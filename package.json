@@ -32,5 +32,6 @@
     "build": "webpack",
     "test": "jest",
     "deploy": "yarn test && yarn build && yarn publish"
-  }
+  },
+  "files": ["dist/*"]
 }
