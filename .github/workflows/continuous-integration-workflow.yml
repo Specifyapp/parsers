@@ -1,0 +1,19 @@
+name: CI
+on: [pull_request, push]
+env:
+  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    if: github.event.pull_request.draft == false
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v2
+      - name: Install
+        run: yarn install
+      - name: Test
+        run: yarn test
+      - name: Coveralls
+        uses: coverallsapp/github-action@master
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
