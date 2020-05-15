@@ -5,7 +5,7 @@
     "noImplicitAny": true,
     "module": "commonjs",
     "moduleResolution": "node",
-    "declaration": false,
+    "declaration": true,
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
@@ -24,24 +24,3 @@
   "include": ["parsers"],
   "exclude": ["./dist", "node_modules","parsers/**/*.spec.ts"]
 }
-
-//{
-//  "compilerOptions": {
-//    "target": "es6",
-//    "outDir": "./dist",
-//    "module": "commonjs",
-//    "sourceMap": true,
-//    "noImplicitAny": true,
-//    "lib": ["ES2019"],
-//    "declaration": true,
-//    "removeComments": true,
-//    "resolveJsonModule": true,
-//    "experimentalDecorators": true,
-//    "esModuleInterop": true,
-//    "emitDecoratorMetadata": true,
-//    "baseUrl": "./",
-//    "allowSyntheticDefaultImports": true
-//  },
-//  "exclude": ["node_modules"]
-//}
-//
