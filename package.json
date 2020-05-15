@@ -1,6 +1,6 @@
 {
   "name": "@specifyapp/parsers",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "main": "dist/index.js",
   "dependencies": {
     "lodash": "^4.17.15",
@@ -33,5 +33,7 @@
     "test": "jest",
     "deploy": "yarn test && yarn build && yarn publish"
   },
-  "files": ["dist/*"]
+  "files": [
+    "dist/*"
+  ]
 }
