@@ -460,10 +460,10 @@
   resolved "https://registry.yarnpkg.com/@specifyapp/get-expectation/-/get-expectation-0.0.4.tgz#f2a07a6f9964a4fbc2526d8819b78f0aafdf5348"
   integrity sha512-sYvXlFn63efInqiDQCOCQuvnKJWT15PjKZCBRGEed/QWZy7bfzE06RCatyXelwopZXtSWVsuxSuTKR1JX7NysQ==
 
-"@specifyapp/types@^0.0.2":
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/@specifyapp/types/-/types-0.0.2.tgz#75ce6939f1786edae3f9e8f396eed0be59431706"
-  integrity sha512-YixvCq3CCRTOcPRR6xXhZ5BI/tPfu/hAnk7S0wrO6IzjltfkOGBOB74qPyzqtfcBnTCo0u78dmSJpgwXE4zntw==
+"@specifyapp/types@^0.0.3":
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/@specifyapp/types/-/types-0.0.3.tgz#b12b5013e77277f18dae2b04c5d9b15d132d14b9"
+  integrity sha512-F6jnO3el1R221vqa1GoKTWf7BK+L8LW27Y8qB9af8ppZ/SXiIUukNQ+WbxxY/VKvWPTE+UJ7zK6tazlhdvjc8Q==
 
 "@types/anymatch@*":
   version "1.3.1"

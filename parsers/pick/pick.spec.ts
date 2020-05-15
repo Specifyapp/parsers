@@ -1,4 +1,4 @@
-import * as seeds from '../../../../tests/seeds.json';
+import * as seeds from '../../seeds.json';
 import pick from './pick.parser';
 import { Token } from '@specifyapp/types';
 import libs from '../global-libs';
