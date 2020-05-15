@@ -5944,7 +5944,7 @@ typedarray@^0.0.6:
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
 
-typescript-is@^0.15.0:
+typescript-is@0.15.0:
   version "0.15.0"
   resolved "https://registry.yarnpkg.com/typescript-is/-/typescript-is-0.15.0.tgz#ab97646dc42cdebebe86dc0aed922cdd250e571a"
   integrity sha512-w+HgaZ2Vsg6ZO9AdIYof1i2rY7P6jmHMOIDD3f81eqw9/GB2oNBl+KTvJ7OClVHgSOM580zbKU927uEjaA6xYA==

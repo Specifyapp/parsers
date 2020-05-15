@@ -8,7 +8,7 @@
     "svg-sprite": "^1.5.0",
     "svgo": "^1.3.2",
     "tinycolor2": "^1.4.1",
-    "typescript-is": "^0.15.0"
+    "typescript-is": "0.15.0"
   },
   "devDependencies": {
     "@specifyapp/get-expectation": "^0.0.4",
@@ -30,6 +30,7 @@
   },
   "scripts": {
     "build": "webpack",
-    "test": "jest"
+    "test": "jest",
+    "deploy": "yarn build && yarn publish"
   }
 }

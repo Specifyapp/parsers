@@ -31,22 +31,22 @@ export default async function (
   { _ }: defaultLibraryType,
 ): outputType {
   try {
-    // if (!is<ParserContext['tokens']>(tokens)) {
-    //   return Promise.reject({
-    //     parser: parserName,
-    //     message: 'Bad input value: tokens',
-    //     actual: tokens,
-    //     expected: getTypeExpectation<ParserContext['tokens']>(),
-    //   });
-    // }
-    // if (options && !is<ParserContext['options']>(options)) {
-    //   return Promise.reject({
-    //     parser: parserName,
-    //     message: 'Bad input value: options',
-    //     actual: options,
-    //     expected: getTypeExpectation<ParserContext['options']>(),
-    //   });
-    // }
+    if (!is<ParserContext['tokens']>(tokens)) {
+      return Promise.reject({
+        parser: parserName,
+        message: 'Bad input value: tokens',
+        actual: tokens,
+        expected: getTypeExpectation<ParserContext['tokens']>(),
+      });
+    }
+    if (options && !is<ParserContext['options']>(options)) {
+      return Promise.reject({
+        parser: parserName,
+        message: 'Bad input value: options',
+        actual: options,
+        expected: getTypeExpectation<ParserContext['options']>(),
+      });
+    }
 
     const transformNameFn = _[options?.formatName || 'kebabCase'];
     const tokensGroupByType = _.groupBy(tokens, 'type');
