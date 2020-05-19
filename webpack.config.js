@@ -1,4 +1,5 @@
 const path = require('path');
+const fs = require('fs');
 const glob = require('glob');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const GenerateSpecifyParserPlugin = require('./GenerateSpecifyParserPlugin.js');
@@ -9,7 +10,6 @@ const entry = glob.sync('./parsers/**/*.parser.ts').reduce((entry, file) => {
   entry[parserName] = file;
   return entry;
 }, {});
-
 module.exports = {
   mode: 'production',
   entry,
@@ -17,20 +17,16 @@ module.exports = {
     rules: [
       {
         test: /\.ts$/,
-        use: [
-          {
-            loader: 'ts-loader',
-            query: {
-              getCustomTransformers: program => ({
-                before: [
-                  getTypeExpectationTransformer(program, { fnName: 'getTypeExpectation' }),
-                  typescriptIsTransformer(program),
-                ],
-              }),
-            },
-          },
+        loader: 'ts-loader',
+        include: [
+          path.resolve(__dirname, 'parsers'),
+          path.resolve(__dirname, 'node_modules/@specifyapp/types/dist'),
         ],
         exclude: [/node_modules/, /(.*?).spec.ts/],
+        options: {
+          compiler: 'ttypescript',
+          allowTsInNodeModules: true,
+        },
       },
     ],
   },

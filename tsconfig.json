@@ -1,10 +1,9 @@
 {
   "compilerOptions": {
-    "target": "ES2019",
+    "target": "es6",
     "outDir": "dist",
     "noImplicitAny": true,
     "module": "commonjs",
-    "lib": ["ES2019"],
     "moduleResolution": "node",
     "declaration": false,
     "resolveJsonModule": true,
@@ -12,7 +11,6 @@
     "esModuleInterop": true,
     "allowJs": true,
     "sourceMap": false,
-    "baseUrl": "./",
     "plugins": [
       {
         "transform": "typescript-is/lib/transform-inline/transformer"
@@ -24,26 +22,5 @@
     ]
   },
   "include": ["parsers"],
-  "exclude": ["./dist", "node_modules","parsers/**/*.spec.ts"]
+  "exclude": ["./dist", "parsers/**/*.spec.ts"]
 }
-
-//{
-//  "compilerOptions": {
-//    "target": "es6",
-//    "outDir": "./dist",
-//    "module": "commonjs",
-//    "sourceMap": true,
-//    "noImplicitAny": true,
-//    "lib": ["ES2019"],
-//    "declaration": true,
-//    "removeComments": true,
-//    "resolveJsonModule": true,
-//    "experimentalDecorators": true,
-//    "esModuleInterop": true,
-//    "emitDecoratorMetadata": true,
-//    "baseUrl": "./",
-//    "allowSyntheticDefaultImports": true
-//  },
-//  "exclude": ["node_modules"]
-//}
-//

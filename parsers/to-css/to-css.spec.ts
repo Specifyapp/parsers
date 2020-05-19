@@ -1,4 +1,4 @@
-import * as seeds from '../../../../tests/seeds.json';
+import * as seeds from '../../seeds.json';
 import toCss, { ParserContext } from './to-css.parser';
 import { ColorValue, Token } from '@specifyapp/types';
 import libs from '../global-libs';
@@ -66,16 +66,16 @@ describe('To css', () => {
       done();
     }
   });
-  it('Get tokens - apply parsers - Bad token input value', async done => {
-    try {
-      // @ts-ignore
-      await toCss(undefined, { keys: ['name'] }, libs);
-    } catch (e) {
-      expect(e.actual).toEqual(undefined);
-      expect(e.parser).toEqual('to-css');
-      expect(e.message).toEqual('Bad input value: tokens');
-      expect(e.expected.includes('Token') && e.expected.includes('value')).toEqual(true);
-      done();
-    }
-  });
+  // it('Get tokens - apply parsers - Bad token input value', async done => {
+  //   try {
+  //     // @ts-ignore
+  //     await toCss(undefined, { keys: ['name'] }, libs);
+  //   } catch (e) {
+  //     expect(e.actual).toEqual(undefined);
+  //     expect(e.parser).toEqual('to-css');
+  //     expect(e.message).toEqual('Bad input value: tokens');
+  //     expect(e.expected.includes('Token') && e.expected.includes('value')).toEqual(true);
+  //     done();
+  //   }
+  // });
 });
