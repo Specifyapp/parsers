@@ -31,14 +31,14 @@ export default async function (
   { _ }: defaultLibraryType,
 ): outputType {
   try {
-    if (!is<ParserContext['tokens']>(tokens)) {
-      return Promise.reject({
-        parser: parserName,
-        message: 'Bad input value: tokens',
-        actual: tokens,
-        expected: getTypeExpectation<ParserContext['tokens']>(),
-      });
-    }
+    // if (!is<ParserContext['tokens']>(tokens)) {
+    //   return Promise.reject({
+    //     parser: parserName,
+    //     message: 'Bad input value: tokens',
+    //     actual: tokens,
+    //     expected: getTypeExpectation<ParserContext['tokens']>(),
+    //   });
+    // }
     if (options && !is<ParserContext['options']>(options)) {
       return Promise.reject({
         parser: parserName,

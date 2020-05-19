@@ -17,15 +17,16 @@ module.exports = {
     rules: [
       {
         test: /\.ts$/,
-        use: [
-          {
-            loader: require.resolve('ts-loader'),
-          },
-        ],
+        loader: 'ts-loader',
         include: [
           path.resolve(__dirname, 'parsers'),
+          path.resolve(__dirname, 'node_modules/@specifyapp/types/dist'),
         ],
         exclude: [/node_modules/, /(.*?).spec.ts/],
+        options: {
+          compiler: 'ttypescript',
+          allowTsInNodeModules: true,
+        },
       },
     ],
   },

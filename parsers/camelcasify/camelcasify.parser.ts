@@ -17,15 +17,15 @@ export default async function (
   options: ParserContext['options'] = { keys: ['name'] },
   { _ }: defaultLibraryType,
 ): Promise<Array<Partial<Token>> | Error> {
-  if (!is<ParserContext['tokens']>(tokens)) {
-    return Promise.reject({
-      parser: parserName,
-      message: 'Bad input value: tokens',
-      actual: tokens,
-      expected: getTypeExpectation<ParserContext['tokens']>(),
-    });
-  }
-
+  // if (!is<ParserContext['tokens']>(tokens)) {
+  //   return Promise.reject({
+  //     parser: parserName,
+  //     message: 'Bad input value: tokens',
+  //     actual: tokens,
+  //     expected: getTypeExpectation<ParserContext['tokens']>(),
+  //   });
+  // }
+  //
   if (!is<ParserContext['options']>(options)) {
     return Promise.reject({
       parser: parserName,

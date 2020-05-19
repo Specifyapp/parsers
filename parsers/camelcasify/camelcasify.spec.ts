@@ -23,18 +23,18 @@ describe('Camelcasify', () => {
       done();
     }
   });
-  it('Get tokens - apply parsers - Bad token input value', async done => {
-    try {
-      // @ts-ignore
-      await camelcasify(undefined, { keys: ['name'] }, libs);
-    } catch (e) {
-      expect(e.actual).toEqual(undefined);
-      expect(e.parser).toEqual('camelcasify');
-      expect(e.message).toEqual('Bad input value: tokens');
-      expect(
-        e.expected.includes('name') && e.expected.includes('Partial') && e.expected.includes('[]'),
-      ).toEqual(true);
-      done();
-    }
-  });
+  // it('Get tokens - apply parsers - Bad token input value', async done => {
+  //   try {
+  //     // @ts-ignore
+  //     await camelcasify(undefined, { keys: ['name'] }, libs);
+  //   } catch (e) {
+  //     expect(e.actual).toEqual(undefined);
+  //     expect(e.parser).toEqual('camelcasify');
+  //     expect(e.message).toEqual('Bad input value: tokens');
+  //     expect(
+  //       e.expected.includes('name') && e.expected.includes('Partial') && e.expected.includes('[]'),
+  //     ).toEqual(true);
+  //     done();
+  //   }
+  // });
 });
