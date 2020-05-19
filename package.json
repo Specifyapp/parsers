@@ -12,7 +12,7 @@
   },
   "devDependencies": {
     "@specifyapp/get-expectation": "^0.0.4",
-    "@specifyapp/types": "0.0.6",
+    "@specifyapp/types": "0.0.7",
     "@types/jest": "^25.2.1",
     "@types/lodash": "^4.14.150",
     "@types/node": "^13.13.5",
@@ -32,5 +32,8 @@
     "build": "webpack",
     "test": "jest",
     "deploy": "yarn test && yarn build && yarn publish"
-  }
+  },
+  "files": [
+    "dist"
+  ]
 }
