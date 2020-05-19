@@ -21,7 +21,6 @@
       }
     ]
   },
-  //  "include": ["parsers"],
-  "files": ["node_modules/@specifyapp/types/index.ts"]
-  //  "exclude": ["./dist", "parsers/**/*.spec.ts"]
+  "include": ["parsers"],
+  "exclude": ["./dist", "parsers/**/*.spec.ts"]
 }
