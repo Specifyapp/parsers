@@ -1,25 +1,17 @@
 {
   "compilerOptions": {
     "target": "es6",
-    "outDir": "dist",
-    "noImplicitAny": true,
     "module": "commonjs",
-    "moduleResolution": "node",
-    "declaration": false,
-    "resolveJsonModule": true,
-    "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true,
+    "noImplicitAny": true,
     "allowJs": true,
-    "sourceMap": false,
-    "plugins": [
-      {
-        "transform": "typescript-is/lib/transform-inline/transformer"
-      },
-      {
-        "transform": "@specifyapp/get-expectation/dist/transform",
-        "fnName": "getTypeExpectation"
-      }
-    ]
+    "declaration": false,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "strict": true,
+    "inlineSourceMap": false,
+    "inlineSources": false,
+    "resolveJsonModule": true,
+    "lib": ["es2019"]
   },
   "include": ["parsers"],
   "exclude": ["./dist", "parsers/**/*.spec.ts"]

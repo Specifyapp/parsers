@@ -2,11 +2,11 @@ import * as seeds from '../../seeds.json';
 import toCss, { ParserContext } from './to-css.parser';
 import { ColorValue, Token } from '@specifyapp/types';
 import libs from '../global-libs';
+import { OutputDataType, OptionsType } from './to-css.parser';
 
 describe('To css', () => {
   it('Get tokens - apply parsers', async done => {
     const result = await toCss(seeds.tokens as Array<Token>, null, libs);
-    if (result instanceof Error) return done.fail(result);
     expect(typeof result).toEqual('string');
     const color: Token = seeds.tokens.find((token: Token) => token.type === 'color');
     const measurement = seeds.tokens.find((token: Token) => token.type === 'measurement');
@@ -32,7 +32,6 @@ describe('To css', () => {
       formatTokens: { color: 'rgb' },
     };
     const result = await toCss(seeds.tokens as Array<Token>, options, libs);
-    if (result instanceof Error) return done.fail(result);
     const color = seeds.tokens.find((token: Token) => token.type === 'color');
     const measurement = seeds.tokens.find((token: Token) => token.type === 'measurement');
     expect(
