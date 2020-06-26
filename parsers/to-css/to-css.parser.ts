@@ -1,59 +1,48 @@
-import { Token, TokenType } from '@specifyapp/types';
-import { defaultLibraryType } from '../global-libs';
-import { is } from 'typescript-is';
-import { getTypeExpectation } from '@specifyapp/get-expectation';
+import { Token } from '@specifyapp/types';
+import libs from '../global-libs';
 import prettier from 'prettier/standalone';
 import parserCss from 'prettier/parser-postcss';
 import * as TokensClass from './tokens';
 
-type outputType = Promise<string | Error>;
-
-export type ParserContext = {
-  tokens: Array<Pick<Token, 'name' | 'value' | 'type'>>;
-  options: null | {
-    formatName?: 'camelCase' | 'kebabCase' | 'snakeCase';
-    formatTokens?: {
-      color?: 'rgb' | 'prgb' | 'hex' | 'hex6' | 'hex3' | 'hex4' | 'hex8' | 'name' | 'hsl' | 'hsv';
-    };
-    formatConfig?: {
-      endOfLine?: 'auto' | 'lf' | 'crlf' | 'cr';
-      tabWidth?: number;
-      useTabs?: boolean;
-    };
-  };
-};
-
-const parserName: string = 'to-css';
+export type InputDataType = Array<Pick<Token, 'name' | 'value' | 'type'>>;
+export type OutputDataType = Promise<string>;
+export type ColorsFormat =
+  | 'rgb'
+  | 'prgb'
+  | 'hex'
+  | 'hex6'
+  | 'hex3'
+  | 'hex4'
+  | 'hex8'
+  | 'name'
+  | 'hsl'
+  | 'hsv';
+export type OptionsType =
+  | Partial<{
+      formatName: 'camelCase' | 'kebabCase' | 'snakeCase';
+      formatTokens: Partial<{
+        color: ColorsFormat;
+      }>;
+      formatConfig: Partial<{
+        endOfLine: 'auto' | 'lf' | 'crlf' | 'cr';
+        tabWidth: number;
+        useTabs: boolean;
+      }>;
+    }>
+  | undefined;
 
 export default async function (
-  tokens: ParserContext['tokens'],
-  options: ParserContext['options'],
-  { _ }: defaultLibraryType,
-): outputType {
+  tokens: InputDataType,
+  options: OptionsType,
+  { _ }: typeof libs,
+): OutputDataType {
   try {
-    // if (!is<ParserContext['tokens']>(tokens)) {
-    //   return Promise.reject({
-    //     parser: parserName,
-    //     message: 'Bad input value: tokens',
-    //     actual: tokens,
-    //     expected: getTypeExpectation<ParserContext['tokens']>(),
-    //   });
-    // }
-    if (options && !is<ParserContext['options']>(options)) {
-      return Promise.reject({
-        parser: parserName,
-        message: 'Bad input value: options',
-        actual: options,
-        expected: getTypeExpectation<ParserContext['options']>(),
-      });
-    }
-
     const transformNameFn = _[options?.formatName || 'kebabCase'];
     const tokensGroupByType = _.groupBy(tokens, 'type');
-    const styles = Object.keys(tokensGroupByType).reduce((result: string, type: TokenType) => {
+    const styles = Object.keys(tokensGroupByType).reduce((result, type) => {
       result += `\n\n/* ${type.toUpperCase()} */\n`;
       result += tokensGroupByType[type]
-        .map((token: Token): string => {
+        .map(token => {
           if (!(<any>TokensClass)[`${token.type.charAt(0).toUpperCase() + token.type.slice(1)}`])
             return;
           const instance = Object.assign(
@@ -72,7 +61,7 @@ export default async function (
       parser: 'css',
       plugins: [parserCss],
     });
-  } catch (e) {
-    return e;
+  } catch (err) {
+    throw err;
   }
 }

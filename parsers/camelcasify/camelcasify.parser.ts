@@ -1,43 +1,28 @@
 import { Token, AllowedFieldsWithType } from '@specifyapp/types';
-import { is } from 'typescript-is';
-import { defaultLibraryType } from '../global-libs';
-import { getTypeExpectation } from '@specifyapp/get-expectation';
+import libs from '../global-libs';
 
-type ParserContext = {
-  tokens: Array<Partial<Pick<Token, AllowedFieldsWithType<Token, string>>>>;
-  options: null | {
-    keys?: Array<AllowedFieldsWithType<Token, string>>;
-  };
-};
-
-const parserName: string = 'camelcasify';
+type listAllowedFields = Exclude<AllowedFieldsWithType<Token, string>, undefined>;
+export type InputDataType = Array<Partial<Pick<Token, listAllowedFields>>>;
+export type OutputDataType = Promise<Array<Partial<Token>>>;
+export type OptionsType =
+  | undefined
+  | {
+      keys: Array<listAllowedFields>;
+    };
 
 export default async function (
-  tokens: ParserContext['tokens'],
-  options: ParserContext['options'] = { keys: ['name'] },
-  { _ }: defaultLibraryType,
-): Promise<Array<Partial<Token>> | Error> {
-  // if (!is<ParserContext['tokens']>(tokens)) {
-  //   return Promise.reject({
-  //     parser: parserName,
-  //     message: 'Bad input value: tokens',
-  //     actual: tokens,
-  //     expected: getTypeExpectation<ParserContext['tokens']>(),
-  //   });
-  // }
-  //
-  if (!is<ParserContext['options']>(options)) {
-    return Promise.reject({
-      parser: parserName,
-      message: 'Bad input value: options',
-      actual: options,
-      expected: getTypeExpectation<ParserContext['options']>(),
+  tokens: InputDataType,
+  options: OptionsType = { keys: ['name'] },
+  { _ }: typeof libs,
+): OutputDataType {
+  try {
+    return tokens.map((token: Partial<Pick<Token, listAllowedFields>>) => {
+      options.keys.forEach(key => {
+        if (token[key]) token[key] = _.camelCase(token[key]);
+      });
+      return token;
     });
+  } catch (err) {
+    throw err;
   }
-  return tokens.map(token => {
-    options.keys.forEach(key => {
-      if (token[key]) token[key] = _.camelCase(token[key]);
-    });
-    return token;
-  });
 }
