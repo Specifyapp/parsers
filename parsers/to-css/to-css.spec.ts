@@ -1,15 +1,14 @@
 import * as seeds from '../../seeds.json';
-import toCss, { ParserContext } from './to-css.parser';
+import toCss, { OptionsType } from './to-css.parser';
 import { ColorValue, Token } from '@specifyapp/types';
 import libs from '../global-libs';
-import { OutputDataType, OptionsType } from './to-css.parser';
 
 describe('To css', () => {
   it('Get tokens - apply parsers', async done => {
-    const result = await toCss(seeds.tokens as Array<Token>, null, libs);
+    const result = await toCss(seeds.tokens as Array<Token>, undefined, libs);
     expect(typeof result).toEqual('string');
-    const color: Token = seeds.tokens.find((token: Token) => token.type === 'color');
-    const measurement = seeds.tokens.find((token: Token) => token.type === 'measurement');
+    const color = seeds.tokens.find((token: Token) => token.type === 'color') as Token;
+    const measurement = seeds.tokens.find((token: Token) => token.type === 'measurement') as Token;
     expect(
       result.includes(
         `${libs._.camelCase(color.name)}: ${libs
@@ -27,54 +26,27 @@ describe('To css', () => {
     done();
   });
   it('Get tokens - apply parsers - with options', async done => {
-    const options: ParserContext['options'] = {
-      formatName: 'snakeCase',
+    const options: OptionsType = {
+      formatName: 'snakeCase'!,
       formatTokens: { color: 'rgb' },
     };
     const result = await toCss(seeds.tokens as Array<Token>, options, libs);
-    const color = seeds.tokens.find((token: Token) => token.type === 'color');
-    const measurement = seeds.tokens.find((token: Token) => token.type === 'measurement');
+    const color = seeds.tokens.find((token: Token) => token.type === 'color') as Token;
+    const measurement = seeds.tokens.find((token: Token) => token.type === 'measurement') as Token;
+
+    const fnFormatColor = libs._[options.formatName!](color.name);
     expect(
       result.includes(
-        `${libs._[options.formatName](color.name)}: ${libs
+        `${fnFormatColor}: ${libs
           .tinycolor(color.value as ColorValue)
-          .toString(options.formatTokens.color)}`,
+          .toString(options.formatTokens?.color)}`,
       ),
     );
+
+    const fnFormatName = libs._[options.formatName!];
     expect(
-      result.includes(
-        `${libs._[options.formatName]}: ${measurement.value.measure}${measurement.value.unit}`,
-      ),
+      result.includes(`${fnFormatName}: ${measurement.value.measure}${measurement.value.unit}`),
     );
     done();
   });
-  it('Get tokens - apply parsers - Bad options input value', async done => {
-    // @ts-ignore
-    const options: OptionType = { formatName: 'Unknown formatName' };
-    try {
-      await toCss(seeds.tokens as Array<Token>, options, libs);
-    } catch (e) {
-      expect(e.actual).toEqual(options);
-      expect(e.parser).toEqual('to-css');
-      expect(e.message).toEqual('Bad input value: options');
-      expect(
-        e.expected.includes('formatName') &&
-          e.expected.includes('formatTokens') &&
-          e.expected.includes('formatConfig'),
-      ).toEqual(true);
-      done();
-    }
-  });
-  // it('Get tokens - apply parsers - Bad token input value', async done => {
-  //   try {
-  //     // @ts-ignore
-  //     await toCss(undefined, { keys: ['name'] }, libs);
-  //   } catch (e) {
-  //     expect(e.actual).toEqual(undefined);
-  //     expect(e.parser).toEqual('to-css');
-  //     expect(e.message).toEqual('Bad input value: tokens');
-  //     expect(e.expected.includes('Token') && e.expected.includes('value')).toEqual(true);
-  //     done();
-  //   }
-  // });
 });

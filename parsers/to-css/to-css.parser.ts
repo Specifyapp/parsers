@@ -61,7 +61,7 @@ export default async function (
       parser: 'css',
       plugins: [parserCss],
     });
-  } catch (e) {
-    return e;
+  } catch (err) {
+    throw err;
   }
 }

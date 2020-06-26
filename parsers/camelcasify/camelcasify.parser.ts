@@ -15,10 +15,14 @@ export default async function (
   options: OptionsType = { keys: ['name'] },
   { _ }: typeof libs,
 ): OutputDataType {
-  return tokens.map((token: Partial<Pick<Token, listAllowedFields>>) => {
-    options.keys.forEach(key => {
-      if (token[key]) token[key] = _.camelCase(token[key]);
+  try {
+    return tokens.map((token: Partial<Pick<Token, listAllowedFields>>) => {
+      options.keys.forEach(key => {
+        if (token[key]) token[key] = _.camelCase(token[key]);
+      });
+      return token;
     });
-    return token;
-  });
+  } catch (err) {
+    throw err;
+  }
 }
