@@ -18,7 +18,7 @@ export default async function (
 ): OutputDataType {
   return tokens.map(token => {
     options.keys.forEach(key => {
-      if (token[key]) token[key] = _.snakeCase(token[key]);
+      if (token[key]) token[key] = _!.snakeCase(token[key]);
     });
     return token;
   });
