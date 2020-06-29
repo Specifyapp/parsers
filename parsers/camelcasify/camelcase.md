@@ -7,21 +7,21 @@ Loop on all tokens and apply camelcase function on the given keys.
 ## Interface 
 ```ts
 interface x {
-  "name": "@specify/camelcasify",
-  "params"?: {
+  "name": "camelcasify",
+  "options"?: {
     "keys": Array<string>
   }
 }
 ```
-### Params
+### Options
 | parameter | Require    | type      | default    | description                                      |
 | --------- | ---------- | --------- | ---------- | ------------------------------------------------ |
 | `keys`    | optional   | `Array`   | `["name"]` |the list of keys where the function will be apply|
-## Usage example 
+## Example 
 
 ```json
 {
-    "name": "@specify/camelcasify",
+    "name": "camelcasify",
     "params": {
       "keys": ["name"]
     }
@@ -39,6 +39,8 @@ Array<{[key: string]: any}>
 ```
 
 ### output
+
+
 ```
 Array<{[key: string]: any}>
 ```

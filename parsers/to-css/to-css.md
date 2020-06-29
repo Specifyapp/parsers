@@ -1,0 +1,103 @@
+# TO-CSS
+
+## Description
+
+Transform design tokens in css.
+
+## Interface 
+```ts
+interface x {
+  "name": "to-css",
+  "options"?: Partial<{
+    formatName: 'camelCase' | 'kebabCase' | 'snakeCase';
+    formatTokens: Partial<{
+      color: 'rgb' | 'prgb' | 'hex' | 'hex6' | 'hex3' | 'hex4' | 'hex8' | 'name' | 'hsl' | 'hsv';
+    }>;
+    formatConfig: Partial<{
+      endOfLine: 'auto' | 'lf' | 'crlf' | 'cr';
+      tabWidth: number;
+      useTabs: boolean;
+    }>;
+  }>
+}
+```
+
+## Options example
+```json
+{
+  "name": "to-css",
+  "options": {
+    "formatName": "camelCase",
+    "formatTokens":{
+      "color": "hsl"
+    },
+    "formatConfig": {
+      "tabWidth": 4
+    }
+  }
+}
+```
+
+## Types
+
+### Input
+
+Array of object with at least name, value and type
+
+```ts
+Array<{name: string, value: any, type: string}>
+```
+
+### Output
+
+String formated in css
+
+```ts
+string
+```
+
+## Before / After
+
+### Before
+
+```json
+[
+    {
+        "type": "color",
+        "value": {
+            "a": 0.96,
+            "b": 20,
+            "g": 227,
+            "r": 122
+        },
+        "name": "Primary color"
+    }
+]
+```
+
+### Options used on parser
+
+```
+{
+  "name": "to-css",
+  "options": {
+    "formatName": "camelCase",
+    "formatTokens":{
+      "color": "hsl"
+    },
+    "formatConfig": {
+      "tabWidth": 4
+    }
+  }
+}
+```
+
+### Result
+
+```css
+:root {
+    /* COLOR */
+    --primary_color: hsla(90, 84%, 48%, 0.96);
+}
+
+```
