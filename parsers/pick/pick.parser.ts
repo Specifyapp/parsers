@@ -1,4 +1,5 @@
 import { Token, AllowedFieldsWithType } from '@specifyapp/types';
+import libs from '../global-libs';
 
 type listAllowedFields = Exclude<AllowedFieldsWithType<Token, string>, undefined>;
 
@@ -13,8 +14,7 @@ export type OptionsType =
 export default async function (
   tokens: InputDataType,
   options: OptionsType = { keys: ['name'] },
-  // @ts-ignore
-  { _ },
+  { _ }: typeof libs,
 ): OutputDataType {
   return tokens.map((token: Partial<Pick<Token, listAllowedFields>>) => {
     return _.pick(token, options.keys);

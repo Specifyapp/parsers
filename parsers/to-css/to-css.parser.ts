@@ -1,5 +1,5 @@
 import { Token } from '@specifyapp/types';
-import { Libs } from '../global-libs';
+import libs from '../global-libs';
 import prettier from 'prettier/standalone';
 import parserCss from 'prettier/parser-postcss';
 import * as TokensClass from './tokens';
@@ -34,15 +34,15 @@ export type OptionsType =
 export default async function (
   tokens: InputDataType,
   options: OptionsType,
-  { _ }: Partial<Libs>,
+  { _ }: typeof libs,
 ): OutputDataType {
   try {
-    const transformNameFn = _![options?.formatName || 'kebabCase'];
-    const tokensGroupByType = _!.groupBy(tokens, 'type');
+    const transformNameFn = _[options?.formatName || 'kebabCase'];
+    const tokensGroupByType = _.groupBy(tokens, 'type');
     const styles = Object.keys(tokensGroupByType).reduce((result, type) => {
       result += `\n\n/* ${type.toUpperCase()} */\n`;
       result += tokensGroupByType[type]
-        .map(token => {
+        .map((token: Pick<Token, 'value' | 'type' | 'name'>) => {
           if (!(<any>TokensClass)[`${token.type.charAt(0).toUpperCase() + token.type.slice(1)}`])
             return;
           const instance = Object.assign(

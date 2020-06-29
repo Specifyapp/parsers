@@ -1,5 +1,5 @@
 import { Token, AllowedFieldsWithType } from '@specifyapp/types';
-import { Libs } from '../global-libs';
+import libs from '../global-libs';
 
 type listAllowedFields = Exclude<AllowedFieldsWithType<Token, string>, undefined>;
 export type InputDataType = Array<Partial<Pick<Token, listAllowedFields>>>;
@@ -13,12 +13,12 @@ export type OptionsType =
 export default async function (
   tokens: InputDataType,
   options: OptionsType = { keys: ['name'] },
-  { _ }: Partial<Libs>,
+  { _ }: typeof libs,
 ): OutputDataType {
   try {
     return tokens.map((token: Partial<Pick<Token, listAllowedFields>>) => {
       options.keys.forEach(key => {
-        if (token[key]) token[key] = _!.camelCase(token[key]);
+        if (token[key]) token[key] = _.camelCase(token[key]);
       });
       return token;
     });
