@@ -28,7 +28,7 @@ describe('To css', () => {
   it('Get tokens - apply parsers - with options', async done => {
     const options: OptionsType = {
       formatName: 'snakeCase'!,
-      formatTokens: { color: 'rgb' },
+      formatTokens: { color: 'hsl' },
     };
     const result = await toCss(seeds.tokens as Array<Token>, options, libs);
     const color = seeds.tokens.find((token: Token) => token.type === 'color') as Token;
