@@ -8,7 +8,7 @@ Loop on all tokens and apply kebabcase function on the given keys.
 
 ```ts
 interface x {
-  "name": "@specify/kebabcasify",
+  "name": "kebabcasify",
   "params"?: {
     "keys": Array<string>
   }
@@ -25,7 +25,7 @@ interface x {
 
 ```json
 {
-    "name": "@specify/kebabcasify",
+    "name": "kebabcasify",
     "options": {
       "keys": ["name"]
     }

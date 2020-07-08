@@ -7,7 +7,7 @@ Loop on all tokens and apply snakecase function on the given keys.
 ## Interface 
 ```ts
 interface x {
-  "name": "@specify/snakecasify",
+  "name": "snakecasify",
   "params"?: {
     "keys": Array<string>
   }
@@ -21,7 +21,7 @@ interface x {
 
 ```json
 {
-    "name": "@specify/snakecasify",
+    "name": "snakecasify",
     "options": {
       "keys": ["name"]
     }
