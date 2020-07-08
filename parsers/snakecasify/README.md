@@ -14,14 +14,14 @@ interface x {
 }
 ```
 ### Params
-| parameter | Require    | type      | default    | description                                      |
-| --------- | ---------- | --------- | ---------- | ------------------------------------------------ |
-| `keys`    | optional   | `Array`   | `["name"]` |the list of keys where the function will be apply|
+| parameter | Require    | type      | default    | description                                       |
+| --------- | ---------- | --------- | ---------- | ------------------------------------------------- |
+| `keys`    | optional   | `Array`   | `["name"]` | the list of keys where the function will be apply |
 ## Usage example 
 
 ```json
 {
-    "name": "@specify/camelcasify",
+    "name": "@specify/snakecasify",
     "options": {
       "keys": ["name"]
     }
