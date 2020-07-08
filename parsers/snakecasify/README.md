@@ -7,21 +7,21 @@ Loop on all tokens and apply snakecase function on the given keys.
 ## Interface 
 ```ts
 interface x {
-  "name": "@specify/snakecasify",
+  "name": "snakecasify",
   "params"?: {
     "keys": Array<string>
   }
 }
 ```
 ### Params
-| parameter | Require    | type      | default    | description                                      |
-| --------- | ---------- | --------- | ---------- | ------------------------------------------------ |
-| `keys`    | optional   | `Array`   | `["name"]` |the list of keys where the function will be apply|
+| parameter | Require    | type      | default    | description                                       |
+| --------- | ---------- | --------- | ---------- | ------------------------------------------------- |
+| `keys`    | optional   | `Array`   | `["name"]` | the list of keys where the function will be apply |
 ## Usage example 
 
 ```json
 {
-    "name": "@specify/camelcasify",
+    "name": "snakecasify",
     "options": {
       "keys": ["name"]
     }

@@ -2,7 +2,7 @@
 
 ## Description
 
-Transform design tokens in css.
+Transform design tokens in CSS.
 
 ## Interface 
 ```ts
@@ -97,7 +97,7 @@ string
 ```css
 :root {
     /* COLOR */
-    --primary_color: hsla(90, 84%, 48%, 0.96);
+    --primaryColor: hsla(90, 84%, 48%, 0.96);
 }
 
 ```
