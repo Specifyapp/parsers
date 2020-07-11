@@ -55,7 +55,7 @@ describe('To css', () => {
       formatName: 'snakeCase'!,
       formatTokens: { color: 'hsl' },
       formatConfig: {
-        customSelector: 'body[data-theme="light"]',
+        selector: 'body[data-theme="light"]',
       },
     };
     const result = await toCss(seeds.tokens as Array<Token>, options, libs);
@@ -75,9 +75,7 @@ describe('To css', () => {
     expect(
       result.includes(`${fnFormatName}: ${measurement.value.measure}${measurement.value.unit}`),
     );
-    expect(
-      result.includes(`${options.formatConfig.customSelector}`),
-    );
+    expect(result.includes(`${options.formatConfig!.selector}`));
     done();
   });
 
@@ -103,9 +101,7 @@ describe('To css', () => {
     expect(
       result.includes(`${fnFormatName}: ${measurement.value.measure}${measurement.value.unit}`),
     );
-    expect(
-      result.includes(`:root {`),
-    );
+    expect(result.includes(`:root {`));
     done();
   });
 });

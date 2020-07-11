@@ -24,7 +24,7 @@ export type OptionsType =
         color: ColorsFormat;
       }>;
       formatConfig: Partial<{
-        customSelector: string,
+        selector: string;
         endOfLine: 'auto' | 'lf' | 'crlf' | 'cr';
         tabWidth: number;
         useTabs: boolean;
@@ -39,7 +39,7 @@ export default async function (
 ): OutputDataType {
   try {
     const transformNameFn = _[options?.formatName || 'kebabCase'];
-    const selector = options?.formatConfig?.customSelector || ':root';
+    const selector = options?.formatConfig?.selector || ':root';
     const tokensGroupByType = _.groupBy(tokens, 'type');
     const styles = Object.keys(tokensGroupByType).reduce((result, type) => {
       result += `\n\n/* ${type.toUpperCase()} */\n`;

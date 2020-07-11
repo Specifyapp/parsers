@@ -14,7 +14,7 @@ interface x {
       color: 'rgb' | 'prgb' | 'hex' | 'hex6' | 'hex3' | 'hex4' | 'hex8' | 'name' | 'hsl' | 'hsv';
     }>;
     formatConfig: Partial<{
-      customSelector: string,
+      selector: string,
       endOfLine: 'auto' | 'lf' | 'crlf' | 'cr';
       tabWidth: number;
       useTabs: boolean;
@@ -33,7 +33,7 @@ interface x {
       "color": "hsl"
     },
     "formatConfig": {
-      "customSelector": "body[data-theme=\"light\"]",
+      "selector": "body[data-theme=\"light\"]",
       "tabWidth": 4
     }
   }
@@ -88,7 +88,7 @@ string
       "color": "hsl"
     },
     "formatConfig": {
-      "customSelector": "body[data-theme=\"light\"]"
+      "selector": "body[data-theme=\"light\"]"
       "tabWidth": 4
     }
   }
