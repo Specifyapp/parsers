@@ -4,7 +4,8 @@
 
 Loop on all tokens and apply camelcase function on the given keys.
 
-## Interface 
+## Interface
+
 ```ts
 interface x {
   "name": "camelcasify",
@@ -13,10 +14,12 @@ interface x {
   }
 }
 ```
+
 ### Options
-| parameter | Require    | type      | default    | description                                      |
-| --------- | ---------- | --------- | ---------- | ------------------------------------------------ |
-| `keys`    | optional   | `Array`   | `["name"]` |the list of keys where the function will be apply|
+| parameter | Require    | type      | default    | description                                       |
+| --------- | ---------- | --------- | ---------- | ------------------------------------------------- |
+| `keys`    | optional   | `Array`   | `["name"]` | the list of keys where the function will be apply |
+
 ## Example 
 
 ```json

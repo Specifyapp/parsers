@@ -24,6 +24,7 @@ export type OptionsType =
         color: ColorsFormat;
       }>;
       formatConfig: Partial<{
+        selector: string;
         endOfLine: 'auto' | 'lf' | 'crlf' | 'cr';
         tabWidth: number;
         useTabs: boolean;
@@ -38,6 +39,7 @@ export default async function (
 ): OutputDataType {
   try {
     const transformNameFn = _[options?.formatName || 'kebabCase'];
+    const selector = options?.formatConfig?.selector || ':root';
     const tokensGroupByType = _.groupBy(tokens, 'type');
     const styles = Object.keys(tokensGroupByType).reduce((result, type) => {
       result += `\n\n/* ${type.toUpperCase()} */\n`;
@@ -56,7 +58,7 @@ export default async function (
       return result;
     }, '');
 
-    return prettier.format(`:root {${styles}}`, {
+    return prettier.format(`${selector} {${styles}}`, {
       ...options?.formatConfig,
       parser: 'css',
       plugins: [parserCss],

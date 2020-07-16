@@ -2,7 +2,7 @@
 
 ## Description
 
-Transform design tokens in css.
+Transform design tokens in CSS.
 
 ## Interface 
 ```ts
@@ -14,6 +14,7 @@ interface x {
       color: 'rgb' | 'prgb' | 'hex' | 'hex6' | 'hex3' | 'hex4' | 'hex8' | 'name' | 'hsl' | 'hsv';
     }>;
     formatConfig: Partial<{
+      selector: string,
       endOfLine: 'auto' | 'lf' | 'crlf' | 'cr';
       tabWidth: number;
       useTabs: boolean;
@@ -32,6 +33,7 @@ interface x {
       "color": "hsl"
     },
     "formatConfig": {
+      "selector": "body[data-theme=\"light\"]",
       "tabWidth": 4
     }
   }
@@ -86,6 +88,7 @@ string
       "color": "hsl"
     },
     "formatConfig": {
+      "selector": "body[data-theme=\"light\"]"
       "tabWidth": 4
     }
   }
@@ -95,9 +98,8 @@ string
 ### Result
 
 ```css
-:root {
+body[data-theme="light"] {
     /* COLOR */
-    --primary_color: hsla(90, 84%, 48%, 0.96);
+    --primaryColor: hsla(90, 84%, 48%, 0.96);
 }
-
 ```
