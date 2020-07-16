@@ -1,6 +1,6 @@
 import * as seeds from '../../seeds.json';
 import toCss, { OptionsType } from './to-css.parser';
-import { ColorValue, Token } from '@specifyapp/types';
+import { ColorValue, Token, ShadowValue } from '@specifyapp/types';
 import libs from '../global-libs';
 
 describe('To css', () => {
@@ -9,6 +9,22 @@ describe('To css', () => {
     expect(typeof result).toEqual('string');
     const color = seeds.tokens.find((token: Token) => token.type === 'color') as Token;
     const measurement = seeds.tokens.find((token: Token) => token.type === 'measurement') as Token;
+    const shadow = seeds.tokens.find((token: Token) => token.type === 'shadow') as Token;
+
+    const shadowValue = shadow.value.reduce((acc: string, value: ShadowValue) => {
+      const { color, offsetX, offsetY, blur, isInner } = value;
+      const x = offsetX.value;
+      const y = offsetY.value;
+      const bl = blur.value;
+      const { r, g, b, a } = color.value;
+      const innerText = isInner ? 'inset' : '';
+      if (acc === '') {
+        return `${innerText} ${x.measure}${x.unit} ${y.measure}${y.unit} ${bl.measure}${bl.unit} rgba(${r},${g},${b},${a})`;
+      }
+
+      return `${acc}, ${innerText} ${x.measure}${x.unit} ${y.measure}${y.unit} ${bl.measure}${bl.unit} rgba(${r},${g},${b},${a})`;
+    }, '');
+
     expect(
       result.includes(
         `${libs._.camelCase(color.name)}: ${libs
@@ -16,6 +32,7 @@ describe('To css', () => {
           .toString('rgb')}`,
       ),
     );
+    expect(result.includes(`${libs._.camelCase(shadow.name)}: ${shadowValue}`));
     expect(
       result.includes(
         `${libs._.camelCase(measurement.name)}: ${measurement.value.measure}${

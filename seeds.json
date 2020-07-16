@@ -1307,35 +1307,37 @@
     },
     {
       "type": "shadow",
-      "value": {
-        "blur": {
-          "value": {
-            "unit": "px",
-            "measure": 2
-          }
-        },
-        "color": {
-          "value": {
-            "r": 144,
-            "g": 63,
-            "b": 6,
-            "a": 0.28
-          }
-        },
-        "isInner": false,
-        "offsetX": {
-          "value": {
-            "unit": "px",
-            "measure": 37
-          }
-        },
-        "offsetY": {
-          "value": {
-            "unit": "px",
-            "measure": 71
+      "value": [
+        {
+          "blur": {
+            "value": {
+              "unit": "px",
+              "measure": 2
+            }
+          },
+          "color": {
+            "value": {
+              "r": 144,
+              "g": 63,
+              "b": 6,
+              "a": 0.28
+            }
+          },
+          "isInner": false,
+          "offsetX": {
+            "value": {
+              "unit": "px",
+              "measure": 37
+            }
+          },
+          "offsetY": {
+            "value": {
+              "unit": "px",
+              "measure": 71
+            }
           }
         }
-      },
+      ],
       "id": "5e3a5dee-95ec-4270-8076-ea1c0c51cbfa",
       "originId": "49fd0933-0931-4cd9-ab5f-30440422169a",
       "name": "Car Ergonomic Licensed Cotton Pants",
@@ -1346,35 +1348,37 @@
     },
     {
       "type": "shadow",
-      "value": {
-        "blur": {
-          "value": {
-            "unit": "px",
-            "measure": 8
-          }
-        },
-        "color": {
-          "value": {
-            "r": 78,
-            "g": 120,
-            "b": 156,
-            "a": 0.51
-          }
-        },
-        "isInner": false,
-        "offsetX": {
-          "value": {
-            "unit": "px",
-            "measure": 73
-          }
-        },
-        "offsetY": {
-          "value": {
-            "unit": "px",
-            "measure": 21
+      "value": [
+        {
+          "blur": {
+            "value": {
+              "unit": "px",
+              "measure": 8
+            }
+          },
+          "color": {
+            "value": {
+              "r": 78,
+              "g": 120,
+              "b": 156,
+              "a": 0.51
+            }
+          },
+          "isInner": false,
+          "offsetX": {
+            "value": {
+              "unit": "px",
+              "measure": 73
+            }
+          },
+          "offsetY": {
+            "value": {
+              "unit": "px",
+              "measure": 21
+            }
           }
         }
-      },
+      ],
       "id": "aedcf523-90ed-428c-81ce-744583b2600a",
       "originId": "74b41879-87ea-47ff-981d-4410743a6497",
       "name": "Concrete Incredible Concrete Soap 4th generation",
@@ -1385,35 +1389,37 @@
     },
     {
       "type": "shadow",
-      "value": {
-        "blur": {
-          "value": {
-            "unit": "px",
-            "measure": 1
-          }
-        },
-        "color": {
-          "value": {
-            "r": 18,
-            "g": 31,
-            "b": 27,
-            "a": 0.52
-          }
-        },
-        "isInner": false,
-        "offsetX": {
-          "value": {
-            "unit": "px",
-            "measure": 21
-          }
-        },
-        "offsetY": {
-          "value": {
-            "unit": "px",
-            "measure": 50
+      "value": [
+        {
+          "blur": {
+            "value": {
+              "unit": "px",
+              "measure": 1
+            }
+          },
+          "color": {
+            "value": {
+              "r": 18,
+              "g": 31,
+              "b": 27,
+              "a": 0.52
+            }
+          },
+          "isInner": false,
+          "offsetX": {
+            "value": {
+              "unit": "px",
+              "measure": 21
+            }
+          },
+          "offsetY": {
+            "value": {
+              "unit": "px",
+              "measure": 50
+            }
           }
         }
-      },
+      ],
       "id": "d1a38b68-afae-4e49-8304-5ea0ebd5d6e9",
       "originId": "89dddba3-ce75-4731-a4d9-a93bfa028711",
       "name": "Cotton cross-platform Cotton",
@@ -1424,35 +1430,37 @@
     },
     {
       "type": "shadow",
-      "value": {
-        "blur": {
-          "value": {
-            "unit": "px",
-            "measure": 3
-          }
-        },
-        "color": {
-          "value": {
-            "r": 113,
-            "g": 73,
-            "b": 29,
-            "a": 0.64
-          }
-        },
-        "isInner": false,
-        "offsetX": {
-          "value": {
-            "unit": "px",
-            "measure": 94
-          }
-        },
-        "offsetY": {
-          "value": {
-            "unit": "px",
-            "measure": 80
+      "value": [
+        {
+          "blur": {
+            "value": {
+              "unit": "px",
+              "measure": 3
+            }
+          },
+          "color": {
+            "value": {
+              "r": 113,
+              "g": 73,
+              "b": 29,
+              "a": 0.64
+            }
+          },
+          "isInner": false,
+          "offsetX": {
+            "value": {
+              "unit": "px",
+              "measure": 94
+            }
+          },
+          "offsetY": {
+            "value": {
+              "unit": "px",
+              "measure": 80
+            }
           }
         }
-      },
+      ],
       "id": "2291c37d-504d-4d87-bab7-b478b2206d32",
       "originId": "10acc7d0-d157-44b7-bc9b-590b45886ee8",
       "name": "models Tunisian Dinar system",
@@ -1463,35 +1471,37 @@
     },
     {
       "type": "shadow",
-      "value": {
-        "blur": {
-          "value": {
-            "unit": "px",
-            "measure": 7
-          }
-        },
-        "color": {
-          "value": {
-            "r": 12,
-            "g": 99,
-            "b": 113,
-            "a": 0.17
-          }
-        },
-        "isInner": false,
-        "offsetX": {
-          "value": {
-            "unit": "px",
-            "measure": 23
-          }
-        },
-        "offsetY": {
-          "value": {
-            "unit": "px",
-            "measure": 93
+      "value": [
+        {
+          "blur": {
+            "value": {
+              "unit": "px",
+              "measure": 7
+            }
+          },
+          "color": {
+            "value": {
+              "r": 12,
+              "g": 99,
+              "b": 113,
+              "a": 0.17
+            }
+          },
+          "isInner": false,
+          "offsetX": {
+            "value": {
+              "unit": "px",
+              "measure": 23
+            }
+          },
+          "offsetY": {
+            "value": {
+              "unit": "px",
+              "measure": 93
+            }
           }
         }
-      },
+      ],
       "id": "02e36dfd-011e-4147-9f1e-b90b51d052ab",
       "originId": "29545603-c5d8-48f0-be76-3af56fdd0d92",
       "name": "front-end invoice Tasty",
