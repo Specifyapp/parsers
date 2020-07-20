@@ -45,8 +45,9 @@ export default async function (
       result += `\n\n/* ${type.toUpperCase()} */\n`;
       result += tokensGroupByType[type]
         .map((token: Pick<Token, 'value' | 'type' | 'name'>) => {
-          if (!(<any>TokensClass)[`${token.type.charAt(0).toUpperCase() + token.type.slice(1)}`])
+          if (!(<any>TokensClass)[`${token.type.charAt(0).toUpperCase() + token.type.slice(1)}`]) {
             return;
+          }
           const instance = Object.assign(
             new (<any>TokensClass)[`${token.type.charAt(0).toUpperCase() + token.type.slice(1)}`](),
             token,

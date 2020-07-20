@@ -1,6 +1,6 @@
 import * as seeds from '../../seeds.json';
 import toCss, { OptionsType } from './to-css.parser';
-import { ColorValue, Token, ShadowValue } from '@specifyapp/types';
+import { ColorValue, Token, Shadow } from '@specifyapp/types';
 import libs from '../global-libs';
 
 describe('To css', () => {
@@ -11,7 +11,7 @@ describe('To css', () => {
     const measurement = seeds.tokens.find((token: Token) => token.type === 'measurement') as Token;
     const shadow = seeds.tokens.find((token: Token) => token.type === 'shadow') as Token;
 
-    const shadowValue = shadow.value.reduce((acc: string, value: ShadowValue) => {
+    const shadowValue = shadow.value.reduce((acc: string, value: Shadow) => {
       const { color, offsetX, offsetY, blur, isInner } = value;
       const x = offsetX.value;
       const y = offsetY.value;
