@@ -1,8 +1,8 @@
 import { VectorToken } from '@specifyapp/types';
 
 export class Vector extends VectorToken {
-  constructor() {
-    super();
+  constructor(token: Partial<VectorToken>) {
+    super(token);
   }
 
   toCss() {

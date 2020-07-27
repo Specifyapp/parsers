@@ -1,10 +1,9 @@
 import { OpacityToken } from '@specifyapp/types';
 
 export class Opacity extends OpacityToken {
-  constructor() {
-    super();
+  constructor(token: Partial<OpacityToken>) {
+    super(token);
   }
-
   toCss() {
     return this.value.opacity / 100;
   }

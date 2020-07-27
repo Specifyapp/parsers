@@ -1,8 +1,8 @@
 import { BorderToken } from '@specifyapp/types';
 
 export class Border extends BorderToken {
-  constructor() {
-    super();
+  constructor(token: Partial<BorderToken>) {
+    super(token);
   }
 
   toCss() {

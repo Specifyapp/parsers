@@ -1,8 +1,8 @@
 import { DurationToken } from '@specifyapp/types';
 
 export class Duration extends DurationToken {
-  constructor() {
-    super();
+  constructor(token: Partial<DurationToken>) {
+    super(token);
   }
 
   toCss() {

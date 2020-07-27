@@ -3,8 +3,8 @@ import tinycolor from 'tinycolor2';
 import { OptionsType } from '../to-css.parser';
 
 export class Color extends ColorToken {
-  constructor() {
-    super();
+  constructor(token: Partial<ColorToken>) {
+    super(token);
   }
   toCss(options: OptionsType): string {
     return tinycolor(this.value).toString(options?.formatTokens?.color || 'rgb');

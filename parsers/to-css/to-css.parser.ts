@@ -48,10 +48,9 @@ export default async function (
           if (!(<any>TokensClass)[`${token.type.charAt(0).toUpperCase() + token.type.slice(1)}`]) {
             return;
           }
-          const instance = Object.assign(
-            new (<any>TokensClass)[`${token.type.charAt(0).toUpperCase() + token.type.slice(1)}`](),
-            token,
-          );
+          const instance = new (<any>TokensClass)[
+            `${token.type.charAt(0).toUpperCase() + token.type.slice(1)}`
+          ](token);
           const name = token.name.includes(' ') ? transformNameFn(token.name) : token.name;
           return `--${name}: ${instance.toCss(options)};`;
         })

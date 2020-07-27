@@ -1,8 +1,8 @@
 import { MeasurementToken } from '@specifyapp/types';
 
 export class Measurement extends MeasurementToken {
-  constructor() {
-    super();
+  constructor(token: Partial<MeasurementToken>) {
+    super(token);
   }
   toCss(): string {
     return `${this.value.measure}${this.value.unit}`;

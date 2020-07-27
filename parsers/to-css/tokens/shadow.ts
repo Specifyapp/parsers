@@ -1,8 +1,8 @@
 import { ShadowToken } from '@specifyapp/types';
 
 export class Shadow extends ShadowToken {
-  constructor() {
-    super();
+  constructor(token: Partial<ShadowToken>) {
+    super(token);
   }
 
   toCss() {

@@ -1,8 +1,8 @@
 import { DepthToken } from '@specifyapp/types';
 
 export class Depth extends DepthToken {
-  constructor() {
-    super();
+  constructor(token: Partial<DepthToken>) {
+    super(token);
   }
 
   toCss() {
