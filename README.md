@@ -25,7 +25,7 @@ To be valid, a parser needs:
 - A `README.md` file which contains:
   - A description
   - A typed interface with its params
-  - A usage example
+  - An example of use
   - The typing of its inputs and outputs.
 - A [parser].spec.ts file containing your parser's unit tests
 - A [parser].parser.ts file
