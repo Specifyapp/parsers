@@ -4,45 +4,48 @@ Specify is a design data platform. It allows you to centralize the management of
 
 By using Specify's platform, you can keep all your design decisions up to date across all your projects.
 
-## What are the parsers?
+## What are parsers?
 
-Parsers are functions that allows you to modify the data you are getting from Specify's API.
+Parsers are functions that allow you to modify the data you are getting from Specify's API.
 
-Parsers are ordered and takes specific input to specific output. This way, we can easily test the input coming from the previous parser to check if the whole parsers process wull work.
+Parsers are ordered and takes specific input to generate specific output. This way, we can easily test the input coming from the previous parser to check if the whole parsers process will work.
 
-Using parsers, you dictate the way you receive the data from Specify to fit your own needs.
+By using parsers, you dictate the way you receive the data from Specify to fit your own needs.
 
 ## Creating your own parser
 
-- Git clone this repo
-- In the directory `parsers`, create a directory with your parser's name
-- Create your valid parser
-- Make a PR
+1. Git clone this repo
+2. In the directory `parsers`, create a directory with your parser's name
+3. Create your valid parser
+4. Make a PR
 
 ### Creating a valid parser
 
-To be valid, a parser needs
-- a README.md file which contains
-  - A description of the parser
-  - The typed interface of the parser with the params
-  - An exemple of the usage
-  - The typing of the inputs and outputs.
-- a [parser].spec.ts files containing the tests of your parser
-- a [parser].parser.ts file
+To be valid, a parser needs:
+- A `README.md` file which contains:
+  - A description
+  - A typed interface with its params
+  - A usage example
+  - The typing of its inputs and outputs.
+- A [parser].spec.ts file containing your parser's unit tests
+- A [parser].parser.ts file
 
 ## Usables libraries
 
-For now, we only use [tinycolor2](https://github.com/bgrins/TinyColor) and [lodash](https://github.com/lodash/lodash) as libraries in our parsers.
+For now, our parsers only use the following libraries:
+- [tinycolor2](https://github.com/bgrins/TinyColor)
+- [lodash](https://github.com/lodash/lodash)
 
-If you need another library to develop your parser, install it using yarn or npm then import and export it in the `parsers/global-libs.ts` file.
+If you need another library to develop your parser:
+1. Install it using `yarn` or `npm`
+2. Import and export it in the `parsers/global-libs.ts` file
 
 ## Testing
 
-You can easily create and test your parsers by using our seeders. You can find them in the `seeds.json` file. 
+To easily create and test your parsers, we advise you to use them on design tokens provided in the `seeds.json` file.
+It will allow you to use our fake tokens to test your parsers.
 
-The main seeds you want to use are token seeds.
-It will allow you to use fake tokens to test your parsers.
-
-To use it, you just have to import it in you [parser].spec.ts using `import * as seeds from '../../seeds.json';` then using `seeds.tokens`.
-
-To tests your parsers and every other, launch using `yarn test`.
+To use our design tokens seed: 
+1. Import it in your [parser].spec.ts using `import * as seeds from '../../seeds.json';`
+2. Use the `seeds.tokens` variable according to your needs.
+3. Launch `yarn test` to tests your parsers
