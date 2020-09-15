@@ -4,10 +4,8 @@ update_configs:
   - package_manager: "javascript"
     directory: "/"
     update_schedule: "daily"
-    target_branch: "staging"
+    target_branch: "master"
     automerged_updates:
       - match:
           dependency_type: "development"
           update_type: "all"
-    default_reviewers:
-      - "AMoreaux"
