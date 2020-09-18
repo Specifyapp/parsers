@@ -31,15 +31,15 @@ describe('To css', () => {
           .tinycolor(color.value as ColorValue)
           .toString('rgb')}`,
       ),
-    );
-    expect(result.includes(`${libs._.camelCase(shadow.name)}: ${shadowValue}`));
+    ).toBe(true);
+    expect(result.includes(`${libs._.camelCase(shadow.name)}: ${shadowValue}`)).toBe(true);
     expect(
       result.includes(
         `${libs._.camelCase(measurement.name)}: ${measurement.value.measure}${
           measurement.value.unit
         }`,
       ),
-    );
+    ).toBe(true);
     done();
   });
   it('Get tokens - apply parsers - with options', async done => {
@@ -58,12 +58,12 @@ describe('To css', () => {
           .tinycolor(color.value as ColorValue)
           .toString(options.formatTokens?.color)}`,
       ),
-    );
+    ).toBe(true);
 
     const fnFormatName = libs._[options.formatName!];
     expect(
       result.includes(`${fnFormatName}: ${measurement.value.measure}${measurement.value.unit}`),
-    );
+    ).toBe(true);
     done();
   });
 
@@ -86,13 +86,13 @@ describe('To css', () => {
           .tinycolor(color.value as ColorValue)
           .toString(options.formatTokens?.color)}`,
       ),
-    );
+    ).toBe(true);
 
     const fnFormatName = libs._[options.formatName!];
     expect(
       result.includes(`${fnFormatName}: ${measurement.value.measure}${measurement.value.unit}`),
-    );
-    expect(result.includes(`${options.formatConfig!.selector}`));
+    ).toBe(true);
+    expect(result.includes(`${options.formatConfig!.selector}`)).toBe(true);
     done();
   });
 
@@ -117,8 +117,40 @@ describe('To css', () => {
     const fnFormatName = libs._[options.formatName!];
     expect(
       result.includes(`${fnFormatName}: ${measurement.value.measure}${measurement.value.unit}`),
-    );
-    expect(result.includes(`:root {`));
+    ).toBe(true);
+    expect(result.includes(`:root {`)).toBe(true);
+    done();
+  });
+
+  it.only('Get tokens - apply parsers - with camelCase', async done => {
+    const options: OptionsType = {
+      formatName: 'camelCase'!,
+      formatTokens: { color: 'hsl' },
+    };
+    const result = await toCss(seeds.tokens as Array<Token>, options, libs);
+    const color = seeds.tokens.find((token: Token) => token.type === 'color') as Token;
+    const measurement = seeds.tokens.find((token: Token) => token.type === 'measurement') as Token;
+
+    const fnFormatColor = libs._[options.formatName!](color.name);
+    expect(
+      result.includes(
+        `${fnFormatColor}: ${libs
+          .tinycolor(color.value as ColorValue)
+          .toString(options.formatTokens?.color)}`,
+      ),
+    ).toBe(true);
+
+    // Specific edge case where we don't have a space in the name but still want to parse
+    expect(result.includes('colorwithaslashInit')).toBe(true);
+    expect(result.includes('colorwithadashInit')).toBe(true);
+
+    const fnFormatName = libs._.camelCase;
+    expect(
+      result.includes(
+        `${fnFormatName(measurement.name)}: ${measurement.value.measure}${measurement.value.unit}`,
+      ),
+    ).toBe(true);
+    expect(result.includes(`:root {`)).toBe(true);
     done();
   });
 });

@@ -126,6 +126,38 @@
       }
     },
     {
+      "type": "color",
+      "value": {
+        "a": 0.07,
+        "b": 165,
+        "g": 255,
+        "r": 135
+      },
+      "id": "fc529d2c-ebfb-4049-aa32-0ad12bbf8bb3",
+      "originId": "bb8a94b8-fb40-4369-bc90-bfeb974e6dd6",
+      "name": "colorwithaslash/init",
+      "repository": {
+        "id": "3009239e-4803-4a65-94fb-259ab92023fa",
+        "name": "Auto Loan Account Customer Designer"
+      }
+    },
+    {
+      "type": "color",
+      "value": {
+        "a": 0.0,
+        "b": 165,
+        "g": 255,
+        "r": 135
+      },
+      "id": "fc529d2c-ebfb-4049-aa32-0ad12bbf8bb3",
+      "originId": "bb8a94b8-fb40-4369-bc90-bfeb974e6dd6",
+      "name": "colorwithadash-init",
+      "repository": {
+        "id": "3009239e-4803-4a65-94fb-259ab92023fa",
+        "name": "Auto Loan Account Customer Designer"
+      }
+    },
+    {
       "type": "bitmap",
       "value": {
         "url": "https://specifyapp.com/_nuxt/img/881a6b6.webp"

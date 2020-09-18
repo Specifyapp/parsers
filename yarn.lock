@@ -455,10 +455,10 @@
   dependencies:
     type-detect "4.0.8"
 
-"@specifyapp/types@^0.0.27":
-  version "0.0.27"
-  resolved "https://registry.yarnpkg.com/@specifyapp/types/-/types-0.0.27.tgz#00473260519070c0a4cae2b9fb903cfcc2a33165"
-  integrity sha512-q30/v2mwa8moloNj04kB2ZpPBsnXo9WZbMh1dVk6+Fhne56DgzRD8/82Iaq8iwShFDnK0NMN3cWHj9zJ12YP6A==
+"@specifyapp/types@^0.0.28":
+  version "0.0.28"
+  resolved "https://registry.yarnpkg.com/@specifyapp/types/-/types-0.0.28.tgz#0f49514081c8474e066bdb4d6237a373fc6ef818"
+  integrity sha512-DWzTOZgkISPdoPLX7oQZkPCWEy92eikqdc8SZuhrNVB/2SQa10HNpSGi5XJxaQq7Hg4r0nW1Y9v31H0pScQYkQ==
 
 "@types/babel__core@^7.1.7":
   version "7.1.7"
