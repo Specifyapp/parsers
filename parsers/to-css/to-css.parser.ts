@@ -53,7 +53,10 @@ export default async function (
           ](token);
 
           const name =
-            options?.formatName || token.name.includes(' ') || token.name.includes('\n')
+            options?.formatName ||
+            token.name.includes(' ') ||
+            token.name.includes('\n') ||
+            token.name.includes('/')
               ? transformNameFn(token.name)
               : token.name;
           return `--${name}: ${instance.toCss(options)};`;
