@@ -52,7 +52,14 @@ export default async function (
             `${token.type.charAt(0).toUpperCase() + token.type.slice(1)}`
           ](token);
 
-          return `--${transformNameFn(token.name)}: ${instance.toCss(options)};`;
+          const name =
+            options?.formatName ||
+            token.name.includes(' ') ||
+            token.name.includes('\n') ||
+            token.name.includes('/')
+              ? transformNameFn(token.name)
+              : token.name;
+          return `--${name}: ${instance.toCss(options)};`;
         })
         .join('');
       return result;

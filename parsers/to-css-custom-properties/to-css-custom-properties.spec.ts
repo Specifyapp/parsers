@@ -1,5 +1,5 @@
 import * as seeds from '../../seeds.json';
-import toCss, { OptionsType } from './to-css.parser';
+import toCss, { OptionsType } from './to-css-custom-properties.parser';
 import { ColorValue, Token, Shadow } from '@specifyapp/types';
 import libs from '../global-libs';
 
