@@ -7,7 +7,7 @@ Transform design tokens in CSS.
 ## Interface 
 ```ts
 interface x {
-  "name": "to-css",
+  "name": "to-css-custom-properties",
   "options"?: Partial<{
     formatName: 'camelCase' | 'kebabCase' | 'snakeCase';
     formatTokens: Partial<{
@@ -26,7 +26,7 @@ interface x {
 ## Options example
 ```json
 {
-  "name": "to-css",
+  "name": "to-css-custom-properties",
   "options": {
     "formatName": "camelCase",
     "formatTokens":{
@@ -81,7 +81,7 @@ string
 
 ```
 {
-  "name": "to-css",
+  "name": "to-css-custom-properties",
   "options": {
     "formatName": "camelCase",
     "formatTokens":{
