@@ -1,4 +1,4 @@
-import { OpacityToken } from '@specifyapp/types';
+import { OpacityToken } from '../../../types';
 
 export class Opacity extends OpacityToken {
   constructor(token: Partial<OpacityToken>) {

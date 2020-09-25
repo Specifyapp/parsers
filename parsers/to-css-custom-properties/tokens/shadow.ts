@@ -1,4 +1,4 @@
-import { ShadowToken } from '@specifyapp/types';
+import { ShadowToken } from '../../../types';
 
 export class Shadow extends ShadowToken {
   constructor(token: Partial<ShadowToken>) {

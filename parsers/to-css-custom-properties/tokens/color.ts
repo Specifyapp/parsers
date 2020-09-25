@@ -1,6 +1,6 @@
-import { ColorToken } from '@specifyapp/types';
 import tinycolor from 'tinycolor2';
 import { OptionsType } from '../to-css-custom-properties.parser';
+import { ColorToken } from '../../../types';
 
 export class Color extends ColorToken {
   constructor(token: Partial<ColorToken>) {

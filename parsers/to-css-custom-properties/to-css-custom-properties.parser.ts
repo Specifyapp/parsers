@@ -1,4 +1,4 @@
-import { Token } from '@specifyapp/types';
+import { Token } from '../../types';
 import libs from '../global-libs';
 import prettier from 'prettier/standalone';
 import parserCss from 'prettier/parser-postcss';

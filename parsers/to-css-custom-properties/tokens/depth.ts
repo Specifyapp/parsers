@@ -1,4 +1,4 @@
-import { DepthToken } from '@specifyapp/types';
+import { DepthToken } from '../../../types';
 
 export class Depth extends DepthToken {
   constructor(token: Partial<DepthToken>) {

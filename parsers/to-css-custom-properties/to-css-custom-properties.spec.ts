@@ -1,15 +1,17 @@
+import libs from '../global-libs';
 import * as seeds from '../../seeds.json';
 import toCss, { OptionsType } from './to-css-custom-properties.parser';
-import { ColorValue, Token, Shadow } from '@specifyapp/types';
-import libs from '../global-libs';
+import { ColorToken, ColorValue, Shadow, ShadowToken, Token, MeasurementToken } from '../../types';
 
 describe('To css', () => {
   it('Get tokens - apply parsers', async done => {
     const result = await toCss(seeds.tokens as Array<Token>, undefined, libs);
     expect(typeof result).toEqual('string');
     const color = seeds.tokens.find((token: Token) => token.type === 'color') as Token;
-    const measurement = seeds.tokens.find((token: Token) => token.type === 'measurement') as Token;
-    const shadow = seeds.tokens.find((token: Token) => token.type === 'shadow') as Token;
+    const measurement = seeds.tokens.find(
+      (token: Token) => token.type === 'measurement',
+    ) as MeasurementToken;
+    const shadow = seeds.tokens.find((token: Token) => token.type === 'shadow') as ShadowToken;
 
     const shadowValue = shadow.value.reduce((acc: string, value: Shadow) => {
       const { color, offsetX, offsetY, blur, isInner } = value;
@@ -17,25 +19,25 @@ describe('To css', () => {
       const y = offsetY.value;
       const bl = blur.value;
       const { r, g, b, a } = color.value;
-      const innerText = isInner ? 'inset' : '';
+      const innerText = isInner ? 'inset ' : '';
       if (acc === '') {
-        return `${innerText} ${x.measure}${x.unit} ${y.measure}${y.unit} ${bl.measure}${bl.unit} rgba(${r},${g},${b},${a})`;
+        return `${innerText} ${x.measure}${x.unit} ${y.measure}${y.unit} ${bl.measure}${bl.unit} rgba(${r}, ${g}, ${b}, ${a})`;
       }
 
-      return `${acc}, ${innerText} ${x.measure}${x.unit} ${y.measure}${y.unit} ${bl.measure}${bl.unit} rgba(${r},${g},${b},${a})`;
+      return `${acc}, ${innerText}${x.measure}${x.unit} ${y.measure}${y.unit} ${bl.measure}${bl.unit} rgba(${r}, ${g}, ${b}, ${a})`;
     }, '');
 
     expect(
       result.includes(
-        `${libs._.camelCase(color.name)}: ${libs
+        `${libs._.kebabCase(color.name)}: ${libs
           .tinycolor(color.value as ColorValue)
           .toString('rgb')}`,
       ),
     ).toBe(true);
-    expect(result.includes(`${libs._.camelCase(shadow.name)}: ${shadowValue}`)).toBe(true);
+    expect(result.includes(`${libs._.kebabCase(shadow.name)}:${shadowValue}`)).toBe(true);
     expect(
       result.includes(
-        `${libs._.camelCase(measurement.name)}: ${measurement.value.measure}${
+        `${libs._.kebabCase(measurement.name)}: ${measurement.value.measure}${
           measurement.value.unit
         }`,
       ),
@@ -48,8 +50,10 @@ describe('To css', () => {
       formatTokens: { color: 'hsl' },
     };
     const result = await toCss(seeds.tokens as Array<Token>, options, libs);
-    const color = seeds.tokens.find((token: Token) => token.type === 'color') as Token;
-    const measurement = seeds.tokens.find((token: Token) => token.type === 'measurement') as Token;
+    const color = seeds.tokens.find((token: Token) => token.type === 'color') as ColorToken;
+    const measurement = seeds.tokens.find(
+      (token: Token) => token.type === 'measurement',
+    ) as MeasurementToken;
 
     const fnFormatColor = libs._[options.formatName!](color.name);
     expect(
@@ -60,9 +64,11 @@ describe('To css', () => {
       ),
     ).toBe(true);
 
-    const fnFormatName = libs._[options.formatName!];
+    const fnFormatMeasurement = libs._[options.formatName!](measurement.name);
     expect(
-      result.includes(`${fnFormatName}: ${measurement.value.measure}${measurement.value.unit}`),
+      result.includes(
+        `${fnFormatMeasurement}: ${measurement.value.measure}${measurement.value.unit}`,
+      ),
     ).toBe(true);
     done();
   });
@@ -76,8 +82,10 @@ describe('To css', () => {
       },
     };
     const result = await toCss(seeds.tokens as Array<Token>, options, libs);
-    const color = seeds.tokens.find((token: Token) => token.type === 'color') as Token;
-    const measurement = seeds.tokens.find((token: Token) => token.type === 'measurement') as Token;
+    const color = seeds.tokens.find((token: Token) => token.type === 'color') as ColorToken;
+    const measurement = seeds.tokens.find(
+      (token: Token) => token.type === 'measurement',
+    ) as MeasurementToken;
 
     const fnFormatColor = libs._[options.formatName!](color.name);
     expect(
@@ -88,9 +96,11 @@ describe('To css', () => {
       ),
     ).toBe(true);
 
-    const fnFormatName = libs._[options.formatName!];
+    const fnFormatMeasurement = libs._[options.formatName!](measurement.name);
     expect(
-      result.includes(`${fnFormatName}: ${measurement.value.measure}${measurement.value.unit}`),
+      result.includes(
+        `${fnFormatMeasurement}: ${measurement.value.measure}${measurement.value.unit}`,
+      ),
     ).toBe(true);
     expect(result.includes(`${options.formatConfig!.selector}`)).toBe(true);
     done();
@@ -102,8 +112,10 @@ describe('To css', () => {
       formatTokens: { color: 'hsl' },
     };
     const result = await toCss(seeds.tokens as Array<Token>, options, libs);
-    const color = seeds.tokens.find((token: Token) => token.type === 'color') as Token;
-    const measurement = seeds.tokens.find((token: Token) => token.type === 'measurement') as Token;
+    const color = seeds.tokens.find((token: Token) => token.type === 'color') as ColorToken;
+    const measurement = seeds.tokens.find(
+      (token: Token) => token.type === 'measurement',
+    ) as MeasurementToken;
 
     const fnFormatColor = libs._[options.formatName!](color.name);
     expect(
@@ -114,22 +126,26 @@ describe('To css', () => {
       ),
     );
 
-    const fnFormatName = libs._[options.formatName!];
+    const fnFormatMeasurement = libs._[options.formatName!](measurement.name);
     expect(
-      result.includes(`${fnFormatName}: ${measurement.value.measure}${measurement.value.unit}`),
+      result.includes(
+        `${fnFormatMeasurement}: ${measurement.value.measure}${measurement.value.unit}`,
+      ),
     ).toBe(true);
     expect(result.includes(`:root {`)).toBe(true);
     done();
   });
 
-  it.only('Get tokens - apply parsers - with camelCase', async done => {
+  it('Get tokens - apply parsers - with camelCase', async done => {
     const options: OptionsType = {
       formatName: 'camelCase'!,
       formatTokens: { color: 'hsl' },
     };
     const result = await toCss(seeds.tokens as Array<Token>, options, libs);
-    const color = seeds.tokens.find((token: Token) => token.type === 'color') as Token;
-    const measurement = seeds.tokens.find((token: Token) => token.type === 'measurement') as Token;
+    const color = seeds.tokens.find((token: Token) => token.type === 'color') as ColorToken;
+    const measurement = seeds.tokens.find(
+      (token: Token) => token.type === 'measurement',
+    ) as MeasurementToken;
 
     const fnFormatColor = libs._[options.formatName!](color.name);
     expect(

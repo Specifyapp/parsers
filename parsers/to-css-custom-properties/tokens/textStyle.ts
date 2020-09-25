@@ -1,4 +1,4 @@
-import { TextStyleToken } from '@specifyapp/types';
+import { TextStyleToken } from '../../../types';
 
 export class TextStyle extends TextStyleToken {
   constructor(token: Partial<TextStyleToken>) {

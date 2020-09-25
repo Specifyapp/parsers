@@ -1,5 +1,5 @@
-import { Token, AllowedFieldsWithType } from '@specifyapp/types';
 import libs from '../global-libs';
+import { AllowedFieldsWithType, Token } from '../../types';
 
 type listAllowedFields = Exclude<AllowedFieldsWithType<Token, string>, undefined>;
 

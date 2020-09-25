@@ -1,4 +1,4 @@
-import { VectorToken } from '@specifyapp/types';
+import { VectorToken } from '../../../types';
 
 export class Vector extends VectorToken {
   constructor(token: Partial<VectorToken>) {
