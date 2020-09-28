@@ -1,4 +1,4 @@
-import { BorderToken } from '@specifyapp/types';
+import { BorderToken } from '../../../types';
 
 export class Border extends BorderToken {
   constructor(token: Partial<BorderToken>) {

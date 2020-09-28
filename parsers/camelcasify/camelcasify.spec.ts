@@ -1,6 +1,6 @@
 import * as seeds from '../../seeds.json';
 import camelcasify from './camelcasify.parser';
-import { Token } from '@specifyapp/types';
+import { Token } from '../../types';
 import libs from '../global-libs';
 
 describe('Camelcasify', () => {

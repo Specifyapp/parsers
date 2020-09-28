@@ -1,5 +1,6 @@
-import { GradientToken } from '@specifyapp/types';
 import tinycolor from 'tinycolor2';
+import { GradientToken } from '../../../types';
+
 export class Gradient extends GradientToken {
   constructor(token: Partial<GradientToken>) {
     super(token);

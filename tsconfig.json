@@ -11,7 +11,5 @@
     "inlineSources": false,
     "resolveJsonModule": true,
     "lib": ["es2019"]
-  },
-  "include": ["parsers"],
-  "exclude": ["./dist", "parsers/**/*.spec.ts"]
+  }
 }
