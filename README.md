@@ -1,3 +1,13 @@
+[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dwyl/esta/issues)
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/Specifyapp/parsers/CI)
+[![Coverage Status](https://coveralls.io/repos/github/Specifyapp/parsers/badge.svg?branch=HEAD)](https://coveralls.io/github/Specifyapp/parsers?branch=HEAD)
+ 
+<!-- [![CI Actions Status](https://github.com/Specifyapp/parsers/workflows/CI/badge.svg)](https://github.com/Specifyapp/parsers/actions) -->
+
+
+
+
+
 # Specify parsers
 
 Specify is a design data platform. It allows you to centralize the management of your design tokens and assets and automate your workflow. 
