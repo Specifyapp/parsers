@@ -18,7 +18,7 @@
     "ts-jest": "^25.4.0"
   },
   "scripts": {
-    "test": "jest",
+    "test": "jest --coverage",
     "deploy": "yarn test && yarn publish"
   }
 }
