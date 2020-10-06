@@ -1437,7 +1437,7 @@
               "a": 0.52
             }
           },
-          "isInner": false,
+          "isInner": true,
           "offsetX": {
             "value": {
               "unit": "px",
@@ -1537,6 +1537,76 @@
       "id": "02e36dfd-011e-4147-9f1e-b90b51d052ab",
       "originId": "29545603-c5d8-48f0-be76-3af56fdd0d92",
       "name": "front-end invoice Tasty",
+      "repository": {
+        "id": "3009239e-4803-4a65-94fb-259ab92023fa",
+        "name": "Auto Loan Account Customer Designer"
+      }
+    },
+    {
+      "type": "shadow",
+      "value": [
+        {
+          "blur": {
+            "value": {
+              "unit": "px",
+              "measure": 7
+            }
+          },
+          "color": {
+            "value": {
+              "r": 12,
+              "g": 99,
+              "b": 113,
+              "a": 0.17
+            }
+          },
+          "isInner": false,
+          "offsetX": {
+            "value": {
+              "unit": "px",
+              "measure": 23
+            }
+          },
+          "offsetY": {
+            "value": {
+              "unit": "px",
+              "measure": 93
+            }
+          }
+        },
+        {
+          "blur": {
+            "value": {
+              "unit": "px",
+              "measure": 7
+            }
+          },
+          "color": {
+            "value": {
+              "r": 12,
+              "g": 99,
+              "b": 113,
+              "a": 0.17
+            }
+          },
+          "isInner": true,
+          "offsetX": {
+            "value": {
+              "unit": "px",
+              "measure": 23
+            }
+          },
+          "offsetY": {
+            "value": {
+              "unit": "px",
+              "measure": 93
+            }
+          }
+        }
+      ],
+      "id": "02e36dfd-011e-4147-9f1e-b90b51d05555",
+      "originId": "29545603-c5d8-48f0-be76-3af56fdd0555",
+      "name": "front-end invoice Tastyyyy",
       "repository": {
         "id": "3009239e-4803-4a65-94fb-259ab92023fa",
         "name": "Auto Loan Account Customer Designer"

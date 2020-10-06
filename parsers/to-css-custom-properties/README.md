@@ -4,32 +4,34 @@
 
 Transform design tokens in CSS.
 
-## Interface 
+## Interface
+
 ```ts
 interface x {
-  "name": "to-css-custom-properties",
-  "options"?: Partial<{
+  name: 'to-css-custom-properties';
+  options?: Partial<{
     formatName: 'camelCase' | 'kebabCase' | 'snakeCase';
     formatTokens: Partial<{
       color: 'rgb' | 'prgb' | 'hex' | 'hex6' | 'hex3' | 'hex4' | 'hex8' | 'name' | 'hsl' | 'hsv';
     }>;
     formatConfig: Partial<{
-      selector: string,
+      selector: string;
       endOfLine: 'auto' | 'lf' | 'crlf' | 'cr';
       tabWidth: number;
       useTabs: boolean;
     }>;
-  }>
+  }>;
 }
 ```
 
 ## Options example
+
 ```json
 {
   "name": "to-css-custom-properties",
   "options": {
     "formatName": "camelCase",
-    "formatTokens":{
+    "formatTokens": {
       "color": "hsl"
     },
     "formatConfig": {
@@ -55,7 +57,7 @@ Array<{name: string, value: any, type: string}>
 String formated in css
 
 ```ts
-string
+string;
 ```
 
 ## Before / After
@@ -64,22 +66,22 @@ string
 
 ```json
 [
-    {
-        "type": "color",
-        "value": {
-            "a": 0.96,
-            "b": 20,
-            "g": 227,
-            "r": 122
-        },
-        "name": "Primary color"
-    }
+  {
+    "type": "color",
+    "value": {
+      "a": 0.96,
+      "b": 20,
+      "g": 227,
+      "r": 122
+    },
+    "name": "Primary color"
+  }
 ]
 ```
 
 ### Options used on parser
 
-```
+```json
 {
   "name": "to-css-custom-properties",
   "options": {
@@ -98,8 +100,8 @@ string
 ### Result
 
 ```css
-body[data-theme="light"] {
-    /* COLOR */
-    --primaryColor: hsla(90, 84%, 48%, 0.96);
+body[data-theme='light'] {
+  /* COLOR */
+  --primaryColor: hsla(90, 84%, 48%, 0.96);
 }
 ```
