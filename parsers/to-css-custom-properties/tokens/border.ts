@@ -9,6 +9,6 @@ export class Border extends BorderToken {
     const { color, type, width } = this.value;
     const { measure, unit } = width.value;
     const { r, g, b, a } = color.value;
-    return `${measure}${unit} ${type} rgba(${r}, ${g}, ${b}, ${a})`;
+    return `${measure}${unit} ${type.toLowerCase()} rgba(${r}, ${g}, ${b}, ${a})`;
   }
 }
