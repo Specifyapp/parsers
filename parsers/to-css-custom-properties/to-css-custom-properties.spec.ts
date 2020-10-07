@@ -21,7 +21,7 @@ describe('To css', () => {
       const { r, g, b, a } = color.value;
       const innerText = isInner ? 'inset ' : '';
       if (acc === '') {
-        return `${innerText} ${x.measure}${x.unit} ${y.measure}${y.unit} ${bl.measure}${bl.unit} rgba(${r}, ${g}, ${b}, ${a})`;
+        return `${innerText}${x.measure}${x.unit} ${y.measure}${y.unit} ${bl.measure}${bl.unit} rgba(${r}, ${g}, ${b}, ${a})`;
       }
 
       return `${acc}, ${innerText}${x.measure}${x.unit} ${y.measure}${y.unit} ${bl.measure}${bl.unit} rgba(${r}, ${g}, ${b}, ${a})`;
@@ -34,7 +34,7 @@ describe('To css', () => {
           .toString('rgb')}`,
       ),
     ).toBe(true);
-    expect(result.includes(`${libs._.kebabCase(shadow.name)}:${shadowValue}`)).toBe(true);
+    expect(result.includes(`${libs._.kebabCase(shadow.name)}: ${shadowValue}`)).toBe(true);
     expect(
       result.includes(
         `${libs._.kebabCase(measurement.name)}: ${measurement.value.measure}${
