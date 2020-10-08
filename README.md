@@ -9,7 +9,7 @@
 
 # Specify parsers
 
-Specify is a design data platform. It allows you to centralize the management of your design tokens and assets and automate your workflow. 
+Specify is a central platform for companies who want to unify their brand identity, by connecting their design system tools. 
 
 By using Specify's platform, you can keep all your design decisions up to date across all your projects.
 
