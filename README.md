@@ -7,7 +7,7 @@
 
 
 
-# Specify parsers
+# Specify Parsers
 
 Specify is a central platform for companies who want to unify their brand identity, by connecting their design system tools. 
 
