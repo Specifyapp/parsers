@@ -6,7 +6,7 @@ interface Point {
   y: number;
 }
 
-interface ColorForGradient {
+export interface ColorForGradient {
   value: ColorValue;
   type: string;
   position: number;
