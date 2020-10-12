@@ -1625,7 +1625,7 @@
         },
         "size": {
           "value": {
-            "unit": "pt",
+            "unit": "px",
             "measure": 5
           }
         },
@@ -1665,7 +1665,7 @@
         },
         "size": {
           "value": {
-            "unit": "pt",
+            "unit": "px",
             "measure": 8
           }
         },
@@ -1705,7 +1705,7 @@
         },
         "size": {
           "value": {
-            "unit": "pt",
+            "unit": "px",
             "measure": 9
           }
         },
@@ -1745,7 +1745,7 @@
         },
         "size": {
           "value": {
-            "unit": "pt",
+            "unit": "px",
             "measure": 7
           }
         },
@@ -1785,7 +1785,7 @@
         },
         "size": {
           "value": {
-            "unit": "pt",
+            "unit": "px",
             "measure": 10
           }
         },
