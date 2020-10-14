@@ -2,7 +2,7 @@
 
 ## Description
 
-Transform design tokens in CSS.
+Transform design tokens in CSS Custom Properties.
 
 ## Interface 
 ```ts
