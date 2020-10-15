@@ -169,4 +169,42 @@ describe('To css', () => {
     expect(result.includes(`:root {`)).toBe(true);
     done();
   });
+
+  it('Get tokens - apply parsers - all tokens', async done => {
+    const options: OptionsType = {};
+    const result = await toCss(seeds.tokens as Array<Token>, options, libs);
+    expect(result.includes('--heuristic-cross-platform-quantify: rgba(51, 15, 99, 0.6);'));
+    expect(
+      result.includes(
+        '--open-system-markets-hard-drive: "https://specifyapp.com/_nuxt/img/881a6b6.webp";',
+      ),
+    );
+    expect(result.includes('--invoice-system-worthy-payment: 7px solid rgba(199, 48, 37, 0.93);'));
+    expect(result.includes('--digital-sas-avon: 805ms;'));
+    expect(result.includes('--frozen-withdrawal-gorgeous: Allan-Bold;'));
+    expect(result.includes('--paanga-calculate-plum: 73px;'));
+    expect(result.includes('--keyboard-fork-loaf: 0.13;'));
+    expect(
+      result.includes(
+        '--car-ergonomic-licensed-cotton-pants: 37px 71px 2px rgba(144, 63, 6, 0.28);',
+      ),
+    );
+    expect(result.includes('--kids-iowa-ergonomic: Allan-Bold 5pt rgba(86, 225, 86, 0.52);'));
+    expect(
+      result.includes(
+        '--handcrafted-rubber-computer-sky-blue-bandwidth: "https://raw.githubusercontent.com/feathericons/feather/master/icons/alert-circle.svg";',
+      ),
+    );
+    expect(result.includes('--towels-uniform-tasty: 8;'));
+    expect(
+      result.includes(
+        '      --concrete-next-generation-palladium: linear-gradient(\n' +
+          '          212deg,\n' +
+          '          rgba(186, 149, 255, 0.34) 0%,\n' +
+          '          rgba(229, 120, 89, 0.79) 13%\n' +
+          '        ),\n',
+      ),
+    );
+    done();
+  });
 });
