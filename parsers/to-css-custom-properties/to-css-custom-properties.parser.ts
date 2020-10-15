@@ -64,7 +64,6 @@ export default async function (
         .join('');
       return result;
     }, '');
-
     return prettier.format(`${selector} {${styles}}`, {
       ...options?.formatConfig,
       parser: 'css',
