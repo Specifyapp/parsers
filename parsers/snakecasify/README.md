@@ -6,7 +6,7 @@ Loop on all tokens and apply snakecase function on the given keys.
 
 ## Interface 
 ```ts
-interface x {
+interface parser {
   "name": "snakecasify",
   "params"?: {
     "keys": Array<string>
@@ -39,6 +39,6 @@ Array<{[key: string]: any}>
 ```
 
 ### output
-```
+```ts
 Array<{[key: string]: any}>
 ```

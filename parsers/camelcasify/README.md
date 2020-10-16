@@ -7,7 +7,7 @@ Loop on all tokens and apply camelcase function on the given keys.
 ## Interface
 
 ```ts
-interface x {
+interface parser {
   "name": "camelcasify",
   "options"?: {
     "keys": Array<string>
@@ -42,8 +42,6 @@ Array<{[key: string]: any}>
 ```
 
 ### output
-
-
-```
+```ts
 Array<{[key: string]: any}>
 ```

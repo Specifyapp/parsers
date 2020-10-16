@@ -7,8 +7,8 @@ Loop on all tokens and apply sort function on the given keys.
 ## Interface 
 
 ```ts
-interface x {
-  "name": "sortby",
+interface parser {
+  "name": "sort-by",
   "params"?: {
     "keys": Array<string>
   }
@@ -24,7 +24,7 @@ interface x {
 
 ```json
 {
-    "name": "sortby",
+    "name": "sort-by",
     "options": {
       "keys": ["name"]
     }
