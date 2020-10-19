@@ -7,7 +7,7 @@ Loop on all tokens and apply kebabcase function on the given keys.
 ## Interface 
 
 ```ts
-interface x {
+interface parser {
   "name": "kebabcasify",
   "params"?: {
     "keys": Array<string>
@@ -43,6 +43,6 @@ Array<{[key: string]: any}>
 ```
 
 ### output
-```
+```ts
 Array<{[key: string]: any}>
 ```

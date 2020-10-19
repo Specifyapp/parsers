@@ -6,7 +6,7 @@ Loop on all tokens and get only keys given in params.
 
 ## Interface 
 ```ts
-interface x {
+interface parser {
   "name": "pick",
   "options"?: {
     "keys": Array<string>
