@@ -1,7 +1,7 @@
 
 ## Description
 
-Allow to concat two string
+Allows to concatenate two strings
 
 ## Interface 
 
