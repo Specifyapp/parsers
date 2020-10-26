@@ -45,6 +45,7 @@ interface x {
     }>;
     formatConfig: Partial<{
       jssObjectName: string,
+      exportDefault: boolean,
       endOfLine: 'auto' | 'lf' | 'crlf' | 'cr';
       tabWidth: number;
       useTabs: boolean;
@@ -68,6 +69,7 @@ interface x {
     },
     "formatConfig": {
       "jssObjectName": "lightTheme",
+      "exportDefault": false,
       "tabWidth": 4,
       "singleQuote": true,
     }
@@ -115,7 +117,9 @@ const lightTheme = {
   depth: {
     towelsUniformTasty: "8",
   }
-}
+};
+
+export default lightTheme;
 ```
 
 ## Types

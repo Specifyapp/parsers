@@ -48,6 +48,7 @@ export type OptionsType =
         tabWidth: number;
         useTabs: boolean;
         singleQuote: boolean;
+        exportDefault: boolean;
       }>;
     }>
   | undefined;
@@ -60,6 +61,7 @@ export default async function (
   try {
     const transformNameFn = _[options?.formatName || 'camelCase'];
     const objectName = options?.formatConfig?.jssObjectName || 'theme';
+    const isExported = options?.formatConfig?.exportDefault ?? true;
 
     const tokensGroupByType = _.groupBy(tokens, 'type');
     const styles = Object.keys(tokensGroupByType).reduce((result, type) => {
@@ -86,7 +88,7 @@ export default async function (
       return result;
     }, '');
 
-    return prettier.format(`const ${objectName} = {${styles}}`, {
+    return prettier.format(`const ${objectName} = {${styles}} ${isExported ? `;\n\nexport default ${objectName};` : ';'}`, {
       ...options?.formatConfig,
       parser: 'babel',
     });
