@@ -7,4 +7,5 @@ module.exports = {
     coverageReporters: ['lcov'],
     'ts-jest': {},
   },
+  testTimeout: 10000,
 };

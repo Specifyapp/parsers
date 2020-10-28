@@ -15,6 +15,9 @@ export interface Shadow {
   blur: {
     value: MeasurementValue;
   };
+  spread?: {
+    value: MeasurementValue;
+  };
   isInner: boolean;
 }
 
