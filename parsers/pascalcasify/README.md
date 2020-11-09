@@ -25,7 +25,7 @@ interface x {
 ```json
 {
     "name": "pascalcasify",
-    "params": {
+    "options": {
       "keys": ["name"]
     }
 }

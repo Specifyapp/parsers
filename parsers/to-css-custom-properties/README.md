@@ -1,4 +1,4 @@
-# To-CSS-Custom-Properties
+# TO CSS CUSTOM PROPERTIES
 
 ## Description
 

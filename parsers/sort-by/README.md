@@ -1,4 +1,4 @@
-# SORTBY
+# SORT BY
 
 ## Description
 
@@ -9,13 +9,13 @@ Loop on all tokens and apply sort function on the given keys.
 ```ts
 interface parser {
   "name": "sort-by",
-  "params"?: {
+  "options"?: {
     "keys": Array<string>
   }
 }
 ```
 
-### Params
+### Options
 | parameter | Require    | type      | default    | description                                       |
 | --------- | ---------- | --------- | ---------- | ------------------------------------------------- |
 | `keys`    | optional   | `Array`   | `["name"]` | the list of keys where the function will be apply |

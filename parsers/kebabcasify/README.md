@@ -1,4 +1,4 @@
-# Kebabcasify
+# KEBABCASIFY
 
 ## Description
 
@@ -9,13 +9,13 @@ Loop on all tokens and apply kebabcase function on the given keys.
 ```ts
 interface parser {
   "name": "kebabcasify",
-  "params"?: {
+  "options"?: {
     "keys": Array<string>
   }
 }
 ```
 
-### Params
+### Options
 
 | parameter | Require    | type      | default    | description                                       |
 | --------- | ---------- | --------- | ---------- | ------------------------------------------------- |

@@ -10,4 +10,16 @@ describe('kebabcasify', () => {
     result.forEach(token => expect(token.name?.includes(' ')).toEqual(false));
     done();
   });
+  it('Get tokens - apply parsers - error', async done => {
+    try {
+      await kebabcasify(
+        // @ts-ignore
+        'wrong type',
+        { keys: ['name', 'not exist'] },
+        libs,
+      );
+    } catch (err) {
+      done();
+    }
+  });
 });

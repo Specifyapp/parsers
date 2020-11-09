@@ -1,7 +1,7 @@
 import { Token } from '../../types';
-import libs from '../global-libs';
 import prettier from 'prettier';
 import * as TokensClass from './tokens';
+import { LibsType } from '../global-libs';
 
 export type InputDataType = Array<Pick<Token, 'name' | 'value' | 'type'>>;
 export type OutputDataType = Promise<string>;
@@ -37,7 +37,7 @@ export type FormatTokenType = Partial<{
   gradientFormat: GradientFormat;
   textStyleFormat: TextStyleFormat;
   fontSizeUnit: FontSizeUnit;
-}>
+}>;
 export type OptionsType =
   | Partial<{
       formatName: 'camelCase' | 'kebabCase' | 'snakeCase';
@@ -56,7 +56,7 @@ export type OptionsType =
 export default async function (
   tokens: InputDataType,
   options: OptionsType,
-  { _ }: typeof libs,
+  { _ }: Pick<LibsType, '_'>,
 ): OutputDataType {
   try {
     const transformNameFn = _[options?.formatName || 'camelCase'];
@@ -88,10 +88,15 @@ export default async function (
       return result;
     }, '');
 
-    return prettier.format(`const ${objectName} = {${styles}} ${isExported ? `;\n\nexport default ${objectName};` : ';'}`, {
-      ...options?.formatConfig,
-      parser: 'babel',
-    });
+    return prettier.format(
+      `const ${objectName} = {${styles}} ${
+        isExported ? `;\n\nexport default ${objectName};` : ';'
+      }`,
+      {
+        ...options?.formatConfig,
+        parser: 'babel',
+      },
+    );
   } catch (err) {
     throw err;
   }

@@ -1,3 +1,4 @@
+# SUFFIX BY
 
 ## Description
 
@@ -8,7 +9,7 @@ Allows to concatenate two strings
 ```ts
 interface parser {
   "name": "suffix-by",
-  "params"?: {
+  "options"?: {
     "key"?: string
     "suffix": string,
     "types"?: Array<string>,
@@ -16,7 +17,7 @@ interface parser {
 }
 ```
 
-### Params
+### Options
 | parameter | Require    | type             | default    | description                                       |
 | --------- | ---------- | ---------------- | ---------- | ------------------------------------------------- |
 | `key`     | optional   | `string`         | "name"     | the key of the value will be suffixed             |

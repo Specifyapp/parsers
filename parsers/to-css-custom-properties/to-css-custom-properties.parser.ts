@@ -1,10 +1,10 @@
 import { Token } from '../../types';
-import libs from '../global-libs';
 import prettier from 'prettier/standalone';
 import parserCss from 'prettier/parser-postcss';
 import * as TokensClass from './tokens';
+import { LibsType } from '../global-libs';
 
-export type InputDataType = Array<Pick<Token, 'name' | 'value' | 'type'>>;
+export type InputDataType = Array<Pick<Token, 'name' | 'value' | 'type'> & Record<string, any>>;
 export type OutputDataType = Promise<string>;
 export type ColorsFormat =
   | 'rgb'
@@ -35,15 +35,14 @@ export type OptionsType =
 export default async function (
   tokens: InputDataType,
   options: OptionsType,
-  { _ }: typeof libs,
+  { _ }: Pick<LibsType, '_'>,
 ): OutputDataType {
   try {
     const transformNameFn = _[options?.formatName || 'kebabCase'];
     const selector = options?.formatConfig?.selector || ':root';
     const tokensGroupByType = _.groupBy(tokens, 'type');
     const styles = Object.keys(tokensGroupByType).reduce((result, type) => {
-      result += `\n\n/* ${type.toUpperCase()} */\n`;
-      result += tokensGroupByType[type]
+      const formatedCss = tokensGroupByType[type]
         .map((token: Pick<Token, 'value' | 'type' | 'name'>) => {
           if (!(<any>TokensClass)[`${token.type.charAt(0).toUpperCase() + token.type.slice(1)}`]) {
             return;
@@ -62,6 +61,7 @@ export default async function (
           return `--${name}: ${instance.toCss(options)};`;
         })
         .join('');
+      if (formatedCss.length > 0) result += `\n\n/* ${type.toUpperCase()} */\n${formatedCss}`;
       return result;
     }, '');
     return prettier.format(`${selector} {${styles}}`, {

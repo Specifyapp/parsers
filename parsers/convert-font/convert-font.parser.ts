@@ -1,0 +1,70 @@
+import { AllowedFormat } from '../../types/tokens';
+import type { LibsType } from '../global-libs';
+
+export type InputDataType = Array<{
+  value: {
+    fontPostScriptName: string;
+    fontFamily?: string;
+    fontWeight?: string | number;
+    [Key: string]: any;
+  };
+  [Key: string]: any;
+}>;
+export type OutputDataType = Promise<
+  Array<InputDataType[0] & { value: InputDataType[0]['value'] & { url: string } }> | Error
+>;
+export type OptionsType = {
+  formats?: Array<'woff2' | 'woff' | 'otf' | 'ttf' | 'eot'>;
+  fileNameKey?: 'name' | 'fontFamily' | Array<string>;
+  fileNameFormat?: 'camelCase' | 'kebabCase' | 'snakeCase';
+};
+
+export default async function (
+  designTokens: InputDataType,
+  options: OptionsType | undefined,
+  { _, SpServices }: LibsType,
+): OutputDataType {
+  try {
+    const formats = options?.formats || ['woff2', 'woff', 'otf', 'ttf', 'eot'];
+
+    const getFileName = (designToken: InputDataType[0]) => {
+      let fileName: string;
+      if (!options?.fileNameKey || typeof options.fileNameKey === 'string') {
+        fileName = designToken[(options?.fileNameKey || 'name') as string];
+      } else {
+        fileName = options.fileNameKey
+          .reduce<Array<string>>((acc, key) => {
+            if (_.has(designToken, key) || _.has(designToken, `value[${key}]`)) {
+              acc.push(_.get(designToken, key) || _.get(designToken, `value[${key}]`));
+            }
+            return acc;
+          }, [])
+          .join(' ');
+      }
+      return options?.fileNameFormat ? _[options.fileNameFormat](fileName) : fileName;
+    };
+
+    return (
+      await Promise.all(
+        designTokens.map(async designToken => {
+          const signedUrlsByFormat = await SpServices.font.convert({
+            postscriptName: designToken.value.fontPostScriptName,
+            formats,
+          });
+
+          return (Object.entries(signedUrlsByFormat) as Array<[AllowedFormat, string]>).map(
+            ([format, url]) => {
+              return {
+                ...designToken,
+                value: { ...designToken.value, url },
+                name: `${getFileName(designToken)}.${format}`,
+              };
+            },
+          );
+        }),
+      )
+    ).flat(2);
+  } catch (err) {
+    throw err;
+  }
+}

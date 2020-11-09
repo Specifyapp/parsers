@@ -1,10 +1,13 @@
 import Token, { TokenInterface } from './Token';
 
+export const FontFormatList = ['woff2', 'woff', 'otf', 'ttf', 'eot'] as const;
+export type AllowedFormat = typeof FontFormatList[number];
+
 export interface FontValue {
   fontFamily: string;
-  url: string;
+  url?: string;
   fontPostScriptName: string;
-  fontWeight: string;
+  fontWeight: string | number;
 }
 
 export class FontToken extends Token implements TokenInterface {

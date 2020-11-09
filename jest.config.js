@@ -8,4 +8,5 @@ module.exports = {
     'ts-jest': {},
   },
   testTimeout: 10000,
+  setupFiles: ['./tests/global.ts'],
 };
