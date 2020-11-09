@@ -25,7 +25,7 @@ interface parser {
 ```json
 {
     "name": "camelcasify",
-    "params": {
+    "options": {
       "keys": ["name"]
     }
 }

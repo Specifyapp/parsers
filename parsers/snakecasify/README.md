@@ -8,12 +8,12 @@ Loop on all tokens and apply snakecase function on the given keys.
 ```ts
 interface parser {
   "name": "snakecasify",
-  "params"?: {
+  "options"?: {
     "keys": Array<string>
   }
 }
 ```
-### Params
+### Options
 | parameter | Require    | type      | default    | description                                       |
 | --------- | ---------- | --------- | ---------- | ------------------------------------------------- |
 | `keys`    | optional   | `Array`   | `["name"]` | the list of keys where the function will be apply |

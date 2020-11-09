@@ -7,11 +7,11 @@ describe('To css', () => {
   it('Get tokens - apply parsers', async done => {
     const result = await toCss(seeds.tokens as Array<Token>, undefined, libs);
     expect(typeof result).toEqual('string');
-    const color = seeds.tokens.find((token: Token) => token.type === 'color') as Token;
+    const color = seeds.tokens.find(token => token.type === 'color') as ColorToken;
     const measurement = seeds.tokens.find(
-      (token: Token) => token.type === 'measurement',
+      token => token.type === 'measurement',
     ) as MeasurementToken;
-    const shadow = seeds.tokens.find((token: Token) => token.type === 'shadow') as ShadowToken;
+    const shadow = seeds.tokens.find(token => token.type === 'shadow') as ShadowToken;
 
     const shadowValue = shadow.value.reduce((acc: string, value: Shadow) => {
       const { color, offsetX, offsetY, blur, isInner } = value;
@@ -50,9 +50,9 @@ describe('To css', () => {
       formatTokens: { color: 'hsl' },
     };
     const result = await toCss(seeds.tokens as Array<Token>, options, libs);
-    const color = seeds.tokens.find((token: Token) => token.type === 'color') as ColorToken;
+    const color = seeds.tokens.find(token => token.type === 'color') as ColorToken;
     const measurement = seeds.tokens.find(
-      (token: Token) => token.type === 'measurement',
+      token => token.type === 'measurement',
     ) as MeasurementToken;
 
     const fnFormatColor = libs._[options.formatName!](color.name);
@@ -82,9 +82,9 @@ describe('To css', () => {
       },
     };
     const result = await toCss(seeds.tokens as Array<Token>, options, libs);
-    const color = seeds.tokens.find((token: Token) => token.type === 'color') as ColorToken;
+    const color = seeds.tokens.find(token => token.type === 'color') as ColorToken;
     const measurement = seeds.tokens.find(
-      (token: Token) => token.type === 'measurement',
+      token => token.type === 'measurement',
     ) as MeasurementToken;
 
     const fnFormatColor = libs._[options.formatName!](color.name);
@@ -112,9 +112,9 @@ describe('To css', () => {
       formatTokens: { color: 'hsl' },
     };
     const result = await toCss(seeds.tokens as Array<Token>, options, libs);
-    const color = seeds.tokens.find((token: Token) => token.type === 'color') as ColorToken;
+    const color = seeds.tokens.find(token => token.type === 'color') as ColorToken;
     const measurement = seeds.tokens.find(
-      (token: Token) => token.type === 'measurement',
+      token => token.type === 'measurement',
     ) as MeasurementToken;
 
     const fnFormatColor = libs._[options.formatName!](color.name);
@@ -142,9 +142,9 @@ describe('To css', () => {
       formatTokens: { color: 'hsl' },
     };
     const result = await toCss(seeds.tokens as Array<Token>, options, libs);
-    const color = seeds.tokens.find((token: Token) => token.type === 'color') as ColorToken;
+    const color = seeds.tokens.find(token => token.type === 'color') as ColorToken;
     const measurement = seeds.tokens.find(
-      (token: Token) => token.type === 'measurement',
+      token => token.type === 'measurement',
     ) as MeasurementToken;
 
     const fnFormatColor = libs._[options.formatName!](color.name);

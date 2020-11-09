@@ -1,7 +1,9 @@
 import { DownloadableFile, Token, DspEntity, DspJson, DspParserSettings } from '../../types';
 import * as TokensClass from './tokens';
 
-export type InputDataType = Array<Pick<Token, 'name' | 'value' | 'type' | 'id'>>;
+export type InputDataType = Array<
+  Pick<Token, 'name' | 'value' | 'type' | 'id'> & Record<string, any>
+>;
 export type OutputDataType = Promise<Array<DownloadableFile>>;
 
 export type OptionsType =

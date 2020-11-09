@@ -1,24 +1,21 @@
-import libs from '../global-libs';
-import { AllowedFieldsWithType, Token } from '../../types';
+import { LibsType } from '../global-libs';
 
-type listAllowedFields = Exclude<AllowedFieldsWithType<Token, string>, undefined>;
-
-export type InputDataType = Array<Partial<Pick<Token, listAllowedFields>>>;
-export type OutputDataType = Promise<Array<Partial<Token>>>;
+export type InputDataType = Array<Record<string, any>>;
+export type OutputDataType = Promise<InputDataType>;
 export type OptionsType =
   | undefined
   | {
-      keys: Array<listAllowedFields>;
+      keys: Array<string>;
     };
 
 export default async function (
   tokens: InputDataType,
   options: OptionsType = { keys: ['name'] },
-  { _ }: typeof libs,
+  { _ }: Pick<LibsType, '_'>,
 ): OutputDataType {
   return tokens.map(token => {
     options.keys.forEach(key => {
-      if (token[key]) token[key] = _.snakeCase(token[key]);
+      if (_.has(token, key)) _.set(token, key, _.snakeCase(_.get(token, key)));
     });
     return token;
   });

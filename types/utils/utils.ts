@@ -9,3 +9,4 @@ export interface DownloadableFile {
     url?: string; // File we will download
   };
 }
+export type PartialRecord<K extends keyof any, T> = Partial<Record<K, T>>;
