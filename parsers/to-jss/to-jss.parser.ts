@@ -43,6 +43,7 @@ export type OptionsType =
       formatName: 'camelCase' | 'kebabCase' | 'snakeCase';
       formatTokens: FormatTokenType;
       formatConfig: Partial<{
+        module: 'es6' | 'commonjs';
         jssObjectName: string;
         endOfLine: 'auto' | 'lf' | 'crlf' | 'cr';
         tabWidth: number;
@@ -61,7 +62,8 @@ export default async function (
   try {
     const transformNameFn = _[options?.formatName || 'camelCase'];
     const objectName = options?.formatConfig?.jssObjectName || 'theme';
-    const isExported = options?.formatConfig?.exportDefault ?? true;
+    const exportDefault = options?.formatConfig?.exportDefault ?? true;
+    const module = options?.formatConfig?.module ?? 'es6';
 
     const tokensGroupByType = _.groupBy(tokens, 'type');
     const styles = Object.keys(tokensGroupByType).reduce((result, type) => {
@@ -89,9 +91,15 @@ export default async function (
     }, '');
 
     return prettier.format(
-      `const ${objectName} = {${styles}} ${
-        isExported ? `;\n\nexport default ${objectName};` : ';'
-      }`,
+      (() => {
+        if (module === 'es6' && exportDefault)
+          return `const ${objectName} = {${styles}} ${`;\n\nexport default ${objectName};`}`;
+        else if (module === 'es6' && !exportDefault)
+          return `export const ${objectName} = {${styles}};`;
+        else if (module === 'commonjs' && exportDefault)
+          return `const ${objectName} = {${styles}}; ${`\n\nmodule.exports = ${objectName};`}`;
+        else return `const ${objectName} = {${styles}}; ${`\n\nmodule.exports = {${objectName}};`}`;
+      })(),
       {
         ...options?.formatConfig,
         parser: 'babel',
