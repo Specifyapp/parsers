@@ -204,4 +204,60 @@ describe('To jss', () => {
 
     done();
   });
+
+  it('Module Format - es6 - export default ', async () => {
+    const jssObjectName = 'moduleTheme';
+
+    const options: OptionsType = {
+      formatConfig: { exportDefault: true, jssObjectName },
+    };
+
+    const result = await toJss(seeds.tokens as Array<Token>, options, libs);
+
+    expect(result.includes(`export default ${jssObjectName}`)).toBeTruthy();
+    expect(result.includes(`export const ${jssObjectName}`)).toBeFalsy();
+    expect(result.includes('module.exports')).toBeFalsy();
+  });
+
+  it('Module Format - es6 - export default ', async () => {
+    const jssObjectName = 'moduleTheme';
+
+    const options: OptionsType = {
+      formatConfig: { exportDefault: false, jssObjectName },
+    };
+
+    const result = await toJss(seeds.tokens as Array<Token>, options, libs);
+
+    expect(result.includes(`export default ${jssObjectName}`)).toBeFalsy();
+    expect(result.includes(`export const ${jssObjectName}`)).toBeTruthy();
+    expect(result.includes('module.exports')).toBeFalsy();
+  });
+
+  it('Module Format - commonjs - export default ', async () => {
+    const jssObjectName = 'moduleTheme';
+
+    const options: OptionsType = {
+      formatConfig: { module: 'commonjs', exportDefault: true, jssObjectName },
+    };
+
+    const result = await toJss(seeds.tokens as Array<Token>, options, libs);
+
+    expect(result.includes(`export default ${jssObjectName}`)).toBeFalsy();
+    expect(result.includes(`export const ${jssObjectName}`)).toBeFalsy();
+    expect(result.includes(`module.exports = ${jssObjectName}`)).toBeTruthy();
+  });
+
+  it('Module Format - commonjs - export default ', async () => {
+    const jssObjectName = 'moduleTheme';
+
+    const options: OptionsType = {
+      formatConfig: { module: 'commonjs', exportDefault: false, jssObjectName },
+    };
+
+    const result = await toJss(seeds.tokens as Array<Token>, options, libs);
+
+    expect(result.includes(`export default ${jssObjectName}`)).toBeFalsy();
+    expect(result.includes(`export const ${jssObjectName}`)).toBeFalsy();
+    expect(result.includes(`module.exports = { ${jssObjectName} }`)).toBeTruthy();
+  });
 });
