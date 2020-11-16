@@ -32,7 +32,7 @@ interface x {
   "options"?: Partial<{
     formatName: 'camelCase' | 'kebabCase' | 'snakeCase';
     formatTokens: Partial<{
-      color: 'rgb' | 'prgb' | 'hex' | 'hex6' | 'hex3' | 'hex4' | 'hex8' | 'name' | 'hsl' | 'hsv';
+      colorFormat: 'rgb' | 'prgb' | 'hex' | 'hex6' | 'hex3' | 'hex4' | 'hex8' | 'name' | 'hsl' | 'hsv';
       borderFormat: 'string' | 'array' | 'object';
       durationFormat: 'string' | 'number';
       opacityFormat: 'string' | 'number';
@@ -62,7 +62,7 @@ interface x {
   "options": {
     "formatName": "camelCase",
     "formatTokens":{
-      "color": "hex8",
+      "colorFormat": "hex8",
       "borderFormat": "array",
       "textStyleFormat": "classObject",
       "fontSizeUnit":  "px"
