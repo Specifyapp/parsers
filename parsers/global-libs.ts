@@ -1,13 +1,14 @@
 import _ from 'lodash';
 import tinycolor from 'tinycolor2';
 import got from 'got';
-import { AllowedFormat } from '../types/tokens';
-import { PartialRecord } from '../types';
+import SVGO from 'svgo';
+import { AllowedFormat, PartialRecord } from '../types';
 
 const Libs = {
   _,
   tinycolor,
   got,
+  SVGO,
   // SpServices is appended to libs object during the runtime
 };
 
@@ -19,6 +20,9 @@ type SpServicesType = {
       postscriptName: string;
       formats: Array<AllowedFormat>;
     }) => Promise<PartialRecord<AllowedFormat, string>>;
+  };
+  assets: {
+    getSource: <T>(payload: string, responseType: 'text' | 'buffer' | 'json') => Promise<T>;
   };
 };
 

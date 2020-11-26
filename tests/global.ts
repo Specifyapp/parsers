@@ -3,12 +3,16 @@ import _ from 'lodash';
 import tinycolor from 'tinycolor2';
 import got from 'got';
 import seeds  from '../seeds';
+import * as fs from 'fs';
+import SVGO from 'svgo';
+import path from 'path';
 
 jest.mock('../parsers/global-libs', () => {
   return {
     _,
     tinycolor,
     got,
+    SVGO,
     SpServices: {
       font: {
         convert: async (payload: { postscriptName: string; formats: Array<AllowedFormat> }) => {
@@ -27,6 +31,20 @@ jest.mock('../parsers/global-libs', () => {
             }),
           );
           return result;
+        },
+      },
+      assets: {
+        getSource<T>(url: string, responseType: 'text' | 'buffer' | 'json') {
+          try {
+            const content = fs.readFileSync(
+              path.join(__dirname, 'fixtures', 'assets', url.replace('https://', '')),
+            );
+            if (responseType === 'text') return content.toString('utf-8');
+            if (responseType === 'json') return JSON.parse(content.toString());
+            if (responseType === 'buffer') return content;
+          } catch (err) {
+            return new Error('Get source failed');
+          }
         },
       },
     },

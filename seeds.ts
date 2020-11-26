@@ -1950,6 +1950,45 @@ export default () => ({
     {
       type: 'vector',
       value: {
+        url: 'https://alert-circle.svg',
+      },
+      id: 'a30579d9-0a14-415e-9bae-8514d1465bd7',
+      originId: '11ecf6a3-3fb5-4a9f-be40-e83877350e6a',
+      name: 'alert-circle.svg',
+      repository: {
+        id: '14def5fb-e91c-4b25-ac28-22d14b93a1a5',
+        name: 'Repo with vector from sketch figma and feather',
+      },
+    },
+    {
+      type: 'vector',
+      value: {
+        url: 'https://from-figma.svg',
+      },
+      id: 'de8351fa-7ef2-46e3-8645-553416b3ff48',
+      originId: 'b179c3a1-b4da-4f7a-969b-dd90ba247a71',
+      name: 'from-figma.svg',
+      repository: {
+        id: '14def5fb-e91c-4b25-ac28-22d14b93a1a5',
+        name: 'Repo with vector from sketch figma and feather',
+      },
+    },
+    {
+      type: 'vector',
+      value: {
+        url: 'https://from-sketch.svg',
+      },
+      id: 'e9b2fd31-aa7b-48fb-927c-60173a3280ff',
+      originId: '72814fde-0930-4878-a866-a1c00bc1ca78',
+      name: 'from-sketch.svg',
+      repository: {
+        id: '14def5fb-e91c-4b25-ac28-22d14b93a1a5',
+        name: 'Repo with vector from sketch figma and feather',
+      },
+    },
+    {
+      type: 'vector',
+      value: {
         url: 'https://raw.githubusercontent.com/feathericons/feather/master/icons/alert-circle.svg',
       },
       id: '46dca03e-1716-4dd7-ba4f-6331575fa85b',
