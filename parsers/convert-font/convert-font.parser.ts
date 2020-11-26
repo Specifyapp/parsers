@@ -1,4 +1,4 @@
-import { AllowedFormat } from '../../types/tokens';
+import { AllowedFormat } from '../../types';
 import type { LibsType } from '../global-libs';
 import { PartialRecord } from '../../types';
 
