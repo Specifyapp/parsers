@@ -8,6 +8,7 @@ export interface FontValue {
   url?: string;
   fontPostScriptName: string;
   fontWeight: string | number;
+  fontFileMissing: boolean;
 }
 
 export class FontToken extends Token implements TokenInterface {

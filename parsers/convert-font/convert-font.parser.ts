@@ -1,5 +1,6 @@
 import { AllowedFormat } from '../../types/tokens';
 import type { LibsType } from '../global-libs';
+import { PartialRecord } from '../../types';
 
 export type InputDataType = Array<{
   value: {
@@ -46,11 +47,17 @@ export default async function (
 
     return (
       await Promise.all(
-        designTokens.map(async designToken => {
-          const signedUrlsByFormat = await SpServices.font.convert({
-            postscriptName: designToken.value.fontPostScriptName,
-            formats,
-          });
+        designTokens.flatMap(async designToken => {
+          const signedUrlsByFormat = await new Promise<PartialRecord<AllowedFormat, string>>(
+            resolve =>
+              SpServices.font
+                .convert({
+                  postscriptName: designToken.value.fontPostScriptName,
+                  formats,
+                })
+                .then(resolve)
+                .catch(() => resolve({})),
+          );
 
           return (Object.entries(signedUrlsByFormat) as Array<[AllowedFormat, string]>).map(
             ([format, url]) => {
