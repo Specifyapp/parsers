@@ -430,9 +430,11 @@
     {
       "type": "font",
       "value": {
-        "fontFamily": "Allan",
-        "fontWeight": "700",
-        "fontPostScriptName": "Allan-Bold"
+        "isItalic": true,
+        "fontFamily": "Tartanpion",
+        "fontWeight": 700,
+        "fontFileMissing": false,
+        "fontPostScriptName": "Tartanpion-Bold"
       },
       "id": "82e6b5fe-0811-4752-bbec-c9043b277dcb",
       "originId": "b7d4b195-9d70-412c-9b4e-730c54a9eab4",
@@ -445,8 +447,11 @@
     {
       "type": "font",
       "value": {
+        "isItalic": false,
+        "provider": "Google font",
         "fontFamily": "Allan",
-        "fontWeight": "700",
+        "fontWeight": 700,
+        "fontFileMissing": false,
         "fontPostScriptName": "Allan-Bold"
       },
       "id": "00fa7d3f-8fe6-4889-9db2-8c7cb1ae26b5",
@@ -460,8 +465,11 @@
     {
       "type": "font",
       "value": {
+        "isItalic": false,
+        "provider": "Google font",
         "fontFamily": "Allan",
-        "fontWeight": "700",
+        "fontWeight": 700,
+        "fontFileMissing": false,
         "fontPostScriptName": "Allan-Bold"
       },
       "id": "2dad2abd-e01b-4d74-b1a5-64469431731d",
@@ -475,9 +483,12 @@
     {
       "type": "font",
       "value": {
-        "fontFamily": "Allan",
-        "fontWeight": "700",
-        "fontPostScriptName": "Allan-Bold"
+        "isItalic": false,
+        "provider": "Google font",
+        "fontFamily": "Fira Code",
+        "fontWeight": 500,
+        "fontFileMissing": false,
+        "fontPostScriptName": "FiraCode-Medium"
       },
       "id": "4e2ac819-20ac-4a74-beec-97ba110cdfd7",
       "originId": "1d4f8b1e-f777-4c83-84b0-4154a405a156",
@@ -490,9 +501,12 @@
     {
       "type": "font",
       "value": {
-        "fontFamily": "Allan",
-        "fontWeight": "700",
-        "fontPostScriptName": "Allan-Bold"
+        "isItalic": false,
+        "provider": "Custom font",
+        "fontFamily": "Optima",
+        "fontWeight": 700,
+        "fontFileMissing": true,
+        "fontPostScriptName": "Optima-Bold"
       },
       "id": "82a6482a-5d33-47a5-97a0-5e56331c8b5f",
       "originId": "8ac0c0a4-7d1e-48fb-9576-0e0e5e503dff",
