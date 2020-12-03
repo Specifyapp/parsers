@@ -29,8 +29,7 @@ interface x {
 {
     "name": "pascalcasify",
     "options": {
-      "keys": ["name"],
-      "excludeFileExtension": "true"
+      "keys": ["name"]
     }
 }
 ```

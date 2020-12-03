@@ -1,17 +1,17 @@
 import libs from '../global-libs';
-import * as seeds from '../../seeds.json';
+import seeds from '../../seeds';
 import toCss, { OptionsType } from './to-css-custom-properties.parser';
 import { ColorToken, ColorValue, Shadow, ShadowToken, Token, MeasurementToken } from '../../types';
 
 describe('To css', () => {
   it('Get tokens - apply parsers', async done => {
-    const result = await toCss(seeds.tokens as Array<Token>, undefined, libs);
+    const result = await toCss(seeds().tokens as Array<Token>, undefined, libs);
     expect(typeof result).toEqual('string');
-    const color = seeds.tokens.find(token => token.type === 'color') as ColorToken;
-    const measurement = seeds.tokens.find(
+    const color = seeds().tokens.find(token => token.type === 'color') as ColorToken;
+    const measurement = seeds().tokens.find(
       token => token.type === 'measurement',
     ) as MeasurementToken;
-    const shadow = seeds.tokens.find(token => token.type === 'shadow') as ShadowToken;
+    const shadow = seeds().tokens.find(token => token.type === 'shadow') as ShadowToken;
 
     const shadowValue = shadow.value.reduce((acc: string, value: Shadow) => {
       const { color, offsetX, offsetY, blur, isInner } = value;
@@ -49,9 +49,9 @@ describe('To css', () => {
       formatName: 'snakeCase'!,
       formatTokens: { color: 'hsl' },
     };
-    const result = await toCss(seeds.tokens as Array<Token>, options, libs);
-    const color = seeds.tokens.find(token => token.type === 'color') as ColorToken;
-    const measurement = seeds.tokens.find(
+    const result = await toCss(seeds().tokens as Array<Token>, options, libs);
+    const color = seeds().tokens.find(token => token.type === 'color') as ColorToken;
+    const measurement = seeds().tokens.find(
       token => token.type === 'measurement',
     ) as MeasurementToken;
 
@@ -81,9 +81,9 @@ describe('To css', () => {
         selector: 'body[data-theme="light"]',
       },
     };
-    const result = await toCss(seeds.tokens as Array<Token>, options, libs);
-    const color = seeds.tokens.find(token => token.type === 'color') as ColorToken;
-    const measurement = seeds.tokens.find(
+    const result = await toCss(seeds().tokens as Array<Token>, options, libs);
+    const color = seeds().tokens.find(token => token.type === 'color') as ColorToken;
+    const measurement = seeds().tokens.find(
       token => token.type === 'measurement',
     ) as MeasurementToken;
 
@@ -111,9 +111,9 @@ describe('To css', () => {
       formatName: 'snakeCase'!,
       formatTokens: { color: 'hsl' },
     };
-    const result = await toCss(seeds.tokens as Array<Token>, options, libs);
-    const color = seeds.tokens.find(token => token.type === 'color') as ColorToken;
-    const measurement = seeds.tokens.find(
+    const result = await toCss(seeds().tokens as Array<Token>, options, libs);
+    const color = seeds().tokens.find(token => token.type === 'color') as ColorToken;
+    const measurement = seeds().tokens.find(
       token => token.type === 'measurement',
     ) as MeasurementToken;
 
@@ -141,9 +141,9 @@ describe('To css', () => {
       formatName: 'camelCase'!,
       formatTokens: { color: 'hsl' },
     };
-    const result = await toCss(seeds.tokens as Array<Token>, options, libs);
-    const color = seeds.tokens.find(token => token.type === 'color') as ColorToken;
-    const measurement = seeds.tokens.find(
+    const result = await toCss(seeds().tokens as Array<Token>, options, libs);
+    const color = seeds().tokens.find(token => token.type === 'color') as ColorToken;
+    const measurement = seeds().tokens.find(
       token => token.type === 'measurement',
     ) as MeasurementToken;
 
@@ -172,7 +172,7 @@ describe('To css', () => {
 
   it('Get tokens - apply parsers - all tokens', async done => {
     const options: OptionsType = {};
-    const result = await toCss(seeds.tokens as Array<Token>, options, libs);
+    const result = await toCss(seeds().tokens as Array<Token>, options, libs);
     expect(result.includes('--heuristic-cross-platform-quantify: rgba(51, 15, 99, 0.6);'));
     expect(
       result.includes(

@@ -26,8 +26,7 @@ interface parser {
 {
     "name": "snakecasify",
     "options": {
-      "keys": ["name"],
-      "excludeFileExtension": "true"
+      "keys": ["name"]
     }
 }
 ```
