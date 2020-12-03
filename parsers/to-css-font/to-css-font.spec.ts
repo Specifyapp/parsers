@@ -1,11 +1,11 @@
-import * as seeds from '../../seeds.json';
+import seeds from '../../seeds';
 import toCssFont from './to-css-font.parser';
 import { Token } from '../../types';
 
 describe('to-css-font', () => {
   it('Get tokens - apply parsers', async done => {
     const result = await toCssFont(
-      seeds.tokens.filter(({ type }) => type === 'font') as Array<Token>,
+      seeds().tokens.filter(({ type }) => type === 'font') as Array<Token>,
     );
     if (result instanceof Error) return done.fail(result);
     expect(
@@ -25,7 +25,7 @@ describe('to-css-font', () => {
   });
   it('Get tokens - apply parsers - with options', async done => {
     const result = await toCssFont(
-      seeds.tokens.filter(({ type }) => type === 'font') as Array<Token>,
+      seeds().tokens.filter(({ type }) => type === 'font') as Array<Token>,
       {
         fontsPath: '../../assets/',
         formats: ['woff2', 'woff'],

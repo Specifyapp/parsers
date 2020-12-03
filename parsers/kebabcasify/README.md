@@ -29,8 +29,7 @@ interface parser {
 {
     "name": "kebabcasify",
     "options": {
-      "keys": ["name"],
-      "excludeFileExtension": "true"
+      "keys": ["name"]
     }
 }
 ```

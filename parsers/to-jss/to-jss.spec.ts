@@ -1,5 +1,5 @@
 import libs from '../global-libs';
-import * as seeds from '../../seeds.json';
+import seeds from '../../seeds';
 import toJss, { OptionsType } from './to-jss.parser';
 import {
   ColorToken,
@@ -14,13 +14,13 @@ import tinycolor from 'tinycolor2';
 
 describe('To jss', () => {
   it('Get tokens - apply parsers', async done => {
-    const result = await toJss(seeds.tokens as Array<Token>, undefined, libs);
+    const result = await toJss(seeds().tokens as Array<Token>, undefined, libs);
     expect(typeof result).toEqual('string');
-    const color = seeds.tokens.find(token => token.type === 'color') as Token;
-    const measurement = seeds.tokens.find(
+    const color = seeds().tokens.find(token => token.type === 'color') as Token;
+    const measurement = seeds().tokens.find(
       token => token.type === 'measurement',
     ) as MeasurementToken;
-    const shadow = seeds.tokens.find(token => token.type === 'shadow') as ShadowToken;
+    const shadow = seeds().tokens.find(token => token.type === 'shadow') as ShadowToken;
 
     const shadowValue = shadow.value.reduce((acc: string, value: Shadow) => {
       const { color, offsetX, offsetY, blur, isInner } = value;
@@ -59,9 +59,9 @@ describe('To jss', () => {
       formatName: 'snakeCase'!,
       formatTokens: { colorFormat: 'hsl' },
     };
-    const result = await toJss(seeds.tokens as Array<Token>, options, libs);
-    const color = seeds.tokens.find(token => token.type === 'color') as ColorToken;
-    const measurement = seeds.tokens.find(
+    const result = await toJss(seeds().tokens as Array<Token>, options, libs);
+    const color = seeds().tokens.find(token => token.type === 'color') as ColorToken;
+    const measurement = seeds().tokens.find(
       token => token.type === 'measurement',
     ) as MeasurementToken;
 
@@ -91,9 +91,9 @@ describe('To jss', () => {
         jssObjectName: 'lightTheme',
       },
     };
-    const result = await toJss(seeds.tokens as Array<Token>, options, libs);
-    const color = seeds.tokens.find(token => token.type === 'color') as ColorToken;
-    const measurement = seeds.tokens.find(
+    const result = await toJss(seeds().tokens as Array<Token>, options, libs);
+    const color = seeds().tokens.find(token => token.type === 'color') as ColorToken;
+    const measurement = seeds().tokens.find(
       token => token.type === 'measurement',
     ) as MeasurementToken;
 
@@ -121,9 +121,9 @@ describe('To jss', () => {
       formatName: 'snakeCase'!,
       formatTokens: { colorFormat: 'hsl' },
     };
-    const result = await toJss(seeds.tokens as Array<Token>, options, libs);
-    const color = seeds.tokens.find(token => token.type === 'color') as ColorToken;
-    const measurement = seeds.tokens.find(
+    const result = await toJss(seeds().tokens as Array<Token>, options, libs);
+    const color = seeds().tokens.find(token => token.type === 'color') as ColorToken;
+    const measurement = seeds().tokens.find(
       token => token.type === 'measurement',
     ) as MeasurementToken;
 
@@ -151,9 +151,9 @@ describe('To jss', () => {
       formatName: 'camelCase'!,
       formatTokens: { colorFormat: 'hsl' },
     };
-    const result = await toJss(seeds.tokens as Array<Token>, options, libs);
-    const color = seeds.tokens.find(token => token.type === 'color') as ColorToken;
-    const measurement = seeds.tokens.find(
+    const result = await toJss(seeds().tokens as Array<Token>, options, libs);
+    const color = seeds().tokens.find(token => token.type === 'color') as ColorToken;
+    const measurement = seeds().tokens.find(
       token => token.type === 'measurement',
     ) as MeasurementToken;
 
@@ -189,9 +189,9 @@ describe('To jss', () => {
         borderFormat: 'array',
       },
     };
-    const result = await toJss(seeds.tokens as Array<Token>, options, libs);
+    const result = await toJss(seeds().tokens as Array<Token>, options, libs);
 
-    const border = seeds.tokens.find(token => token.type === 'border') as BorderToken;
+    const border = seeds().tokens.find(token => token.type === 'border') as BorderToken;
     const xBorderWidth = border.value.width.value.measure;
     const xBorderType = border.value.type.toLowerCase();
     const xBorderColor = tinycolor(border.value.color.value).toString(
@@ -212,7 +212,7 @@ describe('To jss', () => {
       formatConfig: { exportDefault: true, jssObjectName },
     };
 
-    const result = await toJss(seeds.tokens as Array<Token>, options, libs);
+    const result = await toJss(seeds().tokens as Array<Token>, options, libs);
 
     expect(result.includes(`export default ${jssObjectName}`)).toBeTruthy();
     expect(result.includes(`export const ${jssObjectName}`)).toBeFalsy();
@@ -226,7 +226,7 @@ describe('To jss', () => {
       formatConfig: { exportDefault: false, jssObjectName },
     };
 
-    const result = await toJss(seeds.tokens as Array<Token>, options, libs);
+    const result = await toJss(seeds().tokens as Array<Token>, options, libs);
 
     expect(result.includes(`export default ${jssObjectName}`)).toBeFalsy();
     expect(result.includes(`export const ${jssObjectName}`)).toBeTruthy();
@@ -240,7 +240,7 @@ describe('To jss', () => {
       formatConfig: { module: 'commonjs', exportDefault: true, jssObjectName },
     };
 
-    const result = await toJss(seeds.tokens as Array<Token>, options, libs);
+    const result = await toJss(seeds().tokens as Array<Token>, options, libs);
 
     expect(result.includes(`export default ${jssObjectName}`)).toBeFalsy();
     expect(result.includes(`export const ${jssObjectName}`)).toBeFalsy();
@@ -254,7 +254,7 @@ describe('To jss', () => {
       formatConfig: { module: 'commonjs', exportDefault: false, jssObjectName },
     };
 
-    const result = await toJss(seeds.tokens as Array<Token>, options, libs);
+    const result = await toJss(seeds().tokens as Array<Token>, options, libs);
 
     expect(result.includes(`export default ${jssObjectName}`)).toBeFalsy();
     expect(result.includes(`export const ${jssObjectName}`)).toBeFalsy();

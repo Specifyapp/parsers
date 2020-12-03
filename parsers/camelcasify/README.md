@@ -29,8 +29,7 @@ interface parser {
 {
     "name": "camelcasify",
     "options": {
-      "keys": ["name"],
-      "excludeFileExtension": "true"
+      "keys": ["name"]
     }
 }
 ```

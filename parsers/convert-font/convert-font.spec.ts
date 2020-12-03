@@ -1,4 +1,4 @@
-import * as seeds from '../../seeds.json';
+import seeds from '../../seeds'
 import convertFont, { OptionsType } from './convert-font.parser';
 import { FontFormatList, FontToken } from '../../types';
 import { LibsType } from '../global-libs';
@@ -6,7 +6,7 @@ import libs from '../global-libs';
 
 describe('convert-font', () => {
   it('Default options', async done => {
-    const fonts = seeds.tokens.filter(({ type }) => type === 'font') as Array<FontToken>;
+    const fonts = seeds().tokens.filter(({ type }) => type === 'font') as Array<FontToken>;
     const result = await convertFont(fonts, undefined, libs as LibsType);
     if (result instanceof Error) return done.fail(result);
     expect(Array.isArray(result)).toEqual(true);
@@ -25,7 +25,7 @@ describe('convert-font', () => {
     done();
   });
   it('Several options', async done => {
-    const fonts = seeds.tokens.filter(({ type }) => type === 'font') as Array<FontToken>;
+    const fonts = seeds().tokens.filter(({ type }) => type === 'font') as Array<FontToken>;
     const options: OptionsType = {
       formats: ['woff'],
       fileNameKey: ['fontFamily', 'value.fontWeight', 'name'],
