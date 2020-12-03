@@ -22,7 +22,7 @@ interface parser {
 | --------- | ---------- | ---------------- | ---------- | ------------------------------------------------- |
 | `key`     | optional   | `string`         | "name"     | the key of the value will be suffixed             |
 | `suffix`  | required   | `string`         |            | the string used as content to suffix              |
-| `types`   | optional   | `Array<string>`  |            | the types where the function will be apply        |
+| `types`   | optional   | `Array<string>`  |            | the types where the function will be applied        |
 
 ## Usage example 
 

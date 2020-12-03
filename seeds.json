@@ -1828,7 +1828,7 @@
       },
       "id": "46dca03e-1716-4dd7-ba4f-6331575fa85b",
       "originId": "ab963dfc-43e5-4d74-be76-130159de58d4",
-      "name": "Handcrafted Rubber Computer sky blue bandwidth",
+      "name": "alert-circle.svg",
       "repository": {
         "id": "3009239e-4803-4a65-94fb-259ab92023fa",
         "name": "Auto Loan Account Customer Designer"
@@ -1837,11 +1837,11 @@
     {
       "type": "vector",
       "value": {
-        "url": "https://raw.githubusercontent.com/feathericons/feather/master/icons/alert-circle.svg"
+        "url": "https://raw.githubusercontent.com/feathericons/feather/master/icons/alert-octagon.svg"
       },
       "id": "7afa807a-293c-43a0-a7d9-3928da210675",
       "originId": "b201d900-659a-4a44-b1d6-91e6720e480a",
-      "name": "Home connecting Front-line",
+      "name": "alert-octagon.svg",
       "repository": {
         "id": "3009239e-4803-4a65-94fb-259ab92023fa",
         "name": "Auto Loan Account Customer Designer"
@@ -1850,11 +1850,11 @@
     {
       "type": "vector",
       "value": {
-        "url": "https://raw.githubusercontent.com/feathericons/feather/master/icons/alert-circle.svg"
+        "url": "https://raw.githubusercontent.com/feathericons/feather/master/icons/alert-triangle.svg"
       },
       "id": "cb5a0a3e-69cd-41d4-8d59-a20567871d7e",
       "originId": "25036a23-e88b-4759-a3e7-fefa1b5ce66b",
-      "name": "ADP Automotive payment",
+      "name": "alertTriangle.svg",
       "repository": {
         "id": "3009239e-4803-4a65-94fb-259ab92023fa",
         "name": "Auto Loan Account Customer Designer"

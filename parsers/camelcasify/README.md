@@ -11,14 +11,17 @@ interface parser {
   "name": "camelcasify",
   "options"?: {
     "keys": Array<string>
+    "excludeFileExtension"?: boolean
   }
 }
 ```
 
 ### Options
-| parameter | Require    | type      | default    | description                                       |
-| --------- | ---------- | --------- | ---------- | ------------------------------------------------- |
-| `keys`    | optional   | `Array`   | `["name"]` | the list of keys where the function will be apply |
+
+| parameter              | Require    | type      | default    | description                                                                                                                |
+| ---------------------- | ---------- | --------- | ---------- | -------------------------------------------------------------------------------------------------------------------------- |
+| `keys`                 | optional   | `Array`   | `["name"]` | the list of keys where the function will be applied                                                                        |
+| `excludeFileExtension` | optional   | `Boolean` | `false`    | the fact that the function will only be applied on a filename. Useful for transforming strings containing a file extension |
 
 ## Example 
 
@@ -26,7 +29,8 @@ interface parser {
 {
     "name": "camelcasify",
     "options": {
-      "keys": ["name"]
+      "keys": ["name"],
+      "excludeFileExtension": "true"
     }
 }
 ```

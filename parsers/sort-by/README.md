@@ -18,7 +18,7 @@ interface parser {
 ### Options
 | parameter | Require    | type      | default    | description                                       |
 | --------- | ---------- | --------- | ---------- | ------------------------------------------------- |
-| `keys`    | optional   | `Array`   | `["name"]` | the list of keys where the function will be apply |
+| `keys`    | optional   | `Array`   | `["name"]` | the list of keys where the function will be applied |
 
 ## Usage example 
 
