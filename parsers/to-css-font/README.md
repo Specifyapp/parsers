@@ -22,7 +22,7 @@ interface parser {
 ### Options
 | parameter | Require    | type      | default    | description                                       |
 | --------- | ---------- | --------- | ---------- | ------------------------------------------------- |
-_| `formats`    | optional   | `Array<string>`   | `["woff2", "woff", "otf", "ttf", "eot"]` | the list of formats to import |_
+| `formats`    | optional   | `Array<string>`   | `["woff2", "woff", "otf", "ttf", "eot"]` | the list of formats to import |_
 | `fontsPath`    | optional   | `string` |  | the path of font's directory |
 | `fontFamilyTransform`    | optional   | `string` |  | the function to normalize the font-family property |
 | `includeFontWeight`    | optional   | `boolean` | true | Allow to include the font-weight property in the result |
