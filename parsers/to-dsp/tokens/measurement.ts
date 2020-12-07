@@ -1,4 +1,5 @@
-import { DspEntity, MeasurementToken } from '../../../types';
+import { MeasurementToken } from '../../../types';
+import { DspEntity } from '../dsp.type';
 
 export class Measurement extends MeasurementToken {
   constructor(token: Partial<MeasurementToken>) {

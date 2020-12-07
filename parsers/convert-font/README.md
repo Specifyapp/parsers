@@ -8,9 +8,11 @@ Convert font in several formats.
 
 ```ts
 interface parser {
-  "name": "optimize-vector",
+  "name": "convert-font",
   "options"?: {
-    "svgo"?: SvgoOptions
+    "formats"?: Array<'woff2' | 'woff' | 'otf' | 'ttf' | 'eot'>
+    "fileNameKey"?: 'name' | 'fontFamily' | Array<string>
+    "fileNameFormat"?: 'camelCase' | 'kebabCase' | 'snakeCase';
   }
 }
 ```
@@ -20,6 +22,9 @@ interface parser {
 | parameter | Require    | type      | default    | description                                       |
 | --------- | ---------- | --------- | ---------- | ------------------------------------------------- |
 | `formats`    | optional   | `Array<string>`   | `["woff2", "woff", "otf", "ttf", "eot"]` | the list of formats to convert |
+| `fileNameKey`    | optional   | `name` `fontFamily` `Array<string>`   | `name` | The design token's keys that will be used to create the file name. These keys will be separated by a space to create the file name. |
+| `fileNameFormat`    | optional   | `camelCase` `kebabCase` `snakeCase`   |  | The function to normalize the file name |
+
 ## Usage example 
 
 ```json

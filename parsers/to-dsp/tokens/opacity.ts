@@ -1,4 +1,5 @@
-import { DspEntity, OpacityToken } from '../../../types';
+import { OpacityToken } from '../../../types';
+import { DspEntity } from '../dsp.type';
 
 export class Opacity extends OpacityToken {
   constructor(token: Partial<OpacityToken>) {

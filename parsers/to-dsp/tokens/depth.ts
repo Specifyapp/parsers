@@ -1,4 +1,5 @@
-import { DepthToken, DspEntity } from '../../../types';
+import { DepthToken } from '../../../types';
+import { DspEntity } from '../dsp.type';
 
 export class Depth extends DepthToken {
   constructor(token: Partial<DepthToken>) {

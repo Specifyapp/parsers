@@ -1,5 +1,6 @@
 import tinycolor from 'tinycolor2';
-import { DspEntity, GradientToken } from '../../../types';
+import { GradientToken } from '../../../types';
+import { DspEntity } from '../dsp.type';
 
 export class Gradient extends GradientToken {
   constructor(token: Partial<GradientToken>) {

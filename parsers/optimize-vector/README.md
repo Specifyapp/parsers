@@ -8,9 +8,10 @@ SVG optimizer using [svgo](https://github.com/svg/svgo).
 
 ```ts
 interface x {
-  "name": "pascalcasify",
+  "name": "optimize-vector",
   "options"?: {
-    "keys": Array<string>
+    // https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/svgo/index.d.ts#L348
+    "svgo"?:  SVGO.Options 
   }
 }
 ```
@@ -18,16 +19,13 @@ interface x {
 ### Options
 | parameter | Require    | type      | default    | description                                       |
 | --------- | ---------- | --------- | ---------- | ------------------------------------------------- |
-| `keys`    | optional   | `Array`   | `["name"]` | the list of keys where the function will be apply |
+| `svgo`    | optional   | `SVGO.Options`   | [Default config](https://github.com/svg/svgo#what-it-can-do) | Inherit from [svgo](https://github.com/svg/svgo) |
 
 ## Example 
 
 ```json
 {
-    "name": "pascalcasify",
-    "options": {
-      "keys": ["name"]
-    }
+    "name": "optimize-vector"
 }
 ```
 
@@ -38,12 +36,22 @@ interface x {
 Array of object with the keys to apply pascalcase function
 
 ```ts
-Array<{[key: string]: any}>
+Array<
+  Record<string, any> & {
+    type: string;
+    value: { url: string } & { [key: string]: any };
+  }
+>
 ```
 
 ### output
 
 
-```
-Array<{[key: string]: any}>
+```ts
+Array<
+  Record<string, any> & {
+    type: string;
+    value: { content: string } & { [key: string]: any };
+  }
+>
 ```
