@@ -1,4 +1,5 @@
-import { BorderToken, DspEntity } from '../../../types';
+import { BorderToken } from '../../../types';
+import { DspEntity } from '../dsp.type';
 
 export class Border extends BorderToken {
   constructor(token: Partial<BorderToken>) {

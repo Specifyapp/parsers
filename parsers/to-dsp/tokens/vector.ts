@@ -1,5 +1,6 @@
-import got from 'got';
-import { DownloadableFile, DspEntity, VectorToken } from '../../../types';
+import { DownloadableFile, VectorToken } from '../../../types';
+import { DspEntity } from '../dsp.type';
+import { LibsType } from '../../global-libs';
 
 export class Vector extends VectorToken {
   constructor(token: Partial<VectorToken>) {
@@ -17,13 +18,14 @@ export class Vector extends VectorToken {
     };
   }
 
-  async toDspAssets(): Promise<DownloadableFile> {
-    const response = await got(this.value.url);
+  async toDspAssets(SpServices: LibsType['SpServices']): Promise<DownloadableFile> {
+    const response =
+      this.value.content || (await SpServices.assets.getSource<string>(this.value.url!, 'text'));
 
     return {
       name: `assets/${this.name}`,
       value: {
-        content: response.body,
+        content: response,
       },
     };
   }

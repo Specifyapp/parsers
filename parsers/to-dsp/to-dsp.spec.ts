@@ -1,6 +1,8 @@
 import seeds from '../../seeds';
 import toDsp, { OptionsType } from './to-dsp.parser';
-import { DspParserSettings, Token } from '../../types';
+import { Token } from '../../types';
+import { DspParserSettings } from './dsp.type';
+import libs, { LibsType } from '../global-libs';
 
 describe('To DSP', () => {
   it('should take settings and be able to return the correct value', async () => {
@@ -11,9 +13,13 @@ describe('To DSP', () => {
       snippetTriggerPrefix: 'ex-',
     };
 
-    const result = await toDsp(seeds().tokens as Array<Token>, { settings } as OptionsType);
+    const result = await toDsp(
+      seeds().tokens as Array<Token>,
+      { settings } as OptionsType,
+      libs as LibsType,
+    );
     expect(Array.isArray(result)).toBe(true);
-    expect(result.length).toBe(15);
+    expect(result.length).toBe(18);
     expect(result.some(entity => entity.name === 'dsp.json')).toBe(true);
     expect(result.some(entity => entity.name === 'data/tokens.json')).toBe(true);
     expect(result.some(entity => entity.name === 'data/components.json')).toBe(true);
@@ -24,7 +30,7 @@ describe('To DSP', () => {
     const tokensEntities = JSON.parse(tokens?.value.content!).entities;
 
     expect(Array.isArray(tokensEntities)).toBe(true);
-    expect(tokensEntities.length).toBe(53);
+    expect(tokensEntities.length).toBe(56);
 
     const components = result.find(entity => entity.name === 'data/components.json');
     const componentsEntities = JSON.parse(components?.value.content!).entities;
@@ -64,7 +70,7 @@ describe('To DSP', () => {
       snippetTriggerPrefix: 'ex-',
     };
 
-    const result = await toDsp([] as Array<Token>, { settings } as OptionsType);
+    const result = await toDsp([] as Array<Token>, { settings } as OptionsType, libs as LibsType);
     expect(result.length).toBe(5);
 
     expect(result.some(entity => entity.name === 'dsp.json')).toBe(true);
@@ -87,7 +93,7 @@ describe('To DSP', () => {
   });
 
   it('should work with no settings', async () => {
-    const result = await toDsp([] as Array<Token>, {} as OptionsType);
+    const result = await toDsp([] as Array<Token>, {} as OptionsType, libs as LibsType);
     expect(result.length).toBe(5);
 
     expect(result.some(entity => entity.name === 'dsp.json')).toBe(true);
@@ -103,7 +109,7 @@ describe('To DSP', () => {
   });
 
   it('should work with undefined settings', async () => {
-    const result = await toDsp([] as Array<Token>, undefined as OptionsType);
+    const result = await toDsp([] as Array<Token>, undefined as OptionsType, libs as LibsType);
     expect(result.length).toBe(5);
 
     expect(result.some(entity => entity.name === 'dsp.json')).toBe(true);
@@ -125,9 +131,13 @@ describe('To DSP', () => {
       snippetTriggerPrefix: 'ex-',
     };
 
-    const result = await toDsp(seeds().tokens as Array<Token>, { settings } as OptionsType);
+    const result = await toDsp(
+      seeds().tokens as Array<Token>,
+      { settings } as OptionsType,
+      libs as LibsType,
+    );
     expect(Array.isArray(result)).toBe(true);
-    expect(result.length).toBe(15);
+    expect(result.length).toBe(18);
     expect(result.some(entity => entity.name === 'dsp.json')).toBe(true);
     expect(result.some(entity => entity.name === 'data/tokens.json')).toBe(true);
     expect(result.some(entity => entity.name === 'data/components.json')).toBe(true);
@@ -138,7 +148,7 @@ describe('To DSP', () => {
     const tokensEntities = JSON.parse(tokens?.value.content!).entities;
 
     expect(Array.isArray(tokensEntities)).toBe(true);
-    expect(tokensEntities.length).toBe(53);
+    expect(tokensEntities.length).toBe(56);
 
     const components = result.find(entity => entity.name === 'data/components.json');
     const componentsEntities = JSON.parse(components?.value.content!).entities;
@@ -162,9 +172,13 @@ describe('To DSP', () => {
       snippetTriggerPrefix: 'ex-',
     };
 
-    const result = await toDsp(seeds().tokens as Array<Token>, { settings } as OptionsType);
+    const result = await toDsp(
+      seeds().tokens as Array<Token>,
+      { settings } as OptionsType,
+      libs as LibsType,
+    );
     expect(Array.isArray(result)).toBe(true);
-    expect(result.length).toBe(15);
+    expect(result.length).toBe(18);
     expect(result.some(entity => entity.name === 'dsp.json')).toBe(true);
     expect(result.some(entity => entity.name === 'data/tokens.json')).toBe(true);
     expect(result.some(entity => entity.name === 'data/components.json')).toBe(true);
@@ -175,7 +189,7 @@ describe('To DSP', () => {
     const tokensEntities = JSON.parse(tokens?.value.content!).entities;
 
     expect(Array.isArray(tokensEntities)).toBe(true);
-    expect(tokensEntities.length).toBe(53);
+    expect(tokensEntities.length).toBe(56);
 
     const components = result.find(entity => entity.name === 'data/components.json');
     const componentsEntities = JSON.parse(components?.value.content!).entities;
@@ -199,9 +213,13 @@ describe('To DSP', () => {
       snippetTriggerPrefix: 'ex-',
     };
 
-    const result = await toDsp(seeds().tokens as Array<Token>, { settings } as OptionsType);
+    const result = await toDsp(
+      seeds().tokens as Array<Token>,
+      { settings } as OptionsType,
+      libs as LibsType,
+    );
     expect(Array.isArray(result)).toBe(true);
-    expect(result.length).toBe(15);
+    expect(result.length).toBe(18);
     expect(result.some(entity => entity.name === 'dsp.json')).toBe(true);
     expect(result.some(entity => entity.name === 'data/tokens.json')).toBe(true);
     expect(result.some(entity => entity.name === 'data/components.json')).toBe(true);
@@ -212,7 +230,7 @@ describe('To DSP', () => {
     const tokensEntities = JSON.parse(tokens?.value.content!).entities;
 
     expect(Array.isArray(tokensEntities)).toBe(true);
-    expect(tokensEntities.length).toBe(53);
+    expect(tokensEntities.length).toBe(56);
 
     const components = result.find(entity => entity.name === 'data/components.json');
     const componentsEntities = JSON.parse(components?.value.content!).entities;
@@ -236,9 +254,13 @@ describe('To DSP', () => {
       packageVersion: '0.0.1',
     };
 
-    const result = await toDsp(seeds().tokens as Array<Token>, { settings } as OptionsType);
+    const result = await toDsp(
+      seeds().tokens as Array<Token>,
+      { settings } as OptionsType,
+      libs as LibsType,
+    );
     expect(Array.isArray(result)).toBe(true);
-    expect(result.length).toBe(15);
+    expect(result.length).toBe(18);
     expect(result.some(entity => entity.name === 'dsp.json')).toBe(true);
     expect(result.some(entity => entity.name === 'data/tokens.json')).toBe(true);
     expect(result.some(entity => entity.name === 'data/components.json')).toBe(true);
@@ -249,7 +271,7 @@ describe('To DSP', () => {
     const tokensEntities = JSON.parse(tokens?.value.content!).entities;
 
     expect(Array.isArray(tokensEntities)).toBe(true);
-    expect(tokensEntities.length).toBe(53);
+    expect(tokensEntities.length).toBe(56);
 
     const components = result.find(entity => entity.name === 'data/components.json');
     const componentsEntities = JSON.parse(components?.value.content!).entities;
@@ -277,6 +299,7 @@ describe('To DSP', () => {
     const result = await toDsp(
       seeds().tokens as Array<Token>,
       { settings, createAssets: false } as OptionsType,
+      libs as LibsType,
     );
     expect(Array.isArray(result)).toBe(true);
     expect(result.length).toBe(5);
@@ -290,7 +313,7 @@ describe('To DSP', () => {
     const tokensEntities = JSON.parse(tokens?.value.content!).entities;
 
     expect(Array.isArray(tokensEntities)).toBe(true);
-    expect(tokensEntities.length).toBe(53);
+    expect(tokensEntities.length).toBe(56);
 
     const components = result.find(entity => entity.name === 'data/components.json');
     const componentsEntities = JSON.parse(components?.value.content!).entities;
@@ -318,9 +341,10 @@ describe('To DSP', () => {
     const result = await toDsp(
       seeds().tokens as Array<Token>,
       { settings, createAssets: true } as OptionsType,
+      libs as LibsType,
     );
     expect(Array.isArray(result)).toBe(true);
-    expect(result.length).toBe(15);
+    expect(result.length).toBe(18);
     expect(result.some(entity => entity.name === 'dsp.json')).toBe(true);
     expect(result.some(entity => entity.name === 'data/tokens.json')).toBe(true);
     expect(result.some(entity => entity.name === 'data/components.json')).toBe(true);
@@ -331,7 +355,7 @@ describe('To DSP', () => {
     const tokensEntities = JSON.parse(tokens?.value.content!).entities;
 
     expect(Array.isArray(tokensEntities)).toBe(true);
-    expect(tokensEntities.length).toBe(53);
+    expect(tokensEntities.length).toBe(56);
 
     const components = result.find(entity => entity.name === 'data/components.json');
     const componentsEntities = JSON.parse(components?.value.content!).entities;

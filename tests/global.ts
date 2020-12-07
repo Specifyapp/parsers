@@ -1,8 +1,7 @@
 import { AllowedFormat, FontToken, PartialRecord } from '../types';
 import _ from 'lodash';
 import tinycolor from 'tinycolor2';
-import got from 'got';
-import seeds  from '../seeds';
+import seeds from '../seeds';
 import * as fs from 'fs';
 import SVGO from 'svgo';
 import path from 'path';
@@ -11,7 +10,6 @@ jest.mock('../parsers/global-libs', () => {
   return {
     _,
     tinycolor,
-    got,
     SVGO,
     SpServices: {
       font: {

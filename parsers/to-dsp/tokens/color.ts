@@ -1,5 +1,6 @@
 import tinycolor from 'tinycolor2';
-import { ColorToken, DspEntity } from '../../../types';
+import { ColorToken } from '../../../types';
+import { DspEntity } from '../dsp.type';
 
 export class Color extends ColorToken {
   constructor(token: Partial<ColorToken>) {

@@ -1,7 +1,8 @@
 import Token, { TokenInterface } from './Token';
 
 export interface VectorValue {
-  url: string;
+  url?: string;
+  content?: string;
 }
 
 export class VectorToken extends Token implements TokenInterface {

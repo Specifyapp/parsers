@@ -1,5 +1,5 @@
 import { LibsType } from '../global-libs';
-import SVGO from 'svgo';
+import type SVGO from 'svgo';
 
 export type InputDataType = Array<
   Record<string, any> & {
@@ -7,8 +7,9 @@ export type InputDataType = Array<
     value: { url: string } & { [key: string]: any };
   }
 >;
-type OutputDataUnwrapped = Array<Omit<InputDataType[0], 'value'> & { value: { content: string } }>;
-export type OutputDataType = Promise<OutputDataUnwrapped>;
+export type OutputDataType = Array<
+  Omit<InputDataType[0], 'value'> & { value: { content: string } }
+>;
 export type OptionsType =
   | undefined
   | {
@@ -19,7 +20,7 @@ export default async function (
   tokens: InputDataType,
   options: OptionsType,
   { SVGO, _, SpServices }: Pick<LibsType, 'SVGO' | '_' | 'SpServices'>,
-): OutputDataType {
+): Promise<OutputDataType | Error> {
   try {
     const optimizer = new SVGO(options?.svgo || {});
     return (await Promise.all(
@@ -37,7 +38,7 @@ export default async function (
         }
         return token;
       }),
-    )) as OutputDataUnwrapped;
+    )) as OutputDataType;
   } catch (err) {
     throw err;
   }

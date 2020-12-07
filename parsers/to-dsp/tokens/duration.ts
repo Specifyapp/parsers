@@ -1,4 +1,5 @@
-import { DspEntity, DurationToken } from '../../../types';
+import { DurationToken } from '../../../types';
+import { DspEntity } from '../dsp.type';
 
 export class Duration extends DurationToken {
   constructor(token: Partial<DurationToken>) {

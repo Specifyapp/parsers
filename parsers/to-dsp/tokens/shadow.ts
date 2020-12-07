@@ -1,4 +1,5 @@
-import { DspEntity, ShadowToken } from '../../../types';
+import { ShadowToken } from '../../../types';
+import { DspEntity } from '../dsp.type';
 
 export class Shadow extends ShadowToken {
   constructor(token: Partial<ShadowToken>) {
