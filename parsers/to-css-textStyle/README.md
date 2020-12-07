@@ -18,6 +18,7 @@ interface parser {
     cssClassFormat?: 'camelCase' | 'kebabCase' | 'snakeCase';
     fontFamilyFormat?: 'camelCase' | 'kebabCase' | 'snakeCase';
     genericFamily?: 'serif' | 'sans-serif' | 'cursive' | 'fantasy' | 'monospace';
+    relativeLineHeight?: boolean;
     prettierConfig?: Partial<{
       endOfLine: 'auto' | 'lf' | 'crlf' | 'cr';
       tabWidth: number;
@@ -38,6 +39,7 @@ interface parser {
 | `cssClassFormat`    | optional   | `camelCase, kebabCase, snakeCase`   | `kebabCase` | The lodash function used to normalize the css class name |
 | `fontFamilyFormat`    | optional   | `camelCase, kebabCase, snakeCase`   |  | The lodash function used to normalize the font family value |
 | `genericFamily`    | optional   | `string` |  | The generic font family will be applied after the main font family |
+| `relativeLineHeight`    | optional   | `boolean` | | Convert line height to relative value |
 | `prettierConfig.endOfLine`    | optional   | `auto, lf, crlf, cr`   | `auto` | [Prettier documentation](https://prettier.io/docs/en/options.html#end-of-line) |
 | `prettierConfig.tabWidth`    | optional   | `number`   | `2` | [Prettier documentation](https://prettier.io/docs/en/options.html#tab-width) |
 | `prettierConfig.useTabs`    | optional   | `boolean`   | `false` | [Prettier documentation](https://prettier.io/docs/en/options.html#tabs) |
@@ -49,8 +51,9 @@ interface parser {
     "name": "to-css-text-style",
     "options": {
       "exclude": ["color", "text-indent"],
-      "prefix": "utils-",
+      "prefix": "sp-",
       "suffix": "-text-style",
+      "relativeLineHeight": true,
       "genericFamily": "serif"
     }
 }
@@ -58,10 +61,10 @@ interface parser {
 ### Result example
 
 ```css
-.utils-main-text-style {
+.sp-main-text-style {
     font-family: allan, serif;
     font-size: 12px;
-    line-height: 12px;
+    line-height: 1;
     text-align: left;
     vertical-align: top;
     text-transform: uppercase;
@@ -82,5 +85,4 @@ __
 ### output
 ```ts
 string
-
 ```
