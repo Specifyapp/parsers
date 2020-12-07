@@ -1622,204 +1622,330 @@ export default () => ({
       },
     },
     {
-      type: 'textStyle',
+      createdAt: '2020-12-06T17:42:06.335Z',
+      updatedAt: '2020-12-06T17:42:37.621Z',
+      id: '322c40ef-ed1b-497d-9e94-619c2e156c75',
+      name: 'Albra',
       value: {
         font: {
+          meta: {
+            source: 'localStyles',
+          },
+          name: 'AlbraRegular',
+          type: 'font',
           value: {
-            fontFamily: 'Allan',
-            fontWeight: '700',
-            fontPostScriptName: 'Allan-Bold',
-            url: 'http://fonts.googleapis.com/css?family=Allan&variants=Allan-Bold',
+            isItalic: false,
+            fontFamily: 'Albra',
+            fontWeight: 400,
+            fontPostScriptName: 'AlbraRegular',
+          },
+          originId: 'AlbraRegular',
+        },
+        color: {
+          value: {
+            a: 1,
+            b: 196,
+            g: 196,
+            r: 196,
           },
         },
         fontSize: {
           value: {
             unit: 'px',
-            measure: 5,
+            measure: 12,
           },
         },
-        color: {
-          value: {
-            r: 86,
-            g: 225,
-            b: 86,
-            a: 0.52,
-          },
+        textAlign: {
+          vertical: 'top',
+          horizontal: 'left',
         },
         lineHeight: {
           value: {
             unit: 'px',
-            measure: 7,
+            measure: 14.0625,
           },
         },
       },
-      id: '86281481-7e48-4f1f-b44f-b5c609b88e8c',
-      originId: 'bd22b0a1-d23e-4dfd-b10f-9978dd77a937',
-      name: 'Kids Iowa Ergonomic',
-      repository: {
-        id: '3009239e-4803-4a65-94fb-259ab92023fa',
-        name: 'Auto Loan Account Customer Designer',
+      meta: {
+        source: 'localStyles',
       },
+      type: 'textStyle',
+      originId: '1691:2',
+      sourceId: 'aa70d3c9-6223-48a1-a490-9bdd9c5f0a03',
+      repositoryId: '598c9ee3-1427-4a82-b81b-6fb46d17dff9',
     },
     {
-      type: 'textStyle',
+      createdAt: '2020-12-06T17:42:06.334Z',
+      updatedAt: '2020-12-06T17:42:37.621Z',
+      id: 'd9d3ff45-eeae-4847-ac96-bf3b4dc80257',
+      name: 'Avenir',
       value: {
         font: {
+          meta: {
+            source: 'localStyles',
+          },
+          name: 'Avenir-Light',
+          type: 'font',
           value: {
-            fontFamily: 'Allan',
-            fontWeight: '700',
-            fontPostScriptName: 'Allan-Bold',
-            url: 'http://fonts.googleapis.com/css?family=Allan&variants=Allan-Bold',
+            isItalic: false,
+            fontFamily: 'Avenir',
+            fontWeight: 300,
+            fontPostScriptName: 'Avenir-Light',
+          },
+          originId: 'Avenir-Light',
+        },
+        color: {
+          value: {
+            a: 1,
+            b: 196,
+            g: 196,
+            r: 196,
           },
         },
         fontSize: {
           value: {
             unit: 'px',
-            measure: 8,
+            measure: 12,
           },
         },
-        color: {
-          value: {
-            r: 187,
-            g: 130,
-            b: 82,
-            a: 0.77,
-          },
+        textAlign: {
+          vertical: 'top',
+          horizontal: 'left',
         },
         lineHeight: {
           value: {
             unit: 'px',
-            measure: 5,
+            measure: 14.0625,
           },
         },
       },
-      id: '5c913261-1b38-466a-8578-9a82235b83f2',
-      originId: '85736c7d-926c-4bda-bff5-5bf4986e232d',
-      name: 'Bedfordshire B2C Credit Card Account',
-      repository: {
-        id: '3009239e-4803-4a65-94fb-259ab92023fa',
-        name: 'Auto Loan Account Customer Designer',
+      meta: {
+        source: 'localStyles',
       },
+      type: 'textStyle',
+      originId: '1687:0',
+      sourceId: 'aa70d3c9-6223-48a1-a490-9bdd9c5f0a03',
+      repositoryId: '598c9ee3-1427-4a82-b81b-6fb46d17dff9',
     },
     {
-      type: 'textStyle',
+      createdAt: '2020-12-06T17:42:06.337Z',
+      updatedAt: '2020-12-06T17:42:37.623Z',
+      id: 'fc168528-7c4e-482f-9243-e61eeea64cf4',
+      name: 'custom font',
       value: {
         font: {
+          meta: {
+            source: 'localStyles',
+          },
+          name: 'Optima-Bold',
+          type: 'font',
           value: {
-            fontFamily: 'Allan',
-            fontWeight: '700',
-            fontPostScriptName: 'Allan-Bold',
-            url: 'http://fonts.googleapis.com/css?family=Allan&variants=Allan-Bold',
+            isItalic: false,
+            fontFamily: 'Optima',
+            fontWeight: 700,
+            fontPostScriptName: 'Optima-Bold',
+          },
+          originId: 'Optima-Bold',
+        },
+        color: {
+          value: {
+            a: 1,
+            b: 196,
+            g: 196,
+            r: 196,
           },
         },
         fontSize: {
           value: {
             unit: 'px',
-            measure: 9,
+            measure: 12,
           },
         },
-        color: {
-          value: {
-            r: 204,
-            g: 161,
-            b: 103,
-            a: 0.82,
-          },
+        textAlign: {
+          vertical: 'top',
+          horizontal: 'left',
         },
         lineHeight: {
           value: {
             unit: 'px',
-            measure: 0,
+            measure: 14.0625,
           },
         },
       },
-      id: '7f5c0569-0e3d-4cf3-97c8-13b9088a6831',
-      originId: '9331d6c9-e4d7-417c-b454-5c6d6f6eb4aa',
-      name: 'turn-key auxiliary intangible',
-      repository: {
-        id: '3009239e-4803-4a65-94fb-259ab92023fa',
-        name: 'Auto Loan Account Customer Designer',
+      meta: {
+        source: 'localStyles',
       },
+      type: 'textStyle',
+      originId: '1520:0',
+      sourceId: 'aa70d3c9-6223-48a1-a490-9bdd9c5f0a03',
+      repositoryId: '598c9ee3-1427-4a82-b81b-6fb46d17dff9',
     },
     {
-      type: 'textStyle',
+      createdAt: '2020-12-06T17:42:06.337Z',
+      updatedAt: '2020-12-06T17:42:37.621Z',
+      id: '729df2db-d2de-4324-a6fd-4e2cacf5f218',
+      name: 'Font missing',
       value: {
         font: {
+          meta: {
+            source: 'localStyles',
+          },
+          name: 'FiraCode-Medium',
+          type: 'font',
           value: {
-            fontFamily: 'Allan',
-            fontWeight: '700',
-            fontPostScriptName: 'Allan-Bold',
-            url: 'http://fonts.googleapis.com/css?family=Allan&variants=Allan-Bold',
+            isItalic: false,
+            fontFamily: 'Fira Code',
+            fontWeight: 500,
+            fontPostScriptName: 'FiraCode-Medium',
+          },
+          originId: 'FiraCode-Medium',
+        },
+        color: {
+          value: {
+            a: 1,
+            b: 196,
+            g: 196,
+            r: 196,
           },
         },
         fontSize: {
           value: {
             unit: 'px',
-            measure: 7,
+            measure: 12,
           },
         },
-        color: {
-          value: {
-            r: 26,
-            g: 88,
-            b: 103,
-            a: 0.34,
-          },
+        textAlign: {
+          vertical: 'top',
+          horizontal: 'left',
         },
         lineHeight: {
           value: {
             unit: 'px',
-            measure: 6,
+            measure: 14.0625,
           },
         },
       },
-      id: '98684ede-9054-457f-b4c2-5a8ed6c90d63',
-      originId: '8a6c8a83-873f-470c-a47f-f5b35d59ce54',
-      name: 'connect reboot recontextualize',
-      repository: {
-        id: '3009239e-4803-4a65-94fb-259ab92023fa',
-        name: 'Auto Loan Account Customer Designer',
+      meta: {
+        source: 'localStyles',
       },
+      type: 'textStyle',
+      originId: '1637:3',
+      sourceId: 'aa70d3c9-6223-48a1-a490-9bdd9c5f0a03',
+      repositoryId: '598c9ee3-1427-4a82-b81b-6fb46d17dff9',
     },
     {
-      type: 'textStyle',
+      createdAt: '2020-12-06T17:42:06.307Z',
+      updatedAt: '2020-12-06T17:42:37.599Z',
+      id: '5bb0abd7-eb83-40d2-8176-bb809ef671f3',
+      name: 'Local Text Styles',
       value: {
         font: {
+          meta: {
+            source: 'localStyles',
+          },
+          name: 'Allan-Bold',
+          type: 'font',
           value: {
+            isItalic: false,
             fontFamily: 'Allan',
-            fontWeight: '700',
+            fontWeight: 700,
             fontPostScriptName: 'Allan-Bold',
-            url: 'http://fonts.googleapis.com/css?family=Allan&variants=Allan-Bold',
+          },
+          originId: 'Allan-Bold',
+        },
+        color: {
+          value: {
+            a: 1,
+            b: 196,
+            g: 196,
+            r: 196,
           },
         },
         fontSize: {
+          value: {
+            unit: 'px',
+            measure: 16,
+          },
+        },
+        textAlign: {
+          vertical: 'top',
+          horizontal: 'left',
+        },
+        lineHeight: {
+          value: {
+            unit: 'px',
+            measure: 16,
+          },
+        },
+      },
+      meta: {
+        source: 'localStyles',
+      },
+      type: 'textStyle',
+      originId: '249:1',
+      sourceId: 'aa70d3c9-6223-48a1-a490-9bdd9c5f0a03',
+      repositoryId: '598c9ee3-1427-4a82-b81b-6fb46d17dff9',
+    },
+    {
+      createdAt: '2020-12-06T17:42:06.327Z',
+      updatedAt: '2020-12-06T17:42:37.622Z',
+      id: '0497ce17-8c87-43a0-90e7-b0557b20491f',
+      name: 'ts with allan again',
+      value: {
+        font: {
+          meta: {
+            source: 'localStyles',
+          },
+          name: 'Allan-Bold',
+          type: 'font',
+          value: {
+            isItalic: false,
+            fontFamily: 'Allan',
+            fontWeight: 700,
+            fontPostScriptName: 'Allan-Bold',
+          },
+          originId: 'Allan-Bold',
+        },
+        color: {
+          value: {
+            a: 1,
+            b: 196,
+            g: 196,
+            r: 196,
+          },
+        },
+        fontSize: {
+          value: {
+            unit: 'px',
+            measure: 12,
+          },
+        },
+        textAlign: {
+          vertical: 'top',
+          horizontal: 'left',
+        },
+        lineHeight: {
+          value: {
+            unit: 'px',
+            measure: 12,
+          },
+        },
+        textIndent: {
           value: {
             unit: 'px',
             measure: 10,
           },
         },
-        color: {
-          value: {
-            r: 35,
-            g: 254,
-            b: 68,
-            a: 0.9,
-          },
-        },
-        lineHeight: {
-          value: {
-            unit: 'px',
-            measure: 7,
-          },
-        },
+        textTransform: 'uppercase',
+        textDecoration: ['line-through'],
       },
-      id: '35785635-b439-44f5-bd98-91a61072bca5',
-      originId: 'db3d7df8-f45e-4214-bf68-0e215251218d',
-      name: 'multi-byte Representative Credit Card Account',
-      repository: {
-        id: '3009239e-4803-4a65-94fb-259ab92023fa',
-        name: 'Auto Loan Account Customer Designer',
+      meta: {
+        source: 'localStyles',
       },
+      type: 'textStyle',
+      originId: '1350:3',
+      sourceId: 'aa70d3c9-6223-48a1-a490-9bdd9c5f0a03',
+      repositoryId: '598c9ee3-1427-4a82-b81b-6fb46d17dff9',
     },
     {
       type: 'vector',
