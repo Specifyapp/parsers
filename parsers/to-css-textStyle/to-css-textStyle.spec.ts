@@ -88,6 +88,7 @@ describe('to-css-text-style', () => {
         cssClassFormat: 'camelCase',
         fontFamilyFormat: 'kebabCase',
         genericFamily: 'serif',
+        relativeLineHeight: true,
       },
       libs,
     );
@@ -98,7 +99,7 @@ describe('to-css-text-style', () => {
           '  color: #c4c4c4;\n' +
           '  font-family: allan, serif;\n' +
           '  font-size: 16px;\n' +
-          '  line-height: 16px;\n' +
+          '  line-height: 1;\n' +
           '  text-align: left;\n' +
           '  vertical-align: top;\n' +
           '}',
@@ -110,7 +111,7 @@ describe('to-css-text-style', () => {
           '  color: #c4c4c4;\n' +
           '  font-family: fira-code, serif;\n' +
           '  font-size: 12px;\n' +
-          '  line-height: 14.0625px;\n' +
+          '  line-height: 1.17;\n' +
           '  text-align: left;\n' +
           '  vertical-align: top;\n' +
           '}',

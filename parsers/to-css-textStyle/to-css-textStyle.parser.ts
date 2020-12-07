@@ -13,6 +13,7 @@ import tinycolor from 'tinycolor2';
 import prettier from 'prettier/standalone';
 import parserCss from 'prettier/parser-postcss';
 import _ from 'lodash';
+import convertMeasurement from '../../libs/size-manipulation';
 const propertiesBase: Array<FilterList> = [
   'color',
   'font',
@@ -66,6 +67,7 @@ export type OptionsType = Partial<
     cssClassFormat?: transformFn;
     fontFamilyFormat?: transformFn;
     genericFamily?: 'serif' | 'sans-serif' | 'cursive' | 'fantasy' | 'monospace';
+    relativeLineHeight?: boolean;
     prettierConfig?: Partial<{
       endOfLine: 'auto' | 'lf' | 'crlf' | 'cr';
       tabWidth: number;
@@ -137,10 +139,19 @@ class ToCssTextStyle {
       }
     },
     lineHeight: () => {
-      if (this.isIncluded('line-height')) {
-        this.cssContent.push(
-          `line-height: ${this.lineHeight?.measure}${this.lineHeight?.unit || ''}`,
-        );
+      if (this.isIncluded('line-height') && this.lineHeight) {
+        let lineHeight;
+        if (this.options?.relativeLineHeight) {
+          lineHeight =
+            Math.round(
+              (convertMeasurement(this.lineHeight, 'px').measure /
+                convertMeasurement(this.fontSize!, 'px').measure) *
+                100,
+            ) / 100;
+        } else {
+          lineHeight = `${this.lineHeight?.measure}${this.lineHeight?.unit || ''}`;
+        }
+        this.cssContent.push(`line-height: ${lineHeight}`);
       }
     },
 
