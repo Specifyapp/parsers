@@ -6,7 +6,7 @@ import libs, { LibsType } from '../global-libs';
 describe('Optimize vector', () => {
   it('Get tokens - apply parsers', async done => {
     const tokens = seeds().tokens.filter(
-      ({ repository }) => repository.name === 'Repo with vector from sketch figma and feather',
+      ({ repository }) => repository?.name === 'Repo with vector from sketch figma and feather',
     );
     const result = await optimizeVector(tokens as InputDataType, undefined, libs as LibsType);
     if (result instanceof Error) return done.fail(result);
@@ -29,7 +29,7 @@ describe('Optimize vector', () => {
   });
   it('Get tokens - apply parsers - with config', async done => {
     const tokens = seeds().tokens.filter(
-      ({ repository }) => repository.name === 'Repo with vector from sketch figma and feather',
+      ({ repository }) => repository?.name === 'Repo with vector from sketch figma and feather',
     ) as Array<VectorToken>;
     const result = await optimizeVector(
       tokens as InputDataType,

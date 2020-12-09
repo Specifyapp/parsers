@@ -6,7 +6,7 @@ import _ from 'lodash';
 export type InputDataType = Array<Record<string, unknown>>;
 export type OutputDataType = InputDataType;
 export type OptionsType = {
-  baseFontSize?: number;
+  basePixelValue?: number;
   keys: Array<string>;
 };
 
@@ -26,7 +26,7 @@ export default async function (
       if (!ref) return;
       let measurement = _.get(input, ref) as MeasurementValue;
       if (measurement && 'unit' in measurement && measurement.unit === 'px') {
-        _.set(input, ref, convertMeasurement(measurement, 'rem', options.baseFontSize));
+        _.set(input, ref, convertMeasurement(measurement, 'rem', options.basePixelValue));
       }
     });
   });

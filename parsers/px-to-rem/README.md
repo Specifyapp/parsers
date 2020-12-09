@@ -9,7 +9,7 @@ Convert pixel measurement to rem.
 interface parser {
   "name": "px-to-rem",
   "options": {
-    "baseFontSize"?: number;
+    "basePixelValue"?: number;
     "keys": Array<string>
   }
 }
@@ -18,7 +18,7 @@ interface parser {
 ### Options
 | parameter | Require    | type      | default    | description                                       |
 | --------- | ---------- | --------- | ---------- | ------------------------------------------------- |
-| `baseFontSize`    | optional   | `number`   | 16 | Font size of the root element  |
+| `basePixelValue`    | optional   | `number`   | 16 | Base size of the root element  |
 | `keys`    | required   | `Array<string>`   |  | List of key path to apply the convertion  |
 
 ## Usage example

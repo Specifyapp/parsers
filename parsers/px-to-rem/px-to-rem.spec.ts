@@ -36,11 +36,11 @@ describe('px-to-rem', () => {
     });
     done();
   });
-  it('Get tokens - execute parser - with baseFontSize', async done => {
+  it('Get tokens - execute parser - with basePixelValue', async done => {
     const inputData = (seeds().tokens.filter(
       ({ type }) => type === 'textStyle',
     ) as unknown) as InputDataType;
-    const result = await pxToRem(inputData, { keys: ['fontSize.value'], baseFontSize: 20 }, libs);
+    const result = await pxToRem(inputData, { keys: ['fontSize.value'], basePixelValue: 20 }, libs);
     if (result instanceof Error) return done.fail(result);
     result.forEach((textStyle, index) => {
       const unit = (textStyle.value as TextStyleValue).fontSize.value.unit;
