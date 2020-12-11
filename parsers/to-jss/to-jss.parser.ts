@@ -4,7 +4,7 @@ import * as TokensClass from './tokens';
 import { LibsType } from '../global-libs';
 
 export type InputDataType = Array<Pick<Token, 'name' | 'value' | 'type'>>;
-export type OutputDataType = Promise<string>;
+export type OutputDataType = string;
 export type ColorsFormat =
   | 'rgb'
   | 'prgb'
@@ -58,7 +58,7 @@ export default async function (
   tokens: InputDataType,
   options: OptionsType,
   { _ }: Pick<LibsType, '_'>,
-): OutputDataType {
+): Promise<OutputDataType> {
   try {
     const transformNameFn = _[options?.formatName || 'camelCase'];
     const objectName = options?.formatConfig?.jssObjectName || 'theme';

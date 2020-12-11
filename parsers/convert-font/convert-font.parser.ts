@@ -11,9 +11,9 @@ export type InputDataType = Array<{
   };
   [Key: string]: any;
 }>;
-export type OutputDataType = Promise<
-  Array<InputDataType[0] & { value: InputDataType[0]['value'] & { url: string } }> | Error
->;
+export type OutputDataType =
+  | Array<InputDataType[0] & { value: InputDataType[0]['value'] & { url: string } }>
+  | Error;
 export type OptionsType = {
   formats?: Array<'woff2' | 'woff' | 'otf' | 'ttf' | 'eot'>;
   fileNameKey?: 'name' | 'fontFamily' | Array<string>;
@@ -24,7 +24,7 @@ export default async function (
   designTokens: InputDataType,
   options: OptionsType | undefined,
   { _, SpServices }: LibsType,
-): OutputDataType {
+): Promise<OutputDataType> {
   try {
     const formats = options?.formats || ['woff2', 'woff', 'otf', 'ttf', 'eot'];
 

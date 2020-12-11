@@ -1,7 +1,7 @@
 import Token, { TokenInterface } from './Token';
 import { ColorValue } from './Color';
 import { MeasurementValue } from './Measurement';
-import { FontValue } from './Font';
+import { FontToken, FontValue } from './Font';
 
 export type TextTransformValue =
   | 'none'
@@ -71,9 +71,11 @@ export interface TextStyleValue {
   color?: {
     value: ColorValue;
   };
-  font: {
-    value: FontValue;
-  };
+  font:
+    | FontToken
+    | {
+        value: FontValue;
+      };
   fontSize: {
     value: MeasurementValue;
   };

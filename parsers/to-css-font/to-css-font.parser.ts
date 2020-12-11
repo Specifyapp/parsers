@@ -4,7 +4,7 @@ import os from 'os';
 import parserCss from 'prettier/parser-postcss';
 import * as _ from 'lodash';
 export type InputDataType = Array<{ name: string; [Key: string]: any }>;
-export type OutputDataType = Promise<string | Error>;
+export type OutputDataType = string;
 export type OptionsType = {
   formats?: Array<'woff2' | 'woff' | 'otf' | 'ttf' | 'eot'>;
   fontsPath?: string;
@@ -85,7 +85,10 @@ class ToCssFont {
   }
 }
 
-export default async function (tokens: InputDataType, options?: OptionsType): OutputDataType {
+export default async function (
+  tokens: InputDataType,
+  options?: OptionsType,
+): Promise<OutputDataType | Error> {
   try {
     const toCssFont = new ToCssFont(tokens, options);
     return prettier.format(toCssFont.run(), {

@@ -1,7 +1,7 @@
 import { LibsType } from '../global-libs';
 
 export type InputDataType = Record<string, any>;
-export type OutputDataType = Promise<InputDataType>;
+export type OutputDataType = InputDataType;
 export type OptionsType =
   | undefined
   | {
@@ -12,6 +12,6 @@ export default async function (
   tokens: InputDataType,
   options: OptionsType = { keys: ['name'] },
   { _ }: Pick<LibsType, '_'>,
-): OutputDataType {
+): Promise<OutputDataType> {
   return _.sortBy(tokens, options.keys);
 }

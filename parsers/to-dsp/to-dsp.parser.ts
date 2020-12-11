@@ -6,7 +6,7 @@ import { DspEntity, DspJson, DspParserSettings } from './dsp.type';
 export type InputDataType = Array<
   Pick<Token, 'name' | 'value' | 'type' | 'id'> & Record<string, any>
 >;
-export type OutputDataType = Promise<Array<DownloadableFile>>;
+export type OutputDataType = Array<DownloadableFile>;
 
 export type OptionsType =
   | Partial<{
@@ -18,7 +18,7 @@ export type OptionsType =
 export async function createAssetsFiles(
   tokens: InputDataType,
   SpServices: LibsType['SpServices'],
-): OutputDataType {
+): Promise<OutputDataType> {
   const assetsTypes = ['vector', 'bitmap'];
 
   const filteredTokens = tokens.filter(token => assetsTypes.includes(token.type));
@@ -44,7 +44,7 @@ export default async function (
   tokens: InputDataType,
   options: OptionsType,
   { SpServices }: Pick<LibsType, 'SpServices'>,
-): OutputDataType {
+): Promise<OutputDataType> {
   const sharedHeaders = {
     dsp_spec_version: '0.5.0',
     last_updated_by: 'Specify',
