@@ -2,7 +2,7 @@ import { LibsType } from '../global-libs';
 import { extname } from 'path';
 
 export type InputDataType = Array<Record<string, any>>;
-export type OutputDataType = Promise<InputDataType>;
+export type OutputDataType = InputDataType;
 export type OptionsType =
   | undefined
   | {
@@ -14,7 +14,7 @@ export default async function (
   tokens: InputDataType,
   options: OptionsType = { keys: ['name'] },
   { _ }: Pick<LibsType, '_'>,
-): OutputDataType {
+): Promise<OutputDataType> {
   return tokens.map(token => {
     options.keys.forEach(key => {
       if (_.has(token, key)) {
