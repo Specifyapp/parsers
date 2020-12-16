@@ -1,8 +1,10 @@
-# TO CSS CUSTOM PROPERTIES
+# To CSS Custom Properties
 
 ## Description
 
 Transform design tokens in CSS Custom Properties.
+
+Learn more about how to configure Specify in the API documentation: [https://specifyapp.com/developers/cli](https://specifyapp.com/developers/cli)
 
 ## Interface
 
@@ -23,26 +25,19 @@ interface x {
   }>;
 }
 ```
-
-## Options example
-
-```json
-{
-  "name": "to-css-custom-properties",
-  "options": {
-    "formatName": "kebabCase",
-    "formatTokens": {
-      "color": "hsl"
-    },
-    "formatConfig": {
-      "selector": "body[data-theme=\"light\"]",
-      "tabWidth": 4
-    }
-  }
-}
-```
+### Options
+| Parameter                | Required  | Type                                                     | Default    | Description                                                                    |
+| ------------------------ | --------- | -------------------------------------------------------- | ---------- | ------------------------------------------------------------------------------ |
+| `formatName`             | optional     | `camelCase, kebabCase, snakeCase`                        | `kebabCase` | The case transformation you want to apply to your design token name            |
+| `formatTokens.color`     | optional     | `rgb, prgb, hex, hex6, hex3, hex4, hex8, name, hsl, hsv` | `rgb`           | The color format you want to apply to your potential color design token        |
+| `formatConfig.selector`  | optional     | `string`                                                 | `:root` | The CSS selector containing your CSS custom properties                         |
+| `formatConfig.endOfLine` | optional     | `auto, lf, crlf, cr`                                     | `auto`           | [Prettier documentation](https://prettier.io/docs/en/options.html#end-of-line) |
+| `formatConfig.tabWidth`  | optional     | `number`                                                 | `2`           | [Prettier documentation](https://prettier.io/docs/en/options.html#tab-width)   |
+| `formatConfig.useTabs`   | optional     | `boolean`                                                | `false`           | [Prettier documentation](https://prettier.io/docs/en/options.html#tabs)        |
 
 ## Types
+
+ℹ️ **Please be aware that, depending on the order you use parsers, their input and output types have to match.**
 
 ### Input
 
@@ -60,26 +55,8 @@ String formated in css
 string;
 ```
 
-## Before / After
-
-### Before
-
-```json
-[
-  {
-    "type": "color",
-    "value": {
-      "a": 0.96,
-      "b": 20,
-      "g": 227,
-      "r": 122
-    },
-    "name": "Primary color"
-  }
-]
-```
-
-### Options used on parser
+## Usage
+### Config
 
 ```json
 {
@@ -96,8 +73,25 @@ string;
   }
 }
 ```
+### Before/After
 
-### Result
+#### Input
+
+```json
+[
+  {
+    "type": "color",
+    "value": {
+      "a": 0.96,
+      "b": 20,
+      "g": 227,
+      "r": 122
+    },
+    "name": "Primary color"
+  }
+]
+```
+#### Output
 
 ```css
 body[data-theme='light'] {

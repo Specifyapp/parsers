@@ -1,5 +1,5 @@
 import seeds from '../../seeds';
-import optimizeVector, { InputDataType } from './optimize-vector.parser';
+import optimizeVector, { InputDataType } from './svgo.parser';
 import { DownloadableFile, VectorToken } from '../../types';
 import libs, { LibsType } from '../global-libs';
 

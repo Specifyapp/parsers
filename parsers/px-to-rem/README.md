@@ -1,7 +1,9 @@
-# PX TO REM
+# PX to REM
 ## Description
 
 Convert pixel measurement to rem.
+
+Learn more about how to configure Specify in the API documentation: [https://specifyapp.com/developers/cli](https://specifyapp.com/developers/cli)
 
 ## Interface
 
@@ -16,51 +18,71 @@ interface parser {
 ```
 
 ### Options
-| parameter | Require    | type      | default    | description                                       |
-| --------- | ---------- | --------- | ---------- | ------------------------------------------------- |
-| `basePixelValue`    | optional   | `number`   | 16 | Base size of the root element  |
-| `keys`    | required   | `Array<string>`   |  | List of key path to apply the convertion  |
+| Parameter        | Required | Type            | Default  | Description                              |
+| ---------------- | -------- | --------------- | -------- | ---------------------------------------- |
+| `basePixelValue` | optional    | `number`        | 16       | Base font size of your HTML document     |
+| `keys`           | true     | `Array<string>` |          | List of key path to apply the convertion |
 
-## Usage example
-
-```json
-{
-    "name": "px-to-rem",
-    "options": {
-      "keys": ["fontSize"]
-    }
-}
-```
-### Result example
-
-```json
-[
-  {
-    "value": {
-      "fontSize": {
-        "measure": 1.3,
-        "unit": "rem"
-      },
-      ...
-    },
-    ...
-  }
-  ...
-]
-```
 ## Types
+
+ℹ️ **Please be aware that, depending on the order you use parsers, their input and output types have to match.**
 
 Array of object with at least the keys describe in the keys option. 
 Values must match the type [MeasurementValue](https://github.com/Specifyapp/parsers/blob/master/types/tokens/Measurement.ts#L3)
 
-### input
+### Input
 __
 
 ```ts
  Array<Record<string, unknown>>
 ```
 
-### output
+### Output
+
 ```ts
 Array<Record<string, unknown>>
+```
+
+## Usage
+### Config
+```json
+{
+  "name": "px-to-rem",
+  "options": {
+    "keys": ["fontSize"]
+  }
+}
+...
+```
+
+### Before/After
+
+#### Input
+```json
+{
+  ...
+  "fontSize": {
+    "value": {
+      "unit": "px",
+      "measure": 14
+    }
+  },
+  ...
+}
+```
+#### Output
+
+```json
+[
+  {
+    ...
+    "value": {
+      "fontSize": {
+        "measure": 0.875,
+        "unit": "rem"
+      },
+    },
+    ...
+  }
+]
 ```

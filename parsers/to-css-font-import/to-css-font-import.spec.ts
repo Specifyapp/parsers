@@ -1,8 +1,8 @@
 import seeds from '../../seeds';
-import toCssFont from './to-css-font.parser';
+import toCssFont from './to-css-font-import.parser';
 import { Token } from '../../types';
 
-describe('to-css-font', () => {
+describe('to-css-font-import', () => {
   it('Get tokens - apply parsers', async done => {
     const result = await toCssFont(
       seeds().tokens.filter(({ type }) => type === 'font') as Array<Token>,
@@ -12,12 +12,13 @@ describe('to-css-font', () => {
       result.includes(
         `@font-face {
   font-family: "Frozen withdrawal Gorgeous";
-  src: url("Frozen withdrawal Gorgeous.eot");
   src: url("Frozen withdrawal Gorgeous.woff2") format("woff2"),
     url("Frozen withdrawal Gorgeous.woff") format("woff"),
     url("Frozen withdrawal Gorgeous.otf") format("truetype"),
     url("Frozen withdrawal Gorgeous.ttf") format("truetype");
+  src: url("Frozen withdrawal Gorgeous.eot");
   font-weight: 700;
+  font-display: swap;
 }`,
       ),
     ).toBeTruthy();
@@ -43,6 +44,7 @@ describe('to-css-font', () => {
       format("woff2"),
     url("../../assets/Credit Card Account Open-architected solid state.woff")
       format("woff");
+  font-display: swap;
 }`,
       ),
     ).toBeTruthy();
