@@ -1,8 +1,10 @@
-# CAMELCASIFY
+# Camelcasify
 
 ## Description
 
 Loop on all tokens and apply camelcase function on the given keys.
+
+Learn more about how to configure Specify in the API documentation: [https://specifyapp.com/developers/cli](https://specifyapp.com/developers/cli)
 
 ## Interface
 
@@ -18,12 +20,30 @@ interface parser {
 
 ### Options
 
-| parameter              | Require    | type      | default    | description                                                                                                                |
+| Parameter              | Required   | Type      | Default    | Description                                                                                                                |
 | ---------------------- | ---------- | --------- | ---------- | -------------------------------------------------------------------------------------------------------------------------- |
-| `keys`                 | optional   | `Array`   | `["name"]` | the list of keys where the function will be applied                                                                        |
-| `excludeFileExtension` | optional   | `Boolean` | `false`    | the fact that the function will only be applied on a filename. Useful for transforming strings containing a file extension |
+| `keys`                 | optional   | `Array`   | `["name"]` | The list of keys where the function will be applied                                                                        |
+| `excludeFileExtension` | optional   | `Boolean` | `false`    | The fact that the function will only be applied on a filename. Useful for transforming strings containing a file extension |
 
-## Example 
+## Types
+
+ℹ️ **Please be aware that, depending on the order you use parsers, their input and output types have to match.**
+### Input
+
+Array of object with the keys to apply `camelcase` function
+
+```ts
+Array<{[key: string]: any}>
+```
+
+### Output
+
+```ts
+Array<{[key: string]: any}>
+```
+
+## Usage
+### Config
 
 ```json
 {
@@ -32,19 +52,39 @@ interface parser {
       "keys": ["name"]
     }
 }
+...
 ```
+### Before/After
 
-## Types
+#### Input
 
-### input
-
-Array of object with the keys to apply camelcase function
-
-```ts
-Array<{[key: string]: any}>
+```json
+[
+  {
+    "type": "color",
+    "value": {
+      "a": 0.96,
+      "b": 20,
+      "g": 227,
+      "r": 122
+    },
+    "name": "Brand / Primary Color"
+  }
+]
 ```
+#### Output
 
-### output
-```ts
-Array<{[key: string]: any}>
+```json
+[
+  {
+    "type": "color",
+    "value": {
+      "a": 0.96,
+      "b": 20,
+      "g": 227,
+      "r": 122
+    },
+    "name": "brandPrimaryColor"
+  }
+]
 ```

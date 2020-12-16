@@ -1,9 +1,10 @@
-# PASCALCASIFY
+# Pascalcasify
 
 ## Description
 
 Loop on all tokens and apply pascalcase function on the given keys.
 
+Learn more about how to configure Specify in the API documentation: [https://specifyapp.com/developers/cli](https://specifyapp.com/developers/cli)
 ## Interface
 
 ```ts
@@ -18,35 +19,64 @@ interface x {
 
 ### Options
 
-| parameter              | Require    | type      | default    | description                                                                                                                |
+| Parameter              | Required   | Type      | Default    | Description                                                                                                                |
 | ---------------------- | ---------- | --------- | ---------- | -------------------------------------------------------------------------------------------------------------------------- |
-| `keys`                 | optional   | `Array`   | `["name"]` | the list of keys where the function will be applied                                                                        |
-| `excludeFileExtension` | optional   | `Boolean` | `false`    | the fact that the function will only be applied on a filename. Useful for transforming strings containing a file extension |
-
-## Example 
-
-```json
-{
-    "name": "pascalcasify",
-    "options": {
-      "keys": ["name"]
-    }
-}
-```
+| `keys`                 | optional   | `Array`   | `["name"]` | The list of keys where the function will be applied                                                                        |
+| `excludeFileExtension` | optional   | `Boolean` | `false`    | The fact that the function will only be applied on a filename. Useful for transforming strings containing a file extension |
 
 ## Types
 
-### input
+ℹ️ **Please be aware that, depending on the order you use parsers, their input and output types have to match.**
 
-Array of object with the keys to apply pascalcase function
+### Input
 
+Array of object with the keys to apply `pascalcase` function
 ```ts
 Array<{[key: string]: any}>
 ```
 
-### output
+### Output
 
-
-```
+```ts
 Array<{[key: string]: any}>
+```
+## Usage
+### Config
+
+```json
+{
+  "name": "pascalcasify",
+  "options": {
+    "keys": ["name"]
+  }
+}
+...
+```
+### Before/After
+
+#### Input
+
+```json
+[
+  {
+    "type": "color",
+    "value": {
+      "a": 0.96,
+      "b": 20,
+      "g": 227,
+      "r": 122
+    },
+    "name": "Brand / Primary Color"
+  }
+]
+```
+#### Output
+
+```json
+[
+  {
+    "type": "color",
+    "name": "BrandPrimaryColor"
+  }
+]
 ```

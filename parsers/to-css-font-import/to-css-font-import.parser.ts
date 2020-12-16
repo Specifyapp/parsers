@@ -10,6 +10,7 @@ export type OptionsType = {
   fontsPath?: string;
   fontFamilyTransform?: 'camelCase' | 'kebabCase' | 'snakeCase';
   includeFontWeight?: boolean;
+  fontDisplay?: 'auto' | 'block' | 'swap' | 'fallback' | 'optional';
   genericFamily?: 'serif' | 'sans-serif' | 'cursive' | 'fantasy' | 'monospace';
 };
 
@@ -27,12 +28,14 @@ class ToCssFont {
   fontsPath: NonNullable<OptionsType['fontsPath']>;
   fontFamilyTransformFn: Function | undefined;
   includeFontWeight: OptionsType['includeFontWeight'];
+  fontDisplay: NonNullable<OptionsType['fontDisplay']>;
   genericFamily: OptionsType['genericFamily'];
 
   constructor(tokens: InputDataType, options: OptionsType | undefined) {
     this.tokens = tokens;
     this.formats = options?.formats || ['woff2', 'woff', 'otf', 'ttf', 'eot'];
     this.fontsPath = options?.fontsPath || '';
+    this.fontDisplay = options?.fontDisplay || 'swap';
     this.genericFamily = options?.genericFamily;
     this.includeFontWeight =
       typeof options?.includeFontWeight !== 'boolean' ? true : options.includeFontWeight;
@@ -43,9 +46,10 @@ class ToCssFont {
     return this.tokens
       .map(tokenFont => {
         let entry = this.appendFontFamily(tokenFont);
-        if (this.formats?.includes('eot')) entry = this.appendEotFormat(entry, tokenFont);
         entry = this.appendFormats(entry, tokenFont);
+        if (this.formats?.includes('eot')) entry = this.appendEotFormat(entry, tokenFont);
         if (this.includeFontWeight) entry = this.appendFontWeight(entry, tokenFont);
+        entry = this.setFontDisplay(entry, this.fontDisplay);
         return this.wrapInFontFace(entry);
       })
       .join(os.EOL + os.EOL);
@@ -76,8 +80,11 @@ class ToCssFont {
   }
 
   appendFontWeight(entry: string, token: InputDataType[0]) {
-    if (token.value?.fontWeight) entry += `font-weight: ${token.value.fontWeight};`;
-    return entry;
+    return token.value?.fontWeight ? `${entry}font-weight: ${token.value.fontWeight};` : entry;
+  }
+
+  setFontDisplay(entry: string, fontDisplay: OptionsType['fontDisplay']) {
+    return `${entry}font-display: ${fontDisplay};`;
   }
 
   wrapInFontFace(entry: string) {

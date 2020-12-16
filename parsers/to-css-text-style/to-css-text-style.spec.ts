@@ -1,10 +1,11 @@
 import seeds from '../../seeds';
-import { default as toScssMixinTextStyle, InputDataType } from './to-scss-mixin-textStyle.parser';
-import libs from '../global-libs';
+import { default as toCssTextStyle, InputDataType } from './to-css-text-style.parser';
+import libs, { LibsType } from '../global-libs';
+import { TextStyleValue } from '../../types';
 
 describe('to-css-text-style', () => {
   it('Get tokens - execute parser', async done => {
-    const result = await toScssMixinTextStyle(
+    const result = await toCssTextStyle(
       (seeds().tokens.filter(({ type }) => type === 'textStyle') as unknown) as InputDataType,
       undefined,
       libs,
@@ -13,7 +14,7 @@ describe('to-css-text-style', () => {
     expect(typeof result).toEqual('string');
     expect(
       result.includes(
-        '@mixin ts-with-allan-again {\n' +
+        '.ts-with-allan-again {\n' +
           '  color: rgb(196, 196, 196);\n' +
           '  font-family: Allan;\n' +
           '  font-size: 12px;\n' +
@@ -32,7 +33,7 @@ describe('to-css-text-style', () => {
     const input = (seeds().tokens.filter(
       ({ type }) => type === 'textStyle',
     ) as unknown) as InputDataType;
-    const result = await toScssMixinTextStyle(
+    const result = await toCssTextStyle(
       input,
       {
         include: ['font-family'],
@@ -47,7 +48,7 @@ describe('to-css-text-style', () => {
     const input = (seeds().tokens.filter(
       ({ type }) => type === 'textStyle',
     ) as unknown) as InputDataType;
-    const result = await toScssMixinTextStyle(
+    const result = await toCssTextStyle(
       input,
       {
         include: ['font'],
@@ -62,7 +63,7 @@ describe('to-css-text-style', () => {
     const input = (seeds().tokens.filter(
       ({ type }) => type === 'textStyle',
     ) as unknown) as InputDataType;
-    const result = await toScssMixinTextStyle(
+    const result = await toCssTextStyle(
       input,
       {
         exclude: ['color'],
@@ -78,7 +79,7 @@ describe('to-css-text-style', () => {
     const input = (seeds().tokens.filter(
       ({ type }) => type === 'textStyle',
     ) as unknown) as InputDataType;
-    const result = await toScssMixinTextStyle(
+    const result = await toCssTextStyle(
       input,
       {
         prefix: 'utils-',
@@ -94,7 +95,7 @@ describe('to-css-text-style', () => {
     if (result instanceof Error) return done.fail(result);
     expect(
       result.includes(
-        '@mixin utilsLocalTextStylesTextStyle {\n' +
+        '.utilsLocalTextStylesTextStyle {\n' +
           '  color: #c4c4c4;\n' +
           '  font-family: allan, serif;\n' +
           '  font-size: 16px;\n' +
@@ -106,7 +107,7 @@ describe('to-css-text-style', () => {
     ).toBeTruthy();
     expect(
       result.includes(
-        '@mixin utilsFontMissingTextStyle {\n' +
+        '.utilsFontMissingTextStyle {\n' +
           '  color: #c4c4c4;\n' +
           '  font-family: fira-code, serif;\n' +
           '  font-size: 12px;\n' +

@@ -1,4 +1,4 @@
-# TO JSS
+# To JSS
 
 ## Description
 
@@ -23,7 +23,7 @@ primaryBorder: {
 ```
 
 ### Optionnal format for font
-by passing `"classObject"` to `textStyleFormat` the parser will generate a jss class object containing the `color` property (which isn't a `font` sub-property value).
+By passing `"classObject"` to `textStyleFormat` the parser will generate a jss class object containing the `color` property (which isn't a `font` sub-property value).
 
 ## Interface
 ```ts
@@ -54,75 +54,9 @@ interface x {
   }>
 }
 ```
-
-## Config example
-```json
-{
-  "name": "to-jss",
-  "options": {
-    "formatName": "camelCase",
-    "formatTokens":{
-      "colorFormat": "hex8",
-      "borderFormat": "array",
-      "textStyleFormat": "classObject",
-      "fontSizeUnit":  "px"
-    },
-    "formatConfig": {
-      "jssObjectName": "lightTheme",
-      "exportDefault": false,
-      "tabWidth": 4,
-      "singleQuote": true,
-    }
-  }
-}
-```
-
-### Result example (with default config)
-
-```js
-const lightTheme = {
-  color: {
-    heuristicCrossPlatformQuantify: "rgba(51, 15, 99, 0.6)",
-  },
-  bitmap: {
-    openSystemMarketsHardDrive: "https://specifyapp.com/_nuxt/img/881a6b6.webp",
-  },
-  border: {
-    invoiceSystemWorthyPayment: "7px solid rgba(199, 48, 37, 0.93)",
-  },
-  duration: {
-    digitalSasAvon: "805ms",
-  },
-  font: {
-    frozenWithdrawalGorgeous: "Allan-Bold",
-  },
-  gradient: {
-    concreteNextGenerationPalladium: "linear-gradient(212deg, rgba(186, 149, 255, 0.34) 0%), rgba(229, 120, 89, 0.79) 13%), linear-gradient(6deg, rgba(198, 251, 160, 0.54) 70%), rgba(2, 82, 41, 0.33) 80%), linear-gradient(256deg, rgba(95, 26, 90, 0.9) 38%), rgba(24, 64, 49, 0.6) 55%), linear-gradient(320deg, rgba(54, 214, 6, 0.72) 6%), rgba(47, 5, 13, 0.45) 74%), linear-gradient(79deg, rgba(238, 133, 11, 0.24) 100%), rgba(139, 117, 228, 0.63) 48%)",
-  },
-  measurement: {
-    paangaCalculatePlum: "73px",
-  },
-  opacity: {
-    keyboardForkLoaf: "0.13",
-  },
-  shadow: {
-    carErgonomicLicensedCottonPants: "37px 71px 2px rgba(144, 63, 6, 0.28)",
-  },
-  textStyle: {
-    kidsIowaErgonomic: "Allan-Bold 5pt rgba(86, 225, 86, 0.52)",
-  },
-  vector: {
-    handcraftedRubberComputerSkyBlueBandwidth: "https://raw.githubusercontent.com/feathericons/feather/master/icons/alert-circle.svg",
-  },
-  depth: {
-    towelsUniformTasty: "8",
-  }
-};
-
-export default lightTheme;
-```
-
 ## Types
+
+ℹ️ **Please be aware that, depending on the order you use parsers, their input and output types have to match.**
 
 ### Input
 
@@ -138,4 +72,125 @@ String formated in jss
 
 ```ts
 string
+```
+
+## Usage
+### Config
+
+```json
+{
+  "name": "to-jss",
+  "options": {
+    "formatName": "camelCase",
+    "formatTokens":{
+      "colorFormat": "hex8",
+      "textStyleFormat": "classObject",
+      "fontSizeUnit":  "px"
+    },
+    "formatConfig": {
+      "jssObjectName": "lightTheme",
+      "exportDefault": false,
+      "tabWidth": 4,
+      "singleQuote": true
+    }
+  }
+}
+...
+```
+
+### Before/After
+#### Input
+
+```js
+[{
+		"name": "activity.svg",
+		"value": {
+			"url": "https://s3-us-west-2.amazonaws.com/figma-alpha-api/img/a114/ce5c/947dcb83ea93c2da18ee2ea16f470a30"
+		},
+		"type": "vector",
+	},
+	{
+		"name": "Body",
+		"value": {
+			"font": {
+				"meta": {
+					"source": "localStyles"
+				},
+				"name": "Inter-Medium",
+				"type": "font",
+				"value": {
+					"isItalic": false,
+					"fontFamily": "Inter",
+					"fontWeight": 500,
+					"fontPostScriptName": "Inter-Medium"
+				},
+			},
+			"color": {
+				"value": {
+					"a": 1,
+					"b": 196,
+					"g": 196,
+					"r": 196
+				}
+			},
+			"fontSize": {
+				"value": {
+					"unit": "px",
+					"measure": 14
+				}
+			},
+			"textAlign": {
+				"vertical": "top",
+				"horizontal": "left"
+			},
+			"lineHeight": {
+				"value": {
+					"unit": "px",
+					"measure": 20
+				}
+			}
+		},
+		"type": "textStyle",
+	},
+	{
+		"name": "Colors / Accent",
+		"value": {
+			"a": 1,
+			"b": 239,
+			"g": 80,
+			"r": 102
+		},
+		"type": "color",
+	},
+]
+```
+#### Output
+```js
+const lightTheme = {
+  vector: {
+    activitySvg:
+        'https://s3-us-west-2.amazonaws.com/figma-alpha-api/img/a114/ce5c/947dcb83ea93c2da18ee2ea16f470a30',
+    airplaySvg:
+        'https://s3-us-west-2.amazonaws.com/figma-alpha-api/img/5148/a0f1/0663fcd2f52eec2c5dde0777fa3c46bd',
+    alertCircleSvg:
+        'https://s3-us-west-2.amazonaws.com/figma-alpha-api/img/f60c/0138/26feed37c70d80aa0ad4645e46ab0991',
+    alertOctagonSvg:
+        'https://s3-us-west-2.amazonaws.com/figma-alpha-api/img/c4b2/4bfb/f0eae481bb0c109c90cd6dc53e0f0ea4',
+    alertTriangleSvg:
+        'https://s3-us-west-2.amazonaws.com/figma-alpha-api/img/6bd2/c758/aa455203b7511cd948d58cbe421754f9',
+    alignCenterSvg:
+        'https://s3-us-west-2.amazonaws.com/figma-alpha-api/img/6a6f/e126/49e0b9d2833cf674438551c2ab458538',
+  },
+  color: {
+    colorsAccent: '#6650efff',
+    colorsBlack: '#1e212bff',
+    colorsGreen: '#58cd52ff',
+    colorsGrey: '#ccd5e1ff',
+    colorsOrange: '#ff8e05ff',
+    colorsRed: '#f5483fff',
+    colorsWhite: '#ffffffff',
+  },
+};
+
+export default lightTheme;
 ```
