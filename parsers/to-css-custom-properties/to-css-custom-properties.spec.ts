@@ -5,7 +5,7 @@ import { ColorToken, ColorValue, Shadow, ShadowToken, Token, MeasurementToken } 
 
 describe('To css', () => {
   it('Get tokens - apply parsers', async done => {
-    const result = await toCss(seeds().tokens as Array<Token>, undefined, libs);
+    const result = await toCss(seeds().tokens, undefined, libs);
     expect(typeof result).toEqual('string');
     const color = seeds().tokens.find(token => token.type === 'color') as ColorToken;
     const measurement = seeds().tokens.find(

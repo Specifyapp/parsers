@@ -5,11 +5,12 @@ export type AllowedFormat = typeof FontFormatList[number];
 
 export interface FontValue {
   fontFamily: string;
-  url?: string;
   fontPostScriptName: string;
-  fontWeight: string | number;
+  fontWeight?: string | number;
   fontFileMissing?: boolean;
-  isItalic: boolean;
+  isItalic?: boolean;
+  provider?: 'Custom font' | 'Google Fonts';
+  url?: string;
 }
 
 export class FontToken extends Token implements TokenInterface {
