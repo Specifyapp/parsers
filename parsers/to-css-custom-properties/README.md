@@ -30,7 +30,7 @@ interface x {
 {
   "name": "to-css-custom-properties",
   "options": {
-    "formatName": "camelCase",
+    "formatName": "kebabCase",
     "formatTokens": {
       "color": "hsl"
     },
@@ -85,7 +85,7 @@ string;
 {
   "name": "to-css-custom-properties",
   "options": {
-    "formatName": "camelCase",
+    "formatName": "kebabCase",
     "formatTokens":{
       "color": "hsl"
     },
@@ -102,6 +102,6 @@ string;
 ```css
 body[data-theme='light'] {
   /* COLOR */
-  --primaryColor: hsla(90, 84%, 48%, 0.96);
+  --primary-color: hsla(90, 84%, 48%, 0.96);
 }
 ```
