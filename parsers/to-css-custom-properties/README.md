@@ -90,7 +90,7 @@ string;
       "color": "hsl"
     },
     "formatConfig": {
-      "selector": "body[data-theme=\"light\"]"
+      "selector": "body[data-theme=\"light\"]",
       "tabWidth": 4
     }
   }
