@@ -19,9 +19,9 @@ interface x {
 ```
 
 ### Options
-| Parameter | Required  | Type           | Default                                                      | Description                                      |
-| --------- | --------- | -------------- | ------------------------------------------------------------ | ------------------------------------------------ |
-| `svgo`    | optional  | `SVGO.Options` | [Default config](https://github.com/svg/svgo#what-it-can-do) | Inherit from [svgo](https://github.com/svg/svgo) |
+| Parameter | Required  | Type           | Default                                                      | Description                                       |
+| --------- | --------- | -------------- | ------------------------------------------------------------ | ------------------------------------------------- |
+| `svgo`    | optional  | `SVGO.Options` | [Default config](https://github.com/svg/svgo#what-it-can-do) | Inherits from [svgo](https://github.com/svg/svgo) |
 
 ## Types
 
