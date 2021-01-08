@@ -23,29 +23,33 @@ Parsers are ordered and takes specific input to generate specific output. This w
 
 By using parsers, you dictate the way you receive the data from Specify to fit your own needs.
 
-## Creating your own parser
+## How to create your own parser?
 
-1. Git clone this repo
-2. In the directory `parsers`, create a directory with your parser's name
-3. Create your valid parser
-4. Make a PR
+Let's say you want to create a parser named `my-parser`.
+
+1. Fork the current repository
+2. Git clone the forked repository
+3. In the directory `parsers`, create a directory named `my-parser`
+4. Create your valid parser
+5. Make a PR
 
 ### Creating a valid parser
 
-To be valid, a parser needs:
-- A `README.md` file which contains:
+To be valid, your parser needs:
+- A `README.md` file containing:
   - A description
-  - A typed interface with its params
-  - An example of use
-  - The typing of its inputs and outputs.
-- A [parser].spec.ts file containing your parser's unit tests
-- A [parser].parser.ts file
+  - A typed interface with its params ([See the camelcasify one](https://github.com/Specifyapp/parsers/tree/master/parsers/camelcasify#interface))
+  - A usage example ([See the camelcasify one](https://github.com/Specifyapp/parsers/tree/master/parsers/camelcasify#usage))
+  - The typing of its inputs and outputs ([See the camelcasify one](https://github.com/Specifyapp/parsers/tree/master/parsers/camelcasify#types))
+- A `my-parser.spec.ts` file containing your parser's unit tests
+- A `my-parser.parser.ts` file
 
-## Usables libraries
+## Usable libraries
 
 For now, our parsers only use the following libraries:
 - [tinycolor2](https://github.com/bgrins/TinyColor)
 - [lodash](https://github.com/lodash/lodash)
+- [svgo](https://github.com/svg/svgo/)
 
 If you need another library to develop your parser:
 1. Install it using `yarn` or `npm`
