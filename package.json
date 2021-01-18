@@ -21,6 +21,7 @@
   },
   "scripts": {
     "test": "jest --coverage --runInBand",
-    "deploy": "yarn test && yarn publish"
+    "deploy": "yarn test && yarn publish",
+    "create-parser": "sh ./create-parser.sh"
   }
 }
