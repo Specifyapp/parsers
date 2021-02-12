@@ -65,7 +65,8 @@ export type VerticalAlignValue =
   | 'text-bottom'
   | 'middle'
   | 'top'
-  | 'bottom';
+  | 'bottom'
+  | 'center';
 
 export interface TextStyleValue {
   color?: {
