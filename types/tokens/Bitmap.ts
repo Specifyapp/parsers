@@ -2,6 +2,9 @@ import Token, { TokenInterface } from './Token';
 
 export interface BitmapValue {
   url: string;
+  format?: string;
+  dimension?: string;
+  fileName?: string;
 }
 
 export class BitmapToken extends Token implements TokenInterface {

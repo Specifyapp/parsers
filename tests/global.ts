@@ -1,16 +1,12 @@
 import { AllowedFormat, FontToken, PartialRecord } from '../types';
-import _ from 'lodash';
-import tinycolor from 'tinycolor2';
 import seeds from '../seeds';
 import * as fs from 'fs';
-import SVGO from 'svgo';
 import path from 'path';
 
 jest.mock('../parsers/global-libs', () => {
+  const { default: globalLibs } = jest.requireActual('../parsers/global-libs');
   return {
-    _,
-    tinycolor,
-    SVGO,
+    ...globalLibs,
     SpServices: {
       font: {
         convert: async (payload: { postscriptName: string; formats: Array<AllowedFormat> }) => {
