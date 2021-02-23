@@ -161,6 +161,8 @@ export default () => ({
       type: 'bitmap',
       value: {
         url: 'https://specifyapp.com/_nuxt/img/881a6b6.webp',
+        format: 'webp',
+        dimension: '2x',
       },
       id: '154e3b4c-6eac-424b-a319-e8458661fef5',
       originId: '1e1dd74d-b674-4d25-b166-e61f2b2ad3f0',
@@ -174,6 +176,7 @@ export default () => ({
       type: 'bitmap',
       value: {
         url: 'https://specifyapp.com/_nuxt/img/881a6b6.webp',
+        format: 'webp',
       },
       id: '4723a405-2a99-4986-9b4f-307411560804',
       originId: '2d891093-dc6e-4fc4-99bd-85e09418395f',
@@ -187,6 +190,7 @@ export default () => ({
       type: 'bitmap',
       value: {
         url: 'https://specifyapp.com/_nuxt/img/881a6b6.webp',
+        format: 'webp',
       },
       id: '2654b6db-0063-47c3-9794-e8ffea848b78',
       originId: 'c986c0ec-c33e-4af8-8e67-517678dbc91a',
@@ -200,6 +204,7 @@ export default () => ({
       type: 'bitmap',
       value: {
         url: 'https://specifyapp.com/_nuxt/img/881a6b6.webp',
+        format: 'webp',
       },
       id: '4c0b7623-1467-4508-a200-554ea3dcaaa5',
       originId: '2a995859-205b-453e-9b21-ae733efdc381',
@@ -213,6 +218,7 @@ export default () => ({
       type: 'bitmap',
       value: {
         url: 'https://specifyapp.com/_nuxt/img/881a6b6.webp',
+        format: 'webp',
       },
       id: 'fdab0802-25ea-4054-b8b2-67efdc24277a',
       originId: '05f5e996-400d-40e8-b1be-77fc10be0362',
@@ -1951,10 +1957,11 @@ export default () => ({
       type: 'vector',
       value: {
         url: 'https://alert-circle.svg',
+        format: 'svg',
       },
       id: 'a30579d9-0a14-415e-9bae-8514d1465bd7',
       originId: '11ecf6a3-3fb5-4a9f-be40-e83877350e6a',
-      name: 'alert-circle.svg',
+      name: 'alert-circle',
       repository: {
         id: '14def5fb-e91c-4b25-ac28-22d14b93a1a5',
         name: 'Repo with vector from sketch figma and feather',
@@ -1964,10 +1971,11 @@ export default () => ({
       type: 'vector',
       value: {
         url: 'https://from-figma.svg',
+        format: 'svg',
       },
       id: 'de8351fa-7ef2-46e3-8645-553416b3ff48',
       originId: 'b179c3a1-b4da-4f7a-969b-dd90ba247a71',
-      name: 'from-figma.svg',
+      name: 'from-figma',
       repository: {
         id: '14def5fb-e91c-4b25-ac28-22d14b93a1a5',
         name: 'Repo with vector from sketch figma and feather',
@@ -1977,10 +1985,11 @@ export default () => ({
       type: 'vector',
       value: {
         url: 'https://from-sketch.svg',
+        format: 'svg',
       },
       id: 'e9b2fd31-aa7b-48fb-927c-60173a3280ff',
       originId: '72814fde-0930-4878-a866-a1c00bc1ca78',
-      name: 'from-sketch.svg',
+      name: 'from-sketch',
       repository: {
         id: '14def5fb-e91c-4b25-ac28-22d14b93a1a5',
         name: 'Repo with vector from sketch figma and feather',
@@ -1990,10 +1999,11 @@ export default () => ({
       type: 'vector',
       value: {
         url: 'https://raw.githubusercontent.com/feathericons/feather/master/icons/alert-circle.svg',
+        format: 'svg',
       },
       id: '46dca03e-1716-4dd7-ba4f-6331575fa85b',
       originId: 'ab963dfc-43e5-4d74-be76-130159de58d4',
-      name: 'alert-circle.svg',
+      name: 'alert-circle',
       repository: {
         id: '3009239e-4803-4a65-94fb-259ab92023fa',
         name: 'Auto Loan Account Customer Designer',
@@ -2004,10 +2014,11 @@ export default () => ({
       value: {
         url:
           'https://raw.githubusercontent.com/feathericons/feather/master/icons/alert-octagon.svg',
+        format: 'svg',
       },
       id: '7afa807a-293c-43a0-a7d9-3928da210675',
       originId: 'b201d900-659a-4a44-b1d6-91e6720e480a',
-      name: 'alert-octagon.svg',
+      name: 'alert-octagon',
       repository: {
         id: '3009239e-4803-4a65-94fb-259ab92023fa',
         name: 'Auto Loan Account Customer Designer',
@@ -2018,10 +2029,11 @@ export default () => ({
       value: {
         url:
           'https://raw.githubusercontent.com/feathericons/feather/master/icons/alert-triangle.svg',
+        format: 'svg',
       },
       id: 'cb5a0a3e-69cd-41d4-8d59-a20567871d7e',
       originId: '25036a23-e88b-4759-a3e7-fefa1b5ce66b',
-      name: 'alertTriangle.svg',
+      name: 'alertTriangle',
       repository: {
         id: '3009239e-4803-4a65-94fb-259ab92023fa',
         name: 'Auto Loan Account Customer Designer',
@@ -2031,6 +2043,7 @@ export default () => ({
       type: 'vector',
       value: {
         url: 'https://raw.githubusercontent.com/feathericons/feather/master/icons/alert-circle.svg',
+        format: 'svg',
       },
       id: '6ed3e291-dd96-44ad-9371-b0ccf5615bad',
       originId: 'cdfc0783-ed05-4480-8b0d-31a8322f9947',
@@ -2044,6 +2057,7 @@ export default () => ({
       type: 'vector',
       value: {
         url: 'https://raw.githubusercontent.com/feathericons/feather/master/icons/alert-circle.svg',
+        format: 'svg',
       },
       id: '0480a0ac-c3fe-435c-a864-ec2ac17a40d8',
       originId: '15f3311d-f16b-4696-a3d3-e8cacbdee2a8',

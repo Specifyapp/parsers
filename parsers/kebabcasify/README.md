@@ -13,7 +13,6 @@ interface parser {
   "name": "kebabcasify",
   "options"?: {
     "keys": Array<string>
-    "excludeFileExtension"?: boolean
   }
 }
 ```
@@ -23,7 +22,6 @@ interface parser {
 | Parameter              | Required   | Type      | Default    | Description                                                                                                                |
 | ---------------------- | ---------- | --------- | ---------- | -------------------------------------------------------------------------------------------------------------------------- |
 | `keys`                 | optional   | `Array`   | `["name"]` | The list of keys where the function will be applied                                                                        |
-| `excludeFileExtension` | optional   | `Boolean` | `false`    | The fact that the function will only be applied on a filename. Useful for transforming strings containing a file extension |
 
 ## Types
 

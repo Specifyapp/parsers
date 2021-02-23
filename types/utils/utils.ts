@@ -5,6 +5,7 @@ export type AllowedFieldsWithType<Obj, Type> = {
 export interface DownloadableFile {
   name: string;
   value: {
+    fileName?: string;
     content?: string; // File content in string
     url?: string; // File we will download
   };

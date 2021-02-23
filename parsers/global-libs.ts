@@ -1,13 +1,18 @@
 import _ from 'lodash';
 import tinycolor from 'tinycolor2';
 import SVGO from 'svgo';
+import Mustache from 'mustache';
 import { AllowedFormat, PartialRecord } from '../types';
+
+// disable all escaping
+Mustache.escape = text => text;
 
 const Libs = {
   _,
-  tinycolor,
   SVGO,
-  // SpServices is appended to libs object during the runtime
+  tinycolor,
+  Mustache,
+  // SpServices is appended to libs during the runtime
 };
 
 export default Libs;
