@@ -11,13 +11,12 @@
 
 # Specify Parsers
 
-Specify is a central platform for companies who want to unify their brand identity, by connecting their design system tools. 
-
-By using Specify's platform, you can keep all your design decisions up to date across all your projects.
+## What is Specify?
+Specify helps you unify your brand identity by collecting, storing and distributing design tokens and assets—automatically. 
 
 ## What are parsers?
 
-Parsers are functions that allow you to modify the data you are getting from Specify's API.
+Parsers are functions allowing you to transform design tokens and assets you get from Specify's API.
 
 Parsers are ordered and takes specific input to generate specific output. This way, we can easily test the input coming from the previous parser to check if the whole parsers process will work.
 
