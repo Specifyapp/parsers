@@ -8,10 +8,13 @@ export class TextStyle extends TextStyleToken {
   }
 
   toJss({ textStyleFormat = 'classObject', colorFormat = 'hex' }: FormatTokenType) {
-    const { font, color: c, fontSize: fs, lineHeight: lh } = this.value;
+    const { font, color: c, fontSize: fs, lineHeight: lh, letterSpacing: ls } = this.value;
     const { fontPostScriptName, fontWeight } = font.value;
     const color = c?.value;
     const { measure: fontSize, unit: fsUnit } = fs.value;
+    const { measure: letterSpacing } = ls?.value
+      ? ls.value
+      : { measure: 'normal' };
     const { measure: lineHeight, unit: lhUnit } = lh?.value
       ? lh.value
       : { measure: 'normal', unit: 'px' };
@@ -28,6 +31,7 @@ export class TextStyle extends TextStyleToken {
       classObject: JSON.stringify({
         color: tinycolor(color).toString(colorFormat),
         font: fontObject,
+        letterSpacing: letterSpacing,
       }),
       array: JSON.stringify([
         fontWeight,
