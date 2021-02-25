@@ -50,9 +50,18 @@ export type OptionsType =
         useTabs: boolean;
         singleQuote: boolean;
         exportDefault: boolean;
+        isVectorFileType: boolean;
+        isBitmapFileType: boolean;
+        isBitmapScale: boolean;
       }>;
     }>
   | undefined;
+
+const formatName = (name: string, isScale: boolean, isFileType: boolean) => {
+  const start = name.substring(0, name.lastIndexOf(isScale ? '.' : '@'));
+  const end = name.substring(name.lastIndexOf(isFileType ? '.' : ''), name.length);
+  return start.concat(end);
+}
 
 export default async function (
   tokens: InputDataType,
@@ -64,6 +73,9 @@ export default async function (
     const objectName = options?.formatConfig?.jssObjectName || 'theme';
     const exportDefault = options?.formatConfig?.exportDefault ?? true;
     const module = options?.formatConfig?.module ?? 'es6';
+    const isVectorFiletype = options?.formatConfig?.isVectorFileType ?? true;
+    const isBitmapFiletype = options?.formatConfig?.isBitmapFileType ?? true;
+    const isBitmapScale = options?.formatConfig?.isBitmapScale ?? true;
 
     const tokensGroupByType = _.groupBy(tokens, 'type');
     const styles = Object.keys(tokensGroupByType).reduce((result, type) => {
@@ -76,13 +88,20 @@ export default async function (
             `${token.type.charAt(0).toUpperCase() + token.type.slice(1)}`
           ](token);
 
+          const customNames: Record<string, string> = {
+            vector: formatName(token.name, true, isVectorFiletype),
+            bitmap: formatName(token.name, isBitmapScale, isBitmapFiletype),
+          }
+
+          const tokenName = customNames[token.type] || token.name;
+
           const name =
             options?.formatName ||
-            token.name.includes(' ') ||
-            token.name.includes('\n') ||
-            token.name.includes('/')
-              ? transformNameFn(token.name)
-              : token.name;
+            tokenName.includes(' ') ||
+            tokenName.includes('\n') ||
+            tokenName.includes('/')
+              ? transformNameFn(tokenName)
+              : tokenName;
           return `'${name}': ${instance.toJss(options?.formatTokens || {})},`;
         })
         .join('');

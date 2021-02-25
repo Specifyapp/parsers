@@ -23,7 +23,7 @@ primaryBorder: {
 ```
 
 ### Optionnal format for font
-By passing `"classObject"` to `textStyleFormat` the parser will generate a jss class object containing the `color` property (which isn't a `font` sub-property value).
+By passing `"classObject"` to `textStyleFormat` the parser will generate a jss class object containing the `color` and `letter-spacing` properties (which aren't `font`'s sub-properties).
 
 ## Interface
 ```ts
@@ -44,12 +44,15 @@ interface x {
       fontSizeUnit: 'px' | 'pt';
     }>;
     formatConfig: Partial<{
-      jssObjectName: string,
-      exportDefault: boolean,
+      jssObjectName: string;
+      exportDefault: boolean;
       endOfLine: 'auto' | 'lf' | 'crlf' | 'cr';
       tabWidth: number;
       useTabs: boolean;
       singleQuote: boolean;
+      isVectorFileType: boolean;
+      isBitmapFileType: boolean;
+      isBitmapScale: boolean;
     }>;
   }>
 }
