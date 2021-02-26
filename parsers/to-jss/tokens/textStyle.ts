@@ -12,9 +12,7 @@ export class TextStyle extends TextStyleToken {
     const { fontPostScriptName, fontWeight } = font.value;
     const color = c?.value;
     const { measure: fontSize, unit: fsUnit } = fs.value;
-    const { measure: letterSpacing } = ls?.value
-      ? ls.value
-      : { measure: 'normal' };
+    const { measure: letterSpacing } = ls?.value ? ls.value : { measure: 'normal' };
     const { measure: lineHeight, unit: lhUnit } = lh?.value
       ? lh.value
       : { measure: 'normal', unit: 'px' };

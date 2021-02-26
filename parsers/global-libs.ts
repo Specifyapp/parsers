@@ -3,15 +3,13 @@ import tinycolor from 'tinycolor2';
 import SVGO from 'svgo';
 import Mustache from 'mustache';
 import { AllowedFormat, PartialRecord } from '../types';
-
-// disable all escaping
-Mustache.escape = text => text;
+import { MustacheStatic } from '../types/libs/mustache';
 
 const Libs = {
   _,
   SVGO,
   tinycolor,
-  Mustache,
+  Mustache: Mustache as MustacheStatic,
   // SpServices is appended to libs during the runtime
 };
 
