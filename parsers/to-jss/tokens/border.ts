@@ -14,11 +14,17 @@ export class Border extends BorderToken {
       return JSON.stringify({
         width: measure,
         style: type.toLowerCase(),
-        color: tinycolor(color.value).toString(colorFormat)
+        color: tinycolor(color.value).toString(colorFormat),
       });
     else if (borderFormat === 'array')
-      return JSON.stringify([measure, type.toLowerCase(), tinycolor(color.value).toString(colorFormat)]);
+      return JSON.stringify([
+        measure,
+        type.toLowerCase(),
+        tinycolor(color.value).toString(colorFormat),
+      ]);
     else
-      return `'${measure}${unit} ${type.toLowerCase()} ${tinycolor(color.value).toString(colorFormat)}'`;
+      return `'${measure}${unit} ${type.toLowerCase()} ${tinycolor(color.value).toString(
+        colorFormat,
+      )}'`;
   }
 }

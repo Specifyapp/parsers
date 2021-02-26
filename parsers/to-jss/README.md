@@ -50,9 +50,8 @@ interface x {
       tabWidth: number;
       useTabs: boolean;
       singleQuote: boolean;
-      isVectorFileType: boolean;
-      isBitmapFileType: boolean;
-      isBitmapScale: boolean;
+      assetsFolderPath?: string | { vector?: string; bitmap?: string };
+      assetsFilePattern?: string;
     }>;
   }>
 }

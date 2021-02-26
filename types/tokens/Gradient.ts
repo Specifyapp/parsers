@@ -1,11 +1,6 @@
 import Token, { TokenInterface } from './Token';
 import { ColorValue } from './Color';
 
-interface Point {
-  x: number;
-  y: number;
-}
-
 export interface ColorForGradient {
   value: ColorValue;
   type: string;

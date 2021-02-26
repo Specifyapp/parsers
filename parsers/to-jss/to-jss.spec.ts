@@ -205,7 +205,7 @@ describe('To jss', () => {
     done();
   });
 
-  it('Module Format - es6 - export default ', async () => {
+  it('Module Format - es6 - export default', async () => {
     const jssObjectName = 'moduleTheme';
 
     const options: OptionsType = {
@@ -219,7 +219,7 @@ describe('To jss', () => {
     expect(result.includes('module.exports')).toBeFalsy();
   });
 
-  it('Module Format - es6 - export default ', async () => {
+  it('Module Format - es6', async () => {
     const jssObjectName = 'moduleTheme';
 
     const options: OptionsType = {
@@ -247,7 +247,7 @@ describe('To jss', () => {
     expect(result.includes(`module.exports = ${jssObjectName}`)).toBeTruthy();
   });
 
-  it('Module Format - commonjs - export default ', async () => {
+  it('Module Format - commonjs', async () => {
     const jssObjectName = 'moduleTheme';
 
     const options: OptionsType = {
@@ -259,5 +259,39 @@ describe('To jss', () => {
     expect(result.includes(`export default ${jssObjectName}`)).toBeFalsy();
     expect(result.includes(`export const ${jssObjectName}`)).toBeFalsy();
     expect(result.includes(`module.exports = { ${jssObjectName} }`)).toBeTruthy();
+  });
+
+  it('Relative path with default pattern', async () => {
+    const options: OptionsType = {
+      formatConfig: {
+        assetsFolderPath: 'assets/vector',
+      },
+    };
+
+    const result = await toJss(
+      seeds().tokens.filter(({ type }) => type === 'vector' || type === 'bitmap') as Array<Token>,
+      options,
+      libs,
+    );
+
+    expect(result.includes('http://')).toBeFalsy();
+    expect(result.includes('@2x.webp')).toBeTruthy();
+  });
+  it('Relative path with custom pattern', async () => {
+    const options: OptionsType = {
+      formatConfig: {
+        assetsFolderPath: 'assets/vector',
+        assetsFilePattern: '{{name}}.{{format}}',
+      },
+    };
+
+    const result = await toJss(
+      seeds().tokens.filter(({ type }) => type === 'vector' || type === 'bitmap') as Array<Token>,
+      options,
+      libs,
+    );
+
+    expect(result.includes('http://')).toBeFalsy();
+    expect(result.includes('@2x.webp')).toBeFalsy();
   });
 });

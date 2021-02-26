@@ -107,7 +107,7 @@ Array<{[key: string]: any}>
       "format": "png",
       "dimension": "2x"
     },
-    "name": "bitmapExample"
+    "name": "bitmapExampleWithDimension"
   },
   {
     "type": "bitmap",
@@ -127,10 +127,11 @@ Array<{[key: string]: any}>
     "type": "bitmap",
     "value": {
       "url": "https://...",
-      "format": "svg",
-      "fileName": "bitmapExampleWithoutDimension@2x.png"
+      "format": "png",
+      "dimension": "2x",
+      "fileName": "bitmapExampleWithDimension@2x.png"
     },
-    "name": "bitmapExampleWithoutDimension"
+    "name": "bitmapExampleWithDimension"
   },
   {
     "type": "bitmap",
