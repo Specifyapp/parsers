@@ -1,4 +1,4 @@
-import seeds from '../../seeds';
+import seeds from '../../tests/seeds';
 import { default as toScssMixinTextStyle, InputDataType } from './to-scss-mixin-text-style.parser';
 import libs from '../global-libs';
 
@@ -13,16 +13,15 @@ describe('to-css-text-style', () => {
     expect(typeof result).toEqual('string');
     expect(
       result.includes(
-        '@mixin ts-with-allan-again {\n' +
+        '@mixin title {\n' +
           '  color: rgb(196, 196, 196);\n' +
-          '  font-family: Allan;\n' +
-          '  font-size: 12.1px;\n' +
-          '  line-height: 12px;\n' +
+          '  font-family: Inter;\n' +
+          '  font-size: 32px;\n' +
+          '  line-height: 40px;\n' +
           '  text-align: left;\n' +
           '  vertical-align: top;\n' +
-          '  text-transform: uppercase;\n' +
-          '  text-decoration: line-through;\n' +
-          '  text-indent: 10px;\n' +
+          '  text-decoration: underline;\n' +
+          '  text-indent: 5px;\n' +
           '}',
       ),
     ).toBeTruthy();
@@ -94,11 +93,11 @@ describe('to-css-text-style', () => {
     if (result instanceof Error) return done.fail(result);
     expect(
       result.includes(
-        '@mixin utilsLocalTextStylesTextStyle {\n' +
+        '@mixin utilsBodyTextStyle {\n' +
           '  color: #c4c4c4;\n' +
-          '  font-family: allan, serif;\n' +
-          '  font-size: 16px;\n' +
-          '  line-height: 1;\n' +
+          '  font-family: inter, serif;\n' +
+          '  font-size: 14px;\n' +
+          '  line-height: 1.43;\n' +
           '  text-align: left;\n' +
           '  vertical-align: top;\n' +
           '}',
@@ -106,13 +105,15 @@ describe('to-css-text-style', () => {
     ).toBeTruthy();
     expect(
       result.includes(
-        '@mixin utilsFontMissingTextStyle {\n' +
+        '@mixin utilsTitleTextStyle {\n' +
           '  color: #c4c4c4;\n' +
-          '  font-family: fira-code, serif;\n' +
-          '  font-size: 12.7px;\n' +
-          '  line-height: 1.11;\n' +
+          '  font-family: inter, serif;\n' +
+          '  font-size: 32px;\n' +
+          '  line-height: 1.25;\n' +
           '  text-align: left;\n' +
           '  vertical-align: top;\n' +
+          '  text-decoration: underline;\n' +
+          '  text-indent: 5px;\n' +
           '}',
       ),
     ).toBeTruthy();

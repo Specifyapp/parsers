@@ -11,7 +11,7 @@ export class Gradient extends GradientToken {
     const value = this.value.gradients
       .map(gradient => {
         return `linear-gradient(${gradient.angle}, ${gradient.colors
-          .map(({ value, position }) => `${tinycolor(value).toString('rgb')} ${position}%)`)
+          .map(({ color, position }) => `${tinycolor(color.value).toString('rgb')} ${position}%)`)
           .join(', ')}`;
       })
       .join(', ');

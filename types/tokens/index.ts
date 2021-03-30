@@ -39,6 +39,20 @@ export * from './TextStyle';
 export * from './Vector';
 export * from './Depth';
 
+export type TokensType =
+  | 'bitmap'
+  | 'border'
+  | 'color'
+  | 'font'
+  | 'gradient'
+  | 'duration'
+  | 'measurement'
+  | 'opacity'
+  | 'shadow'
+  | 'textStyle'
+  | 'vector'
+  | 'depth';
+
 export type TokensValues =
   | BitmapValue
   | BorderValue

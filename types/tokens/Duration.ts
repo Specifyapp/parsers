@@ -1,4 +1,5 @@
 import Token, { TokenInterface } from './Token';
+import { TokensType } from './index';
 
 export interface DurationValue {
   duration: number;
@@ -6,12 +7,11 @@ export interface DurationValue {
 }
 
 export class DurationToken extends Token implements TokenInterface {
-  type: string;
+  type: TokensType = 'duration';
   value: DurationValue;
 
   constructor(element: Partial<DurationToken>) {
     super(element);
-    this.type = 'duration';
     this.value = element.value!;
   }
 }

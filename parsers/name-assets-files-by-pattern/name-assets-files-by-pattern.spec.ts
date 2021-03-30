@@ -1,7 +1,7 @@
 import nameAssetsFilesByPattern from './name-assets-files-by-pattern.parser';
 import { VectorToken, BitmapToken } from '../../types';
 import libs from '../global-libs';
-import seeds from '../../seeds';
+import seeds from '../../tests/seeds';
 
 describe('Name assets files by pattern', () => {
   it('Get tokens - apply parser', async done => {

@@ -1,24 +1,56 @@
 import Token, { TokenInterface } from './Token';
-import { ColorValue } from './Color';
-import { MeasurementValue } from './Measurement';
+import { ColorToken, ColorValue } from './Color';
+import { MeasurementToken, MeasurementValue } from './Measurement';
+import { TokensType } from './index';
 
 export interface BorderValue {
-  color: {
-    value: ColorValue;
-  };
-  type: string;
-  width: {
-    value: MeasurementValue;
-  };
+  color:
+    | ColorToken
+    | {
+        value: ColorValue;
+      };
+  type:
+    | 'none'
+    | 'hidden'
+    | 'dotted'
+    | 'dashed'
+    | 'solid'
+    | 'double'
+    | 'groove'
+    | 'ridge'
+    | 'inset'
+    | 'outset';
+  width:
+    | MeasurementToken
+    | {
+        value: MeasurementValue;
+      };
+  align?: string;
+  radii?:
+    | MeasurementToken
+    | {
+        value: MeasurementValue;
+      };
+  rectangleCornerRadii?: Array<
+    | MeasurementToken
+    | {
+        value: MeasurementValue;
+      }
+  >;
+  dashes?: Array<
+    | MeasurementToken
+    | {
+        value: MeasurementValue;
+      }
+  >;
 }
 
 export class BorderToken extends Token implements TokenInterface {
-  type: string;
+  type: TokensType = 'border';
   value: BorderValue;
 
   constructor(element: Partial<BorderToken>) {
     super(element);
-    this.type = 'border';
     this.value = element.value!;
   }
 }

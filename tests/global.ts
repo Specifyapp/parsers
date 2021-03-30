@@ -1,6 +1,7 @@
 import { AllowedFormat, FontToken, PartialRecord } from '../types';
-import seeds from '../seeds';
-import * as fs from 'fs';
+import seeds from '../tests/seeds';
+import fs from 'fs';
+import crypto from 'crypto';
 import path from 'path';
 
 jest.mock('../parsers/global-libs', () => {
@@ -31,7 +32,12 @@ jest.mock('../parsers/global-libs', () => {
         getSource<T>(url: string, responseType: 'text' | 'buffer' | 'json') {
           try {
             const content = fs.readFileSync(
-              path.join(__dirname, 'fixtures', 'assets', url.replace('https://', '')),
+              path.join(
+                __dirname,
+                'fixtures',
+                'assets',
+                crypto.createHash('md5').update(url).digest('hex'),
+              ),
             );
             if (responseType === 'text') return content.toString('utf-8');
             if (responseType === 'json') return JSON.parse(content.toString());

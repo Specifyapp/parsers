@@ -1,0 +1,1477 @@
+[
+  {
+    "createdAt": "2021-04-02T09:55:29.276Z",
+    "updatedAt": "2021-04-02T09:55:29.276Z",
+    "id": "f9ac3798-01e8-4a4e-8331-e877cbc0fdd1",
+    "name": "acme-logo",
+    "value": {
+      "url": "https://s3-us-west-2.amazonaws.com/figma-alpha-api/img/13d6/2eb6/a2626d914998754ac0b704e2cdb7a813",
+      "format": "png"
+    },
+    "meta": {
+      "format": "png",
+      "dimension": 1
+    },
+    "type": "bitmap",
+    "originId": "12:14-png-1",
+    "sourceId": "ded1694b-249a-42e8-add9-35df05d36f80",
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
+  },
+  {
+    "createdAt": "2021-04-02T09:54:57.048Z",
+    "updatedAt": "2021-04-02T09:54:57.048Z",
+    "id": "db9c9a96-2185-4622-a6f9-0df150315fcd",
+    "name": "activity",
+    "value": {
+      "url": "https://s3-us-west-2.amazonaws.com/figma-alpha-api/img/96dc/8825/c166b559140a0a64b28441924700a0b2",
+      "format": "svg"
+    },
+    "meta": {
+      "format": "svg",
+      "dimension": 1
+    },
+    "type": "vector",
+    "originId": "12:48-svg-1",
+    "sourceId": "d38b4d2f-23c7-4ad9-b087-8c1f468d878f",
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
+  },
+  {
+    "createdAt": "2021-04-02T09:54:57.048Z",
+    "updatedAt": "2021-04-02T09:54:57.048Z",
+    "id": "927911b9-99b6-42de-89d6-2984689b6233",
+    "name": "airplay",
+    "value": {
+      "url": "https://s3-us-west-2.amazonaws.com/figma-alpha-api/img/ba89/d0aa/da2310c63c85699af43c8d128619cfdc",
+      "format": "svg"
+    },
+    "meta": {
+      "format": "svg",
+      "dimension": 1
+    },
+    "type": "vector",
+    "originId": "12:45-svg-1",
+    "sourceId": "d38b4d2f-23c7-4ad9-b087-8c1f468d878f",
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
+  },
+  {
+    "createdAt": "2021-04-02T09:54:57.048Z",
+    "updatedAt": "2021-04-02T09:54:57.048Z",
+    "id": "a87ef1ab-6cf9-41b2-9933-9dc25928f3fa",
+    "name": "alert-circle",
+    "value": {
+      "url": "https://s3-us-west-2.amazonaws.com/figma-alpha-api/img/e8be/d9ce/4595ffa4510b7427d42e113c33632ae9",
+      "format": "svg"
+    },
+    "meta": {
+      "format": "svg",
+      "dimension": 1
+    },
+    "type": "vector",
+    "originId": "12:41-svg-1",
+    "sourceId": "d38b4d2f-23c7-4ad9-b087-8c1f468d878f",
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
+  },
+  {
+    "createdAt": "2021-04-02T09:54:57.048Z",
+    "updatedAt": "2021-04-02T09:54:57.048Z",
+    "id": "6e5413cf-d1f6-465e-b3ab-004e2ce57d76",
+    "name": "alert-octagon",
+    "value": {
+      "url": "https://s3-us-west-2.amazonaws.com/figma-alpha-api/img/fda9/f3ef/d31ed18fd324eb97190f34e0497214df",
+      "format": "svg"
+    },
+    "meta": {
+      "format": "svg",
+      "dimension": 1
+    },
+    "type": "vector",
+    "originId": "12:37-svg-1",
+    "sourceId": "d38b4d2f-23c7-4ad9-b087-8c1f468d878f",
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
+  },
+  {
+    "createdAt": "2021-04-02T09:54:57.054Z",
+    "updatedAt": "2021-04-02T09:54:57.054Z",
+    "id": "7aa11aa4-b3bf-4b72-9fbf-2f40c73233cb",
+    "name": "alert-triangle",
+    "value": {
+      "url": "https://s3-us-west-2.amazonaws.com/figma-alpha-api/img/880e/672c/155447c7e27185832ded7310ac9a02e7",
+      "format": "svg"
+    },
+    "meta": {
+      "format": "svg",
+      "dimension": 1
+    },
+    "type": "vector",
+    "originId": "12:33-svg-1",
+    "sourceId": "d38b4d2f-23c7-4ad9-b087-8c1f468d878f",
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
+  },
+  {
+    "createdAt": "2021-04-02T09:54:57.057Z",
+    "updatedAt": "2021-04-02T09:54:57.057Z",
+    "id": "9893b356-1d54-464c-9a74-db4c692a0c8c",
+    "name": "align-center",
+    "value": {
+      "url": "https://s3-us-west-2.amazonaws.com/figma-alpha-api/img/44e1/3537/07081649495a48e2f2de80b83e69a876",
+      "format": "svg"
+    },
+    "meta": {
+      "format": "svg",
+      "dimension": 1
+    },
+    "type": "vector",
+    "originId": "12:28-svg-1",
+    "sourceId": "d38b4d2f-23c7-4ad9-b087-8c1f468d878f",
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
+  },
+  {
+    "createdAt": "2021-04-02T08:16:49.847Z",
+    "updatedAt": "2021-04-02T08:22:43.069Z",
+    "id": "474282bd-140e-4fee-9f09-e33bf847672a",
+    "name": "Background",
+    "value": {
+      "depth": 1
+    },
+    "meta": {
+      "source": "frames",
+      "sourceFile": "https://www.figma.com/file/9KvLO7F8VPrJ7GxGBWwCr9",
+      "originFrameName": "Depth - Example"
+    },
+    "type": "depth",
+    "originId": "1:53",
+    "sourceId": "cce5bc1c-60c6-45b4-95f2-5b8ee29864fc",
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
+  },
+  {
+    "createdAt": "2021-04-02T09:38:09.767Z",
+    "updatedAt": "2021-04-02T09:38:09.767Z",
+    "id": "a0d2ca43-7f35-45ca-a4bb-fcc4071c0e6c",
+    "name": "Base",
+    "value": {
+      "unit": "ms",
+      "duration": 300
+    },
+    "meta": {
+      "source": "frames",
+      "sourceFile": "https://www.figma.com/file/9KvLO7F8VPrJ7GxGBWwCr9",
+      "originFrameName": "Timing · Example"
+    },
+    "type": "duration",
+    "originId": "1:66",
+    "sourceId": "c79c5c65-f70b-4bba-a410-976465f0713e",
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
+  },
+  {
+    "createdAt": "2021-04-02T09:37:35.984Z",
+    "updatedAt": "2021-04-02T09:37:35.984Z",
+    "id": "f2bd8978-a12a-45a1-a707-e78f800f642b",
+    "name": "base-space-01",
+    "value": {
+      "unit": "px",
+      "measure": 4
+    },
+    "meta": {
+      "source": "frames",
+      "sourceFile": "https://www.figma.com/file/9KvLO7F8VPrJ7GxGBWwCr9",
+      "originFrameName": "Measurement · Frame Example"
+    },
+    "type": "measurement",
+    "originId": "12:101",
+    "sourceId": "8744ed2c-6640-4707-930d-8a8e72b7ba39",
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
+  },
+  {
+    "createdAt": "2021-04-02T09:37:35.996Z",
+    "updatedAt": "2021-04-02T09:37:35.996Z",
+    "id": "17cbb046-6e79-4ae5-a0e3-36f1eea99709",
+    "name": "base-space-02",
+    "value": {
+      "unit": "px",
+      "measure": 8
+    },
+    "meta": {
+      "source": "frames",
+      "sourceFile": "https://www.figma.com/file/9KvLO7F8VPrJ7GxGBWwCr9",
+      "originFrameName": "Measurement · Frame Example"
+    },
+    "type": "measurement",
+    "originId": "12:102",
+    "sourceId": "8744ed2c-6640-4707-930d-8a8e72b7ba39",
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
+  },
+  {
+    "createdAt": "2021-04-02T09:37:36.016Z",
+    "updatedAt": "2021-04-02T09:37:36.016Z",
+    "id": "8c3d54d0-a64d-42cd-85bd-90e95b7e68a4",
+    "name": "base-space-03",
+    "value": {
+      "unit": "px",
+      "measure": 12
+    },
+    "meta": {
+      "source": "frames",
+      "sourceFile": "https://www.figma.com/file/9KvLO7F8VPrJ7GxGBWwCr9",
+      "originFrameName": "Measurement · Frame Example"
+    },
+    "type": "measurement",
+    "originId": "12:103",
+    "sourceId": "8744ed2c-6640-4707-930d-8a8e72b7ba39",
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
+  },
+  {
+    "createdAt": "2021-04-02T09:37:36.019Z",
+    "updatedAt": "2021-04-02T09:37:36.019Z",
+    "id": "b482d5f2-ef06-45f9-8b31-ab8d39467c85",
+    "name": "base-space-04",
+    "value": {
+      "unit": "px",
+      "measure": 16
+    },
+    "meta": {
+      "source": "frames",
+      "sourceFile": "https://www.figma.com/file/9KvLO7F8VPrJ7GxGBWwCr9",
+      "originFrameName": "Measurement · Frame Example"
+    },
+    "type": "measurement",
+    "originId": "12:104",
+    "sourceId": "8744ed2c-6640-4707-930d-8a8e72b7ba39",
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
+  },
+  {
+    "createdAt": "2021-04-02T09:37:36.020Z",
+    "updatedAt": "2021-04-02T09:37:36.020Z",
+    "id": "61e73802-cb82-47b3-b9d0-d8ccca00987f",
+    "name": "base-space-05",
+    "value": {
+      "unit": "px",
+      "measure": 32
+    },
+    "meta": {
+      "source": "frames",
+      "sourceFile": "https://www.figma.com/file/9KvLO7F8VPrJ7GxGBWwCr9",
+      "originFrameName": "Measurement · Frame Example"
+    },
+    "type": "measurement",
+    "originId": "12:105",
+    "sourceId": "8744ed2c-6640-4707-930d-8a8e72b7ba39",
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
+  },
+  {
+    "createdAt": "2021-04-02T09:37:36.020Z",
+    "updatedAt": "2021-04-02T09:37:36.020Z",
+    "id": "3e8ba795-4c0a-4935-8148-3f71880321f7",
+    "name": "base-space-06",
+    "value": {
+      "unit": "px",
+      "measure": 48
+    },
+    "meta": {
+      "source": "frames",
+      "sourceFile": "https://www.figma.com/file/9KvLO7F8VPrJ7GxGBWwCr9",
+      "originFrameName": "Measurement · Frame Example"
+    },
+    "type": "measurement",
+    "originId": "12:106",
+    "sourceId": "8744ed2c-6640-4707-930d-8a8e72b7ba39",
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
+  },
+  {
+    "createdAt": "2021-04-02T09:37:36.016Z",
+    "updatedAt": "2021-04-02T09:37:36.016Z",
+    "id": "fdea4e31-287f-4e84-8e0e-8a308ff39854",
+    "name": "base-space-07",
+    "value": {
+      "unit": "px",
+      "measure": 64
+    },
+    "meta": {
+      "source": "frames",
+      "sourceFile": "https://www.figma.com/file/9KvLO7F8VPrJ7GxGBWwCr9",
+      "originFrameName": "Measurement · Frame Example"
+    },
+    "type": "measurement",
+    "originId": "12:107",
+    "sourceId": "8744ed2c-6640-4707-930d-8a8e72b7ba39",
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
+  },
+  {
+    "createdAt": "2021-04-02T09:37:36.020Z",
+    "updatedAt": "2021-04-02T09:37:36.020Z",
+    "id": "706a79f5-aa4c-4305-ac93-c55d61c47f87",
+    "name": "base-space-08",
+    "value": {
+      "unit": "px",
+      "measure": 80
+    },
+    "meta": {
+      "source": "frames",
+      "sourceFile": "https://www.figma.com/file/9KvLO7F8VPrJ7GxGBWwCr9",
+      "originFrameName": "Measurement · Frame Example"
+    },
+    "type": "measurement",
+    "originId": "12:108",
+    "sourceId": "8744ed2c-6640-4707-930d-8a8e72b7ba39",
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
+  },
+  {
+    "createdAt": "2021-04-02T09:37:36.019Z",
+    "updatedAt": "2021-04-02T09:37:36.019Z",
+    "id": "ca3765a7-5164-459e-a8fc-76995bf2e063",
+    "name": "base-space-09",
+    "value": {
+      "unit": "px",
+      "measure": 96
+    },
+    "meta": {
+      "source": "frames",
+      "sourceFile": "https://www.figma.com/file/9KvLO7F8VPrJ7GxGBWwCr9",
+      "originFrameName": "Measurement · Frame Example"
+    },
+    "type": "measurement",
+    "originId": "12:109",
+    "sourceId": "8744ed2c-6640-4707-930d-8a8e72b7ba39",
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
+  },
+  {
+    "createdAt": "2021-04-02T09:37:36.019Z",
+    "updatedAt": "2021-04-02T09:37:36.019Z",
+    "id": "7e0e6088-e6bf-4ab0-84f7-43b5a11d635d",
+    "name": "base-space-10",
+    "value": {
+      "unit": "px",
+      "measure": 112
+    },
+    "meta": {
+      "source": "frames",
+      "sourceFile": "https://www.figma.com/file/9KvLO7F8VPrJ7GxGBWwCr9",
+      "originFrameName": "Measurement · Frame Example"
+    },
+    "type": "measurement",
+    "originId": "12:110",
+    "sourceId": "8744ed2c-6640-4707-930d-8a8e72b7ba39",
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
+  },
+  {
+    "createdAt": "2021-04-02T09:54:13.112Z",
+    "updatedAt": "2021-04-02T09:54:13.112Z",
+    "id": "9205e28a-a083-435e-a19b-8bd005232bfa",
+    "name": "Body",
+    "value": {
+      "font": {
+        "createdAt": "2021-04-02T08:01:57.087Z",
+        "updatedAt": "2021-04-02T08:01:57.289Z",
+        "id": "e69237ab-05db-4380-81e5-70db7f5448f1",
+        "name": "Inter-Medium",
+        "value": {
+          "isItalic": false,
+          "provider": "Google Fonts",
+          "fontFamily": "Inter",
+          "fontWeight": 500,
+          "fontFileMissing": false,
+          "fontPostScriptName": "Inter-Medium",
+          "url": "https://ddp-assets-prod.s3.amazonaws.com/927e26f6-da29-40d6-b9de-530bdcddf1ed/font/Inter-Medium/Inter-Medium.ttf?AWSAccessKeyId=ASIAYLKZPEWOIXPOWF5E&Expires=1617721668&Signature=RGdWyHQjaAkDjQ5xC22UYaBDgms%3D&x-amz-security-token=IQoJb3JpZ2luX2VjENT%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCWV1LXdlc3QtMSJGMEQCIHlUYrX1GikgdAHg3czxO9fEMZZlSCLg%2BvasP5c9xsT4AiBd8SAoHjnYnrTGdWmMTRTPh3pixcux%2BwjZZO07VxQiKSqfAwgtEAIaDDU3NDEwMjY0NDEyNCIMRp7ey8m%2BAIFNvi2AKvwCpHRCmOQmiTXkFudLAzNohkpSDdwayWpGwhMDiRuwuPOdkzG4MyUVp4kIKkP62WnqevJe%2Fvdsr6W8ApEQV4mUnUqmG%2BhaFa9hg5gHQ5JlQXpGmad5XcM7RP0zPjw9zTzHyMcfeYdLGlqHzOGd7ttuiYFXVuRIAsMW0zTfUc98F352yFIi4D3Ah5xknBVDYdZF%2BWobl3%2FSb9mR7QxBIuo5lm%2FpFVwYrAYz9YyG155y4j4%2FupVF0Nq2rphEz2dqJsZ4wjah1hgKueDfLcho8wSnHZtcwnII%2F2CJcnha%2F4V2CImAD5zYVYW9BWNQ6Xs9kTo9R86Z8WOjcdePP8GEsOUOWF146TiYfpldZEhmfpmlX7VVzROe9VyOaa2qqlhpxbmV4bbslrISLWs1ufQXwsWvP9aRsro%2FCpNK3R0RDtbcG0yUslLt6zkffUrTzfyyzlNRnHOiq1CCrk65635NZtkj62cOdV28D2LuGsqlgy57QF93rxCylIQo1xP5SQAw7ouxgwY67AFL6kjnAPxHWsFWu0DtfBsvhi4KtOV71wZtP9gM1W69xO%2BBNdzmBfZh91DLo5ZmvT4Q%2FLyXj0yAGp5N56hJjh5RfdlyXL%2BJjerHeUUAl7nDrq47OiFyhtgeiZOQxiEgVAytiESYjpKF1NO8xAr3RmLPfZqTDQ7wkunUy45%2BUdw6rf3xQ6yXzAL7UlLr%2BtrPTqDc8wG776tpQOP1zjJs53WF8byfRgenn7TDqriA0o4iBMWvLcCjpGWEK7MaaKLBnZNLOGWFogtxDfrkSmSsBfGDzHIPJeIX01YzOslYDckmalhc%2B3ROLExw4YlpCg%3D%3D"
+        },
+        "meta": {
+          "source": "localStyles"
+        },
+        "type": "font",
+        "originId": "Inter-Medium",
+        "sourceId": "3653cb84-8edb-46b0-8bee-ce46f0c7c829",
+        "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
+      },
+      "color": {
+        "value": {
+          "a": 1,
+          "b": 196,
+          "g": 196,
+          "r": 196
+        }
+      },
+      "fontSize": {
+        "value": {
+          "unit": "px",
+          "measure": 14
+        }
+      },
+      "textAlign": {
+        "vertical": "top",
+        "horizontal": "left"
+      },
+      "lineHeight": {
+        "value": {
+          "unit": "px",
+          "measure": 20
+        }
+      }
+    },
+    "meta": {
+      "source": "localStyles"
+    },
+    "type": "textStyle",
+    "originId": "12:164",
+    "sourceId": "3653cb84-8edb-46b0-8bee-ce46f0c7c829",
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
+  },
+  {
+    "createdAt": "2021-04-02T09:39:06.105Z",
+    "updatedAt": "2021-04-02T09:47:01.154Z",
+    "id": "72e7b628-cf2c-4691-b3d2-8248b492a60b",
+    "name": "border-accent",
+    "value": {
+      "type": "solid",
+      "color": {
+        "value": {
+          "a": 1,
+          "b": 255,
+          "g": 189,
+          "r": 198
+        }
+      },
+      "width": {
+        "value": {
+          "unit": "px",
+          "measure": 2
+        }
+      }
+    },
+    "meta": {
+      "source": "frames",
+      "sourceFile": "https://www.figma.com/file/9KvLO7F8VPrJ7GxGBWwCr9",
+      "originFrameName": "Border · Frame Example"
+    },
+    "type": "border",
+    "originId": "12:76",
+    "sourceId": "eb1a26cd-abfb-4ffa-b0da-9499d0d4602e",
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
+  },
+  {
+    "createdAt": "2021-04-02T09:39:06.100Z",
+    "updatedAt": "2021-04-02T09:39:06.100Z",
+    "id": "84ccd8de-71a9-4b65-8581-4fb40c6af5a0",
+    "name": "border-dashed",
+    "value": {
+      "type": "dashed",
+      "color": {
+        "value": {
+          "a": 1,
+          "b": 43,
+          "g": 33,
+          "r": 30
+        }
+      },
+      "width": {
+        "value": {
+          "unit": "px",
+          "measure": 1
+        }
+      },
+      "dashes": [
+        {
+          "value": {
+            "unit": "px",
+            "measure": 4
+          }
+        },
+        {
+          "value": {
+            "unit": "px",
+            "measure": 4
+          }
+        }
+      ]
+    },
+    "meta": {
+      "source": "frames",
+      "sourceFile": "https://www.figma.com/file/9KvLO7F8VPrJ7GxGBWwCr9",
+      "originFrameName": "Border · Frame Example"
+    },
+    "type": "border",
+    "originId": "12:75",
+    "sourceId": "eb1a26cd-abfb-4ffa-b0da-9499d0d4602e",
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
+  },
+  {
+    "createdAt": "2021-04-02T09:54:13.117Z",
+    "updatedAt": "2021-04-02T09:54:13.117Z",
+    "id": "e442a71c-4e1d-4757-878e-4b6fda69e8ff",
+    "name": "Code",
+    "value": {
+      "font": {
+        "createdAt": "2021-04-02T09:54:13.112Z",
+        "updatedAt": "2021-04-02T09:54:13.363Z",
+        "id": "6bf09330-71a6-475e-88d1-d3b72122bab3",
+        "name": "FiraCode-Medium",
+        "value": {
+          "isItalic": false,
+          "provider": "Google Fonts",
+          "fontFamily": "Fira Code",
+          "fontWeight": 500,
+          "fontFileMissing": false,
+          "fontPostScriptName": "FiraCode-Medium",
+          "url": "https://ddp-assets-prod.s3.amazonaws.com/927e26f6-da29-40d6-b9de-530bdcddf1ed/font/FiraCode-Medium/FiraCode-Medium.ttf?AWSAccessKeyId=ASIAYLKZPEWOIXPOWF5E&Expires=1617721668&Signature=xdTDQ3Q5IY%2BRNRhL8Hmp4FGt8QY%3D&x-amz-security-token=IQoJb3JpZ2luX2VjENT%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCWV1LXdlc3QtMSJGMEQCIHlUYrX1GikgdAHg3czxO9fEMZZlSCLg%2BvasP5c9xsT4AiBd8SAoHjnYnrTGdWmMTRTPh3pixcux%2BwjZZO07VxQiKSqfAwgtEAIaDDU3NDEwMjY0NDEyNCIMRp7ey8m%2BAIFNvi2AKvwCpHRCmOQmiTXkFudLAzNohkpSDdwayWpGwhMDiRuwuPOdkzG4MyUVp4kIKkP62WnqevJe%2Fvdsr6W8ApEQV4mUnUqmG%2BhaFa9hg5gHQ5JlQXpGmad5XcM7RP0zPjw9zTzHyMcfeYdLGlqHzOGd7ttuiYFXVuRIAsMW0zTfUc98F352yFIi4D3Ah5xknBVDYdZF%2BWobl3%2FSb9mR7QxBIuo5lm%2FpFVwYrAYz9YyG155y4j4%2FupVF0Nq2rphEz2dqJsZ4wjah1hgKueDfLcho8wSnHZtcwnII%2F2CJcnha%2F4V2CImAD5zYVYW9BWNQ6Xs9kTo9R86Z8WOjcdePP8GEsOUOWF146TiYfpldZEhmfpmlX7VVzROe9VyOaa2qqlhpxbmV4bbslrISLWs1ufQXwsWvP9aRsro%2FCpNK3R0RDtbcG0yUslLt6zkffUrTzfyyzlNRnHOiq1CCrk65635NZtkj62cOdV28D2LuGsqlgy57QF93rxCylIQo1xP5SQAw7ouxgwY67AFL6kjnAPxHWsFWu0DtfBsvhi4KtOV71wZtP9gM1W69xO%2BBNdzmBfZh91DLo5ZmvT4Q%2FLyXj0yAGp5N56hJjh5RfdlyXL%2BJjerHeUUAl7nDrq47OiFyhtgeiZOQxiEgVAytiESYjpKF1NO8xAr3RmLPfZqTDQ7wkunUy45%2BUdw6rf3xQ6yXzAL7UlLr%2BtrPTqDc8wG776tpQOP1zjJs53WF8byfRgenn7TDqriA0o4iBMWvLcCjpGWEK7MaaKLBnZNLOGWFogtxDfrkSmSsBfGDzHIPJeIX01YzOslYDckmalhc%2B3ROLExw4YlpCg%3D%3D"
+        },
+        "meta": {
+          "source": "localStyles"
+        },
+        "type": "font",
+        "originId": "FiraCode-Medium",
+        "sourceId": "3653cb84-8edb-46b0-8bee-ce46f0c7c829",
+        "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
+      },
+      "color": {
+        "value": {
+          "a": 1,
+          "b": 5,
+          "g": 142,
+          "r": 255
+        }
+      },
+      "fontSize": {
+        "value": {
+          "unit": "px",
+          "measure": 13
+        }
+      },
+      "textAlign": {
+        "vertical": "top",
+        "horizontal": "left"
+      },
+      "lineHeight": {
+        "value": {
+          "unit": "px",
+          "measure": 20
+        }
+      }
+    },
+    "meta": {
+      "source": "localStyles"
+    },
+    "type": "textStyle",
+    "originId": "12:168",
+    "sourceId": "3653cb84-8edb-46b0-8bee-ce46f0c7c829",
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
+  },
+  {
+    "createdAt": "2021-04-02T09:28:14.188Z",
+    "updatedAt": "2021-04-02T09:33:26.105Z",
+    "id": "89db893b-86c5-4d5a-a585-431650c1098f",
+    "name": "Colors/Accent",
+    "value": {
+      "a": 1,
+      "b": 255,
+      "g": 189,
+      "r": 198
+    },
+    "meta": {
+      "source": "localStyles"
+    },
+    "type": "color",
+    "originId": "12:150",
+    "sourceId": "079a9869-1dbc-4c60-a5c7-89fb42170c4b",
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
+  },
+  {
+    "createdAt": "2021-04-02T09:28:14.176Z",
+    "updatedAt": "2021-04-02T09:33:26.088Z",
+    "id": "fdb6a3dd-65cb-4855-b972-8a453784407e",
+    "name": "Colors/Black",
+    "value": {
+      "a": 1,
+      "b": 43,
+      "g": 33,
+      "r": 30
+    },
+    "meta": {
+      "source": "localStyles"
+    },
+    "type": "color",
+    "originId": "12:151",
+    "sourceId": "079a9869-1dbc-4c60-a5c7-89fb42170c4b",
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
+  },
+  {
+    "createdAt": "2021-04-02T09:28:14.188Z",
+    "updatedAt": "2021-04-02T09:33:26.105Z",
+    "id": "f1bea685-0a11-4df8-8b96-d82360904fa5",
+    "name": "Colors/Green",
+    "value": {
+      "a": 1,
+      "b": 82,
+      "g": 205,
+      "r": 88
+    },
+    "meta": {
+      "source": "localStyles"
+    },
+    "type": "color",
+    "originId": "12:154",
+    "sourceId": "079a9869-1dbc-4c60-a5c7-89fb42170c4b",
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
+  },
+  {
+    "createdAt": "2021-04-02T09:28:14.188Z",
+    "updatedAt": "2021-04-02T09:33:26.105Z",
+    "id": "07077ad2-2fa1-48a3-8585-abdc94d51288",
+    "name": "Colors/Grey",
+    "value": {
+      "a": 1,
+      "b": 225,
+      "g": 213,
+      "r": 204
+    },
+    "meta": {
+      "source": "localStyles"
+    },
+    "type": "color",
+    "originId": "12:152",
+    "sourceId": "079a9869-1dbc-4c60-a5c7-89fb42170c4b",
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
+  },
+  {
+    "createdAt": "2021-04-02T09:28:14.199Z",
+    "updatedAt": "2021-04-02T09:33:26.096Z",
+    "id": "5d3321b9-b2b5-40b5-84da-39a162f469c5",
+    "name": "Colors/Orange",
+    "value": {
+      "a": 1,
+      "b": 5,
+      "g": 142,
+      "r": 255
+    },
+    "meta": {
+      "source": "localStyles"
+    },
+    "type": "color",
+    "originId": "12:156",
+    "sourceId": "079a9869-1dbc-4c60-a5c7-89fb42170c4b",
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
+  },
+  {
+    "createdAt": "2021-04-02T09:28:14.199Z",
+    "updatedAt": "2021-04-02T09:33:26.108Z",
+    "id": "078f3fa9-f327-44aa-aeee-b0eae1dbcc8a",
+    "name": "Colors/Red",
+    "value": {
+      "a": 1,
+      "b": 63,
+      "g": 72,
+      "r": 245
+    },
+    "meta": {
+      "source": "localStyles"
+    },
+    "type": "color",
+    "originId": "12:155",
+    "sourceId": "079a9869-1dbc-4c60-a5c7-89fb42170c4b",
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
+  },
+  {
+    "createdAt": "2021-04-02T09:28:14.188Z",
+    "updatedAt": "2021-04-02T09:33:26.105Z",
+    "id": "a69dbcb0-2603-4a58-8e96-2cab55b80acb",
+    "name": "Colors/White",
+    "value": {
+      "a": 1,
+      "b": 255,
+      "g": 255,
+      "r": 255
+    },
+    "meta": {
+      "source": "localStyles"
+    },
+    "type": "color",
+    "originId": "12:153",
+    "sourceId": "079a9869-1dbc-4c60-a5c7-89fb42170c4b",
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
+  },
+  {
+    "createdAt": "2021-04-02T09:38:38.588Z",
+    "updatedAt": "2021-04-02T09:38:38.588Z",
+    "id": "df449e45-21c2-4204-93ed-932b1df96161",
+    "name": "Elevation-1",
+    "value": [
+      {
+        "blur": {
+          "value": {
+            "unit": "px",
+            "measure": 8
+          }
+        },
+        "color": {
+          "value": {
+            "a": 0.1,
+            "b": 0,
+            "g": 0,
+            "r": 0
+          }
+        },
+        "isInner": false,
+        "offsetX": {
+          "value": {
+            "unit": "px",
+            "measure": 0
+          }
+        },
+        "offsetY": {
+          "value": {
+            "unit": "px",
+            "measure": 4
+          }
+        }
+      }
+    ],
+    "meta": {
+      "source": "localStyles"
+    },
+    "type": "shadow",
+    "originId": "12:157",
+    "sourceId": "0b42c713-452d-47de-9475-a91abcf81498",
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
+  },
+  {
+    "createdAt": "2021-04-02T09:38:38.588Z",
+    "updatedAt": "2021-04-02T09:38:38.588Z",
+    "id": "5e271334-3edb-4e30-b125-079fb99ae806",
+    "name": "Elevation-2",
+    "value": [
+      {
+        "blur": {
+          "value": {
+            "unit": "px",
+            "measure": 28
+          }
+        },
+        "color": {
+          "value": {
+            "a": 0.1,
+            "b": 0,
+            "g": 0,
+            "r": 0
+          }
+        },
+        "isInner": false,
+        "offsetX": {
+          "value": {
+            "unit": "px",
+            "measure": 0
+          }
+        },
+        "offsetY": {
+          "value": {
+            "unit": "px",
+            "measure": 4
+          }
+        }
+      },
+      {
+        "blur": {
+          "value": {
+            "unit": "px",
+            "measure": 4
+          }
+        },
+        "color": {
+          "value": {
+            "a": 0.1,
+            "b": 0,
+            "g": 0,
+            "r": 0
+          }
+        },
+        "isInner": false,
+        "offsetX": {
+          "value": {
+            "unit": "px",
+            "measure": 0
+          }
+        },
+        "offsetY": {
+          "value": {
+            "unit": "px",
+            "measure": 4
+          }
+        }
+      }
+    ],
+    "meta": {
+      "source": "localStyles"
+    },
+    "type": "shadow",
+    "originId": "12:158",
+    "sourceId": "0b42c713-452d-47de-9475-a91abcf81498",
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
+  },
+  {
+    "createdAt": "2021-04-02T09:38:38.582Z",
+    "updatedAt": "2021-04-02T09:38:38.582Z",
+    "id": "8ee87a99-ba46-4ad5-b1b6-4a4ab7eefe6b",
+    "name": "Elevation-3",
+    "value": [
+      {
+        "blur": {
+          "value": {
+            "unit": "px",
+            "measure": 3.1481480598449707
+          }
+        },
+        "color": {
+          "value": {
+            "a": 0.02,
+            "b": 0,
+            "g": 0,
+            "r": 0
+          }
+        },
+        "isInner": false,
+        "offsetX": {
+          "value": {
+            "unit": "px",
+            "measure": 0
+          }
+        },
+        "offsetY": {
+          "value": {
+            "unit": "px",
+            "measure": 1.8518518209457397
+          }
+        }
+      },
+      {
+        "blur": {
+          "value": {
+            "unit": "px",
+            "measure": 6.518518447875977
+          }
+        },
+        "color": {
+          "value": {
+            "a": 0.03,
+            "b": 0,
+            "g": 0,
+            "r": 0
+          }
+        },
+        "isInner": false,
+        "offsetX": {
+          "value": {
+            "unit": "px",
+            "measure": 0
+          }
+        },
+        "offsetY": {
+          "value": {
+            "unit": "px",
+            "measure": 8.148148536682129
+          }
+        }
+      },
+      {
+        "blur": {
+          "value": {
+            "unit": "px",
+            "measure": 13
+          }
+        },
+        "color": {
+          "value": {
+            "a": 0.04,
+            "b": 0,
+            "g": 0,
+            "r": 0
+          }
+        },
+        "isInner": false,
+        "offsetX": {
+          "value": {
+            "unit": "px",
+            "measure": 0
+          }
+        },
+        "offsetY": {
+          "value": {
+            "unit": "px",
+            "measure": 20
+          }
+        }
+      },
+      {
+        "blur": {
+          "value": {
+            "unit": "px",
+            "measure": 25.481481552124023
+          }
+        },
+        "color": {
+          "value": {
+            "a": 0.04,
+            "b": 0,
+            "g": 0,
+            "r": 0
+          }
+        },
+        "isInner": false,
+        "offsetX": {
+          "value": {
+            "unit": "px",
+            "measure": 0
+          }
+        },
+        "offsetY": {
+          "value": {
+            "unit": "px",
+            "measure": 38.51852035522461
+          }
+        }
+      },
+      {
+        "blur": {
+          "value": {
+            "unit": "px",
+            "measure": 46.85185241699219
+          }
+        },
+        "color": {
+          "value": {
+            "a": 0.05,
+            "b": 0,
+            "g": 0,
+            "r": 0
+          }
+        },
+        "isInner": false,
+        "offsetX": {
+          "value": {
+            "unit": "px",
+            "measure": 0
+          }
+        },
+        "offsetY": {
+          "value": {
+            "unit": "px",
+            "measure": 64.81481170654297
+          }
+        }
+      },
+      {
+        "blur": {
+          "value": {
+            "unit": "px",
+            "measure": 80
+          }
+        },
+        "color": {
+          "value": {
+            "a": 0.07,
+            "b": 0,
+            "g": 0,
+            "r": 0
+          }
+        },
+        "spread": {
+          "value": {
+            "unit": "px",
+            "measure": 1
+          }
+        },
+        "isInner": false,
+        "offsetX": {
+          "value": {
+            "unit": "px",
+            "measure": 0
+          }
+        },
+        "offsetY": {
+          "value": {
+            "unit": "px",
+            "measure": 100
+          }
+        }
+      }
+    ],
+    "meta": {
+      "source": "localStyles"
+    },
+    "type": "shadow",
+    "originId": "12:159",
+    "sourceId": "0b42c713-452d-47de-9475-a91abcf81498",
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
+  },
+  {
+    "createdAt": "2021-04-02T09:54:13.112Z",
+    "updatedAt": "2021-04-02T09:54:13.363Z",
+    "id": "6bf09330-71a6-475e-88d1-d3b72122bab3",
+    "name": "FiraCode-Medium",
+    "value": {
+      "isItalic": false,
+      "provider": "Google Fonts",
+      "fontFamily": "Fira Code",
+      "fontWeight": 500,
+      "fontFileMissing": false,
+      "fontPostScriptName": "FiraCode-Medium",
+      "url": "https://ddp-assets-prod.s3.amazonaws.com/927e26f6-da29-40d6-b9de-530bdcddf1ed/font/FiraCode-Medium/FiraCode-Medium.ttf?AWSAccessKeyId=ASIAYLKZPEWOIXPOWF5E&Expires=1617721668&Signature=xdTDQ3Q5IY%2BRNRhL8Hmp4FGt8QY%3D&x-amz-security-token=IQoJb3JpZ2luX2VjENT%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCWV1LXdlc3QtMSJGMEQCIHlUYrX1GikgdAHg3czxO9fEMZZlSCLg%2BvasP5c9xsT4AiBd8SAoHjnYnrTGdWmMTRTPh3pixcux%2BwjZZO07VxQiKSqfAwgtEAIaDDU3NDEwMjY0NDEyNCIMRp7ey8m%2BAIFNvi2AKvwCpHRCmOQmiTXkFudLAzNohkpSDdwayWpGwhMDiRuwuPOdkzG4MyUVp4kIKkP62WnqevJe%2Fvdsr6W8ApEQV4mUnUqmG%2BhaFa9hg5gHQ5JlQXpGmad5XcM7RP0zPjw9zTzHyMcfeYdLGlqHzOGd7ttuiYFXVuRIAsMW0zTfUc98F352yFIi4D3Ah5xknBVDYdZF%2BWobl3%2FSb9mR7QxBIuo5lm%2FpFVwYrAYz9YyG155y4j4%2FupVF0Nq2rphEz2dqJsZ4wjah1hgKueDfLcho8wSnHZtcwnII%2F2CJcnha%2F4V2CImAD5zYVYW9BWNQ6Xs9kTo9R86Z8WOjcdePP8GEsOUOWF146TiYfpldZEhmfpmlX7VVzROe9VyOaa2qqlhpxbmV4bbslrISLWs1ufQXwsWvP9aRsro%2FCpNK3R0RDtbcG0yUslLt6zkffUrTzfyyzlNRnHOiq1CCrk65635NZtkj62cOdV28D2LuGsqlgy57QF93rxCylIQo1xP5SQAw7ouxgwY67AFL6kjnAPxHWsFWu0DtfBsvhi4KtOV71wZtP9gM1W69xO%2BBNdzmBfZh91DLo5ZmvT4Q%2FLyXj0yAGp5N56hJjh5RfdlyXL%2BJjerHeUUAl7nDrq47OiFyhtgeiZOQxiEgVAytiESYjpKF1NO8xAr3RmLPfZqTDQ7wkunUy45%2BUdw6rf3xQ6yXzAL7UlLr%2BtrPTqDc8wG776tpQOP1zjJs53WF8byfRgenn7TDqriA0o4iBMWvLcCjpGWEK7MaaKLBnZNLOGWFogtxDfrkSmSsBfGDzHIPJeIX01YzOslYDckmalhc%2B3ROLExw4YlpCg%3D%3D"
+    },
+    "meta": {
+      "source": "localStyles"
+    },
+    "type": "font",
+    "originId": "FiraCode-Medium",
+    "sourceId": "3653cb84-8edb-46b0-8bee-ce46f0c7c829",
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
+  },
+  {
+    "createdAt": "2021-04-02T08:16:49.853Z",
+    "updatedAt": "2021-04-02T08:22:43.068Z",
+    "id": "e173819d-4410-446c-93e0-02e5dbbe5c5c",
+    "name": "Foreground",
+    "value": {
+      "depth": 100
+    },
+    "meta": {
+      "source": "frames",
+      "sourceFile": "https://www.figma.com/file/9KvLO7F8VPrJ7GxGBWwCr9",
+      "originFrameName": "Depth - Example"
+    },
+    "type": "depth",
+    "originId": "1:55",
+    "sourceId": "cce5bc1c-60c6-45b4-95f2-5b8ee29864fc",
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
+  },
+  {
+    "createdAt": "2021-04-02T09:45:46.293Z",
+    "updatedAt": "2021-04-02T09:45:46.293Z",
+    "id": "a8f2ce1d-8817-4396-ac5a-8a3de7a76fff",
+    "name": "Gradients/ Colored",
+    "value": {
+      "gradients": [
+        {
+          "angle": "90deg",
+          "colors": [
+            {
+              "type": "color",
+              "color": {
+                "value": {
+                  "a": 1,
+                  "b": 63,
+                  "g": 72,
+                  "r": 245
+                }
+              },
+              "position": 0
+            },
+            {
+              "type": "color",
+              "color": {
+                "value": {
+                  "a": 1,
+                  "b": 5,
+                  "g": 142,
+                  "r": 255
+                }
+              },
+              "position": 100
+            }
+          ]
+        }
+      ]
+    },
+    "meta": {
+      "source": "localStyles"
+    },
+    "type": "gradient",
+    "originId": "12:161",
+    "sourceId": "0196b1d4-7def-4a07-a407-c63a40ba3aa8",
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
+  },
+  {
+    "createdAt": "2021-04-02T09:45:46.293Z",
+    "updatedAt": "2021-04-02T09:45:46.293Z",
+    "id": "639e2352-a6a6-4d1f-94d1-8c9aa8e9a3a0",
+    "name": "Gradients/ Dark",
+    "value": {
+      "gradients": [
+        {
+          "angle": "90deg",
+          "colors": [
+            {
+              "type": "color",
+              "color": {
+                "value": {
+                  "a": 1,
+                  "b": 43,
+                  "g": 33,
+                  "r": 30
+                }
+              },
+              "position": 0
+            },
+            {
+              "type": "color",
+              "color": {
+                "value": {
+                  "a": 1,
+                  "b": 225,
+                  "g": 213,
+                  "r": 204
+                }
+              },
+              "position": 100
+            }
+          ]
+        }
+      ]
+    },
+    "meta": {
+      "source": "localStyles"
+    },
+    "type": "gradient",
+    "originId": "12:160",
+    "sourceId": "0196b1d4-7def-4a07-a407-c63a40ba3aa8",
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
+  },
+  {
+    "createdAt": "2021-04-02T09:45:46.293Z",
+    "updatedAt": "2021-04-02T09:45:46.293Z",
+    "id": "f0b78f3d-ed48-44af-8a7f-05ec90971a2b",
+    "name": "Gradients/ Neutral",
+    "value": {
+      "gradients": [
+        {
+          "angle": "90deg",
+          "colors": [
+            {
+              "type": "color",
+              "color": {
+                "value": {
+                  "a": 1,
+                  "b": 225,
+                  "g": 213,
+                  "r": 204
+                }
+              },
+              "position": 0
+            },
+            {
+              "type": "color",
+              "color": {
+                "value": {
+                  "a": 1,
+                  "b": 255,
+                  "g": 255,
+                  "r": 255
+                }
+              },
+              "position": 100
+            }
+          ]
+        }
+      ]
+    },
+    "meta": {
+      "source": "localStyles"
+    },
+    "type": "gradient",
+    "originId": "12:162",
+    "sourceId": "0196b1d4-7def-4a07-a407-c63a40ba3aa8",
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
+  },
+  {
+    "createdAt": "2021-04-02T08:01:57.087Z",
+    "updatedAt": "2021-04-02T08:01:57.289Z",
+    "id": "e69237ab-05db-4380-81e5-70db7f5448f1",
+    "name": "Inter-Medium",
+    "value": {
+      "isItalic": false,
+      "provider": "Google Fonts",
+      "fontFamily": "Inter",
+      "fontWeight": 500,
+      "fontFileMissing": false,
+      "fontPostScriptName": "Inter-Medium",
+      "url": "https://ddp-assets-prod.s3.amazonaws.com/927e26f6-da29-40d6-b9de-530bdcddf1ed/font/Inter-Medium/Inter-Medium.ttf?AWSAccessKeyId=ASIAYLKZPEWOIXPOWF5E&Expires=1617721668&Signature=RGdWyHQjaAkDjQ5xC22UYaBDgms%3D&x-amz-security-token=IQoJb3JpZ2luX2VjENT%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCWV1LXdlc3QtMSJGMEQCIHlUYrX1GikgdAHg3czxO9fEMZZlSCLg%2BvasP5c9xsT4AiBd8SAoHjnYnrTGdWmMTRTPh3pixcux%2BwjZZO07VxQiKSqfAwgtEAIaDDU3NDEwMjY0NDEyNCIMRp7ey8m%2BAIFNvi2AKvwCpHRCmOQmiTXkFudLAzNohkpSDdwayWpGwhMDiRuwuPOdkzG4MyUVp4kIKkP62WnqevJe%2Fvdsr6W8ApEQV4mUnUqmG%2BhaFa9hg5gHQ5JlQXpGmad5XcM7RP0zPjw9zTzHyMcfeYdLGlqHzOGd7ttuiYFXVuRIAsMW0zTfUc98F352yFIi4D3Ah5xknBVDYdZF%2BWobl3%2FSb9mR7QxBIuo5lm%2FpFVwYrAYz9YyG155y4j4%2FupVF0Nq2rphEz2dqJsZ4wjah1hgKueDfLcho8wSnHZtcwnII%2F2CJcnha%2F4V2CImAD5zYVYW9BWNQ6Xs9kTo9R86Z8WOjcdePP8GEsOUOWF146TiYfpldZEhmfpmlX7VVzROe9VyOaa2qqlhpxbmV4bbslrISLWs1ufQXwsWvP9aRsro%2FCpNK3R0RDtbcG0yUslLt6zkffUrTzfyyzlNRnHOiq1CCrk65635NZtkj62cOdV28D2LuGsqlgy57QF93rxCylIQo1xP5SQAw7ouxgwY67AFL6kjnAPxHWsFWu0DtfBsvhi4KtOV71wZtP9gM1W69xO%2BBNdzmBfZh91DLo5ZmvT4Q%2FLyXj0yAGp5N56hJjh5RfdlyXL%2BJjerHeUUAl7nDrq47OiFyhtgeiZOQxiEgVAytiESYjpKF1NO8xAr3RmLPfZqTDQ7wkunUy45%2BUdw6rf3xQ6yXzAL7UlLr%2BtrPTqDc8wG776tpQOP1zjJs53WF8byfRgenn7TDqriA0o4iBMWvLcCjpGWEK7MaaKLBnZNLOGWFogtxDfrkSmSsBfGDzHIPJeIX01YzOslYDckmalhc%2B3ROLExw4YlpCg%3D%3D"
+    },
+    "meta": {
+      "source": "localStyles"
+    },
+    "type": "font",
+    "originId": "Inter-Medium",
+    "sourceId": "3653cb84-8edb-46b0-8bee-ce46f0c7c829",
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
+  },
+  {
+    "createdAt": "2021-04-02T08:01:57.087Z",
+    "updatedAt": "2021-04-02T08:01:57.306Z",
+    "id": "55662ae4-7078-4e36-8392-eca72647acbf",
+    "name": "Inter-SemiBold",
+    "value": {
+      "isItalic": false,
+      "provider": "Google Fonts",
+      "fontFamily": "Inter",
+      "fontWeight": 600,
+      "fontFileMissing": false,
+      "fontPostScriptName": "Inter-SemiBold",
+      "url": "https://ddp-assets-prod.s3.amazonaws.com/927e26f6-da29-40d6-b9de-530bdcddf1ed/font/Inter-SemiBold/Inter-SemiBold.ttf?AWSAccessKeyId=ASIAYLKZPEWOIXPOWF5E&Expires=1617721668&Signature=BKkV7VipnLs8xQR1VlnSyDAeX9U%3D&x-amz-security-token=IQoJb3JpZ2luX2VjENT%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCWV1LXdlc3QtMSJGMEQCIHlUYrX1GikgdAHg3czxO9fEMZZlSCLg%2BvasP5c9xsT4AiBd8SAoHjnYnrTGdWmMTRTPh3pixcux%2BwjZZO07VxQiKSqfAwgtEAIaDDU3NDEwMjY0NDEyNCIMRp7ey8m%2BAIFNvi2AKvwCpHRCmOQmiTXkFudLAzNohkpSDdwayWpGwhMDiRuwuPOdkzG4MyUVp4kIKkP62WnqevJe%2Fvdsr6W8ApEQV4mUnUqmG%2BhaFa9hg5gHQ5JlQXpGmad5XcM7RP0zPjw9zTzHyMcfeYdLGlqHzOGd7ttuiYFXVuRIAsMW0zTfUc98F352yFIi4D3Ah5xknBVDYdZF%2BWobl3%2FSb9mR7QxBIuo5lm%2FpFVwYrAYz9YyG155y4j4%2FupVF0Nq2rphEz2dqJsZ4wjah1hgKueDfLcho8wSnHZtcwnII%2F2CJcnha%2F4V2CImAD5zYVYW9BWNQ6Xs9kTo9R86Z8WOjcdePP8GEsOUOWF146TiYfpldZEhmfpmlX7VVzROe9VyOaa2qqlhpxbmV4bbslrISLWs1ufQXwsWvP9aRsro%2FCpNK3R0RDtbcG0yUslLt6zkffUrTzfyyzlNRnHOiq1CCrk65635NZtkj62cOdV28D2LuGsqlgy57QF93rxCylIQo1xP5SQAw7ouxgwY67AFL6kjnAPxHWsFWu0DtfBsvhi4KtOV71wZtP9gM1W69xO%2BBNdzmBfZh91DLo5ZmvT4Q%2FLyXj0yAGp5N56hJjh5RfdlyXL%2BJjerHeUUAl7nDrq47OiFyhtgeiZOQxiEgVAytiESYjpKF1NO8xAr3RmLPfZqTDQ7wkunUy45%2BUdw6rf3xQ6yXzAL7UlLr%2BtrPTqDc8wG776tpQOP1zjJs53WF8byfRgenn7TDqriA0o4iBMWvLcCjpGWEK7MaaKLBnZNLOGWFogtxDfrkSmSsBfGDzHIPJeIX01YzOslYDckmalhc%2B3ROLExw4YlpCg%3D%3D"
+    },
+    "meta": {
+      "source": "localStyles"
+    },
+    "type": "font",
+    "originId": "Inter-SemiBold",
+    "sourceId": "3653cb84-8edb-46b0-8bee-ce46f0c7c829",
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
+  },
+  {
+    "createdAt": "2021-04-02T09:38:09.767Z",
+    "updatedAt": "2021-04-02T09:38:09.767Z",
+    "id": "51102746-9435-4437-80d5-b03b03b0d518",
+    "name": "Long",
+    "value": {
+      "unit": "ms",
+      "duration": 700
+    },
+    "meta": {
+      "source": "frames",
+      "sourceFile": "https://www.figma.com/file/9KvLO7F8VPrJ7GxGBWwCr9",
+      "originFrameName": "Timing · Example"
+    },
+    "type": "duration",
+    "originId": "1:64",
+    "sourceId": "c79c5c65-f70b-4bba-a410-976465f0713e",
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
+  },
+  {
+    "createdAt": "2021-04-02T08:16:49.853Z",
+    "updatedAt": "2021-04-02T08:22:43.068Z",
+    "id": "b104bf03-1079-4ee0-a823-b44cc4b59a12",
+    "name": "Middle",
+    "value": {
+      "depth": 50
+    },
+    "meta": {
+      "source": "frames",
+      "sourceFile": "https://www.figma.com/file/9KvLO7F8VPrJ7GxGBWwCr9",
+      "originFrameName": "Depth - Example"
+    },
+    "type": "depth",
+    "originId": "1:56",
+    "sourceId": "cce5bc1c-60c6-45b4-95f2-5b8ee29864fc",
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
+  },
+  {
+    "createdAt": "2021-04-02T09:55:29.270Z",
+    "updatedAt": "2021-04-02T09:55:29.270Z",
+    "id": "1d05cb87-2403-4952-a972-56933e84d8d5",
+    "name": "photo-example",
+    "value": {
+      "url": "https://s3-us-west-2.amazonaws.com/figma-alpha-api/img/3302/0ec5/79870771c0861eaa8f1af4e4ed5a8790",
+      "format": "png"
+    },
+    "meta": {
+      "format": "png",
+      "dimension": 1
+    },
+    "type": "bitmap",
+    "originId": "12:13-png-1",
+    "sourceId": "ded1694b-249a-42e8-add9-35df05d36f80",
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
+  },
+  {
+    "createdAt": "2021-04-02T09:55:29.275Z",
+    "updatedAt": "2021-04-02T09:55:29.275Z",
+    "id": "038e3d7d-1cdf-4e17-86ab-003c84e92893",
+    "name": "photo-example",
+    "value": {
+      "url": "https://s3-us-west-2.amazonaws.com/figma-alpha-api/img/3dc2/2924/69dc19737d174f7a50bdbb680eecd234",
+      "format": "jpg",
+      "dimension": 2
+    },
+    "meta": {
+      "format": "jpg",
+      "dimension": 2
+    },
+    "type": "bitmap",
+    "originId": "12:13-jpg-2",
+    "sourceId": "ded1694b-249a-42e8-add9-35df05d36f80",
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
+  },
+  {
+    "createdAt": "2021-04-02T09:55:29.275Z",
+    "updatedAt": "2021-04-02T09:55:29.275Z",
+    "id": "7bb27a1b-6e06-4585-b7a3-b1dee660d869",
+    "name": "photo-example",
+    "value": {
+      "url": "https://s3-us-west-2.amazonaws.com/figma-alpha-api/img/b37d/0363/619821e8608769bcfdde017aadf0dc9b",
+      "format": "jpg",
+      "dimension": 3
+    },
+    "meta": {
+      "format": "jpg",
+      "dimension": 3
+    },
+    "type": "bitmap",
+    "originId": "12:13-jpg-3",
+    "sourceId": "ded1694b-249a-42e8-add9-35df05d36f80",
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
+  },
+  {
+    "createdAt": "2021-04-02T09:38:09.759Z",
+    "updatedAt": "2021-04-02T09:38:09.759Z",
+    "id": "71b2d400-f330-4ab0-9c16-30cea2d5a1ce",
+    "name": "Short",
+    "value": {
+      "unit": "ms",
+      "duration": 100
+    },
+    "meta": {
+      "source": "frames",
+      "sourceFile": "https://www.figma.com/file/9KvLO7F8VPrJ7GxGBWwCr9",
+      "originFrameName": "Timing · Example"
+    },
+    "type": "duration",
+    "originId": "1:63",
+    "sourceId": "c79c5c65-f70b-4bba-a410-976465f0713e",
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
+  },
+  {
+    "createdAt": "2021-04-02T08:30:11.555Z",
+    "updatedAt": "2021-04-02T08:30:11.555Z",
+    "id": "3f75eab5-2fe3-4a96-a0e0-1080e1c67c4b",
+    "name": "Subtle",
+    "value": {
+      "opacity": 50
+    },
+    "meta": {
+      "source": "frames",
+      "sourceFile": "https://www.figma.com/file/9KvLO7F8VPrJ7GxGBWwCr9",
+      "originFrameName": "Opacity - Example"
+    },
+    "type": "opacity",
+    "originId": "1:74",
+    "sourceId": "a327147a-357f-4e96-9413-f41e42b9b3c8",
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
+  },
+  {
+    "createdAt": "2021-04-02T09:54:13.112Z",
+    "updatedAt": "2021-04-02T11:09:52.690Z",
+    "id": "4a629e43-cc47-4e08-948a-5a8d1b8e225d",
+    "name": "Title",
+    "value": {
+      "font": {
+        "createdAt": "2021-04-02T08:01:57.087Z",
+        "updatedAt": "2021-04-02T08:01:57.306Z",
+        "id": "55662ae4-7078-4e36-8392-eca72647acbf",
+        "name": "Inter-SemiBold",
+        "value": {
+          "isItalic": false,
+          "provider": "Google Fonts",
+          "fontFamily": "Inter",
+          "fontWeight": 600,
+          "fontFileMissing": false,
+          "fontPostScriptName": "Inter-SemiBold",
+          "url": "https://ddp-assets-prod.s3.amazonaws.com/927e26f6-da29-40d6-b9de-530bdcddf1ed/font/Inter-SemiBold/Inter-SemiBold.ttf?AWSAccessKeyId=ASIAYLKZPEWOIXPOWF5E&Expires=1617721668&Signature=BKkV7VipnLs8xQR1VlnSyDAeX9U%3D&x-amz-security-token=IQoJb3JpZ2luX2VjENT%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCWV1LXdlc3QtMSJGMEQCIHlUYrX1GikgdAHg3czxO9fEMZZlSCLg%2BvasP5c9xsT4AiBd8SAoHjnYnrTGdWmMTRTPh3pixcux%2BwjZZO07VxQiKSqfAwgtEAIaDDU3NDEwMjY0NDEyNCIMRp7ey8m%2BAIFNvi2AKvwCpHRCmOQmiTXkFudLAzNohkpSDdwayWpGwhMDiRuwuPOdkzG4MyUVp4kIKkP62WnqevJe%2Fvdsr6W8ApEQV4mUnUqmG%2BhaFa9hg5gHQ5JlQXpGmad5XcM7RP0zPjw9zTzHyMcfeYdLGlqHzOGd7ttuiYFXVuRIAsMW0zTfUc98F352yFIi4D3Ah5xknBVDYdZF%2BWobl3%2FSb9mR7QxBIuo5lm%2FpFVwYrAYz9YyG155y4j4%2FupVF0Nq2rphEz2dqJsZ4wjah1hgKueDfLcho8wSnHZtcwnII%2F2CJcnha%2F4V2CImAD5zYVYW9BWNQ6Xs9kTo9R86Z8WOjcdePP8GEsOUOWF146TiYfpldZEhmfpmlX7VVzROe9VyOaa2qqlhpxbmV4bbslrISLWs1ufQXwsWvP9aRsro%2FCpNK3R0RDtbcG0yUslLt6zkffUrTzfyyzlNRnHOiq1CCrk65635NZtkj62cOdV28D2LuGsqlgy57QF93rxCylIQo1xP5SQAw7ouxgwY67AFL6kjnAPxHWsFWu0DtfBsvhi4KtOV71wZtP9gM1W69xO%2BBNdzmBfZh91DLo5ZmvT4Q%2FLyXj0yAGp5N56hJjh5RfdlyXL%2BJjerHeUUAl7nDrq47OiFyhtgeiZOQxiEgVAytiESYjpKF1NO8xAr3RmLPfZqTDQ7wkunUy45%2BUdw6rf3xQ6yXzAL7UlLr%2BtrPTqDc8wG776tpQOP1zjJs53WF8byfRgenn7TDqriA0o4iBMWvLcCjpGWEK7MaaKLBnZNLOGWFogtxDfrkSmSsBfGDzHIPJeIX01YzOslYDckmalhc%2B3ROLExw4YlpCg%3D%3D"
+        },
+        "meta": {
+          "source": "localStyles"
+        },
+        "type": "font",
+        "originId": "Inter-SemiBold",
+        "sourceId": "3653cb84-8edb-46b0-8bee-ce46f0c7c829",
+        "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
+      },
+      "color": {
+        "value": {
+          "a": 1,
+          "b": 196,
+          "g": 196,
+          "r": 196
+        }
+      },
+      "fontSize": {
+        "value": {
+          "unit": "px",
+          "measure": 32
+        }
+      },
+      "textAlign": {
+        "vertical": "top",
+        "horizontal": "left"
+      },
+      "lineHeight": {
+        "value": {
+          "unit": "px",
+          "measure": 40
+        }
+      },
+      "textIndent": {
+        "value": {
+          "unit": "px",
+          "measure": 5
+        }
+      },
+      "textDecoration": [
+        "underline"
+      ]
+    },
+    "meta": {
+      "source": "localStyles"
+    },
+    "type": "textStyle",
+    "originId": "12:163",
+    "sourceId": "3653cb84-8edb-46b0-8bee-ce46f0c7c829",
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
+  },
+  {
+    "createdAt": "2021-04-02T08:30:11.555Z",
+    "updatedAt": "2021-04-02T08:30:11.555Z",
+    "id": "a644be4a-8294-448c-a90e-f8a4c2906bf3",
+    "name": "Transparent",
+    "value": {
+      "opacity": 10
+    },
+    "meta": {
+      "source": "frames",
+      "sourceFile": "https://www.figma.com/file/9KvLO7F8VPrJ7GxGBWwCr9",
+      "originFrameName": "Opacity - Example"
+    },
+    "type": "opacity",
+    "originId": "1:72",
+    "sourceId": "a327147a-357f-4e96-9413-f41e42b9b3c8",
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
+  },
+  {
+    "createdAt": "2021-04-02T09:38:09.767Z",
+    "updatedAt": "2021-04-02T09:38:09.767Z",
+    "id": "d7f7616e-cc95-4248-a0a7-d301d1fb1144",
+    "name": "Very long",
+    "value": {
+      "unit": "s",
+      "duration": 3
+    },
+    "meta": {
+      "source": "frames",
+      "sourceFile": "https://www.figma.com/file/9KvLO7F8VPrJ7GxGBWwCr9",
+      "originFrameName": "Timing · Example"
+    },
+    "type": "duration",
+    "originId": "1:65",
+    "sourceId": "c79c5c65-f70b-4bba-a410-976465f0713e",
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
+  },
+  {
+    "createdAt": "2021-04-02T08:30:11.549Z",
+    "updatedAt": "2021-04-02T08:30:11.549Z",
+    "id": "24ae6eb2-f61e-4505-9634-dc4724420bf2",
+    "name": "Visible",
+    "value": {
+      "opacity": 95
+    },
+    "meta": {
+      "source": "frames",
+      "sourceFile": "https://www.figma.com/file/9KvLO7F8VPrJ7GxGBWwCr9",
+      "originFrameName": "Opacity - Example"
+    },
+    "type": "opacity",
+    "originId": "1:75",
+    "sourceId": "a327147a-357f-4e96-9413-f41e42b9b3c8",
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
+  }
+]

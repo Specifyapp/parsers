@@ -1,4 +1,4 @@
-import seeds from '../../seeds';
+import seeds from '../../tests/seeds';
 import suffixBy from './suffix-by.parser';
 import { Token } from '../../types';
 import libs from '../global-libs';

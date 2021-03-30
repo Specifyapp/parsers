@@ -1,5 +1,5 @@
 import libs from '../global-libs';
-import seeds from '../../seeds';
+import seeds from '../../tests/seeds';
 import toJss, { OptionsType } from './to-jss.parser';
 import {
   ColorToken,
@@ -14,7 +14,7 @@ import tinycolor from 'tinycolor2';
 
 describe('To jss', () => {
   it('Get tokens - apply parsers', async done => {
-    const result = await toJss(seeds().tokens as Array<Token>, undefined, libs);
+    const result = await toJss(seeds().tokens as Array<Token>, { formatName: 'camelCase' }, libs);
     expect(typeof result).toEqual('string');
     const color = seeds().tokens.find(token => token.type === 'color') as Token;
     const measurement = seeds().tokens.find(
@@ -166,10 +166,6 @@ describe('To jss', () => {
       ),
     ).toBe(true);
 
-    // Specific edge case where we don't have a space in the name but still want to parse
-    expect(result.includes('colorwithaslashInit')).toBe(true);
-    expect(result.includes('colorwithadashInit')).toBe(true);
-
     const fnFormatName = libs._.camelCase;
     expect(
       result.includes(
@@ -275,7 +271,7 @@ describe('To jss', () => {
     );
 
     expect(result.includes('http://')).toBeFalsy();
-    expect(result.includes('@2x.webp')).toBeTruthy();
+    expect(result.includes('@2x.jpg')).toBeTruthy();
   });
   it('Relative path with custom pattern', async () => {
     const options: OptionsType = {

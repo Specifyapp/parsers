@@ -1,7 +1,7 @@
 import rounding from './round-number.parser';
 import { BorderToken, MeasurementToken, ShadowToken, TextStyleToken, Token } from '../../types';
 import libs from '../global-libs';
-import seeds from '../../seeds';
+import seeds from '../../tests/seeds';
 
 const countDecimals = function (value: number) {
   if (Math.floor(value) !== value) return value.toString().split('.')[1].length || 0;

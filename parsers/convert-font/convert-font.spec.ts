@@ -1,4 +1,4 @@
-import seeds from '../../seeds'
+import seeds from '../../tests/seeds';
 import convertFont, { OptionsType } from './convert-font.parser';
 import { FontFormatList, FontToken } from '../../types';
 import { LibsType } from '../global-libs';
