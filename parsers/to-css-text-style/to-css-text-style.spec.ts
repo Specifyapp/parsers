@@ -1,7 +1,6 @@
-import seeds from '../../seeds';
+import seeds from '../../tests/seeds';
 import { default as toCssTextStyle, InputDataType } from './to-css-text-style.parser';
-import libs, { LibsType } from '../global-libs';
-import { TextStyleValue } from '../../types';
+import libs from '../global-libs';
 
 describe('to-css-text-style', () => {
   it('Get tokens - execute parser', async done => {
@@ -14,16 +13,15 @@ describe('to-css-text-style', () => {
     expect(typeof result).toEqual('string');
     expect(
       result.includes(
-        '.ts-with-allan-again {\n' +
+        '.title {\n' +
           '  color: rgb(196, 196, 196);\n' +
-          '  font-family: Allan;\n' +
-          '  font-size: 12.1px;\n' +
-          '  line-height: 12px;\n' +
+          '  font-family: Inter;\n' +
+          '  font-size: 32px;\n' +
+          '  line-height: 40px;\n' +
           '  text-align: left;\n' +
           '  vertical-align: top;\n' +
-          '  text-transform: uppercase;\n' +
-          '  text-decoration: line-through;\n' +
-          '  text-indent: 10px;\n' +
+          '  text-decoration: underline;\n' +
+          '  text-indent: 5px;\n' +
           '}',
       ),
     ).toBeTruthy();
@@ -95,11 +93,11 @@ describe('to-css-text-style', () => {
     if (result instanceof Error) return done.fail(result);
     expect(
       result.includes(
-        '.utilsLocalTextStylesTextStyle {\n' +
+        '.utilsBodyTextStyle {\n' +
           '  color: #c4c4c4;\n' +
-          '  font-family: allan, serif;\n' +
-          '  font-size: 16px;\n' +
-          '  line-height: 1;\n' +
+          '  font-family: inter, serif;\n' +
+          '  font-size: 14px;\n' +
+          '  line-height: 1.43;\n' +
           '  text-align: left;\n' +
           '  vertical-align: top;\n' +
           '}',
@@ -107,13 +105,27 @@ describe('to-css-text-style', () => {
     ).toBeTruthy();
     expect(
       result.includes(
-        '.utilsFontMissingTextStyle {\n' +
-          '  color: #c4c4c4;\n' +
+        '.utilsCodeTextStyle {\n' +
+          '  color: #ff8e05;\n' +
           '  font-family: fira-code, serif;\n' +
-          '  font-size: 12.7px;\n' +
-          '  line-height: 1.11;\n' +
+          '  font-size: 13px;\n' +
+          '  line-height: 1.54;\n' +
           '  text-align: left;\n' +
           '  vertical-align: top;\n' +
+          '}',
+      ),
+    ).toBeTruthy();
+    expect(
+      result.includes(
+        '.utilsTitleTextStyle {\n' +
+          '  color: #c4c4c4;\n' +
+          '  font-family: inter, serif;\n' +
+          '  font-size: 32px;\n' +
+          '  line-height: 1.25;\n' +
+          '  text-align: left;\n' +
+          '  vertical-align: top;\n' +
+          '  text-decoration: underline;\n' +
+          '  text-indent: 5px;\n' +
           '}',
       ),
     ).toBeTruthy();

@@ -1,4 +1,4 @@
-import seeds from '../../seeds';
+import seeds from '../../tests/seeds';
 import { default as pxToRem, InputDataType } from './px-to-rem.parser';
 import libs, { LibsType } from '../global-libs';
 import { TextStyleValue } from '../../types';

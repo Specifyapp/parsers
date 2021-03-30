@@ -1,19 +1,19 @@
 import Token, { TokenInterface } from './Token';
+import { TokensType } from './index';
 
 export interface BitmapValue {
   url: string;
   format?: string;
-  dimension?: string;
+  dimension?: number;
   fileName?: string;
 }
 
 export class BitmapToken extends Token implements TokenInterface {
+  type: TokensType = 'bitmap';
   value: BitmapValue;
-  type: string;
 
   constructor(element: Partial<BitmapToken>) {
     super(element);
-    this.type = 'bitmap';
     this.value = element.value!;
   }
 }

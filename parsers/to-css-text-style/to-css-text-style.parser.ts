@@ -180,8 +180,8 @@ class ToCssTextStyle {
       }
     },
     textDecoration: () => {
-      if (this.isIncluded('text-decoration')) {
-        this.cssContent.push(`text-decoration: ${this.textDecoration}`);
+      if (this.isIncluded('text-decoration') && this.textDecoration) {
+        this.cssContent.push(`text-decoration: ${this.textDecoration.join(' ')}`);
       }
     },
     textIndent: () => {

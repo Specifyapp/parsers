@@ -1,7 +1,8 @@
 import Token, { TokenInterface } from './Token';
-import { ColorValue } from './Color';
-import { MeasurementValue } from './Measurement';
+import { ColorToken, ColorValue } from './Color';
+import { MeasurementToken, MeasurementValue } from './Measurement';
 import { FontToken, FontValue } from './Font';
+import { TokensType } from './index';
 
 export type TextTransformValue =
   | 'none'
@@ -69,23 +70,31 @@ export type VerticalAlignValue =
   | 'center';
 
 export interface TextStyleValue {
-  color?: {
-    value: ColorValue;
-  };
+  color?:
+    | ColorToken
+    | {
+        value: ColorValue;
+      };
   font:
     | FontToken
     | {
         value: FontValue;
       };
-  fontSize: {
-    value: MeasurementValue;
-  };
-  lineHeight?: {
-    value: MeasurementValue;
-  };
-  letterSpacing?: {
-    value: MeasurementValue;
-  };
+  fontSize:
+    | MeasurementToken
+    | {
+        value: MeasurementValue;
+      };
+  lineHeight?:
+    | MeasurementToken
+    | {
+        value: MeasurementValue;
+      };
+  letterSpacing?:
+    | MeasurementToken
+    | {
+        value: MeasurementValue;
+      };
   textAlign?: {
     horizontal?: TextAlignValue;
     vertical?: VerticalAlignValue;
@@ -93,18 +102,19 @@ export interface TextStyleValue {
   textTransform?: TextTransformValue;
   fontVariant?: Array<FontVariantValue>;
   textDecoration?: Array<TextDecorationValue>;
-  textIndent?: {
-    value: MeasurementValue;
-  };
+  textIndent?:
+    | MeasurementToken
+    | {
+        value: MeasurementValue;
+      };
 }
 
 export class TextStyleToken extends Token implements TokenInterface {
-  type: string;
+  type: TokensType = 'textStyle';
   value: TextStyleValue;
 
   constructor(element: Partial<TextStyleToken>) {
     super(element);
-    this.type = 'textStyle';
     this.value = element.value!;
   }
 }

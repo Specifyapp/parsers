@@ -10,6 +10,13 @@ export interface DownloadableFile {
     url?: string; // File we will download
   };
 }
+
+export type LinkableTokensSignaturesValue = Record<string, string>;
+export interface LinkableTokensSignatures {
+  color: LinkableTokensSignaturesValue;
+  measurement: LinkableTokensSignaturesValue;
+}
+
 export type PartialRecord<K extends keyof any, T> = Partial<Record<K, T>>;
 export type Assign<A, B> = Omit<A, keyof B> & B;
 export type Await<T> = T extends PromiseLike<infer U> ? U : T;

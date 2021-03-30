@@ -72,18 +72,16 @@ export default async function (
     const module = options?.formatConfig?.module ?? 'es6';
     const pattern =
       options?.formatConfig?.assetsFilePattern ??
-      '{{name}}{{#dimension}}@{{dimension}}{{/dimension}}{{#format}}.{{format}}{{/format}}';
+      '{{name}}{{#dimension}}@{{dimension}}x{{/dimension}}{{#format}}.{{format}}{{/format}}';
     const tokensGroupByType = _.groupBy(tokens, 'type');
     const template = new Template(pattern);
     const styles = Object.keys(tokensGroupByType).reduce((result, type) => {
       const content = tokensGroupByType[type]
         .map((token: Pick<Token, 'value' | 'type' | 'name'>) => {
-          if (!(<any>TokensClass)[`${token.type.charAt(0).toUpperCase() + token.type.slice(1)}`]) {
-            return;
-          }
-          const instance = new (<any>TokensClass)[
-            `${token.type.charAt(0).toUpperCase() + token.type.slice(1)}`
-          ](token);
+          const tokenClassName = `${token.type.charAt(0).toUpperCase() + token.type.slice(1)}`;
+
+          if (!(<any>TokensClass)[tokenClassName]) return;
+          const instance = new (<any>TokensClass)[tokenClassName](token);
 
           token.name =
             options?.formatName ||

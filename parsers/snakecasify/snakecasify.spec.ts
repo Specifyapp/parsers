@@ -1,7 +1,7 @@
 import snakecasify from './snakecasify.parser';
 import { Token } from '../../types';
 import libs from '../global-libs';
-import seeds from '../../seeds';
+import seeds from '../../tests/seeds';
 
 describe('Snakecasify', () => {
   it('Get tokens - apply parsers', async done => {

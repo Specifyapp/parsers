@@ -1,5 +1,5 @@
 import libs from '../global-libs';
-import seeds from '../../seeds';
+import seeds from '../../tests/seeds';
 import toCss, { OptionsType } from './to-css-custom-properties.parser';
 import { ColorToken, ColorValue, Shadow, ShadowToken, Token, MeasurementToken } from '../../types';
 
@@ -34,7 +34,7 @@ describe('To css', () => {
           .toString('rgb')}`,
       ),
     ).toBe(true);
-    expect(result.includes(`${libs._.kebabCase(shadow.name)}: ${shadowValue}`)).toBe(true);
+    expect(result.includes(`${shadow.name}: ${shadowValue}`)).toBe(true);
     expect(
       result.includes(
         `${libs._.kebabCase(measurement.name)}: ${measurement.value.measure}${
@@ -49,7 +49,7 @@ describe('To css', () => {
       formatName: 'snakeCase'!,
       formatTokens: { color: 'hsl' },
     };
-    const result = await toCss(seeds().tokens as Array<Token>, options, libs);
+    const result = await toCss(seeds().tokens, options, libs);
     const color = seeds().tokens.find(token => token.type === 'color') as ColorToken;
     const measurement = seeds().tokens.find(
       token => token.type === 'measurement',
@@ -81,7 +81,7 @@ describe('To css', () => {
         selector: 'body[data-theme="light"]',
       },
     };
-    const result = await toCss(seeds().tokens as Array<Token>, options, libs);
+    const result = await toCss(seeds().tokens, options, libs);
     const color = seeds().tokens.find(token => token.type === 'color') as ColorToken;
     const measurement = seeds().tokens.find(
       token => token.type === 'measurement',
@@ -111,7 +111,7 @@ describe('To css', () => {
       formatName: 'snakeCase'!,
       formatTokens: { color: 'hsl' },
     };
-    const result = await toCss(seeds().tokens as Array<Token>, options, libs);
+    const result = await toCss(seeds().tokens, options, libs);
     const color = seeds().tokens.find(token => token.type === 'color') as ColorToken;
     const measurement = seeds().tokens.find(
       token => token.type === 'measurement',
@@ -141,7 +141,7 @@ describe('To css', () => {
       formatName: 'camelCase'!,
       formatTokens: { color: 'hsl' },
     };
-    const result = await toCss(seeds().tokens as Array<Token>, options, libs);
+    const result = await toCss(seeds().tokens, options, libs);
     const color = seeds().tokens.find(token => token.type === 'color') as ColorToken;
     const measurement = seeds().tokens.find(
       token => token.type === 'measurement',
@@ -156,9 +156,8 @@ describe('To css', () => {
       ),
     ).toBe(true);
 
-    // Specific edge case where we don't have a space in the name but still want to parse
-    expect(result.includes('colorwithaslashInit')).toBe(true);
-    expect(result.includes('colorwithadashInit')).toBe(true);
+    expect(result.includes('colorsAccent')).toBe(true);
+    expect(result.includes('colorsRed')).toBe(true);
 
     const fnFormatName = libs._.camelCase;
     expect(
@@ -172,7 +171,7 @@ describe('To css', () => {
 
   it('Get tokens - apply parsers - all tokens', async done => {
     const options: OptionsType = {};
-    const result = await toCss(seeds().tokens as Array<Token>, options, libs);
+    const result = await toCss(seeds().tokens, options, libs);
     expect(result.includes('--heuristic-cross-platform-quantify: rgba(51, 15, 99, 0.6);'));
     expect(
       result.includes(

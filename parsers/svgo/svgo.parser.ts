@@ -1,6 +1,6 @@
 import { LibsType } from '../global-libs';
 import type SVGO from 'svgo';
-import { Assign, DownloadableFile } from '../../types';
+import { DownloadableFile } from '../../types';
 
 export type InputDataType = Array<
   Record<string, any> & {
@@ -27,7 +27,7 @@ export default async function (
   try {
     const optimizer = new SVGO(options?.svgo || {});
     return (await Promise.all(
-      tokens.map(async (token: Assign<InputDataType[0], { value: DownloadableFile['value'] }>) => {
+      tokens.map(async token => {
         if (token.type) {
           if (token.type === 'vector') {
             const baseString = await SpServices.assets.getSource<string>(token.value.url!, 'text');
@@ -35,8 +35,7 @@ export default async function (
               .optimize(baseString)
               .then(({ data }) => data)
               .catch(() => baseString);
-            delete token.value.url;
-            return token;
+            return { ...token, value: _.omit(token.value, ['url']) };
           }
         }
         return token;

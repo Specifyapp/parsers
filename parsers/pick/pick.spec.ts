@@ -1,12 +1,12 @@
-import seeds from '../../seeds';
+import seeds from '../../tests/seeds';
 import pick from './pick.parser';
-import { Token } from '../../types';
+import { Token, TokensType } from '../../types';
 import libs from '../global-libs';
 
 describe('Pick', () => {
   it('Execute parser', async done => {
     const result = await pick(
-      seeds().tokens.filter(({ type }: { type: string }) => type === 'color') as Array<Token>,
+      seeds().tokens.filter(({ type }: { type: TokensType }) => type === 'color') as Array<Token>,
       {
         keys: ['name', 'type'],
       },

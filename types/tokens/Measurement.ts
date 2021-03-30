@@ -1,4 +1,5 @@
 import Token, { TokenInterface } from './Token';
+import { TokensType } from './index';
 
 export interface MeasurementValue {
   measure: number;
@@ -6,12 +7,11 @@ export interface MeasurementValue {
 }
 
 export class MeasurementToken extends Token implements TokenInterface {
-  type: string;
+  type: TokensType = 'measurement';
   value: MeasurementValue;
 
   constructor(element: Partial<MeasurementToken>) {
     super(element);
-    this.type = 'measurement';
     this.value = element.value!;
   }
 }

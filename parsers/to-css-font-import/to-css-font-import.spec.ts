@@ -1,4 +1,4 @@
-import seeds from '../../seeds';
+import seeds from '../../tests/seeds';
 import toCssFont from './to-css-font-import.parser';
 import { Token } from '../../types';
 
@@ -10,16 +10,16 @@ describe('to-css-font-import', () => {
     if (result instanceof Error) return done.fail(result);
     expect(
       result.includes(
-        `@font-face {
-  font-family: "Frozen withdrawal Gorgeous";
-  src: url("Frozen withdrawal Gorgeous.woff2") format("woff2"),
-    url("Frozen withdrawal Gorgeous.woff") format("woff"),
-    url("Frozen withdrawal Gorgeous.otf") format("truetype"),
-    url("Frozen withdrawal Gorgeous.ttf") format("truetype");
-  src: url("Frozen withdrawal Gorgeous.eot");
-  font-weight: 700;
-  font-display: swap;
-}`,
+        '@font-face {\n' +
+          '  font-family: "FiraCode-Medium";\n' +
+          '  src: url("FiraCode-Medium.woff2") format("woff2"),\n' +
+          '    url("FiraCode-Medium.woff") format("woff"),\n' +
+          '    url("FiraCode-Medium.otf") format("truetype"),\n' +
+          '    url("FiraCode-Medium.ttf") format("truetype");\n' +
+          '  src: url("FiraCode-Medium.eot");\n' +
+          '  font-weight: 500;\n' +
+          '  font-display: swap;\n' +
+          '}',
       ),
     ).toBeTruthy();
     done();
@@ -38,14 +38,12 @@ describe('to-css-font-import', () => {
     if (result instanceof Error) return done.fail(result);
     expect(
       result.includes(
-        `@font-face {
-  font-family: credit-card-account-open-architected-solid-state, sans-serif;
-  src: url("../../assets/Credit Card Account Open-architected solid state.woff2")
-      format("woff2"),
-    url("../../assets/Credit Card Account Open-architected solid state.woff")
-      format("woff");
-  font-display: swap;
-}`,
+        '@font-face {\n' +
+          '  font-family: inter-semi-bold, sans-serif;\n' +
+          '  src: url("../../assets/Inter-SemiBold.woff2") format("woff2"),\n' +
+          '    url("../../assets/Inter-SemiBold.woff") format("woff");\n' +
+          '  font-display: swap;\n' +
+          '}',
       ),
     ).toBeTruthy();
     done();

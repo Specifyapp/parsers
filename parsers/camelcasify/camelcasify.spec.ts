@@ -1,7 +1,7 @@
 import camelcasify from './camelcasify.parser';
 import { Token } from '../../types';
 import libs from '../global-libs';
-import seeds from '../../seeds';
+import seeds from '../../tests/seeds';
 
 describe('Camelcasify', () => {
   it('Get tokens - apply parsers', async done => {

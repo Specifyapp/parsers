@@ -1,4 +1,4 @@
-import seeds from '../../seeds';
+import seeds from '../../tests/seeds';
 import toDsp, { OptionsType } from './to-dsp.parser';
 import { Token } from '../../types';
 import { DspParserSettings } from './dsp.type';
@@ -19,7 +19,7 @@ describe('To DSP', () => {
       libs as LibsType,
     );
     expect(Array.isArray(result)).toBe(true);
-    expect(result.length).toBe(18);
+    expect(result.length).toBe(15);
     expect(result.some(entity => entity.name === 'dsp.json')).toBe(true);
     expect(result.some(entity => entity.name === 'data/tokens.json')).toBe(true);
     expect(result.some(entity => entity.name === 'data/components.json')).toBe(true);
@@ -30,7 +30,7 @@ describe('To DSP', () => {
     const tokensEntities = JSON.parse(tokens?.value.content!).entities;
 
     expect(Array.isArray(tokensEntities)).toBe(true);
-    expect(tokensEntities.length).toBe(56);
+    expect(tokensEntities.length).toBe(45);
 
     const components = result.find(entity => entity.name === 'data/components.json');
     const componentsEntities = JSON.parse(components?.value.content!).entities;
@@ -137,7 +137,7 @@ describe('To DSP', () => {
       libs as LibsType,
     );
     expect(Array.isArray(result)).toBe(true);
-    expect(result.length).toBe(18);
+    expect(result.length).toBe(15);
     expect(result.some(entity => entity.name === 'dsp.json')).toBe(true);
     expect(result.some(entity => entity.name === 'data/tokens.json')).toBe(true);
     expect(result.some(entity => entity.name === 'data/components.json')).toBe(true);
@@ -148,7 +148,7 @@ describe('To DSP', () => {
     const tokensEntities = JSON.parse(tokens?.value.content!).entities;
 
     expect(Array.isArray(tokensEntities)).toBe(true);
-    expect(tokensEntities.length).toBe(56);
+    expect(tokensEntities.length).toBe(45);
 
     const components = result.find(entity => entity.name === 'data/components.json');
     const componentsEntities = JSON.parse(components?.value.content!).entities;
@@ -178,7 +178,7 @@ describe('To DSP', () => {
       libs as LibsType,
     );
     expect(Array.isArray(result)).toBe(true);
-    expect(result.length).toBe(18);
+    expect(result.length).toBe(15);
     expect(result.some(entity => entity.name === 'dsp.json')).toBe(true);
     expect(result.some(entity => entity.name === 'data/tokens.json')).toBe(true);
     expect(result.some(entity => entity.name === 'data/components.json')).toBe(true);
@@ -189,7 +189,7 @@ describe('To DSP', () => {
     const tokensEntities = JSON.parse(tokens?.value.content!).entities;
 
     expect(Array.isArray(tokensEntities)).toBe(true);
-    expect(tokensEntities.length).toBe(56);
+    expect(tokensEntities.length).toBe(45);
 
     const components = result.find(entity => entity.name === 'data/components.json');
     const componentsEntities = JSON.parse(components?.value.content!).entities;
@@ -219,7 +219,7 @@ describe('To DSP', () => {
       libs as LibsType,
     );
     expect(Array.isArray(result)).toBe(true);
-    expect(result.length).toBe(18);
+    expect(result.length).toBe(15);
     expect(result.some(entity => entity.name === 'dsp.json')).toBe(true);
     expect(result.some(entity => entity.name === 'data/tokens.json')).toBe(true);
     expect(result.some(entity => entity.name === 'data/components.json')).toBe(true);
@@ -230,7 +230,7 @@ describe('To DSP', () => {
     const tokensEntities = JSON.parse(tokens?.value.content!).entities;
 
     expect(Array.isArray(tokensEntities)).toBe(true);
-    expect(tokensEntities.length).toBe(56);
+    expect(tokensEntities.length).toBe(45);
 
     const components = result.find(entity => entity.name === 'data/components.json');
     const componentsEntities = JSON.parse(components?.value.content!).entities;
@@ -260,7 +260,7 @@ describe('To DSP', () => {
       libs as LibsType,
     );
     expect(Array.isArray(result)).toBe(true);
-    expect(result.length).toBe(18);
+    expect(result.length).toBe(15);
     expect(result.some(entity => entity.name === 'dsp.json')).toBe(true);
     expect(result.some(entity => entity.name === 'data/tokens.json')).toBe(true);
     expect(result.some(entity => entity.name === 'data/components.json')).toBe(true);
@@ -271,7 +271,7 @@ describe('To DSP', () => {
     const tokensEntities = JSON.parse(tokens?.value.content!).entities;
 
     expect(Array.isArray(tokensEntities)).toBe(true);
-    expect(tokensEntities.length).toBe(56);
+    expect(tokensEntities.length).toBe(45);
 
     const components = result.find(entity => entity.name === 'data/components.json');
     const componentsEntities = JSON.parse(components?.value.content!).entities;
@@ -313,7 +313,7 @@ describe('To DSP', () => {
     const tokensEntities = JSON.parse(tokens?.value.content!).entities;
 
     expect(Array.isArray(tokensEntities)).toBe(true);
-    expect(tokensEntities.length).toBe(56);
+    expect(tokensEntities.length).toBe(45);
 
     const components = result.find(entity => entity.name === 'data/components.json');
     const componentsEntities = JSON.parse(components?.value.content!).entities;
@@ -344,7 +344,7 @@ describe('To DSP', () => {
       libs as LibsType,
     );
     expect(Array.isArray(result)).toBe(true);
-    expect(result.length).toBe(18);
+    expect(result.length).toBe(15);
     expect(result.some(entity => entity.name === 'dsp.json')).toBe(true);
     expect(result.some(entity => entity.name === 'data/tokens.json')).toBe(true);
     expect(result.some(entity => entity.name === 'data/components.json')).toBe(true);
@@ -355,7 +355,7 @@ describe('To DSP', () => {
     const tokensEntities = JSON.parse(tokens?.value.content!).entities;
 
     expect(Array.isArray(tokensEntities)).toBe(true);
-    expect(tokensEntities.length).toBe(56);
+    expect(tokensEntities.length).toBe(45);
 
     const components = result.find(entity => entity.name === 'data/components.json');
     const componentsEntities = JSON.parse(components?.value.content!).entities;

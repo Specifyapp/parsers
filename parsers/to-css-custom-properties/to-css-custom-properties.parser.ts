@@ -1,10 +1,10 @@
-import { Token } from '../../types';
+import { IToken } from '../../types';
 import prettier from 'prettier/standalone';
 import parserCss from 'prettier/parser-postcss';
 import * as TokensClass from './tokens';
 import { LibsType } from '../global-libs';
 
-export type InputDataType = Array<Pick<Token, 'name' | 'value' | 'type'> & Record<string, any>>;
+export type InputDataType = Array<Pick<IToken, 'name' | 'value' | 'type'> & Record<string, any>>;
 export type OutputDataType = string;
 export type ColorsFormat =
   | 'rgb'
@@ -43,7 +43,7 @@ export default async function (
     const tokensGroupByType = _.groupBy(tokens, 'type');
     const styles = Object.keys(tokensGroupByType).reduce((result, type) => {
       const formatedCss = tokensGroupByType[type]
-        .map((token: Pick<Token, 'value' | 'type' | 'name'>) => {
+        .map(token => {
           if (!(<any>TokensClass)[`${token.type.charAt(0).toUpperCase() + token.type.slice(1)}`]) {
             return;
           }

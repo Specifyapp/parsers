@@ -12,3 +12,5 @@ yarn-error.log*
 **/.vscode
 /coverage/
 .history
+
+.env
