@@ -1,5 +1,6 @@
 import { LibsType } from '../global-libs';
 import type SVGO from 'svgo';
+import { Assign, DownloadableFile } from '../../types';
 
 export type InputDataType = Array<
   Record<string, any> & {
@@ -8,7 +9,9 @@ export type InputDataType = Array<
   }
 >;
 export type OutputDataType = Array<
-  Omit<InputDataType[0], 'value'> & { value: { content: string } }
+  InputDataType[0] & {
+    value: DownloadableFile & { [key: string]: any };
+  }
 >;
 export type OptionsType =
   | undefined
@@ -24,17 +27,17 @@ export default async function (
   try {
     const optimizer = new SVGO(options?.svgo || {});
     return (await Promise.all(
-      tokens.map(async (token: InputDataType[0]) => {
-        if (token.type && token.type === 'vector') {
-          const baseString = await SpServices.assets.getSource<string>(token.value.url, 'text');
-          return optimizer
-            .optimize(baseString)
-            .then(({ data }) => {
-              return { ...token, value: { content: data } };
-            })
-            .catch(() => {
-              return { ...token, value: { content: baseString } };
-            });
+      tokens.map(async (token: Assign<InputDataType[0], { value: DownloadableFile['value'] }>) => {
+        if (token.type) {
+          if (token.type === 'vector') {
+            const baseString = await SpServices.assets.getSource<string>(token.value.url!, 'text');
+            token.value.content = await optimizer
+              .optimize(baseString)
+              .then(({ data }) => data)
+              .catch(() => baseString);
+            delete token.value.url;
+            return token;
+          }
         }
         return token;
       }),
