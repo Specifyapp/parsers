@@ -243,7 +243,7 @@ export default () => ({
         width: {
           value: {
             unit: 'px',
-            measure: 7,
+            measure: 7.555555,
           },
         },
       },
@@ -270,7 +270,7 @@ export default () => ({
         width: {
           value: {
             unit: 'px',
-            measure: 5,
+            measure: 5.233,
           },
         },
       },
@@ -297,7 +297,7 @@ export default () => ({
         width: {
           value: {
             unit: 'px',
-            measure: 8,
+            measure: 8.15,
           },
         },
       },
@@ -351,7 +351,7 @@ export default () => ({
         width: {
           value: {
             unit: 'px',
-            measure: 3,
+            measure: 3.3,
           },
         },
       },
@@ -1221,7 +1221,7 @@ export default () => ({
       type: 'measurement',
       value: {
         unit: 'px',
-        measure: 73,
+        measure: 73.5555,
       },
       id: '533dddb8-2197-4d6d-af3a-2864340efef8',
       originId: '82049695-d80b-4b15-9a35-7bd8a0b2b72d',
@@ -1235,7 +1235,7 @@ export default () => ({
       type: 'measurement',
       value: {
         unit: 'px',
-        measure: 61,
+        measure: 61.4,
       },
       id: '1f182b79-32f8-469b-a914-5fca2b991046',
       originId: 'f3c167a2-93ff-4e44-a9fb-9ff59ab6ddbc',
@@ -1249,7 +1249,7 @@ export default () => ({
       type: 'measurement',
       value: {
         unit: 'px',
-        measure: 13,
+        measure: 13.2367,
       },
       id: '631baf2b-ddde-488c-bcc1-d94ef1591cdf',
       originId: '642f0896-894b-4b56-bdfa-d4501942ed7c',
@@ -1263,7 +1263,7 @@ export default () => ({
       type: 'measurement',
       value: {
         unit: 'px',
-        measure: 62,
+        measure: 62.354,
       },
       id: '7af01142-cf1b-4818-98f8-335c6ff00600',
       originId: '5059fd11-d34c-4a4a-a3f3-2d47acabd3ac',
@@ -1359,7 +1359,7 @@ export default () => ({
           blur: {
             value: {
               unit: 'px',
-              measure: 2,
+              measure: 2.23,
             },
           },
           color: {
@@ -1400,7 +1400,7 @@ export default () => ({
           blur: {
             value: {
               unit: 'px',
-              measure: 8,
+              measure: 8.78999,
             },
           },
           color: {
@@ -1441,7 +1441,7 @@ export default () => ({
           blur: {
             value: {
               unit: 'px',
-              measure: 1,
+              measure: 1.1,
             },
           },
           color: {
@@ -1482,7 +1482,7 @@ export default () => ({
           blur: {
             value: {
               unit: 'px',
-              measure: 3,
+              measure: 3.73,
             },
           },
           color: {
@@ -1523,7 +1523,7 @@ export default () => ({
           blur: {
             value: {
               unit: 'px',
-              measure: 7,
+              measure: 7.2222,
             },
           },
           color: {
@@ -1658,7 +1658,7 @@ export default () => ({
         fontSize: {
           value: {
             unit: 'px',
-            measure: 12,
+            measure: 12.55555,
           },
         },
         textAlign: {
@@ -1711,7 +1711,7 @@ export default () => ({
         fontSize: {
           value: {
             unit: 'px',
-            measure: 12,
+            measure: 12.444,
           },
         },
         textAlign: {
@@ -1764,7 +1764,7 @@ export default () => ({
         fontSize: {
           value: {
             unit: 'px',
-            measure: 12,
+            measure: 12.25,
           },
         },
         textAlign: {
@@ -1817,7 +1817,7 @@ export default () => ({
         fontSize: {
           value: {
             unit: 'px',
-            measure: 12,
+            measure: 12.7,
           },
         },
         textAlign: {
@@ -1923,7 +1923,7 @@ export default () => ({
         fontSize: {
           value: {
             unit: 'px',
-            measure: 12,
+            measure: 12.1,
           },
         },
         textAlign: {

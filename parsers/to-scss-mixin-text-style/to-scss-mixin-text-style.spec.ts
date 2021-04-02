@@ -16,7 +16,7 @@ describe('to-css-text-style', () => {
         '@mixin ts-with-allan-again {\n' +
           '  color: rgb(196, 196, 196);\n' +
           '  font-family: Allan;\n' +
-          '  font-size: 12px;\n' +
+          '  font-size: 12.1px;\n' +
           '  line-height: 12px;\n' +
           '  text-align: left;\n' +
           '  vertical-align: top;\n' +
@@ -109,8 +109,8 @@ describe('to-css-text-style', () => {
         '@mixin utilsFontMissingTextStyle {\n' +
           '  color: #c4c4c4;\n' +
           '  font-family: fira-code, serif;\n' +
-          '  font-size: 12px;\n' +
-          '  line-height: 1.17;\n' +
+          '  font-size: 12.7px;\n' +
+          '  line-height: 1.11;\n' +
           '  text-align: left;\n' +
           '  vertical-align: top;\n' +
           '}',

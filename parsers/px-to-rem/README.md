@@ -21,7 +21,7 @@ interface parser {
 | Parameter        | Required | Type            | Default  | Description                              |
 | ---------------- | -------- | --------------- | -------- | ---------------------------------------- |
 | `basePixelValue` | optional    | `number`        | 16       | Base font size of your HTML document     |
-| `keys`           | true     | `Array<string>` |          | List of key path to apply the convertion |
+| `keys`           | required     | `Array<string>` |          | List of key paths to apply the convertion |
 
 ## Types
 
