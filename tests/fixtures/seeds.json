@@ -353,67 +353,6 @@
     "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
   },
   {
-    "createdAt": "2021-04-02T09:54:13.112Z",
-    "updatedAt": "2021-04-02T09:54:13.112Z",
-    "id": "9205e28a-a083-435e-a19b-8bd005232bfa",
-    "name": "Body",
-    "value": {
-      "font": {
-        "createdAt": "2021-04-02T08:01:57.087Z",
-        "updatedAt": "2021-04-02T08:01:57.289Z",
-        "id": "e69237ab-05db-4380-81e5-70db7f5448f1",
-        "name": "Inter-Medium",
-        "value": {
-          "isItalic": false,
-          "provider": "Google Fonts",
-          "fontFamily": "Inter",
-          "fontWeight": 500,
-          "fontFileMissing": false,
-          "fontPostScriptName": "Inter-Medium",
-          "url": "https://ddp-assets-prod.s3.amazonaws.com/927e26f6-da29-40d6-b9de-530bdcddf1ed/font/Inter-Medium/Inter-Medium.ttf?AWSAccessKeyId=ASIAYLKZPEWOIXPOWF5E&Expires=1617721668&Signature=RGdWyHQjaAkDjQ5xC22UYaBDgms%3D&x-amz-security-token=IQoJb3JpZ2luX2VjENT%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCWV1LXdlc3QtMSJGMEQCIHlUYrX1GikgdAHg3czxO9fEMZZlSCLg%2BvasP5c9xsT4AiBd8SAoHjnYnrTGdWmMTRTPh3pixcux%2BwjZZO07VxQiKSqfAwgtEAIaDDU3NDEwMjY0NDEyNCIMRp7ey8m%2BAIFNvi2AKvwCpHRCmOQmiTXkFudLAzNohkpSDdwayWpGwhMDiRuwuPOdkzG4MyUVp4kIKkP62WnqevJe%2Fvdsr6W8ApEQV4mUnUqmG%2BhaFa9hg5gHQ5JlQXpGmad5XcM7RP0zPjw9zTzHyMcfeYdLGlqHzOGd7ttuiYFXVuRIAsMW0zTfUc98F352yFIi4D3Ah5xknBVDYdZF%2BWobl3%2FSb9mR7QxBIuo5lm%2FpFVwYrAYz9YyG155y4j4%2FupVF0Nq2rphEz2dqJsZ4wjah1hgKueDfLcho8wSnHZtcwnII%2F2CJcnha%2F4V2CImAD5zYVYW9BWNQ6Xs9kTo9R86Z8WOjcdePP8GEsOUOWF146TiYfpldZEhmfpmlX7VVzROe9VyOaa2qqlhpxbmV4bbslrISLWs1ufQXwsWvP9aRsro%2FCpNK3R0RDtbcG0yUslLt6zkffUrTzfyyzlNRnHOiq1CCrk65635NZtkj62cOdV28D2LuGsqlgy57QF93rxCylIQo1xP5SQAw7ouxgwY67AFL6kjnAPxHWsFWu0DtfBsvhi4KtOV71wZtP9gM1W69xO%2BBNdzmBfZh91DLo5ZmvT4Q%2FLyXj0yAGp5N56hJjh5RfdlyXL%2BJjerHeUUAl7nDrq47OiFyhtgeiZOQxiEgVAytiESYjpKF1NO8xAr3RmLPfZqTDQ7wkunUy45%2BUdw6rf3xQ6yXzAL7UlLr%2BtrPTqDc8wG776tpQOP1zjJs53WF8byfRgenn7TDqriA0o4iBMWvLcCjpGWEK7MaaKLBnZNLOGWFogtxDfrkSmSsBfGDzHIPJeIX01YzOslYDckmalhc%2B3ROLExw4YlpCg%3D%3D"
-        },
-        "meta": {
-          "source": "localStyles"
-        },
-        "type": "font",
-        "originId": "Inter-Medium",
-        "sourceId": "3653cb84-8edb-46b0-8bee-ce46f0c7c829",
-        "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
-      },
-      "color": {
-        "value": {
-          "a": 1,
-          "b": 196,
-          "g": 196,
-          "r": 196
-        }
-      },
-      "fontSize": {
-        "value": {
-          "unit": "px",
-          "measure": 14
-        }
-      },
-      "textAlign": {
-        "vertical": "top",
-        "horizontal": "left"
-      },
-      "lineHeight": {
-        "value": {
-          "unit": "px",
-          "measure": 20
-        }
-      }
-    },
-    "meta": {
-      "source": "localStyles"
-    },
-    "type": "textStyle",
-    "originId": "12:164",
-    "sourceId": "3653cb84-8edb-46b0-8bee-ce46f0c7c829",
-    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
-  },
-  {
     "createdAt": "2021-04-02T09:39:06.105Z",
     "updatedAt": "2021-04-02T09:47:01.154Z",
     "id": "72e7b628-cf2c-4691-b3d2-8248b492a60b",
@@ -489,67 +428,6 @@
     "type": "border",
     "originId": "12:75",
     "sourceId": "eb1a26cd-abfb-4ffa-b0da-9499d0d4602e",
-    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
-  },
-  {
-    "createdAt": "2021-04-02T09:54:13.117Z",
-    "updatedAt": "2021-04-02T09:54:13.117Z",
-    "id": "e442a71c-4e1d-4757-878e-4b6fda69e8ff",
-    "name": "Code",
-    "value": {
-      "font": {
-        "createdAt": "2021-04-02T09:54:13.112Z",
-        "updatedAt": "2021-04-02T09:54:13.363Z",
-        "id": "6bf09330-71a6-475e-88d1-d3b72122bab3",
-        "name": "FiraCode-Medium",
-        "value": {
-          "isItalic": false,
-          "provider": "Google Fonts",
-          "fontFamily": "Fira Code",
-          "fontWeight": 500,
-          "fontFileMissing": false,
-          "fontPostScriptName": "FiraCode-Medium",
-          "url": "https://ddp-assets-prod.s3.amazonaws.com/927e26f6-da29-40d6-b9de-530bdcddf1ed/font/FiraCode-Medium/FiraCode-Medium.ttf?AWSAccessKeyId=ASIAYLKZPEWOIXPOWF5E&Expires=1617721668&Signature=xdTDQ3Q5IY%2BRNRhL8Hmp4FGt8QY%3D&x-amz-security-token=IQoJb3JpZ2luX2VjENT%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCWV1LXdlc3QtMSJGMEQCIHlUYrX1GikgdAHg3czxO9fEMZZlSCLg%2BvasP5c9xsT4AiBd8SAoHjnYnrTGdWmMTRTPh3pixcux%2BwjZZO07VxQiKSqfAwgtEAIaDDU3NDEwMjY0NDEyNCIMRp7ey8m%2BAIFNvi2AKvwCpHRCmOQmiTXkFudLAzNohkpSDdwayWpGwhMDiRuwuPOdkzG4MyUVp4kIKkP62WnqevJe%2Fvdsr6W8ApEQV4mUnUqmG%2BhaFa9hg5gHQ5JlQXpGmad5XcM7RP0zPjw9zTzHyMcfeYdLGlqHzOGd7ttuiYFXVuRIAsMW0zTfUc98F352yFIi4D3Ah5xknBVDYdZF%2BWobl3%2FSb9mR7QxBIuo5lm%2FpFVwYrAYz9YyG155y4j4%2FupVF0Nq2rphEz2dqJsZ4wjah1hgKueDfLcho8wSnHZtcwnII%2F2CJcnha%2F4V2CImAD5zYVYW9BWNQ6Xs9kTo9R86Z8WOjcdePP8GEsOUOWF146TiYfpldZEhmfpmlX7VVzROe9VyOaa2qqlhpxbmV4bbslrISLWs1ufQXwsWvP9aRsro%2FCpNK3R0RDtbcG0yUslLt6zkffUrTzfyyzlNRnHOiq1CCrk65635NZtkj62cOdV28D2LuGsqlgy57QF93rxCylIQo1xP5SQAw7ouxgwY67AFL6kjnAPxHWsFWu0DtfBsvhi4KtOV71wZtP9gM1W69xO%2BBNdzmBfZh91DLo5ZmvT4Q%2FLyXj0yAGp5N56hJjh5RfdlyXL%2BJjerHeUUAl7nDrq47OiFyhtgeiZOQxiEgVAytiESYjpKF1NO8xAr3RmLPfZqTDQ7wkunUy45%2BUdw6rf3xQ6yXzAL7UlLr%2BtrPTqDc8wG776tpQOP1zjJs53WF8byfRgenn7TDqriA0o4iBMWvLcCjpGWEK7MaaKLBnZNLOGWFogtxDfrkSmSsBfGDzHIPJeIX01YzOslYDckmalhc%2B3ROLExw4YlpCg%3D%3D"
-        },
-        "meta": {
-          "source": "localStyles"
-        },
-        "type": "font",
-        "originId": "FiraCode-Medium",
-        "sourceId": "3653cb84-8edb-46b0-8bee-ce46f0c7c829",
-        "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
-      },
-      "color": {
-        "value": {
-          "a": 1,
-          "b": 5,
-          "g": 142,
-          "r": 255
-        }
-      },
-      "fontSize": {
-        "value": {
-          "unit": "px",
-          "measure": 13
-        }
-      },
-      "textAlign": {
-        "vertical": "top",
-        "horizontal": "left"
-      },
-      "lineHeight": {
-        "value": {
-          "unit": "px",
-          "measure": 20
-        }
-      }
-    },
-    "meta": {
-      "source": "localStyles"
-    },
-    "type": "textStyle",
-    "originId": "12:168",
-    "sourceId": "3653cb84-8edb-46b0-8bee-ce46f0c7c829",
     "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
   },
   {
@@ -1020,6 +898,28 @@
     "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
   },
   {
+    "createdAt": "2021-04-12T09:24:32.704Z",
+    "updatedAt": "2021-04-12T09:24:33.077Z",
+    "id": "69d2d62e-4d62-45d7-b85f-5da2f9f0c0d4",
+    "name": "Roboto-Regular",
+    "value": {
+      "isItalic": false,
+      "provider": "Google Fonts",
+      "fontFamily": "Roboto",
+      "fontWeight": 400,
+      "fontFileMissing": false,
+      "fontPostScriptName": "Roboto-Regular",
+      "url": "https://ddp-assets-prod.s3.amazonaws.com/927e26f6-da29-40d6-b9de-530bdcddf1ed/font/Roboto-Regular/Roboto-Regular.ttf?AWSAccessKeyId=ASIAYLKZPEWOJVU534HF&Expires=1618223258&Signature=b4fuXQYuEjv%2B1nJKr6LdxU4obaI%3D&x-amz-security-token=IQoJb3JpZ2luX2VjEGAaCWV1LXdlc3QtMSJIMEYCIQDYQqqdJi8KWcdHvM%2FgHaU8g0VwaZCoeTP6koUxVKQGbAIhAL8Cnyavps3sjXc%2BtWA46HmPzzd01NOHwFcAASJoWXwRKqgDCLn%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQAhoMNTc0MTAyNjQ0MTI0IgybcaMImfsreZ%2Bf%2F%2Fkq%2FAKYJR9F626UANDvoSTdi4JDa0JuvbdAUg69u%2BTtrLHxt88ChfZaWw3yVfV1q7UlreuD9HWeYJaiNgGbyFmPickxr85Vr5TFqdoJMuFWQatc9D07F%2BYIFfV6jwsuDDrt01Dkw3r%2Fg8UgQwhkrZcWqba5rI9ATcmo1ByNw%2F7z5X33pzYMLo7ZNBwjkKBTVwM%2BHVBpyqx9uWm%2BVYGZNgEIEO%2FzrtqQXYMNWbrpYXEBxjvwd%2BSyC6We2w2Zaq4KAJXpmmMv4%2FANLKkYQBmonzAcsUcnTHFBMkunD1d8wHMx1lUCo7n5gjEo958tl5CKEhfjU59jABWO27d9FOu3HCwAtS0er8kk3580%2FERubmzD9dZv8%2FnzjPjbBlFhuJtzHBE9267ofQAIS%2FY3CtA85fv0XiLd4GEj52owJQ87WtMSxQQPyhlU2H1Zg%2B9KZgzdbixwRJrMLyxkS6EA4QgWPuqpZsSsXkkYlAqaoI8AMHYinEKDRtovCRkBxD2%2F%2F2Pi1TCD8s%2BDBjrqAQxDmO4M59PLiXJfpFJQVYXxXajf%2FPVjnmUJz1xKngh57KIJSkDDWs0oQGcga%2FoAIHSeDaZHBni4Vlzg%2Fw93qJAM3ZafHcxjBzo10xMR95MV1dqYcPSn94j%2FHQyA07zh8AFXxK%2Bbf9di0vkA8pVDbp702WFu2XBQuQUqfxehzJqE%2BXurGi7yrS12nLZgJuYS3H%2B3D8LQ5Dj0zrFQQEQ1qB%2F8zViT3XvzoXWPkRnMZdykyxXt8fw%2F70VPkYCFZGpdHT1qW5%2FBeYluUCVDb%2FCNxC5rB6Fo9FEF6iBJqClVdBnZ49VFIo4VAUbH9Q%3D%3D"
+    },
+    "meta": {
+      "source": "localStyles"
+    },
+    "type": "font",
+    "originId": "Roboto-Regular",
+    "sourceId": "3653cb84-8edb-46b0-8bee-ce46f0c7c829",
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
+  },
+  {
     "createdAt": "2021-04-02T08:16:49.853Z",
     "updatedAt": "2021-04-02T08:22:43.068Z",
     "id": "e173819d-4410-446c-93e0-02e5dbbe5c5c",
@@ -1126,6 +1026,52 @@
     },
     "type": "gradient",
     "originId": "12:160",
+    "sourceId": "0196b1d4-7def-4a07-a407-c63a40ba3aa8",
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
+  },
+  {
+    "createdAt": "2021-04-12T17:56:57.106Z",
+    "updatedAt": "2021-04-12T17:56:57.106Z",
+    "id": "01a2e852-50d6-4b8e-84f1-2fbbc27aac79",
+    "name": "Gradients / Safari",
+    "value": {
+      "gradients": [
+        {
+          "angle": "90deg",
+          "colors": [
+            {
+              "type": "color",
+              "color": {
+                "value": {
+                  "a": 1,
+                  "b": 5,
+                  "g": 142,
+                  "r": 255
+                }
+              },
+              "position": 0
+            },
+            {
+              "type": "color",
+              "color": {
+                "value": {
+                  "a": 1,
+                  "b": 255,
+                  "g": 255,
+                  "r": 255
+                }
+              },
+              "position": 100
+            }
+          ]
+        }
+      ]
+    },
+    "meta": {
+      "source": "localStyles"
+    },
+    "type": "gradient",
+    "originId": "52:3",
     "sourceId": "0196b1d4-7def-4a07-a407-c63a40ba3aa8",
     "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
   },
@@ -1350,14 +1296,98 @@
     "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
   },
   {
-    "createdAt": "2021-04-02T09:54:13.112Z",
-    "updatedAt": "2021-04-02T11:09:52.690Z",
-    "id": "4a629e43-cc47-4e08-948a-5a8d1b8e225d",
+    "createdAt": "2021-04-12T11:39:15.703Z",
+    "updatedAt": "2021-04-12T11:39:15.703Z",
+    "id": "c4cd5ca0-65c0-498d-8512-5d168c275ca0",
+    "name": "list",
+    "value": {
+      "font": {
+        "createdAt": "2021-04-12T09:24:32.704Z",
+        "updatedAt": "2021-04-12T11:39:15.707Z",
+        "id": "69d2d62e-4d62-45d7-b85f-5da2f9f0c0d4",
+        "name": "Roboto-Regular",
+        "value": {
+          "isItalic": false,
+          "provider": "Google Fonts",
+          "fontFamily": "Roboto",
+          "fontWeight": 400,
+          "fontFileMissing": false,
+          "fontPostScriptName": "Roboto-Regular",
+          "url": "https://ddp-assets-prod.s3.amazonaws.com/927e26f6-da29-40d6-b9de-530bdcddf1ed/font/Roboto-Regular/Roboto-Regular.ttf?AWSAccessKeyId=ASIAYLKZPEWOJVU534HF&Expires=1618231227&Signature=IcI490WtUu3wPPhEfolUqsrHKlM%3D&x-amz-security-token=IQoJb3JpZ2luX2VjEGAaCWV1LXdlc3QtMSJIMEYCIQDYQqqdJi8KWcdHvM%2FgHaU8g0VwaZCoeTP6koUxVKQGbAIhAL8Cnyavps3sjXc%2BtWA46HmPzzd01NOHwFcAASJoWXwRKqgDCLn%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQAhoMNTc0MTAyNjQ0MTI0IgybcaMImfsreZ%2Bf%2F%2Fkq%2FAKYJR9F626UANDvoSTdi4JDa0JuvbdAUg69u%2BTtrLHxt88ChfZaWw3yVfV1q7UlreuD9HWeYJaiNgGbyFmPickxr85Vr5TFqdoJMuFWQatc9D07F%2BYIFfV6jwsuDDrt01Dkw3r%2Fg8UgQwhkrZcWqba5rI9ATcmo1ByNw%2F7z5X33pzYMLo7ZNBwjkKBTVwM%2BHVBpyqx9uWm%2BVYGZNgEIEO%2FzrtqQXYMNWbrpYXEBxjvwd%2BSyC6We2w2Zaq4KAJXpmmMv4%2FANLKkYQBmonzAcsUcnTHFBMkunD1d8wHMx1lUCo7n5gjEo958tl5CKEhfjU59jABWO27d9FOu3HCwAtS0er8kk3580%2FERubmzD9dZv8%2FnzjPjbBlFhuJtzHBE9267ofQAIS%2FY3CtA85fv0XiLd4GEj52owJQ87WtMSxQQPyhlU2H1Zg%2B9KZgzdbixwRJrMLyxkS6EA4QgWPuqpZsSsXkkYlAqaoI8AMHYinEKDRtovCRkBxD2%2F%2F2Pi1TCD8s%2BDBjrqAQxDmO4M59PLiXJfpFJQVYXxXajf%2FPVjnmUJz1xKngh57KIJSkDDWs0oQGcga%2FoAIHSeDaZHBni4Vlzg%2Fw93qJAM3ZafHcxjBzo10xMR95MV1dqYcPSn94j%2FHQyA07zh8AFXxK%2Bbf9di0vkA8pVDbp702WFu2XBQuQUqfxehzJqE%2BXurGi7yrS12nLZgJuYS3H%2B3D8LQ5Dj0zrFQQEQ1qB%2F8zViT3XvzoXWPkRnMZdykyxXt8fw%2F70VPkYCFZGpdHT1qW5%2FBeYluUCVDb%2FCNxC5rB6Fo9FEF6iBJqClVdBnZ49VFIo4VAUbH9Q%3D%3D"
+        },
+        "meta": {
+          "source": "frames",
+          "sourceFile": "https://www.figma.com/file/9KvLO7F8VPrJ7GxGBWwCr9",
+          "originFrameName": "Text Style · Frame Example"
+        },
+        "type": "font",
+        "originId": "Roboto-Regular",
+        "sourceId": "2ec31677-436c-4ebe-9740-96acd5193b06",
+        "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
+      },
+      "fontSize": {
+        "value": {
+          "unit": "px",
+          "measure": 14
+        }
+      },
+      "textAlign": {
+        "vertical": "top",
+        "horizontal": "left"
+      },
+      "lineHeight": {
+        "value": {
+          "unit": "px",
+          "measure": 20
+        }
+      },
+      "fontVariant": [
+        "small-caps"
+      ]
+    },
+    "meta": {
+      "source": "frames",
+      "sourceFile": "https://www.figma.com/file/9KvLO7F8VPrJ7GxGBWwCr9",
+      "originFrameName": "Text Style · Frame Example"
+    },
+    "type": "textStyle",
+    "originId": "48:1133",
+    "sourceId": "2ec31677-436c-4ebe-9740-96acd5193b06",
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
+  },
+  {
+    "createdAt": "2021-04-12T09:24:32.704Z",
+    "updatedAt": "2021-04-12T11:39:15.707Z",
+    "id": "69d2d62e-4d62-45d7-b85f-5da2f9f0c0d4",
+    "name": "Roboto-Regular",
+    "value": {
+      "isItalic": false,
+      "provider": "Google Fonts",
+      "fontFamily": "Roboto",
+      "fontWeight": 400,
+      "fontFileMissing": false,
+      "fontPostScriptName": "Roboto-Regular",
+      "url": "https://ddp-assets-prod.s3.amazonaws.com/927e26f6-da29-40d6-b9de-530bdcddf1ed/font/Roboto-Regular/Roboto-Regular.ttf?AWSAccessKeyId=ASIAYLKZPEWOJVU534HF&Expires=1618231227&Signature=IcI490WtUu3wPPhEfolUqsrHKlM%3D&x-amz-security-token=IQoJb3JpZ2luX2VjEGAaCWV1LXdlc3QtMSJIMEYCIQDYQqqdJi8KWcdHvM%2FgHaU8g0VwaZCoeTP6koUxVKQGbAIhAL8Cnyavps3sjXc%2BtWA46HmPzzd01NOHwFcAASJoWXwRKqgDCLn%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQAhoMNTc0MTAyNjQ0MTI0IgybcaMImfsreZ%2Bf%2F%2Fkq%2FAKYJR9F626UANDvoSTdi4JDa0JuvbdAUg69u%2BTtrLHxt88ChfZaWw3yVfV1q7UlreuD9HWeYJaiNgGbyFmPickxr85Vr5TFqdoJMuFWQatc9D07F%2BYIFfV6jwsuDDrt01Dkw3r%2Fg8UgQwhkrZcWqba5rI9ATcmo1ByNw%2F7z5X33pzYMLo7ZNBwjkKBTVwM%2BHVBpyqx9uWm%2BVYGZNgEIEO%2FzrtqQXYMNWbrpYXEBxjvwd%2BSyC6We2w2Zaq4KAJXpmmMv4%2FANLKkYQBmonzAcsUcnTHFBMkunD1d8wHMx1lUCo7n5gjEo958tl5CKEhfjU59jABWO27d9FOu3HCwAtS0er8kk3580%2FERubmzD9dZv8%2FnzjPjbBlFhuJtzHBE9267ofQAIS%2FY3CtA85fv0XiLd4GEj52owJQ87WtMSxQQPyhlU2H1Zg%2B9KZgzdbixwRJrMLyxkS6EA4QgWPuqpZsSsXkkYlAqaoI8AMHYinEKDRtovCRkBxD2%2F%2F2Pi1TCD8s%2BDBjrqAQxDmO4M59PLiXJfpFJQVYXxXajf%2FPVjnmUJz1xKngh57KIJSkDDWs0oQGcga%2FoAIHSeDaZHBni4Vlzg%2Fw93qJAM3ZafHcxjBzo10xMR95MV1dqYcPSn94j%2FHQyA07zh8AFXxK%2Bbf9di0vkA8pVDbp702WFu2XBQuQUqfxehzJqE%2BXurGi7yrS12nLZgJuYS3H%2B3D8LQ5Dj0zrFQQEQ1qB%2F8zViT3XvzoXWPkRnMZdykyxXt8fw%2F70VPkYCFZGpdHT1qW5%2FBeYluUCVDb%2FCNxC5rB6Fo9FEF6iBJqClVdBnZ49VFIo4VAUbH9Q%3D%3D"
+    },
+    "meta": {
+      "source": "frames",
+      "sourceFile": "https://www.figma.com/file/9KvLO7F8VPrJ7GxGBWwCr9",
+      "originFrameName": "Text Style · Frame Example"
+    },
+    "type": "font",
+    "originId": "Roboto-Regular",
+    "sourceId": "2ec31677-436c-4ebe-9740-96acd5193b06",
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
+  },
+  {
+    "createdAt": "2021-04-12T11:39:15.699Z",
+    "updatedAt": "2021-04-12T11:39:15.699Z",
+    "id": "63a8bb04-9631-4c08-92cf-7b75a7a078b3",
     "name": "Title",
     "value": {
       "font": {
         "createdAt": "2021-04-02T08:01:57.087Z",
-        "updatedAt": "2021-04-02T08:01:57.306Z",
+        "updatedAt": "2021-04-12T11:39:15.667Z",
         "id": "55662ae4-7078-4e36-8392-eca72647acbf",
         "name": "Inter-SemiBold",
         "value": {
@@ -1367,22 +1397,24 @@
           "fontWeight": 600,
           "fontFileMissing": false,
           "fontPostScriptName": "Inter-SemiBold",
-          "url": "https://ddp-assets-prod.s3.amazonaws.com/927e26f6-da29-40d6-b9de-530bdcddf1ed/font/Inter-SemiBold/Inter-SemiBold.ttf?AWSAccessKeyId=ASIAYLKZPEWOIXPOWF5E&Expires=1617721668&Signature=BKkV7VipnLs8xQR1VlnSyDAeX9U%3D&x-amz-security-token=IQoJb3JpZ2luX2VjENT%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCWV1LXdlc3QtMSJGMEQCIHlUYrX1GikgdAHg3czxO9fEMZZlSCLg%2BvasP5c9xsT4AiBd8SAoHjnYnrTGdWmMTRTPh3pixcux%2BwjZZO07VxQiKSqfAwgtEAIaDDU3NDEwMjY0NDEyNCIMRp7ey8m%2BAIFNvi2AKvwCpHRCmOQmiTXkFudLAzNohkpSDdwayWpGwhMDiRuwuPOdkzG4MyUVp4kIKkP62WnqevJe%2Fvdsr6W8ApEQV4mUnUqmG%2BhaFa9hg5gHQ5JlQXpGmad5XcM7RP0zPjw9zTzHyMcfeYdLGlqHzOGd7ttuiYFXVuRIAsMW0zTfUc98F352yFIi4D3Ah5xknBVDYdZF%2BWobl3%2FSb9mR7QxBIuo5lm%2FpFVwYrAYz9YyG155y4j4%2FupVF0Nq2rphEz2dqJsZ4wjah1hgKueDfLcho8wSnHZtcwnII%2F2CJcnha%2F4V2CImAD5zYVYW9BWNQ6Xs9kTo9R86Z8WOjcdePP8GEsOUOWF146TiYfpldZEhmfpmlX7VVzROe9VyOaa2qqlhpxbmV4bbslrISLWs1ufQXwsWvP9aRsro%2FCpNK3R0RDtbcG0yUslLt6zkffUrTzfyyzlNRnHOiq1CCrk65635NZtkj62cOdV28D2LuGsqlgy57QF93rxCylIQo1xP5SQAw7ouxgwY67AFL6kjnAPxHWsFWu0DtfBsvhi4KtOV71wZtP9gM1W69xO%2BBNdzmBfZh91DLo5ZmvT4Q%2FLyXj0yAGp5N56hJjh5RfdlyXL%2BJjerHeUUAl7nDrq47OiFyhtgeiZOQxiEgVAytiESYjpKF1NO8xAr3RmLPfZqTDQ7wkunUy45%2BUdw6rf3xQ6yXzAL7UlLr%2BtrPTqDc8wG776tpQOP1zjJs53WF8byfRgenn7TDqriA0o4iBMWvLcCjpGWEK7MaaKLBnZNLOGWFogtxDfrkSmSsBfGDzHIPJeIX01YzOslYDckmalhc%2B3ROLExw4YlpCg%3D%3D"
+          "url": "https://ddp-assets-prod.s3.amazonaws.com/927e26f6-da29-40d6-b9de-530bdcddf1ed/font/Inter-SemiBold/Inter-SemiBold.ttf?AWSAccessKeyId=ASIAYLKZPEWOJVU534HF&Expires=1618231227&Signature=k9uZ0Vh9bAD8x3KmsOIyJQnJAiM%3D&x-amz-security-token=IQoJb3JpZ2luX2VjEGAaCWV1LXdlc3QtMSJIMEYCIQDYQqqdJi8KWcdHvM%2FgHaU8g0VwaZCoeTP6koUxVKQGbAIhAL8Cnyavps3sjXc%2BtWA46HmPzzd01NOHwFcAASJoWXwRKqgDCLn%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQAhoMNTc0MTAyNjQ0MTI0IgybcaMImfsreZ%2Bf%2F%2Fkq%2FAKYJR9F626UANDvoSTdi4JDa0JuvbdAUg69u%2BTtrLHxt88ChfZaWw3yVfV1q7UlreuD9HWeYJaiNgGbyFmPickxr85Vr5TFqdoJMuFWQatc9D07F%2BYIFfV6jwsuDDrt01Dkw3r%2Fg8UgQwhkrZcWqba5rI9ATcmo1ByNw%2F7z5X33pzYMLo7ZNBwjkKBTVwM%2BHVBpyqx9uWm%2BVYGZNgEIEO%2FzrtqQXYMNWbrpYXEBxjvwd%2BSyC6We2w2Zaq4KAJXpmmMv4%2FANLKkYQBmonzAcsUcnTHFBMkunD1d8wHMx1lUCo7n5gjEo958tl5CKEhfjU59jABWO27d9FOu3HCwAtS0er8kk3580%2FERubmzD9dZv8%2FnzjPjbBlFhuJtzHBE9267ofQAIS%2FY3CtA85fv0XiLd4GEj52owJQ87WtMSxQQPyhlU2H1Zg%2B9KZgzdbixwRJrMLyxkS6EA4QgWPuqpZsSsXkkYlAqaoI8AMHYinEKDRtovCRkBxD2%2F%2F2Pi1TCD8s%2BDBjrqAQxDmO4M59PLiXJfpFJQVYXxXajf%2FPVjnmUJz1xKngh57KIJSkDDWs0oQGcga%2FoAIHSeDaZHBni4Vlzg%2Fw93qJAM3ZafHcxjBzo10xMR95MV1dqYcPSn94j%2FHQyA07zh8AFXxK%2Bbf9di0vkA8pVDbp702WFu2XBQuQUqfxehzJqE%2BXurGi7yrS12nLZgJuYS3H%2B3D8LQ5Dj0zrFQQEQ1qB%2F8zViT3XvzoXWPkRnMZdykyxXt8fw%2F70VPkYCFZGpdHT1qW5%2FBeYluUCVDb%2FCNxC5rB6Fo9FEF6iBJqClVdBnZ49VFIo4VAUbH9Q%3D%3D"
         },
         "meta": {
-          "source": "localStyles"
+          "source": "frames",
+          "sourceFile": "https://www.figma.com/file/9KvLO7F8VPrJ7GxGBWwCr9",
+          "originFrameName": "Text Style · Frame Example"
         },
         "type": "font",
         "originId": "Inter-SemiBold",
-        "sourceId": "3653cb84-8edb-46b0-8bee-ce46f0c7c829",
+        "sourceId": "2ec31677-436c-4ebe-9740-96acd5193b06",
         "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
       },
       "color": {
         "value": {
           "a": 1,
-          "b": 196,
-          "g": 196,
-          "r": 196
+          "b": 43,
+          "g": 33,
+          "r": 30
         }
       },
       "fontSize": {
@@ -1407,16 +1439,155 @@
           "measure": 5
         }
       },
+      "textTransform": "uppercase",
       "textDecoration": [
         "underline"
       ]
     },
     "meta": {
-      "source": "localStyles"
+      "source": "frames",
+      "sourceFile": "https://www.figma.com/file/9KvLO7F8VPrJ7GxGBWwCr9",
+      "originFrameName": "Text Style · Frame Example"
     },
     "type": "textStyle",
-    "originId": "12:163",
-    "sourceId": "3653cb84-8edb-46b0-8bee-ce46f0c7c829",
+    "originId": "12:63",
+    "sourceId": "2ec31677-436c-4ebe-9740-96acd5193b06",
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
+  },
+  {
+    "createdAt": "2021-04-12T11:39:15.699Z",
+    "updatedAt": "2021-04-12T11:39:15.699Z",
+    "id": "466e4b10-44de-4065-b4f7-25446b024f8c",
+    "name": "Body",
+    "value": {
+      "font": {
+        "createdAt": "2021-04-02T08:01:57.087Z",
+        "updatedAt": "2021-04-12T11:39:15.710Z",
+        "id": "e69237ab-05db-4380-81e5-70db7f5448f1",
+        "name": "Inter-Medium",
+        "value": {
+          "isItalic": false,
+          "provider": "Google Fonts",
+          "fontFamily": "Inter",
+          "fontWeight": 500,
+          "fontFileMissing": false,
+          "fontPostScriptName": "Inter-Medium",
+          "url": "https://ddp-assets-prod.s3.amazonaws.com/927e26f6-da29-40d6-b9de-530bdcddf1ed/font/Inter-Medium/Inter-Medium.ttf?AWSAccessKeyId=ASIAYLKZPEWOJVU534HF&Expires=1618231227&Signature=74Ekpr2O8jVSCFoeoXPCKJIX2fY%3D&x-amz-security-token=IQoJb3JpZ2luX2VjEGAaCWV1LXdlc3QtMSJIMEYCIQDYQqqdJi8KWcdHvM%2FgHaU8g0VwaZCoeTP6koUxVKQGbAIhAL8Cnyavps3sjXc%2BtWA46HmPzzd01NOHwFcAASJoWXwRKqgDCLn%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQAhoMNTc0MTAyNjQ0MTI0IgybcaMImfsreZ%2Bf%2F%2Fkq%2FAKYJR9F626UANDvoSTdi4JDa0JuvbdAUg69u%2BTtrLHxt88ChfZaWw3yVfV1q7UlreuD9HWeYJaiNgGbyFmPickxr85Vr5TFqdoJMuFWQatc9D07F%2BYIFfV6jwsuDDrt01Dkw3r%2Fg8UgQwhkrZcWqba5rI9ATcmo1ByNw%2F7z5X33pzYMLo7ZNBwjkKBTVwM%2BHVBpyqx9uWm%2BVYGZNgEIEO%2FzrtqQXYMNWbrpYXEBxjvwd%2BSyC6We2w2Zaq4KAJXpmmMv4%2FANLKkYQBmonzAcsUcnTHFBMkunD1d8wHMx1lUCo7n5gjEo958tl5CKEhfjU59jABWO27d9FOu3HCwAtS0er8kk3580%2FERubmzD9dZv8%2FnzjPjbBlFhuJtzHBE9267ofQAIS%2FY3CtA85fv0XiLd4GEj52owJQ87WtMSxQQPyhlU2H1Zg%2B9KZgzdbixwRJrMLyxkS6EA4QgWPuqpZsSsXkkYlAqaoI8AMHYinEKDRtovCRkBxD2%2F%2F2Pi1TCD8s%2BDBjrqAQxDmO4M59PLiXJfpFJQVYXxXajf%2FPVjnmUJz1xKngh57KIJSkDDWs0oQGcga%2FoAIHSeDaZHBni4Vlzg%2Fw93qJAM3ZafHcxjBzo10xMR95MV1dqYcPSn94j%2FHQyA07zh8AFXxK%2Bbf9di0vkA8pVDbp702WFu2XBQuQUqfxehzJqE%2BXurGi7yrS12nLZgJuYS3H%2B3D8LQ5Dj0zrFQQEQ1qB%2F8zViT3XvzoXWPkRnMZdykyxXt8fw%2F70VPkYCFZGpdHT1qW5%2FBeYluUCVDb%2FCNxC5rB6Fo9FEF6iBJqClVdBnZ49VFIo4VAUbH9Q%3D%3D"
+        },
+        "meta": {
+          "source": "frames",
+          "sourceFile": "https://www.figma.com/file/9KvLO7F8VPrJ7GxGBWwCr9",
+          "originFrameName": "Text Style · Frame Example"
+        },
+        "type": "font",
+        "originId": "Inter-Medium",
+        "sourceId": "2ec31677-436c-4ebe-9740-96acd5193b06",
+        "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
+      },
+      "color": {
+        "value": {
+          "a": 1,
+          "b": 43,
+          "g": 33,
+          "r": 30
+        }
+      },
+      "fontSize": {
+        "value": {
+          "unit": "px",
+          "measure": 14
+        }
+      },
+      "textAlign": {
+        "vertical": "top",
+        "horizontal": "left"
+      },
+      "lineHeight": {
+        "value": {
+          "unit": "px",
+          "measure": 20
+        }
+      },
+      "letterSpacing": {
+        "value": {
+          "unit": "px",
+          "measure": 10
+        }
+      }
+    },
+    "meta": {
+      "source": "frames",
+      "sourceFile": "https://www.figma.com/file/9KvLO7F8VPrJ7GxGBWwCr9",
+      "originFrameName": "Text Style · Frame Example"
+    },
+    "type": "textStyle",
+    "originId": "12:64",
+    "sourceId": "2ec31677-436c-4ebe-9740-96acd5193b06",
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
+  },
+  {
+    "createdAt": "2021-04-12T11:39:15.699Z",
+    "updatedAt": "2021-04-12T11:39:15.699Z",
+    "id": "a8417035-326b-45c4-b2d0-7e929aae9bcf",
+    "name": "Code",
+    "value": {
+      "font": {
+        "createdAt": "2021-04-02T09:54:13.112Z",
+        "updatedAt": "2021-04-12T11:39:15.707Z",
+        "id": "6bf09330-71a6-475e-88d1-d3b72122bab3",
+        "name": "FiraCode-Medium",
+        "value": {
+          "isItalic": false,
+          "provider": "Google Fonts",
+          "fontFamily": "Fira Code",
+          "fontWeight": 500,
+          "fontFileMissing": false,
+          "fontPostScriptName": "FiraCode-Medium",
+          "url": "https://ddp-assets-prod.s3.amazonaws.com/927e26f6-da29-40d6-b9de-530bdcddf1ed/font/FiraCode-Medium/FiraCode-Medium.ttf?AWSAccessKeyId=ASIAYLKZPEWOJVU534HF&Expires=1618231227&Signature=CCb8DRJurPWhxD0sImyxecrYinw%3D&x-amz-security-token=IQoJb3JpZ2luX2VjEGAaCWV1LXdlc3QtMSJIMEYCIQDYQqqdJi8KWcdHvM%2FgHaU8g0VwaZCoeTP6koUxVKQGbAIhAL8Cnyavps3sjXc%2BtWA46HmPzzd01NOHwFcAASJoWXwRKqgDCLn%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQAhoMNTc0MTAyNjQ0MTI0IgybcaMImfsreZ%2Bf%2F%2Fkq%2FAKYJR9F626UANDvoSTdi4JDa0JuvbdAUg69u%2BTtrLHxt88ChfZaWw3yVfV1q7UlreuD9HWeYJaiNgGbyFmPickxr85Vr5TFqdoJMuFWQatc9D07F%2BYIFfV6jwsuDDrt01Dkw3r%2Fg8UgQwhkrZcWqba5rI9ATcmo1ByNw%2F7z5X33pzYMLo7ZNBwjkKBTVwM%2BHVBpyqx9uWm%2BVYGZNgEIEO%2FzrtqQXYMNWbrpYXEBxjvwd%2BSyC6We2w2Zaq4KAJXpmmMv4%2FANLKkYQBmonzAcsUcnTHFBMkunD1d8wHMx1lUCo7n5gjEo958tl5CKEhfjU59jABWO27d9FOu3HCwAtS0er8kk3580%2FERubmzD9dZv8%2FnzjPjbBlFhuJtzHBE9267ofQAIS%2FY3CtA85fv0XiLd4GEj52owJQ87WtMSxQQPyhlU2H1Zg%2B9KZgzdbixwRJrMLyxkS6EA4QgWPuqpZsSsXkkYlAqaoI8AMHYinEKDRtovCRkBxD2%2F%2F2Pi1TCD8s%2BDBjrqAQxDmO4M59PLiXJfpFJQVYXxXajf%2FPVjnmUJz1xKngh57KIJSkDDWs0oQGcga%2FoAIHSeDaZHBni4Vlzg%2Fw93qJAM3ZafHcxjBzo10xMR95MV1dqYcPSn94j%2FHQyA07zh8AFXxK%2Bbf9di0vkA8pVDbp702WFu2XBQuQUqfxehzJqE%2BXurGi7yrS12nLZgJuYS3H%2B3D8LQ5Dj0zrFQQEQ1qB%2F8zViT3XvzoXWPkRnMZdykyxXt8fw%2F70VPkYCFZGpdHT1qW5%2FBeYluUCVDb%2FCNxC5rB6Fo9FEF6iBJqClVdBnZ49VFIo4VAUbH9Q%3D%3D"
+        },
+        "meta": {
+          "source": "frames",
+          "sourceFile": "https://www.figma.com/file/9KvLO7F8VPrJ7GxGBWwCr9",
+          "originFrameName": "Text Style · Frame Example"
+        },
+        "type": "font",
+        "originId": "FiraCode-Medium",
+        "sourceId": "2ec31677-436c-4ebe-9740-96acd5193b06",
+        "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
+      },
+      "color": {
+        "value": {
+          "a": 1,
+          "b": 5,
+          "g": 142,
+          "r": 255
+        }
+      },
+      "fontSize": {
+        "value": {
+          "unit": "px",
+          "measure": 13
+        }
+      },
+      "textAlign": {
+        "vertical": "top",
+        "horizontal": "left"
+      },
+      "lineHeight": {
+        "value": {
+          "unit": "px",
+          "measure": 20
+        }
+      }
+    },
+    "meta": {
+      "source": "frames",
+      "sourceFile": "https://www.figma.com/file/9KvLO7F8VPrJ7GxGBWwCr9",
+      "originFrameName": "Text Style · Frame Example"
+    },
+    "type": "textStyle",
+    "originId": "12:165",
+    "sourceId": "2ec31677-436c-4ebe-9740-96acd5193b06",
     "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
   },
   {

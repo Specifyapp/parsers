@@ -40,10 +40,6 @@ export abstract class Token implements IToken {
   source?: Source;
   sourceId?: string;
   repositoryId?: string;
-  repository?: {
-    id: string;
-    name: string;
-  };
 
   constructor(element: Partial<Token>) {
     this.originId = element?.originId || '';

@@ -6,7 +6,6 @@ import * as _ from 'lodash';
 import * as os from 'os';
 import {
   ColorsFormat,
-  ThemeUiConfig,
   ThemeUiIndexes,
   ThemeUiTokenClass,
   ThemeUiType,
@@ -14,7 +13,7 @@ import {
 } from './to-theme-ui.type';
 
 export type InputDataType = Array<Pick<IToken, 'id' | 'name' | 'value' | 'type'>>;
-export type OutputDataType = ThemeUiConfig | string;
+export type OutputDataType = string;
 export type FormatTokenType = Partial<{
   colorFormat: {
     format: ColorsFormat;
@@ -46,7 +45,7 @@ export type OptionsType =
       formatTokens: FormatTokenType;
       formatConfig: Partial<{
         module: 'es6' | 'commonjs' | 'json';
-        themeObjectName: string;
+        objectName: string;
         endOfLine: 'auto' | 'lf' | 'crlf' | 'cr';
         tabWidth: number;
         useTabs: boolean;
@@ -120,7 +119,7 @@ class ToThemeUiParser {
   styles: Partial<Record<ThemeUiType, any>> = {};
   constructor(tokens: InputDataType, options: OptionsType) {
     this.options = options;
-    this.objectName = options?.formatConfig?.themeObjectName || 'theme';
+    this.objectName = options?.formatConfig?.objectName || 'theme';
     this.transformNameFn = _[options?.formatName || 'camelCase'];
     this.exportDefault = options?.formatConfig?.exportDefault ?? true;
     this.module = options?.formatConfig?.module ?? 'es6';
@@ -215,28 +214,29 @@ class ToThemeUiParser {
   }
 
   finalize() {
-    if (this.module === 'json') return this.styles;
-    const result = JSON.stringify(this.styles);
+    const styles = JSON.stringify(this.styles);
     return prettier.format(
       (() => {
-        if (this.module === 'es6' && this.exportDefault)
-          return `const ${this.objectName} = ${result} ${`;${os.EOL + os.EOL}export default ${
+        if (this.module === 'json') {
+          return styles;
+        } else if (this.module === 'es6' && this.exportDefault)
+          return `const ${this.objectName} = ${styles} ${`;${os.EOL + os.EOL}export default ${
             this.objectName
           };`}`;
         else if (this.module === 'es6' && !this.exportDefault)
-          return `export const ${this.objectName} = ${result};`;
+          return `export const ${this.objectName} = ${styles};`;
         else if (this.module === 'commonjs' && this.exportDefault)
-          return `const ${this.objectName} = ${result}; ${`${os.EOL + os.EOL}module.exports = ${
+          return `const ${this.objectName} = ${styles}; ${`${os.EOL + os.EOL}module.exports = ${
             this.objectName
           };`}`;
         else
-          return `const ${this.objectName} = ${result}; ${`${os.EOL + os.EOL}module.exports = ${
+          return `const ${this.objectName} = ${styles}; ${`${os.EOL + os.EOL}module.exports = {${
             this.objectName
-          };`}`;
+          }};`}`;
       })(),
       {
         ...this.options?.formatConfig,
-        parser: 'babel',
+        parser: this.module === 'json' ? 'json' : 'babel',
       },
     );
   }

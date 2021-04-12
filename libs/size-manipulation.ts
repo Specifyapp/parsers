@@ -1,17 +1,23 @@
 import { MeasurementValue } from '../types';
 
-export default function convertMeasurement(
-  from: MeasurementValue | string,
+function convertMeasurement(
+  from: MeasurementValue,
+  toUnit: 'px' | 'rem',
+  basePixelValue?: number | undefined,
+): MeasurementValue;
+function convertMeasurement(
+  from: string,
+  toUnit: 'px' | 'rem',
+  basePixelValue?: number | undefined,
+): string;
+function convertMeasurement(
+  from: string | MeasurementValue,
   toUnit: 'px' | 'rem',
   basePixelValue = 16,
-): MeasurementValue {
+): MeasurementValue | string {
   if (!['px', 'rem'].includes(toUnit)) throw new Error('Unknown size unit');
   let fromValue = typeof from === 'object' && 'measure' in from ? from.measure : parseFloat(from);
-  const fromUnit =
-    typeof from === 'string'
-      ? from.match(/[\d.\-\+]*\s*(.*)/)![1] || ''
-      : (from as MeasurementValue).unit;
-
+  const fromUnit = typeof from === 'string' ? from.match(/[\d.\-\+]*\s*(.*)/)![1] || '' : from.unit;
   let pxValue;
   if (fromUnit === 'px') {
     pxValue = fromValue;
@@ -20,15 +26,11 @@ export default function convertMeasurement(
   }
   if (!pxValue) throw new Error('Unknown size unit');
 
-  // Convert length in pixels to the output unit
-  if (toUnit === 'px') {
-    return {
-      unit: 'px',
-      measure: pxValue,
-    };
-  }
-  return {
-    unit: 'rem',
-    measure: pxValue / basePixelValue,
+  const result = {
+    unit: toUnit === 'px' ? 'px' : 'rem',
+    measure: toUnit === 'px' ? pxValue : pxValue / basePixelValue,
   };
+  return typeof from === 'string' ? `${result.measure}${result.unit}` : result;
 }
+
+export default convertMeasurement;

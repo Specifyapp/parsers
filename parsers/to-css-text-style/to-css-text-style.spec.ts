@@ -14,12 +14,13 @@ describe('to-css-text-style', () => {
     expect(
       result.includes(
         '.title {\n' +
-          '  color: rgb(196, 196, 196);\n' +
+          '  color: rgb(30, 33, 43);\n' +
           '  font-family: Inter;\n' +
           '  font-size: 32px;\n' +
           '  line-height: 40px;\n' +
           '  text-align: left;\n' +
           '  vertical-align: top;\n' +
+          '  text-transform: uppercase;\n' +
           '  text-decoration: underline;\n' +
           '  text-indent: 5px;\n' +
           '}',
@@ -94,10 +95,11 @@ describe('to-css-text-style', () => {
     expect(
       result.includes(
         '.utilsBodyTextStyle {\n' +
-          '  color: #c4c4c4;\n' +
+          '  color: #1e212b;\n' +
           '  font-family: inter, serif;\n' +
           '  font-size: 14px;\n' +
           '  line-height: 1.43;\n' +
+          '  letter-spacing: 10px;\n' +
           '  text-align: left;\n' +
           '  vertical-align: top;\n' +
           '}',
@@ -118,12 +120,13 @@ describe('to-css-text-style', () => {
     expect(
       result.includes(
         '.utilsTitleTextStyle {\n' +
-          '  color: #c4c4c4;\n' +
+          '  color: #1e212b;\n' +
           '  font-family: inter, serif;\n' +
           '  font-size: 32px;\n' +
           '  line-height: 1.25;\n' +
           '  text-align: left;\n' +
           '  vertical-align: top;\n' +
+          '  text-transform: uppercase;\n' +
           '  text-decoration: underline;\n' +
           '  text-indent: 5px;\n' +
           '}',

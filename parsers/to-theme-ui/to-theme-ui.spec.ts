@@ -1,23 +1,25 @@
 import libs from '../global-libs';
 import seeds from '../../tests/seeds';
-import toThemeUi from './to-theme-ui.parser';
+import toThemeUi, { OptionsType } from './to-theme-ui.parser';
 import * as _ from 'lodash';
 import { ThemeUiConfig, ThemeUiType } from './to-theme-ui.type';
+import { Token } from '../../types';
 
 type ObjectOfStringNumber = { [key: string]: number };
 type ObjectOfStringString = { [key: string]: string };
 describe('To theme ui', () => {
   it('Get tokens - apply parsers', async done => {
-    const result = (await toThemeUi(seeds().tokens, undefined, libs)) as string;
+    const str = (await toThemeUi(seeds().tokens, undefined, libs)) as string;
+
     seeds().tokens.forEach(({ type, name }) => {
       if (!['vector', 'bitmap', 'opacity'].includes(type)) {
-        expect(result).toEqual(expect.stringMatching(_.camelCase(name)));
+        expect(str).toEqual(expect.stringMatching(_.camelCase(name)));
       }
     });
     done();
   });
   it('Get tokens - apply parsers - json', async done => {
-    const result = (await toThemeUi(
+    const str = await toThemeUi(
       seeds().tokens,
       {
         formatConfig: {
@@ -25,7 +27,9 @@ describe('To theme ui', () => {
         },
       },
       libs,
-    )) as ThemeUiConfig;
+    );
+    const result = JSON.parse(str) as ThemeUiConfig;
+
     expect(Object.keys(result)).toEqual(
       expect.arrayContaining([
         'zIndices',
@@ -82,7 +86,7 @@ describe('To theme ui', () => {
     done();
   });
   it('Get tokens - apply parsers - with variant', async done => {
-    const result = (await toThemeUi(
+    const str = await toThemeUi(
       seeds().tokens,
       {
         formatConfig: {
@@ -91,7 +95,9 @@ describe('To theme ui', () => {
         variants: true,
       },
       libs,
-    )) as ThemeUiConfig;
+    );
+    const result = JSON.parse(str) as ThemeUiConfig;
+
     expect(Object.keys(result)).toEqual(
       expect.arrayContaining([
         'zIndices',
@@ -126,7 +132,7 @@ describe('To theme ui', () => {
     done();
   });
   it('Should return variant that matched frozen presets', async done => {
-    const result = (await toThemeUi(
+    const str = await toThemeUi(
       seeds().tokens,
       {
         formatTokens: {
@@ -154,7 +160,8 @@ describe('To theme ui', () => {
         },
       },
       libs,
-    )) as ThemeUiConfig;
+    );
+    const result = JSON.parse(str) as ThemeUiConfig;
     Object.values(
       result.text as Record<string, { fontFamily: string; fontWeight: string }>,
     ).forEach(value => {
@@ -168,7 +175,7 @@ describe('To theme ui', () => {
   });
   it('Should return variant that matched non frozen presets', async done => {
     const tokens = seeds().tokens;
-    const result = (await toThemeUi(
+    const str = await toThemeUi(
       tokens,
       {
         formatConfig: {
@@ -182,7 +189,9 @@ describe('To theme ui', () => {
         },
       },
       libs,
-    )) as ThemeUiConfig;
+    );
+    const result = JSON.parse(str) as ThemeUiConfig;
+
     expect(Object.keys(result.fontWeights).length).toBeGreaterThan(
       tokens.filter(({ type }) => type === 'textStyle').length,
     );
@@ -193,5 +202,123 @@ describe('To theme ui', () => {
       expect(result.fontWeights[value.fontWeight]).toBeDefined();
     });
     done();
+  });
+  it('Should return variant that matched custom presets', async done => {
+    const tokens = seeds().tokens;
+    const str = await toThemeUi(
+      tokens,
+      {
+        formatConfig: {
+          module: 'json',
+        },
+        variants: true,
+        presets: {
+          fontWeights: {
+            preset: {
+              thin: 100,
+              extraLight: 200,
+              light: 300,
+              normal: 400,
+              regular: 400,
+              medium: 500,
+              semiBold: 600,
+              bold: 700,
+              extraBold: 800,
+              black: 900,
+            },
+          },
+          fontSizes: {
+            preset: [4, 8, 12],
+          },
+        },
+      },
+      libs,
+    );
+    const result = JSON.parse(str) as ThemeUiConfig;
+
+    expect(Object.keys(result.fontWeights).length).toBeGreaterThan(
+      tokens.filter(({ type }) => type === 'textStyle').length,
+    );
+    expect(Object.keys(result.fontSizes).length).toBeGreaterThan(
+      tokens.filter(({ type }) => type === 'textStyle').length,
+    );
+    Object.values(
+      result.text as Record<string, { fontFamily: string; fontWeight: string }>,
+    ).forEach(value => {
+      expect(result.fonts[value.fontFamily]).toBeDefined();
+      expect(result.fontWeights[value.fontWeight]).toBeDefined();
+    });
+    done();
+  });
+  it('Should return variant that matched nothing', async done => {
+    const tokens = seeds().tokens.filter(({ type }) => type !== 'measurement' && type !== 'color');
+    const str = await toThemeUi(
+      tokens,
+      {
+        formatConfig: {
+          module: 'json',
+        },
+        variants: true,
+      },
+      libs,
+    );
+    const result = JSON.parse(str) as ThemeUiConfig;
+    expect(result.colors).toBeFalsy();
+    expect(result.sizes).toBeFalsy();
+    done();
+  });
+
+  it('Module Format - es6 - export default', async () => {
+    const objectName = 'moduleTheme';
+
+    const options: OptionsType = {
+      formatConfig: { exportDefault: true, objectName },
+    };
+
+    const result = await toThemeUi(seeds().tokens, options, libs);
+    expect(result.includes(`export default ${objectName}`)).toBeTruthy();
+    expect(result.includes(`export const ${objectName}`)).toBeFalsy();
+    expect(result.includes('module.exports')).toBeFalsy();
+  });
+
+  it('Module Format - es6', async () => {
+    const objectName = 'moduleTheme';
+
+    const options: OptionsType = {
+      formatConfig: { exportDefault: false, objectName },
+    };
+
+    const result = await toThemeUi(seeds().tokens, options, libs);
+
+    expect(result.includes(`export default ${objectName}`)).toBeFalsy();
+    expect(result.includes(`export const ${objectName}`)).toBeTruthy();
+    expect(result.includes('module.exports')).toBeFalsy();
+  });
+
+  it('Module Format - commonjs - export default ', async () => {
+    const objectName = 'moduleTheme';
+
+    const options: OptionsType = {
+      formatConfig: { module: 'commonjs', exportDefault: true, objectName },
+    };
+
+    const result = await toThemeUi(seeds().tokens, options, libs);
+
+    expect(result.includes(`export default ${objectName}`)).toBeFalsy();
+    expect(result.includes(`export const ${objectName}`)).toBeFalsy();
+    expect(result.includes(`module.exports = ${objectName}`)).toBeTruthy();
+  });
+
+  it('Module Format - commonjs', async () => {
+    const objectName = 'moduleTheme';
+
+    const options: OptionsType = {
+      formatConfig: { module: 'commonjs', exportDefault: false, objectName },
+    };
+
+    const result = await toThemeUi(seeds().tokens, options, libs);
+    expect(result.includes(`export default ${objectName}`)).toBeFalsy();
+    expect(result.includes(`export const ${objectName}`)).toBeFalsy();
+    expect(result.includes(`module.exports = { ${objectName} }`)).toBeTruthy();
   });
 });

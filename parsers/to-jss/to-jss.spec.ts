@@ -9,8 +9,14 @@ import {
   Token,
   MeasurementToken,
   BorderToken,
+  DepthToken,
+  OpacityToken,
+  DurationToken,
+  BitmapToken,
+  VectorToken,
 } from '../../types';
 import tinycolor from 'tinycolor2';
+import path from 'path';
 
 describe('To jss', () => {
   it('Get tokens - apply parsers', async done => {
@@ -251,7 +257,6 @@ describe('To jss', () => {
     };
 
     const result = await toJss(seeds().tokens as Array<Token>, options, libs);
-
     expect(result.includes(`export default ${jssObjectName}`)).toBeFalsy();
     expect(result.includes(`export const ${jssObjectName}`)).toBeFalsy();
     expect(result.includes(`module.exports = { ${jssObjectName} }`)).toBeTruthy();
@@ -289,5 +294,79 @@ describe('To jss', () => {
 
     expect(result.includes('http://')).toBeFalsy();
     expect(result.includes('@2x.webp')).toBeFalsy();
+  });
+  it('No assets folder path - type by tokens', async () => {
+    const options: OptionsType = {
+      formatName: 'camelCase',
+      formatTokens: {
+        durationFormat: 'number',
+        opacityFormat: 'number',
+        measurementFormat: 'number',
+        depthFormat: 'number',
+        gradientFormat: 'array',
+        shadowFormat: 'array',
+      },
+    };
+    const tokens = seeds().tokens;
+
+    const result = await toJss(tokens, options, libs);
+    tokens.forEach(token => {
+      if (token.type === 'depth') {
+        expect(
+          result.includes(`${token.name}: ${(token.value as DepthToken['value']).depth}`),
+        ).toBeTruthy();
+      } else if (token.type === 'measurement') {
+        expect(
+          result.includes(`${token.name}: ${(token.value as MeasurementToken['value']).measure}`),
+        ).toBeTruthy();
+      } else if (token.type === 'opacity') {
+        expect(
+          result.includes(`${token.name}: ${(token.value as OpacityToken['value']).opacity / 100}`),
+        ).toBeTruthy();
+      } else if (token.type === 'duration') {
+        expect(
+          result.includes(`${token.name}: ${(token.value as DurationToken['value']).duration}`),
+        ).toBeTruthy();
+      } else if (token.type === 'gradient' || token.type === 'shadow') {
+        const arrayReg = new RegExp(`${token.name}: \\[`);
+        expect(result).toEqual(expect.stringMatching(arrayReg));
+      }
+    });
+  });
+  it('Define assets folder path by type', async () => {
+    const assetsFolderPath = { bitmap: 'bitmap/', vector: 'vector/' };
+    const options: OptionsType = {
+      formatName: 'camelCase',
+      formatConfig: {
+        assetsFilePattern: '{{name}}.{{format}}',
+        assetsFolderPath,
+      },
+    };
+    const tokens = seeds().tokens.filter(({ type }) => type === 'bitmap' || type === 'vector');
+
+    const result = await toJss(tokens, options, libs);
+    tokens.forEach(token => {
+      if (token.type === 'bitmap') {
+        const bitmap = token as BitmapToken;
+        expect(
+          result.includes(
+            `${libs._.camelCase(bitmap.name)}: "${path.join(
+              assetsFolderPath.bitmap,
+              `${libs._.camelCase(bitmap.name)}.${bitmap.value.format}"`,
+            )}`,
+          ),
+        ).toBeTruthy();
+      } else {
+        const vector = token as VectorToken;
+        expect(
+          result.includes(
+            `${libs._.camelCase(vector.name)}: "${path.join(
+              assetsFolderPath.vector,
+              `${libs._.camelCase(vector.name)}.${vector.value.format}"`,
+            )}`,
+          ),
+        ).toBeTruthy();
+      }
+    });
   });
 });

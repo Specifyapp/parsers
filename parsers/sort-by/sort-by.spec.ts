@@ -10,4 +10,10 @@ describe('sort-by', () => {
     expect(JSON.stringify(libs._.sortBy(seeds().tokens, ['name']))).toEqual(JSON.stringify(result));
     done();
   });
+  it('Get tokens - apply parsers - wihtout options', async done => {
+    const result = await sortBy(seeds().tokens, undefined, libs);
+    if (result instanceof Error) return done.fail(result);
+    expect(JSON.stringify(libs._.sortBy(seeds().tokens, ['name']))).toEqual(JSON.stringify(result));
+    done();
+  });
 });

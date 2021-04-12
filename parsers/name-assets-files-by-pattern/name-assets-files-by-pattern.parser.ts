@@ -12,10 +12,6 @@ export default async function (
   options: OptionsType,
   libs: Pick<LibsType, 'Mustache' | '_'>,
 ): Promise<OutputDataType> {
-  try {
-    const template = new Template(options.pattern);
-    return assets.map(asset => libs._.set(asset, 'value.fileName', template.render(asset)));
-  } catch (err) {
-    throw err;
-  }
+  const template = new Template(options.pattern);
+  return assets.map(asset => libs._.set(asset, 'value.fileName', template.render(asset)));
 }

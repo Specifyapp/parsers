@@ -23,8 +23,8 @@ export class TextStyle extends TextStyleToken {
     if (ls) return `${ls.value.measure}${ls.value.unit}`;
   }
   private getLineHeights() {
-    const ls = this.value.lineHeight;
-    if (ls) return `${ls.value.measure}${ls.value.unit}`;
+    const lh = this.value.lineHeight;
+    return `${lh.value.measure}${lh.value.unit}`;
   }
 
   private getFontSizes(fontFormat: FormatTokenType['fontFormat']) {
@@ -41,14 +41,13 @@ export class TextStyle extends TextStyleToken {
   generate(options: OptionsType, spTokens: Array<IToken>): ThemeUiTextStyle {
     const result: ThemeUiTextStyle = {};
 
-    const fontSizes = this.getFontSizes(options?.formatTokens?.fontFormat);
-    if (fontSizes) result.fontSizes = fontSizes;
+    result.fontSizes = this.getFontSizes(options?.formatTokens?.fontFormat);
 
     const letterSpacing = this.getLetterSpacings();
     if (letterSpacing) result.letterSpacings = { [this.transformedName]: letterSpacing };
 
     const lineHeight = this.getLineHeights();
-    if (lineHeight) result.lineHeights = { [this.transformedName]: lineHeight };
+    result.lineHeights = { [this.transformedName]: lineHeight };
 
     if (options?.variants) {
       if (!('id' in this.value.fontSize)) {
@@ -58,7 +57,7 @@ export class TextStyle extends TextStyleToken {
         });
         spTokens.push(fontSizeToken);
         this.value.fontSize = fontSizeToken;
-        Indexes.Instance.add('fontSizes', fontSizeToken.id, fontSizes[0]);
+        Indexes.Instance.add('fontSizes', fontSizeToken.id, result.fontSizes[0]);
       }
     }
 
