@@ -4,6 +4,20 @@ import { Token } from '../../types';
 import { DspParserSettings } from './dsp.type';
 import libs, { LibsType } from '../global-libs';
 
+const entitiesAvailable = [
+  'bitmap',
+  'border',
+  'color',
+  'depth',
+  'duration',
+  'gradient',
+  'measurement',
+  'opacity',
+  'shadow',
+  'vector',
+];
+const entitiesLength = seeds().tokens.filter(({ type }) => entitiesAvailable.includes(type)).length;
+
 describe('To DSP', () => {
   it('should take settings and be able to return the correct value', async () => {
     const settings: DspParserSettings = {
@@ -13,11 +27,8 @@ describe('To DSP', () => {
       snippetTriggerPrefix: 'ex-',
     };
 
-    const result = await toDsp(
-      seeds().tokens as Array<Token>,
-      { settings } as OptionsType,
-      libs as LibsType,
-    );
+    const tokenSeeds = seeds().tokens;
+    const result = await toDsp(tokenSeeds, { settings } as OptionsType, libs as LibsType);
     expect(Array.isArray(result)).toBe(true);
     expect(result.length).toBe(15);
     expect(result.some(entity => entity.name === 'dsp.json')).toBe(true);
@@ -30,7 +41,7 @@ describe('To DSP', () => {
     const tokensEntities = JSON.parse(tokens?.value.content!).entities;
 
     expect(Array.isArray(tokensEntities)).toBe(true);
-    expect(tokensEntities.length).toBe(45);
+    expect(tokensEntities.length).toBe(entitiesLength);
 
     const components = result.find(entity => entity.name === 'data/components.json');
     const componentsEntities = JSON.parse(components?.value.content!).entities;
@@ -148,7 +159,7 @@ describe('To DSP', () => {
     const tokensEntities = JSON.parse(tokens?.value.content!).entities;
 
     expect(Array.isArray(tokensEntities)).toBe(true);
-    expect(tokensEntities.length).toBe(45);
+    expect(tokensEntities.length).toBe(entitiesLength);
 
     const components = result.find(entity => entity.name === 'data/components.json');
     const componentsEntities = JSON.parse(components?.value.content!).entities;
@@ -189,7 +200,7 @@ describe('To DSP', () => {
     const tokensEntities = JSON.parse(tokens?.value.content!).entities;
 
     expect(Array.isArray(tokensEntities)).toBe(true);
-    expect(tokensEntities.length).toBe(45);
+    expect(tokensEntities.length).toBe(entitiesLength);
 
     const components = result.find(entity => entity.name === 'data/components.json');
     const componentsEntities = JSON.parse(components?.value.content!).entities;
@@ -230,7 +241,7 @@ describe('To DSP', () => {
     const tokensEntities = JSON.parse(tokens?.value.content!).entities;
 
     expect(Array.isArray(tokensEntities)).toBe(true);
-    expect(tokensEntities.length).toBe(45);
+    expect(tokensEntities.length).toBe(entitiesLength);
 
     const components = result.find(entity => entity.name === 'data/components.json');
     const componentsEntities = JSON.parse(components?.value.content!).entities;
@@ -271,7 +282,7 @@ describe('To DSP', () => {
     const tokensEntities = JSON.parse(tokens?.value.content!).entities;
 
     expect(Array.isArray(tokensEntities)).toBe(true);
-    expect(tokensEntities.length).toBe(45);
+    expect(tokensEntities.length).toBe(entitiesLength);
 
     const components = result.find(entity => entity.name === 'data/components.json');
     const componentsEntities = JSON.parse(components?.value.content!).entities;
@@ -313,7 +324,7 @@ describe('To DSP', () => {
     const tokensEntities = JSON.parse(tokens?.value.content!).entities;
 
     expect(Array.isArray(tokensEntities)).toBe(true);
-    expect(tokensEntities.length).toBe(45);
+    expect(tokensEntities.length).toBe(entitiesLength);
 
     const components = result.find(entity => entity.name === 'data/components.json');
     const componentsEntities = JSON.parse(components?.value.content!).entities;
@@ -355,7 +366,7 @@ describe('To DSP', () => {
     const tokensEntities = JSON.parse(tokens?.value.content!).entities;
 
     expect(Array.isArray(tokensEntities)).toBe(true);
-    expect(tokensEntities.length).toBe(45);
+    expect(tokensEntities.length).toBe(entitiesLength);
 
     const components = result.find(entity => entity.name === 'data/components.json');
     const componentsEntities = JSON.parse(components?.value.content!).entities;

@@ -16,7 +16,7 @@ export class Font extends FontToken {
   }
 
   static afterGenerate(tokens: ThemeUiFont) {
-    if (tokens.fonts) tokens.fonts = Utils.sortObject(tokens.fonts);
+    tokens.fonts = Utils.sortObject(tokens.fonts!);
     return tokens;
   }
 
@@ -26,10 +26,8 @@ export class Font extends FontToken {
         [this.transformedName]: this.value.fontPostScriptName,
       },
     };
-    if (this.value.fontWeight) {
-      result.fontWeights = { [this.transformedName]: this.value.fontWeight };
-      Indexes.Instance.add('fontWeights', this.id, this.transformedName, this.value.fontWeight);
-    }
+    result.fontWeights = { [this.transformedName]: this.value.fontWeight };
+    Indexes.Instance.add('fontWeights', this.id, this.transformedName, this.value.fontWeight);
     Indexes.Instance.add('fonts', this.id, this.transformedName);
     return result;
   }

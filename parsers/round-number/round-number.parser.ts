@@ -7,11 +7,11 @@ export type OptionsType =
   | undefined
   | {
       keys: Array<string>; // default []
-      precision?: number; // default 2
+      precision?: number; // default 0
       mode?: 'down' | 'up' | 'auto'; // default auto
     };
 
-const defaultOptions = { keys: [], precision: 2, mode: 'auto' };
+const defaultOptions = { keys: [], precision: 0, mode: 'auto' };
 
 export default async function (
   tokens: InputDataType,
@@ -26,7 +26,6 @@ export default async function (
   return tokens.map(token => {
     mergedOptions.keys.forEach(pattern => {
       const paths = listPathsByPattern(token, pattern);
-
       paths.forEach(selector => {
         const originalValue = _.get(token, selector);
 

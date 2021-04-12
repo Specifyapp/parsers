@@ -21,7 +21,7 @@ export class Duration extends DurationToken {
   }
 
   static afterGenerate(tokens: ThemeUiDuration) {
-    if (tokens.durations) tokens.durations = Utils.sortObject(tokens.durations);
+    tokens.durations = Utils.sortObject(tokens.durations);
     return tokens;
   }
 }

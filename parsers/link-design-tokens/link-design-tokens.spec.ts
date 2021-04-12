@@ -21,4 +21,16 @@ describe('Link token', () => {
     expect(textStyleInheritOfColor).toBeDefined();
     done();
   });
+  it('Should return gradients and shadow without any change', async done => {
+    const tokens = seeds().tokens.filter(({ type }) => type === 'gradient' || type === 'shadow');
+    const response = await linkTokens(tokens);
+    expect(JSON.stringify(tokens)).toEqual(JSON.stringify(response));
+    done();
+  });
+  it('Should return same number of tokens', async done => {
+    const tokens = seeds().tokens;
+    const response = await linkTokens(tokens);
+    expect(response.length).toEqual(tokens.length);
+    done();
+  });
 });

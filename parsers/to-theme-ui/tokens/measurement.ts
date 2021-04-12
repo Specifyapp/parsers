@@ -24,7 +24,7 @@ export class Measurement extends MeasurementToken {
   }
 
   static afterGenerate(tokens: ThemeUiSizes) {
-    if (tokens.sizes) tokens.sizes = Utils.sortObject(tokens.sizes);
+    tokens.sizes = Utils.sortObject(tokens.sizes!);
     return tokens;
   }
 }

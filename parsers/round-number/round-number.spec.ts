@@ -14,7 +14,6 @@ describe('Rounding', () => {
     const measurementTokens = tokens.filter(token => token.type === 'measurement');
     const result = await rounding(measurementTokens, { keys: ['value.measure'] }, libs);
     if (result instanceof Error) return done.fail(result);
-
     expect(result.length).toEqual(measurementTokens.length);
 
     (result as Array<MeasurementToken>).forEach(token => {

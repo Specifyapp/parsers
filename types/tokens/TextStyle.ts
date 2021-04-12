@@ -85,7 +85,7 @@ export interface TextStyleValue {
     | {
         value: MeasurementValue;
       };
-  lineHeight?:
+  lineHeight:
     | MeasurementToken
     | {
         value: MeasurementValue;

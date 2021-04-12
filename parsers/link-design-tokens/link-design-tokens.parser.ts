@@ -45,7 +45,7 @@ export default async function (tokens: InputDataType): Promise<OutputDataType> {
           }),
         );
       } else {
-        acc.concat(tokensGroupedByType[type]);
+        acc.push(...tokensGroupedByType[type]);
       }
       return acc;
     }, [] as Array<IToken>);
