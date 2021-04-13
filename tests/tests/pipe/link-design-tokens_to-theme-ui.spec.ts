@@ -22,7 +22,7 @@ describe('Pipe - link design tokens -> theme ui', () => {
         libs,
       );
       const linkedTokens = await linkTokens(roundedTokens as Array<IToken>);
-      const str = await toThemeUi(
+      await toThemeUi(
         linkedTokens,
         {
           formatConfig: {

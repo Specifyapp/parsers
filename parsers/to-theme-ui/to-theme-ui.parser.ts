@@ -12,7 +12,9 @@ import {
   ThemeUiTypes,
 } from './to-theme-ui.type';
 
-export type InputDataType = Array<Pick<IToken, 'id' | 'name' | 'value' | 'type'>>;
+export type InputDataType = Array<
+  Pick<IToken, 'id' | 'name' | 'value' | 'type'> & Record<string, any>
+>;
 export type OutputDataType = string;
 export type FormatTokenType = Partial<{
   colorFormat: {
@@ -22,7 +24,7 @@ export type FormatTokenType = Partial<{
     unit: 'percent' | 'none';
     type?: 'number' | 'string';
   };
-  fontFormat: {
+  fontSizeFormat: {
     type: 'number' | 'string';
     unit?: 'px' | 'rem';
   };
@@ -51,8 +53,6 @@ export type OptionsType =
         useTabs: boolean;
         singleQuote: boolean;
         exportDefault: boolean;
-        assetsFolderPath?: string | { vector?: string; bitmap?: string };
-        assetsFilePattern?: string;
       }>;
       variants: boolean;
       presets: PresetsType;
@@ -119,8 +119,8 @@ class ToThemeUiParser {
   styles: Partial<Record<ThemeUiType, any>> = {};
   constructor(tokens: InputDataType, options: OptionsType) {
     this.options = options;
-    this.objectName = options?.formatConfig?.objectName || 'theme';
-    this.transformNameFn = _[options?.formatName || 'camelCase'];
+    this.objectName = options?.formatConfig?.objectName ?? 'theme';
+    this.transformNameFn = _[options?.formatName ?? 'camelCase'];
     this.exportDefault = options?.formatConfig?.exportDefault ?? true;
     this.module = options?.formatConfig?.module ?? 'es6';
     this.tokens = tokens;

@@ -1,11 +1,11 @@
 import { has, get } from 'lodash';
 
 export default function listPathsByPattern<T extends object>(
-  obj: T | Array<T>,
+  base: T | Array<T>,
   pattern: string,
 ): Array<string> {
   try {
-    if (!pattern.includes('[*]')) return has(obj, pattern) ? [pattern] : [];
+    if (!pattern.includes('[*]')) return has(base, pattern) ? [pattern] : [];
     return pattern
       .split('[*]')
       .flatMap(elm => [elm, '[*]'])
@@ -15,14 +15,14 @@ export default function listPathsByPattern<T extends object>(
           if (item === '[*]') {
             return paths
               .map(basePath => {
-                if (basePath !== '' && !has(obj, basePath)) return paths;
-                const iteration = Array.isArray(obj) ? obj : get(obj, basePath);
+                if (basePath !== '' && !has(base, basePath)) return paths;
+                const iteration = Array.isArray(base) ? base : get(base, basePath);
                 if (!iteration?.length) return paths;
                 return Array(iteration.length)
                   .fill(0)
                   .reduce(
                     (acc, _, index) => {
-                      if (has(obj, `${basePath}[${index}]`)) acc.push(`${basePath}[${index}]`);
+                      if (has(base, `${basePath}[${index}]`)) acc.push(`${basePath}[${index}]`);
                       return acc;
                     },
                     [''],
@@ -32,7 +32,7 @@ export default function listPathsByPattern<T extends object>(
           } else {
             return paths.reduce<Array<string>>(
               (acc, elm) => {
-                if (has(obj, `${elm}${item}`)) acc.push(`${elm}${item}`);
+                if (has(base, `${elm}${item}`)) acc.push(`${elm}${item}`);
                 return acc;
               },
               [''],

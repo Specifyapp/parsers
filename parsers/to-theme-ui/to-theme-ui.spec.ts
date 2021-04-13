@@ -3,13 +3,12 @@ import seeds from '../../tests/seeds';
 import toThemeUi, { OptionsType } from './to-theme-ui.parser';
 import * as _ from 'lodash';
 import { ThemeUiConfig, ThemeUiType } from './to-theme-ui.type';
-import { Token } from '../../types';
 
 type ObjectOfStringNumber = { [key: string]: number };
 type ObjectOfStringString = { [key: string]: string };
 describe('To theme ui', () => {
   it('Get tokens - apply parsers', async done => {
-    const str = (await toThemeUi(seeds().tokens, undefined, libs)) as string;
+    const str = await toThemeUi(seeds().tokens, undefined, libs);
 
     seeds().tokens.forEach(({ type, name }) => {
       if (!['vector', 'bitmap', 'opacity'].includes(type)) {
@@ -136,7 +135,7 @@ describe('To theme ui', () => {
       seeds().tokens,
       {
         formatTokens: {
-          fontFormat: {
+          fontSizeFormat: {
             unit: 'rem',
             type: 'string',
           },

@@ -2,7 +2,7 @@
 
 ## Description
 
-This parser replace absolute values by the design token corresponding 
+This parser replace absolute values by the design token corresponding.
 
 If you have a border which include a width of `{ measure: 3, unit: 'px' }` and a measurement with the same value.
 The parser will replace the value of `width` by the entire measurement token.
@@ -22,7 +22,8 @@ At first we create a dictionary used as indexes with the `md5` of values.
 }
 ```
 
-After the creation of the indexes dictionary, we will loop over design tokens that include the `compute` method to replace value by the design associate in the dictionary. Each token has its method of replacing its values.
+After the creation of the indexes dictionary, we will loop over design tokens that include the `compute` method to replace value by the design token
+associate in the dictionary. Each token has its method of replacing its values.
 ## Interface
 
 ```ts
@@ -39,13 +40,13 @@ interface parser {
 Array of object containing at least the keys described in the pattern option.
 
 ```ts
-Array<IToken>
+Array<{id: string, type: string, value: string, name: string} & Record<any, any>>
 ```
 
 ### Output
 
 ```ts
-Array<IToken>
+Array<{id: string, type: string, value: string, name: string} & Record<any, any>>
 ```
 
 ## Basic usage 
@@ -61,7 +62,7 @@ Array<IToken>
 
 #### Input
 
-```json
+```json5
 [
   {
     "id": "1",
@@ -82,7 +83,7 @@ Array<IToken>
             "fontPostScriptName": "Allan-Regular"
           }
       },
-      "fontSize": {
+      "fontSize": { // <---
         "value": {
           "unit": "px",
           "measure": 8
@@ -95,7 +96,7 @@ Array<IToken>
 ```
 #### Output
 
-```json
+```json5
 [
   {
     "id": "1",
@@ -116,7 +117,7 @@ Array<IToken>
           "fontPostScriptName": "Allan-Regular"
         }
       },
-      "fontSize":  {
+      "fontSize":  { // <---
         "id": "1",
         "type": "measurement",
         "value": {
