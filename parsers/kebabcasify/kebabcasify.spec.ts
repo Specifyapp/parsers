@@ -25,7 +25,7 @@ describe('Kebabcasify', () => {
     expect(result.length).toEqual(0);
     done();
   });
-  it('Get tokens - apply parsers - unkown target key', async done => {
+  it('Get tokens - apply parsers - unknown target key', async done => {
     const input = seeds().tokens;
     const result = await kebabcasify(input, { keys: ['name', 'not exist'] }, libs);
     expect(Array.isArray(result)).toBeTruthy();

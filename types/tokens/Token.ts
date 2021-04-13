@@ -15,12 +15,12 @@ export interface TokenInterface {
 }
 
 export interface IToken {
-  originId: string;
+  originId?: string;
   id: string;
   type: TokensType;
   value: TokensValues;
-  meta?: any;
   name: string;
+  meta?: any;
   createdAt?: string;
   updatedAt?: string;
   source?: Source;

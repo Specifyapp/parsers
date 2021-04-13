@@ -28,10 +28,10 @@ interface x {
 ### Options
 | Parameter                | Required  | Type                                                     | Default    | Description                                                                    |
 | ------------------------ | --------- | -------------------------------------------------------- | ---------- | ------------------------------------------------------------------------------ |
-| `formatName`             | optional     | `camelCase, kebabCase, snakeCase`                        | `kebabCase` | The case transformation you want to apply to your design token name            |
-| `formatTokens.color`     | optional     | `rgb, prgb, hex, hex6, hex3, hex4, hex8, name, hsl, hsv` | `rgb`           | The color format you want to apply to your potential color design token        |
+| `formatName`             | optional     | `camelCase` `kebabCase` `snakeCase`                        | `kebabCase` | The case transformation you want to apply to your design token name            |
+| `formatTokens.color`     | optional     | `rgb` `prgb` `hex` `hex6` `hex3` `hex4` `hex8` `name` `hsl` `hsv` | `rgb`           | The color format you want to apply to your potential color design token        |
 | `formatConfig.selector`  | optional     | `string`                                                 | `:root` | The CSS selector containing your CSS custom properties                         |
-| `formatConfig.endOfLine` | optional     | `auto, lf, crlf, cr`                                     | `auto`           | [Prettier documentation](https://prettier.io/docs/en/options.html#end-of-line) |
+| `formatConfig.endOfLine` | optional     | `auto` `lf` `crlf` `cr`                                     | `auto`           | [Prettier documentation](https://prettier.io/docs/en/options.html#end-of-line) |
 | `formatConfig.tabWidth`  | optional     | `number`                                                 | `2`           | [Prettier documentation](https://prettier.io/docs/en/options.html#tab-width)   |
 | `formatConfig.useTabs`   | optional     | `boolean`                                                | `false`           | [Prettier documentation](https://prettier.io/docs/en/options.html#tabs)        |
 
