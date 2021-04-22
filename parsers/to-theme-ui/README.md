@@ -1,15 +1,14 @@
 # To Theme Ui 
-
 ## Description
 
-Format design tokens to satisfy the [theme-ui specification](https://theme-ui.com/theme-spec).
+Format design tokens to create a theme compatible with the [theme-ui specification](https://theme-ui.com/theme-spec).
 
 ## Interface
 
 ```ts
 interface parser {
-  "name": "to-theme-ui",
-  "options": Partial<{
+  name: "to-theme-ui",
+  options: Partial<{
     formatName: 'camelCase' | 'kebabCase' | 'snakeCase';
     variants: boolean;
     formatConfig: Partial<{
@@ -73,12 +72,16 @@ interface parser {
 | `presets.fontSizes.freeze`  | optional     | `boolean`          | false |          Prevent the edition of the preset                |
 
 ### Preset
-A preset is a list of elements that you can arbitrarily add to the final object.There are two presets that you can use.
+A preset is a list of elements that you can arbitrarily add to the final object.
+
+There are two presets you can use:
+- Font weight
+- Font size
 
 All presets can be frozen to prevent their edition.
 
-### Font Weight
-If you want the base preset, Specify will add this object.
+#### Font Weight
+Using the base preset will return the following object:
 
 ```json5
 // base
@@ -95,13 +98,15 @@ If you want the base preset, Specify will add this object.
 }
 ```
 
-On the other hand you can use a custom preset that match the type
+On the other hand you can use a custom preset that match the following type:
 ```ts
 Record<string, string | number>
 ```
 
-### Font Size
-The base preset depend of the unit. If you choose `px` it will be:
+#### Font Size
+The base preset depends of the unit. 
+
+Choosing `px` returns:
 ```json5
 [
   '8.19px',
@@ -115,7 +120,7 @@ The base preset depend of the unit. If you choose `px` it will be:
   '48.83px'
 ]
 ```
-With `rem`:
+Choosing `rem` returns:
 ```json5
 [
   '0.512rem',
@@ -136,7 +141,7 @@ With `rem`:
 
 ### Input
 
-Array of object with at least name, value and type
+Array of object with at least name, value and type:
 
 ```ts
 Array<{name: string, value: any, type: string}>
@@ -165,7 +170,7 @@ string;
 ```json
 [
   {
-    "name": "Colors/Accent",
+    "name": "primary",
     "value": {
       "a": 1,
       "b": 255,
@@ -183,7 +188,7 @@ string;
     "type": "measurement"
   },
   {
-    "name": "list",
+    "name": "body",
     "value": {
       "font": {
         "id": "69d2d62e-4d62-45d7-b85f-5da2f9f0c0d4",
@@ -198,7 +203,7 @@ string;
       "fontSize": {
         "value": {
           "unit": "px",
-          "measure": 14
+          "measure": 16
         }
       },
       "textAlign": {
@@ -227,7 +232,7 @@ const theme = {
     baseSpace01: "4px"
   },
   colors: {
-    colorsAccent: "rgb(198, 189, 255)"
+    primary: "rgb(198, 189, 255)"
   },
   fonts: {
     robotoRegular: "Roboto-Regular"
@@ -235,9 +240,9 @@ const theme = {
   fontWeights: {
     robotoRegular: 400
   },
-  fontSizes: [14],
+  fontSizes: [16],
   lineHeights: {
-    list: "20px"
+    body: "20px"
   }
 };
 
@@ -278,7 +283,7 @@ export default theme;
 ```json
 [
   {
-    "name": "Colors/Accent",
+    "name": "primary",
     "value": {
       "a": 1,
       "b": 255,
@@ -296,7 +301,7 @@ export default theme;
     "type": "measurement"
   },
   {
-    "name": "list",
+    "name": "body",
     "value": {
       "font": {
         "id": "69d2d62e-4d62-45d7-b85f-5da2f9f0c0d4",
@@ -311,7 +316,7 @@ export default theme;
       "fontSize": {
         "value": {
           "unit": "px",
-          "measure": 14
+          "measure": 16
         }
       },
       "textAlign": {
@@ -359,11 +364,11 @@ const theme = {
     "2.441rem",
     "3.052rem",
   ],
-  colors: { colorsAccent: "#c6bdff" },
+  colors: { primary: "#c6bdff" },
   sizes: { baseSpace01: "4px" },
-  lineHeights: { list: "20px" },
+  lineHeights: { body: "20px" },
   text: {
-    list: {
+    body: {
       fontFamily: "Roboto-Regular",
       lineHeight: "20px",
       fontSize: "0.875rem",
@@ -378,8 +383,8 @@ const theme = {
 export default theme;
 ```
 
-# 💡 Tips
-To link color and measurement to other design tokens and be able to use them as references in variants, use [link-design-tokens](../link-design-tokens/README.md) before to-theme-ui.
+## ℹ️ Good to know
+Use the [link-design-tokens](https://github.com/Specifyapp/parsers/tree/master/parsers/link-design-tokens) parser before this parser to reference color and measurement design tokens in [variants](https://theme-ui.com/theme-spec/#variants).
 
 
 With this flow you will be able to link `fontSizes, colors` with variants like `texts` or `borders`. 
