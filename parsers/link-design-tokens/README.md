@@ -1,15 +1,30 @@
 # Link design tokens
 
 ## Description
+This parser helps you have design tokens referencing other ones.
+It replaces absolute values by their potential corresponding design token.
 
-This parser replace absolute values by the design token corresponding.
+Use this parser to make your borders, shadows and gradient reference other design token types like measurement or color.
 
-If you have a border which include a width of `{ measure: 3, unit: 'px' }` and a measurement with the same value.
-The parser will replace the value of `width` by the entire measurement token.
+For instance, a border design token is composed of:
+- a border width (a measurement design token)
+- a border type
+- a border color (a color design token)
+
+The border width and the border color absolute values will be replaced by their corresponding design tokens.
+
+**ℹ️ Good to know**
+1. This parser is meant to be used before the [`to-theme-ui`](https://github.com/Specifyapp/parsers/tree/master/parsers/to-theme-ui) parser.
+2. In the future, it will also be used by the [`to-css-custom-properties`](https://github.com/Specifyapp/parsers/tree/master/parsers/to-css-custom-properties) to allow an output like this for example: <br>`--border-token: var(--measurement-token) solid var(--color-token);`
 
 ## How it works
 
-At first we create a dictionary used as indexes with the `md5` of values. 
+This parser will:
+1. Index in a dictionary every measurement and color design tokens returned in your [rule](https://specifyapp.com/developers/configuration#heading-rules)
+2. Hash them with [the md5 algorithm](https://md5hashing.net/)
+3. Associate their hash and name
+
+The dictionary resembles this:
 ```ts
 // interface LinkableTokensSignatures
 {
@@ -22,8 +37,11 @@ At first we create a dictionary used as indexes with the `md5` of values.
 }
 ```
 
-After the creation of the indexes dictionary, we will loop over design tokens that include the `compute` method to replace value by the design token
-associate in the dictionary. Each token has its method of replacing its values.
+Some design tokens include a `compute()` method. It dictates how their values should be transformed to contain references of other design tokens.
+
+The parser will only loop over the design tokens including the `compute()` method.
+
+It will replace the absolute child values they contain by the corresponding design token from the dictionary.
 ## Interface
 
 ```ts
@@ -66,31 +84,36 @@ Array<{id: string, type: string, value: string, name: string} & Record<any, any>
 [
   {
     "id": "1",
-    "type": "measurement",
+    "type": "color",
     "value": {
-      "unit": "px",
-      "measure": 8
+      "a": 1,
+      "b": 255,
+      "g": 189,
+      "r": 198
     },
-    "name": "base"
+    "name": "color-primary"
   },
   {
     "id": "2",
-    "type": "textStyle",
+    "type": "border",
     "value": {
-      "font": {
-        "value": {
-            "fontFamily": "Allan",
-            "fontPostScriptName": "Allan-Regular"
-          }
+      "type": "solid",
+      "color": {
+        "value": { // <--- This absolute color value must be replaced by its corresponding design token
+          "a": 1,
+          "b": 255,
+          "g": 189,
+          "r": 198
+        }
       },
-      "fontSize": { // <---
+      "width": {
         "value": {
           "unit": "px",
-          "measure": 8
+          "measure": 2
         }
       }
     },
-    "name": "base"
+    "name": "border-active"
   }
 ]
 ```
@@ -100,34 +123,39 @@ Array<{id: string, type: string, value: string, name: string} & Record<any, any>
 [
   {
     "id": "1",
-    "type": "measurement",
+    "type": "color",
     "value": {
-      "unit": "px",
-      "measure": 8
+      "a": 1,
+      "b": 255,
+      "g": 189,
+      "r": 198
     },
-    "name": "base"
+    "name": "color-primary"
   },
   {
     "id": "2",
-    "type": "textStyle",
+    "type": "border",
     "value": {
-      "font": {
-        "value": {
-          "fontFamily": "Allan",
-          "fontPostScriptName": "Allan-Regular"
-        }
-      },
-      "fontSize":  { // <---
+      "type": "solid",
+      "color": { // <--- The corresponding design token replaced the absolute color value 🎉
         "id": "1",
-        "type": "measurement",
+        "type": "color",
+        "value": {
+          "a": 1,
+          "b": 255,
+          "g": 189,
+          "r": 198
+        },
+        "name": "color-primary"
+      },
+      "width": {
         "value": {
           "unit": "px",
-          "measure": 8
-        },
-        "name": "base"
+          "measure": 2
+        }
       }
     },
-    "name": "base"
+    "name": "border-active"
   }
 ]
 ```
