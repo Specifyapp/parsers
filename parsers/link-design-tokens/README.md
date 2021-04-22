@@ -4,7 +4,7 @@
 This parser helps you have design tokens referencing other ones.
 It replaces absolute values by their potential corresponding design token.
 
-Use this parser to make your borders, shadows and gradient reference other design token types like measurement or color.
+You may want to use this parser to make your borders, shadows and gradient reference other design token types like measurement or color.
 
 For instance, a border design token is composed of:
 - a border width (a measurement design token)
@@ -14,15 +14,14 @@ For instance, a border design token is composed of:
 The border width and the border color absolute values will be replaced by their corresponding design tokens.
 
 **ℹ️ Good to know**
-1. This parser is meant to be used before the [`to-theme-ui`](https://github.com/Specifyapp/parsers/tree/master/parsers/to-theme-ui) parser.
-2. In the future, it will also be used by the [`to-css-custom-properties`](https://github.com/Specifyapp/parsers/tree/master/parsers/to-css-custom-properties) to allow an output like this for example: <br>`--border-token: var(--measurement-token) solid var(--color-token);`
+This parser is useful when used before the [`to-theme-ui`](https://github.com/Specifyapp/parsers/tree/master/parsers/to-theme-ui) parser.
 
 ## How it works
 
 This parser will:
 1. Index in a dictionary every measurement and color design tokens returned in your [rule](https://specifyapp.com/developers/configuration#heading-rules)
-2. Hash them with [the md5 algorithm](https://md5hashing.net/)
-3. Associate their hash and name
+2. Hash their value with [the md5 algorithm](https://md5hashing.net/)
+3. Associate their hash and `id`
 
 The dictionary resembles this:
 ```ts
