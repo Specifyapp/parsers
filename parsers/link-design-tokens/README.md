@@ -71,7 +71,7 @@ Array<{id: string, type: string, value: string, name: string} & Record<any, any>
 
 ```json
 {
-    "name": "link-design-token"
+    "name": "link-design-tokens"
 }
 ...
 ```
