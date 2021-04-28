@@ -1,24 +1,35 @@
 import Token, { TokenInterface } from './Token';
-import { ColorValue } from './Color';
-import { MeasurementValue } from './Measurement';
+import { ColorToken, ColorValue } from './Color';
+import { MeasurementToken, MeasurementValue } from './Measurement';
 import { TokensType } from './index';
 
 export interface Shadow {
-  color: {
-    value: ColorValue;
-  };
-  offsetX: {
-    value: MeasurementValue;
-  };
-  offsetY: {
-    value: MeasurementValue;
-  };
-  blur: {
-    value: MeasurementValue;
-  };
-  spread?: {
-    value: MeasurementValue;
-  };
+  color:
+    | {
+        value: ColorValue;
+      }
+    | ColorToken;
+  offsetX:
+    | {
+        value: MeasurementValue;
+      }
+    | MeasurementToken;
+  offsetY:
+    | {
+        value: MeasurementValue;
+      }
+    | MeasurementToken;
+  blur:
+    | {
+        value: MeasurementValue;
+      }
+    | MeasurementToken;
+  spread?:
+    | {
+        value: MeasurementValue;
+      }
+    | MeasurementToken;
+
   isInner: boolean;
 }
 
