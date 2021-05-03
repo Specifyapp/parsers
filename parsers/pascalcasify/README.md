@@ -8,10 +8,10 @@ Learn more about how to configure Specify in the API documentation: [https://spe
 ## Interface
 
 ```ts
-interface x {
-  "name": "pascalcasify",
-  "options"?: {
-    "keys": Array<string>
+interface parser {
+  name: 'pascalcasify',
+  options?: {
+    keys: Array<string>
   }
 }
 ```

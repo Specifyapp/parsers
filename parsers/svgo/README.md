@@ -9,11 +9,11 @@ Learn more about how to configure Specify in the API documentation: [https://spe
 ## Interface
 
 ```ts
-interface x {
-  "name": "svgo",
-  "options"?: {
+interface parser {
+  name: 'svgo',
+  options?: {
     // https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/svgo/index.d.ts#L348
-    "svgo"?:  SVGO.Options 
+    svgo?:  SVGO.Options 
   }
 }
 ```

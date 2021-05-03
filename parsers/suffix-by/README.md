@@ -10,11 +10,11 @@ Learn more about how to configure Specify in the API documentation: [https://spe
 
 ```ts
 interface parser {
-  "name": "suffix-by",
-  "options"?: {
-    "key"?: string
-    "suffix": string,
-    "types"?: Array<string>,
+  name: 'suffix-by',
+  options?: {
+    key?: string
+    suffix: string,
+    types?: Array<string>,
   }
 }
 ```

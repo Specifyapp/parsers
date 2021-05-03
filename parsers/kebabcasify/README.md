@@ -10,9 +10,9 @@ Learn more about how to configure Specify in the API documentation: [https://spe
 
 ```ts
 interface parser {
-  "name": "kebabcasify",
-  "options"?: {
-    "keys": Array<string>
+  name: 'kebabcasify',
+  options?: {
+    keys: Array<string>
   }
 }
 ```

@@ -10,13 +10,13 @@ Learn more about how to configure Specify in the API documentation: [https://spe
 
 ```ts
 interface parser {
-  "name": "to-css-font-import",
-  "options"?: {
-    "formats"?: Array<"woff2"|"woff"|"otf"|"ttf"|"eot">
-    "fontsPath"?: string
-    "fontFamilyTransform"?: 'camelCase' | 'kebabCase' | 'snakeCase';
-    "includeFontWeight"?: boolean;
-    "genericFamily"?: 'serif' | 'sans-serif' | 'cursive' | 'fantasy' | 'monospace';
+  name: 'to-css-font-import',
+  options?: {
+    formats?: Array<'woff2' | 'woff' | 'otf' | 'ttf' | 'eot'>
+    fontsPath?: string
+    fontFamilyTransform?: 'camelCase' | 'kebabCase' | 'snakeCase';
+    includeFontWeight?: boolean;
+    genericFamily?: 'serif' | 'sans-serif' | 'cursive' | 'fantasy' | 'monospace';
   }
 }
 ```

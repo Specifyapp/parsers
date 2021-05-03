@@ -10,8 +10,8 @@ By specifying a mode, you can control the round function more precisely.
 
 ```ts
 interface parser {
-  "name": "round-number",
-  "options": {
+  name: 'round-number',
+  options: {
     keys: Array<string>;
     precision?: number;
     mode?: 'down' | 'up' | 'auto';
