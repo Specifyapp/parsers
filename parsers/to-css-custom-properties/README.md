@@ -9,7 +9,7 @@ Learn more about how to configure Specify in the API documentation: [https://spe
 ## Interface
 
 ```ts
-interface x {
+interface parser {
   name: 'to-css-custom-properties';
   options?: Partial<{
     formatName: 'camelCase' | 'kebabCase' | 'snakeCase';

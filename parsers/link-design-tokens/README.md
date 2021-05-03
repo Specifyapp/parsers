@@ -45,7 +45,7 @@ It will replace the absolute child values they contain by the corresponding desi
 
 ```ts
 interface parser {
-  "name": "link-design-tokens",
+  name: 'link-design-tokens',
 }
 ```
 

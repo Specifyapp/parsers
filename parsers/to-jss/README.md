@@ -27,9 +27,9 @@ By passing `"classObject"` to `textStyleFormat` the parser will generate a jss c
 
 ## Interface
 ```ts
-interface x {
-  "name": "to-jss",
-  "options"?: Partial<{
+interface parser {
+  name: 'to-jss',
+  options?: Partial<{
     formatName: 'camelCase' | 'kebabCase' | 'snakeCase';
     formatTokens: Partial<{
       colorFormat: 'rgb' | 'prgb' | 'hex' | 'hex6' | 'hex3' | 'hex4' | 'hex8' | 'name' | 'hsl' | 'hsv';

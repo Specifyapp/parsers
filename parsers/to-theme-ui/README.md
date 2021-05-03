@@ -7,7 +7,7 @@ Format design tokens to create a theme compatible with the [theme-ui specificati
 
 ```ts
 interface parser {
-  name: "to-theme-ui",
+  name: 'to-theme-ui',
   options: Partial<{
     formatName: 'camelCase' | 'kebabCase' | 'snakeCase';
     variants: boolean;

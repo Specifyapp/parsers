@@ -9,10 +9,10 @@ Learn more about how to configure Specify in the API documentation: [https://spe
 
 ```ts
 interface parser {
-  "name": "px-to-rem",
-  "options": {
-    "basePixelValue"?: number;
-    "keys": Array<string>
+  name: 'px-to-rem',
+  options: {
+    basePixelValue?: number;
+    keys: Array<string>
   }
 }
 ```

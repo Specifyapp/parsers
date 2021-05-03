@@ -10,8 +10,8 @@ Learn more about how to configure Specify in the API documentation: [https://spe
 
 ```ts
 interface parser {
-  "name": "convert-font",
-  "options"?: {
+  name: "convert-font",
+  options?: {
     "formats"?: Array<'woff2' | 'woff' | 'otf' | 'ttf' | 'eot'>
     "fileNameKey"?: 'name' | 'fontFamily' | Array<string>
     "fileNameFormat"?: 'camelCase' | 'kebabCase' | 'snakeCase';

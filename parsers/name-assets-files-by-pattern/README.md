@@ -8,9 +8,9 @@ This parser helps you set a structured filename on your assets. It won't rename 
 
 ```ts
 interface parser {
-  "name": "name-assets-files-by-pattern",
-  "options": {
-    "pattern": string
+  name: 'name-assets-files-by-pattern',
+  options: {
+    pattern: string
   }
 }
 ```

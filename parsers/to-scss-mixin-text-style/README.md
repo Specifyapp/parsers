@@ -10,8 +10,8 @@ Learn more about how to configure Specify in the API documentation: [https://spe
 
   ```ts
 interface parser {
-  "name": "to-scss-mixin-text-style",
-  "options"?: {
+  name: 'to-scss-mixin-text-style',
+  options?: {
     include?: Array<'color' | 'font-family' | 'font-size' | 'line-height' | 'letter-spacing' | 'text-align' | 'vertical-align' | 'text-transform' | 'font-variant' | 'text-decoration' | 'text-indent' | 'font' | 'fontSize' | 'lineHeight' | 'letterSpacing' | 'textAlign' | 'textTransform' | 'fontVariant' | 'textDecoration' | 'textIndent'>,
     exclude?: Array<'color' | 'font-family' | 'font-size' | 'line-height' | 'letter-spacing' | 'text-align' | 'vertical-align' | 'text-transform' | 'font-variant' | 'text-decoration' | 'text-indent' | 'font' | 'fontSize' | 'lineHeight' | 'letterSpacing' | 'textAlign' | 'textTransform' | 'fontVariant' | 'textDecoration' | 'textIndent'>,
     prefix?: string;
