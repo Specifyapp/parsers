@@ -1,10 +1,12 @@
-import { Token } from '../../types';
+import { IToken, Token } from '../../types';
 import prettier from 'prettier';
 import * as TokensClass from './tokens';
 import { LibsType } from '../global-libs';
 import Template from '../../libs/template';
 
-export type InputDataType = Array<Pick<Token, 'name' | 'value' | 'type'>>;
+export type InputDataType = Array<
+  Pick<IToken, 'id' | 'name' | 'value' | 'type'> & Record<string, any>
+>;
 export type OutputDataType = string;
 export type ColorsFormat =
   | 'rgb'
