@@ -10,23 +10,23 @@ Learn more about how to configure Specify in the API documentation: [https://spe
 
   ```ts
 interface parser {
-  name: 'to-scss-mixin-text-style',
-  options?: {
-    include?: Array<'color' | 'font-family' | 'font-size' | 'line-height' | 'letter-spacing' | 'text-align' | 'vertical-align' | 'text-transform' | 'font-variant' | 'text-decoration' | 'text-indent' | 'font' | 'fontSize' | 'lineHeight' | 'letterSpacing' | 'textAlign' | 'textTransform' | 'fontVariant' | 'textDecoration' | 'textIndent'>,
-    exclude?: Array<'color' | 'font-family' | 'font-size' | 'line-height' | 'letter-spacing' | 'text-align' | 'vertical-align' | 'text-transform' | 'font-variant' | 'text-decoration' | 'text-indent' | 'font' | 'fontSize' | 'lineHeight' | 'letterSpacing' | 'textAlign' | 'textTransform' | 'fontVariant' | 'textDecoration' | 'textIndent'>,
-    prefix?: string;
-    suffix?: string;
-    colorFormat?: 'rgb' | 'prgb' | 'hex' | 'hex6' | 'hex3' | 'hex4' | 'hex8' | 'name' | 'hsl' | 'hsv';
-    cssClassFormat?: 'camelCase' | 'kebabCase' | 'snakeCase';
-    fontFamilyFormat?: 'camelCase' | 'kebabCase' | 'snakeCase';
-    genericFamily?: 'serif' | 'sans-serif' | 'cursive' | 'fantasy' | 'monospace';
-    relativeLineHeight?: boolean;
-    prettierConfig?: Partial<{
-      endOfLine: 'auto' | 'lf' | 'crlf' | 'cr';
-      tabWidth: number;
-      useTabs: boolean;
-    }>;
-  }
+    name: 'to-scss-mixin-text-style',
+    options?: {
+      include?: Array<'color' | 'font-family' | 'font-size' | 'line-height' | 'letter-spacing' | 'text-align' | 'vertical-align' | 'text-transform' | 'font-variant' | 'text-decoration' | 'text-indent' | 'font' | 'fontSize' | 'lineHeight' | 'letterSpacing' | 'textAlign' | 'textTransform' | 'fontVariant' | 'textDecoration' | 'textIndent'>,
+      exclude?: Array<'color' | 'font-family' | 'font-size' | 'line-height' | 'letter-spacing' | 'text-align' | 'vertical-align' | 'text-transform' | 'font-variant' | 'text-decoration' | 'text-indent' | 'font' | 'fontSize' | 'lineHeight' | 'letterSpacing' | 'textAlign' | 'textTransform' | 'fontVariant' | 'textDecoration' | 'textIndent'>,
+      prefix?: string;
+      suffix?: string;
+      colorFormat?: 'rgb' | 'prgb' | 'hex' | 'hex6' | 'hex3' | 'hex4' | 'hex8' | 'name' | 'hsl' | 'hsv';
+      cssClassFormat?: 'camelCase' | 'kebabCase' | 'snakeCase';
+      fontFamilyFormat?: 'camelCase' | 'kebabCase' | 'snakeCase';
+      genericFamily?: 'serif' | 'sans-serif' | 'cursive' | 'fantasy' | 'monospace';
+      relativeLineHeight?: boolean;
+      prettierConfig?: Partial<{
+        endOfLine: 'auto' | 'lf' | 'crlf' | 'cr';
+        tabWidth: number;
+        useTabs: boolean;
+      }>;
+    }
 }
 ```
 
