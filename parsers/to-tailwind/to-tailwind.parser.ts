@@ -15,7 +15,7 @@ export type FormatTokenType = Partial<{
     format: ColorsFormat;
   };
   fontSizeFormat: {
-    unit?: 'px' | 'rem';
+    unit: 'px' | 'rem';
   };
 }>;
 export type OptionsType =
