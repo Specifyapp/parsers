@@ -71,13 +71,8 @@ class ToTailwind {
     let tokenByType = this.tokensGroupByType[type].reduce((acc, token) => {
       const instance = new tokenHandler(token, this.transformNameFn);
       const tailwindTokens = instance.generate(this.options, this.tokens);
-      (Object.keys(tailwindTokens) as Array<TailwindType>).forEach(themeUiKey => {
-        if (this.styles[themeUiKey] && Object.isFrozen(this.styles[themeUiKey])) return;
-        if (Array.isArray(tailwindTokens[themeUiKey])) {
-          acc[themeUiKey] = [...(acc[themeUiKey] || []), ...tailwindTokens[themeUiKey]];
-        } else {
-          acc[themeUiKey] = { ...(acc[themeUiKey] || {}), ...tailwindTokens[themeUiKey] };
-        }
+      (Object.keys(tailwindTokens) as Array<TailwindType>).forEach(tailwindKey => {
+        acc[tailwindKey] = { ...(acc[tailwindKey] || {}), ...tailwindTokens[tailwindKey] };
       });
       return acc;
     }, this.styles as Record<TailwindType, any>);

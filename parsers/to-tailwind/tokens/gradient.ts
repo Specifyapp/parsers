@@ -32,14 +32,11 @@ export class Gradient extends GradientToken {
   }
 
   static afterStringGenerate(tailwindTokens: TailwindMappingTypes, str: string): string {
-    if (tailwindTokens && tailwindTokens.backgroundImage) {
-      return `
+    return `
       ${str.slice(0, -1)}${Object.keys(tailwindTokens).length > 1 ? ',' : ''}
       ${os.EOL}
       backgroundImage: theme => (${JSON.stringify(tailwindTokens.backgroundImage)})
       ${os.EOL}
       }`;
-    }
-    return str;
   }
 }
