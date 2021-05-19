@@ -33,16 +33,31 @@ describe('To tailwind', () => {
     const result = await toTailwind(tokens, undefined, libs);
 
     tokens.forEach(({ name, value }) => {
+      expect(result).toEqual(expect.stringMatching('borderWidth'));
       expect(result).toEqual(
         expect.stringMatching(
           `${_.camelCase(name)}: "${value.width.value.measure}${value.width.value.unit}"`,
         ),
       );
+      expect(result).toEqual(expect.stringMatching('borderColor'));
       expect(result).toEqual(
         expect.stringMatching(
           `${_.camelCase(name)}: "${tinycolor(value.color.value).toString('hex')}"`,
         ),
       );
+      expect(result).toEqual(expect.stringMatching('borderRadius'));
+      expect(result).toEqual(
+        expect.stringMatching(
+          `${_.camelCase(name)}: "${value.radii?.value.measure}${value.radii?.value.unit}"`,
+        ),
+      );
+
+      if (value.color.value.a && value.color.value.a !== 1) {
+        expect(result).toEqual(expect.stringMatching('borderOpacity'));
+        expect(result).toEqual(
+          expect.stringMatching(`${_.camelCase(name)}: "${value.color.value.a}"`),
+        );
+      }
     });
 
     done();
@@ -80,7 +95,20 @@ describe('To tailwind', () => {
     >;
     const result = await toTailwind(tokens, undefined, libs);
 
-    tokens.forEach(({ name, value }) => {});
+    tokens.forEach(({ name, value }) => {
+      const gradientValue = value.gradients
+        .map(gradient => {
+          return `linear-gradient(${gradient.angle}, ${gradient.colors
+            .map(({ color, position }) => `${tinycolor(color.value).toString('hex')} ${position}%`)
+            .join(', ')})`;
+        })
+        .join(', ');
+      expect(result).toEqual(
+        expect.stringMatching(
+          `.*${_.camelCase(name)}: "${gradientValue.replace(/\(/, '\\(').replace(/\)/, '\\)')}".*`,
+        ),
+      );
+    });
 
     done();
   });
@@ -151,22 +179,26 @@ describe('To tailwind', () => {
 
     tokens.forEach(({ name, value }) => {
       // Match font size
+      expect(result).toEqual(expect.stringMatching('fontSize'));
       expect(result).toEqual(
         expect.stringMatching(
           `${_.camelCase(name)}: "${value.fontSize.value.measure}${value.fontSize.value.unit}"`,
         ),
       );
       // Match line height
+      expect(result).toEqual(expect.stringMatching('lineHeight'));
       expect(result).toEqual(
         expect.stringMatching(
           `${_.camelCase(name)}: "${value.lineHeight.value.measure}${value.lineHeight.value.unit}"`,
         ),
       );
       // Match fontFamily
+      expect(result).toEqual(expect.stringMatching('fontFamily'));
       expect(result).toEqual(
         expect.stringMatching(`${_.camelCase(name)}: ["${value.font.value.fontFamily}"]`),
       );
       // Match textOpacity
+      expect(result).toEqual(expect.stringMatching('textOpacity'));
       if (value.color?.value.a && value.color?.value.a < 1) {
         expect(result).toEqual(
           expect.stringMatching(`${_.camelCase(name)}: "${value.color?.value.a}"`),
@@ -174,6 +206,7 @@ describe('To tailwind', () => {
       }
 
       // Match textColor
+      expect(result).toEqual(expect.stringMatching('textColor'));
       if (value.color?.value) {
         expect(result).toEqual(
           expect.stringMatching(
@@ -183,6 +216,7 @@ describe('To tailwind', () => {
       }
 
       // Match letterSpacing
+      expect(result).toEqual(expect.stringMatching('letterSpacing'));
       if (value.letterSpacing?.value) {
         expect(result).toEqual(
           expect.stringMatching(
@@ -268,6 +302,74 @@ describe('To tailwind', () => {
             .replace(/\)/, '\\)')}"`,
         ),
       );
+    });
+
+    done();
+  });
+
+  it('Should generate with specific format on textStyle', async done => {
+    const tokens = seeds().tokens.filter(token => token.type === 'textStyle') as Array<
+      TextStyleToken
+    >;
+    const result = await toTailwind(
+      tokens,
+      {
+        formatTokens: {
+          fontSizeFormat: {
+            unit: 'rem',
+          },
+        },
+      },
+      libs,
+    );
+
+    tokens.forEach(({ name, value }) => {
+      // Match font size
+      expect(result).toEqual(expect.stringMatching('fontSize'));
+      expect(result).toEqual(
+        expect.stringMatching(`${_.camelCase(name)}: "${value.fontSize.value.measure}rem"`),
+      );
+      // Match line height
+      expect(result).toEqual(expect.stringMatching('lineHeight'));
+      expect(result).toEqual(
+        expect.stringMatching(
+          `${_.camelCase(name)}: "${value.lineHeight.value.measure}${value.lineHeight.value.unit}"`,
+        ),
+      );
+      // Match fontFamily
+      expect(result).toEqual(expect.stringMatching('fontFamily'));
+      expect(result).toEqual(
+        expect.stringMatching(`${_.camelCase(name)}: ["${value.font.value.fontFamily}"]`),
+      );
+      // Match textOpacity
+      expect(result).toEqual(expect.stringMatching('textOpacity'));
+      if (value.color?.value.a && value.color?.value.a < 1) {
+        expect(result).toEqual(
+          expect.stringMatching(`${_.camelCase(name)}: "${value.color?.value.a}"`),
+        );
+      }
+
+      // Match textColor
+      expect(result).toEqual(expect.stringMatching('textColor'));
+      if (value.color?.value) {
+        expect(result).toEqual(
+          expect.stringMatching(
+            `${_.camelCase(name)}: "${tinycolor(value.color.value).toString('hex')}"`,
+          ),
+        );
+      }
+
+      // Match letterSpacing
+      expect(result).toEqual(expect.stringMatching('letterSpacing'));
+      if (value.letterSpacing?.value) {
+        expect(result).toEqual(
+          expect.stringMatching(
+            `${_.camelCase(name)}: "${value.letterSpacing.value.measure}${
+              value.letterSpacing.value.unit
+            }"`,
+          ),
+        );
+      }
     });
 
     done();

@@ -18,10 +18,4 @@ export abstract class Utils {
       .sort(([, a], [, b]) => this.parseFloatIfString(a) - this.parseFloatIfString(b))
       .reduce((r, [k, v]) => ({ ...r, [k]: v }), {});
   }
-
-  static deduplicateAndSortList(list: Array<string | number>) {
-    return [...new Set(list)].sort(
-      (a, b) => this.parseFloatIfString(a) - this.parseFloatIfString(b),
-    );
-  }
 }
