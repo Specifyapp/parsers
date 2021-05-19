@@ -17,6 +17,8 @@ export interface LinkableTokensSignatures {
   measurement: LinkableTokensSignaturesValue;
 }
 
-export type PartialRecord<K extends keyof any, T> = Partial<Record<K, T>>;
+export type PartialRecord<K extends keyof any, T> = {
+  [P in K]?: T;
+};
 export type Assign<A, B> = Omit<A, keyof B> & B;
 export type Await<T> = T extends PromiseLike<infer U> ? U : T;

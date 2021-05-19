@@ -46,12 +46,14 @@ describe('To tailwind', () => {
           `${_.camelCase(name)}: "${tinycolor(value.color.value).toString('hex')}"`,
         ),
       );
-      expect(result).toEqual(expect.stringMatching('borderRadius'));
-      expect(result).toEqual(
-        expect.stringMatching(
-          `${_.camelCase(name)}: "${value.radii?.value.measure}${value.radii?.value.unit}"`,
-        ),
-      );
+      if (value.radii) {
+        expect(result).toEqual(expect.stringMatching('borderRadius'));
+        expect(result).toEqual(
+          expect.stringMatching(
+            `${_.camelCase(name)}: "${value.radii?.value.measure}${value.radii?.value.unit}"`,
+          ),
+        );
+      }
 
       if (value.color.value.a && value.color.value.a !== 1) {
         expect(result).toEqual(expect.stringMatching('borderOpacity'));

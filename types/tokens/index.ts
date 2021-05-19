@@ -39,19 +39,20 @@ export * from './TextStyle';
 export * from './Vector';
 export * from './Depth';
 
-export type TokensType =
-  | 'bitmap'
+export type DesignTokensType =
   | 'border'
   | 'color'
-  | 'font'
   | 'gradient'
   | 'duration'
   | 'measurement'
   | 'opacity'
   | 'shadow'
   | 'textStyle'
-  | 'vector'
   | 'depth';
+
+export type AssetsType = 'font' | 'bitmap' | 'vector';
+
+export type TokensType = AssetsType | DesignTokensType;
 
 export type TokensValues =
   | BitmapValue
