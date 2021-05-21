@@ -15,7 +15,7 @@ describe('to-css-text-style', () => {
       result.includes(
         '@mixin title {\n' +
           '  color: rgb(30, 33, 43);\n' +
-          '  font-family: Inter;\n' +
+          '  font-family: Inter-SemiBold;\n' +
           '  font-size: 32px;\n' +
           '  line-height: 40px;\n' +
           '  text-align: left;\n' +
@@ -96,7 +96,7 @@ describe('to-css-text-style', () => {
       result.includes(
         '@mixin utilsBodyTextStyle {\n' +
           '  color: #1e212b;\n' +
-          '  font-family: inter, serif;\n' +
+          '  font-family: inter-medium, serif;\n' +
           '  font-size: 14px;\n' +
           '  line-height: 1.43;\n' +
           '  letter-spacing: 10px;\n' +
@@ -109,7 +109,7 @@ describe('to-css-text-style', () => {
       result.includes(
         '@mixin utilsTitleTextStyle {\n' +
           '  color: #1e212b;\n' +
-          '  font-family: inter, serif;\n' +
+          '  font-family: inter-semi-bold, serif;\n' +
           '  font-size: 32px;\n' +
           '  line-height: 1.25;\n' +
           '  text-align: left;\n' +
