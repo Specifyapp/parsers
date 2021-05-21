@@ -1,6 +1,7 @@
 import { LibsType } from '../global-libs';
 import {
   ColorValue,
+  FontToken,
   FontValue,
   FontVariantValue,
   MeasurementValue,
@@ -78,6 +79,7 @@ export type OptionsType = Partial<
 
 class ToCssTextStyle {
   font: FontValue;
+  fontName: string;
   color?: ColorValue;
   fontSize?: MeasurementValue;
   lineHeight?: MeasurementValue;
@@ -98,6 +100,7 @@ class ToCssTextStyle {
     options: OptionsType | undefined,
   ) {
     this.font = textStyle.font.value;
+    this.fontName = (textStyle.font as FontToken).name;
     this.color = textStyle.color?.value;
     this.fontSize = textStyle.fontSize?.value;
     this.textAlign = textStyle.textAlign;
@@ -119,7 +122,7 @@ class ToCssTextStyle {
   trigger = {
     font: () => {
       if (this.isIncluded('font-family')) {
-        let fontFamily = applyTransformStr(this.font.fontFamily, this.options?.fontFamilyFormat);
+        let fontFamily = applyTransformStr(this.fontName, this.options?.fontFamilyFormat);
         if (this.options?.genericFamily) fontFamily += `, ${this.options.genericFamily}`;
         this.cssContent.push(`font-family: ${fontFamily}`);
       }
