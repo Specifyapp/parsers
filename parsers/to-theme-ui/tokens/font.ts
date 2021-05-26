@@ -23,7 +23,7 @@ export class Font extends FontToken {
   generate(): ThemeUiFont {
     const result: ThemeUiFont = {
       fonts: {
-        [this.transformedName]: this.value.fontPostScriptName,
+        [this.transformedName]: this.name,
       },
     };
     result.fontWeights = { [this.transformedName]: this.value.fontWeight };

@@ -1,4 +1,4 @@
-import { TextStyleToken } from '../../../types';
+import { FontToken, TextStyleToken } from '../../../types';
 import convertMeasurement from '../../../libs/size-manipulation';
 import { Utils } from './index';
 import { ColorsFormat, TailwindMappingTypes, TextStyleMapping } from '../to-tailwind.type';
@@ -31,7 +31,7 @@ export class TextStyle extends TextStyleToken {
   }
 
   private getFontFamily() {
-    return this.value.font.value.fontFamily;
+    return (this.value.font as FontToken).name ?? this.value.font.value.fontPostScriptName;
   }
 
   private getFontSize(fontFormat: FormatTokenType['fontSizeFormat']) {

@@ -8,6 +8,7 @@ import {
   ColorToken,
   DepthToken,
   DurationToken,
+  FontToken,
   GradientToken,
   MeasurementToken,
   OpacityToken,
@@ -195,7 +196,9 @@ describe('To tailwind', () => {
       // Match fontFamily
       expect(result).toEqual(expect.stringMatching('fontFamily'));
       expect(result).toEqual(
-        expect.stringMatching(`${_.camelCase(name)}: ["${value.font.value.fontFamily}"]`),
+        expect.stringMatching(
+          `${_.camelCase(name)}: ["${(value.font as FontToken).name.replace('-', '\\-')}"]`,
+        ),
       );
       // Match textOpacity
       expect(result).toEqual(expect.stringMatching('textOpacity'));
@@ -339,7 +342,9 @@ describe('To tailwind', () => {
       // Match fontFamily
       expect(result).toEqual(expect.stringMatching('fontFamily'));
       expect(result).toEqual(
-        expect.stringMatching(`${_.camelCase(name)}: ["${value.font.value.fontFamily}"]`),
+        expect.stringMatching(
+          `${_.camelCase(name)}: ["${(value.font as FontToken).name.replace('-', '\\-')}"]`,
+        ),
       );
       // Match textOpacity
       expect(result).toEqual(expect.stringMatching('textOpacity'));

@@ -28,15 +28,13 @@ export default async function (
     const optimizer = new SVGO(options?.svgo || {});
     return (await Promise.all(
       tokens.map(async token => {
-        if (token.type) {
-          if (token.type === 'vector') {
-            const baseString = await SpServices.assets.getSource<string>(token.value.url!, 'text');
-            token.value.content = await optimizer
-              .optimize(baseString)
-              .then(({ data }) => data)
-              .catch(() => baseString);
-            return { ...token, value: _.omit(token.value, ['url']) };
-          }
+        if (token.type === 'vector') {
+          const baseString = await SpServices.assets.getSource<string>(token.value.url!, 'text');
+          token.value.content = await optimizer
+            .optimize(baseString)
+            .then(({ data }) => data)
+            .catch(() => baseString);
+          return { ...token, value: _.omit(token.value, ['url']) };
         }
         return token;
       }),
