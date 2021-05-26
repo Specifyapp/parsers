@@ -36,6 +36,7 @@ export default async function (
             .catch(() => baseString);
           return { ...token, value: _.omit(token.value, ['url']) };
         }
+
         return token;
       }),
     )) as OutputDataType;

@@ -12,6 +12,10 @@ export class TextStyle extends TextStyleToken {
     this.transformedName = transformNameFn(token.name);
   }
 
+  private getFontWeight() {
+    const fw = this.value.font.value.fontWeight;
+    return fw;
+  }
   private getLetterSpacing() {
     const ls = this.value.letterSpacing;
     if (ls) return `${ls.value.measure}${ls.value.unit}`;
@@ -63,6 +67,9 @@ export class TextStyle extends TextStyleToken {
 
     const fontFamily = this.getFontFamily();
     result.fontFamily = { [this.transformedName]: [fontFamily] };
+
+    const fontWeight = this.getFontWeight();
+    result.fontWeight = { [this.transformedName]: fontWeight };
 
     return result;
   }
