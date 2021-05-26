@@ -100,7 +100,7 @@ class ToCssTextStyle {
     options: OptionsType | undefined,
   ) {
     this.font = textStyle.font.value;
-    this.fontName = (textStyle.font as FontToken).name;
+    this.fontName = (textStyle.font as FontToken).name ?? this.font.fontPostScriptName;
     this.color = textStyle.color?.value;
     this.fontSize = textStyle.fontSize?.value;
     this.textAlign = textStyle.textAlign;
