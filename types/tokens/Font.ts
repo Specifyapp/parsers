@@ -7,7 +7,7 @@ export type AllowedFormat = typeof FontFormatList[number];
 export interface FontValue {
   fontFamily: string;
   fontPostScriptName: string;
-  fontWeight: string | number;
+  fontWeight: number;
   fontFileMissing?: boolean;
   isItalic?: boolean;
   provider?: 'Custom font' | 'Google Fonts';
