@@ -13,10 +13,7 @@ describe('to-css-font-import', () => {
         '@font-face {\n' +
           '  font-family: "FiraCode-Medium";\n' +
           '  src: url("FiraCode-Medium.woff2") format("woff2"),\n' +
-          '    url("FiraCode-Medium.woff") format("woff"),\n' +
-          '    url("FiraCode-Medium.otf") format("truetype"),\n' +
-          '    url("FiraCode-Medium.ttf") format("truetype");\n' +
-          '  src: url("FiraCode-Medium.eot");\n' +
+          '    url("FiraCode-Medium.woff") format("woff");\n' +
           '  font-weight: 500;\n' +
           '  font-display: swap;\n' +
           '}',
@@ -29,7 +26,7 @@ describe('to-css-font-import', () => {
       seeds().tokens.filter(({ type }) => type === 'font') as Array<Token>,
       {
         fontsPath: '../../assets/',
-        formats: ['woff2', 'woff'],
+        formats: ['woff2', 'woff', 'eot'],
         fontFamilyTransform: 'kebabCase',
         includeFontWeight: false,
         genericFamily: 'sans-serif',
@@ -42,6 +39,7 @@ describe('to-css-font-import', () => {
           '  font-family: inter-semi-bold, sans-serif;\n' +
           '  src: url("../../assets/Inter-SemiBold.woff2") format("woff2"),\n' +
           '    url("../../assets/Inter-SemiBold.woff") format("woff");\n' +
+          '  src: url("../../assets/Inter-SemiBold.eot");\n' +
           '  font-display: swap;\n' +
           '}',
       ),

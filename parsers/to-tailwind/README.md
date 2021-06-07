@@ -5,7 +5,7 @@
 Format design tokens to create a theme compatible with the [TailwindCSS specification](https://tailwindcss.com/docs/theme).
 The theme is also compatible with [WindiCSS](https://windicss.org/).
 
-This parser will create a file containing the whole theme. It can then be used in the tailwind.config.js.
+This parser creates a file containing the whole theme. It can then be used in the `tailwind.config.js`.
 
 ## Interface
 
@@ -263,7 +263,7 @@ module.exports = extend;
 
 ## ℹ️ Good to know
 
-In your tailwind.config.js file, you can easily use the theme in the extend object.
+In your `tailwind.config.js` file, you can easily use the theme in the extend object.
 
 Example:
 
@@ -274,10 +274,10 @@ module.exports = {
   // Whole config
   theme: {
     extend: {
-      // add the colors only from specify
+      // add the colors only from Specify
       colors: themeBySpecify.colors,
       spacing: {
-        // use the spacing from specify and add a custom spacing
+        // use the spacing from Specify and add a custom spacing
         ...themeBySpecify.spacing
         'custom-spacing': '8px',
       }

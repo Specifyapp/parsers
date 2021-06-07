@@ -26,7 +26,7 @@ export default async function (
   { _, SpServices }: LibsType,
 ): Promise<OutputDataType> {
   try {
-    const formats = options?.formats || ['woff2', 'woff', 'otf', 'ttf', 'eot'];
+    const formats = options?.formats || ['woff2', 'woff'];
 
     const getFileName = (designToken: InputDataType[0]) => {
       let fileName: string;
