@@ -24,7 +24,7 @@ interface parser {
 ### Options
 | Parameter             | Required | Type            | Default                                  | Description                                                        |
 | --------------------- | -------- | --------------- | ---------------------------------------- | ------------------------------------------------------------------ |
-| `formats`             | optional | `Array<string>` | `["woff2", "woff", "otf", "ttf", "eot"]` | The list of formats to import                                      |
+| `formats`             | optional | `Array<string>` | `["woff2", "woff"]`                      | The list of formats to import.|
 | `fontsPath`           | optional | `string`        |                                          | The path of font's directory                                       |
 | `fontFamilyTransform` | optional | `string`        |                                          | The function to normalize the font-family property                 |
 | `includeFontWeight`   | optional | `boolean`       | true                                     | Allow to include the font-weight property in the result            |
@@ -95,3 +95,7 @@ string
 }
 ```
 
+## ℹ️ Good to know
+We decided to exclude the `eot`, `otf` and `ttf` file formats in the [`formats`](#Options) parameter. If you are mostly targeting users with modern browsers, [you can get away with a progressive method](https://css-tricks.com/understanding-web-fonts-getting/#font-formats) of using `@font-face` that only serves WOFF and WOFF2 formats.
+
+However, you can still add `eot`, `otf` and `ttf` file formats in the [`formats`](#Interface) parameter if you need to support older browsers.

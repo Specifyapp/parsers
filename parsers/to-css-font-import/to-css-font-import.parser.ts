@@ -33,7 +33,7 @@ class ToCssFont {
 
   constructor(tokens: InputDataType, options: OptionsType | undefined) {
     this.tokens = tokens;
-    this.formats = options?.formats || ['woff2', 'woff', 'otf', 'ttf', 'eot'];
+    this.formats = options?.formats || ['woff2', 'woff'];
     this.fontsPath = options?.fontsPath || '';
     this.fontDisplay = options?.fontDisplay || 'swap';
     this.genericFamily = options?.genericFamily;
