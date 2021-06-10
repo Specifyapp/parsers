@@ -12,6 +12,7 @@ export interface FontValue {
   isItalic?: boolean;
   provider?: 'Custom font' | 'Google Fonts';
   url?: string;
+  format?: string;
 }
 
 export class FontToken extends Token implements TokenInterface {
