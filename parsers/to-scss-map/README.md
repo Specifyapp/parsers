@@ -22,10 +22,10 @@ interface parser {
       singleQuote: boolean;
     }>;
     formatTokens?: {
-      colorFormat?: {
+      color?: {
         format: 'rgb' | 'prgb' | 'hex' | 'hex6' | 'hex3' | 'hex4' | 'hex8' | 'name' | 'hsl' | 'hsv';
       };
-      fontSizeFormat?: {
+      fontSize?: {
         unit?: 'px' | 'rem';
       };
     };
@@ -48,8 +48,8 @@ interface parser {
 | `formatConfig.tabWidth`            | optional | `number`                                                          | `2`         | [Prettier documentation](https://prettier.io/docs/en/options.html#tab-width)                                                                                                                                                                               |
 | `formatConfig.useTabs`             | optional | `boolean`                                                         | `true`      | [Prettier documentation](https://prettier.io/docs/en/options.html#tabs)                                                                                                                                                                                    |
 | `formatConfig.singleQuote`         | optional | `boolean`                                                         | `false`     | [Prettier documentation](https://prettier.io/docs/en/options.html#quotes)                                                                                                                                                                                  |
-| `formatTokens.colorFormat.format`  | optional | `rgb` `prgb` `hex` `hex6` `hex3` `hex4` `hex8` `name` `hsl` `hsv` | `rgb`       | The color format you want to apply to your potential color design token.                                                                                                                                                                                   |
-| `formatTokens.fontSizeFormat.unit` | optional | `px` `rem`                                                        | `none`      |                                                                                                                                                                                                                                                            |
+| `formatTokens.color.format`        | optional | `rgb` `prgb` `hex` `hex6` `hex3` `hex4` `hex8` `name` `hsl` `hsv` | `rgb`       | The color format you want to apply to your potential color design token.                                                                                                                                                                                   |
+| `formatTokens.fontSize.unit`       | optional | `px` `rem`                                                        | `none`      |                                                                                                                                                                                                                                                            |
 | `splitBy`                          | optional | `string`                                                          |             | The character used to define the nesting of the values in the map object (e.g. The name of the color in [this example](https://github.com/Specifyapp/parsers/tree/feat/parser/add-to-sass-maps/parsers/to-scss-map#input-2))                               |
 | `omitFunctionAndMixin`             | optional | `boolean`                                                         | `false`     | When set to true, blocks the creation of the getter functions and mixins.                                                                                                                                                                                  |
 
