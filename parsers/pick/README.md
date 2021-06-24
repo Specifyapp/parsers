@@ -12,14 +12,16 @@ interface parser {
   name: 'pick',
   options?: {
     keys: Array<string>
+    flatten?: boolean
   }
 }
 ```
 ### Options
 
-| Parameter              | Required   | Type      | Default    | Description                                          |
-| ---------------------- | ---------- | --------- | ---------- | ---------------------------------------------------- |
-| `keys`                 | optional   | `Array`   | `["name"]` | The list of keys where the function will be applied. |
+| Parameter              | Required   | Type      | Default    | Description                                             |
+| ---------------------- | ---------- | --------- | ---------- | ------------------------------------------------------- |
+| `keys`                 | optional   | `Array`   | `["name"]` | The list of keys where the function will be applied.    |
+| `flatten`              | optional   | `boolean` | `false`    | Allow flattening each object after picking their values.|
 
 ## Types
 
@@ -40,7 +42,7 @@ Array of object with the keys given in options
 ```ts
 Array<{[key: string]: any}>
 ```
-## Usage
+## Simple Usage
 ### Config
 
 ```json
@@ -77,6 +79,63 @@ Array<{[key: string]: any}>
   {
     "name": "Brand / Primary Color",
     "type": "color"
+  }
+]
+```
+
+## Complexe Usage
+### Config
+
+```json
+{
+  "name": "pick",
+  "options": {
+    "keys": ["name", "meta.originFrameName"],
+    "flatten": true
+  }
+}
+...
+```
+### Before/After
+
+#### Input
+
+```json
+[
+  {
+    "name": "Border / Main",
+    "value": {
+      "type": "solid",
+      "color": {
+        "value": {
+          "a": 0.5,
+          "b": 239,
+          "g": 80,
+          "r": 102
+        }
+      },
+      "width": {
+        "value": {
+          "unit": "px",
+          "measure": 2
+        }
+      }
+    },
+    "meta": {
+      "source": "frames",
+      "sourceFile": "https://www.figma.com/file/9KvLO7F8VPrJ7GxGBWwCr9",
+      "originFrameName": "Border · Frame Example"
+    }
+  }
+]
+```
+#### Output
+
+```json
+[
+  {
+    "name": "Border / Main",
+    "originFrameName": "Border · Frame Example"
   }
 ]
 ```

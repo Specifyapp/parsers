@@ -23,7 +23,7 @@ interface parser {
 | Parameter | Required | Type             | Default | Description                                  |
 | --------- | -------- | ---------------- | ------- | -------------------------------------------- |
 | `key`     | optional | `string`         | "name"  | The key of the value will be suffixed        |
-| `suffix`  | required | `string`         |         | The string used as content to suffix         |
+| `suffix`  | required | `string`         |         | The pattern used generate suffix string. It must match [mustache](https://github.com/janl/mustache.js#templates) template syntax.        |
 | `types`   | optional | `Array<string>`  |         | The types where the function will be applied |
 
 ## Types
@@ -44,7 +44,7 @@ Array<{[key: string]: any}>
 Array<{[key: string]: any}>
 ```
 
-## Usage
+## Basic usage
 ### Config
 
 ```json
@@ -57,4 +57,98 @@ Array<{[key: string]: any}>
   }
 }
 ...
+```
+### Before/After
+
+#### Input
+
+```json
+[
+  {
+    "type": "vector",
+    "value": {
+      "url": "https://...",
+      "format": "svg"
+    },
+    "name": "Warning"
+  }
+]
+```
+#### Output
+
+```json
+[
+  {
+    "type": "vector",
+    "value": {
+      "url": "https://...",
+      "format": "svg",
+      "fileName": "Warning-vector.svg"
+    },
+    "name": "Warning.svg"
+  }
+]
+```
+
+## Complex usage - with condition in template
+### Config
+
+```json
+{
+  "name": "suffix-by",
+  "options": {
+    "types": ["bitmap"],
+    "suffix": "{{#value.dimension}}@{{value.dimension}}{{/value.dimension}}.{{value.format}}",
+    "key": "name"
+  }
+}
+...
+```
+### Before/After
+
+#### Input
+
+```json
+[
+  {
+    "type": "bitmap",
+    "value": {
+      "url": "https://...",
+      "format": "png",
+      "dimension": "2x"
+    },
+    "name": "photo-example"
+  },
+  {
+    "type": "bitmap",
+    "value": {
+      "url": "https://...",
+      "format": "webp"
+    },
+    "name": "photo-example"
+  }
+]
+```
+#### Output
+
+```json
+[
+  {
+    "type": "bitmap",
+    "value": {
+      "url": "https://...",
+      "format": "png",
+      "dimension": "2x"
+    },
+    "name": "photo-example@2x.png"
+  },
+  {
+    "type": "bitmap",
+    "value": {
+      "url": "https://...",
+      "format": "webp"
+    },
+    "name": "photo-example.webp"
+  }
+]
 ```
