@@ -21,4 +21,24 @@ describe('Pick', () => {
     result.forEach(token => expect(Object.keys(token)).toEqual(['name']));
     done();
   });
+  it('Execute parser with flatten option', async done => {
+    const tokens = seeds().tokens;
+    const result = await pick(
+      tokens,
+      {
+        keys: ['id', 'name', 'meta.originFrameName'],
+        flatten: true,
+      },
+      libs,
+    );
+
+    if (result instanceof Error) return done.fail(result);
+
+    tokens.forEach(token => {
+      const expectation = ['id', 'name'];
+      if (token.meta?.originFrameName) expectation.push('originFrameName');
+      expect(Object.keys(result.find(({ id }) => id === token.id)!)).toEqual(expectation);
+    });
+    done();
+  });
 });
