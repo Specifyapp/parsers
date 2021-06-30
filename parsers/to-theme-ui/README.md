@@ -9,7 +9,7 @@ Format design tokens to create a theme compatible with the [theme-ui specificati
 interface parser {
   name: 'to-theme-ui',
   options: Partial<{
-    formatName: 'camelCase' | 'kebabCase' | 'snakeCase';
+    formatName: 'camelCase' | 'kebabCase' | 'snakeCase' | 'pascalCase';
     variants: boolean;
     formatConfig: Partial<{
       module: 'es6' | 'commonjs' | 'json';
@@ -51,7 +51,7 @@ interface parser {
 ### Options
 | Parameter                | Required  | Type                                                     | Default    | Description                                                                    |
 | ------------------------ | --------- | -------------------------------------------------------- | ---------- | ------------------------------------------------------------------------------ |
-| `formatName`             | optional     | `camelCase` `kebabCase` `snakeCase`                        | `kebabCase` | The case transformation you want to apply to your design token name            |
+| `formatName`             | optional     | `camelCase` `kebabCase` `snakeCase` `pascalCase`      | `kebabCase` | The case transformation you want to apply to your design token name            |
 | `variants`             | optional     | `boolean`                        | `false` | Generate variants. Currently `texts` and `borders` are generated as variants. [source](https://theme-ui.com/theme-spec#variants).       |
 | `formatConfig.module` | optional     | `es6` `commonjs` `json`                                     | `es6`           | Module loader used to export the result |
 | `formatConfig.objectName` | optional     | `string`                                     | `theme`           | Name of exported variable |

@@ -24,7 +24,7 @@ export type OptionsType = {
   variableName?: string | PartialRecord<ToScssMapTokenType, string>; // pattern or mapped pattern by token type
   fileName?: string | PartialRecord<ToScssMapTokenType, string>; // pattern or mapped pattern by token type
   formatTokens?: FormatTokenType;
-  formatName?: 'camelCase' | 'kebabCase' | 'snakeCase';
+  formatName?: 'camelCase' | 'kebabCase' | 'snakeCase' | 'pascalCase';
   // regex use a regex to match selector used for nesting
   /* ex:
    * tokens : [{name: 'color-light-primary', value: '#000000' }]

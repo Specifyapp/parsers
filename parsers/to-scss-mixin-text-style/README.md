@@ -17,8 +17,8 @@ interface parser {
       prefix?: string;
       suffix?: string;
       colorFormat?: 'rgb' | 'prgb' | 'hex' | 'hex6' | 'hex3' | 'hex4' | 'hex8' | 'name' | 'hsl' | 'hsv';
-      cssClassFormat?: 'camelCase' | 'kebabCase' | 'snakeCase';
-      fontFamilyFormat?: 'camelCase' | 'kebabCase' | 'snakeCase';
+      cssClassFormat?: 'camelCase' | 'kebabCase' | 'snakeCase' | 'pascalCase';
+      fontFamilyFormat?: 'camelCase' | 'kebabCase' | 'snakeCase' | 'pascalCase';
       genericFamily?: 'serif' | 'sans-serif' | 'cursive' | 'fantasy' | 'monospace';
       relativeLineHeight?: boolean;
       prettierConfig?: Partial<{
@@ -38,8 +38,8 @@ interface parser {
 | `prefix`                   | optional   | `string`                                                 |             | A string will be append before the css class name                              |
 | `suffix`                   | optional   | `string`                                                 |             | A string will be append after the css class name                               |
 | `colorFormat`              | optional   | `rgb, prgb, hex, hex6, hex3, hex4, hex8, name, hsl, hsv` | `rgb`       | A color format applied when a text style include a color                       |
-| `cssClassFormat`           | optional   | `camelCase, kebabCase, snakeCase`                        | `kebabCase` | The lodash function used to normalize the css class name                       |
-| `fontFamilyFormat`         | optional   | `camelCase, kebabCase, snakeCase`                        |             | The lodash function used to normalize the font family value                    |
+| `cssClassFormat`           | optional   | `camelCase` `kebabCase` `snakeCase` `pascalCase`         | `kebabCase` | The lodash function used to normalize the css class name                       |
+| `fontFamilyFormat`         | optional   | `camelCase` `kebabCase` `snakeCase` `pascalCase`         |             | The lodash function used to normalize the font family value                    |
 | `genericFamily`            | optional   | `string`                                                 |             | The generic font family will be applied after the main font family             |
 | `relativeLineHeight`       | optional   | `boolean`                                                |             | Convert line height to relative value                                          |
 | `prettierConfig.endOfLine` | optional   | `auto, lf, crlf, cr`                                     | `auto`      | [Prettier documentation](https://prettier.io/docs/en/options.html#end-of-line) |

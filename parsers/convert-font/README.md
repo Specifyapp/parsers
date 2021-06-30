@@ -14,7 +14,7 @@ interface parser {
   options?: {
     "formats"?: Array<'woff2' | 'woff' | 'otf' | 'ttf' | 'eot'>
     "fileNameKey"?: 'name' | 'fontFamily' | Array<string>
-    "fileNameFormat"?: 'camelCase' | 'kebabCase' | 'snakeCase';
+    "fileNameFormat"?: 'camelCase' | 'kebabCase' | 'snakeCase' | 'pascalCase';
   }
 }
 ```
@@ -25,7 +25,7 @@ interface parser {
 | ---------------- | --------- | ------------------------------------- | ---------------------------------------- | ------------------------------------------------- |
 | `formats`        | optional     | `Array<string>`                       | `["woff2", "woff"]` | The list of formats to convert |
 | `fileNameKey`    | optional     | `name`, `fontFamily`, `Array<string>` | `name`                                   | The design token's keys that will be used to create the file name. These keys will be separated by a space to create the file name.|
-| `fileNameFormat` | optional     | `camelCase` `kebabCase` `snakeCase`   |                                          | The function to normalize the file name |
+| `fileNameFormat` | optional     | `camelCase` `kebabCase` `snakeCase` `pascalCase`   |                                          | The function to normalize the file name |
 
 
 ## Types

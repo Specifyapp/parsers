@@ -29,7 +29,8 @@ interface parser {
 
 ### Input
 
-Array of object with the keys to apply `svgo`.
+Array of object with at least the key `value.url` and `type`
+
 
 ```ts
 Array<
@@ -74,7 +75,6 @@ Array<
 }
 ```
 ### Before/After
-
 #### Input
 
 ```json

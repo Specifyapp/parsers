@@ -14,7 +14,7 @@ interface parser {
   options?: {
     formats?: Array<'woff2' | 'woff' | 'otf' | 'ttf' | 'eot'>
     fontsPath?: string
-    fontFamilyTransform?: 'camelCase' | 'kebabCase' | 'snakeCase';
+    fontFamilyTransform?: 'camelCase' | 'kebabCase' | 'snakeCase' | 'pascalCase';
     includeFontWeight?: boolean;
     genericFamily?: 'serif' | 'sans-serif' | 'cursive' | 'fantasy' | 'monospace';
   }

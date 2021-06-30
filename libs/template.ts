@@ -18,17 +18,20 @@ export default class Template {
           this.flattenVariablesFromParseTree(acc, variable),
         [],
       )
-      .map((v: TemplateSpans) => v[1]);
+      .map((v: TemplateSpans) => (v && v[1] ? v[1] : null));
   }
 
   private flattenVariablesFromParseTree(acc: TemplateSpans, variable: TemplateSpans[0]) {
     if (variable[0] === 'name' || variable[0] === '&') {
-      acc = [...acc, variable];
-    } else if (variable[0] === '#') {
-      acc = [
-        ...acc,
-        (variable[4] as TemplateSpans).reduce(this.flattenVariablesFromParseTree, [])[0],
-      ] as TemplateSpans;
+      // Evaluation of a variable. Simply add the variable to be evaluated
+      acc.push(variable);
+    } else if (variable[0] === '#' || variable[0] === '^') {
+      // Condition in the template. Add the variable to check + check if there is any nested conditions
+      acc.push(variable);
+      const childs = (variable[4] as TemplateSpans).reduce<TemplateSpans>((acc, variable) => {
+        return this.flattenVariablesFromParseTree(acc, variable);
+      }, acc)[0];
+      if (childs) acc.push(childs);
     }
     return acc;
   }

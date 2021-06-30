@@ -13,7 +13,7 @@ This parser creates a file containing the whole theme. It can then be used in th
 interface parser {
   name: 'to-tailwind';
   options: Partial<{
-    formatName: 'camelCase' | 'kebabCase' | 'snakeCase';
+    formatName: 'camelCase' | 'kebabCase' | 'snakeCase' | 'pascalCase';
     formatTokens: Partial<{
       colorFormat: {
         format: ColorsFormat;
@@ -39,7 +39,7 @@ interface parser {
 
 | Parameter                          | Required | Type                                                              | Default     | Description                                                                    |
 | ---------------------------------- | -------- | ----------------------------------------------------------------- | ----------- | ------------------------------------------------------------------------------ |
-| `formatName`                       | optional | `camelCase` `kebabCase` `snakeCase`                               | `kebabCase` | The case transformation you want to apply to your design token name            |
+| `formatName`                       | optional | `camelCase` `kebabCase` `snakeCase` `pascalCase`                  | `kebabCase` | The case transformation you want to apply to your design token name            |
 | `formatConfig.module`              | optional | `es6` `commonjs` `json`                                           | `es6`       | Module loader used to export the result                                        |
 | `formatConfig.objectName`          | optional | `string`                                                          | `theme`     | Name of exported variable                                                      |
 | `formatConfig.endOfLine`           | optional | `auto` `lf` `crlf` `cr`                                           | `auto`      | [Prettier documentation](https://prettier.io/docs/en/options.html#end-of-line) |

@@ -9,12 +9,12 @@ Generates scss files containing scss map and function / mixin to access the valu
 ```ts
 interface parser {
   name: 'to-scss-map';
-  options?: options: Partial<{
+  options?: Partial<{
     fileName?: string | PartialRecord<TokensType, string>;
     functionName?: string | PartialRecord<ToScssMapTokenType, string>;
     mixinName?: string | PartialRecord<ToScssMapTokenType, string>;
     variableName?: string | PartialRecord<TokensType, string>;
-    formatName?: 'camelCase' | 'kebabCase' | 'snakeCase';
+    formatName?: 'camelCase' | 'kebabCase' | 'snakeCase' | 'pascalCase';
     formatConfig: Partial<{
       endOfLine: 'auto' | 'lf' | 'crlf' | 'cr';
       tabWidth: number;
@@ -43,7 +43,7 @@ interface parser {
 | `functionName`                     | optional | `string` `object`                                                 |             | How to name the map variable. Can be a mapping with token typeas key and function name as a value or a RegExp pattern. See [advanced usage example](https://github.com/Specifyapp/parsers/tree/feat/parser/add-to-sass-maps/parsers/to-scss-map#config-1). |
 | `mixinName`                        | optional | `string` `object`                                                 |             | How to name the map variable. Can be a mapping with token typeas key and mixin name as a value or a RegExp pattern. See [advanced usage example](https://github.com/Specifyapp/parsers/tree/feat/parser/add-to-sass-maps/parsers/to-scss-map#config-1).    |
 | `variableName`                     | optional | `string` `object`                                                 |             | How to name the map variable. Can be a mapping with token typeas key and variable name as a value or a RegExp pattern. See [advanced usage example](https://github.com/Specifyapp/parsers/tree/feat/parser/add-to-sass-maps/parsers/to-scss-map#config-1). |
-| `formatName`                       | optional | `camelCase` `kebabCase` `snakeCase`                               | `kebabCase` | The case transformation you want to apply to your design token name.                                                                                                                                                                                       |
+| `formatName`                       | optional | `camelCase` `kebabCase` `snakeCase` `pascalCase`                              | `kebabCase` | The case transformation you want to apply to your design token name.                                                                                                                                                                                       |
 | `formatConfig.endOfLine`           | optional | `auto` `lf` `crlf` `cr`                                           | `auto`      | [Prettier documentation](https://prettier.io/docs/en/options.html#end-of-line)                                                                                                                                                                             |
 | `formatConfig.tabWidth`            | optional | `number`                                                          | `2`         | [Prettier documentation](https://prettier.io/docs/en/options.html#tab-width)                                                                                                                                                                               |
 | `formatConfig.useTabs`             | optional | `boolean`                                                         | `true`      | [Prettier documentation](https://prettier.io/docs/en/options.html#tabs)                                                                                                                                                                                    |
