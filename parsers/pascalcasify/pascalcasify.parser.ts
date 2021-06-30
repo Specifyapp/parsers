@@ -17,7 +17,7 @@ export default async function (
     return tokens.map(token => {
       options.keys.forEach(key => {
         if (_.has(token, key)) {
-          _.set(token, key, _.flow(_.camelCase, _.upperFirst)(_.get(token, key)));
+          _.set(token, key, _.pascalCase(_.get(token, key)));
         }
       });
       return token;

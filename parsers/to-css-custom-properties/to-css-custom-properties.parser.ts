@@ -19,7 +19,7 @@ export type ColorsFormat =
   | 'hsv';
 export type OptionsType =
   | Partial<{
-      formatName: 'camelCase' | 'kebabCase' | 'snakeCase';
+      formatName: 'camelCase' | 'kebabCase' | 'snakeCase' | 'pascalCase';
       formatTokens: Partial<{
         color: ColorsFormat;
       }>;

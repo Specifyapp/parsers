@@ -17,7 +17,7 @@ export type OutputDataType =
 export type OptionsType = {
   formats?: Array<'woff2' | 'woff' | 'otf' | 'ttf' | 'eot'>;
   fileNameKey?: 'name' | 'fontFamily' | Array<string>;
-  fileNameFormat?: 'camelCase' | 'kebabCase' | 'snakeCase';
+  fileNameFormat?: 'camelCase' | 'kebabCase' | 'snakeCase' | 'pascalCase';
 };
 
 export default async function (

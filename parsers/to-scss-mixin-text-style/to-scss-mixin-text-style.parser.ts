@@ -59,7 +59,7 @@ type ColorsFormat =
   | 'name'
   | 'hsl'
   | 'hsv';
-type transformFn = 'camelCase' | 'kebabCase' | 'snakeCase';
+type transformFn = 'camelCase' | 'kebabCase' | 'snakeCase' | 'pascalCase';
 export type OptionsType = Partial<
   {
     prefix?: string;

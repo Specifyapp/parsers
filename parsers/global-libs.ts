@@ -5,6 +5,13 @@ import Mustache from 'mustache';
 import { AllowedFormat, PartialRecord } from '../types';
 import { MustacheStatic } from '../types/libs/mustache';
 
+declare module 'lodash' {
+  export interface LoDashStatic {
+    pascalCase(string?: string): string;
+  }
+}
+_.mixin({ pascalCase: _.flow(_.camelCase, _.upperFirst) });
+
 const Libs = {
   _,
   SVGO,

@@ -4,7 +4,6 @@ import roundNumber from '../../../parsers/round-number/round-number.parser';
 import libs from '../../../parsers/global-libs';
 import seeds from '../../seeds';
 import { IToken } from '../../../types';
-import * as util from 'util';
 
 describe('Pipe - link design tokens -> theme ui', () => {
   it('Should link measurement and letter spacing', async done => {

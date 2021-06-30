@@ -12,7 +12,7 @@ Learn more about how to configure Specify in the API documentation: [https://spe
 interface parser {
   name: 'to-css-custom-properties';
   options?: Partial<{
-    formatName: 'camelCase' | 'kebabCase' | 'snakeCase';
+    formatName: 'camelCase' | 'kebabCase' | 'snakeCase' | 'pascalCase';
     formatTokens: Partial<{
       color: 'rgb' | 'prgb' | 'hex' | 'hex6' | 'hex3' | 'hex4' | 'hex8' | 'name' | 'hsl' | 'hsv';
     }>;
@@ -28,7 +28,7 @@ interface parser {
 ### Options
 | Parameter                | Required  | Type                                                     | Default    | Description                                                                    |
 | ------------------------ | --------- | -------------------------------------------------------- | ---------- | ------------------------------------------------------------------------------ |
-| `formatName`             | optional     | `camelCase` `kebabCase` `snakeCase`                        | `kebabCase` | The case transformation you want to apply to your design token name            |
+| `formatName`             | optional     | `camelCase` `kebabCase` `snakeCase` `pascalCase`                        | `kebabCase` | The case transformation you want to apply to your design token name            |
 | `formatTokens.color`     | optional     | `rgb` `prgb` `hex` `hex6` `hex3` `hex4` `hex8` `name` `hsl` `hsv` | `rgb`           | The color format you want to apply to your potential color design token        |
 | `formatConfig.selector`  | optional     | `string`                                                 | `:root` | The CSS selector containing your CSS custom properties                         |
 | `formatConfig.endOfLine` | optional     | `auto` `lf` `crlf` `cr`                                     | `auto`           | [Prettier documentation](https://prettier.io/docs/en/options.html#end-of-line) |

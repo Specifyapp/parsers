@@ -8,7 +8,7 @@ export type OutputDataType = string;
 export type OptionsType = {
   formats?: Array<'woff2' | 'woff' | 'otf' | 'ttf' | 'eot'>;
   fontsPath?: string;
-  fontFamilyTransform?: 'camelCase' | 'kebabCase' | 'snakeCase';
+  fontFamilyTransform?: 'camelCase' | 'kebabCase' | 'snakeCase' | 'pascalCase';
   includeFontWeight?: boolean;
   fontDisplay?: 'auto' | 'block' | 'swap' | 'fallback' | 'optional';
   genericFamily?: 'serif' | 'sans-serif' | 'cursive' | 'fantasy' | 'monospace';
