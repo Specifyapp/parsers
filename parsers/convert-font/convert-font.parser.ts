@@ -63,8 +63,12 @@ export default async function (
             ([format, url]) => {
               return {
                 ...designToken,
-                value: { ...designToken.value, url },
-                name: `${getFileName(designToken)}.${format}`,
+                value: {
+                  ...designToken.value,
+                  url,
+                  format: format,
+                  fileName: designToken?.value?.fileName || `${getFileName(designToken)}.${format}`,
+                },
               };
             },
           );
