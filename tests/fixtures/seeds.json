@@ -361,16 +361,17 @@
       "font": {
         "id": "e69237ab-05db-4380-81e5-70db7f5448f1",
         "createdAt": "2021-04-02T08:01:57.087Z",
-        "updatedAt": "2021-04-12T11:39:15.710Z",
+        "updatedAt": "2021-06-28T14:00:49.527Z",
         "name": "Inter-Medium",
         "value": {
+          "format": "ttf",
           "isItalic": false,
           "provider": "Google Fonts",
           "fontFamily": "Inter",
           "fontWeight": 500,
           "fontFileMissing": false,
           "fontPostScriptName": "Inter-Medium",
-          "url": "https://ddp-assets-prod.s3.amazonaws.com/927e26f6-da29-40d6-b9de-530bdcddf1ed/font/Inter-Medium/Inter-Medium.ttf?AWSAccessKeyId=ASIAYLKZPEWOLUYYUQUT&Expires=1623087921&Signature=UvvDu42RdsZfTtjFh9%2F9Gm0G0l0%3D&x-amz-security-token=IQoJb3JpZ2luX2VjEKP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCWV1LXdlc3QtMSJHMEUCIQDgS45bvwx3qw4t73HF0c4ZRE8kfH5eGfCDMHK%2ByCoQCQIgGmCVweAjKCPGz95AOog2lCI6ppOK8KHB43qNhJyMS5kq5QMIXBACGgw1NzQxMDI2NDQxMjQiDE0%2FbFFjpmviZhfIdSrCA48JJ6N8uMgaTXj6ghIJlNn1MU6QXb%2FNFGKanSlD0pVTRDcTGMRyUbLcqYtbhBjxCm6WpZpRMtlpWLUnFXHj3wTiI4wMMU0pFsVJFi8yx3S88J52Q%2BGnesTUXw1Zsfj6LNwmLCflP4RarF01jfS7%2FnwXpAkxCNS98EcHeZF0W5CmWuCKVfwIufmysyjDJj8JWFqpy5JCMK8QRdmLocbT1iexlesGuCp3ohRlI4YZT2lwdr%2BgoKvSVBAr3AI8MmNuy3TY%2FJOyHMva%2FIcnpmFKPxavxF%2FVFj8i9C2GGs0bbRK278kSi3ppc08wTU9uy9JkPtbBu9Vj30C05F%2FNPHhlwiwtPHFk428MfqBMZju3B26GakXfFZugaCfl6tMFSYWoFpJnb8Uu5C7%2FON74RgErz8cyVB5l%2F0sQGbFygSSHPkXmiqJodFeNwpz3Ir4BwI28Jxhv%2FGdkMGg9%2Ftp2jFl4w6TJ7somCaW4tkwxyVWb63ExCDzZfUr7iY4jpg3tV%2B2EHGKvGGf3DUWwcE7z1YjR1gajiPW8TH3GuG%2FYfD7WixNcs5gYUb7w5Xlt8e1Fr5mlq9%2FE3wkLHg68ROX%2BA3j3s3d9AjDC%2FPeFBjqlAa0Ognqx4sXQ2YNoIw3XxFQwuuofb9VU3MUUfUoaBMVtz294jNv%2BQeDLU%2F0EG7B9nudDsHpC39QfKElQC6%2FVS%2B7uPzJVDvf9fwXJypLf0KiL91ZNXXTGWjpNWSkLAl8tdc4owAQFPysbb3wJHlESpmTYlB5qaLFu8J%2FYgiumyFtaExKmtVIWT1tG0Ux71jAmG7k001SFvYAsmHXAJ9Fqh5rIFawKtA%3D%3D"
+          "url": "https://ddp-assets-prod.s3.amazonaws.com/927e26f6-da29-40d6-b9de-530bdcddf1ed/font/Inter-Medium/Inter-Medium.ttf?AWSAccessKeyId=ASIAYLKZPEWOJVUQ2FM6&Expires=1625507524&Signature=AHnfQWt26NXSBfXybBvKHan2g%2Bo%3D&x-amz-security-token=IQoJb3JpZ2luX2VjEEQaCWV1LXdlc3QtMSJHMEUCIHhwLZ1rz95rvnPwR1jYJ0vxv1Ns5ikvQYkuWuVzSqL0AiEAs14AF2ya0Q1fONeZ5zevK07bUrGs2V%2FSbBVobJKh0wEq5QMILRACGgw1NzQxMDI2NDQxMjQiDGp6tuSyF9SPqEmMnyrCAye8XBN373f6ABrEoiIAJcoah6vN46y7rspI%2BE2tJ3i%2BBYewSxXGUrg264aFshz%2B%2FFAbvb%2F1kPttrzcc9GFdUgSYYcyHDVndVOrM8w4jzIPf5p49SIaMQ2tIUNc0L7vu%2Frr%2BHAdZm4cSeyNTaXKIyxUxFQQqqTO4i72eqbzKP%2BNe6V06A1Rcr1R0I4U1Eczf9939e%2F73G8PcOtk6wEextLnrgUHqBe8tTm64F7PODq%2F93Djz%2BBBp85cYdGSg0Syv9V04qY5%2B9TkX9f%2BPorVhl4y2dZfSYIMCRI7IE2QOxq4c4QVQBDG0x81Ygk3%2FkehC0fDH2qZbWO7K52U3AvkBvOET%2BXBMzp47UJ3aQ2k2lpE%2FKGf0mZiitaDrpbI%2FamTEBcWRhbA7Np%2Flxb2q9wvtXLtJT1Mu3ljJbqkYwsH%2FMyHGEOUYK5%2BYS28zarDGYAvsH6CFNQzprpeAmCYxVU2%2FVoqNCF3fAhCsZzFerFC7juR7EHdf%2BjF%2FgMuSTovCxPZGLEZ1Z08eGviml31fRg%2B1ZHlDZQBUIxRTU0QzrPCODNy1bGOKnMLwND0gU1bn5cawLnjCo7hRdpgGOdWOehdOZZjXGTCB14uHBjqlAfhX1W%2FOPbJELddO3y3KX67Eok8eV2%2BKyMTXOkty1dgPoncEvZWv93Dh2DQtiopSbbth%2FzRO8L0ZzleucEz0N7MWw7khZFEraWW%2FM4jhdR6RQ8947qgvHbLJlw526c0%2B13R1OaMZrs9g3R91ypjNzH3a1daHbDnxkDkANcOGFqIaQpsNb4UiV6tpFCCwF1vZ%2BgND1JP%2B%2BH3TepU1uEuw1%2BaVWtsPTQ%3D%3D"
         },
         "meta": {
           "source": "frames",
@@ -432,16 +433,17 @@
       "font": {
         "id": "e69237ab-05db-4380-81e5-70db7f5448f1",
         "createdAt": "2021-04-02T08:01:57.087Z",
-        "updatedAt": "2021-04-12T11:39:15.710Z",
+        "updatedAt": "2021-06-28T14:00:49.527Z",
         "name": "Inter-Medium",
         "value": {
+          "format": "ttf",
           "isItalic": false,
           "provider": "Google Fonts",
           "fontFamily": "Inter",
           "fontWeight": 500,
           "fontFileMissing": false,
           "fontPostScriptName": "Inter-Medium",
-          "url": "https://ddp-assets-prod.s3.amazonaws.com/927e26f6-da29-40d6-b9de-530bdcddf1ed/font/Inter-Medium/Inter-Medium.ttf?AWSAccessKeyId=ASIAYLKZPEWOLUYYUQUT&Expires=1623087921&Signature=UvvDu42RdsZfTtjFh9%2F9Gm0G0l0%3D&x-amz-security-token=IQoJb3JpZ2luX2VjEKP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCWV1LXdlc3QtMSJHMEUCIQDgS45bvwx3qw4t73HF0c4ZRE8kfH5eGfCDMHK%2ByCoQCQIgGmCVweAjKCPGz95AOog2lCI6ppOK8KHB43qNhJyMS5kq5QMIXBACGgw1NzQxMDI2NDQxMjQiDE0%2FbFFjpmviZhfIdSrCA48JJ6N8uMgaTXj6ghIJlNn1MU6QXb%2FNFGKanSlD0pVTRDcTGMRyUbLcqYtbhBjxCm6WpZpRMtlpWLUnFXHj3wTiI4wMMU0pFsVJFi8yx3S88J52Q%2BGnesTUXw1Zsfj6LNwmLCflP4RarF01jfS7%2FnwXpAkxCNS98EcHeZF0W5CmWuCKVfwIufmysyjDJj8JWFqpy5JCMK8QRdmLocbT1iexlesGuCp3ohRlI4YZT2lwdr%2BgoKvSVBAr3AI8MmNuy3TY%2FJOyHMva%2FIcnpmFKPxavxF%2FVFj8i9C2GGs0bbRK278kSi3ppc08wTU9uy9JkPtbBu9Vj30C05F%2FNPHhlwiwtPHFk428MfqBMZju3B26GakXfFZugaCfl6tMFSYWoFpJnb8Uu5C7%2FON74RgErz8cyVB5l%2F0sQGbFygSSHPkXmiqJodFeNwpz3Ir4BwI28Jxhv%2FGdkMGg9%2Ftp2jFl4w6TJ7somCaW4tkwxyVWb63ExCDzZfUr7iY4jpg3tV%2B2EHGKvGGf3DUWwcE7z1YjR1gajiPW8TH3GuG%2FYfD7WixNcs5gYUb7w5Xlt8e1Fr5mlq9%2FE3wkLHg68ROX%2BA3j3s3d9AjDC%2FPeFBjqlAa0Ognqx4sXQ2YNoIw3XxFQwuuofb9VU3MUUfUoaBMVtz294jNv%2BQeDLU%2F0EG7B9nudDsHpC39QfKElQC6%2FVS%2B7uPzJVDvf9fwXJypLf0KiL91ZNXXTGWjpNWSkLAl8tdc4owAQFPysbb3wJHlESpmTYlB5qaLFu8J%2FYgiumyFtaExKmtVIWT1tG0Ux71jAmG7k001SFvYAsmHXAJ9Fqh5rIFawKtA%3D%3D"
+          "url": "https://ddp-assets-prod.s3.amazonaws.com/927e26f6-da29-40d6-b9de-530bdcddf1ed/font/Inter-Medium/Inter-Medium.ttf?AWSAccessKeyId=ASIAYLKZPEWOJVUQ2FM6&Expires=1625507524&Signature=AHnfQWt26NXSBfXybBvKHan2g%2Bo%3D&x-amz-security-token=IQoJb3JpZ2luX2VjEEQaCWV1LXdlc3QtMSJHMEUCIHhwLZ1rz95rvnPwR1jYJ0vxv1Ns5ikvQYkuWuVzSqL0AiEAs14AF2ya0Q1fONeZ5zevK07bUrGs2V%2FSbBVobJKh0wEq5QMILRACGgw1NzQxMDI2NDQxMjQiDGp6tuSyF9SPqEmMnyrCAye8XBN373f6ABrEoiIAJcoah6vN46y7rspI%2BE2tJ3i%2BBYewSxXGUrg264aFshz%2B%2FFAbvb%2F1kPttrzcc9GFdUgSYYcyHDVndVOrM8w4jzIPf5p49SIaMQ2tIUNc0L7vu%2Frr%2BHAdZm4cSeyNTaXKIyxUxFQQqqTO4i72eqbzKP%2BNe6V06A1Rcr1R0I4U1Eczf9939e%2F73G8PcOtk6wEextLnrgUHqBe8tTm64F7PODq%2F93Djz%2BBBp85cYdGSg0Syv9V04qY5%2B9TkX9f%2BPorVhl4y2dZfSYIMCRI7IE2QOxq4c4QVQBDG0x81Ygk3%2FkehC0fDH2qZbWO7K52U3AvkBvOET%2BXBMzp47UJ3aQ2k2lpE%2FKGf0mZiitaDrpbI%2FamTEBcWRhbA7Np%2Flxb2q9wvtXLtJT1Mu3ljJbqkYwsH%2FMyHGEOUYK5%2BYS28zarDGYAvsH6CFNQzprpeAmCYxVU2%2FVoqNCF3fAhCsZzFerFC7juR7EHdf%2BjF%2FgMuSTovCxPZGLEZ1Z08eGviml31fRg%2B1ZHlDZQBUIxRTU0QzrPCODNy1bGOKnMLwND0gU1bn5cawLnjCo7hRdpgGOdWOehdOZZjXGTCB14uHBjqlAfhX1W%2FOPbJELddO3y3KX67Eok8eV2%2BKyMTXOkty1dgPoncEvZWv93Dh2DQtiopSbbth%2FzRO8L0ZzleucEz0N7MWw7khZFEraWW%2FM4jhdR6RQ8947qgvHbLJlw526c0%2B13R1OaMZrs9g3R91ypjNzH3a1daHbDnxkDkANcOGFqIaQpsNb4UiV6tpFCCwF1vZ%2BgND1JP%2B%2BH3TepU1uEuw1%2BaVWtsPTQ%3D%3D"
         },
         "meta": {
           "source": "frames",
@@ -741,16 +743,17 @@
       "font": {
         "id": "6bf09330-71a6-475e-88d1-d3b72122bab3",
         "createdAt": "2021-04-02T09:54:13.112Z",
-        "updatedAt": "2021-04-12T11:39:15.707Z",
+        "updatedAt": "2021-06-28T14:00:49.527Z",
         "name": "FiraCode-Medium",
         "value": {
+          "format": "ttf",
           "isItalic": false,
           "provider": "Google Fonts",
           "fontFamily": "Fira Code",
           "fontWeight": 500,
           "fontFileMissing": false,
           "fontPostScriptName": "FiraCode-Medium",
-          "url": "https://ddp-assets-prod.s3.amazonaws.com/927e26f6-da29-40d6-b9de-530bdcddf1ed/font/FiraCode-Medium/FiraCode-Medium.ttf?AWSAccessKeyId=ASIAYLKZPEWOLUYYUQUT&Expires=1623087921&Signature=NIYv8yj8DafwRbP74l87GOZ8jl8%3D&x-amz-security-token=IQoJb3JpZ2luX2VjEKP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCWV1LXdlc3QtMSJHMEUCIQDgS45bvwx3qw4t73HF0c4ZRE8kfH5eGfCDMHK%2ByCoQCQIgGmCVweAjKCPGz95AOog2lCI6ppOK8KHB43qNhJyMS5kq5QMIXBACGgw1NzQxMDI2NDQxMjQiDE0%2FbFFjpmviZhfIdSrCA48JJ6N8uMgaTXj6ghIJlNn1MU6QXb%2FNFGKanSlD0pVTRDcTGMRyUbLcqYtbhBjxCm6WpZpRMtlpWLUnFXHj3wTiI4wMMU0pFsVJFi8yx3S88J52Q%2BGnesTUXw1Zsfj6LNwmLCflP4RarF01jfS7%2FnwXpAkxCNS98EcHeZF0W5CmWuCKVfwIufmysyjDJj8JWFqpy5JCMK8QRdmLocbT1iexlesGuCp3ohRlI4YZT2lwdr%2BgoKvSVBAr3AI8MmNuy3TY%2FJOyHMva%2FIcnpmFKPxavxF%2FVFj8i9C2GGs0bbRK278kSi3ppc08wTU9uy9JkPtbBu9Vj30C05F%2FNPHhlwiwtPHFk428MfqBMZju3B26GakXfFZugaCfl6tMFSYWoFpJnb8Uu5C7%2FON74RgErz8cyVB5l%2F0sQGbFygSSHPkXmiqJodFeNwpz3Ir4BwI28Jxhv%2FGdkMGg9%2Ftp2jFl4w6TJ7somCaW4tkwxyVWb63ExCDzZfUr7iY4jpg3tV%2B2EHGKvGGf3DUWwcE7z1YjR1gajiPW8TH3GuG%2FYfD7WixNcs5gYUb7w5Xlt8e1Fr5mlq9%2FE3wkLHg68ROX%2BA3j3s3d9AjDC%2FPeFBjqlAa0Ognqx4sXQ2YNoIw3XxFQwuuofb9VU3MUUfUoaBMVtz294jNv%2BQeDLU%2F0EG7B9nudDsHpC39QfKElQC6%2FVS%2B7uPzJVDvf9fwXJypLf0KiL91ZNXXTGWjpNWSkLAl8tdc4owAQFPysbb3wJHlESpmTYlB5qaLFu8J%2FYgiumyFtaExKmtVIWT1tG0Ux71jAmG7k001SFvYAsmHXAJ9Fqh5rIFawKtA%3D%3D"
+          "url": "https://ddp-assets-prod.s3.amazonaws.com/927e26f6-da29-40d6-b9de-530bdcddf1ed/font/FiraCode-Medium/FiraCode-Medium.ttf?AWSAccessKeyId=ASIAYLKZPEWOJVUQ2FM6&Expires=1625507524&Signature=MspoTMW3jd9byxr5zDPiqnwkxH0%3D&x-amz-security-token=IQoJb3JpZ2luX2VjEEQaCWV1LXdlc3QtMSJHMEUCIHhwLZ1rz95rvnPwR1jYJ0vxv1Ns5ikvQYkuWuVzSqL0AiEAs14AF2ya0Q1fONeZ5zevK07bUrGs2V%2FSbBVobJKh0wEq5QMILRACGgw1NzQxMDI2NDQxMjQiDGp6tuSyF9SPqEmMnyrCAye8XBN373f6ABrEoiIAJcoah6vN46y7rspI%2BE2tJ3i%2BBYewSxXGUrg264aFshz%2B%2FFAbvb%2F1kPttrzcc9GFdUgSYYcyHDVndVOrM8w4jzIPf5p49SIaMQ2tIUNc0L7vu%2Frr%2BHAdZm4cSeyNTaXKIyxUxFQQqqTO4i72eqbzKP%2BNe6V06A1Rcr1R0I4U1Eczf9939e%2F73G8PcOtk6wEextLnrgUHqBe8tTm64F7PODq%2F93Djz%2BBBp85cYdGSg0Syv9V04qY5%2B9TkX9f%2BPorVhl4y2dZfSYIMCRI7IE2QOxq4c4QVQBDG0x81Ygk3%2FkehC0fDH2qZbWO7K52U3AvkBvOET%2BXBMzp47UJ3aQ2k2lpE%2FKGf0mZiitaDrpbI%2FamTEBcWRhbA7Np%2Flxb2q9wvtXLtJT1Mu3ljJbqkYwsH%2FMyHGEOUYK5%2BYS28zarDGYAvsH6CFNQzprpeAmCYxVU2%2FVoqNCF3fAhCsZzFerFC7juR7EHdf%2BjF%2FgMuSTovCxPZGLEZ1Z08eGviml31fRg%2B1ZHlDZQBUIxRTU0QzrPCODNy1bGOKnMLwND0gU1bn5cawLnjCo7hRdpgGOdWOehdOZZjXGTCB14uHBjqlAfhX1W%2FOPbJELddO3y3KX67Eok8eV2%2BKyMTXOkty1dgPoncEvZWv93Dh2DQtiopSbbth%2FzRO8L0ZzleucEz0N7MWw7khZFEraWW%2FM4jhdR6RQ8947qgvHbLJlw526c0%2B13R1OaMZrs9g3R91ypjNzH3a1daHbDnxkDkANcOGFqIaQpsNb4UiV6tpFCCwF1vZ%2BgND1JP%2B%2BH3TepU1uEuw1%2BaVWtsPTQ%3D%3D"
         },
         "meta": {
           "source": "frames",
@@ -798,9 +801,9 @@
     "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
   },
   {
-    "id": "89db893b-86c5-4d5a-a585-431650c1098f",
-    "createdAt": "2021-04-02T09:28:14.188Z",
-    "updatedAt": "2021-04-29T13:07:12.341Z",
+    "id": "4c635ab5-4e98-417f-9fec-0fe9866646bd",
+    "createdAt": "2021-06-14T16:55:16.117Z",
+    "updatedAt": "2021-06-14T16:55:16.117Z",
     "name": "Colors/Accent",
     "value": {
       "a": 1,
@@ -813,13 +816,13 @@
     },
     "type": "color",
     "originId": "12:150",
-    "sourceId": "079a9869-1dbc-4c60-a5c7-89fb42170c4b",
+    "sourceId": "d1b6f55c-69a0-4d65-acae-08d2c168299c",
     "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
   },
   {
-    "id": "fdb6a3dd-65cb-4855-b972-8a453784407e",
-    "createdAt": "2021-04-02T09:28:14.176Z",
-    "updatedAt": "2021-04-02T09:33:26.088Z",
+    "id": "1f07f796-9268-4794-a056-8a01dafd45bd",
+    "createdAt": "2021-06-14T16:55:16.100Z",
+    "updatedAt": "2021-06-14T16:55:16.100Z",
     "name": "Colors/Black",
     "value": {
       "a": 1,
@@ -832,13 +835,13 @@
     },
     "type": "color",
     "originId": "12:151",
-    "sourceId": "079a9869-1dbc-4c60-a5c7-89fb42170c4b",
+    "sourceId": "d1b6f55c-69a0-4d65-acae-08d2c168299c",
     "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
   },
   {
-    "id": "f1bea685-0a11-4df8-8b96-d82360904fa5",
-    "createdAt": "2021-04-02T09:28:14.188Z",
-    "updatedAt": "2021-04-02T09:33:26.105Z",
+    "id": "de09da16-b9f5-47bb-8091-7bc444cb9bd3",
+    "createdAt": "2021-06-14T16:55:16.117Z",
+    "updatedAt": "2021-06-14T16:55:16.117Z",
     "name": "Colors/Green",
     "value": {
       "a": 1,
@@ -851,13 +854,13 @@
     },
     "type": "color",
     "originId": "12:154",
-    "sourceId": "079a9869-1dbc-4c60-a5c7-89fb42170c4b",
+    "sourceId": "d1b6f55c-69a0-4d65-acae-08d2c168299c",
     "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
   },
   {
-    "id": "07077ad2-2fa1-48a3-8585-abdc94d51288",
-    "createdAt": "2021-04-02T09:28:14.188Z",
-    "updatedAt": "2021-04-02T09:33:26.105Z",
+    "id": "280f67a7-c49e-4343-a057-5d9f6001e3e9",
+    "createdAt": "2021-06-14T16:55:16.118Z",
+    "updatedAt": "2021-06-14T16:55:16.118Z",
     "name": "Colors/Grey",
     "value": {
       "a": 1,
@@ -870,13 +873,13 @@
     },
     "type": "color",
     "originId": "12:152",
-    "sourceId": "079a9869-1dbc-4c60-a5c7-89fb42170c4b",
+    "sourceId": "d1b6f55c-69a0-4d65-acae-08d2c168299c",
     "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
   },
   {
-    "id": "5d3321b9-b2b5-40b5-84da-39a162f469c5",
-    "createdAt": "2021-04-02T09:28:14.199Z",
-    "updatedAt": "2021-04-02T09:33:26.096Z",
+    "id": "0d77b045-07e8-4018-857d-b3133606bf9b",
+    "createdAt": "2021-06-14T16:55:16.118Z",
+    "updatedAt": "2021-06-14T16:55:16.118Z",
     "name": "Colors/Orange",
     "value": {
       "a": 1,
@@ -889,13 +892,13 @@
     },
     "type": "color",
     "originId": "12:156",
-    "sourceId": "079a9869-1dbc-4c60-a5c7-89fb42170c4b",
+    "sourceId": "d1b6f55c-69a0-4d65-acae-08d2c168299c",
     "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
   },
   {
-    "id": "078f3fa9-f327-44aa-aeee-b0eae1dbcc8a",
-    "createdAt": "2021-04-02T09:28:14.199Z",
-    "updatedAt": "2021-04-02T09:33:26.108Z",
+    "id": "c147e62c-2843-48d6-abf9-b37de37f65ed",
+    "createdAt": "2021-06-14T16:55:16.117Z",
+    "updatedAt": "2021-06-14T16:55:16.117Z",
     "name": "Colors/Red",
     "value": {
       "a": 1,
@@ -908,13 +911,13 @@
     },
     "type": "color",
     "originId": "12:155",
-    "sourceId": "079a9869-1dbc-4c60-a5c7-89fb42170c4b",
+    "sourceId": "d1b6f55c-69a0-4d65-acae-08d2c168299c",
     "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
   },
   {
-    "id": "a69dbcb0-2603-4a58-8e96-2cab55b80acb",
-    "createdAt": "2021-04-02T09:28:14.188Z",
-    "updatedAt": "2021-04-02T09:33:26.105Z",
+    "id": "afcf9f25-374b-4b19-832d-71b53ab61a01",
+    "createdAt": "2021-06-14T16:55:16.117Z",
+    "updatedAt": "2021-06-14T16:55:16.117Z",
     "name": "Colors/White",
     "value": {
       "a": 1,
@@ -927,7 +930,7 @@
     },
     "type": "color",
     "originId": "12:153",
-    "sourceId": "079a9869-1dbc-4c60-a5c7-89fb42170c4b",
+    "sourceId": "d1b6f55c-69a0-4d65-acae-08d2c168299c",
     "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
   },
   {
@@ -1245,16 +1248,17 @@
   {
     "id": "6bf09330-71a6-475e-88d1-d3b72122bab3",
     "createdAt": "2021-04-02T09:54:13.112Z",
-    "updatedAt": "2021-04-12T11:39:15.707Z",
+    "updatedAt": "2021-06-28T14:00:49.527Z",
     "name": "FiraCode-Medium",
     "value": {
+      "format": "ttf",
       "isItalic": false,
       "provider": "Google Fonts",
       "fontFamily": "Fira Code",
       "fontWeight": 500,
       "fontFileMissing": false,
       "fontPostScriptName": "FiraCode-Medium",
-      "url": "https://ddp-assets-prod.s3.amazonaws.com/927e26f6-da29-40d6-b9de-530bdcddf1ed/font/FiraCode-Medium/FiraCode-Medium.ttf?AWSAccessKeyId=ASIAYLKZPEWOLUYYUQUT&Expires=1623087921&Signature=NIYv8yj8DafwRbP74l87GOZ8jl8%3D&x-amz-security-token=IQoJb3JpZ2luX2VjEKP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCWV1LXdlc3QtMSJHMEUCIQDgS45bvwx3qw4t73HF0c4ZRE8kfH5eGfCDMHK%2ByCoQCQIgGmCVweAjKCPGz95AOog2lCI6ppOK8KHB43qNhJyMS5kq5QMIXBACGgw1NzQxMDI2NDQxMjQiDE0%2FbFFjpmviZhfIdSrCA48JJ6N8uMgaTXj6ghIJlNn1MU6QXb%2FNFGKanSlD0pVTRDcTGMRyUbLcqYtbhBjxCm6WpZpRMtlpWLUnFXHj3wTiI4wMMU0pFsVJFi8yx3S88J52Q%2BGnesTUXw1Zsfj6LNwmLCflP4RarF01jfS7%2FnwXpAkxCNS98EcHeZF0W5CmWuCKVfwIufmysyjDJj8JWFqpy5JCMK8QRdmLocbT1iexlesGuCp3ohRlI4YZT2lwdr%2BgoKvSVBAr3AI8MmNuy3TY%2FJOyHMva%2FIcnpmFKPxavxF%2FVFj8i9C2GGs0bbRK278kSi3ppc08wTU9uy9JkPtbBu9Vj30C05F%2FNPHhlwiwtPHFk428MfqBMZju3B26GakXfFZugaCfl6tMFSYWoFpJnb8Uu5C7%2FON74RgErz8cyVB5l%2F0sQGbFygSSHPkXmiqJodFeNwpz3Ir4BwI28Jxhv%2FGdkMGg9%2Ftp2jFl4w6TJ7somCaW4tkwxyVWb63ExCDzZfUr7iY4jpg3tV%2B2EHGKvGGf3DUWwcE7z1YjR1gajiPW8TH3GuG%2FYfD7WixNcs5gYUb7w5Xlt8e1Fr5mlq9%2FE3wkLHg68ROX%2BA3j3s3d9AjDC%2FPeFBjqlAa0Ognqx4sXQ2YNoIw3XxFQwuuofb9VU3MUUfUoaBMVtz294jNv%2BQeDLU%2F0EG7B9nudDsHpC39QfKElQC6%2FVS%2B7uPzJVDvf9fwXJypLf0KiL91ZNXXTGWjpNWSkLAl8tdc4owAQFPysbb3wJHlESpmTYlB5qaLFu8J%2FYgiumyFtaExKmtVIWT1tG0Ux71jAmG7k001SFvYAsmHXAJ9Fqh5rIFawKtA%3D%3D"
+      "url": "https://ddp-assets-prod.s3.amazonaws.com/927e26f6-da29-40d6-b9de-530bdcddf1ed/font/FiraCode-Medium/FiraCode-Medium.ttf?AWSAccessKeyId=ASIAYLKZPEWOJVUQ2FM6&Expires=1625507524&Signature=MspoTMW3jd9byxr5zDPiqnwkxH0%3D&x-amz-security-token=IQoJb3JpZ2luX2VjEEQaCWV1LXdlc3QtMSJHMEUCIHhwLZ1rz95rvnPwR1jYJ0vxv1Ns5ikvQYkuWuVzSqL0AiEAs14AF2ya0Q1fONeZ5zevK07bUrGs2V%2FSbBVobJKh0wEq5QMILRACGgw1NzQxMDI2NDQxMjQiDGp6tuSyF9SPqEmMnyrCAye8XBN373f6ABrEoiIAJcoah6vN46y7rspI%2BE2tJ3i%2BBYewSxXGUrg264aFshz%2B%2FFAbvb%2F1kPttrzcc9GFdUgSYYcyHDVndVOrM8w4jzIPf5p49SIaMQ2tIUNc0L7vu%2Frr%2BHAdZm4cSeyNTaXKIyxUxFQQqqTO4i72eqbzKP%2BNe6V06A1Rcr1R0I4U1Eczf9939e%2F73G8PcOtk6wEextLnrgUHqBe8tTm64F7PODq%2F93Djz%2BBBp85cYdGSg0Syv9V04qY5%2B9TkX9f%2BPorVhl4y2dZfSYIMCRI7IE2QOxq4c4QVQBDG0x81Ygk3%2FkehC0fDH2qZbWO7K52U3AvkBvOET%2BXBMzp47UJ3aQ2k2lpE%2FKGf0mZiitaDrpbI%2FamTEBcWRhbA7Np%2Flxb2q9wvtXLtJT1Mu3ljJbqkYwsH%2FMyHGEOUYK5%2BYS28zarDGYAvsH6CFNQzprpeAmCYxVU2%2FVoqNCF3fAhCsZzFerFC7juR7EHdf%2BjF%2FgMuSTovCxPZGLEZ1Z08eGviml31fRg%2B1ZHlDZQBUIxRTU0QzrPCODNy1bGOKnMLwND0gU1bn5cawLnjCo7hRdpgGOdWOehdOZZjXGTCB14uHBjqlAfhX1W%2FOPbJELddO3y3KX67Eok8eV2%2BKyMTXOkty1dgPoncEvZWv93Dh2DQtiopSbbth%2FzRO8L0ZzleucEz0N7MWw7khZFEraWW%2FM4jhdR6RQ8947qgvHbLJlw526c0%2B13R1OaMZrs9g3R91ypjNzH3a1daHbDnxkDkANcOGFqIaQpsNb4UiV6tpFCCwF1vZ%2BgND1JP%2B%2BH3TepU1uEuw1%2BaVWtsPTQ%3D%3D"
     },
     "meta": {
       "source": "frames",
@@ -1471,16 +1475,17 @@
   {
     "id": "e69237ab-05db-4380-81e5-70db7f5448f1",
     "createdAt": "2021-04-02T08:01:57.087Z",
-    "updatedAt": "2021-04-12T11:39:15.710Z",
+    "updatedAt": "2021-06-28T14:00:49.527Z",
     "name": "Inter-Medium",
     "value": {
+      "format": "ttf",
       "isItalic": false,
       "provider": "Google Fonts",
       "fontFamily": "Inter",
       "fontWeight": 500,
       "fontFileMissing": false,
       "fontPostScriptName": "Inter-Medium",
-      "url": "https://ddp-assets-prod.s3.amazonaws.com/927e26f6-da29-40d6-b9de-530bdcddf1ed/font/Inter-Medium/Inter-Medium.ttf?AWSAccessKeyId=ASIAYLKZPEWOLUYYUQUT&Expires=1623087921&Signature=UvvDu42RdsZfTtjFh9%2F9Gm0G0l0%3D&x-amz-security-token=IQoJb3JpZ2luX2VjEKP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCWV1LXdlc3QtMSJHMEUCIQDgS45bvwx3qw4t73HF0c4ZRE8kfH5eGfCDMHK%2ByCoQCQIgGmCVweAjKCPGz95AOog2lCI6ppOK8KHB43qNhJyMS5kq5QMIXBACGgw1NzQxMDI2NDQxMjQiDE0%2FbFFjpmviZhfIdSrCA48JJ6N8uMgaTXj6ghIJlNn1MU6QXb%2FNFGKanSlD0pVTRDcTGMRyUbLcqYtbhBjxCm6WpZpRMtlpWLUnFXHj3wTiI4wMMU0pFsVJFi8yx3S88J52Q%2BGnesTUXw1Zsfj6LNwmLCflP4RarF01jfS7%2FnwXpAkxCNS98EcHeZF0W5CmWuCKVfwIufmysyjDJj8JWFqpy5JCMK8QRdmLocbT1iexlesGuCp3ohRlI4YZT2lwdr%2BgoKvSVBAr3AI8MmNuy3TY%2FJOyHMva%2FIcnpmFKPxavxF%2FVFj8i9C2GGs0bbRK278kSi3ppc08wTU9uy9JkPtbBu9Vj30C05F%2FNPHhlwiwtPHFk428MfqBMZju3B26GakXfFZugaCfl6tMFSYWoFpJnb8Uu5C7%2FON74RgErz8cyVB5l%2F0sQGbFygSSHPkXmiqJodFeNwpz3Ir4BwI28Jxhv%2FGdkMGg9%2Ftp2jFl4w6TJ7somCaW4tkwxyVWb63ExCDzZfUr7iY4jpg3tV%2B2EHGKvGGf3DUWwcE7z1YjR1gajiPW8TH3GuG%2FYfD7WixNcs5gYUb7w5Xlt8e1Fr5mlq9%2FE3wkLHg68ROX%2BA3j3s3d9AjDC%2FPeFBjqlAa0Ognqx4sXQ2YNoIw3XxFQwuuofb9VU3MUUfUoaBMVtz294jNv%2BQeDLU%2F0EG7B9nudDsHpC39QfKElQC6%2FVS%2B7uPzJVDvf9fwXJypLf0KiL91ZNXXTGWjpNWSkLAl8tdc4owAQFPysbb3wJHlESpmTYlB5qaLFu8J%2FYgiumyFtaExKmtVIWT1tG0Ux71jAmG7k001SFvYAsmHXAJ9Fqh5rIFawKtA%3D%3D"
+      "url": "https://ddp-assets-prod.s3.amazonaws.com/927e26f6-da29-40d6-b9de-530bdcddf1ed/font/Inter-Medium/Inter-Medium.ttf?AWSAccessKeyId=ASIAYLKZPEWOJVUQ2FM6&Expires=1625507524&Signature=AHnfQWt26NXSBfXybBvKHan2g%2Bo%3D&x-amz-security-token=IQoJb3JpZ2luX2VjEEQaCWV1LXdlc3QtMSJHMEUCIHhwLZ1rz95rvnPwR1jYJ0vxv1Ns5ikvQYkuWuVzSqL0AiEAs14AF2ya0Q1fONeZ5zevK07bUrGs2V%2FSbBVobJKh0wEq5QMILRACGgw1NzQxMDI2NDQxMjQiDGp6tuSyF9SPqEmMnyrCAye8XBN373f6ABrEoiIAJcoah6vN46y7rspI%2BE2tJ3i%2BBYewSxXGUrg264aFshz%2B%2FFAbvb%2F1kPttrzcc9GFdUgSYYcyHDVndVOrM8w4jzIPf5p49SIaMQ2tIUNc0L7vu%2Frr%2BHAdZm4cSeyNTaXKIyxUxFQQqqTO4i72eqbzKP%2BNe6V06A1Rcr1R0I4U1Eczf9939e%2F73G8PcOtk6wEextLnrgUHqBe8tTm64F7PODq%2F93Djz%2BBBp85cYdGSg0Syv9V04qY5%2B9TkX9f%2BPorVhl4y2dZfSYIMCRI7IE2QOxq4c4QVQBDG0x81Ygk3%2FkehC0fDH2qZbWO7K52U3AvkBvOET%2BXBMzp47UJ3aQ2k2lpE%2FKGf0mZiitaDrpbI%2FamTEBcWRhbA7Np%2Flxb2q9wvtXLtJT1Mu3ljJbqkYwsH%2FMyHGEOUYK5%2BYS28zarDGYAvsH6CFNQzprpeAmCYxVU2%2FVoqNCF3fAhCsZzFerFC7juR7EHdf%2BjF%2FgMuSTovCxPZGLEZ1Z08eGviml31fRg%2B1ZHlDZQBUIxRTU0QzrPCODNy1bGOKnMLwND0gU1bn5cawLnjCo7hRdpgGOdWOehdOZZjXGTCB14uHBjqlAfhX1W%2FOPbJELddO3y3KX67Eok8eV2%2BKyMTXOkty1dgPoncEvZWv93Dh2DQtiopSbbth%2FzRO8L0ZzleucEz0N7MWw7khZFEraWW%2FM4jhdR6RQ8947qgvHbLJlw526c0%2B13R1OaMZrs9g3R91ypjNzH3a1daHbDnxkDkANcOGFqIaQpsNb4UiV6tpFCCwF1vZ%2BgND1JP%2B%2BH3TepU1uEuw1%2BaVWtsPTQ%3D%3D"
     },
     "meta": {
       "source": "frames",
@@ -1495,16 +1500,17 @@
   {
     "id": "55662ae4-7078-4e36-8392-eca72647acbf",
     "createdAt": "2021-04-02T08:01:57.087Z",
-    "updatedAt": "2021-04-12T11:39:15.667Z",
+    "updatedAt": "2021-06-28T14:00:49.528Z",
     "name": "Inter-SemiBold",
     "value": {
+      "format": "ttf",
       "isItalic": false,
       "provider": "Google Fonts",
       "fontFamily": "Inter",
       "fontWeight": 600,
       "fontFileMissing": false,
       "fontPostScriptName": "Inter-SemiBold",
-      "url": "https://ddp-assets-prod.s3.amazonaws.com/927e26f6-da29-40d6-b9de-530bdcddf1ed/font/Inter-SemiBold/Inter-SemiBold.ttf?AWSAccessKeyId=ASIAYLKZPEWOLUYYUQUT&Expires=1623087921&Signature=G6fcMFRnBitsrsH5yaEP9zjBLnY%3D&x-amz-security-token=IQoJb3JpZ2luX2VjEKP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCWV1LXdlc3QtMSJHMEUCIQDgS45bvwx3qw4t73HF0c4ZRE8kfH5eGfCDMHK%2ByCoQCQIgGmCVweAjKCPGz95AOog2lCI6ppOK8KHB43qNhJyMS5kq5QMIXBACGgw1NzQxMDI2NDQxMjQiDE0%2FbFFjpmviZhfIdSrCA48JJ6N8uMgaTXj6ghIJlNn1MU6QXb%2FNFGKanSlD0pVTRDcTGMRyUbLcqYtbhBjxCm6WpZpRMtlpWLUnFXHj3wTiI4wMMU0pFsVJFi8yx3S88J52Q%2BGnesTUXw1Zsfj6LNwmLCflP4RarF01jfS7%2FnwXpAkxCNS98EcHeZF0W5CmWuCKVfwIufmysyjDJj8JWFqpy5JCMK8QRdmLocbT1iexlesGuCp3ohRlI4YZT2lwdr%2BgoKvSVBAr3AI8MmNuy3TY%2FJOyHMva%2FIcnpmFKPxavxF%2FVFj8i9C2GGs0bbRK278kSi3ppc08wTU9uy9JkPtbBu9Vj30C05F%2FNPHhlwiwtPHFk428MfqBMZju3B26GakXfFZugaCfl6tMFSYWoFpJnb8Uu5C7%2FON74RgErz8cyVB5l%2F0sQGbFygSSHPkXmiqJodFeNwpz3Ir4BwI28Jxhv%2FGdkMGg9%2Ftp2jFl4w6TJ7somCaW4tkwxyVWb63ExCDzZfUr7iY4jpg3tV%2B2EHGKvGGf3DUWwcE7z1YjR1gajiPW8TH3GuG%2FYfD7WixNcs5gYUb7w5Xlt8e1Fr5mlq9%2FE3wkLHg68ROX%2BA3j3s3d9AjDC%2FPeFBjqlAa0Ognqx4sXQ2YNoIw3XxFQwuuofb9VU3MUUfUoaBMVtz294jNv%2BQeDLU%2F0EG7B9nudDsHpC39QfKElQC6%2FVS%2B7uPzJVDvf9fwXJypLf0KiL91ZNXXTGWjpNWSkLAl8tdc4owAQFPysbb3wJHlESpmTYlB5qaLFu8J%2FYgiumyFtaExKmtVIWT1tG0Ux71jAmG7k001SFvYAsmHXAJ9Fqh5rIFawKtA%3D%3D"
+      "url": "https://ddp-assets-prod.s3.amazonaws.com/927e26f6-da29-40d6-b9de-530bdcddf1ed/font/Inter-SemiBold/Inter-SemiBold.ttf?AWSAccessKeyId=ASIAYLKZPEWOJVUQ2FM6&Expires=1625507524&Signature=aO6TzWNn9qPp8qBL%2BzEKh5ibt98%3D&x-amz-security-token=IQoJb3JpZ2luX2VjEEQaCWV1LXdlc3QtMSJHMEUCIHhwLZ1rz95rvnPwR1jYJ0vxv1Ns5ikvQYkuWuVzSqL0AiEAs14AF2ya0Q1fONeZ5zevK07bUrGs2V%2FSbBVobJKh0wEq5QMILRACGgw1NzQxMDI2NDQxMjQiDGp6tuSyF9SPqEmMnyrCAye8XBN373f6ABrEoiIAJcoah6vN46y7rspI%2BE2tJ3i%2BBYewSxXGUrg264aFshz%2B%2FFAbvb%2F1kPttrzcc9GFdUgSYYcyHDVndVOrM8w4jzIPf5p49SIaMQ2tIUNc0L7vu%2Frr%2BHAdZm4cSeyNTaXKIyxUxFQQqqTO4i72eqbzKP%2BNe6V06A1Rcr1R0I4U1Eczf9939e%2F73G8PcOtk6wEextLnrgUHqBe8tTm64F7PODq%2F93Djz%2BBBp85cYdGSg0Syv9V04qY5%2B9TkX9f%2BPorVhl4y2dZfSYIMCRI7IE2QOxq4c4QVQBDG0x81Ygk3%2FkehC0fDH2qZbWO7K52U3AvkBvOET%2BXBMzp47UJ3aQ2k2lpE%2FKGf0mZiitaDrpbI%2FamTEBcWRhbA7Np%2Flxb2q9wvtXLtJT1Mu3ljJbqkYwsH%2FMyHGEOUYK5%2BYS28zarDGYAvsH6CFNQzprpeAmCYxVU2%2FVoqNCF3fAhCsZzFerFC7juR7EHdf%2BjF%2FgMuSTovCxPZGLEZ1Z08eGviml31fRg%2B1ZHlDZQBUIxRTU0QzrPCODNy1bGOKnMLwND0gU1bn5cawLnjCo7hRdpgGOdWOehdOZZjXGTCB14uHBjqlAfhX1W%2FOPbJELddO3y3KX67Eok8eV2%2BKyMTXOkty1dgPoncEvZWv93Dh2DQtiopSbbth%2FzRO8L0ZzleucEz0N7MWw7khZFEraWW%2FM4jhdR6RQ8947qgvHbLJlw526c0%2B13R1OaMZrs9g3R91ypjNzH3a1daHbDnxkDkANcOGFqIaQpsNb4UiV6tpFCCwF1vZ%2BgND1JP%2B%2BH3TepU1uEuw1%2BaVWtsPTQ%3D%3D"
     },
     "meta": {
       "source": "frames",
@@ -1525,16 +1531,17 @@
       "font": {
         "id": "69d2d62e-4d62-45d7-b85f-5da2f9f0c0d4",
         "createdAt": "2021-04-12T09:24:32.704Z",
-        "updatedAt": "2021-04-12T11:39:15.707Z",
+        "updatedAt": "2021-06-28T14:00:49.527Z",
         "name": "Roboto-Regular",
         "value": {
+          "format": "ttf",
           "isItalic": false,
           "provider": "Google Fonts",
           "fontFamily": "Roboto",
           "fontWeight": 400,
           "fontFileMissing": false,
           "fontPostScriptName": "Roboto-Regular",
-          "url": "https://ddp-assets-prod.s3.amazonaws.com/927e26f6-da29-40d6-b9de-530bdcddf1ed/font/Roboto-Regular/Roboto-Regular.ttf?AWSAccessKeyId=ASIAYLKZPEWOLUYYUQUT&Expires=1623087921&Signature=UeGqQiFpBQxctD8%2Bxv701X8H9kY%3D&x-amz-security-token=IQoJb3JpZ2luX2VjEKP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCWV1LXdlc3QtMSJHMEUCIQDgS45bvwx3qw4t73HF0c4ZRE8kfH5eGfCDMHK%2ByCoQCQIgGmCVweAjKCPGz95AOog2lCI6ppOK8KHB43qNhJyMS5kq5QMIXBACGgw1NzQxMDI2NDQxMjQiDE0%2FbFFjpmviZhfIdSrCA48JJ6N8uMgaTXj6ghIJlNn1MU6QXb%2FNFGKanSlD0pVTRDcTGMRyUbLcqYtbhBjxCm6WpZpRMtlpWLUnFXHj3wTiI4wMMU0pFsVJFi8yx3S88J52Q%2BGnesTUXw1Zsfj6LNwmLCflP4RarF01jfS7%2FnwXpAkxCNS98EcHeZF0W5CmWuCKVfwIufmysyjDJj8JWFqpy5JCMK8QRdmLocbT1iexlesGuCp3ohRlI4YZT2lwdr%2BgoKvSVBAr3AI8MmNuy3TY%2FJOyHMva%2FIcnpmFKPxavxF%2FVFj8i9C2GGs0bbRK278kSi3ppc08wTU9uy9JkPtbBu9Vj30C05F%2FNPHhlwiwtPHFk428MfqBMZju3B26GakXfFZugaCfl6tMFSYWoFpJnb8Uu5C7%2FON74RgErz8cyVB5l%2F0sQGbFygSSHPkXmiqJodFeNwpz3Ir4BwI28Jxhv%2FGdkMGg9%2Ftp2jFl4w6TJ7somCaW4tkwxyVWb63ExCDzZfUr7iY4jpg3tV%2B2EHGKvGGf3DUWwcE7z1YjR1gajiPW8TH3GuG%2FYfD7WixNcs5gYUb7w5Xlt8e1Fr5mlq9%2FE3wkLHg68ROX%2BA3j3s3d9AjDC%2FPeFBjqlAa0Ognqx4sXQ2YNoIw3XxFQwuuofb9VU3MUUfUoaBMVtz294jNv%2BQeDLU%2F0EG7B9nudDsHpC39QfKElQC6%2FVS%2B7uPzJVDvf9fwXJypLf0KiL91ZNXXTGWjpNWSkLAl8tdc4owAQFPysbb3wJHlESpmTYlB5qaLFu8J%2FYgiumyFtaExKmtVIWT1tG0Ux71jAmG7k001SFvYAsmHXAJ9Fqh5rIFawKtA%3D%3D"
+          "url": "https://ddp-assets-prod.s3.amazonaws.com/927e26f6-da29-40d6-b9de-530bdcddf1ed/font/Roboto-Regular/Roboto-Regular.ttf?AWSAccessKeyId=ASIAYLKZPEWOJVUQ2FM6&Expires=1625507524&Signature=wqaHc1B1Z5PIPB4xpo5TQ7sJy9c%3D&x-amz-security-token=IQoJb3JpZ2luX2VjEEQaCWV1LXdlc3QtMSJHMEUCIHhwLZ1rz95rvnPwR1jYJ0vxv1Ns5ikvQYkuWuVzSqL0AiEAs14AF2ya0Q1fONeZ5zevK07bUrGs2V%2FSbBVobJKh0wEq5QMILRACGgw1NzQxMDI2NDQxMjQiDGp6tuSyF9SPqEmMnyrCAye8XBN373f6ABrEoiIAJcoah6vN46y7rspI%2BE2tJ3i%2BBYewSxXGUrg264aFshz%2B%2FFAbvb%2F1kPttrzcc9GFdUgSYYcyHDVndVOrM8w4jzIPf5p49SIaMQ2tIUNc0L7vu%2Frr%2BHAdZm4cSeyNTaXKIyxUxFQQqqTO4i72eqbzKP%2BNe6V06A1Rcr1R0I4U1Eczf9939e%2F73G8PcOtk6wEextLnrgUHqBe8tTm64F7PODq%2F93Djz%2BBBp85cYdGSg0Syv9V04qY5%2B9TkX9f%2BPorVhl4y2dZfSYIMCRI7IE2QOxq4c4QVQBDG0x81Ygk3%2FkehC0fDH2qZbWO7K52U3AvkBvOET%2BXBMzp47UJ3aQ2k2lpE%2FKGf0mZiitaDrpbI%2FamTEBcWRhbA7Np%2Flxb2q9wvtXLtJT1Mu3ljJbqkYwsH%2FMyHGEOUYK5%2BYS28zarDGYAvsH6CFNQzprpeAmCYxVU2%2FVoqNCF3fAhCsZzFerFC7juR7EHdf%2BjF%2FgMuSTovCxPZGLEZ1Z08eGviml31fRg%2B1ZHlDZQBUIxRTU0QzrPCODNy1bGOKnMLwND0gU1bn5cawLnjCo7hRdpgGOdWOehdOZZjXGTCB14uHBjqlAfhX1W%2FOPbJELddO3y3KX67Eok8eV2%2BKyMTXOkty1dgPoncEvZWv93Dh2DQtiopSbbth%2FzRO8L0ZzleucEz0N7MWw7khZFEraWW%2FM4jhdR6RQ8947qgvHbLJlw526c0%2B13R1OaMZrs9g3R91ypjNzH3a1daHbDnxkDkANcOGFqIaQpsNb4UiV6tpFCCwF1vZ%2BgND1JP%2B%2BH3TepU1uEuw1%2BaVWtsPTQ%3D%3D"
         },
         "meta": {
           "source": "frames",
@@ -1672,16 +1679,17 @@
   {
     "id": "69d2d62e-4d62-45d7-b85f-5da2f9f0c0d4",
     "createdAt": "2021-04-12T09:24:32.704Z",
-    "updatedAt": "2021-04-12T11:39:15.707Z",
+    "updatedAt": "2021-06-28T14:00:49.527Z",
     "name": "Roboto-Regular",
     "value": {
+      "format": "ttf",
       "isItalic": false,
       "provider": "Google Fonts",
       "fontFamily": "Roboto",
       "fontWeight": 400,
       "fontFileMissing": false,
       "fontPostScriptName": "Roboto-Regular",
-      "url": "https://ddp-assets-prod.s3.amazonaws.com/927e26f6-da29-40d6-b9de-530bdcddf1ed/font/Roboto-Regular/Roboto-Regular.ttf?AWSAccessKeyId=ASIAYLKZPEWOLUYYUQUT&Expires=1623087921&Signature=UeGqQiFpBQxctD8%2Bxv701X8H9kY%3D&x-amz-security-token=IQoJb3JpZ2luX2VjEKP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCWV1LXdlc3QtMSJHMEUCIQDgS45bvwx3qw4t73HF0c4ZRE8kfH5eGfCDMHK%2ByCoQCQIgGmCVweAjKCPGz95AOog2lCI6ppOK8KHB43qNhJyMS5kq5QMIXBACGgw1NzQxMDI2NDQxMjQiDE0%2FbFFjpmviZhfIdSrCA48JJ6N8uMgaTXj6ghIJlNn1MU6QXb%2FNFGKanSlD0pVTRDcTGMRyUbLcqYtbhBjxCm6WpZpRMtlpWLUnFXHj3wTiI4wMMU0pFsVJFi8yx3S88J52Q%2BGnesTUXw1Zsfj6LNwmLCflP4RarF01jfS7%2FnwXpAkxCNS98EcHeZF0W5CmWuCKVfwIufmysyjDJj8JWFqpy5JCMK8QRdmLocbT1iexlesGuCp3ohRlI4YZT2lwdr%2BgoKvSVBAr3AI8MmNuy3TY%2FJOyHMva%2FIcnpmFKPxavxF%2FVFj8i9C2GGs0bbRK278kSi3ppc08wTU9uy9JkPtbBu9Vj30C05F%2FNPHhlwiwtPHFk428MfqBMZju3B26GakXfFZugaCfl6tMFSYWoFpJnb8Uu5C7%2FON74RgErz8cyVB5l%2F0sQGbFygSSHPkXmiqJodFeNwpz3Ir4BwI28Jxhv%2FGdkMGg9%2Ftp2jFl4w6TJ7somCaW4tkwxyVWb63ExCDzZfUr7iY4jpg3tV%2B2EHGKvGGf3DUWwcE7z1YjR1gajiPW8TH3GuG%2FYfD7WixNcs5gYUb7w5Xlt8e1Fr5mlq9%2FE3wkLHg68ROX%2BA3j3s3d9AjDC%2FPeFBjqlAa0Ognqx4sXQ2YNoIw3XxFQwuuofb9VU3MUUfUoaBMVtz294jNv%2BQeDLU%2F0EG7B9nudDsHpC39QfKElQC6%2FVS%2B7uPzJVDvf9fwXJypLf0KiL91ZNXXTGWjpNWSkLAl8tdc4owAQFPysbb3wJHlESpmTYlB5qaLFu8J%2FYgiumyFtaExKmtVIWT1tG0Ux71jAmG7k001SFvYAsmHXAJ9Fqh5rIFawKtA%3D%3D"
+      "url": "https://ddp-assets-prod.s3.amazonaws.com/927e26f6-da29-40d6-b9de-530bdcddf1ed/font/Roboto-Regular/Roboto-Regular.ttf?AWSAccessKeyId=ASIAYLKZPEWOJVUQ2FM6&Expires=1625507524&Signature=wqaHc1B1Z5PIPB4xpo5TQ7sJy9c%3D&x-amz-security-token=IQoJb3JpZ2luX2VjEEQaCWV1LXdlc3QtMSJHMEUCIHhwLZ1rz95rvnPwR1jYJ0vxv1Ns5ikvQYkuWuVzSqL0AiEAs14AF2ya0Q1fONeZ5zevK07bUrGs2V%2FSbBVobJKh0wEq5QMILRACGgw1NzQxMDI2NDQxMjQiDGp6tuSyF9SPqEmMnyrCAye8XBN373f6ABrEoiIAJcoah6vN46y7rspI%2BE2tJ3i%2BBYewSxXGUrg264aFshz%2B%2FFAbvb%2F1kPttrzcc9GFdUgSYYcyHDVndVOrM8w4jzIPf5p49SIaMQ2tIUNc0L7vu%2Frr%2BHAdZm4cSeyNTaXKIyxUxFQQqqTO4i72eqbzKP%2BNe6V06A1Rcr1R0I4U1Eczf9939e%2F73G8PcOtk6wEextLnrgUHqBe8tTm64F7PODq%2F93Djz%2BBBp85cYdGSg0Syv9V04qY5%2B9TkX9f%2BPorVhl4y2dZfSYIMCRI7IE2QOxq4c4QVQBDG0x81Ygk3%2FkehC0fDH2qZbWO7K52U3AvkBvOET%2BXBMzp47UJ3aQ2k2lpE%2FKGf0mZiitaDrpbI%2FamTEBcWRhbA7Np%2Flxb2q9wvtXLtJT1Mu3ljJbqkYwsH%2FMyHGEOUYK5%2BYS28zarDGYAvsH6CFNQzprpeAmCYxVU2%2FVoqNCF3fAhCsZzFerFC7juR7EHdf%2BjF%2FgMuSTovCxPZGLEZ1Z08eGviml31fRg%2B1ZHlDZQBUIxRTU0QzrPCODNy1bGOKnMLwND0gU1bn5cawLnjCo7hRdpgGOdWOehdOZZjXGTCB14uHBjqlAfhX1W%2FOPbJELddO3y3KX67Eok8eV2%2BKyMTXOkty1dgPoncEvZWv93Dh2DQtiopSbbth%2FzRO8L0ZzleucEz0N7MWw7khZFEraWW%2FM4jhdR6RQ8947qgvHbLJlw526c0%2B13R1OaMZrs9g3R91ypjNzH3a1daHbDnxkDkANcOGFqIaQpsNb4UiV6tpFCCwF1vZ%2BgND1JP%2B%2BH3TepU1uEuw1%2BaVWtsPTQ%3D%3D"
     },
     "meta": {
       "source": "frames",
@@ -1739,16 +1747,17 @@
       "font": {
         "id": "55662ae4-7078-4e36-8392-eca72647acbf",
         "createdAt": "2021-04-02T08:01:57.087Z",
-        "updatedAt": "2021-04-12T11:39:15.667Z",
+        "updatedAt": "2021-06-28T14:00:49.528Z",
         "name": "Inter-SemiBold",
         "value": {
+          "format": "ttf",
           "isItalic": false,
           "provider": "Google Fonts",
           "fontFamily": "Inter",
           "fontWeight": 600,
           "fontFileMissing": false,
           "fontPostScriptName": "Inter-SemiBold",
-          "url": "https://ddp-assets-prod.s3.amazonaws.com/927e26f6-da29-40d6-b9de-530bdcddf1ed/font/Inter-SemiBold/Inter-SemiBold.ttf?AWSAccessKeyId=ASIAYLKZPEWOLUYYUQUT&Expires=1623087921&Signature=G6fcMFRnBitsrsH5yaEP9zjBLnY%3D&x-amz-security-token=IQoJb3JpZ2luX2VjEKP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCWV1LXdlc3QtMSJHMEUCIQDgS45bvwx3qw4t73HF0c4ZRE8kfH5eGfCDMHK%2ByCoQCQIgGmCVweAjKCPGz95AOog2lCI6ppOK8KHB43qNhJyMS5kq5QMIXBACGgw1NzQxMDI2NDQxMjQiDE0%2FbFFjpmviZhfIdSrCA48JJ6N8uMgaTXj6ghIJlNn1MU6QXb%2FNFGKanSlD0pVTRDcTGMRyUbLcqYtbhBjxCm6WpZpRMtlpWLUnFXHj3wTiI4wMMU0pFsVJFi8yx3S88J52Q%2BGnesTUXw1Zsfj6LNwmLCflP4RarF01jfS7%2FnwXpAkxCNS98EcHeZF0W5CmWuCKVfwIufmysyjDJj8JWFqpy5JCMK8QRdmLocbT1iexlesGuCp3ohRlI4YZT2lwdr%2BgoKvSVBAr3AI8MmNuy3TY%2FJOyHMva%2FIcnpmFKPxavxF%2FVFj8i9C2GGs0bbRK278kSi3ppc08wTU9uy9JkPtbBu9Vj30C05F%2FNPHhlwiwtPHFk428MfqBMZju3B26GakXfFZugaCfl6tMFSYWoFpJnb8Uu5C7%2FON74RgErz8cyVB5l%2F0sQGbFygSSHPkXmiqJodFeNwpz3Ir4BwI28Jxhv%2FGdkMGg9%2Ftp2jFl4w6TJ7somCaW4tkwxyVWb63ExCDzZfUr7iY4jpg3tV%2B2EHGKvGGf3DUWwcE7z1YjR1gajiPW8TH3GuG%2FYfD7WixNcs5gYUb7w5Xlt8e1Fr5mlq9%2FE3wkLHg68ROX%2BA3j3s3d9AjDC%2FPeFBjqlAa0Ognqx4sXQ2YNoIw3XxFQwuuofb9VU3MUUfUoaBMVtz294jNv%2BQeDLU%2F0EG7B9nudDsHpC39QfKElQC6%2FVS%2B7uPzJVDvf9fwXJypLf0KiL91ZNXXTGWjpNWSkLAl8tdc4owAQFPysbb3wJHlESpmTYlB5qaLFu8J%2FYgiumyFtaExKmtVIWT1tG0Ux71jAmG7k001SFvYAsmHXAJ9Fqh5rIFawKtA%3D%3D"
+          "url": "https://ddp-assets-prod.s3.amazonaws.com/927e26f6-da29-40d6-b9de-530bdcddf1ed/font/Inter-SemiBold/Inter-SemiBold.ttf?AWSAccessKeyId=ASIAYLKZPEWOJVUQ2FM6&Expires=1625507524&Signature=aO6TzWNn9qPp8qBL%2BzEKh5ibt98%3D&x-amz-security-token=IQoJb3JpZ2luX2VjEEQaCWV1LXdlc3QtMSJHMEUCIHhwLZ1rz95rvnPwR1jYJ0vxv1Ns5ikvQYkuWuVzSqL0AiEAs14AF2ya0Q1fONeZ5zevK07bUrGs2V%2FSbBVobJKh0wEq5QMILRACGgw1NzQxMDI2NDQxMjQiDGp6tuSyF9SPqEmMnyrCAye8XBN373f6ABrEoiIAJcoah6vN46y7rspI%2BE2tJ3i%2BBYewSxXGUrg264aFshz%2B%2FFAbvb%2F1kPttrzcc9GFdUgSYYcyHDVndVOrM8w4jzIPf5p49SIaMQ2tIUNc0L7vu%2Frr%2BHAdZm4cSeyNTaXKIyxUxFQQqqTO4i72eqbzKP%2BNe6V06A1Rcr1R0I4U1Eczf9939e%2F73G8PcOtk6wEextLnrgUHqBe8tTm64F7PODq%2F93Djz%2BBBp85cYdGSg0Syv9V04qY5%2B9TkX9f%2BPorVhl4y2dZfSYIMCRI7IE2QOxq4c4QVQBDG0x81Ygk3%2FkehC0fDH2qZbWO7K52U3AvkBvOET%2BXBMzp47UJ3aQ2k2lpE%2FKGf0mZiitaDrpbI%2FamTEBcWRhbA7Np%2Flxb2q9wvtXLtJT1Mu3ljJbqkYwsH%2FMyHGEOUYK5%2BYS28zarDGYAvsH6CFNQzprpeAmCYxVU2%2FVoqNCF3fAhCsZzFerFC7juR7EHdf%2BjF%2FgMuSTovCxPZGLEZ1Z08eGviml31fRg%2B1ZHlDZQBUIxRTU0QzrPCODNy1bGOKnMLwND0gU1bn5cawLnjCo7hRdpgGOdWOehdOZZjXGTCB14uHBjqlAfhX1W%2FOPbJELddO3y3KX67Eok8eV2%2BKyMTXOkty1dgPoncEvZWv93Dh2DQtiopSbbth%2FzRO8L0ZzleucEz0N7MWw7khZFEraWW%2FM4jhdR6RQ8947qgvHbLJlw526c0%2B13R1OaMZrs9g3R91ypjNzH3a1daHbDnxkDkANcOGFqIaQpsNb4UiV6tpFCCwF1vZ%2BgND1JP%2B%2BH3TepU1uEuw1%2BaVWtsPTQ%3D%3D"
         },
         "meta": {
           "source": "frames",

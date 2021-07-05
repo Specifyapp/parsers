@@ -1,6 +1,7 @@
+import Path from 'path';
 import seeds from '../../tests/seeds';
 import convertFont, { OptionsType } from './convert-font.parser';
-import { FontToken } from '../../types';
+import { AllowedFormat, FontToken } from '../../types';
 import { LibsType } from '../global-libs';
 import libs from '../global-libs';
 
@@ -13,9 +14,10 @@ describe('convert-font', () => {
     expect(result.length).toEqual(fonts.filter(({ value }) => !value.fontFileMissing).length * 2);
     result.forEach(item => {
       expect(typeof item.value.url).toMatch('string');
+      expect(['woff2', 'woff'].includes(Path.extname(item.value.format).substring(1)));
     });
     const fontsWithoutMissing = fonts.filter(({ value }) => !value.fontFileMissing);
-    expect(result.map(({ name }, index) => name)).toEqual(
+    expect(result.map(({ value }) => value.fileName)).toEqual(
       fontsWithoutMissing
         .map(font => ['woff2', 'woff'].map(format => `${font.name}.${format}`))
         .flat(2),
@@ -35,10 +37,13 @@ describe('convert-font', () => {
     expect(result.length).toEqual(fonts.filter(({ value }) => !value.fontFileMissing).length);
     result.forEach((item, index) => {
       expect(typeof item.value.url).toMatch('string');
+      expect(
+        options.formats!.includes(Path.extname(item.value.format).substring(1) as AllowedFormat),
+      );
       const expectedName = libs._.kebabCase(
         `${fonts[index].value.fontFamily}-${fonts[index].value.fontWeight}-${fonts[index].name}`,
       );
-      expect(item.name).toEqual(`${expectedName}.woff`);
+      expect(item.value.fileName).toEqual(`${expectedName}.woff`);
     });
     done();
   });
