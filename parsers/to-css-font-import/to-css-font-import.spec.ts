@@ -3,11 +3,11 @@ import toCssFont from './to-css-font-import.parser';
 import { Token } from '../../types';
 
 describe('to-css-font-import', () => {
-  it('Get tokens - apply parsers', async done => {
+  it('Get tokens - apply parsers', async () => {
     const result = await toCssFont(
       seeds().tokens.filter(({ type }) => type === 'font') as Array<Token>,
     );
-    if (result instanceof Error) return done.fail(result);
+    if (result instanceof Error) return fail(result);
     expect(
       result.includes(
         '@font-face {\n' +
@@ -19,9 +19,9 @@ describe('to-css-font-import', () => {
           '}',
       ),
     ).toBeTruthy();
-    done();
+    return;
   });
-  it('Get tokens - apply parsers - with options', async done => {
+  it('Get tokens - apply parsers - with options', async () => {
     const result = await toCssFont(
       seeds().tokens.filter(({ type }) => type === 'font') as Array<Token>,
       {
@@ -32,7 +32,7 @@ describe('to-css-font-import', () => {
         genericFamily: 'sans-serif',
       },
     );
-    if (result instanceof Error) return done.fail(result);
+    if (result instanceof Error) return fail(result);
     expect(
       result.includes(
         '@font-face {\n' +
@@ -44,6 +44,6 @@ describe('to-css-font-import', () => {
           '}',
       ),
     ).toBeTruthy();
-    done();
+    return;
   });
 });

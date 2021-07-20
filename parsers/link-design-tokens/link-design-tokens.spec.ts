@@ -4,7 +4,7 @@ import { ColorToken } from '../../types';
 import { TextStyle } from './tokens';
 
 describe('Link token', () => {
-  it('Get tokens - apply parser', async done => {
+  it('Get tokens - apply parser', async () => {
     const tokens = seeds().tokens.filter(({ type }) => type === 'textStyle' || type === 'color');
     const response = await linkTokens(tokens);
     const colorShouldMatch = response.find(
@@ -20,19 +20,19 @@ describe('Link token', () => {
     expect(textStyleInheritOfColor).toBeDefined();
     expect(response.length).toEqual(tokens.length);
 
-    done();
+    return;
   });
-  it('Should return gradients and shadow without any change', async done => {
+  it('Should return gradients and shadow without any change', async () => {
     const tokens = seeds().tokens.filter(({ type }) => type === 'gradient' || type === 'shadow');
     const response = await linkTokens(tokens);
     expect(JSON.stringify(tokens)).toEqual(JSON.stringify(response));
     expect(response.length).toEqual(tokens.length);
-    done();
+    return;
   });
-  it('Should return same number of tokens', async done => {
+  it('Should return same number of tokens', async () => {
     const tokens = seeds().tokens;
     const response = await linkTokens(tokens);
     expect(response.length).toEqual(tokens.length);
-    done();
+    return;
   });
 });

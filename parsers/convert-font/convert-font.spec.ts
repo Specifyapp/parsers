@@ -6,10 +6,10 @@ import { LibsType } from '../global-libs';
 import libs from '../global-libs';
 
 describe('convert-font', () => {
-  it('Default options', async done => {
+  it('Default options', async () => {
     const fonts = seeds().tokens.filter(({ type }) => type === 'font') as Array<FontToken>;
     const result = await convertFont(fonts, undefined, libs as LibsType);
-    if (result instanceof Error) return done.fail(result);
+    if (result instanceof Error) return fail(result);
     expect(Array.isArray(result)).toEqual(true);
     expect(result.length).toEqual(fonts.filter(({ value }) => !value.fontFileMissing).length * 2);
     result.forEach(item => {
@@ -22,9 +22,9 @@ describe('convert-font', () => {
         .map(font => ['woff2', 'woff'].map(format => `${font.name}.${format}`))
         .flat(2),
     );
-    done();
+    return;
   });
-  it('Several options', async done => {
+  it('Several options', async () => {
     const fonts = seeds().tokens.filter(({ type }) => type === 'font') as Array<FontToken>;
     const options: OptionsType = {
       formats: ['woff'],
@@ -32,7 +32,7 @@ describe('convert-font', () => {
       fileNameFormat: 'kebabCase',
     };
     const result = await convertFont(fonts, options, libs as LibsType);
-    if (result instanceof Error) return done.fail(result);
+    if (result instanceof Error) return fail(result);
     expect(Array.isArray(result)).toEqual(true);
     expect(result.length).toEqual(fonts.filter(({ value }) => !value.fontFileMissing).length);
     result.forEach((item, index) => {
@@ -45,6 +45,6 @@ describe('convert-font', () => {
       );
       expect(item.value.fileName).toEqual(`${expectedName}.woff`);
     });
-    done();
+    return;
   });
 });

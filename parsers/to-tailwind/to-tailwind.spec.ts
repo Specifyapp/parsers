@@ -17,7 +17,7 @@ import {
 } from '../../types';
 
 describe('To tailwind', () => {
-  it('Should generate the colors object', async done => {
+  it('Should generate the colors object', async () => {
     const tokens = seeds().tokens.filter(token => token.type === 'color') as Array<ColorToken>;
     const result = await toTailwind(tokens, undefined, libs);
 
@@ -26,10 +26,10 @@ describe('To tailwind', () => {
       expect(result).toEqual(expect.stringMatching(tinycolor(value).toString('hex')));
     });
 
-    done();
+    return;
   });
 
-  it('Should generate the border object', async done => {
+  it('Should generate the border object', async () => {
     const tokens = seeds().tokens.filter(token => token.type === 'border') as Array<BorderToken>;
     const result = await toTailwind(tokens, undefined, libs);
 
@@ -63,10 +63,10 @@ describe('To tailwind', () => {
       }
     });
 
-    done();
+    return;
   });
 
-  it('Should generate the depth object', async done => {
+  it('Should generate the depth object', async () => {
     const tokens = seeds().tokens.filter(token => token.type === 'depth') as Array<DepthToken>;
     const result = await toTailwind(tokens, undefined, libs);
 
@@ -74,13 +74,13 @@ describe('To tailwind', () => {
       expect(result).toEqual(expect.stringMatching(`${_.camelCase(name)}: "${value.depth}"`));
     });
 
-    done();
+    return;
   });
 
-  it('Should generate the duration object', async done => {
-    const tokens = seeds().tokens.filter(token => token.type === 'duration') as Array<
-      DurationToken
-    >;
+  it('Should generate the duration object', async () => {
+    const tokens = seeds().tokens.filter(
+      token => token.type === 'duration',
+    ) as Array<DurationToken>;
     const result = await toTailwind(tokens, undefined, libs);
 
     tokens.forEach(({ name, value }) => {
@@ -89,13 +89,13 @@ describe('To tailwind', () => {
       );
     });
 
-    done();
+    return;
   });
 
-  it('Should generate the gradient object', async done => {
-    const tokens = seeds().tokens.filter(token => token.type === 'gradient') as Array<
-      GradientToken
-    >;
+  it('Should generate the gradient object', async () => {
+    const tokens = seeds().tokens.filter(
+      token => token.type === 'gradient',
+    ) as Array<GradientToken>;
     const result = await toTailwind(tokens, undefined, libs);
 
     tokens.forEach(({ name, value }) => {
@@ -113,13 +113,13 @@ describe('To tailwind', () => {
       );
     });
 
-    done();
+    return;
   });
 
-  it('Should generate the measurement object', async done => {
-    const tokens = seeds().tokens.filter(token => token.type === 'measurement') as Array<
-      MeasurementToken
-    >;
+  it('Should generate the measurement object', async () => {
+    const tokens = seeds().tokens.filter(
+      token => token.type === 'measurement',
+    ) as Array<MeasurementToken>;
     const result = await toTailwind(tokens, undefined, libs);
 
     tokens.forEach(({ name, value }) => {
@@ -128,10 +128,10 @@ describe('To tailwind', () => {
       );
     });
 
-    done();
+    return;
   });
 
-  it('Should generate the opacity object', async done => {
+  it('Should generate the opacity object', async () => {
     const tokens = seeds().tokens.filter(token => token.type === 'opacity') as Array<OpacityToken>;
     const result = await toTailwind(tokens, undefined, libs);
 
@@ -141,10 +141,10 @@ describe('To tailwind', () => {
       );
     });
 
-    done();
+    return;
   });
 
-  it('Should generate the shadow object', async done => {
+  it('Should generate the shadow object', async () => {
     const tokens = seeds().tokens.filter(token => token.type === 'shadow') as Array<ShadowToken>;
     const result = await toTailwind(tokens, undefined, libs);
 
@@ -171,13 +171,13 @@ describe('To tailwind', () => {
       expect(result).toEqual(expect.stringMatching(regexp));
     });
 
-    done();
+    return;
   });
 
-  it('Should generate the textStyle object', async done => {
-    const tokens = seeds().tokens.filter(token => token.type === 'textStyle') as Array<
-      TextStyleToken
-    >;
+  it('Should generate the textStyle object', async () => {
+    const tokens = seeds().tokens.filter(
+      token => token.type === 'textStyle',
+    ) as Array<TextStyleToken>;
     const result = await toTailwind(tokens, undefined, libs);
 
     tokens.forEach(({ name, value }) => {
@@ -233,10 +233,10 @@ describe('To tailwind', () => {
       }
     });
 
-    done();
+    return;
   });
 
-  it('Should generate with multiple types', async done => {
+  it('Should generate with multiple types', async () => {
     const tokens = seeds().tokens.filter(token =>
       ['color', 'gradient'].includes(token.type),
     ) as Array<ColorToken | GradientToken>;
@@ -269,10 +269,10 @@ describe('To tailwind', () => {
         );
       }
     });
-    done();
+    return;
   });
 
-  it('Should generate with specific formatName', async done => {
+  it('Should generate with specific formatName', async () => {
     const tokens = seeds().tokens.filter(token => token.type === 'color') as Array<ColorToken>;
     const result = await toTailwind(tokens, { formatName: 'kebabCase' }, libs);
 
@@ -281,10 +281,10 @@ describe('To tailwind', () => {
       expect(result).toEqual(expect.stringMatching(tinycolor(value).toString('hex')));
     });
 
-    done();
+    return;
   });
 
-  it('Should generate with specific format on colors', async done => {
+  it('Should generate with specific format on colors', async () => {
     const tokens = seeds().tokens.filter(token => token.type === 'color') as Array<ColorToken>;
     const result = await toTailwind(
       tokens,
@@ -309,13 +309,13 @@ describe('To tailwind', () => {
       );
     });
 
-    done();
+    return;
   });
 
-  it('Should generate with specific format on textStyle', async done => {
-    const tokens = seeds().tokens.filter(token => token.type === 'textStyle') as Array<
-      TextStyleToken
-    >;
+  it('Should generate with specific format on textStyle', async () => {
+    const tokens = seeds().tokens.filter(
+      token => token.type === 'textStyle',
+    ) as Array<TextStyleToken>;
     const result = await toTailwind(
       tokens,
       {
@@ -379,10 +379,10 @@ describe('To tailwind', () => {
       }
     });
 
-    done();
+    return;
   });
 
-  it('Should generate with specific as es6 exportDefault', async done => {
+  it('Should generate with specific as es6 exportDefault', async () => {
     const tokens = seeds().tokens.filter(token => token.type === 'color') as Array<ColorToken>;
     const result = await toTailwind(
       tokens,
@@ -403,10 +403,10 @@ describe('To tailwind', () => {
     expect(result).toEqual(expect.stringMatching('const theme'));
     expect(result).toEqual(expect.stringMatching('export default theme'));
 
-    done();
+    return;
   });
 
-  it('Should generate with specific as es6 not export default', async done => {
+  it('Should generate with specific as es6 not export default', async () => {
     const tokens = seeds().tokens.filter(token => token.type === 'color') as Array<ColorToken>;
     const result = await toTailwind(
       tokens,
@@ -426,10 +426,10 @@ describe('To tailwind', () => {
 
     expect(result).toEqual(expect.stringMatching('export const theme'));
 
-    done();
+    return;
   });
 
-  it('Should generate with specific as commonjs export default', async done => {
+  it('Should generate with specific as commonjs export default', async () => {
     const tokens = seeds().tokens.filter(token => token.type === 'color') as Array<ColorToken>;
     const result = await toTailwind(
       tokens,
@@ -450,10 +450,10 @@ describe('To tailwind', () => {
     expect(result).toEqual(expect.stringMatching('const theme'));
     expect(result).toEqual(expect.stringMatching('module.exports = theme'));
 
-    done();
+    return;
   });
 
-  it('Should generate with specific as commonjs not export default', async done => {
+  it('Should generate with specific as commonjs not export default', async () => {
     const tokens = seeds().tokens.filter(token => token.type === 'color') as Array<ColorToken>;
     const result = await toTailwind(
       tokens,
@@ -474,10 +474,10 @@ describe('To tailwind', () => {
     expect(result).toEqual(expect.stringMatching('const theme'));
     expect(result).toEqual(expect.stringMatching('module.exports = { theme }'));
 
-    done();
+    return;
   });
 
-  it('Should generate with specific objectName', async done => {
+  it('Should generate with specific objectName', async () => {
     const tokens = seeds().tokens.filter(token => token.type === 'color') as Array<ColorToken>;
     const result = await toTailwind(
       tokens,
@@ -499,6 +499,6 @@ describe('To tailwind', () => {
     expect(result).toEqual(expect.stringMatching('const extend'));
     expect(result).toEqual(expect.stringMatching('export default extend'));
 
-    done();
+    return;
   });
 });

@@ -4,27 +4,27 @@ import libs from '../global-libs';
 import seeds from '../../tests/seeds';
 
 describe('Name assets files by pattern', () => {
-  it('Get tokens - apply parser', async done => {
+  it('Get tokens - apply parser', async () => {
     const vectors = seeds().tokens.filter(({ type }) => type === 'vector') as Array<VectorToken>;
     const result = await nameAssetsFilesByPattern(
       vectors,
       { pattern: '{{name}}-{{type}}.{{format}}' },
       libs,
     );
-    if (result instanceof Error) return done.fail(result);
+    if (result instanceof Error) return fail(result);
     vectors.forEach(vector => {
       expect(vector.value.fileName).toEqual(`${vector.name}-vector.svg`);
     });
-    done();
+    return;
   });
-  it('Get tokens - apply parser - bitmap', async done => {
+  it('Get tokens - apply parser - bitmap', async () => {
     const bitmaps = seeds().tokens.filter(({ type }) => type === 'bitmap') as Array<BitmapToken>;
     const result = await nameAssetsFilesByPattern(
       bitmaps,
       { pattern: '{{name}}{{#dimension}}@{{dimension}}{{/dimension}}.{{format}}' },
       libs,
     );
-    if (result instanceof Error) return done.fail(result);
+    if (result instanceof Error) return fail(result);
     bitmaps.forEach(bitmap => {
       expect(bitmap.value.fileName).toEqual(
         `${bitmap.name}${bitmap.value.dimension ? `@${bitmap.value.dimension}` : ''}.${
@@ -32,6 +32,6 @@ describe('Name assets files by pattern', () => {
         }`,
       );
     });
-    done();
+    return;
   });
 });

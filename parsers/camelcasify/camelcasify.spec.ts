@@ -4,37 +4,37 @@ import libs from '../global-libs';
 import seeds from '../../tests/seeds';
 
 describe('Camelcasify', () => {
-  it('Get tokens - apply parsers', async done => {
+  it('Get tokens - apply parsers', async () => {
     const result = await camelcasify(seeds().tokens as Array<Token>, { keys: ['name'] }, libs);
-    if (result instanceof Error) return done.fail(result);
+    if (result instanceof Error) return fail(result);
     result.forEach(token => {
       expect(token.name?.includes(' ')).toEqual(false);
     });
-    done();
+    return;
   });
-  it('Get tokens - apply parsers - default', async done => {
+  it('Get tokens - apply parsers - default', async () => {
     const result = await camelcasify(seeds().tokens as Array<Token>, undefined, libs);
-    if (result instanceof Error) return done.fail(result);
+    if (result instanceof Error) return fail(result);
     result.forEach(token => {
       expect(token.name?.includes(' ')).toEqual(false);
     });
-    done();
+    return;
   });
-  it('Get tokens - apply parsers - without tokens', async done => {
+  it('Get tokens - apply parsers - without tokens', async () => {
     const result = await camelcasify([], undefined, libs);
-    if (result instanceof Error) return done.fail(result);
+    if (result instanceof Error) return fail(result);
     expect(Array.isArray(result)).toBeTruthy();
     expect(result.length).toEqual(0);
-    done();
+    return;
   });
-  it('Get tokens - apply parsers - unknown target key', async done => {
+  it('Get tokens - apply parsers - unknown target key', async () => {
     const input = seeds().tokens;
     const result = await camelcasify(input, { keys: ['name', 'not exist'] }, libs);
     expect(Array.isArray(result)).toBeTruthy();
     expect(result.length).toEqual(input.length);
-    done();
+    return;
   });
-  it('Get tokens - apply parsers - error', async done => {
+  it('Get tokens - apply parsers - error', async () => {
     try {
       await camelcasify(
         // @ts-ignore
@@ -43,7 +43,7 @@ describe('Camelcasify', () => {
         libs,
       );
     } catch (err) {
-      done();
+      return;
     }
   });
 });

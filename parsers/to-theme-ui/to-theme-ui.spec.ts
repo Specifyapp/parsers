@@ -7,7 +7,7 @@ import { ThemeUiConfig, ThemeUiType } from './to-theme-ui.type';
 type ObjectOfStringNumber = { [key: string]: number };
 type ObjectOfStringString = { [key: string]: string };
 describe('To theme ui', () => {
-  it('Get tokens - apply parsers', async done => {
+  it('Get tokens - apply parsers', async () => {
     const str = await toThemeUi(seeds().tokens, undefined, libs);
 
     seeds().tokens.forEach(({ type, name }) => {
@@ -15,9 +15,9 @@ describe('To theme ui', () => {
         expect(str).toEqual(expect.stringMatching(_.camelCase(name)));
       }
     });
-    done();
+    return;
   });
-  it('Get tokens - apply parsers - json', async done => {
+  it('Get tokens - apply parsers - json', async () => {
     const str = await toThemeUi(
       seeds().tokens,
       {
@@ -59,15 +59,17 @@ describe('To theme ui', () => {
     Object.values(result.zIndices as ObjectOfStringNumber).forEach((item: number) =>
       expect(item).toEqual(expect.any(Number)),
     );
-    ([
-      'durations',
-      'sizes',
-      'borderWidths',
-      'borderStyles',
-      'lineHeights',
-      'shadows',
-      'colors',
-    ] as Array<ThemeUiType>).forEach(key => {
+    (
+      [
+        'durations',
+        'sizes',
+        'borderWidths',
+        'borderStyles',
+        'lineHeights',
+        'shadows',
+        'colors',
+      ] as Array<ThemeUiType>
+    ).forEach(key => {
       Object.values(result[key] as ObjectOfStringString).forEach((item: string) =>
         expect(item).toEqual(expect.any(String)),
       );
@@ -82,9 +84,9 @@ describe('To theme ui', () => {
         expect(item).toEqual(expect.any(Number)),
       );
     });
-    done();
+    return;
   });
-  it('Get tokens - apply parsers - with variant', async done => {
+  it('Get tokens - apply parsers - with variant', async () => {
     const str = await toThemeUi(
       seeds().tokens,
       {
@@ -128,9 +130,9 @@ describe('To theme ui', () => {
       expect(result.fonts[value.fontFamily]).toBeDefined();
       expect(result.fontWeights[value.fontFamily]).toBeDefined();
     });
-    done();
+    return;
   });
-  it('Should return variant that matched frozen presets', async done => {
+  it('Should return variant that matched frozen presets', async () => {
     const str = await toThemeUi(
       seeds().tokens,
       {
@@ -170,9 +172,9 @@ describe('To theme ui', () => {
     result.opacities.forEach((opacity: string) => {
       expect(opacity).toMatch(/[0-9]+%/);
     });
-    done();
+    return;
   });
-  it('Should return variant that matched non frozen presets', async done => {
+  it('Should return variant that matched non frozen presets', async () => {
     const tokens = seeds().tokens;
     const str = await toThemeUi(
       tokens,
@@ -200,9 +202,9 @@ describe('To theme ui', () => {
       expect(result.fonts[value.fontFamily]).toBeDefined();
       expect(result.fontWeights[value.fontWeight]).toBeDefined();
     });
-    done();
+    return;
   });
-  it('Should return variant that matched custom presets', async done => {
+  it('Should return variant that matched custom presets', async () => {
     const tokens = seeds().tokens;
     const str = await toThemeUi(
       tokens,
@@ -247,9 +249,9 @@ describe('To theme ui', () => {
       expect(result.fonts[value.fontFamily]).toBeDefined();
       expect(result.fontWeights[value.fontWeight]).toBeDefined();
     });
-    done();
+    return;
   });
-  it('Should return variant that matched nothing', async done => {
+  it('Should return variant that matched nothing', async () => {
     const tokens = seeds().tokens.filter(({ type }) => type !== 'measurement' && type !== 'color');
     const str = await toThemeUi(
       tokens,
@@ -264,7 +266,7 @@ describe('To theme ui', () => {
     const result = JSON.parse(str) as ThemeUiConfig;
     expect(result.colors).toBeFalsy();
     expect(result.sizes).toBeFalsy();
-    done();
+    return;
   });
 
   it('Module Format - es6 - export default', async () => {

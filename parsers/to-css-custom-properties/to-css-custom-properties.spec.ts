@@ -4,7 +4,7 @@ import toCss, { OptionsType } from './to-css-custom-properties.parser';
 import { ColorToken, ColorValue, Shadow, ShadowToken, Token, MeasurementToken } from '../../types';
 
 describe('To css', () => {
-  it('Get tokens - apply parsers', async done => {
+  it('Get tokens - apply parsers', async () => {
     const result = await toCss(seeds().tokens, undefined, libs);
     expect(typeof result).toEqual('string');
     const color = seeds().tokens.find(token => token.type === 'color') as ColorToken;
@@ -42,9 +42,9 @@ describe('To css', () => {
         }`,
       ),
     ).toBe(true);
-    done();
+    return;
   });
-  it('Get tokens - apply parsers - with options', async done => {
+  it('Get tokens - apply parsers - with options', async () => {
     const options: OptionsType = {
       formatName: 'snakeCase'!,
       formatTokens: { color: 'hsl' },
@@ -70,10 +70,10 @@ describe('To css', () => {
         `${fnFormatMeasurement}: ${measurement.value.measure}${measurement.value.unit}`,
       ),
     ).toBe(true);
-    done();
+    return;
   });
 
-  it('Get tokens - apply parsers - with custom selector', async done => {
+  it('Get tokens - apply parsers - with custom selector', async () => {
     const options: OptionsType = {
       formatName: 'snakeCase'!,
       formatTokens: { color: 'hsl' },
@@ -103,10 +103,10 @@ describe('To css', () => {
       ),
     ).toBe(true);
     expect(result.includes(`${options.formatConfig!.selector}`)).toBe(true);
-    done();
+    return;
   });
 
-  it('Get tokens - apply parsers - without custom selector', async done => {
+  it('Get tokens - apply parsers - without custom selector', async () => {
     const options: OptionsType = {
       formatName: 'snakeCase'!,
       formatTokens: { color: 'hsl' },
@@ -133,10 +133,10 @@ describe('To css', () => {
       ),
     ).toBe(true);
     expect(result.includes(`:root {`)).toBe(true);
-    done();
+    return;
   });
 
-  it('Get tokens - apply parsers - with camelCase', async done => {
+  it('Get tokens - apply parsers - with camelCase', async () => {
     const options: OptionsType = {
       formatName: 'camelCase'!,
       formatTokens: { color: 'hsl' },
@@ -166,10 +166,10 @@ describe('To css', () => {
       ),
     ).toBe(true);
     expect(result.includes(`:root {`)).toBe(true);
-    done();
+    return;
   });
 
-  it('Get tokens - apply parsers - all tokens', async done => {
+  it('Get tokens - apply parsers - all tokens', async () => {
     const options: OptionsType = {};
     const result = await toCss(seeds().tokens, options, libs);
     expect(result.includes('--heuristic-cross-platform-quantify: rgba(51, 15, 99, 0.6);'));
@@ -204,6 +204,6 @@ describe('To css', () => {
           '        ),\n',
       ),
     );
-    done();
+    return;
   });
 });

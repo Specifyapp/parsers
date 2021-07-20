@@ -1,7 +1,7 @@
 import convertMeasurement from '../../../libs/size-manipulation';
 
 describe('Libs - size manipulation', () => {
-  it('Should convert px to rem', async done => {
+  it('Should convert px to rem', async () => {
     expect(
       convertMeasurement(
         {
@@ -14,36 +14,36 @@ describe('Libs - size manipulation', () => {
       measure: 1,
       unit: 'rem',
     });
-    done();
+    return;
   });
-  it('Should convert px to rem when input is a string', async done => {
+  it('Should convert px to rem when input is a string', async () => {
     const result = convertMeasurement('16px', 'rem');
     expect(result).toEqual('1rem');
-    done();
+    return;
   });
-  it('Should convert rem to px when input is a string', async done => {
+  it('Should convert rem to px when input is a string', async () => {
     const result = convertMeasurement('16rem', 'px');
     expect(result).toEqual(`${16 * 16}px`);
-    done();
+    return;
   });
-  it('Should trigger error when there is no unit', async done => {
+  it('Should trigger error when there is no unit', async () => {
     try {
       convertMeasurement('16', 'rem');
     } catch (err) {
       expect(err.message).toEqual('Unknown size unit');
     }
-    done();
+    return;
   });
-  it('Should trigger error when there is unknown unit', async done => {
+  it('Should trigger error when there is unknown unit', async () => {
     try {
       // @ts-ignore
       convertMeasurement('16', 'patate');
     } catch (err) {
       expect(err.message).toEqual('Unknown size unit');
     }
-    done();
+    return;
   });
-  it('Should convert rem to px', async done => {
+  it('Should convert rem to px', async () => {
     const result = convertMeasurement(
       {
         unit: 'rem',
@@ -55,9 +55,9 @@ describe('Libs - size manipulation', () => {
       measure: 16 * 16,
       unit: 'px',
     });
-    done();
+    return;
   });
-  it('Should convert px to rem with custom coeff', async done => {
+  it('Should convert px to rem with custom coeff', async () => {
     const result = convertMeasurement(
       {
         unit: 'px',
@@ -70,6 +70,6 @@ describe('Libs - size manipulation', () => {
       measure: 16 / 10,
       unit: 'rem',
     });
-    done();
+    return;
   });
 });

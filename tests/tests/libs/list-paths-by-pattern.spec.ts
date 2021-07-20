@@ -4,7 +4,7 @@ import { ShadowToken } from '../../../types';
 import _ from 'lodash';
 
 describe('Libs - list path by pattern', () => {
-  it('Should return as many elements as there are in the shadow array', async done => {
+  it('Should return as many elements as there are in the shadow array', async () => {
     const tokens = seeds().tokens;
     const pattern = 'value[*].blur.value.measure';
     tokens
@@ -16,10 +16,10 @@ describe('Libs - list path by pattern', () => {
           expect(elm).toEqual(pattern.replace('[*]', `[${index}]`));
         });
       });
-    done();
+    return;
   });
 
-  it('Should return ', async done => {
+  it('Should return ', async () => {
     const pattern = '[*][*].name';
     const base = [
       [
@@ -44,6 +44,6 @@ describe('Libs - list path by pattern', () => {
     const result = listPathsByPattern(base, pattern);
     expect(result.length).toEqual(base.flat(2).length);
     result.forEach((path, index) => expect(_.get(base, path)).toEqual(index + 1));
-    done();
+    return;
   });
 });
