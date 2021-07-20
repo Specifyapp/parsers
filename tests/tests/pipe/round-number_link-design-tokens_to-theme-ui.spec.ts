@@ -6,7 +6,7 @@ import seeds from '../../seeds';
 import { IToken } from '../../../types';
 
 describe('Pipe - link design tokens -> theme ui', () => {
-  it('Should link measurement and letter spacing', async done => {
+  it('Should link measurement and letter spacing', async () => {
     try {
       const roundedTokens = await roundNumber(
         seeds().tokens,
@@ -35,6 +35,6 @@ describe('Pipe - link design tokens -> theme ui', () => {
       fail();
     }
 
-    done();
+    return;
   });
 });

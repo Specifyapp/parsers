@@ -11,7 +11,7 @@ jest.setTimeout(3 * 60 * 1000);
 
 describe('to-scss-map', () => {
   describe('Generate tokens', () => {
-    it('Expect result to be a valid downloadable file', async done => {
+    it('Expect result to be a valid downloadable file', async () => {
       const result = await toScssMap(
         seeds().tokens.filter(({ type }) => type === 'color') as Array<Token>,
         { splitBy: '/', formatConfig: { singleQuote: true } },
@@ -20,18 +20,18 @@ describe('to-scss-map', () => {
 
       expect(Array.isArray(result)).toEqual(true);
       result.forEach(file => expect(typeof file.value.content).toEqual('string'));
-      done();
+      return;
     });
 
-    it('Expect result to be a valid downloadable file when there is no options', async done => {
+    it('Expect result to be a valid downloadable file when there is no options', async () => {
       const result = await toScssMap(seeds().tokens as Array<Token>, undefined, libs);
 
       expect(Array.isArray(result)).toEqual(true);
       result.forEach(file => expect(typeof file.value.content).toEqual('string'));
-      done();
+      return;
     });
 
-    it('should throw unexpected error from the parser', async done => {
+    it('should throw unexpected error from the parser', async () => {
       try {
         jest.spyOn(colorHandler, 'run').mockImplementationOnce(() => {
           throw new Error('Unexpected error');
@@ -41,10 +41,10 @@ describe('to-scss-map', () => {
       } catch (err) {
         expect(err.message).toMatch('Unexpected error');
       }
-      done();
+      return;
     });
 
-    it('should not have function with the omit option', async done => {
+    it('should not have function with the omit option', async () => {
       const result = await toScssMap(
         seeds().tokens.filter(({ type }) => type === 'color') as Array<Token>,
         { splitBy: '/', omitFunctionAndMixin: true },
@@ -56,10 +56,10 @@ describe('to-scss-map', () => {
         expect(typeof file.value.content).toEqual('string');
         expect(file.value.content!.includes('get-token-for-color')).toBeFalsy();
       });
-      done();
+      return;
     });
 
-    it('should not have mixin with the omit option', async done => {
+    it('should not have mixin with the omit option', async () => {
       const result = await toScssMap(
         seeds().tokens.filter(({ type }) => type === 'textStyle') as Array<Token>,
         { splitBy: '/', omitFunctionAndMixin: true },
@@ -71,12 +71,12 @@ describe('to-scss-map', () => {
         expect(typeof file.value.content).toEqual('string');
         expect(file.value.content!.includes('mixin-for-text-style')).toBeFalsy();
       });
-      done();
+      return;
     });
   });
 
   describe('SCSS functions', () => {
-    it('should be able to get values from the scss function', async done => {
+    it('should be able to get values from the scss function', async () => {
       const testFunctionMapping: Record<string, string> = {
         depth: '.test { z-index: get-depth(middle); }',
         duration: '.test { transition-duration: get-duration(short); }',
@@ -121,10 +121,10 @@ describe('to-scss-map', () => {
         }),
       );
 
-      done();
+      return;
     });
 
-    it('should be able to get the properties from the scss mixin', async done => {
+    it('should be able to get the properties from the scss mixin', async () => {
       const testFunctionMapping: Record<string, string> = {
         'text-style': '.test { @include text-style(title); }',
       };
@@ -155,10 +155,10 @@ describe('to-scss-map', () => {
         }),
       );
 
-      done();
+      return;
     });
 
-    it('should throw error from the scss function if missing parameter', async done => {
+    it('should throw error from the scss function if missing parameter', async () => {
       const testFunctionMapping: Record<string, string> = {
         depth: '.test { z-index: get-depth(); }',
         duration: '.test { transition-duration: get-duration(); }',
@@ -208,10 +208,10 @@ describe('to-scss-map', () => {
         }),
       );
 
-      done();
+      return;
     });
 
-    it('should throw error from the scss mixin if missing parameters', async done => {
+    it('should throw error from the scss mixin if missing parameters', async () => {
       const testFunctionMapping: Record<string, string> = {
         'text-style': '.test { @include text-style(); }',
       };
@@ -243,10 +243,10 @@ describe('to-scss-map', () => {
         }),
       );
 
-      done();
+      return;
     });
 
-    it('should throw error from the scss mixin if too much params', async done => {
+    it('should throw error from the scss mixin if too much params', async () => {
       const testFunctionMapping: Record<string, string> = {
         'text-style': '.test { @include text-style(body, font-family); }',
       };
@@ -278,10 +278,10 @@ describe('to-scss-map', () => {
         }),
       );
 
-      done();
+      return;
     });
 
-    it('should be able to get values from the scss function following the configuration', async done => {
+    it('should be able to get values from the scss function following the configuration', async () => {
       const testFunction = '.test { width: get-my-measurements(baseSpace05); }';
 
       const expectedName = '_measurement-custom.scss';
@@ -313,10 +313,10 @@ describe('to-scss-map', () => {
         }),
       );
 
-      done();
+      return;
     });
 
-    it('should be able to get the properties from the scss mixin following the configuration', async done => {
+    it('should be able to get the properties from the scss mixin following the configuration', async () => {
       const testFunctionMapping: Record<string, string> = {
         typography: '.test { @include typography(title); }',
       };
@@ -364,10 +364,10 @@ describe('to-scss-map', () => {
         }),
       );
 
-      done();
+      return;
     });
 
-    it('should be able to get values from the scss function with variable name not starting by $', async done => {
+    it('should be able to get values from the scss function with variable name not starting by $', async () => {
       const testFunction = '.test { width: get-my-measurements(baseSpace05); }';
 
       const expectedName = '_measurement-custom.scss';
@@ -397,10 +397,10 @@ describe('to-scss-map', () => {
         }),
       );
 
-      done();
+      return;
     });
 
-    it('should be able to get values with variable and file as a string', async done => {
+    it('should be able to get values with variable and file as a string', async () => {
       const testFunction = '.test { width: get-my-measurements(baseSpace05); }';
 
       const expectedName = '_measurement-custom.scss';
@@ -426,10 +426,10 @@ describe('to-scss-map', () => {
         }),
       );
 
-      done();
+      return;
     });
 
-    it('should be able to get values from the scss function with function named', async done => {
+    it('should be able to get values from the scss function with function named', async () => {
       const testFunctionMapping: Record<string, string> = {
         measurement: '.test { width: my-measurements(baseSpace05); }',
         color: '.test { color: color(colors, white); }',
@@ -469,10 +469,10 @@ describe('to-scss-map', () => {
         }),
       );
 
-      done();
+      return;
     });
 
-    it('should be able to get the properties from the scss mixin with mixin named', async done => {
+    it('should be able to get the properties from the scss mixin with mixin named', async () => {
       const testFunctionMapping: Record<string, string> = {
         typography: '.test { @include typography(title); }',
       };
@@ -503,7 +503,7 @@ describe('to-scss-map', () => {
         }),
       );
 
-      done();
+      return;
     });
   });
 });

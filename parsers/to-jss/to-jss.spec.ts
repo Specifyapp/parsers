@@ -19,7 +19,7 @@ import tinycolor from 'tinycolor2';
 import path from 'path';
 
 describe('To jss', () => {
-  it('Get tokens - apply parsers', async done => {
+  it('Get tokens - apply parsers', async () => {
     const result = await toJss(seeds().tokens as Array<Token>, { formatName: 'camelCase' }, libs);
     expect(typeof result).toEqual('string');
     const color = seeds().tokens.find(token => token.type === 'color') as Token;
@@ -57,10 +57,10 @@ describe('To jss', () => {
         }",`,
       ),
     ).toBe(true);
-    done();
+    return;
   });
 
-  it('Get tokens - apply parsers - with snakeCase formatName options', async done => {
+  it('Get tokens - apply parsers - with snakeCase formatName options', async () => {
     const options: OptionsType = {
       formatName: 'snakeCase'!,
       formatTokens: { colorFormat: 'hsl' },
@@ -86,10 +86,10 @@ describe('To jss', () => {
         `${fnFormatMeasurement}: "${measurement.value.measure}${measurement.value.unit}",`,
       ),
     ).toBe(true);
-    done();
+    return;
   });
 
-  it('Get tokens - apply parsers - with custom jssObjectName', async done => {
+  it('Get tokens - apply parsers - with custom jssObjectName', async () => {
     const options: OptionsType = {
       formatName: 'snakeCase'!,
       formatTokens: { colorFormat: 'hsl' },
@@ -119,10 +119,10 @@ describe('To jss', () => {
       ),
     ).toBe(true);
     expect(result.includes(`${options.formatConfig!.jssObjectName}`)).toBe(true);
-    done();
+    return;
   });
 
-  it('Get tokens - apply parsers - without custom jssObjectName', async done => {
+  it('Get tokens - apply parsers - without custom jssObjectName', async () => {
     const options: OptionsType = {
       formatName: 'snakeCase'!,
       formatTokens: { colorFormat: 'hsl' },
@@ -149,10 +149,10 @@ describe('To jss', () => {
       ),
     ).toBe(true);
     expect(result.includes(`const theme = {`)).toBe(true);
-    done();
+    return;
   });
 
-  it('Get tokens - apply parsers - with camelCase', async done => {
+  it('Get tokens - apply parsers - with camelCase', async () => {
     const options: OptionsType = {
       formatName: 'camelCase'!,
       formatTokens: { colorFormat: 'hsl' },
@@ -181,10 +181,10 @@ describe('To jss', () => {
       ),
     ).toBe(true);
     expect(result.includes(`const theme = {`)).toBe(true);
-    done();
+    return;
   });
 
-  it('Get tokens - apply parsers - with values format options', async done => {
+  it('Get tokens - apply parsers - with values format options', async () => {
     const options: OptionsType = {
       formatName: 'camelCase',
       formatTokens: {
@@ -204,7 +204,7 @@ describe('To jss', () => {
     )}: [${xBorderWidth}, "${xBorderType}", "${xBorderColor}"],`;
     expect(result.includes(xBorder)).toBe(true);
 
-    done();
+    return;
   });
 
   it('Module Format - es6 - export default', async () => {

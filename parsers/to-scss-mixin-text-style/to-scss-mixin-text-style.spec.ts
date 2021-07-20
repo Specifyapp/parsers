@@ -3,13 +3,13 @@ import { default as toScssMixinTextStyle, InputDataType } from './to-scss-mixin-
 import libs from '../global-libs';
 
 describe('to-css-text-style', () => {
-  it('Get tokens - execute parser', async done => {
+  it('Get tokens - execute parser', async () => {
     const result = await toScssMixinTextStyle(
-      (seeds().tokens.filter(({ type }) => type === 'textStyle') as unknown) as InputDataType,
+      seeds().tokens.filter(({ type }) => type === 'textStyle') as unknown as InputDataType,
       undefined,
       libs,
     );
-    if (result instanceof Error) return done.fail(result);
+    if (result instanceof Error) return fail(result);
     expect(typeof result).toEqual('string');
     expect(
       result.includes(
@@ -26,12 +26,12 @@ describe('to-css-text-style', () => {
           '}',
       ),
     ).toBeTruthy();
-    done();
+    return;
   });
-  it('Get tokens - execute parser - with options include css properties', async done => {
-    const input = (seeds().tokens.filter(
+  it('Get tokens - execute parser - with options include css properties', async () => {
+    const input = seeds().tokens.filter(
       ({ type }) => type === 'textStyle',
-    ) as unknown) as InputDataType;
+    ) as unknown as InputDataType;
     const result = await toScssMixinTextStyle(
       input,
       {
@@ -39,14 +39,14 @@ describe('to-css-text-style', () => {
       },
       libs,
     );
-    if (result instanceof Error) return done.fail(result);
+    if (result instanceof Error) return fail(result);
     expect(result.match(/{\n  font-family: (.*?);\n}/g)?.length).toEqual(input.length);
-    done();
+    return;
   });
-  it('Get tokens - execute parser - with options include textStyle properties', async done => {
-    const input = (seeds().tokens.filter(
+  it('Get tokens - execute parser - with options include textStyle properties', async () => {
+    const input = seeds().tokens.filter(
       ({ type }) => type === 'textStyle',
-    ) as unknown) as InputDataType;
+    ) as unknown as InputDataType;
     const result = await toScssMixinTextStyle(
       input,
       {
@@ -54,14 +54,14 @@ describe('to-css-text-style', () => {
       },
       libs,
     );
-    if (result instanceof Error) return done.fail(result);
+    if (result instanceof Error) return fail(result);
     expect(result.match(/{\n  font-family: (.*?);\n}/g)?.length).toEqual(input.length);
-    done();
+    return;
   });
-  it('Get tokens - execute parser - with options exclude textStyle properties', async done => {
-    const input = (seeds().tokens.filter(
+  it('Get tokens - execute parser - with options exclude textStyle properties', async () => {
+    const input = seeds().tokens.filter(
       ({ type }) => type === 'textStyle',
-    ) as unknown) as InputDataType;
+    ) as unknown as InputDataType;
     const result = await toScssMixinTextStyle(
       input,
       {
@@ -69,15 +69,15 @@ describe('to-css-text-style', () => {
       },
       libs,
     );
-    if (result instanceof Error) return done.fail(result);
+    if (result instanceof Error) return fail(result);
     expect(result.includes('color')).toBeFalsy();
-    done();
+    return;
   });
 
-  it('Get tokens - execute parser - with several options', async done => {
-    const input = (seeds().tokens.filter(
+  it('Get tokens - execute parser - with several options', async () => {
+    const input = seeds().tokens.filter(
       ({ type }) => type === 'textStyle',
-    ) as unknown) as InputDataType;
+    ) as unknown as InputDataType;
     const result = await toScssMixinTextStyle(
       input,
       {
@@ -91,7 +91,7 @@ describe('to-css-text-style', () => {
       },
       libs,
     );
-    if (result instanceof Error) return done.fail(result);
+    if (result instanceof Error) return fail(result);
     expect(
       result.includes(
         '@mixin utilsBodyTextStyle {\n' +
@@ -120,6 +120,6 @@ describe('to-css-text-style', () => {
           '}',
       ),
     ).toBeTruthy();
-    done();
+    return;
   });
 });

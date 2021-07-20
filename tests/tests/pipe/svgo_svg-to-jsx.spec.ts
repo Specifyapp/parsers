@@ -10,7 +10,7 @@ import {
 import seeds from '../../seeds';
 
 describe('Pipe - svgo -> svg-to-jsx', () => {
-  it('Should compress svg and wrap it in a jsx component', async done => {
+  it('Should compress svg and wrap it in a jsx component', async () => {
     try {
       const compressedToken = await toSvgo(
         seeds().tokens as SvgoInputDataType,
@@ -18,7 +18,7 @@ describe('Pipe - svgo -> svg-to-jsx', () => {
         libs as LibsType,
       );
       const result = await svgToJsx(
-        (compressedToken as unknown) as SvgToJsxInputDataType,
+        compressedToken as unknown as SvgToJsxInputDataType,
         undefined,
         libs as LibsType,
       );
@@ -31,11 +31,10 @@ describe('Pipe - svgo -> svg-to-jsx', () => {
         );
         expect(file.value.content).toMatch(reg);
       });
-      done();
+      return;
     } catch (err) {
       fail();
     }
-
-    done();
+    return;
   });
 });

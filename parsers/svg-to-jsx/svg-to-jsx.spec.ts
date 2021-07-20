@@ -4,10 +4,10 @@ import { InputDataType } from './svg-to-jsx.parser';
 import svgToJsx from './svg-to-jsx.parser';
 
 describe('Svg to jsx', () => {
-  it('Get tokens - apply parsers', async done => {
+  it('Get tokens - apply parsers', async () => {
     const tokens = seeds().tokens.filter(({ type }) => type === 'vector');
     const result = await svgToJsx(tokens as InputDataType, undefined, libs as LibsType);
-    if (result instanceof Error) return done.fail(result);
+    if (result instanceof Error) return fail(result);
     expect(Array.isArray(result)).toEqual(true);
     result.forEach(file => {
       expect(typeof file.value.content).toEqual('string');
@@ -18,16 +18,16 @@ describe('Svg to jsx', () => {
       );
       expect(file.value.content).toMatch(reg);
     });
-    done();
+    return;
   });
-  it('Get tokens - apply parsers without export default', async done => {
+  it('Get tokens - apply parsers without export default', async () => {
     const tokens = seeds().tokens.filter(({ type }) => type === 'vector');
     const result = await svgToJsx(
       JSON.parse(JSON.stringify(tokens)) as InputDataType,
       { formatConfig: { exportDefault: false } },
       libs as LibsType,
     );
-    if (result instanceof Error) return done.fail(result);
+    if (result instanceof Error) return fail(result);
     expect(Array.isArray(result)).toEqual(true);
     result.forEach(file => {
       expect(typeof file.value.content).toEqual('string');
@@ -38,9 +38,9 @@ describe('Svg to jsx', () => {
       );
       expect(file.value.content).toMatch(reg);
     });
-    done();
+    return;
   });
-  it('Get tokens - apply parsers with wrapper', async done => {
+  it('Get tokens - apply parsers with wrapper', async () => {
     const tokens = seeds().tokens.filter(({ type }) => type === 'vector');
     const result = await svgToJsx(
       tokens as InputDataType,
@@ -58,7 +58,7 @@ describe('Svg to jsx', () => {
       libs as LibsType,
     );
 
-    if (result instanceof Error) return done.fail(result);
+    if (result instanceof Error) return fail(result);
     expect(Array.isArray(result)).toEqual(true);
     result.forEach(file => {
       expect(typeof file.value.content).toEqual('string');
@@ -69,6 +69,6 @@ describe('Svg to jsx', () => {
       );
       expect(file.value.content).toMatch(reg);
     });
-    done();
+    return;
   });
 });

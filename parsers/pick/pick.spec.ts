@@ -3,7 +3,7 @@ import pick from './pick.parser';
 import libs from '../global-libs';
 
 describe('Pick', () => {
-  it('Execute parser', async done => {
+  it('Execute parser', async () => {
     const result = await pick(
       seeds().tokens,
       {
@@ -11,17 +11,17 @@ describe('Pick', () => {
       },
       libs,
     );
-    if (result instanceof Error) return done.fail(result);
+    if (result instanceof Error) return fail(result);
     result.forEach(token => expect(Object.keys(token)).toEqual(['name', 'type']));
-    done();
+    return;
   });
-  it('Execute parser without option', async done => {
+  it('Execute parser without option', async () => {
     const result = await pick(seeds().tokens, undefined, libs);
-    if (result instanceof Error) return done.fail(result);
+    if (result instanceof Error) return fail(result);
     result.forEach(token => expect(Object.keys(token)).toEqual(['name']));
-    done();
+    return;
   });
-  it('Execute parser with flatten option', async done => {
+  it('Execute parser with flatten option', async () => {
     const tokens = seeds().tokens;
     const result = await pick(
       tokens,
@@ -32,13 +32,13 @@ describe('Pick', () => {
       libs,
     );
 
-    if (result instanceof Error) return done.fail(result);
+    if (result instanceof Error) return fail(result);
 
     tokens.forEach(token => {
       const expectation = ['id', 'name'];
       if (token.meta?.originFrameName) expectation.push('originFrameName');
       expect(Object.keys(result.find(({ id }) => id === token.id)!)).toEqual(expectation);
     });
-    done();
+    return;
   });
 });

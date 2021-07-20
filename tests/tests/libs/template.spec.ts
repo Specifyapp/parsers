@@ -1,7 +1,7 @@
 import Template from '../../../libs/template';
 
 describe('Libs - template', () => {
-  it('Should render simple template', async done => {
+  it('Should render simple template', async () => {
     const template = new Template('{{name}}-{{type}}.{{format}}');
 
     const result = template.render({
@@ -10,9 +10,9 @@ describe('Libs - template', () => {
       format: 'format',
     });
     expect(result).toEqual('name-type.format');
-    done();
+    return;
   });
-  it('Should render template with condition', async done => {
+  it('Should render template with condition', async () => {
     const template = new Template(
       '{{name}}-{{type}}{{#dimension}}@{{dimension}}{{/dimension}}.{{format}}',
     );
@@ -32,9 +32,9 @@ describe('Libs - template', () => {
         format: 'format',
       }),
     ).toEqual('name-type@4x.format');
-    done();
+    return;
   });
-  it('Should render template with condition when keys are in value.', async done => {
+  it('Should render template with condition when keys are in value.', async () => {
     const template = new Template(
       '{{name}}-{{type}}{{#dimension}}@{{dimension}}{{/dimension}}.{{format}}',
     );
@@ -57,6 +57,6 @@ describe('Libs - template', () => {
         },
       }),
     ).toEqual('name-type@4x.format');
-    done();
+    return;
   });
 });
