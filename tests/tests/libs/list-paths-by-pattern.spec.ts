@@ -64,7 +64,7 @@ describe('Libs - list path by pattern', () => {
   });
 
   it('Should return elements which exist included undefined, 0 or false ', async () => {
-    const pattern = '[*]name';
+    const pattern = '[*].name';
     const base = [
       {
         name: false,
