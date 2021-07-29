@@ -12,3 +12,14 @@ declare global {
   }
 }
 
+export type ColorsFormat =
+  | 'rgb'
+  | 'prgb'
+  | 'hex'
+  | 'hex6'
+  | 'hex3'
+  | 'hex4'
+  | 'hex8'
+  | 'name'
+  | 'hsl'
+  | 'hsv';
