@@ -13,7 +13,7 @@ interface parser {
   name: "convert-font",
   options?: {
     "formats"?: Array<'woff2' | 'woff' | 'otf' | 'ttf' | 'eot'>
-    "fileNameKey"?: 'name' | 'fontFamily' | Array<string>
+    "fileNameKey"?: 'name' | 'fontFamily' | 'fontPostScriptName' | Array<string>
     "fileNameFormat"?: 'camelCase' | 'kebabCase' | 'snakeCase' | 'pascalCase';
   }
 }
@@ -24,7 +24,7 @@ interface parser {
 | Parameter        | Required  | Type                                  | Default                                  | Description                                       |
 | ---------------- | --------- | ------------------------------------- | ---------------------------------------- | ------------------------------------------------- |
 | `formats`        | optional     | `Array<string>`                       | `["woff2", "woff"]` | The list of formats to convert |
-| `fileNameKey`    | optional     | `name`, `fontFamily`, `Array<string>` | `name`                                   | The design token's keys that will be used to create the file name. These keys will be separated by a space to create the file name.|
+| `fileNameKey`    | optional     | `name`, `fontFamily`, `fontPostScriptName`, `Array<string>` | `name`                                   | The design token's keys that will be used to create the file name. These keys will be separated by a space to create the file name.|
 | `fileNameFormat` | optional     | `camelCase` `kebabCase` `snakeCase` `pascalCase`   |                                          | The function to normalize the file name |
 
 
