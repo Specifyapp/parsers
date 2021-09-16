@@ -1,4 +1,5 @@
 import { LibsType } from '../global-libs';
+import { TokensType } from '../../types';
 
 export type InputDataType = Array<Record<string, any>>;
 export type OutputDataType = InputDataType;
@@ -6,6 +7,9 @@ export type OptionsType =
   | undefined
   | {
       keys: Array<string>;
+      filter?: {
+        types: Array<TokensType>;
+      };
       flatten?: boolean;
     };
 
@@ -29,7 +33,15 @@ export default async function (
   { _ }: Pick<LibsType, '_'>,
 ): Promise<OutputDataType> {
   return tokens.map(token => {
-    const obj = _.pick(token, options.keys);
-    return options.flatten ? flattenObject(obj) : obj;
+    if (
+      !options?.filter ||
+      (options?.filter?.types &&
+        options.filter.types.length &&
+        options.filter!.types.includes(token.type))
+    ) {
+      const obj = _.pick(token, options.keys);
+      return options.flatten ? flattenObject(obj) : obj;
+    }
+    return token;
   });
 }
