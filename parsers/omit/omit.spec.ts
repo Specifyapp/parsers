@@ -5,20 +5,23 @@ import { has } from 'lodash';
 
 describe('Omit', () => {
   it('Execute parser', async () => {
+    const tokens = seeds().tokens;
     const result = await omit(
-      seeds().tokens,
+      tokens,
       {
         keys: ['value.color'],
       },
       libs,
     );
     if (result instanceof Error) return fail(result);
+    expect(tokens.length).toEqual(result.length);
     result.forEach(token => expect(has(token, 'value.color')).toEqual(false));
     return;
   });
   it('Execute parser with filter', async () => {
+    const tokens = seeds().tokens;
     const result = await omit(
-      seeds().tokens,
+      tokens,
       {
         keys: ['value.color'],
         filter: {
@@ -28,6 +31,7 @@ describe('Omit', () => {
       libs,
     );
     if (result instanceof Error) return fail(result);
+    expect(tokens.length).toEqual(result.length);
     result.forEach(token => {
       if (token.type === 'textStyle') expect(has(token, 'value.color')).toEqual(false);
       if (token.type === 'border') expect(has(token, 'value.color')).toEqual(true);
@@ -44,7 +48,7 @@ describe('Omit', () => {
       },
       libs,
     );
-
+    expect(tokens.length).toEqual(result.length);
     if (result instanceof Error) return fail(result);
     result.forEach(token => {
       Object.keys(token).forEach(key => {

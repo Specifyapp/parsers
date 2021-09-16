@@ -31,12 +31,16 @@ export default async function (
   options: OptionsType = { keys: [] },
   { _ }: Pick<LibsType, '_'>,
 ): Promise<OutputDataType> {
-  const filteredTokens =
-    !options.filter?.types || options.filter.types.length === 0
-      ? tokens
-      : tokens.filter(({ type }) => options.filter!.types.includes(type));
-  return filteredTokens.map(token => {
-    const obj = _.omit(token, options.keys);
-    return options.flatten ? flattenObject(obj) : obj;
+  return tokens.map(token => {
+    if (
+      !options?.filter ||
+      (options?.filter?.types &&
+        options.filter.types.length &&
+        options.filter!.types.includes(token.type))
+    ) {
+      const obj = _.omit(token, options.keys);
+      return options.flatten ? flattenObject(obj) : obj;
+    }
+    return token;
   });
 }

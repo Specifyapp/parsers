@@ -68,15 +68,32 @@ export class Indexes {
   private static _instance: Indexes;
   private _enable: boolean;
   list: ThemeUiIndexes = {};
-  presets: PresetsType = {};
+  presets: ToThemeUiParser['styles'] = {};
 
   private constructor(enable: boolean) {
     this._enable = enable;
   }
 
-  public static init(enable: boolean, presets: PresetsType) {
+  public static init(enable: boolean, presets: Indexes['presets']) {
     this._instance = new this(enable);
     this._instance.presets = { ...presets };
+    if (enable && Object.keys(presets).length > 0) {
+      Object.entries(presets).forEach(([property, values]) => {
+        if (!this._instance.list[property as keyof ThemeUiIndexes]) {
+          this._instance.list[property as keyof ThemeUiIndexes] = {};
+        }
+        if (Array.isArray(values)) {
+          values.forEach(
+            (value, index) =>
+              (this._instance.list[property as keyof ThemeUiIndexes]![value] = index),
+          );
+        } else {
+          Object.entries<string>(values).forEach(
+            ([key, value]) => (this._instance.list[property as keyof ThemeUiIndexes]![value] = key),
+          );
+        }
+      });
+    }
   }
 
   public static get Instance(): Indexes {
@@ -85,7 +102,7 @@ export class Indexes {
 
   public add(
     themeUiKey: ThemeUiType,
-    spTokenId: string,
+    tokenKey: string,
     tokenRef: string | number,
     value: string | number = tokenRef,
   ) {
@@ -95,15 +112,15 @@ export class Indexes {
       const preset = this.presets[themeUiKey as PresetableKey];
       if (Array.isArray(preset)) {
         const matchedPreset = preset.find(presetValue => presetValue === value);
-        if (matchedPreset) this.list[themeUiKey]![spTokenId] = matchedPreset;
+        if (matchedPreset) this.list[themeUiKey]![tokenKey] = matchedPreset;
       } else {
         const matchedPreset = Object.entries(preset as object).find(
           ([_, presetValue]) => value === presetValue,
         );
-        if (matchedPreset) this.list[themeUiKey]![spTokenId] = matchedPreset[0];
+        if (matchedPreset) this.list[themeUiKey]![tokenKey] = matchedPreset[0];
       }
     } else {
-      this.list[themeUiKey]![spTokenId] = tokenRef;
+      this.list[themeUiKey]![tokenKey] = tokenRef;
     }
   }
 }

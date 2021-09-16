@@ -12,6 +12,9 @@ interface parser {
   name: 'pick',
   options?: {
     keys: Array<string>
+    filter?: {
+      types: Array<string>
+    },
     flatten?: boolean
   }
 }
@@ -21,6 +24,7 @@ interface parser {
 | Parameter              | Required   | Type      | Default    | Description                                             |
 | ---------------------- | ---------- | --------- | ---------- | ------------------------------------------------------- |
 | `keys`                 | optional   | `Array`   | `["name"]` | The list of keys where the function will be applied.    |
+| `filter.types`         | optional   | `Array`   | `[]`       | The list of token types where the function will be applied.    |
 | `flatten`              | optional   | `boolean` | `false`    | Allow flattening each object after picking their values.|
 
 ## Types
