@@ -148,7 +148,7 @@ class ToThemeUiParser {
   }
 
   initPreset(presets: PresetsType) {
-    const fontWeights =
+    this.styles.fontWeights =
       presets.fontWeights?.preset === 'base'
         ? {
             thin: 100,
@@ -162,11 +162,6 @@ class ToThemeUiParser {
             black: 900,
           } // source: https://developer.mozilla.org/fr/docs/Web/CSS/font-weight
         : presets.fontWeights?.preset ?? {};
-    if (presets.fontWeights?.freeze) {
-      this.styles.fontWeights = Object.freeze(fontWeights);
-    } else {
-      this.styles.fontWeights = fontWeights;
-    }
 
     if (presets.fontSizes?.preset === 'base') {
       this.styles.fontSizes =
@@ -186,7 +181,6 @@ class ToThemeUiParser {
     } else if (presets.fontSizes?.preset) {
       this.styles.fontSizes = presets.fontSizes?.preset;
     }
-    if (presets.fontSizes?.freeze) Object.freeze(this.styles.fontSizes);
   }
 
   exec() {
@@ -205,11 +199,16 @@ class ToThemeUiParser {
       const instance = new tokenHandler(token, this.transformNameFn);
       const themeUiTokens = instance.generate(this.options, this.tokens);
       (Object.keys(themeUiTokens) as Array<ThemeUiTypes>).forEach(themeUiKey => {
-        if (this.styles[themeUiKey] && Object.isFrozen(this.styles[themeUiKey])) return;
+        if (
+          this.styles[themeUiKey] &&
+          this.options?.presets?.[themeUiKey as keyof PresetsType]?.freeze
+        )
+          return;
         if (Array.isArray(themeUiTokens[themeUiKey])) {
-          acc[themeUiKey] = [...(acc[themeUiKey] || []), ...themeUiTokens[themeUiKey]];
+          acc[themeUiKey] = (acc[themeUiKey] || []).concat(themeUiTokens[themeUiKey]);
         } else {
-          acc[themeUiKey] = { ...(acc[themeUiKey] || {}), ...themeUiTokens[themeUiKey] };
+          if (!acc[themeUiKey]) acc[themeUiKey] = {};
+          Object.assign(acc[themeUiKey], themeUiTokens[themeUiKey]);
         }
       });
       return acc;
