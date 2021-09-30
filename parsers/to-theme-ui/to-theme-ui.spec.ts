@@ -163,6 +163,7 @@ describe('To theme ui', () => {
       libs,
     );
     const result = JSON.parse(str) as ThemeUiConfig;
+    expect(Object.keys(result.fontWeights).length).toEqual(9);
     Object.values(
       result.text as Record<string, { fontFamily: string; fontWeight: string }>,
     ).forEach(value => {
