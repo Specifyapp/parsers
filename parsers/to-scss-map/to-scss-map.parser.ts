@@ -2,7 +2,7 @@ import * as _ from 'lodash';
 import prettier from 'prettier';
 import * as os from 'os';
 import { LibsType } from '../global-libs';
-import { DesignTokensType, DownloadableFile, IToken, PartialRecord, TokensType } from '../../types';
+import { DesignTokensType, DownloadableFile, IToken, PartialRecord } from '../../types';
 import TokensHandler from './tokens';
 import { ColorsFormat, ScssMapHandlerType, ToScssMapTokenType } from './to-scss-map.type';
 import Template from '../../libs/template';
@@ -198,7 +198,7 @@ export default async function (
 ): Promise<OutputDataType> {
   try {
     options.formatName = options.formatName || 'camelCase';
-    const tokensGroupByType = _.groupBy(tokens, 'type') as Record<TokensType, InputDataType>;
+    const tokensGroupByType = _.groupBy(tokens, 'type');
 
     return Object.entries(tokensGroupByType).reduce<Array<DownloadableFile>>(
       (typesAcc, [type, tokensByType]: [string, InputDataType]) => {

@@ -55,7 +55,7 @@ class ToTailwind {
     this.exportDefault = options?.formatConfig?.exportDefault ?? true;
     this.module = options?.formatConfig?.module ?? 'es6';
     this.tokens = tokens;
-    this.tokensGroupByType = _.groupBy(tokens, 'type') as Record<TokensType, InputDataType>;
+    this.tokensGroupByType = _.groupBy(tokens, 'type');
     this.styles = {};
   }
   exec() {

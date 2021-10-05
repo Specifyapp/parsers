@@ -14,7 +14,7 @@ function getClassByType(type: string): LinkDesignTokenClass | undefined {
 
 export default async function (tokens: InputDataType): Promise<OutputDataType> {
   try {
-    const tokensGroupedByType = _.groupBy(tokens, 'type') as Record<TokensType, InputDataType>;
+    const tokensGroupedByType = _.groupBy(tokens, 'type');
     const types = Object.keys(tokensGroupedByType) as Array<TokensType>;
 
     // create indexes dictionary

@@ -9,6 +9,7 @@
     "strict": true,
     "inlineSourceMap": false,
     "inlineSources": false,
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "useUnknownInCatchVariables": false
   }
 }
