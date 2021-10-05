@@ -1,0 +1,361 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`To React Native Should generate the theme object 1`] = `
+"const theme = {
+  bitmap: {
+    acmeLogo: {
+      uri: \\"'https://s3-us-west-2.amazonaws.com/figma-alpha-api/img/13d6/2eb6/a2626d914998754ac0b704e2cdb7a813'\\",
+    },
+    photoExample: {
+      uri: \\"'https://s3-us-west-2.amazonaws.com/figma-alpha-api/img/3302/0ec5/79870771c0861eaa8f1af4e4ed5a8790'\\",
+    },
+  },
+  vector: {
+    activity: {
+      uri: \\"'https://s3-us-west-2.amazonaws.com/figma-alpha-api/img/96dc/8825/c166b559140a0a64b28441924700a0b2'\\",
+    },
+    airplay: {
+      uri: \\"'https://s3-us-west-2.amazonaws.com/figma-alpha-api/img/ba89/d0aa/da2310c63c85699af43c8d128619cfdc'\\",
+    },
+    alertCircle: {
+      uri: \\"'https://s3-us-west-2.amazonaws.com/figma-alpha-api/img/e8be/d9ce/4595ffa4510b7427d42e113c33632ae9'\\",
+    },
+    alertOctagon: {
+      uri: \\"'https://s3-us-west-2.amazonaws.com/figma-alpha-api/img/fda9/f3ef/d31ed18fd324eb97190f34e0497214df'\\",
+    },
+    alertTriangle: {
+      uri: \\"'https://s3-us-west-2.amazonaws.com/figma-alpha-api/img/880e/672c/155447c7e27185832ded7310ac9a02e7'\\",
+    },
+    alignCenter: {
+      uri: \\"'https://s3-us-west-2.amazonaws.com/figma-alpha-api/img/44e1/3537/07081649495a48e2f2de80b83e69a876'\\",
+    },
+  },
+  depth: {
+    background: {
+      elevation: 1,
+      shadowOpacity: 0.1815,
+      shadowRadius: 0.54,
+      shadowOffset: { width: 0.6, height: 0.6 },
+    },
+    foreground: {
+      elevation: 100,
+      shadowOpacity: 0.32999999999999996,
+      shadowRadius: 54,
+      shadowOffset: { width: 60, height: 60 },
+    },
+    middle: {
+      elevation: 50,
+      shadowOpacity: 0.255,
+      shadowRadius: 27,
+      shadowOffset: { width: 30, height: 30 },
+    },
+  },
+  duration: { base: 300, long: 700, short: 100, veryLong: 3000 },
+  measurement: {
+    baseSpace01: 4,
+    baseSpace02: 8,
+    baseSpace03: 12,
+    baseSpace04: 16,
+    baseSpace05: 32,
+    baseSpace06: 48,
+    baseSpace07: 64,
+    baseSpace08: 80,
+    baseSpace09: 96,
+    baseSpace10: 112,
+  },
+  textStyle: {
+    body: {
+      fontWeight: \\"500\\",
+      fontSize: 14,
+      lineHeight: 20,
+      fontFamily: \\"Inter-Medium\\",
+      color: \\"rgb(30, 33, 43)\\",
+      letterSpacing: 10,
+    },
+    bodyWithOpacity: {
+      fontWeight: \\"500\\",
+      fontSize: 14,
+      lineHeight: 20,
+      fontFamily: \\"Inter-Medium\\",
+      color: \\"rgba(30, 33, 43, 0.3)\\",
+      letterSpacing: 10,
+    },
+    code: {
+      fontWeight: \\"500\\",
+      fontSize: 13,
+      lineHeight: 20,
+      fontFamily: \\"FiraCode-Medium\\",
+      color: \\"rgb(255, 142, 5)\\",
+    },
+    list: {
+      fontWeight: \\"400\\",
+      fontSize: 14,
+      lineHeight: 20,
+      fontFamily: \\"Roboto-Regular\\",
+      color: \\"rgb(0, 0, 0)\\",
+    },
+    title: {
+      fontWeight: \\"600\\",
+      fontSize: 32,
+      lineHeight: 40,
+      fontFamily: \\"Inter-SemiBold\\",
+      color: \\"rgb(30, 33, 43)\\",
+    },
+  },
+  border: {
+    borderAccent: {
+      borderWidth: 2,
+      borderStyle: \\"solid\\",
+      borderColor: \\"rgb(102, 80, 239)\\",
+      borderRadius: 16,
+    },
+    borderAccentWithOpacity: {
+      borderWidth: 2,
+      borderStyle: \\"solid\\",
+      borderColor: \\"rgba(102, 80, 239, 0.5)\\",
+      borderRadius: 16,
+    },
+    borderAccentWithoutRadii: {
+      borderWidth: 2,
+      borderStyle: \\"solid\\",
+      borderColor: \\"rgba(102, 80, 239, 0.5)\\",
+    },
+    borderDashed: {
+      borderWidth: 1,
+      borderStyle: \\"dashed\\",
+      borderColor: \\"rgb(30, 33, 43)\\",
+      borderRadius: 16,
+    },
+  },
+  color: {
+    colorsAccent: \\"rgb(87, 124, 254)\\",
+    colorsBlack: \\"rgb(30, 33, 43)\\",
+    colorsGreen: \\"rgb(88, 205, 82)\\",
+    colorsGrey: \\"rgb(204, 213, 225)\\",
+    colorsOrange: \\"rgb(255, 142, 5)\\",
+    colorsRed: \\"rgb(245, 72, 63)\\",
+    colorsWhite: \\"rgb(255, 255, 255)\\",
+  },
+  font: {
+    firaCodeMedium: \\"FiraCode-Medium\\",
+    interMedium: \\"Inter-Medium\\",
+    interSemiBold: \\"Inter-SemiBold\\",
+    robotoRegular: \\"Roboto-Regular\\",
+  },
+  gradient: {
+    gradientsColored: [
+      {
+        angle: 90,
+        colors: [\\"rgb(245, 72, 63)\\", \\"rgb(255, 142, 5)\\"],
+        locations: [0, 1],
+      },
+    ],
+    gradientsDark: [
+      {
+        angle: 90,
+        colors: [\\"rgb(30, 33, 43)\\", \\"rgb(204, 213, 225)\\"],
+        locations: [0, 1],
+      },
+    ],
+    gradientsNeutral: [
+      {
+        angle: 90,
+        colors: [\\"rgb(204, 213, 225)\\", \\"rgb(255, 255, 255)\\"],
+        locations: [0, 1],
+      },
+    ],
+    gradientsSafari: [
+      {
+        angle: 90,
+        colors: [\\"rgb(255, 142, 5)\\", \\"rgb(255, 255, 255)\\"],
+        locations: [0, 1],
+      },
+    ],
+  },
+  opacity: { subtle: 0.5, transparent: 0.1, visible: 0.95 },
+};
+export default theme;
+"
+`;
+
+exports[`To React Native Should support different duration types 1`] = `
+"const theme = {
+  duration: {
+    \\"2Hours\\": 7200000,
+    \\"2Minutes\\": 120000,
+    \\"2Seconds\\": 2000,
+    \\"2Milliseconds\\": 2,
+    \\"2Nanoseconds\\": 0.002,
+  },
+};
+export default theme;
+"
+`;
+
+exports[`To React Native Should use assetsFolderPath 1`] = `
+"import assetAcmeLogo from \\"path/acmeLogo.png\\";
+import assetPhotoExample from \\"path/photoExample.png\\";
+import assetActivity from \\"path/activity.svg\\";
+import assetAirplay from \\"path/airplay.svg\\";
+import assetAlertCircle from \\"path/alertCircle.svg\\";
+import assetAlertOctagon from \\"path/alertOctagon.svg\\";
+import assetAlertTriangle from \\"path/alertTriangle.svg\\";
+import assetAlignCenter from \\"path/alignCenter.svg\\";
+
+const theme = {
+  bitmap: { acmeLogo: assetAcmeLogo, photoExample: assetPhotoExample },
+  vector: {
+    activity: assetActivity,
+    airplay: assetAirplay,
+    alertCircle: assetAlertCircle,
+    alertOctagon: assetAlertOctagon,
+    alertTriangle: assetAlertTriangle,
+    alignCenter: assetAlignCenter,
+  },
+  depth: {
+    background: {
+      elevation: 1,
+      shadowOpacity: 0.1815,
+      shadowRadius: 0.54,
+      shadowOffset: { width: 0.6, height: 0.6 },
+    },
+    foreground: {
+      elevation: 100,
+      shadowOpacity: 0.32999999999999996,
+      shadowRadius: 54,
+      shadowOffset: { width: 60, height: 60 },
+    },
+    middle: {
+      elevation: 50,
+      shadowOpacity: 0.255,
+      shadowRadius: 27,
+      shadowOffset: { width: 30, height: 30 },
+    },
+  },
+  duration: { base: 300, long: 700, short: 100, veryLong: 3000 },
+  measurement: {
+    baseSpace01: 4,
+    baseSpace02: 8,
+    baseSpace03: 12,
+    baseSpace04: 16,
+    baseSpace05: 32,
+    baseSpace06: 48,
+    baseSpace07: 64,
+    baseSpace08: 80,
+    baseSpace09: 96,
+    baseSpace10: 112,
+  },
+  textStyle: {
+    body: {
+      fontWeight: \\"500\\",
+      fontSize: 14,
+      lineHeight: 20,
+      fontFamily: \\"Inter-Medium\\",
+      color: \\"rgb(30, 33, 43)\\",
+      letterSpacing: 10,
+    },
+    bodyWithOpacity: {
+      fontWeight: \\"500\\",
+      fontSize: 14,
+      lineHeight: 20,
+      fontFamily: \\"Inter-Medium\\",
+      color: \\"rgba(30, 33, 43, 0.3)\\",
+      letterSpacing: 10,
+    },
+    code: {
+      fontWeight: \\"500\\",
+      fontSize: 13,
+      lineHeight: 20,
+      fontFamily: \\"FiraCode-Medium\\",
+      color: \\"rgb(255, 142, 5)\\",
+    },
+    list: {
+      fontWeight: \\"400\\",
+      fontSize: 14,
+      lineHeight: 20,
+      fontFamily: \\"Roboto-Regular\\",
+      color: \\"rgb(0, 0, 0)\\",
+    },
+    title: {
+      fontWeight: \\"600\\",
+      fontSize: 32,
+      lineHeight: 40,
+      fontFamily: \\"Inter-SemiBold\\",
+      color: \\"rgb(30, 33, 43)\\",
+    },
+  },
+  border: {
+    borderAccent: {
+      borderWidth: 2,
+      borderStyle: \\"solid\\",
+      borderColor: \\"rgb(102, 80, 239)\\",
+      borderRadius: 16,
+    },
+    borderAccentWithOpacity: {
+      borderWidth: 2,
+      borderStyle: \\"solid\\",
+      borderColor: \\"rgba(102, 80, 239, 0.5)\\",
+      borderRadius: 16,
+    },
+    borderAccentWithoutRadii: {
+      borderWidth: 2,
+      borderStyle: \\"solid\\",
+      borderColor: \\"rgba(102, 80, 239, 0.5)\\",
+    },
+    borderDashed: {
+      borderWidth: 1,
+      borderStyle: \\"dashed\\",
+      borderColor: \\"rgb(30, 33, 43)\\",
+      borderRadius: 16,
+    },
+  },
+  color: {
+    colorsAccent: \\"rgb(87, 124, 254)\\",
+    colorsBlack: \\"rgb(30, 33, 43)\\",
+    colorsGreen: \\"rgb(88, 205, 82)\\",
+    colorsGrey: \\"rgb(204, 213, 225)\\",
+    colorsOrange: \\"rgb(255, 142, 5)\\",
+    colorsRed: \\"rgb(245, 72, 63)\\",
+    colorsWhite: \\"rgb(255, 255, 255)\\",
+  },
+  font: {
+    firaCodeMedium: \\"FiraCode-Medium\\",
+    interMedium: \\"Inter-Medium\\",
+    interSemiBold: \\"Inter-SemiBold\\",
+    robotoRegular: \\"Roboto-Regular\\",
+  },
+  gradient: {
+    gradientsColored: [
+      {
+        angle: 90,
+        colors: [\\"rgb(245, 72, 63)\\", \\"rgb(255, 142, 5)\\"],
+        locations: [0, 1],
+      },
+    ],
+    gradientsDark: [
+      {
+        angle: 90,
+        colors: [\\"rgb(30, 33, 43)\\", \\"rgb(204, 213, 225)\\"],
+        locations: [0, 1],
+      },
+    ],
+    gradientsNeutral: [
+      {
+        angle: 90,
+        colors: [\\"rgb(204, 213, 225)\\", \\"rgb(255, 255, 255)\\"],
+        locations: [0, 1],
+      },
+    ],
+    gradientsSafari: [
+      {
+        angle: 90,
+        colors: [\\"rgb(255, 142, 5)\\", \\"rgb(255, 255, 255)\\"],
+        locations: [0, 1],
+      },
+    ],
+  },
+  opacity: { subtle: 0.5, transparent: 0.1, visible: 0.95 },
+};
+export default theme;
+"
+`;
