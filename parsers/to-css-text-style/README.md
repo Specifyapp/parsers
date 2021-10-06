@@ -10,8 +10,8 @@ Create text styles css classes.
 interface parser {
   name: 'to-css-text-style',
   options?: {
-    include?: Array<'color' | 'font-family' | 'font-size' | 'line-height' | 'letter-spacing' | 'text-align' | 'vertical-align' | 'text-transform' | 'font-variant' | 'text-decoration' | 'text-indent' | 'font' | 'fontSize' | 'lineHeight' | 'letterSpacing' | 'textAlign' | 'textTransform' | 'fontVariant' | 'textDecoration' | 'textIndent'>,
-    exclude?: Array<'color' | 'font-family' | 'font-size' | 'line-height' | 'letter-spacing' | 'text-align' | 'vertical-align' | 'text-transform' | 'font-variant' | 'text-decoration' | 'text-indent' | 'font' | 'fontSize' | 'lineHeight' | 'letterSpacing' | 'textAlign' | 'textTransform' | 'fontVariant' | 'textDecoration' | 'textIndent'>,
+    include?: Array<'color' | 'font-family' | 'font-size' | 'font-weight' | 'line-height' | 'letter-spacing' | 'text-align' | 'vertical-align' | 'text-transform' | 'font-variant' | 'text-decoration' | 'text-indent' | 'font' | 'fontSize' | 'lineHeight' | 'letterSpacing' | 'textAlign' | 'textTransform' | 'fontVariant' | 'textDecoration' | 'textIndent'>,
+    exclude?: Array<'color' | 'font-family' | 'font-size' | 'font-weight'| 'line-height' | 'letter-spacing' | 'text-align' | 'vertical-align' | 'text-transform' | 'font-variant' | 'text-decoration' | 'text-indent' | 'font' | 'fontSize' | 'lineHeight' | 'letterSpacing' | 'textAlign' | 'textTransform' | 'fontVariant' | 'textDecoration' | 'textIndent'>,
     prefix?: string;
     suffix?: string;
     colorFormat?: 'rgb' | 'prgb' | 'hex' | 'hex6' | 'hex3' | 'hex4' | 'hex8' | 'name' | 'hsl' | 'hsv';
@@ -136,6 +136,7 @@ string
 ```css
 .sp-body-text-style {
   font-family: allan, serif;
+  font-weight: 500,
   font-size: 14px;
   line-height: 1;
 }
