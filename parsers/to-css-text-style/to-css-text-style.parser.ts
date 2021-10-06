@@ -31,6 +31,7 @@ const propertiesBase: Array<FilterList> = [
 const propertiesBaseInCss = [
   'color',
   'font-family',
+  'font-weight',
   'font-size',
   'line-height',
   'letter-spacing',
@@ -125,6 +126,9 @@ class ToCssTextStyle {
         let fontFamily = applyTransformStr(this.fontName, this.options?.fontFamilyFormat);
         if (this.options?.genericFamily) fontFamily += `, ${this.options.genericFamily}`;
         this.cssContent.push(`font-family: ${fontFamily}`);
+      }
+      if (this.isIncluded('font-weight')) {
+        this.cssContent.push(`font-weight: ${this.font?.fontWeight}`);
       }
     },
 
