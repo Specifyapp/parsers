@@ -2,9 +2,9 @@
 
 ## Description
 
-filters the tokens by their name using a provided regular expression.
+Filters the tokens by their name using a provided regular expression.
 
-Learn more about how to configure Specify in the API documentation: [https://specifyapp.com/developers/cli](https://specifyapp.com/developers/cli)
+Learn more about how to configure Specify in the API documentation: [https://specifyapp.com/developers/cli](https://specifyapp.com/developers/cli).
 
 ## Interface
 
@@ -27,14 +27,14 @@ interface parser {
 
 | Parameter       | Required | Type              | Default | Description                                                                                                                                                                                                                                            |
 | --------------- | -------- | ----------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `key`           | required | `string`          |         | key path to apply the filter function                                                                                                                                                                                                                  |
-| `regex`         | required | `object` `string` |         | if string: the parameter used for the [constructor of the regex](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp#literal_notation_and_constructor). If your use case need to use flags prefer object notation. |
-| `regex.pattern` | required | `string`          |         | the pattern of the regex used as first argument of the [constructor](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp#literal_notation_and_constructor)                                                         |
-| `regex.flags`   | optional | `string`          |         | the flags to use for regex. In the regex constructor it's the second argument [constructor of the regex](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp#literal_notation_and_constructor)                     |
+| `key`           | required | `string`          |         | Key path to apply the filter function.                                                                                                                                                                                                                  |
+| `regex`         | required | `object` `string` |         | If you need to define flags inside the [constructor of the regex](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp#literal_notation_and_constructor), use the `object` notation. Otherwise use the `string` notation. |
+| `regex.pattern` | required | `string`          |         | The pattern of the regex used as first argument of the [constructor of the regex](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp#literal_notation_and_constructor).                                                         |
+| `regex.flags`   | optional | `string`          |         | The flags to use for regex. In the regex constructor it's the second argument [constructor of the regex](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp#literal_notation_and_constructor).                     |
 
 ### Good to know
 
-Under the hood the regex is build like:
+Under the hood the regex is built as:
 
 `let re = new RegExp('ab+c', 'i') // constructor with string pattern as first argument`
 
@@ -73,7 +73,7 @@ Array<Record<string, any>>
 }
 ```
 
-With this config, we will filter the elements containing the word Background
+With this config, we will filter the elements containing the word "Background".
 
 ### Before/After
 

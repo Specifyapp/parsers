@@ -4,7 +4,7 @@
 
 Transform design tokens in CSS Custom Properties.
 
-Learn more about how to configure Specify in the API documentation: [https://specifyapp.com/developers/cli](https://specifyapp.com/developers/cli)
+Learn more about how to configure Specify in the API documentation: [https://specifyapp.com/developers/cli](https://specifyapp.com/developers/cli).
 
 ## Interface
 

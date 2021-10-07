@@ -2,9 +2,9 @@
 
 ## Description
 
-Loop on all tokens and get only keys given in params.
+Loop on all tokens and only get keys not given in parameters.
 
-Learn more about how to configure Specify in the API documentation: [https://specifyapp.com/developers/cli](https://specifyapp.com/developers/cli)
+Learn more about how to configure Specify in the API documentation: [https://specifyapp.com/developers/cli](https://specifyapp.com/developers/cli).
 
 ## Interface 
 ```ts
