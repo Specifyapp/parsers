@@ -4,7 +4,7 @@
 
 Loop on all tokens and apply camelcase function on the given keys.
 
-Learn more about how to configure Specify in the API documentation: [https://specifyapp.com/developers/cli](https://specifyapp.com/developers/cli)
+Learn more about how to configure Specify in the API documentation: [https://specifyapp.com/developers/cli](https://specifyapp.com/developers/cli).
 
 ## Interface
 

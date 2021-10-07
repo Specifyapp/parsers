@@ -4,7 +4,7 @@
 
 Allows to concatenate two strings.
 
-Learn more about how to configure Specify in the API documentation: [https://specifyapp.com/developers/cli](https://specifyapp.com/developers/cli)
+Learn more about how to configure Specify in the API documentation: [https://specifyapp.com/developers/cli](https://specifyapp.com/developers/cli).
 
 ## Interface 
 

@@ -4,7 +4,7 @@
 
 Create text styles formatted as SCSS mixins.
 
-Learn more about how to configure Specify in the API documentation: [https://specifyapp.com/developers/cli](https://specifyapp.com/developers/cli)
+Learn more about how to configure Specify in the API documentation: [https://specifyapp.com/developers/cli](https://specifyapp.com/developers/cli).
 
 ## Interface
 
