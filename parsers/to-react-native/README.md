@@ -22,7 +22,7 @@ interface parser {
       | 'hsl'
       | 'hsv';
     objectName?: string;
-    assetsFolderPath?: string;
+    assetsFolderPath?: string | { vector?: string; bitmap?: string };
     prettierConfig?: Partial<{
       endOfLine: 'auto' | 'lf' | 'crlf' | 'cr';
       tabWidth: number;
@@ -39,8 +39,10 @@ interface parser {
 | Parameter                    | Required | Type                                                                       | Default     | Description                                                                                                           |
 | ---------------------------- | -------- | -------------------------------------------------------------------------- | ----------- | --------------------------------------------------------------------------------------------------------------------- |
 | `colorFormat`                | optional | `rgb`, `prgb`, `hex`, `hex6`, `hex3`, `hex4`, `hex8`, `name`, `hsl`, `hsv` | `rgb`       | The format of all colors (gradients, borders, textStyles etc.)                                                        |
-| `objectName`                 | optional | `string`                                                                   | `'theme'`   | The name of the JS object containing the theme,                                                                       |
+| `objectName`                 | optional | `string`                                                                   | `'theme'`   | The name of the JS object containing the theme (it will be the default export of the file).                           |
 | `assetsFolderPath`           | optional | `string`                                                                   | `undefined` | The relative location of the folder to import the assets from, if not provided, the assets will be referenced by URL. |
+| `assetsFolderPath.vector`    | optional | `string`                                                                   | `undefined` | The relative location of the folder to import the **vector** assets from.                                             |
+| `assetsFolderPath.bitmap`    | optional | `string`                                                                   | `undefined` | The relative location of the folder to import the **bitmap** assets from.                                             |
 | `prettierConfig.endOfLine`   | optional | `auto, lf, crlf, cr`                                                       | `auto`      | [Prettier documentation](https://prettier.io/docs/en/options.html#end-of-line)                                        |
 | `prettierConfig.tabWidth`    | optional | `number`                                                                   | `2`         | [Prettier documentation](https://prettier.io/docs/en/options.html#tab-width)                                          |
 | `prettierConfig.useTabs`     | optional | `boolean`                                                                  | `false`     | [Prettier documentation](https://prettier.io/docs/en/options.html#tabs)                                               |
@@ -71,7 +73,7 @@ string;
 ```jsonc
 {
   "name": "Import tokens",
-  "path": "src/common/theme/theme.ts",
+  "path": "src/common/theme/theme.js",
   "filter": {
     "types": [
       "bitmap",
@@ -92,7 +94,7 @@ string;
       "name": "to-react-native",
       "options": {
         "colorFormat": "hex",
-        "assetsFolder": "src/common/assets",
+        "assetsFolderPath": "src/common/assets",
         "objectName": "myTheme",
         "prettierConfig": {
           "tabWidth": 4,
@@ -110,6 +112,7 @@ string;
 
 ```js
 [
+  ...
   {
     name: 'activity.svg',
     value: {
@@ -170,6 +173,7 @@ string;
     },
     type: 'color',
   },
+  ...
 ];
 ```
 
@@ -239,15 +243,17 @@ const theme = {
 export default theme;
 ```
 
-### FAQ
+## Guides
 
 <details>
-<summary>How do I download assets & fonts from Specify?</summary>
+<summary>Downloading assets & fonts</summary>
+
 Downloading assets happens in a seperate rule in `.specifyrc.json`.
 
 ```jsonc
+// .specifyrc.json
 {
-  // ...
+  ...
   "rules": [
     {
       "name": "Download Assets",
@@ -260,59 +266,14 @@ Downloading assets happens in a seperate rule in `.specifyrc.json`.
       "name": "Download Fonts",
       "path": "src/common/assets/fonts",
       "filter": {
-        "types": ["fonts"]
+        "types": ["font"]
       }
     },
-    {
-      "name": "Import tokens",
-      "path": "src/common/theme/theme.ts",
-      "filter": {
-        "types": ["vector", "bitmap", "fonts"]
-      },
-      "parsers": [
-        {
-          "name": "to-react-native",
-          "options": {
-            "assetsFolder": "src/common/assets/images"
-          }
-        }
-      ]
-    }
   ]
 }
 ```
 
-Next, run `react-native link` after `specify pull`. All fonts in `assets/fonts` will be linked automatically!
-
-</details>
-<details>
-<summary>How do I render bitmap assets?</summary>
-Simple as that:
-
-```ts
-import { Image } from 'react-native';
-
-const App = () => <Image source={theme.bitmap.myBitmap} />;
-```
-
-</details>
-<details>
-<summary>How do I render vector assets?</summary>
-
-You will need to install and configure [`react-native-svg-transformer`](https://github.com/kristerkari/react-native-svg-transformer). Next you best create a `Vector` component:
-
-```ts
-const Vector = ({ source: SVGElement, ...props }: Props) => <SVGElement {...props} />;
-
-const App = () => <Vector source={theme.vector.myVector} />;
-```
-
-</details>
-
-<details>
-<summary>How do I link fonts automatically?</summary>
-
-Assuming your assets are under `assets/fonts`, Create a `react-native.config.js`:
+Next, create a `react-native.config.js` and fill in the path where the fonts are imported:
 
 ```ts
 module.exports = {
@@ -324,17 +285,45 @@ module.exports = {
 };
 ```
 
-Next, run `react-native link` after `specify pull`. All fonts in `assets/fonts` will be linked automatically!
+Finally, run `react-native link` after `specify pull`. All fonts in `assets/fonts` will be ready to use!
+
+> Linking fonts like this only works for non-Expo apps. Feel free to contribute a section for Expo managed apps 🙏.
+
+</details>
+<details>
+<summary>Rendering bitmaps</summary>
+Simple as that:
+
+```tsx
+import { Image } from 'react-native';
+
+const App = () => <Image source={theme.bitmap.myBitmap} />;
+```
+
+</details>
+<details>
+<summary>Rendering vectors</summary>
+
+You will need to install and configure [`react-native-svg-transformer`](https://github.com/kristerkari/react-native-svg-transformer). If you are using Expo, this is pre-configured for you. The imported SVG's are React Elements, so it is recommended you create a simple `Vector` component:
+
+```tsx
+const Vector = ({ source: SVGElement, ...props }: Props) => <SVGElement {...props} />;
+
+const App = () => <Vector source={theme.vector.myVector} />;
+```
 
 </details>
 
 <details>
-<summary>How do I use gradients?</summary>
 
-It is recommended to use [react-native-linear-gradient](https://github.com/react-native-linear-gradient/react-native-linear-gradient) for this.
-Example usage:
+<summary>Rendering gradients</summary>
 
-```ts
+For rendering gradients we recommend to use [react-native-linear-gradient](https://github.com/react-native-linear-gradient/react-native-linear-gradient).
+Gradients can be rendered as such:
+
+```tsx
+import { LinearGradient } from 'react-native-linear-gradient';
+
 const App = () => (
   <LinearGradient
     colors={theme.gradients.myGradient.colors}
@@ -344,7 +333,5 @@ const App = () => (
   />
 );
 ```
-
-Next, run `react-native link` after `specify pull`. All fonts in `assets/fonts` will be linked automatically!
 
 </details>
