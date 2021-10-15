@@ -1,26 +1,28 @@
-import { FontToken, TextStyleValue } from '../../../types';
+import { TextStyleValue } from '../../../types';
 import { OptionsType } from '../to-scss-map.parser';
 import convertMeasurement from '../../../libs/size-manipulation';
 import { sortObjectByKey } from './index';
 import { ScssMapHandlerType } from '../to-scss-map.type';
 
 function getFontSize(
-  value: TextStyleValue,
+  value: Partial<TextStyleValue>,
   fontFormat?: NonNullable<OptionsType['formatTokens']>['fontSize'],
 ) {
   const fontSize = value.fontSize;
-  if (fontFormat?.unit && value.fontSize.value.unit !== fontFormat?.unit) {
+  if (fontFormat?.unit && value.fontSize?.value.unit !== fontFormat?.unit && value.fontSize) {
     value.fontSize.value = convertMeasurement(value.fontSize.value, fontFormat?.unit);
   }
-  return `${fontSize.value.measure}${fontSize.value.unit}`;
+  if (fontSize) {
+    return `${fontSize.value.measure}${fontSize.value.unit}`;
+  }
 }
 
-function getLetterSpacing(value: TextStyleValue) {
+function getLetterSpacing(value: Partial<TextStyleValue>) {
   const ls = value.letterSpacing;
   if (ls) return `${ls.value.measure}${ls.value.unit}`;
 }
 
-function getLineHeight(value: TextStyleValue) {
+function getLineHeight(value: Partial<TextStyleValue>) {
   const lh = value.lineHeight;
   if (lh) return `${lh.value.measure}${lh.value.unit}`;
 }
@@ -28,13 +30,19 @@ function getLineHeight(value: TextStyleValue) {
 const handler: ScssMapHandlerType = {
   name: 'textStyle',
   run: (value, options: OptionsType) => {
-    const textStyle = value as TextStyleValue;
+    const textStyle = value as Partial<TextStyleValue>;
     const result: Record<string, string | number> = {};
-    result['font-family'] = `"${
-      (textStyle.font as FontToken).name ?? textStyle.font.value.fontPostScriptName
-    }"`;
-    result['font-size'] = getFontSize(textStyle, options?.formatTokens?.fontSize);
-    result['font-weight'] = textStyle.font.value.fontWeight;
+    if (textStyle.font && ('name' in textStyle.font || textStyle.font?.value?.fontPostScriptName)) {
+      result['font-family'] = `"${
+        'name' in textStyle.font ? textStyle.font.name : textStyle.font.value.fontPostScriptName
+      }"`;
+    }
+    if (textStyle.font?.value?.fontWeight) {
+      result['font-weight'] = textStyle.font.value.fontWeight;
+    }
+
+    const fontSize = getFontSize(textStyle, options?.formatTokens?.fontSize);
+    if (fontSize) result['font-size'] = fontSize;
 
     const letterSpacing = getLetterSpacing(textStyle);
     if (letterSpacing) result['letter-spacing'] = letterSpacing;

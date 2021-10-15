@@ -121,7 +121,7 @@ class ToCssTextStyle {
 
   trigger = {
     font: () => {
-      if (this.isIncluded('font-family')) {
+      if (this.isIncluded('font-family') && this.fontName) {
         let fontFamily = applyTransformStr(this.fontName, this.options?.fontFamilyFormat);
         if (this.options?.genericFamily) fontFamily += `, ${this.options.genericFamily}`;
         this.cssContent.push(`font-family: ${fontFamily}`);
@@ -264,7 +264,7 @@ export default async function (
   inputData: InputDataType,
   options: OptionsType | undefined,
   { _ }: Pick<LibsType, '_'>,
-): Promise<OutputDataType | Error> {
+): Promise<OutputDataType> {
   try {
     const textStylesProperties = getTextStyleProperties(options);
     const cssProperties = getCssProperties(options);

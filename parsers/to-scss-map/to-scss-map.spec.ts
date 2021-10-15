@@ -131,7 +131,7 @@ describe('to-scss-map', () => {
 
       const expectedMapping: Record<string, string> = {
         'text-style':
-          '.test { font-family: "Inter-SemiBold"; font-size: 32px; font-weight: 600; line-height: 40px; }',
+          '.test { font-family: "Inter-SemiBold"; font-weight: 600; font-size: 32px; line-height: 40px; }',
       };
 
       const ScssMapsResponse = await toScssMap(
@@ -148,7 +148,6 @@ describe('to-scss-map', () => {
           const functionExecution = testFunctionMapping[type] ?? '';
           const data = `${fileGenerated.value.content}${os.EOL}${functionExecution}`;
           const content = await render({ data });
-
           if (expectedMapping[type]) {
             expect(content.css.toString().includes(expectedMapping[type])).toBeTruthy();
           }
@@ -218,7 +217,7 @@ describe('to-scss-map', () => {
 
       const expectedError: Record<string, string> = {
         'text-style':
-          '(font-family: "Inter-Medium", font-size: 14px, font-weight: 500, letter-spacing: 10px, line-height: 20px) isn\'t a valid CSS value',
+          '(font-family: "Inter-Medium", font-weight: 500, font-size: 14px, letter-spacing: 10px, line-height: 20px) isn\'t a valid CSS value',
       };
 
       const scssMapsResponse = await toScssMap(
@@ -253,7 +252,7 @@ describe('to-scss-map', () => {
 
       const expectedError: Record<string, string> = {
         'text-style':
-          'Non usable value. Got `(body: (font-family: "Inter-Medium", font-size: 14px, font-weight: 500, letter-spacing: 10px, line-height: 20px), bodyWithOpacity: (font-family: "Inter-Medium", font-size: 14px, font-weight: 500, letter-spacing: 10px, line-height: 20px), code: (font-family: "FiraCode-Medium", font-size: 13px, font-weight: 500, line-height: 20px), list: (font-family: "Roboto-Regular", font-size: 14px, font-weight: 400, line-height: 20px), title: (font-family: "Inter-SemiBold", font-size: 32px, font-weight: 600, line-height: 40px))',
+          'Non usable value. Got `(body: (font-family: "Inter-Medium", font-weight: 500, font-size: 14px, letter-spacing: 10px, line-height: 20px), bodyWithOpacity: (font-family: "Inter-Medium", font-weight: 500, font-size: 14px, letter-spacing: 10px, line-height: 20px), code: (font-family: "FiraCode-Medium", font-weight: 500, font-size: 13px, line-height: 20px), list: (font-family: "Roboto-Regular", font-weight: 400, font-size: 14px, line-height: 20px), title: (font-family: "Inter-SemiBold", font-weight: 600, font-size: 32px, line-height: 40px))',
       };
 
       const scssMapsResponse = await toScssMap(
@@ -323,7 +322,7 @@ describe('to-scss-map', () => {
 
       const expectedMapping: Record<string, string> = {
         typography:
-          '.test { font-family: "Inter-SemiBold"; font-size: 32px; font-weight: 600; line-height: 40px; }',
+          '.test { font-family: "Inter-SemiBold"; font-weight: 600; font-size: 32px; line-height: 40px; }',
       };
 
       const expectedFileName: Record<string, string> = {
@@ -479,7 +478,7 @@ describe('to-scss-map', () => {
 
       const expectedMapping: Record<string, string> = {
         typography:
-          '.test { font-family: "Inter-SemiBold"; font-size: 32px; font-weight: 600; line-height: 40px; }',
+          '.test { font-family: "Inter-SemiBold"; font-weight: 600; font-size: 32px; line-height: 40px; }',
       };
 
       const ScssMapsResponse = await toScssMap(

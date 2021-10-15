@@ -9,7 +9,6 @@ describe('to-css-text-style', () => {
       undefined,
       libs,
     );
-    if (result instanceof Error) return fail(result);
     expect(typeof result).toEqual('string');
     expect(
       result.includes(
@@ -39,7 +38,6 @@ describe('to-css-text-style', () => {
       },
       libs,
     );
-    if (result instanceof Error) return fail(result);
     expect(result.match(/{\n  font-family: (.*?);\n}/g)?.length).toEqual(input.length);
     return;
   });
@@ -54,7 +52,6 @@ describe('to-css-text-style', () => {
       },
       libs,
     );
-    if (result instanceof Error) return fail(result);
     expect(result.match(/{\n  font-family: (.*?);\n}/g)?.length).toEqual(input.length);
     return;
   });
@@ -69,7 +66,6 @@ describe('to-css-text-style', () => {
       },
       libs,
     );
-    if (result instanceof Error) return fail(result);
     expect(result.includes('color')).toBeFalsy();
     return;
   });
@@ -91,7 +87,6 @@ describe('to-css-text-style', () => {
       },
       libs,
     );
-    if (result instanceof Error) return fail(result);
     expect(
       result.includes(
         '@mixin utilsBodyTextStyle {\n' +
