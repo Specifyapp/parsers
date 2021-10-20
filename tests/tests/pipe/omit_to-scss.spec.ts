@@ -25,9 +25,11 @@ describe('Pipe - omit -> to-scss-map', () => {
         undefined,
         libs as LibsType,
       );
+
       result.forEach(file => {
         expect(typeof file.value.content).toEqual('string');
         expect(file.value.content?.includes('font-family')).toBeFalsy();
+        expect(file.value.content?.includes('font-weight')).toBeTruthy();
       });
       return;
     } catch (err) {
@@ -50,6 +52,7 @@ describe('Pipe - omit -> to-scss-map', () => {
       );
       expect(typeof result).toEqual('string');
       expect(result.includes('font-family')).toBeFalsy();
+      expect(result.includes('font-weight')).toBeTruthy();
       return;
     } catch (err) {
       throw err;
