@@ -12,8 +12,8 @@ Learn more about how to configure Specify in the API documentation: [https://spe
 interface parser {
   name: 'svgo',
   options?: {
-    // https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/svgo/index.d.ts#L348
-    svgo?:  SVGO.Options 
+    // https://github.com/DefinitelyTyped/DefinitelyTyped/blob/3fb92644d8dc475a52147c6315704ece24335469/types/svgo/index.d.ts#L752
+    svgo?: OptimizeOptions
   }
 }
 ```
@@ -21,7 +21,7 @@ interface parser {
 ### Options
 | Parameter | Required  | Type           | Default                                                      | Description                                       |
 | --------- | --------- | -------------- | ------------------------------------------------------------ | ------------------------------------------------- |
-| `svgo`    | optional  | `SVGO.Options` | [Default config](https://github.com/svg/svgo#what-it-can-do) | Inherits from [svgo](https://github.com/svg/svgo) |
+| `svgo`    | optional  | `OptimizeOptions` | `{ plugins: [{name: 'preset-default'}]}` | Inherits from [svgo](https://github.com/svg/svgo) |
 
 ## Types
 
