@@ -31,6 +31,7 @@ const propertiesBase: Array<FilterList> = [
 const propertiesBaseInCss = [
   'color',
   'font-family',
+  'font-weight',
   'font-size',
   'line-height',
   'letter-spacing',
@@ -126,6 +127,9 @@ class ToCssTextStyle {
         if (this.options?.genericFamily) fontFamily += `, ${this.options.genericFamily}`;
         this.cssContent.push(`font-family: ${fontFamily}`);
       }
+      if (this.isIncluded('font-weight') && this.font?.fontWeight) {
+        this.cssContent.push(`font-weight: ${this.font.fontWeight}`);
+      }
     },
 
     fontSize: () => {
@@ -183,8 +187,12 @@ class ToCssTextStyle {
       }
     },
     textDecoration: () => {
-      if (this.isIncluded('text-decoration')) {
-        this.cssContent.push(`text-decoration: ${this.textDecoration}`);
+      if (
+        this.isIncluded('text-decoration') &&
+        this.textDecoration &&
+        this.textDecoration.length > 0
+      ) {
+        this.cssContent.push(`text-decoration: ${this.textDecoration.join(' ')}`);
       }
     },
     textIndent: () => {

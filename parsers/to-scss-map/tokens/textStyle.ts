@@ -1,8 +1,8 @@
-import { TextStyleValue } from '../../../types';
+import { PartialRecord, TextStyleValue } from '../../../types';
 import { OptionsType } from '../to-scss-map.parser';
 import convertMeasurement from '../../../libs/size-manipulation';
 import { sortObjectByKey } from './index';
-import { ScssMapHandlerType } from '../to-scss-map.type';
+import { ScssMapHandlerType, TextStyleProperties } from '../to-scss-map.type';
 
 function getFontSize(
   value: Partial<TextStyleValue>,
@@ -31,7 +31,7 @@ const handler: ScssMapHandlerType = {
   name: 'textStyle',
   run: (value, options: OptionsType) => {
     const textStyle = value as Partial<TextStyleValue>;
-    const result: Record<string, string | number> = {};
+    const result: PartialRecord<TextStyleProperties, string | number> = {};
     if (textStyle.font && ('name' in textStyle.font || textStyle.font?.value?.fontPostScriptName)) {
       result['font-family'] = `"${
         'name' in textStyle.font ? textStyle.font.name : textStyle.font.value.fontPostScriptName
@@ -49,6 +49,23 @@ const handler: ScssMapHandlerType = {
 
     const lineHeight = getLineHeight(textStyle);
     if (lineHeight) result['line-height'] = lineHeight;
+
+    if (textStyle.textTransform) result['text-transform'] = textStyle.textTransform;
+
+    if (textStyle.textAlign?.horizontal) result['text-align'] = textStyle.textAlign?.horizontal;
+
+    if (textStyle.textAlign?.vertical) result['vertical-align'] = textStyle.textAlign?.vertical;
+
+    if (textStyle.textDecoration && textStyle.textDecoration.length > 0) {
+      result['text-decoration'] = textStyle.textDecoration.join(' ');
+    }
+
+    if (textStyle.textIndent) {
+      result[
+        'text-indent'
+      ] = `${textStyle.textIndent.value.measure}${textStyle.textIndent.value.unit}`;
+    }
+
     return result;
   },
   sort(list: Record<string, any>) {

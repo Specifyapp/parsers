@@ -13,6 +13,20 @@ export type ColorsFormat =
   | 'hsl'
   | 'hsv';
 
+export type TextStyleProperties =
+  | 'color'
+  | 'font-family'
+  | 'font-weight'
+  | 'font-size'
+  | 'line-height'
+  | 'letter-spacing'
+  | 'text-align'
+  | 'vertical-align'
+  | 'text-transform'
+  | 'font-variant'
+  | 'text-decoration'
+  | 'text-indent';
+
 export type ToScssMapTokenType = Exclude<TokensType, 'vector' | 'bitmap' | 'font'> | 'borderRadius';
 export type ScssMapHandlerType = {
   run: (

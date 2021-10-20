@@ -15,6 +15,7 @@ describe('to-css-text-style', () => {
         '@mixin title {\n' +
           '  color: rgb(30, 33, 43);\n' +
           '  font-family: Inter-SemiBold;\n' +
+          '  font-weight: 600;\n' +
           '  font-size: 32px;\n' +
           '  line-height: 40px;\n' +
           '  text-align: left;\n' +
@@ -52,7 +53,9 @@ describe('to-css-text-style', () => {
       },
       libs,
     );
-    expect(result.match(/{\n  font-family: (.*?);\n}/g)?.length).toEqual(input.length);
+    expect(result.match(/{\n  font-family: (.*?);\n  font-weight: (.*?)\n}/gm)?.length).toEqual(
+      input.length,
+    );
     return;
   });
   it('Get tokens - execute parser - with options exclude textStyle properties', async () => {
@@ -92,6 +95,7 @@ describe('to-css-text-style', () => {
         '@mixin utilsBodyTextStyle {\n' +
           '  color: #1e212b;\n' +
           '  font-family: inter-medium, serif;\n' +
+          '  font-weight: 500;\n' +
           '  font-size: 14px;\n' +
           '  line-height: 1.43;\n' +
           '  letter-spacing: 10px;\n' +
@@ -105,6 +109,7 @@ describe('to-css-text-style', () => {
         '@mixin utilsTitleTextStyle {\n' +
           '  color: #1e212b;\n' +
           '  font-family: inter-semi-bold, serif;\n' +
+          '  font-weight: 600;\n' +
           '  font-size: 32px;\n' +
           '  line-height: 1.25;\n' +
           '  text-align: left;\n' +
