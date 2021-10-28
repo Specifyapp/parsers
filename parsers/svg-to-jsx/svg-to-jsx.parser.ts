@@ -63,38 +63,31 @@ export default async function (
       tokens
         // This parser only works on svg, not pdf
         .filter(({ value, type }) => type === 'vector' && value.format === 'svg')
-        .map(
-          async (token): Promise<OutputDataType[0]> => {
-            if (token.value.url && !token.value.content) {
-              token.value.content = await SpServices.assets.getSource<string>(
-                token.value.url!,
-                'text',
-              );
-            }
-            const className = classNameTemplate?.render(token);
-            const variableName = _[options?.variableFormat || 'pascalCase'](token.name);
-
-            token.value.content = prettier.format(
-              (options?.prepend ? `${options?.prepend}${os.EOL}${os.EOL}` : '') +
-                template.render({ token, variableName, options, className }),
-              {
-                parser: 'babel',
-                ...(options?.formatConfig
-                  ? _.pick(options.formatConfig, [
-                      'endOfLine',
-                      'tabWidth',
-                      'useTabs',
-                      'singleQuote',
-                    ])
-                  : {}),
-              },
+        .map(async (token): Promise<OutputDataType[0]> => {
+          if (token.value.url && !token.value.content) {
+            token.value.content = await SpServices.assets.getSource<string>(
+              token.value.url!,
+              'text',
             );
-            token.value.fileName = token.value.fileName
-              ? token.value.fileName
-              : `${_.camelCase(token.name)}.jsx`;
-            return token as OutputDataType[0];
-          },
-        ),
+          }
+          const className = classNameTemplate?.render(token);
+          const variableName = _[options?.variableFormat || 'pascalCase'](token.name);
+
+          token.value.content = prettier.format(
+            (options?.prepend ? `${options?.prepend}${os.EOL}${os.EOL}` : '') +
+              template.render({ token, variableName, options, className }),
+            {
+              parser: 'babel',
+              ...(options?.formatConfig
+                ? _.pick(options.formatConfig, ['endOfLine', 'tabWidth', 'useTabs', 'singleQuote'])
+                : {}),
+            },
+          );
+          token.value.fileName = token.value.fileName
+            ? token.value.fileName
+            : `${_.camelCase(token.name)}.jsx`;
+          return { ...token, value: _.omit(token.value, ['url']) } as OutputDataType[0];
+        }),
     );
   } catch (err) {
     throw err;
