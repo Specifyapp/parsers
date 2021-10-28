@@ -62,6 +62,7 @@ describe('Svg to jsx', () => {
     expect(Array.isArray(result)).toEqual(true);
     result.forEach(file => {
       expect(typeof file.value.content).toEqual('string');
+      expect(file.value.url).toEqual(undefined);
       expect(file.value.fileName.endsWith('.jsx')).toEqual(true);
       const reg = new RegExp(
         `import React from "react";([\\s\\S]*)export const ([a-zA-Z0-9])+ = \\(\\) => \\(\\n  <div className="icon-[\\s\\S]* icon">([\\s\\S]*)<svg([\\s\\S]*)>([\\s\\S]*)<\\/svg>\\n  <\\/div>\\n\\);`,
