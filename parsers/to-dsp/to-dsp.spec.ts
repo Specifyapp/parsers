@@ -30,7 +30,7 @@ describe('To DSP', () => {
     const tokenSeeds = seeds().tokens;
     const result = await toDsp(tokenSeeds, { settings } as OptionsType, libs as LibsType);
     expect(Array.isArray(result)).toBe(true);
-    expect(result.length).toBe(15);
+    expect(result.length).toBe(17);
     expect(result.some(entity => entity.name === 'dsp.json')).toBe(true);
     expect(result.some(entity => entity.name === 'data/tokens.json')).toBe(true);
     expect(result.some(entity => entity.name === 'data/components.json')).toBe(true);
@@ -148,7 +148,7 @@ describe('To DSP', () => {
       libs as LibsType,
     );
     expect(Array.isArray(result)).toBe(true);
-    expect(result.length).toBe(15);
+    expect(result.length).toBe(17);
     expect(result.some(entity => entity.name === 'dsp.json')).toBe(true);
     expect(result.some(entity => entity.name === 'data/tokens.json')).toBe(true);
     expect(result.some(entity => entity.name === 'data/components.json')).toBe(true);
@@ -189,7 +189,7 @@ describe('To DSP', () => {
       libs as LibsType,
     );
     expect(Array.isArray(result)).toBe(true);
-    expect(result.length).toBe(15);
+    expect(result.length).toBe(17);
     expect(result.some(entity => entity.name === 'dsp.json')).toBe(true);
     expect(result.some(entity => entity.name === 'data/tokens.json')).toBe(true);
     expect(result.some(entity => entity.name === 'data/components.json')).toBe(true);
@@ -230,7 +230,7 @@ describe('To DSP', () => {
       libs as LibsType,
     );
     expect(Array.isArray(result)).toBe(true);
-    expect(result.length).toBe(15);
+    expect(result.length).toBe(17);
     expect(result.some(entity => entity.name === 'dsp.json')).toBe(true);
     expect(result.some(entity => entity.name === 'data/tokens.json')).toBe(true);
     expect(result.some(entity => entity.name === 'data/components.json')).toBe(true);
@@ -271,7 +271,7 @@ describe('To DSP', () => {
       libs as LibsType,
     );
     expect(Array.isArray(result)).toBe(true);
-    expect(result.length).toBe(15);
+    expect(result.length).toBe(17);
     expect(result.some(entity => entity.name === 'dsp.json')).toBe(true);
     expect(result.some(entity => entity.name === 'data/tokens.json')).toBe(true);
     expect(result.some(entity => entity.name === 'data/components.json')).toBe(true);
@@ -355,7 +355,7 @@ describe('To DSP', () => {
       libs as LibsType,
     );
     expect(Array.isArray(result)).toBe(true);
-    expect(result.length).toBe(15);
+    expect(result.length).toBe(17);
     expect(result.some(entity => entity.name === 'dsp.json')).toBe(true);
     expect(result.some(entity => entity.name === 'data/tokens.json')).toBe(true);
     expect(result.some(entity => entity.name === 'data/components.json')).toBe(true);

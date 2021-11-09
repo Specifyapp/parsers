@@ -26,7 +26,7 @@ describe('Filter', () => {
     );
     if (result instanceof Error) return fail(result);
     expect(Array.isArray(result)).toEqual(true);
-    expect(result.length).toEqual(6);
+    expect(result.length).toEqual(8);
     return;
   });
 

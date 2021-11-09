@@ -13,7 +13,7 @@ describe('Name assets files by pattern', () => {
     );
     if (result instanceof Error) return fail(result);
     vectors.forEach(vector => {
-      expect(vector.value.fileName).toEqual(`${vector.name}-vector.svg`);
+      expect(vector.value.fileName).toEqual(`${vector.name}-vector.${vector.value.format}`);
     });
     return;
   });

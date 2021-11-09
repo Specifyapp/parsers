@@ -146,7 +146,6 @@ describe('Optimize vector', () => {
 
 
     it('should send error', async () => {
-      const tokens = seeds().tokens;
       try {
         // @ts-ignore
         await optimizeVector('Wrong data (should be catch by ts in real life)', undefined, libs as LibsType,
@@ -258,5 +257,14 @@ describe('Optimize vector', () => {
       );
       return;
     });
+  })
+  describe('Handle no svg vector', () => {
+    it('PDF vector must output an url', async () => {
+      const tokens = seeds().tokens.filter((token) => token.type === 'vector');
+      const result = await optimizeVector(tokens as InputDataType, undefined, libs as LibsType);
+      if (result instanceof Error) return fail(result);
+      expect(result.find(({ name }) => name === 'Vector-pdf')).toMatchObject(
+        {"value": {"url": "https://s3-us-west-2.amazonaws.com/figma-alpha-api/img/68e3/1501/3e419d6badc279bb9a8939070cb5737b"}})
+    })
   })
 });

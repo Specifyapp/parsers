@@ -36,6 +36,42 @@
     "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
   },
   {
+    "id": "eac56c8b-1bb9-456a-b77e-a43220a24e01",
+    "createdAt": "2021-11-09T09:38:28.483Z",
+    "updatedAt": "2021-11-09T09:38:28.483Z",
+    "name": "Vector-pdf",
+    "value": {
+      "url": "https://s3-us-west-2.amazonaws.com/figma-alpha-api/img/68e3/1501/3e419d6badc279bb9a8939070cb5737b",
+      "format": "pdf"
+    },
+    "meta": {
+      "format": "pdf",
+      "dimension": 1
+    },
+    "type": "vector",
+    "originId": "2385:0-pdf-1",
+    "sourceId": "ec68305e-68c7-4c0b-8f6b-6687364f6bad",
+    "repositoryId": "a5c9e7e8-dce1-4990-aa4a-afc20cf9e047"
+  },
+  {
+    "id": "7802a1cd-c924-4b19-92fa-687135184f49",
+    "createdAt": "2021-11-09T09:38:28.483Z",
+    "updatedAt": "2021-11-09T09:38:28.483Z",
+    "name": "alert-circle/circle",
+    "value": {
+      "url": "https://s3-us-west-2.amazonaws.com/figma-alpha-api/img/0f69/9e5d/022020187f8e48e5d2ef58e4daa906a7",
+      "format": "pdf"
+    },
+    "meta": {
+      "format": "pdf",
+      "dimension": 1
+    },
+    "type": "vector",
+    "originId": "37:2-pdf-1",
+    "sourceId": "ec68305e-68c7-4c0b-8f6b-6687364f6bad",
+    "repositoryId": "a5c9e7e8-dce1-4990-aa4a-afc20cf9e047"
+  },
+  {
     "id": "927911b9-99b6-42de-89d6-2984689b6233",
     "createdAt": "2021-04-02T09:54:57.048Z",
     "updatedAt": "2021-04-02T09:54:57.048Z",

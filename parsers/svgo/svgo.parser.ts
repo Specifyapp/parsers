@@ -92,7 +92,7 @@ export default async function (
 
     return (await Promise.all(
       tokens.map(async token => {
-        if (token.type === 'vector') {
+        if (token.type === 'vector' && token.value.format === 'svg') {
           const baseString = await SpServices.assets.getSource<string>(token.value.url!, 'text');
           try {
             token.value.content = SVGO.optimize(baseString, options?.svgo as OptimizeOptions).data;
