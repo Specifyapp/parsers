@@ -3,6 +3,10 @@ import Template from '../../libs/template';
 import prettier from 'prettier';
 import { IToken, TokensType } from '../../types';
 import * as os from 'os';
+import { create } from 'xmlbuilder2';
+import { parseStringPromise } from 'xml2js';
+import { xml2jsElementType } from './svg-to-jsx.type';
+import { ExpandObject } from 'xmlbuilder2/lib/interfaces';
 
 export type InputDataType = Array<
   IToken & {
@@ -44,7 +48,25 @@ export default async function (
   tokens: InputDataType,
   options: OptionsType,
   { _, SpServices }: Pick<LibsType, '_' | 'SpServices'>,
-): Promise<OutputDataType> {
+): Promise<OutputDataType|Error> {
+  const formatObject4XMLBuilder = (xpath: string, _: never, element: xml2jsElementType) => {
+    const tag = element['#name'];
+    let value = element._;
+    if (!value && element.$$) {
+      value = { '#': element.$$ };
+    }
+    if (element.$) {
+      value = { ...value, ...element.$ };
+    }
+    return {
+      [tag]: value,
+    };
+  }
+
+  function convertObjectToXMLString(xmlObject: ExpandObject) {
+    return create(xmlObject)
+      .end({ headless: true, prettyPrint: false, indent: '\t', newline: '\n' });
+  }
   try {
     const template = new Template(templateExportDefaultModel);
     const classNameTemplate = options?.wrapper?.className
@@ -72,6 +94,28 @@ export default async function (
           }
           const className = classNameTemplate?.render(token);
           const variableName = _[options?.variableFormat || 'pascalCase'](token.name);
+
+          const xmlObject = await parseStringPromise(
+            token.value.content,
+            {
+              explicitArray: true,
+              explicitChildren: true,
+              explicitRoot: false,
+              mergeAttrs: false,
+              normalize: true,
+              normalizeTags: false,
+              preserveChildrenOrder: true,
+              attrNameProcessors: [(attrName: string) => {
+                attrName = attrName.toLowerCase();
+                return (attrName.startsWith('data-') || attrName.startsWith('aria-'))
+                  ? `@${attrName}`
+                  : '@' + _.camelCase(attrName)
+              }],
+              validator: formatObject4XMLBuilder
+            }
+          )
+
+          token.value.content = convertObjectToXMLString(xmlObject);
 
           token.value.content = prettier.format(
             (options?.prepend ? `${options?.prepend}${os.EOL}${os.EOL}` : '') +
