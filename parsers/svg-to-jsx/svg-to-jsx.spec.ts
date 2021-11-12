@@ -72,4 +72,14 @@ describe('Svg to jsx', () => {
     });
     return;
   });
+  it('Validate camelCase on attribute', async () => {
+    const tokens = seeds().tokens.filter(({ name }) => name === 'activity');
+    const result = await svgToJsx(tokens as InputDataType, undefined, libs as LibsType);
+    if (result instanceof Error) return fail(result);
+    expect(result).toHaveLength(1);
+    expect(result[0].value.content).toMatch(/strokeWidth/)
+    expect(result[0].value.content).toMatch(/strokeLinecap/)
+    expect(result[0].value.content).toMatch(/strokeLinejoin/)
+    return;
+  });
 });

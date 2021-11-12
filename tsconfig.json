@@ -10,6 +10,10 @@
     "inlineSourceMap": false,
     "inlineSources": false,
     "resolveJsonModule": true,
-    "useUnknownInCatchVariables": false
+    "useUnknownInCatchVariables": false,
+    "lib": [
+      "es2020",
+      "dom"
+    ],
   }
 }

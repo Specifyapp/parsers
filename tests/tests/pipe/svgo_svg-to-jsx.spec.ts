@@ -22,6 +22,7 @@ describe('Pipe - svgo -> svg-to-jsx', () => {
         undefined,
         libs as LibsType,
       );
+      if (result instanceof Error) return fail(result);
       result.forEach(file => {
         expect(typeof file.value.content).toEqual('string');
         expect(file.value.fileName.endsWith('.jsx')).toEqual(true);
