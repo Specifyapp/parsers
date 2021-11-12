@@ -310,6 +310,31 @@ describe('To Style Dictionary', () => {
     });
   });
 
+  it('Should be able to extract without splitBy', async () => {
+    const result = await toStyleDictionary(
+      seeds().tokens.filter(({ type }) => type === 'color') as Array<Token>,
+      {},
+      libs,
+    );
+
+    console.log(result);
+
+    expect(Array.isArray(result)).toEqual(true);
+    expect(result.length).toEqual(1); // Color token only creates base
+    const file = result[0];
+    expect(typeof file.name).toEqual('string');
+    expect(file.name).toEqual('color/base.json');
+    expect(typeof file.value.content).toEqual('string');
+    const content = JSON.parse(file.value.content!) as Record<string, any>;
+    expect(Object.keys(content)[0]).toEqual('color');
+    expect(Object.keys(content.color)[0]).toEqual('base');
+    expect(content.color.base['colorsAccent']).toEqual({ value: expect.any(String) });
+    expect(content.color.base['colorsBlack']).toEqual({ value: expect.any(String) });
+    expect(content.color.base['colorsGreen']).toEqual({ value: expect.any(String) });
+    expect(content.color.base['colorsGrey']).toEqual({ value: expect.any(String) });
+    expect(content.color.base['colorsOrange']).toEqual({ value: expect.any(String) });
+  });
+
   describe('Should generate simple token per type', () => {
     it('Color', () => {
       seeds()
