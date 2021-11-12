@@ -15,8 +15,8 @@ export class Bitmap extends BitmapToken {
       this.keys,
       {
         value:
-          options?.assetsBaseDirectory?.images ??
-          '' + `${this.name}@${this.value.dimension ?? 1}.${this.value.format}`,
+          (options?.assetsBaseDirectory?.images ?? '') +
+          `${this.name}@${this.value.dimension ?? 1}.${this.value.format}`,
       },
       Object,
     );

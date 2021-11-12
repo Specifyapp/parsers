@@ -14,7 +14,7 @@ export class Vector extends VectorToken {
       {},
       this.keys,
       {
-        value: options?.assetsBaseDirectory?.icons ?? '' + `${this.name}.${this.value.format}`,
+        value: (options?.assetsBaseDirectory?.icons ?? '') + `${this.name}.${this.value.format}`,
       },
       Object,
     );
