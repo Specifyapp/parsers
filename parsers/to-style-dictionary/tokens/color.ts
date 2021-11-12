@@ -1,6 +1,6 @@
 import tinycolor from 'tinycolor2';
 import { ColorToken } from '../../../types';
-import { OptionsType } from '../to-style-dictionary';
+import { OptionsType } from '../to-style-dictionary.parser';
 import { BaseStyleDictionaryTokensFormat } from '../to-style-dictionary.type';
 import * as _ from 'lodash';
 

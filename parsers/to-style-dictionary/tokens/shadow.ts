@@ -1,7 +1,7 @@
 import { ShadowToken } from '../../../types';
 import tinycolor from 'tinycolor2';
 import { BaseStyleDictionaryTokensFormat } from '../to-style-dictionary.type';
-import { OptionsType } from '../to-style-dictionary';
+import { OptionsType } from '../to-style-dictionary.parser';
 import * as _ from 'lodash';
 
 export class Shadow extends ShadowToken {

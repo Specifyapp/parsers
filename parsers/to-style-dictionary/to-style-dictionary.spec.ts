@@ -1,4 +1,4 @@
-import toStyleDictionary from './to-style-dictionary';
+import toStyleDictionary from './to-style-dictionary.parser';
 import seeds from '../../tests/seeds';
 import libs from '../global-libs';
 import { Token } from '../../types';

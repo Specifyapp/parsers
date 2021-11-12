@@ -1,6 +1,6 @@
 import * as _ from 'lodash';
 import { BitmapToken } from '../../../types';
-import { OptionsType } from '../to-style-dictionary';
+import { OptionsType } from '../to-style-dictionary.parser';
 import { BaseStyleDictionaryTokensFormat } from '../to-style-dictionary.type';
 
 export class Bitmap extends BitmapToken {

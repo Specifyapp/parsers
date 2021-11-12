@@ -1,4 +1,3 @@
-import * as _ from 'lodash';
 import prettier from 'prettier';
 import { LibsType } from '../global-libs';
 import { ColorsFormat, DownloadableFile, Token, TokensType } from '../../types';

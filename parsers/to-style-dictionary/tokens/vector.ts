@@ -1,6 +1,6 @@
 import * as _ from 'lodash';
 import { VectorToken } from '../../../types';
-import { OptionsType } from '../to-style-dictionary';
+import { OptionsType } from '../to-style-dictionary.parser';
 import { BaseStyleDictionaryTokensFormat } from '../to-style-dictionary.type';
 
 export class Vector extends VectorToken {

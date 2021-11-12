@@ -2,7 +2,7 @@ import { TextStyleToken } from '../../../types';
 import convertMeasurement from '../../../libs/size-manipulation';
 import tinycolor from 'tinycolor2';
 import { BaseStyleDictionaryTokensFormat } from '../to-style-dictionary.type';
-import { FormatTokenType, OptionsType } from '../to-style-dictionary';
+import { OptionsType, FormatTokenType } from '../to-style-dictionary.parser';
 import * as _ from 'lodash';
 
 export class TextStyle extends TextStyleToken {

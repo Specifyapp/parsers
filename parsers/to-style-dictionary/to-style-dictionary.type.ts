@@ -1,5 +1,5 @@
 import Token from '../../types/tokens/Token';
-import { OptionsType } from './to-style-dictionary';
+import { OptionsType } from './to-style-dictionary.parser';
 
 type BasicObject = Record<string, string>;
 type RecursiveBasicObject = Record<string, BasicObject | string>;
