@@ -18,7 +18,7 @@ export class Font extends FontToken {
             this.keys,
             {
               [format]: {
-                value: options?.assetsBaseDirectory?.fonts ?? '' + `${this.name}.${format}`,
+                value: (options?.assetsBaseDirectory?.fonts ?? '') + `${this.name}.${format}`,
               },
             },
             Object,
