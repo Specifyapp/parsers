@@ -58,7 +58,9 @@ export default async function (
         (acc, designDecision) => {
           const tokenHandler = getClassByType(type as TokensType);
           if (!tokenHandler) return {};
-          const keys = options?.splitBy ? designDecision.name!.split(options.splitBy) : [];
+          const keys = options?.splitBy
+            ? designDecision.name!.split(options.splitBy)
+            : [designDecision.name];
           const instance = new tokenHandler(
             designDecision,
             keys.map(k => transformNameFn(k)),
