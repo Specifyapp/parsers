@@ -2,7 +2,7 @@
 
 ## Description
 
-Format design tokens to create a theme compatible with the [Style Dictionary configuration](https://amzn.github.io/style-dictionary/#/).
+Generates [Style Dictionary](https://amzn.github.io/style-dictionary/#/) configuration files for all design tokens coming from Specify.
 
 ## Interface
 
