@@ -15,7 +15,7 @@ export default async function (
   tokens: InputDataType,
   options: OptionsType,
   { _ }: Pick<LibsType, '_'>,
-): Promise<OutputDataType> {
+): Promise<OutputDataType|Error> {
   try {
     const reg =
       typeof options.regex === 'object'

@@ -19,14 +19,15 @@ describe('Filter', () => {
   });
 
   it('Should return only the element matching the RegEx while ignoring the case', async () => {
+    const tokens = seeds().tokens as Array<Token>
     const result = await filter(
-      seeds().tokens as Array<Token>,
+      tokens,
       { key: 'type', regex: { pattern: 'VeCtOr', flags: 'i' } },
       libs,
     );
     if (result instanceof Error) return fail(result);
     expect(Array.isArray(result)).toEqual(true);
-    expect(result.length).toEqual(8);
+    expect(result.length).toEqual(tokens.filter(token => token.type === 'vector').length);
     return;
   });
 
