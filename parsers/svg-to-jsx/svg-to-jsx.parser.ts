@@ -1,3 +1,4 @@
+import * as _ from 'lodash';
 import { LibsType } from '../global-libs';
 import Template from '../../libs/template';
 import prettier from 'prettier';
@@ -38,6 +39,46 @@ export type OptionsType =
       };
     };
 
+function formatObject4XMLBuilder(xpath: string, _: never, element: xml2jsElementType) {
+  const tag = element['#name'];
+  let value = element._;
+  if (!value && element.$$) {
+    value = { '#': element.$$ };
+  }
+  if (element.$) {
+    value = { ...value, ...element.$ };
+  }
+  return {
+    [tag]: value,
+  };
+}
+
+function convertObjectToXMLString(xmlObject: ExpandObject) {
+  return create(xmlObject)
+    .end({ headless: true, prettyPrint: false, indent: '\t', newline: '\n' });
+}
+
+function camelCaseAttribute(attrName: string) {
+  attrName = attrName.toLowerCase();
+  // attribute for xmlBuilder must start with '@'
+  return (attrName.startsWith('data-') || attrName.startsWith('aria-'))
+    ? `@${attrName}`
+    : '@' + _.camelCase(attrName);
+}
+
+function convertStyleAttrAsJsxObject(content: string) {
+  return content.replace(/style="([^"\\]*)"/, function(styleAttr:string, styleContent:string) {
+    const style = styleContent.split(/\s*;\s*/g).filter(Boolean)
+      .reduce(function(hash: Record<string, string>, rule: string) {
+        const keyValue:string[] = rule.split(/\s*:\s*(.*)/);
+        hash[_.camelCase(keyValue[0])] = keyValue[1];
+        return hash;
+      }, {});
+    //JSX style must be in json object format surrounded by curly braces
+    return `style={${JSON.stringify(style)}}`
+  })
+}
+
 const templateExportDefaultModel = `export {{#options.formatConfig.exportDefault}}default{{/options.formatConfig.exportDefault}}{{^options.formatConfig.exportDefault}}const {{variableName}} ={{/options.formatConfig.exportDefault}} () => (
   {{#options.wrapper.tag}}<{{options.wrapper.tag}} {{#className}}className="{{className}}"{{/className}} >{{/options.wrapper.tag}}
   {{token.value.content}}
@@ -47,26 +88,8 @@ const templateExportDefaultModel = `export {{#options.formatConfig.exportDefault
 export default async function (
   tokens: InputDataType,
   options: OptionsType,
-  { _, SpServices }: Pick<LibsType, '_' | 'SpServices'>,
+  { SpServices }: Pick<LibsType, 'SpServices'>,
 ): Promise<OutputDataType|Error> {
-  const formatObject4XMLBuilder = (xpath: string, _: never, element: xml2jsElementType) => {
-    const tag = element['#name'];
-    let value = element._;
-    if (!value && element.$$) {
-      value = { '#': element.$$ };
-    }
-    if (element.$) {
-      value = { ...value, ...element.$ };
-    }
-    return {
-      [tag]: value,
-    };
-  }
-
-  function convertObjectToXMLString(xmlObject: ExpandObject) {
-    return create(xmlObject)
-      .end({ headless: true, prettyPrint: false, indent: '\t', newline: '\n' });
-  }
   try {
     const template = new Template(templateExportDefaultModel);
     const classNameTemplate = options?.wrapper?.className
@@ -105,17 +128,13 @@ export default async function (
               normalize: true,
               normalizeTags: false,
               preserveChildrenOrder: true,
-              attrNameProcessors: [(attrName: string) => {
-                attrName = attrName.toLowerCase();
-                return (attrName.startsWith('data-') || attrName.startsWith('aria-'))
-                  ? `@${attrName}`
-                  : '@' + _.camelCase(attrName)
-              }],
+              attrNameProcessors: [camelCaseAttribute],
               validator: formatObject4XMLBuilder
             }
           )
 
-          token.value.content = convertObjectToXMLString(xmlObject);
+          token.value.content = convertObjectToXMLString(xmlObject)
+          token.value.content = convertStyleAttrAsJsxObject(token.value.content)
 
           token.value.content = prettier.format(
             (options?.prepend ? `${options?.prepend}${os.EOL}${os.EOL}` : '') +

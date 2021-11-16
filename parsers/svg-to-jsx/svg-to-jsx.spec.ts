@@ -77,9 +77,17 @@ describe('Svg to jsx', () => {
     const result = await svgToJsx(tokens as InputDataType, undefined, libs as LibsType);
     if (result instanceof Error) return fail(result);
     expect(result).toHaveLength(1);
-    expect(result[0].value.content).toMatch(/strokeWidth/)
-    expect(result[0].value.content).toMatch(/strokeLinecap/)
-    expect(result[0].value.content).toMatch(/strokeLinejoin/)
+    expect(result[0].value.content).toContain("strokeWidth")
+    expect(result[0].value.content).toContain("strokeLinecap")
+    expect(result[0].value.content).toContain("strokeLinejoin")
+    return;
+  });
+  it('Validate camelCase on Style rules', async () => {
+    const tokens = seeds().tokens.filter(({ name }) => name === 'user-mask');
+    const result = await svgToJsx(tokens as InputDataType, undefined, libs as LibsType);
+    if (result instanceof Error) return fail(result);
+    expect(result).toHaveLength(1);
+    expect(result[0].value.content).toContain('style={{ maskType: "alpha" }}')
     return;
   });
 });
