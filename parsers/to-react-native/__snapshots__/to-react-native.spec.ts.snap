@@ -14,12 +14,6 @@ exports[`To React Native Should generate the theme object 1`] = `
     activity: {
       uri: \\"'https://s3-us-west-2.amazonaws.com/figma-alpha-api/img/96dc/8825/c166b559140a0a64b28441924700a0b2'\\",
     },
-    vectorPdf: {
-      uri: \\"'https://s3-us-west-2.amazonaws.com/figma-alpha-api/img/68e3/1501/3e419d6badc279bb9a8939070cb5737b'\\",
-    },
-    alertCircleCircle: {
-      uri: \\"'https://s3-us-west-2.amazonaws.com/figma-alpha-api/img/0f69/9e5d/022020187f8e48e5d2ef58e4daa906a7'\\",
-    },
     airplay: {
       uri: \\"'https://s3-us-west-2.amazonaws.com/figma-alpha-api/img/ba89/d0aa/da2310c63c85699af43c8d128619cfdc'\\",
     },
@@ -30,10 +24,22 @@ exports[`To React Native Should generate the theme object 1`] = `
       uri: \\"'https://s3-us-west-2.amazonaws.com/figma-alpha-api/img/fda9/f3ef/d31ed18fd324eb97190f34e0497214df'\\",
     },
     alertTriangle: {
+      uri: \\"'https://s3-us-west-2.amazonaws.com/figma-alpha-api/img/877f/7e96/57aa1df766cf179f3610bf3b84cc268a'\\",
+    },
+    alertTriangle: {
       uri: \\"'https://s3-us-west-2.amazonaws.com/figma-alpha-api/img/880e/672c/155447c7e27185832ded7310ac9a02e7'\\",
     },
     alignCenter: {
       uri: \\"'https://s3-us-west-2.amazonaws.com/figma-alpha-api/img/44e1/3537/07081649495a48e2f2de80b83e69a876'\\",
+    },
+    alignCenter: {
+      uri: \\"'https://s3-us-west-2.amazonaws.com/figma-alpha-api/img/60d9/4a66/69c02a6b502dec9e745acdfb8418093d'\\",
+    },
+    userMask: {
+      uri: \\"'https://s3-us-west-2.amazonaws.com/figma-alpha-api/img/5e90/27b6/3e136d25798fc5013fce51eea15ad48c'\\",
+    },
+    userMask: {
+      uri: \\"'https://s3-us-west-2.amazonaws.com/figma-alpha-api/img/8005/3a2c/7ab7a74d1b3b57bd5151e9c48669b4f7'\\",
     },
   },
   depth: {
@@ -202,25 +208,29 @@ exports[`To React Native Should use assetsFolderPath 1`] = `
 "import assetAcmeLogo from \\"path/acmeLogo.png\\";
 import assetPhotoExample from \\"path/photoExample.png\\";
 import assetActivity from \\"path/activity.svg\\";
-import assetVectorPdf from \\"path/vectorPdf.pdf\\";
-import assetAlertCircleCircle from \\"path/alertCircleCircle.pdf\\";
 import assetAirplay from \\"path/airplay.svg\\";
 import assetAlertCircle from \\"path/alertCircle.svg\\";
 import assetAlertOctagon from \\"path/alertOctagon.svg\\";
+import assetAlertTriangle from \\"path/alertTriangle.pdf\\";
 import assetAlertTriangle from \\"path/alertTriangle.svg\\";
 import assetAlignCenter from \\"path/alignCenter.svg\\";
+import assetAlignCenter from \\"path/alignCenter.pdf\\";
+import assetUserMask from \\"path/userMask.svg\\";
+import assetUserMask from \\"path/userMask.pdf\\";
 
 const theme = {
   bitmap: { acmeLogo: assetAcmeLogo, photoExample: assetPhotoExample },
   vector: {
     activity: assetActivity,
-    vectorPdf: assetVectorPdf,
-    alertCircleCircle: assetAlertCircleCircle,
     airplay: assetAirplay,
     alertCircle: assetAlertCircle,
     alertOctagon: assetAlertOctagon,
     alertTriangle: assetAlertTriangle,
+    alertTriangle: assetAlertTriangle,
     alignCenter: assetAlignCenter,
+    alignCenter: assetAlignCenter,
+    userMask: assetUserMask,
+    userMask: assetUserMask,
   },
   depth: {
     background: {

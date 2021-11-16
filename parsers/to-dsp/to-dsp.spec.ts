@@ -30,7 +30,7 @@ describe('To DSP', () => {
     const tokenSeeds = seeds().tokens;
     const result = await toDsp(tokenSeeds, { settings } as OptionsType, libs as LibsType);
     expect(Array.isArray(result)).toBe(true);
-    expect(result.length).toBe(17);
+    expect(result.length).toBe(tokenSeeds.filter(({type}) => type === 'vector' || type === 'bitmap').length + 5);
     expect(result.some(entity => entity.name === 'dsp.json')).toBe(true);
     expect(result.some(entity => entity.name === 'data/tokens.json')).toBe(true);
     expect(result.some(entity => entity.name === 'data/components.json')).toBe(true);
@@ -142,13 +142,14 @@ describe('To DSP', () => {
       snippetTriggerPrefix: 'ex-',
     };
 
+    const tokenSeeds = seeds().tokens as Array<Token>;
     const result = await toDsp(
-      seeds().tokens as Array<Token>,
+      tokenSeeds,
       { settings } as OptionsType,
       libs as LibsType,
     );
     expect(Array.isArray(result)).toBe(true);
-    expect(result.length).toBe(17);
+    expect(result.length).toBe(tokenSeeds.filter(({type}) => type === 'vector' || type === 'bitmap').length + 5);
     expect(result.some(entity => entity.name === 'dsp.json')).toBe(true);
     expect(result.some(entity => entity.name === 'data/tokens.json')).toBe(true);
     expect(result.some(entity => entity.name === 'data/components.json')).toBe(true);
@@ -183,13 +184,14 @@ describe('To DSP', () => {
       snippetTriggerPrefix: 'ex-',
     };
 
+    const tokenSeeds = seeds().tokens as Array<Token>;
     const result = await toDsp(
-      seeds().tokens as Array<Token>,
+      tokenSeeds,
       { settings } as OptionsType,
       libs as LibsType,
     );
     expect(Array.isArray(result)).toBe(true);
-    expect(result.length).toBe(17);
+    expect(result.length).toBe(tokenSeeds.filter(({type}) => type === 'vector' || type === 'bitmap').length + 5);
     expect(result.some(entity => entity.name === 'dsp.json')).toBe(true);
     expect(result.some(entity => entity.name === 'data/tokens.json')).toBe(true);
     expect(result.some(entity => entity.name === 'data/components.json')).toBe(true);
@@ -224,13 +226,14 @@ describe('To DSP', () => {
       snippetTriggerPrefix: 'ex-',
     };
 
+    const tokenSeeds = seeds().tokens as Array<Token>;
     const result = await toDsp(
-      seeds().tokens as Array<Token>,
+      tokenSeeds,
       { settings } as OptionsType,
       libs as LibsType,
     );
     expect(Array.isArray(result)).toBe(true);
-    expect(result.length).toBe(17);
+    expect(result.length).toBe(tokenSeeds.filter(({type}) => type === 'vector' || type === 'bitmap').length + 5);
     expect(result.some(entity => entity.name === 'dsp.json')).toBe(true);
     expect(result.some(entity => entity.name === 'data/tokens.json')).toBe(true);
     expect(result.some(entity => entity.name === 'data/components.json')).toBe(true);
@@ -265,13 +268,14 @@ describe('To DSP', () => {
       packageVersion: '0.0.1',
     };
 
+    const tokenSeeds = seeds().tokens as Array<Token>;
     const result = await toDsp(
-      seeds().tokens as Array<Token>,
+      tokenSeeds,
       { settings } as OptionsType,
       libs as LibsType,
     );
     expect(Array.isArray(result)).toBe(true);
-    expect(result.length).toBe(17);
+    expect(result.length).toBe(tokenSeeds.filter(({type}) => type === 'vector' || type === 'bitmap').length + 5);
     expect(result.some(entity => entity.name === 'dsp.json')).toBe(true);
     expect(result.some(entity => entity.name === 'data/tokens.json')).toBe(true);
     expect(result.some(entity => entity.name === 'data/components.json')).toBe(true);
@@ -349,13 +353,14 @@ describe('To DSP', () => {
       snippetTriggerPrefix: 'ex-',
     };
 
+    const tokenSeeds = seeds().tokens as Array<Token>;
     const result = await toDsp(
-      seeds().tokens as Array<Token>,
+      tokenSeeds,
       { settings, createAssets: true } as OptionsType,
       libs as LibsType,
     );
     expect(Array.isArray(result)).toBe(true);
-    expect(result.length).toBe(17);
+    expect(result.length).toBe(tokenSeeds.filter(({type}) => type === 'vector' || type === 'bitmap').length + 5);
     expect(result.some(entity => entity.name === 'dsp.json')).toBe(true);
     expect(result.some(entity => entity.name === 'data/tokens.json')).toBe(true);
     expect(result.some(entity => entity.name === 'data/components.json')).toBe(true);
