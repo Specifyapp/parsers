@@ -98,7 +98,7 @@ export default async function (
 
     options = {
       formatConfig: {
-        exportDefault: true,
+        exportDefault: (!options?.variableFormat),
         ...(options?.formatConfig || {}),
       },
       ...(options || {}),
