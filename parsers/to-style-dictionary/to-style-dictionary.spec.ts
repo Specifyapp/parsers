@@ -393,8 +393,6 @@ describe('To Style Dictionary', () => {
       libs,
     );
 
-    console.log(result);
-
     expect(Array.isArray(result)).toEqual(true);
     expect(result.length).toEqual(1); // Color token only creates base
     const file = result[0];
