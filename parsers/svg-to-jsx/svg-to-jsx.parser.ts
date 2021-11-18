@@ -60,6 +60,11 @@ function convertObjectToXMLString(xmlObject: ExpandObject) {
 
 function camelCaseAttribute(attrName: string) {
   attrName = attrName.toLowerCase();
+
+  if (attrName === 'viewbox') {
+    return '@viewBox'
+  }
+
   // attribute for xmlBuilder must start with '@'
   return (attrName.startsWith('data-') || attrName.startsWith('aria-'))
     ? `@${attrName}`

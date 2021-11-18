@@ -80,6 +80,7 @@ describe('Svg to jsx', () => {
     expect(result[0].value.content).toContain("strokeWidth")
     expect(result[0].value.content).toContain("strokeLinecap")
     expect(result[0].value.content).toContain("strokeLinejoin")
+    expect(result[0].value.content).toContain("viewBox")
     return;
   });
   it('Validate camelCase on Style rules', async () => {
