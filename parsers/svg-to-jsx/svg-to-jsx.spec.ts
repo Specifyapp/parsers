@@ -89,6 +89,7 @@ describe('Svg to jsx', () => {
     if (result instanceof Error) return fail(result);
     expect(result).toHaveLength(1);
     expect(result[0].value.content).toContain('style={{ maskType: "alpha" }}')
+    expect(result[0].value.content).toContain('maskUnits')
     return;
   });
 });

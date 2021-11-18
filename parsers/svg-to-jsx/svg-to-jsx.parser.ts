@@ -59,13 +59,17 @@ function convertObjectToXMLString(xmlObject: ExpandObject) {
 }
 
 function camelCaseAttribute(attrName: string) {
+  const specificAttributeToConvert:Record<string, string> = {
+    "viewbox": "viewBox",
+    "maskunits": "maskUnits"
+  }
   attrName = attrName.toLowerCase();
 
-  if (attrName === 'viewbox') {
-    return '@viewBox'
+  // attribute for xmlBuilder must start with '@'
+  if (specificAttributeToConvert[attrName]) {
+    return `@${specificAttributeToConvert[attrName]}`
   }
 
-  // attribute for xmlBuilder must start with '@'
   return (attrName.startsWith('data-') || attrName.startsWith('aria-'))
     ? `@${attrName}`
     : '@' + _.camelCase(attrName);
