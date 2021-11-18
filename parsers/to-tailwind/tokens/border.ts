@@ -2,37 +2,44 @@ import { BorderToken } from '../../../types';
 import { BorderMapping } from '../to-tailwind.type';
 import tinycolor from 'tinycolor2';
 import { OptionsType } from '../to-tailwind.parser';
+import { Utils } from './index';
 
 export class Border extends BorderToken {
-  transformedName: string;
-  constructor(token: Partial<BorderToken>, transformedNameFn: Function) {
+  token: Partial<BorderToken>;
+  constructor(token: Partial<BorderToken>, transformNameFn: Function) {
     super(token);
-    this.transformedName = transformedNameFn(token.name);
+    this.token = { ...token, name: transformNameFn(token.name) };
   }
 
   generate(options: OptionsType): BorderMapping {
     const { width, radii, color } = this.value;
-    const result: BorderMapping = {
-      borderWidth: {
-        [this.transformedName]: `${width.value.measure}${width.value.unit}`,
-      },
-    };
+    const result = {} as BorderMapping;
+
+    if (width && width.value) {
+      const keyName = Utils.getTemplatedTokenName(this.token, options?.renameKeys?.borderWidth);
+      result.borderWidth = {
+        [keyName]: `${width.value.measure}${width.value.unit}`,
+      };
+    }
 
     if (radii && radii.value) {
+      const keyName = Utils.getTemplatedTokenName(this.token, options?.renameKeys?.borderRadius);
       result.borderRadius = {
-        [this.transformedName]: `${radii?.value.measure}${radii?.value.unit}`,
+        [keyName]: `${radii?.value.measure}${radii?.value.unit}`,
       };
     }
 
     if (color && color.value) {
+      const keyName = Utils.getTemplatedTokenName(this.token, options?.renameKeys?.borderColor);
       result.borderColor = {
-        [this.transformedName]: tinycolor(color.value).toString(
+        [keyName]: tinycolor(color.value).toString(
           options?.formatTokens?.colorFormat?.format || 'hex',
         ),
       };
       if (color.value.a && color.value.a !== 1) {
+        const keyName = Utils.getTemplatedTokenName(this.token, options?.renameKeys?.borderOpacity);
         result.borderOpacity = {
-          [this.transformedName]: `${color.value.a}`,
+          [keyName]: `${color.value.a}`,
         };
       }
     }

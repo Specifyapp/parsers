@@ -31,6 +31,7 @@ interface parser {
       singleQuote: boolean;
       exportDefault: boolean;
     }>;
+    renameKeys: PartialRecord<TailwindType, string>;
   }>;
 }
 ```
@@ -49,6 +50,7 @@ interface parser {
 | `formatConfig.exportDefault`       | optional | `boolean`                                                         | `true`      |                                                                                |
 | `formatTokens.colorFormat.format`  | optional | `rgb` `prgb` `hex` `hex6` `hex3` `hex4` `hex8` `name` `hsl` `hsv` | `hex`       | The color format you want to apply to your potential color design token        |
 | `formatTokens.fontSizeFormat.unit` | optional | `px` `rem`                                                        | `none`      |                                                                                |
+| `renameKeys` | optional | `{ colors?: string, spacing?: string... }` [full list](https://github.com/Specifyapp/parsers/blob/master/parsers/to-tailwind/to-tailwind.type.ts#L16) | `none`      | Used to rename the generated tokens based on their Tailwind theme keys | 
 
 ## Types
 
@@ -160,7 +162,7 @@ const theme = {
 export default theme;
 ```
 
-## Complex usage - with specific config
+## Complex usage - with specific config for `colorFormat`
 
 ### Config
 
@@ -255,6 +257,69 @@ const extend = {
   },
   spacing: {
     'base-space-01': '4px',
+  },
+};
+
+module.exports = extend;
+```
+
+## Complex usage - with specific config for `renameKeys`
+
+### Config
+
+```json
+{
+  "name": "to-tailwind",
+  "options": {
+    "renameKeys": {
+      "colors": "custom-color-{{name}}",
+      "spacing": "custom-spacing-{{name}}"
+    },
+    "formatName": "kebabCase",
+    "formatConfig": {
+      "objectName": "extend",
+      "module": "commonjs"
+    }
+  }
+}
+```
+
+### Before/After
+
+#### Input
+
+```json
+[
+  {
+    "name": "primary",
+    "value": {
+      "a": 1,
+      "b": 255,
+      "g": 189,
+      "r": 198
+    },
+    "type": "color"
+  },
+  {
+    "name": "base-space-01",
+    "value": {
+      "unit": "px",
+      "measure": 4
+    },
+    "type": "measurement"
+  }
+]
+```
+
+#### Output
+
+```js
+const extend = {
+  colors: {
+    'custom-color-primary': '#C6BDFF',
+  },
+  spacing: {
+    'custom-spacing-base-space-01': '4px',
   },
 };
 

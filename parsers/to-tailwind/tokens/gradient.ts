@@ -6,19 +6,22 @@ import {
   TailwindType,
 } from '../to-tailwind.type';
 import * as os from 'os';
+import { Utils } from './index';
+import { OptionsType } from '../to-tailwind.parser';
 
 export class Gradient extends GradientToken {
-  transformedName: string;
+  token: Partial<GradientToken>;
   static tailwindKeys: Array<TailwindType> = ['backgroundImage'];
   constructor(token: Partial<GradientToken>, transformNameFn: Function) {
     super(token);
-    this.transformedName = transformNameFn(token.name);
+    this.token = { ...token, name: transformNameFn(token.name) };
   }
 
-  generate(): GradientMappingBeforeWrapper {
+  generate(options: OptionsType): GradientMappingBeforeWrapper {
+    const keyName = Utils.getTemplatedTokenName(this.token, options?.renameKeys?.backgroundImage);
     return {
       backgroundImage: {
-        [this.transformedName]: this.value.gradients
+        [keyName]: this.value.gradients
           .map(gradient => {
             return `linear-gradient(${gradient.angle}, ${gradient.colors
               .map(

@@ -1,17 +1,22 @@
 import { DurationToken } from '../../../types';
 import { Utils } from './index';
 import { DurationMapping, TailwindMappingTypes } from '../to-tailwind.type';
+import { OptionsType } from '../to-tailwind.parser';
 
 export class Duration extends DurationToken {
-  transformedName: string;
+  token: Partial<DurationToken>;
   constructor(token: Partial<DurationToken>, transformNameFn: Function) {
     super(token);
-    this.transformedName = transformNameFn(token.name);
+    this.token = { ...token, name: transformNameFn(token.name) };
   }
-  generate(): DurationMapping {
+  generate(options: OptionsType): DurationMapping {
+    const keyName = Utils.getTemplatedTokenName(
+      this.token,
+      options?.renameKeys?.transitionDuration,
+    );
     return {
       transitionDuration: {
-        [this.transformedName]: `${this.value.duration}${this.value.unit}`,
+        [keyName]: `${this.value.duration}${this.value.unit}`,
       },
     };
   }

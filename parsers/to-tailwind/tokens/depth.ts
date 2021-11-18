@@ -1,18 +1,20 @@
 import { DepthToken } from '../../../types';
+import { OptionsType } from '../to-tailwind.parser';
 import { DepthMapping, TailwindMappingTypes } from '../to-tailwind.type';
 import { Utils } from './index';
 
 export class Depth extends DepthToken {
-  transformedName: string;
+  token: Partial<DepthToken>;
   constructor(token: Partial<DepthToken>, transformNameFn: Function) {
     super(token);
-    this.transformedName = transformNameFn(token.name);
+    this.token = { ...token, name: transformNameFn(token.name) };
   }
 
-  generate(): DepthMapping {
+  generate(options: OptionsType): DepthMapping {
+    const keyName = Utils.getTemplatedTokenName(this.token, options?.renameKeys?.zIndex);
     return {
       zIndex: {
-        [this.transformedName]: `${this.value.depth}`,
+        [keyName]: `${this.value.depth}`,
       },
     };
   }

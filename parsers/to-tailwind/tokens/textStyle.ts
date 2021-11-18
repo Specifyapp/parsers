@@ -6,10 +6,10 @@ import { FormatTokenType, OptionsType } from '../to-tailwind.parser';
 import tinycolor from 'tinycolor2';
 
 export class TextStyle extends TextStyleToken {
-  transformedName: string;
+  token: Partial<TextStyleToken>;
   constructor(token: Partial<TextStyleToken>, transformNameFn: Function) {
     super(token);
-    this.transformedName = transformNameFn(token.name);
+    this.token = { ...token, name: transformNameFn(token.name) };
   }
 
   private getFontWeight() {
@@ -49,27 +49,52 @@ export class TextStyle extends TextStyleToken {
   generate(options: OptionsType): TextStyleMapping {
     const result: TextStyleMapping = {};
 
+    const fontSizeKeyName = Utils.getTemplatedTokenName(this.token, options?.renameKeys?.fontSize);
     result.fontSize = {
-      [this.transformedName]: this.getFontSize(options?.formatTokens?.fontSizeFormat),
+      [fontSizeKeyName]: this.getFontSize(options?.formatTokens?.fontSizeFormat),
     };
 
+    const letterSpacingKeyName = Utils.getTemplatedTokenName(
+      this.token,
+      options?.renameKeys?.letterSpacing,
+    );
     const letterSpacing = this.getLetterSpacing();
-    if (letterSpacing) result.letterSpacing = { [this.transformedName]: letterSpacing };
+    if (letterSpacing) result.letterSpacing = { [letterSpacingKeyName]: letterSpacing };
 
+    const lineHeightKeyName = Utils.getTemplatedTokenName(
+      this.token,
+      options?.renameKeys?.lineHeight,
+    );
     const lineHeight = this.getLineHeight();
-    result.lineHeight = { [this.transformedName]: lineHeight };
+    result.lineHeight = { [lineHeightKeyName]: lineHeight };
 
     const textColor = this.getColor(options?.formatTokens?.colorFormat?.format || 'hex');
-    if (textColor) result.textColor = { [this.transformedName]: textColor };
+    const textColorKeyName = Utils.getTemplatedTokenName(
+      this.token,
+      options?.renameKeys?.textColor,
+    );
+    if (textColor) result.textColor = { [textColorKeyName]: textColor };
 
     const textOpacity = this.getOpacity();
-    if (textOpacity) result.textOpacity = { [this.transformedName]: textOpacity };
+    const textOpacityKeyName = Utils.getTemplatedTokenName(
+      this.token,
+      options?.renameKeys?.textOpacity,
+    );
+    if (textOpacity) result.textOpacity = { [textOpacityKeyName]: textOpacity };
 
     const fontFamily = this.getFontFamily();
-    result.fontFamily = { [this.transformedName]: [fontFamily] };
+    const fontFamilyKeyName = Utils.getTemplatedTokenName(
+      this.token,
+      options?.renameKeys?.fontFamily,
+    );
+    result.fontFamily = { [fontFamilyKeyName]: [fontFamily] };
 
     const fontWeight = this.getFontWeight();
-    result.fontWeight = { [this.transformedName]: fontWeight };
+    const fontWeightKeyName = Utils.getTemplatedTokenName(
+      this.token,
+      options?.renameKeys?.fontWeight,
+    );
+    result.fontWeight = { [fontWeightKeyName]: fontWeight };
 
     return result;
   }

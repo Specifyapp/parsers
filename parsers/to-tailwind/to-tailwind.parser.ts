@@ -1,10 +1,11 @@
-import { IToken, TokensType } from '../../types';
+import { IToken, PartialRecord, TokensType } from '../../types';
 import { LibsType } from '../global-libs';
 import prettier from 'prettier';
 import os from 'os';
 import * as _ from 'lodash';
-import { ColorsFormat, TailwindTokenClass, TailwindType } from './to-tailwind.type';
+import { ColorsFormat, FormatName, TailwindTokenClass, TailwindType } from './to-tailwind.type';
 import * as TokensClass from './tokens';
+import { getNameFormatterFunction } from './utils/getNameFormatterFunction';
 
 export type OutputDataType = string;
 export type InputDataType = Array<
@@ -20,7 +21,7 @@ export type FormatTokenType = Partial<{
 }>;
 export type OptionsType =
   | Partial<{
-      formatName: 'camelCase' | 'kebabCase' | 'snakeCase' | 'pascalCase';
+      formatName: FormatName;
       formatTokens: FormatTokenType;
       formatConfig: Partial<{
         module: 'es6' | 'commonjs';
@@ -31,6 +32,7 @@ export type OptionsType =
         singleQuote: boolean;
         exportDefault: boolean;
       }>;
+      renameKeys: PartialRecord<TailwindType, string>;
     }>
   | undefined;
 
@@ -44,46 +46,51 @@ class ToTailwind {
   transformNameFn;
   exportDefault;
   module;
-  tokensGroupByType;
+  tokensGroupedByType;
   options;
   tokens;
   styles: Partial<Record<TailwindType, any>> = {};
   constructor(tokens: InputDataType, options: OptionsType) {
     this.options = options;
     this.objectName = options?.formatConfig?.objectName ?? 'theme';
-    this.transformNameFn = _[options?.formatName ?? 'camelCase'];
+    this.transformNameFn = getNameFormatterFunction(options?.formatName);
     this.exportDefault = options?.formatConfig?.exportDefault ?? true;
     this.module = options?.formatConfig?.module ?? 'es6';
     this.tokens = tokens;
-    this.tokensGroupByType = _.groupBy(tokens, 'type');
+    this.tokensGroupedByType = _.groupBy(tokens, 'type');
     this.styles = {};
   }
   exec() {
-    const types = Object.keys(this.tokensGroupByType) as Array<TokensType>;
-    types.forEach(type => Object.assign(this.styles, this.setGlobal(type)));
+    const tokenTypes = Object.keys(this.tokensGroupedByType) as Array<TokensType>;
+    this.styles = tokenTypes.reduce(
+      (acc, tokenType) => ({ ...acc, ...this.setGlobal(tokenType) }),
+      {},
+    );
     const result = this.replaceFunctionTokens();
     return this.finalize(result);
   }
 
-  setGlobal(type: TokensType) {
-    const tokenHandler = getClassByType(type);
-    if (!tokenHandler) return {};
-    let tokenByType = this.tokensGroupByType[type].reduce((acc, token) => {
-      const instance = new tokenHandler(token, this.transformNameFn);
+  setGlobal(tokenType: TokensType) {
+    const TokenHandler = getClassByType(tokenType);
+    if (!TokenHandler) return {};
+
+    const tokenByType = this.tokensGroupedByType[tokenType].reduce((acc, token) => {
+      const instance = new TokenHandler(token, this.transformNameFn);
       const tailwindTokens = instance.generate(this.options, this.tokens);
       (Object.keys(tailwindTokens) as Array<TailwindType>).forEach(tailwindKey => {
         acc[tailwindKey] = { ...(acc[tailwindKey] || {}), ...tailwindTokens[tailwindKey] };
       });
       return acc;
-    }, this.styles as Record<TailwindType, any>);
-    return tokenHandler.afterGenerate ? tokenHandler.afterGenerate(tokenByType) : tokenByType;
+    }, {} as Record<TailwindType, any>);
+
+    return TokenHandler.afterGenerate ? TokenHandler.afterGenerate(tokenByType) : tokenByType;
   }
 
   replaceFunctionTokens() {
     // List of keys that needs to be removed from the created styles before stringify
+    // So we need to remove them first
     // For example, backgroundImage sends back a function, not a string containing the function
-    // So we need to remove it before adding it back
-    const keysToExclude = Object.keys(this.tokensGroupByType).reduce(
+    const keysToExclude = Object.keys(this.tokensGroupedByType).reduce(
       (keyToExclude: Array<TailwindType>, type) => {
         const tokenHandler = getClassByType(type);
         if (tokenHandler?.afterStringGenerate && tokenHandler.tailwindKeys)
@@ -92,11 +99,11 @@ class ToTailwind {
       },
       [],
     );
-    // Stringify everything except for the keys
+    // Stringify everything except for the excluded keys
     const styles = JSON.stringify(_.omit(this.styles, keysToExclude));
-    // After string generates add the specificities for our keys
+    // Once the string is generated we add the function based ones
     // From the example, it adds the function not stringified for backgroundImage
-    return Object.keys(this.tokensGroupByType).reduce((result, type) => {
+    return Object.keys(this.tokensGroupedByType).reduce((result, type) => {
       const tokenHandler = getClassByType(type);
       if (tokenHandler?.afterStringGenerate)
         result = tokenHandler.afterStringGenerate(this.styles, result);
