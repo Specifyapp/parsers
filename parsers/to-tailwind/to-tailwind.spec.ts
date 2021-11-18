@@ -15,6 +15,7 @@ import {
   ShadowToken,
   TextStyleToken,
 } from '../../types';
+import { getNameFormatterFunction } from './utils/getNameFormatterFunction';
 
 describe('To tailwind', () => {
   it('Should generate the colors object', async () => {
@@ -500,5 +501,290 @@ describe('To tailwind', () => {
     expect(result).toEqual(expect.stringMatching('export default extend'));
 
     return;
+  });
+
+  it('Should allow renaming of `border` tokens', async () => {
+    const tokens = seeds().tokens.filter(token => token.type === 'border') as Array<BorderToken>;
+    const borderWidthPrefix = 'border-width-';
+    const borderRadiusPrefix = 'border-radius-';
+    const borderColorPrefix = 'border-color-';
+    const borderOpacityPrefix = 'border-opacity-';
+
+    const formatName = 'kebabCase';
+    const result = await toTailwind(
+      tokens,
+      {
+        renameKeys: {
+          borderWidth: `${borderWidthPrefix}{{name}}`,
+          borderRadius: `${borderRadiusPrefix}{{name}}`,
+          borderColor: `${borderColorPrefix}{{name}}`,
+          borderOpacity: `${borderOpacityPrefix}{{name}}`,
+        },
+        formatName,
+        formatConfig: {
+          module: 'es6',
+          exportDefault: true,
+          objectName: 'extend',
+        },
+      },
+      libs,
+    );
+
+    tokens.forEach(({ name, value }) => {
+      const transformedName = getNameFormatterFunction(formatName)(name);
+      expect(result).toEqual(expect.stringContaining(`${borderWidthPrefix}${transformedName}`));
+      expect(result).toEqual(expect.stringContaining(`${borderColorPrefix}${transformedName}`));
+
+      // only for tokens with radii values
+      if (value.radii) {
+        expect(result).toEqual(expect.stringContaining(`${borderRadiusPrefix}${transformedName}`));
+      }
+
+      // only for border color using alpha
+      if (value.color.value.a < 1) {
+        expect(result).toEqual(expect.stringContaining(`${borderOpacityPrefix}${transformedName}`));
+      }
+    });
+  });
+  it('Should allow renaming of `color` tokens', async () => {
+    const tokens = seeds().tokens.filter(token => token.type === 'color') as Array<ColorToken>;
+    const prefix = 'color-';
+
+    const formatName = 'kebabCase';
+    const result = await toTailwind(
+      tokens,
+      {
+        renameKeys: {
+          colors: `${prefix}{{name}}`,
+        },
+        formatName,
+        formatConfig: {
+          module: 'es6',
+          exportDefault: true,
+          objectName: 'extend',
+        },
+      },
+      libs,
+    );
+
+    tokens.forEach(({ name }) => {
+      const transformedName = getNameFormatterFunction(formatName)(name);
+      expect(result).toEqual(expect.stringContaining(`${prefix}${transformedName}`));
+    });
+  });
+  it('Should allow renaming of `depth` tokens', async () => {
+    const tokens = seeds().tokens.filter(token => token.type === 'depth') as Array<DepthToken>;
+    const prefix = 'depth-';
+
+    const formatName = 'kebabCase';
+    const result = await toTailwind(
+      tokens,
+      {
+        renameKeys: {
+          zIndex: `${prefix}{{name}}`,
+        },
+        formatName,
+        formatConfig: {
+          module: 'es6',
+          exportDefault: true,
+          objectName: 'extend',
+        },
+      },
+      libs,
+    );
+
+    tokens.forEach(({ name }) => {
+      const transformedName = getNameFormatterFunction(formatName)(name);
+      expect(result).toEqual(expect.stringContaining(`${prefix}${transformedName}`));
+    });
+  });
+  it('Should allow renaming of `duration` tokens', async () => {
+    const tokens = seeds().tokens.filter(
+      token => token.type === 'duration',
+    ) as Array<DurationToken>;
+    const prefix = 'duration-';
+
+    const formatName = 'kebabCase';
+    const result = await toTailwind(
+      tokens,
+      {
+        renameKeys: {
+          transitionDuration: `${prefix}{{name}}`,
+        },
+        formatName,
+        formatConfig: {
+          module: 'es6',
+          exportDefault: true,
+          objectName: 'extend',
+        },
+      },
+      libs,
+    );
+
+    tokens.forEach(({ name }) => {
+      const transformedName = getNameFormatterFunction(formatName)(name);
+      expect(result).toEqual(expect.stringContaining(`${prefix}${transformedName}`));
+    });
+  });
+  it('Should allow renaming of `gradient` tokens', async () => {
+    const tokens = seeds().tokens.filter(
+      token => token.type === 'gradient',
+    ) as Array<GradientToken>;
+    const prefix = 'gradient-';
+
+    const formatName = 'kebabCase';
+    const result = await toTailwind(
+      tokens,
+      {
+        renameKeys: {
+          backgroundImage: `${prefix}{{name}}`,
+        },
+        formatName,
+        formatConfig: {
+          module: 'es6',
+          exportDefault: true,
+          objectName: 'extend',
+        },
+      },
+      libs,
+    );
+
+    tokens.forEach(({ name }) => {
+      const transformedName = getNameFormatterFunction(formatName)(name);
+      expect(result).toEqual(expect.stringContaining(`${prefix}${transformedName}`));
+    });
+  });
+  it('Should allow renaming of `measurement` tokens', async () => {
+    const tokens = seeds().tokens.filter(
+      token => token.type === 'measurement',
+    ) as Array<MeasurementToken>;
+    const prefix = 'measurement-';
+
+    const formatName = 'kebabCase';
+    const result = await toTailwind(
+      tokens,
+      {
+        renameKeys: {
+          spacing: `${prefix}{{name}}`,
+        },
+        formatName,
+        formatConfig: {
+          module: 'es6',
+          exportDefault: true,
+          objectName: 'extend',
+        },
+      },
+      libs,
+    );
+
+    tokens.forEach(({ name }) => {
+      const transformedName = getNameFormatterFunction(formatName)(name);
+      expect(result).toEqual(expect.stringContaining(`${prefix}${transformedName}`));
+    });
+  });
+  it('Should allow renaming of `opacity` tokens', async () => {
+    const tokens = seeds().tokens.filter(token => token.type === 'opacity') as Array<OpacityToken>;
+    const prefix = 'opacity-';
+
+    const formatName = 'kebabCase';
+    const result = await toTailwind(
+      tokens,
+      {
+        renameKeys: {
+          opacity: `${prefix}{{name}}`,
+        },
+        formatName,
+        formatConfig: {
+          module: 'es6',
+          exportDefault: true,
+          objectName: 'extend',
+        },
+      },
+      libs,
+    );
+
+    tokens.forEach(({ name }) => {
+      const transformedName = getNameFormatterFunction(formatName)(name);
+      expect(result).toEqual(expect.stringContaining(`${prefix}${transformedName}`));
+    });
+  });
+  it('Should allow renaming of `shadow` tokens', async () => {
+    const tokens = seeds().tokens.filter(token => token.type === 'shadow') as Array<ShadowToken>;
+    const prefix = 'shadow-';
+
+    const formatName = 'kebabCase';
+    const result = await toTailwind(
+      tokens,
+      {
+        renameKeys: {
+          boxShadow: `${prefix}{{name}}`,
+        },
+        formatName,
+        formatConfig: {
+          module: 'es6',
+          exportDefault: true,
+          objectName: 'extend',
+        },
+      },
+      libs,
+    );
+
+    tokens.forEach(({ name }) => {
+      const transformedName = getNameFormatterFunction(formatName)(name);
+      expect(result).toEqual(expect.stringContaining(`${prefix}${transformedName}`));
+    });
+  });
+  it('Should allow renaming of `textStyle` tokens', async () => {
+    const tokens = seeds().tokens.filter(
+      token => token.type === 'textStyle',
+    ) as Array<TextStyleToken>;
+    const fontSizePrefix = 'text-style-font-size-';
+    const letterSpacingPrefix = 'text-style-letter-spacing-';
+    const lineHeightPrefix = 'text-style-line-height-';
+    const textColorPrefix = 'text-style-text-color-';
+    const textOpacityPrefix = 'text-style-text-opacity-';
+    const fontFamilyPrefix = 'text-style-font-family-';
+    const fontWeightPrefix = 'text-style-font-weight-';
+
+    const formatName = 'kebabCase';
+    const result = await toTailwind(
+      tokens,
+      {
+        renameKeys: {
+          fontSize: `${fontSizePrefix}{{name}}`,
+          letterSpacing: `${letterSpacingPrefix}{{name}}`,
+          lineHeight: `${lineHeightPrefix}{{name}}`,
+          textColor: `${textColorPrefix}{{name}}`,
+          textOpacity: `${textOpacityPrefix}{{name}}`,
+          fontFamily: `${fontFamilyPrefix}{{name}}`,
+          fontWeight: `${fontWeightPrefix}{{name}}`,
+        },
+        formatName,
+        formatConfig: {
+          module: 'es6',
+          exportDefault: true,
+          objectName: 'extend',
+        },
+      },
+      libs,
+    );
+
+    tokens.forEach(({ name, value }) => {
+      const transformedName = getNameFormatterFunction(formatName)(name);
+
+      expect(result).toEqual(expect.stringContaining(`${fontSizePrefix}${transformedName}`));
+      expect(result).toEqual(expect.stringContaining(`${lineHeightPrefix}${transformedName}`));
+      expect(result).toEqual(expect.stringContaining(`${fontFamilyPrefix}${transformedName}`));
+      expect(result).toEqual(expect.stringContaining(`${fontWeightPrefix}${transformedName}`));
+      if (value.letterSpacing) {
+        expect(result).toEqual(expect.stringContaining(`${letterSpacingPrefix}${transformedName}`));
+      }
+      if (value.color) {
+        expect(result).toEqual(expect.stringContaining(`${textColorPrefix}${transformedName}`));
+      }
+      if (value.color && value.color.value.a < 1) {
+        expect(result).toEqual(expect.stringContaining(`${textOpacityPrefix}${transformedName}`));
+      }
+    });
   });
 });

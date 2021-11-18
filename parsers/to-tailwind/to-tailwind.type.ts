@@ -105,3 +105,5 @@ export interface TailwindTokenClassInstance {
   transformedName: string;
   generate(options: OptionsType, spTokens: InputDataType): Partial<Record<TailwindType, any>>;
 }
+
+export type FormatName = 'camelCase' | 'kebabCase' | 'snakeCase' | 'pascalCase';

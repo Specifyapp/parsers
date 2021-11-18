@@ -1,19 +1,20 @@
 import { OpacityToken } from '../../../types';
 import { Utils } from './index';
 import { OpacityMapping } from '../to-tailwind.type';
+import { OptionsType } from '../to-tailwind.parser';
 
 export class Opacity extends OpacityToken {
-  transformedName: string;
-
+  token: Partial<OpacityToken>;
   constructor(token: Partial<OpacityToken>, transformNameFn: Function) {
     super(token);
-    this.transformedName = transformNameFn(token.name);
+    this.token = { ...token, name: transformNameFn(token.name) };
   }
 
-  generate(): OpacityMapping {
+  generate(options: OptionsType): OpacityMapping {
+    const keyName = Utils.getTemplatedTokenName(this.token, options?.renameKeys?.opacity);
     return {
       opacity: {
-        [this.transformedName]: `${this.value.opacity / 100}`,
+        [keyName]: `${this.value.opacity / 100}`,
       },
     };
   }

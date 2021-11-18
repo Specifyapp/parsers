@@ -1,3 +1,6 @@
+import { Token } from '../../../types';
+import Template from '../../../libs/template';
+
 export * from './color';
 export * from './gradient';
 export * from './shadow';
@@ -17,5 +20,13 @@ export abstract class Utils {
     return Object.entries(obj)
       .sort(([, a], [, b]) => this.parseFloatIfString(a) - this.parseFloatIfString(b))
       .reduce((r, [k, v]) => ({ ...r, [k]: v }), {});
+  }
+
+  static getTemplatedTokenName(token: Partial<Token>, template: string | undefined) {
+    if (template) {
+      const templateInstance = new Template(template);
+      return templateInstance.render(token);
+    }
+    return token.name!;
   }
 }

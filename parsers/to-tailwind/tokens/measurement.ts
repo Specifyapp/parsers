@@ -1,17 +1,19 @@
 import { MeasurementToken } from '../../../types';
 import { Utils } from './index';
 import { MeasurementMapping, TailwindMappingTypes } from '../to-tailwind.type';
+import { OptionsType } from '../to-tailwind.parser';
 
 export class Measurement extends MeasurementToken {
-  transformedName: string;
+  token: Partial<MeasurementToken>;
   constructor(token: Partial<MeasurementToken>, transformNameFn: Function) {
     super(token);
-    this.transformedName = transformNameFn(token.name);
+    this.token = { ...token, name: transformNameFn(token.name) };
   }
-  generate(): MeasurementMapping {
+  generate(options: OptionsType): MeasurementMapping {
+    const keyName = Utils.getTemplatedTokenName(this.token, options?.renameKeys?.spacing);
     return {
       spacing: {
-        [this.transformedName]: `${this.value.measure}${this.value.unit}`,
+        [keyName]: `${this.value.measure}${this.value.unit}`,
       },
     };
   }
