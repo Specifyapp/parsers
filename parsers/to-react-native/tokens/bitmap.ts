@@ -7,13 +7,12 @@ export class Bitmap extends BitmapToken {
     super(token);
   }
 
-  toReactNative(options: OptionsType, fileName: string): { theme: string; imports: string } {
+  toReactNative(options: OptionsType, fileName: string): { theme: string } {
     if (!options?.assetsFolderPath) {
       return {
         theme: JSON.stringify({
           uri: `'${this.value.url}'`,
         }),
-        imports: '',
       };
     }
 
@@ -22,11 +21,9 @@ export class Bitmap extends BitmapToken {
         ? options.assetsFolderPath
         : options.assetsFolderPath!.bitmap;
 
-    const symbol = `asset${this.name.charAt(0).toUpperCase()}${this.name.slice(1)}`;
     const fullPath = path.join(relPath || '', fileName);
     return {
-      theme: symbol,
-      imports: `import ${symbol} from '${fullPath}';\n`,
+      theme: `require('${fullPath}')`,
     };
   }
 }

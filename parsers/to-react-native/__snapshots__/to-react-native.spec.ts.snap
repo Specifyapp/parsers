@@ -205,9 +205,7 @@ export default theme;
 `;
 
 exports[`To React Native Should use assetsFolderPath 1`] = `
-"import assetAcmeLogo from \\"path/acmeLogo.png\\";
-import assetPhotoExample from \\"path/photoExample.png\\";
-import assetActivity from \\"path/activity.svg\\";
+"import assetActivity from \\"path/activity.svg\\";
 import assetAirplay from \\"path/airplay.svg\\";
 import assetAlertCircle from \\"path/alertCircle.svg\\";
 import assetAlertOctagon from \\"path/alertOctagon.svg\\";
@@ -219,7 +217,10 @@ import assetUserMask from \\"path/userMask.svg\\";
 import assetUserMask from \\"path/userMask.pdf\\";
 
 const theme = {
-  bitmap: { acmeLogo: assetAcmeLogo, photoExample: assetPhotoExample },
+  bitmap: {
+    acmeLogo: require(\\"path/acmeLogo.png\\"),
+    photoExample: require(\\"path/photoExample.png\\"),
+  },
   vector: {
     activity: assetActivity,
     airplay: assetAirplay,
