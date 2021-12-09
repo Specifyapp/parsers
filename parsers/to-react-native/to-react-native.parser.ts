@@ -61,7 +61,7 @@ export default async function (
             }
             const fileName = template.render(token);
             const { theme, imports: tokenImports } = instance.toReactNative(options, fileName);
-            imports += tokenImports;
+            imports += tokenImports ?? '';
 
             return `'${token.name}': ${theme},`;
           }

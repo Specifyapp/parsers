@@ -180,12 +180,11 @@ string;
 #### Output
 
 ```js
-import assetAcmeLogo from '../src/assets/acmeLogo.png';
 import assetActivity from '../src/assets/activity.svg';
 
 const theme = {
   bitmap: {
-    acmeLogo: assetAcmeLogo,
+    acmeLogo: require('../src/assets/acmeLogo.png'),
   },
   vector: {
     activity: assetActivity,
