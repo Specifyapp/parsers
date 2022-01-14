@@ -54,38 +54,41 @@ function formatObject4XMLBuilder(xpath: string, _: never, element: xml2jsElement
 }
 
 function convertObjectToXMLString(xmlObject: ExpandObject) {
-  return create(xmlObject)
-    .end({ headless: true, prettyPrint: false, indent: '\t', newline: '\n' });
+  return create(xmlObject).end({ headless: true, prettyPrint: false, indent: '\t', newline: '\n' });
 }
 
 function camelCaseAttribute(attrName: string) {
-  const specificAttributeToConvert:Record<string, string> = {
-    "viewbox": "viewBox",
-    "maskunits": "maskUnits"
-  }
+  const specificAttributeToConvert: Record<string, string> = {
+    viewbox: 'viewBox',
+    maskunits: 'maskUnits',
+    gradientunits: 'gradientUnits',
+    gradienttransform: 'gradientTransform',
+  };
   attrName = attrName.toLowerCase();
 
   // attribute for xmlBuilder must start with '@'
   if (specificAttributeToConvert[attrName]) {
-    return `@${specificAttributeToConvert[attrName]}`
+    return `@${specificAttributeToConvert[attrName]}`;
   }
 
-  return (attrName.startsWith('data-') || attrName.startsWith('aria-'))
+  return attrName.startsWith('data-') || attrName.startsWith('aria-')
     ? `@${attrName}`
     : '@' + _.camelCase(attrName);
 }
 
 function convertStyleAttrAsJsxObject(content: string) {
-  return content.replace(/style="([^"\\]*)"/, function(styleAttr:string, styleContent:string) {
-    const style = styleContent.split(/\s*;\s*/g).filter(Boolean)
-      .reduce(function(hash: Record<string, string>, rule: string) {
-        const keyValue:string[] = rule.split(/\s*:\s*(.*)/);
+  return content.replace(/style="([^"\\]*)"/, function (styleAttr: string, styleContent: string) {
+    const style = styleContent
+      .split(/\s*;\s*/g)
+      .filter(Boolean)
+      .reduce(function (hash: Record<string, string>, rule: string) {
+        const keyValue: string[] = rule.split(/\s*:\s*(.*)/);
         hash[_.camelCase(keyValue[0])] = keyValue[1];
         return hash;
       }, {});
     //JSX style must be in json object format surrounded by curly braces
-    return `style={${JSON.stringify(style)}}`
-  })
+    return `style={${JSON.stringify(style)}}`;
+  });
 }
 
 const templateExportDefaultModel = `export {{#options.formatConfig.exportDefault}}default{{/options.formatConfig.exportDefault}}{{^options.formatConfig.exportDefault}}const {{variableName}} ={{/options.formatConfig.exportDefault}} () => (
@@ -98,7 +101,7 @@ export default async function (
   tokens: InputDataType,
   options: OptionsType,
   { SpServices }: Pick<LibsType, 'SpServices'>,
-): Promise<OutputDataType|Error> {
+): Promise<OutputDataType | Error> {
   try {
     const template = new Template(templateExportDefaultModel);
     const classNameTemplate = options?.wrapper?.className
@@ -107,7 +110,7 @@ export default async function (
 
     options = {
       formatConfig: {
-        exportDefault: (!options?.variableFormat),
+        exportDefault: !options?.variableFormat,
         ...(options?.formatConfig || {}),
       },
       ...(options || {}),
@@ -127,23 +130,20 @@ export default async function (
           const className = classNameTemplate?.render(token);
           const variableName = _[options?.variableFormat || 'pascalCase'](token.name);
 
-          const xmlObject = await parseStringPromise(
-            token.value.content,
-            {
-              explicitArray: true,
-              explicitChildren: true,
-              explicitRoot: false,
-              mergeAttrs: false,
-              normalize: true,
-              normalizeTags: false,
-              preserveChildrenOrder: true,
-              attrNameProcessors: [camelCaseAttribute],
-              validator: formatObject4XMLBuilder
-            }
-          )
+          const xmlObject = await parseStringPromise(token.value.content, {
+            explicitArray: true,
+            explicitChildren: true,
+            explicitRoot: false,
+            mergeAttrs: false,
+            normalize: true,
+            normalizeTags: false,
+            preserveChildrenOrder: true,
+            attrNameProcessors: [camelCaseAttribute],
+            validator: formatObject4XMLBuilder,
+          });
 
-          token.value.content = convertObjectToXMLString(xmlObject)
-          token.value.content = convertStyleAttrAsJsxObject(token.value.content)
+          token.value.content = convertObjectToXMLString(xmlObject);
+          token.value.content = convertStyleAttrAsJsxObject(token.value.content);
 
           token.value.content = prettier.format(
             (options?.prepend ? `${options?.prepend}${os.EOL}${os.EOL}` : '') +
