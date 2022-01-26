@@ -90,7 +90,7 @@ With this config, we will filter the elements containing the word "Background".
       g: 255,
       r: 255,
     },
-    type: 'background-color',
+    type: 'color',
     // ...
   },
   {
@@ -121,7 +121,7 @@ With this config, we will filter the elements containing the word "Background".
       g: 255,
       r: 255,
     },
-    type: 'background-color',
+    type: 'color',
     // ...
   },
 ]
