@@ -54,7 +54,7 @@ describe('to-scss-map', () => {
       expect(Array.isArray(result)).toEqual(true);
       result.forEach(file => {
         expect(typeof file.value.content).toEqual('string');
-        expect(file.value.content!.includes('get-token-for-color')).toBeFalsy();
+        expect(file.value.content!).not.toContain('get-token-for-color');
       });
       return;
     });
@@ -69,7 +69,7 @@ describe('to-scss-map', () => {
       expect(Array.isArray(result)).toEqual(true);
       result.forEach(file => {
         expect(typeof file.value.content).toEqual('string');
-        expect(file.value.content!.includes('mixin-for-text-style')).toBeFalsy();
+        expect(file.value.content!).not.toContain('mixin-for-text-style');
       });
       return;
     });
@@ -89,15 +89,15 @@ describe('to-scss-map', () => {
       };
 
       const expectedMapping: Record<string, string> = {
-        depth: '.test { z-index: 50; }',
-        duration: '.test { transition-duration: 100ms; }',
-        measurement: '.test { width: 32px; }',
-        border: '.test { border: 1px dashed #1e212b; }',
-        color: '.test { color: white; }',
+        depth: '.test{z-index:50}',
+        duration: '.test{transition-duration:100ms}',
+        measurement: '.test{width:32px}',
+        border: '.test{border:1px dashed #1e212b}',
+        color: '.test{color:#fff}',
         shadow:
-          '.test { box-shadow: 0px 1.85185px 3.14815px rgba(0, 0, 0, 0.02), 0px 8.14815px 6.51852px rgba(0, 0, 0, 0.03), 0px 20px 13px rgba(0, 0, 0, 0.04), 0px 38.51852px 25.48148px rgba(0, 0, 0, 0.04), 0px 64.81481px 46.85185px rgba(0, 0, 0, 0.05), 0px 100px 80px 1px rgba(0, 0, 0, 0.07); }',
-        gradient: '.test { background-image: linear-gradient(90deg, #f5483f 0%, #ff8e05 100%); }',
-        opacity: '.test { opacity: 0.5; }',
+          '.test{box-shadow:0px 1.8518518209px 3.1481480598px rgba(0,0,0,.02),0px 8.1481485367px 6.5185184479px rgba(0,0,0,.03),0px 20px 13px rgba(0,0,0,.04),0px 38.5185203552px 25.4814815521px rgba(0,0,0,.04),0px 64.8148117065px 46.851852417px rgba(0,0,0,.05),0px 100px 80px 1px rgba(0,0,0,.07)}',
+        gradient: '.test{background-image:linear-gradient(90deg, #f5483f 0%, #ff8e05 100%)}',
+        opacity: '.test{opacity:.5}',
       };
 
       const ScssMapsResponse = await toScssMap(
@@ -114,9 +114,9 @@ describe('to-scss-map', () => {
           const functionExecution = testFunctionMapping[type] ?? '';
           const data = `${fileGenerated.value.content}${os.EOL}${functionExecution}`;
 
-          const content = await render({ data });
+          const content = await render(data);
           if (expectedMapping[type]) {
-            expect(content.css.toString().includes(expectedMapping[type])).toBeTruthy();
+            expect(content.css.toString()).toContain(expectedMapping[type]);
           }
         }),
       );
@@ -131,7 +131,7 @@ describe('to-scss-map', () => {
 
       const expectedMapping: Record<string, string> = {
         'text-style':
-          '.test { font-family: "Inter-SemiBold"; font-weight: 600; font-size: 32px; line-height: 40px; text-transform: uppercase; text-align: left; vertical-align: top; text-decoration: underline; text-indent: 5px; }',
+          '.test{font-family:"Inter-SemiBold";font-weight:600;font-size:32px;line-height:40px;text-transform:uppercase;text-align:left;vertical-align:top;text-decoration:underline;text-indent:5px}',
       };
 
       const ScssMapsResponse = await toScssMap(
@@ -147,9 +147,9 @@ describe('to-scss-map', () => {
           const type = /mixin (.*)\(/.exec(fileGenerated.value.content!)![1];
           const functionExecution = testFunctionMapping[type] ?? '';
           const data = `${fileGenerated.value.content}${os.EOL}${functionExecution}`;
-          const content = await render({ data });
+          const content = await render(data);
           if (expectedMapping[type]) {
-            expect(content.css.toString().includes(expectedMapping[type])).toBeTruthy();
+            expect(content.css.toString()).toContain(expectedMapping[type]);
           }
         }),
       );
@@ -170,19 +170,19 @@ describe('to-scss-map', () => {
       };
 
       const expectedError: Record<string, string> = {
-        depth: 'Non usable value. Got `(background: 1, middle: 50, foreground: 100)`',
-        duration: 'Non usable value. Got `(veryLong: 3s, short: 100ms, base: 300ms, long: 700ms)',
+        depth: "(background: 1, middle: 50, foreground: 100) isn't a valid CSS value.",
+        duration: "(veryLong: 3s, short: 100ms, base: 300ms, long: 700ms) isn't a valid CSS value.",
         measurement:
-          'Non usable value. Got `(baseSpace01: 4px, baseSpace02: 8px, baseSpace03: 12px, baseSpace04: 16px, baseSpace05: 32px, baseSpace06: 48px, baseSpace07: 64px, baseSpace08: 80px, baseSpace09: 96px, baseSpace10: 112px)`',
+          "(baseSpace01: 4px, baseSpace02: 8px, baseSpace03: 12px, baseSpace04: 16px, baseSpace05: 32px, baseSpace06: 48px, baseSpace07: 64px, baseSpace08: 80px, baseSpace09: 96px, baseSpace10: 112px) isn't a valid CSS value.",
         border:
-          'Non usable value. Got `(borderAccent: 2px solid #6650ef, borderAccentWithOpacity: 2px solid rgba(102, 80, 239, 0.5), borderAccentWithoutRadii: 2px solid rgba(102, 80, 239, 0.5), borderDashed: 1px dashed #1e212b)`',
+          "(borderAccent: 2px solid #6650ef, borderAccentWithOpacity: 2px solid rgba(102, 80, 239, 0.5), borderAccentWithoutRadii: 2px solid rgba(102, 80, 239, 0.5), borderDashed: 1px dashed #1e212b) isn't a valid CSS value.",
         color:
-          'Non usable value. Got `(colors: (accent: #577cfe, black: #1e212b, green: #58cd52, grey: #ccd5e1, orange: #ff8e05, red: #f5483f, white: white))`',
+          "(colors: (accent: #577cfe, black: #1e212b, green: #58cd52, grey: #ccd5e1, orange: #ff8e05, red: #f5483f, white: white)) isn't a valid CSS value.",
         shadow:
-          'Non usable value. Got `(elevation1: 0px 4px 8px rgba(0, 0, 0, 0.1), elevation2: 0px 4px 28px rgba(0, 0, 0, 0.1), 0px 4px 4px rgba(0, 0, 0, 0.1), elevation3: 0px 1.85185px 3.14815px rgba(0, 0, 0, 0.02), 0px 8.14815px 6.51852px rgba(0, 0, 0, 0.03), 0px 20px 13px rgba(0, 0, 0, 0.04), 0px 38.51852px 25.48148px rgba(0, 0, 0, 0.04), 0px 64.81481px 46.85185px rgba(0, 0, 0, 0.05), 0px 100px 80px 1px rgba(0, 0, 0, 0.07))`',
+          "(elevation1: ((0px 4px 8px rgba(0, 0, 0, 0.1),)), elevation2: (0px 4px 28px rgba(0, 0, 0, 0.1), 0px 4px 4px rgba(0, 0, 0, 0.1)), elevation3: (0px 1.8518518209px 3.1481480598px rgba(0, 0, 0, 0.02), 0px 8.1481485367px 6.5185184479px rgba(0, 0, 0, 0.03), 0px 20px 13px rgba(0, 0, 0, 0.04), 0px 38.5185203552px 25.4814815521px rgba(0, 0, 0, 0.04), 0px 64.8148117065px 46.851852417px rgba(0, 0, 0, 0.05), 0px 100px 80px 1px rgba(0, 0, 0, 0.07))) isn't a valid CSS value.",
         gradient:
-          'Non usable value. Got `(gradients: (colored: linear-gradient(90deg, #f5483f 0%, #ff8e05 100%), dark: linear-gradient(90deg, #1e212b 0%, #ccd5e1 100%), neutral: linear-gradient(90deg, #ccd5e1 0%, white 100%), safari: linear-gradient(90deg, #ff8e05 0%, white 100%)))`',
-        opacity: 'Non usable value. Got `(transparent: 0.1, subtle: 0.5, visible: 0.95)`',
+          "(gradients: (colored: linear-gradient(90deg, #f5483f 0%, #ff8e05 100%), dark: linear-gradient(90deg, #1e212b 0%, #ccd5e1 100%), neutral: linear-gradient(90deg, #ccd5e1 0%, white 100%), safari: linear-gradient(90deg, #ff8e05 0%, white 100%))) isn't a valid CSS value.",
+        opacity: "(transparent: 0.1, subtle: 0.5, visible: 0.95) isn't a valid CSS value.",
       };
 
       const ScssMapsResponse = await toScssMap(
@@ -200,9 +200,10 @@ describe('to-scss-map', () => {
           const data = `${fileGenerated.value.content}${os.EOL}${functionExecution}`;
 
           try {
-            await render({ data });
+            await render(data);
           } catch (error) {
-            expect(error.message.includes(expectedError[type])).toBeTruthy();
+            expect(error.message).toContain(expectedError[type]);
+            expect(error.message).toContain(`Non usable value. Got \`#{$${type}}\``);
           }
         }),
       );
@@ -235,9 +236,9 @@ describe('to-scss-map', () => {
           const data = `${fileGenerated.value.content}${os.EOL}${functionExecution}`;
 
           try {
-            await render({ data });
+            await render(data);
           } catch (error) {
-            expect(error.message.includes(expectedError[type])).toBeTruthy();
+            expect(error.message).toContain(expectedError[type]);
           }
         }),
       );
@@ -252,7 +253,7 @@ describe('to-scss-map', () => {
 
       const expectedError: Record<string, string> = {
         'text-style':
-          'Non usable value. Got `(body: (font-family: "Inter-Medium", font-weight: 500, font-size: 14px, letter-spacing: 10px, line-height: 20px, text-align: left, vertical-align: top), bodyWithOpacity: (font-family: "Inter-Medium", font-weight: 500, font-size: 14px, letter-spacing: 10px, line-height: 20px, text-align: left, vertical-align: top), code: (font-family: "FiraCode-Medium", font-weight: 500, font-size: 13px, line-height: 20px, text-align: left, vertical-align: top), list: (font-family: "Roboto-Regular", font-weight: 400, font-size: 14px, line-height: 20px, text-align: left, vertical-align: top), title: (font-family: "Inter-SemiBold", font-weight: 600, font-size: 32px, line-height: 40px, text-transform: uppercase, text-align: left, vertical-align: top, text-decoration: underline, text-indent: 5px))',
+          '(body: (font-family: "Inter-Medium", font-weight: 500, font-size: 14px, letter-spacing: 10px, line-height: 20px, text-align: left, vertical-align: top), bodyWithOpacity: (font-family: "Inter-Medium", font-weight: 500, font-size: 14px, letter-spacing: 10px, line-height: 20px, text-align: left, vertical-align: top), code: (font-family: "FiraCode-Medium", font-weight: 500, font-size: 13px, line-height: 20px, text-align: left, vertical-align: top), list: (font-family: "Roboto-Regular", font-weight: 400, font-size: 14px, line-height: 20px, text-align: left, vertical-align: top), title: (font-family: "Inter-SemiBold", font-weight: 600, font-size: 32px, line-height: 40px, text-transform: uppercase, text-align: left, vertical-align: top, text-decoration: underline, text-indent: 5px)) isn\'t a valid CSS value.',
       };
 
       const scssMapsResponse = await toScssMap(
@@ -270,9 +271,10 @@ describe('to-scss-map', () => {
           const data = `${fileGenerated.value.content}${os.EOL}${functionExecution}`;
 
           try {
-            await render({ data });
+            await render(data);
           } catch (error) {
-            expect(error.message.includes(expectedError[type])).toBeTruthy();
+            expect(error.message).toContain(expectedError[type]);
+            expect(error.message).toContain(`Non usable value. Got \`#{$text-style}\``);
           }
         }),
       );
@@ -284,7 +286,7 @@ describe('to-scss-map', () => {
       const testFunction = '.test { width: get-my-measurements(baseSpace05); }';
 
       const expectedName = '_measurement-custom.scss';
-      const expected = '.test { width: 32px; }';
+      const expected = '.test{width:32px}';
 
       const ScssMapsResponse = await toScssMap(
         seeds().tokens.filter(token =>
@@ -306,8 +308,8 @@ describe('to-scss-map', () => {
       await Promise.all(
         ScssMapsResponse.map(async fileGenerated => {
           const data = `${fileGenerated.value.content}${os.EOL}${testFunction}`;
-          const content = await render({ data });
-          expect(content.css.toString().includes(expected)).toBeTruthy();
+          const content = await render(data);
+          expect(content.css.toString()).toContain(expected);
           expect(fileGenerated.name).toEqual(expectedName);
         }),
       );
@@ -322,7 +324,7 @@ describe('to-scss-map', () => {
 
       const expectedMapping: Record<string, string> = {
         typography:
-          '.test { font-family: "Inter-SemiBold"; font-weight: 600; font-size: 32px; line-height: 40px; text-transform: uppercase; text-align: left; vertical-align: top; text-decoration: underline; text-indent: 5px; }',
+          '.test{font-family:"Inter-SemiBold";font-weight:600;font-size:32px;line-height:40px;text-transform:uppercase;text-align:left;vertical-align:top;text-decoration:underline;text-indent:5px}',
       };
 
       const expectedFileName: Record<string, string> = {
@@ -353,12 +355,12 @@ describe('to-scss-map', () => {
           const type = /mixin (.*)\(/.exec(fileGenerated.value.content!)![1];
           const functionExecution = testFunctionMapping[type] ?? '';
           const data = `${fileGenerated.value.content}${os.EOL}${functionExecution}`;
-          const content = await render({ data });
+          const content = await render(data);
 
           expect(fileGenerated.name).toEqual(expectedFileName[type]);
 
           if (expectedMapping) {
-            expect(content.css.toString().includes(expectedMapping[type])).toBeTruthy();
+            expect(content.css.toString()).toContain(expectedMapping[type]);
           }
         }),
       );
@@ -370,7 +372,7 @@ describe('to-scss-map', () => {
       const testFunction = '.test { width: get-my-measurements(baseSpace05); }';
 
       const expectedName = '_measurement-custom.scss';
-      const expected = '.test { width: 32px; }';
+      const expected = '.test{width:32px}';
 
       const ScssMapsResponse = await toScssMap(
         seeds().tokens.filter(token => token.type === 'measurement') as Array<Token>,
@@ -390,8 +392,8 @@ describe('to-scss-map', () => {
       await Promise.all(
         ScssMapsResponse.map(async fileGenerated => {
           const data = `${fileGenerated.value.content}${os.EOL}${testFunction}`;
-          const content = await render({ data });
-          expect(content.css.toString().includes(expected)).toBeTruthy();
+          const content = await render(data);
+          expect(content.css.toString().includes(expected));
           expect(fileGenerated.name).toEqual(expectedName);
         }),
       );
@@ -403,7 +405,7 @@ describe('to-scss-map', () => {
       const testFunction = '.test { width: get-my-measurements(baseSpace05); }';
 
       const expectedName = '_measurement-custom.scss';
-      const expected = '.test { width: 32px; }';
+      const expected = '.test{width:32px}';
 
       const ScssMapsResponse = await toScssMap(
         seeds().tokens.filter(token => token.type === 'measurement') as Array<Token>,
@@ -419,8 +421,8 @@ describe('to-scss-map', () => {
       await Promise.all(
         ScssMapsResponse.map(async fileGenerated => {
           const data = `${fileGenerated.value.content}${os.EOL}${testFunction}`;
-          const content = await render({ data });
-          expect(content.css.toString().includes(expected)).toBeTruthy();
+          const content = await render(data);
+          expect(content.css.toString().includes(expected));
           expect(fileGenerated.name).toEqual(expectedName);
         }),
       );
@@ -435,8 +437,8 @@ describe('to-scss-map', () => {
       };
 
       const expectedMapping: Record<string, string> = {
-        measurement: '.test { width: 32px; }',
-        color: '.test { color: white; }',
+        measurement: '.test{width:32px}',
+        color: '.test{color:white}',
       };
 
       const ScssMapsResponse = await toScssMap(
@@ -461,9 +463,9 @@ describe('to-scss-map', () => {
           const functionExecution = testFunctionMapping[type] ?? '';
           const data = `${fileGenerated.value.content}${os.EOL}${functionExecution}`;
 
-          const content = await render({ data });
+          const content = await render(data);
           if (expectedMapping[type]) {
-            expect(content.css.toString().includes(expectedMapping[type])).toBeTruthy();
+            expect(content.css.toString().includes(expectedMapping[type]));
           }
         }),
       );
@@ -478,7 +480,7 @@ describe('to-scss-map', () => {
 
       const expectedMapping: Record<string, string> = {
         typography:
-          '.test { font-family: "Inter-SemiBold"; font-weight: 600; font-size: 32px; line-height: 40px; text-transform: uppercase; text-align: left; vertical-align: top; text-decoration: underline; text-indent: 5px; }',
+          '.test{font-family:"Inter-SemiBold"; font-weight:600; font-size:32px; line-height:40px; text-transform:uppercase; text-align:left; vertical-align:top; text-decoration:underline; text-indent: 5px; }',
       };
 
       const ScssMapsResponse = await toScssMap(
@@ -494,10 +496,10 @@ describe('to-scss-map', () => {
           const type = /mixin (.*)\(/.exec(fileGenerated.value.content!)![1];
           const functionExecution = testFunctionMapping[type] ?? '';
           const data = `${fileGenerated.value.content}${os.EOL}${functionExecution}`;
-          const content = await render({ data });
+          const content = await render(data);
 
           if (expectedMapping[type]) {
-            expect(content.css.toString().includes(expectedMapping[type])).toBeTruthy();
+            expect(content.css.toString().includes(expectedMapping[type]));
           }
         }),
       );
