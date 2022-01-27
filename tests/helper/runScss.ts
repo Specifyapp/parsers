@@ -1,10 +1,5 @@
-import util from 'util';
-import sass from 'node-sass';
+import sass from 'sass';
 
-const sassRender = util.promisify(sass.render);
-
-export const render = (options: sass.Options) =>
-  sassRender({
-    outputStyle: 'compact',
-    ...options,
-  });
+export const render = (source: Parameters<typeof sass.compileString>[0]) => {
+  return sass.compileString(source, { style: 'compressed' });
+};
