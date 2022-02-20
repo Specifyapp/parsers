@@ -6,17 +6,17 @@ import { Utils } from './index';
 
 export class Shadow extends ShadowToken {
   token: Partial<ShadowToken>;
-  constructor(token: Partial<ShadowToken>, transformNameFn: Function) {
+  constructor(token: Partial<ShadowToken>) {
     super(token);
-    this.token = { ...token, name: transformNameFn(token.name) };
+    this.token = token;
   }
   generate(options: OptionsType): ShadowMapping {
-    const colorFormat = options?.formatTokens?.colorFormat?.format ?? 'hex';
-    const keyName = Utils.getTemplatedTokenName(this.token, options?.renameKeys?.boxShadow);
-
     return {
-      boxShadow: {
-        [keyName]: this.value
+      boxShadow: Utils.go<ConstructorParameters<typeof ShadowToken>[0]>(
+        this.token,
+        options,
+        'boxShadow',
+        this.value
           .reduce<Array<string>>((acc, shadow) => {
             const { color, offsetX, offsetY, blur, isInner, spread } = shadow;
             const x = `${offsetX.value.measure}${offsetX.value.unit}`;
@@ -24,12 +24,14 @@ export class Shadow extends ShadowToken {
             const blurString = `${blur.value.measure}${blur.value.unit}`;
             const spreadString = spread ? ` ${spread.value.measure}${spread.value.unit}` : '';
             const innerText = isInner ? 'inset ' : '';
-            const colorString = tinycolor(color.value).toString(colorFormat);
+            const colorString = tinycolor(color.value).toString(
+              options?.formatTokens?.colorFormat?.format ?? 'hex',
+            );
             acc.push(`${innerText}${x} ${y} ${blurString}${spreadString} ${colorString}`);
             return acc;
           }, [])
           .join(', '),
-      },
+      ),
     };
   }
 }

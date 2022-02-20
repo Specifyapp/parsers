@@ -5,25 +5,24 @@ import { OptionsType } from '../to-tailwind.parser';
 
 export class Duration extends DurationToken {
   token: Partial<DurationToken>;
-  constructor(token: Partial<DurationToken>, transformNameFn: Function) {
+  constructor(token: Partial<DurationToken>) {
     super(token);
-    this.token = { ...token, name: transformNameFn(token.name) };
+    this.token = token;
   }
   generate(options: OptionsType): DurationMapping {
-    const keyName = Utils.getTemplatedTokenName(
-      this.token,
-      options?.renameKeys?.transitionDuration,
-    );
     return {
-      transitionDuration: {
-        [keyName]: `${this.value.duration}${this.value.unit}`,
-      },
+      transitionDuration: Utils.go<ConstructorParameters<typeof DurationToken>[0]>(
+        this.token,
+        options,
+        'transitionDuration',
+        `${this.value.duration}${this.value.unit}`,
+      ),
     };
   }
 
   static afterGenerate(tokens: TailwindMappingTypes) {
     if (tokens.transitionDuration)
-      tokens.transitionDuration = Utils.sortObject(tokens.transitionDuration);
+      tokens.transitionDuration = Utils.sortObjectByValue(tokens.transitionDuration);
     return tokens;
   }
 }

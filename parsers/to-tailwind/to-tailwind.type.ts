@@ -1,5 +1,6 @@
 import { InputDataType, OptionsType } from './to-tailwind.parser';
 import Token from '../../types/tokens/Token';
+import { RecursiveRecord } from '../../types';
 
 export type ColorsFormat =
   | 'rgb'
@@ -34,44 +35,44 @@ export type TailwindType =
   | 'backgroundImage';
 
 export type DepthMapping = {
-  zIndex?: Record<string, string>;
+  zIndex?: RecursiveRecord<string>;
 };
 export type MeasurementMapping = {
-  spacing?: Record<string, string>;
+  spacing?: RecursiveRecord<string>;
 };
 export type OpacityMapping = {
-  opacity?: Record<string, string>;
+  opacity?: RecursiveRecord<string>;
 };
 export type ShadowMapping = {
-  boxShadow?: Record<string, string>;
+  boxShadow?: RecursiveRecord<string>;
 };
 
 export type TextStyleMapping = {
-  fontSize?: Record<string, string>;
-  fontWeight?: Record<string, number>;
-  letterSpacing?: Record<string, string>;
-  lineHeight?: Record<string, string>;
-  textColor?: Record<string, string>;
-  textOpacity?: Record<string, string>;
-  fontFamily?: Record<string, Array<string>>;
+  fontSize?: RecursiveRecord<string>;
+  fontWeight?: RecursiveRecord<number>;
+  letterSpacing?: RecursiveRecord<string>;
+  lineHeight?: RecursiveRecord<string>;
+  textColor?: RecursiveRecord<string>;
+  textOpacity?: RecursiveRecord<string>;
+  fontFamily?: RecursiveRecord<Array<string>>;
 };
 export type BorderMapping = {
-  borderRadius?: Record<string, string>;
-  borderColor?: Record<string, string>;
-  borderOpacity?: Record<string, string>;
-  borderWidth?: Record<string, string>;
+  borderRadius?: RecursiveRecord<string>;
+  borderColor?: RecursiveRecord<string>;
+  borderOpacity?: RecursiveRecord<string>;
+  borderWidth?: RecursiveRecord<string>;
 };
 export type DurationMapping = {
-  transitionDuration?: Record<string, string>;
+  transitionDuration?: RecursiveRecord<string>;
 };
 export type ColorMapping = {
-  colors?: Record<string, string>;
+  colors?: RecursiveRecord<string>;
 };
 export type GradientMappingBeforeWrapper = {
-  backgroundImage?: Record<string, string>;
+  backgroundImage?: RecursiveRecord<string>;
 };
 export type GradientMapping = {
-  backgroundImage?: (theme: string) => Record<string, string>;
+  backgroundImage?: (theme: string) => RecursiveRecord<string>;
 };
 
 export type TailwindMappingTypes = DepthMapping &
@@ -95,9 +96,8 @@ export type TailwindOutputType = DepthMapping &
   GradientMapping;
 
 export interface TailwindTokenClass {
-  new (tokens: Partial<Token>, transformNameFn: Function): TailwindTokenClassInstance;
+  new (tokens: Partial<Token>): TailwindTokenClassInstance;
   tailwindKeys?: Array<TailwindType>;
-  afterStringGenerate?(tailwindTokens: TailwindOutputType, result: string): string;
   afterGenerate(TailwindTokens: TailwindMappingTypes): TailwindOutputType;
 }
 

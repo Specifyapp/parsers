@@ -16,6 +16,7 @@ import {
   TextStyleToken,
 } from '../../types';
 import { getNameFormatterFunction } from './utils/getNameFormatterFunction';
+import { camelCase } from 'lodash';
 
 describe('To tailwind', () => {
   it('Should generate the colors object', async () => {
@@ -98,7 +99,6 @@ describe('To tailwind', () => {
       token => token.type === 'gradient',
     ) as Array<GradientToken>;
     const result = await toTailwind(tokens, undefined, libs);
-
     tokens.forEach(({ name, value }) => {
       const gradientValue = value.gradients
         .map(gradient => {
@@ -109,7 +109,7 @@ describe('To tailwind', () => {
         .join(', ');
       expect(result).toEqual(
         expect.stringMatching(
-          `.*${_.camelCase(name)}: "${gradientValue.replace(/\(/, '\\(').replace(/\)/, '\\)')}".*`,
+          `${_.camelCase(name)}: "${gradientValue.replace(/\(/, '\\(').replace(/\)/, '\\)')}"`,
         ),
       );
     });
@@ -734,6 +734,30 @@ describe('To tailwind', () => {
       expect(result).toEqual(expect.stringContaining(`${prefix}${transformedName}`));
     });
   });
+
+  it('Should allow to format object with the splitBy options', async () => {
+    const tokens = seeds().tokens.filter(
+      token => !['font', 'vector', 'bitmap'].includes(token.type),
+    );
+    const result = await toTailwind(
+      tokens,
+      {
+        splitBy: '/',
+      },
+      libs,
+    );
+    tokens.forEach(token => {
+      if (token.name.includes('/')) {
+        expect(result).toEqual(
+          expect.stringContaining(`${camelCase(token.name.split('/')[0])}: {`),
+        );
+        expect(result).toEqual(expect.stringContaining(`${camelCase(token.name.split('/')[1])}: `));
+      } else {
+        expect(result).toEqual(expect.stringContaining(camelCase(token.name)));
+      }
+    });
+  });
+
   it('Should allow renaming of `textStyle` tokens', async () => {
     const tokens = seeds().tokens.filter(
       token => token.type === 'textStyle',
