@@ -5,21 +5,23 @@ import { OptionsType } from '../to-tailwind.parser';
 
 export class Measurement extends MeasurementToken {
   token: Partial<MeasurementToken>;
-  constructor(token: Partial<MeasurementToken>, transformNameFn: Function) {
+  constructor(token: Partial<MeasurementToken>) {
     super(token);
-    this.token = { ...token, name: transformNameFn(token.name) };
+    this.token = token;
   }
   generate(options: OptionsType): MeasurementMapping {
-    const keyName = Utils.getTemplatedTokenName(this.token, options?.renameKeys?.spacing);
     return {
-      spacing: {
-        [keyName]: `${this.value.measure}${this.value.unit}`,
-      },
+      spacing: Utils.go<ConstructorParameters<typeof MeasurementToken>[0]>(
+        this.token,
+        options,
+        'spacing',
+        `${this.value.measure}${this.value.unit}`,
+      ),
     };
   }
 
   static afterGenerate(tokens: TailwindMappingTypes) {
-    if (tokens.spacing) tokens.spacing = Utils.sortObject(tokens.spacing!);
+    if (tokens.spacing) tokens.spacing = Utils.sortObjectByValue(tokens.spacing!);
     return tokens;
   }
 }

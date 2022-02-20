@@ -6,9 +6,9 @@ import { Utils } from './index';
 
 export class Border extends BorderToken {
   token: Partial<BorderToken>;
-  constructor(token: Partial<BorderToken>, transformNameFn: Function) {
+  constructor(token: Partial<BorderToken>) {
     super(token);
-    this.token = { ...token, name: transformNameFn(token.name) };
+    this.token = token;
   }
 
   generate(options: OptionsType): BorderMapping {
@@ -16,31 +16,37 @@ export class Border extends BorderToken {
     const result = {} as BorderMapping;
 
     if (width && width.value) {
-      const keyName = Utils.getTemplatedTokenName(this.token, options?.renameKeys?.borderWidth);
-      result.borderWidth = {
-        [keyName]: `${width.value.measure}${width.value.unit}`,
-      };
+      result.borderWidth = Utils.go<ConstructorParameters<typeof BorderToken>[0]>(
+        this.token,
+        options,
+        'borderWidth',
+        `${width.value.measure}${width.value.unit}`,
+      );
     }
 
     if (radii && radii.value) {
-      const keyName = Utils.getTemplatedTokenName(this.token, options?.renameKeys?.borderRadius);
-      result.borderRadius = {
-        [keyName]: `${radii?.value.measure}${radii?.value.unit}`,
-      };
+      result.borderRadius = Utils.go<ConstructorParameters<typeof BorderToken>[0]>(
+        this.token,
+        options,
+        'borderRadius',
+        `${radii?.value.measure}${radii?.value.unit}`,
+      );
     }
 
     if (color && color.value) {
-      const keyName = Utils.getTemplatedTokenName(this.token, options?.renameKeys?.borderColor);
-      result.borderColor = {
-        [keyName]: tinycolor(color.value).toString(
-          options?.formatTokens?.colorFormat?.format || 'hex',
-        ),
-      };
+      result.borderColor = Utils.go<ConstructorParameters<typeof BorderToken>[0]>(
+        this.token,
+        options,
+        'borderColor',
+        tinycolor(color.value).toString(options?.formatTokens?.colorFormat?.format || 'hex'),
+      );
       if (color.value.a && color.value.a !== 1) {
-        const keyName = Utils.getTemplatedTokenName(this.token, options?.renameKeys?.borderOpacity);
-        result.borderOpacity = {
-          [keyName]: `${color.value.a}`,
-        };
+        result.borderOpacity = Utils.go<ConstructorParameters<typeof BorderToken>[0]>(
+          this.token,
+          options,
+          'borderOpacity',
+          `${color.value.a}`,
+        );
       }
     }
 

@@ -5,22 +5,24 @@ import { Utils } from './index';
 
 export class Depth extends DepthToken {
   token: Partial<DepthToken>;
-  constructor(token: Partial<DepthToken>, transformNameFn: Function) {
+  constructor(token: Partial<DepthToken>) {
     super(token);
-    this.token = { ...token, name: transformNameFn(token.name) };
+    this.token = token;
   }
 
   generate(options: OptionsType): DepthMapping {
-    const keyName = Utils.getTemplatedTokenName(this.token, options?.renameKeys?.zIndex);
     return {
-      zIndex: {
-        [keyName]: `${this.value.depth}`,
-      },
+      zIndex: Utils.go<ConstructorParameters<typeof DepthToken>[0]>(
+        this.token,
+        options,
+        'zIndex',
+        `${this.value.depth}`,
+      ),
     };
   }
 
   static afterGenerate(tokens: TailwindMappingTypes) {
-    if (tokens.zIndex) tokens.zIndex = Utils.sortObject(tokens.zIndex);
+    if (tokens.zIndex) tokens.zIndex = Utils.sortObjectByValue(tokens.zIndex);
     return tokens;
   }
 }

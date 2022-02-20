@@ -7,14 +7,13 @@ import tinycolor from 'tinycolor2';
 
 export class TextStyle extends TextStyleToken {
   token: Partial<TextStyleToken>;
-  constructor(token: Partial<TextStyleToken>, transformNameFn: Function) {
+  constructor(token: Partial<TextStyleToken>) {
     super(token);
-    this.token = { ...token, name: transformNameFn(token.name) };
+    this.token = token;
   }
 
   private getFontWeight() {
-    const fw = this.value.font.value.fontWeight;
-    return fw;
+    return this.value.font.value.fontWeight;
   }
   private getLetterSpacing() {
     const ls = this.value.letterSpacing;
@@ -49,74 +48,88 @@ export class TextStyle extends TextStyleToken {
   generate(options: OptionsType): TextStyleMapping {
     const result: TextStyleMapping = {};
 
-    const fontSizeKeyName = Utils.getTemplatedTokenName(this.token, options?.renameKeys?.fontSize);
-    result.fontSize = {
-      [fontSizeKeyName]: this.getFontSize(options?.formatTokens?.fontSizeFormat),
-    };
-
-    const letterSpacingKeyName = Utils.getTemplatedTokenName(
+    result.fontSize = Utils.go<ConstructorParameters<typeof TextStyleToken>[0]>(
       this.token,
-      options?.renameKeys?.letterSpacing,
+      options,
+      'fontSize',
+      this.getFontSize(options?.formatTokens?.fontSizeFormat),
     );
+
     const letterSpacing = this.getLetterSpacing();
-    if (letterSpacing) result.letterSpacing = { [letterSpacingKeyName]: letterSpacing };
+    if (letterSpacing) {
+      result.letterSpacing = Utils.go<ConstructorParameters<typeof TextStyleToken>[0]>(
+        this.token,
+        options,
+        'letterSpacing',
+        letterSpacing,
+      );
+    }
 
-    const lineHeightKeyName = Utils.getTemplatedTokenName(
-      this.token,
-      options?.renameKeys?.lineHeight,
-    );
     const lineHeight = this.getLineHeight();
-    result.lineHeight = { [lineHeightKeyName]: lineHeight };
+    result.lineHeight = Utils.go<ConstructorParameters<typeof TextStyleToken>[0]>(
+      this.token,
+      options,
+      'lineHeight',
+      lineHeight,
+    );
 
     const textColor = this.getColor(options?.formatTokens?.colorFormat?.format || 'hex');
-    const textColorKeyName = Utils.getTemplatedTokenName(
-      this.token,
-      options?.renameKeys?.textColor,
-    );
-    if (textColor) result.textColor = { [textColorKeyName]: textColor };
+    if (textColor) {
+      result.textColor = Utils.go<ConstructorParameters<typeof TextStyleToken>[0]>(
+        this.token,
+        options,
+        'textColor',
+        textColor,
+      );
+    }
 
     const textOpacity = this.getOpacity();
-    const textOpacityKeyName = Utils.getTemplatedTokenName(
-      this.token,
-      options?.renameKeys?.textOpacity,
-    );
-    if (textOpacity) result.textOpacity = { [textOpacityKeyName]: textOpacity };
+    if (textOpacity) {
+      result.textOpacity = Utils.go<ConstructorParameters<typeof TextStyleToken>[0]>(
+        this.token,
+        options,
+        'textOpacity',
+        textOpacity,
+      );
+    }
 
     const fontFamily = this.getFontFamily();
-    const fontFamilyKeyName = Utils.getTemplatedTokenName(
+    result.fontFamily = Utils.go<ConstructorParameters<typeof TextStyleToken>[0]>(
       this.token,
-      options?.renameKeys?.fontFamily,
+      options,
+      'fontFamily',
+      [fontFamily],
     );
-    result.fontFamily = { [fontFamilyKeyName]: [fontFamily] };
 
     const fontWeight = this.getFontWeight();
-    const fontWeightKeyName = Utils.getTemplatedTokenName(
+    result.fontWeight = Utils.go<ConstructorParameters<typeof TextStyleToken>[0]>(
       this.token,
-      options?.renameKeys?.fontWeight,
+      options,
+      'fontWeight',
+      fontWeight,
     );
-    result.fontWeight = { [fontWeightKeyName]: fontWeight };
 
     return result;
   }
 
   static afterGenerate(TailwindTokens: TailwindMappingTypes) {
     if (TailwindTokens.fontSize)
-      TailwindTokens.fontSize = Utils.sortObject(TailwindTokens.fontSize);
+      TailwindTokens.fontSize = Utils.sortObjectByValue(TailwindTokens.fontSize);
 
     if (TailwindTokens.fontWeight)
-      TailwindTokens.fontWeight = Utils.sortObject(TailwindTokens.fontWeight);
+      TailwindTokens.fontWeight = Utils.sortObjectByValue(TailwindTokens.fontWeight);
 
     if (TailwindTokens.lineHeight)
-      TailwindTokens.lineHeight = Utils.sortObject(TailwindTokens.lineHeight);
+      TailwindTokens.lineHeight = Utils.sortObjectByValue(TailwindTokens.lineHeight);
 
     if (TailwindTokens.letterSpacing)
-      TailwindTokens.letterSpacing = Utils.sortObject(TailwindTokens.letterSpacing);
+      TailwindTokens.letterSpacing = Utils.sortObjectByValue(TailwindTokens.letterSpacing);
 
     if (TailwindTokens.textColor)
-      TailwindTokens.textColor = Utils.sortObject(TailwindTokens.textColor);
+      TailwindTokens.textColor = Utils.sortObjectByValue(TailwindTokens.textColor);
 
     if (TailwindTokens.textOpacity)
-      TailwindTokens.textOpacity = Utils.sortObject(TailwindTokens.textOpacity);
+      TailwindTokens.textOpacity = Utils.sortObjectByValue(TailwindTokens.textOpacity);
 
     return TailwindTokens;
   }

@@ -5,7 +5,7 @@ import os from 'os';
 import * as _ from 'lodash';
 import { ColorsFormat, FormatName, TailwindTokenClass, TailwindType } from './to-tailwind.type';
 import * as TokensClass from './tokens';
-import { getNameFormatterFunction } from './utils/getNameFormatterFunction';
+import deepmerge from 'deepmerge';
 
 export type OutputDataType = string;
 export type InputDataType = Array<
@@ -33,6 +33,7 @@ export type OptionsType =
         exportDefault: boolean;
       }>;
       renameKeys: PartialRecord<TailwindType, string>;
+      splitBy?: string;
     }>
   | undefined;
 
@@ -43,7 +44,6 @@ function getClassByType(type: string): TailwindTokenClass | undefined {
 
 class ToTailwind {
   objectName;
-  transformNameFn;
   exportDefault;
   module;
   tokensGroupedByType;
@@ -53,7 +53,6 @@ class ToTailwind {
   constructor(tokens: InputDataType, options: OptionsType) {
     this.options = options;
     this.objectName = options?.formatConfig?.objectName ?? 'theme';
-    this.transformNameFn = getNameFormatterFunction(options?.formatName);
     this.exportDefault = options?.formatConfig?.exportDefault ?? true;
     this.module = options?.formatConfig?.module ?? 'es6';
     this.tokens = tokens;
@@ -66,8 +65,7 @@ class ToTailwind {
       (acc, tokenType) => ({ ...acc, ...this.setGlobal(tokenType) }),
       {},
     );
-    const result = this.replaceFunctionTokens();
-    return this.finalize(result);
+    return this.finalize(JSON.stringify(this.styles));
   }
 
   setGlobal(tokenType: TokensType) {
@@ -75,40 +73,12 @@ class ToTailwind {
     if (!TokenHandler) return {};
 
     const tokenByType = this.tokensGroupedByType[tokenType].reduce((acc, token) => {
-      const instance = new TokenHandler(token, this.transformNameFn);
+      const instance = new TokenHandler(token);
       const tailwindTokens = instance.generate(this.options, this.tokens);
-      (Object.keys(tailwindTokens) as Array<TailwindType>).forEach(tailwindKey => {
-        acc[tailwindKey] = { ...(acc[tailwindKey] || {}), ...tailwindTokens[tailwindKey] };
-      });
-      return acc;
-    }, {} as Record<TailwindType, any>);
+      return deepmerge(acc, tailwindTokens);
+    }, {});
 
     return TokenHandler.afterGenerate ? TokenHandler.afterGenerate(tokenByType) : tokenByType;
-  }
-
-  replaceFunctionTokens() {
-    // List of keys that needs to be removed from the created styles before stringify
-    // So we need to remove them first
-    // For example, backgroundImage sends back a function, not a string containing the function
-    const keysToExclude = Object.keys(this.tokensGroupedByType).reduce(
-      (keyToExclude: Array<TailwindType>, type) => {
-        const tokenHandler = getClassByType(type);
-        if (tokenHandler?.afterStringGenerate && tokenHandler.tailwindKeys)
-          keyToExclude.push(...tokenHandler.tailwindKeys);
-        return keyToExclude;
-      },
-      [],
-    );
-    // Stringify everything except for the excluded keys
-    const styles = JSON.stringify(_.omit(this.styles, keysToExclude));
-    // Once the string is generated we add the function based ones
-    // From the example, it adds the function not stringified for backgroundImage
-    return Object.keys(this.tokensGroupedByType).reduce((result, type) => {
-      const tokenHandler = getClassByType(type);
-      if (tokenHandler?.afterStringGenerate)
-        result = tokenHandler.afterStringGenerate(this.styles, result);
-      return result;
-    }, styles);
   }
 
   finalize(result: string) {

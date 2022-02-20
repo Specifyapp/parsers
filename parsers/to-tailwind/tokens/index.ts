@@ -1,5 +1,9 @@
 import { Token } from '../../../types';
 import Template from '../../../libs/template';
+import * as _ from 'lodash';
+import { getNameFormatterFunction } from '../utils/getNameFormatterFunction';
+import { TailwindType } from '../to-tailwind.type';
+import { OptionsType } from '../to-tailwind.parser';
 
 export * from './color';
 export * from './gradient';
@@ -16,7 +20,7 @@ export abstract class Utils {
     return typeof value === 'string' ? parseFloat(value) : value;
   }
 
-  static sortObject(obj: Record<string, string | number>) {
+  static sortObjectByValue<T>(obj: T) {
     return Object.entries(obj)
       .sort(([, a], [, b]) => this.parseFloatIfString(a) - this.parseFloatIfString(b))
       .reduce((r, [k, v]) => ({ ...r, [k]: v }), {});
@@ -28,5 +32,16 @@ export abstract class Utils {
       return templateInstance.render(token);
     }
     return token.name!;
+  }
+
+  static go<T>(token: T, options: OptionsType, tailwindKey: TailwindType, value: unknown) {
+    const keyName = this.getTemplatedTokenName(token, options?.renameKeys?.[tailwindKey]);
+    const keys = [...(options?.splitBy ? keyName.split(new RegExp(options.splitBy)) : [keyName])];
+    return _.setWith(
+      {},
+      keys.map(k => getNameFormatterFunction(options?.formatName)(k)).join('.'),
+      value,
+      Object,
+    );
   }
 }
