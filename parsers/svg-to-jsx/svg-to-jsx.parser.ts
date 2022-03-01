@@ -32,6 +32,7 @@ export type OptionsType =
         tabWidth: number;
         useTabs: boolean;
         singleQuote: boolean;
+        isTsx: boolean;
       }>;
       wrapper?: {
         tag: string;
@@ -157,7 +158,7 @@ export default async function (
           );
           token.value.fileName = token.value.fileName
             ? token.value.fileName
-            : `${_.camelCase(token.name)}.jsx`;
+            : `${_.camelCase(token.name)}.${options?.formatConfig?.isTsx ? 'tsx' : 'jsx'}`;
           return { ...token, value: _.omit(token.value, ['url']) } as OutputDataType[0];
         }),
     );
