@@ -18,6 +18,7 @@ interface parser {
       tabWidth: number;
       useTabs: boolean;
       singleQuote: boolean;
+      isTsx: boolean;
     }>;
     wrapper?: {
       tag?: string;
@@ -28,17 +29,18 @@ interface parser {
 ```
 
 ### Options
-| Parameter                | Required  | Type                                                     | Default    | Description                                                                    |
-| ------------------------ | --------- | -------------------------------------------------------- | ---------- | ------------------------------------------------------------------------------ |
-| `prepend`  | optional     | `string`       |   | A string to append at the top of the generated file                | 
-| `formatConfig.endOfLine` | optional     | `auto` `lf` `crlf` `cr`                                     | `auto`           | [Prettier documentation](https://prettier.io/docs/en/options.html#end-of-line) |
-| `formatConfig.tabWidth`  | optional     | `number`                                                 | `2`           | [Prettier documentation](https://prettier.io/docs/en/options.html#tab-width)   |
-| `formatConfig.useTabs`   | optional     | `boolean`                                                | `true`           | [Prettier documentation](https://prettier.io/docs/en/options.html#tabs)        |
-| `formatConfig.singleQuote`   | optional     | `boolean`                                                | `false`           | [Prettier documentation](https://prettier.io/docs/en/options.html#quotes)        |
-| `formatConfig.exportDefault`   | optional     | `boolean`                                                | `true`           | Defines if the export of the JSX component should be done using default or not.      |
-| `formatConfig.variableFormat`             | optional     | `camelCase` `kebabCase` `snakeCase` `pascalCase`      | `kebabCase` | The case transformation you want to apply to the name of JavaScript variable that will be exported.            |
-| `wrapper.tag`  | optional     | `string`          |  | An HTML parent tag will be used to wrap the SVG tag.              |
-| `wrapper.className`  | optional     | `string`    |      | A string or a pattern used to set a className attribute on the potential parent tag wrapping the SVG tag.                           |
+| Parameter                     | Required  | Type                                             | Default     | Description                                                                                               |
+|-------------------------------| --------- |--------------------------------------------------|-------------|-----------------------------------------------------------------------------------------------------------|
+| `prepend`                     | optional     | `string`                                         |             | A string to append at the top of the generated file                                                       | 
+| `formatConfig.endOfLine`      | optional     | `auto` `lf` `crlf` `cr`                          | `auto`      | [Prettier documentation](https://prettier.io/docs/en/options.html#end-of-line)                            |
+| `formatConfig.tabWidth`       | optional     | `number`                                         | `2`         | [Prettier documentation](https://prettier.io/docs/en/options.html#tab-width)                              |
+| `formatConfig.useTabs`        | optional     | `boolean`                                        | `true`      | [Prettier documentation](https://prettier.io/docs/en/options.html#tabs)                                   |
+| `formatConfig.singleQuote`    | optional     | `boolean`                                        | `false`     | [Prettier documentation](https://prettier.io/docs/en/options.html#quotes)                                 |
+| `formatConfig.exportDefault`  | optional     | `boolean`                                        | `true`      | Defines if the export of the JSX component should be done using default or not.                           |
+| `formatConfig.variableFormat` | optional     | `camelCase` `kebabCase` `snakeCase` `pascalCase` | `kebabCase` | The case transformation you want to apply to the name of JavaScript variable that will be exported.       |
+| `formatConfig.isTsx`          | optional     | `boolean`   | `false`     | Append `.tsx` extension to the generated files.                                                                  |
+| `wrapper.tag`                 | optional     | `string`                                         |             | An HTML parent tag will be used to wrap the SVG tag.                                                      |
+| `wrapper.className`           | optional     | `string`                                         |             | A string or a pattern used to set a className attribute on the potential parent tag wrapping the SVG tag. |
 
 
 ## Types

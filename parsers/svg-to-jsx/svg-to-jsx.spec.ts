@@ -77,10 +77,10 @@ describe('Svg to jsx', () => {
     const result = await svgToJsx(tokens as InputDataType, undefined, libs as LibsType);
     if (result instanceof Error) return fail(result);
     expect(result).toHaveLength(1);
-    expect(result[0].value.content).toContain("strokeWidth")
-    expect(result[0].value.content).toContain("strokeLinecap")
-    expect(result[0].value.content).toContain("strokeLinejoin")
-    expect(result[0].value.content).toContain("viewBox")
+    expect(result[0].value.content).toContain('strokeWidth');
+    expect(result[0].value.content).toContain('strokeLinecap');
+    expect(result[0].value.content).toContain('strokeLinejoin');
+    expect(result[0].value.content).toContain('viewBox');
     return;
   });
   it('Validate camelCase on Style rules', async () => {
@@ -88,8 +88,21 @@ describe('Svg to jsx', () => {
     const result = await svgToJsx(tokens as InputDataType, undefined, libs as LibsType);
     if (result instanceof Error) return fail(result);
     expect(result).toHaveLength(1);
-    expect(result[0].value.content).toContain('style={{ maskType: "alpha" }}')
-    expect(result[0].value.content).toContain('maskUnits')
+    expect(result[0].value.content).toContain('style={{ maskType: "alpha" }}');
+    expect(result[0].value.content).toContain('maskUnits');
+    return;
+  });
+  it('Should return filename with tsx extension', async () => {
+    const tokens = seeds().tokens.filter(({ type }) => type === 'vector');
+    const result = await svgToJsx(
+      tokens as InputDataType,
+      { formatConfig: { isTsx: true } },
+      libs as LibsType,
+    );
+    if (result instanceof Error) return fail(result);
+    result.forEach(file => {
+      expect(file.value.fileName.endsWith('.tsx')).toEqual(true);
+    });
     return;
   });
 });
