@@ -70,7 +70,7 @@ type output = Array<Record<string, any>>;
 
 ### Config
 
-```json
+```jsonc
 {
   "name": "replace-string",
   "options": {
@@ -90,38 +90,38 @@ With this config, we will change name by keeping only characters after the last 
 
 #### Input
 
-```json5
+```jsonc
 [
   {
     // …
-    name: 'Colors/Accent',
-    value: {
-      a: 1,
-      b: 255,
-      g: 189,
-      r: 198,
+    "name": "Colors/Accent",
+    "value": {
+      "a": 1,
+      "b": 255,
+      "g": 189,
+      "r": 198
     },
-    type: 'color',
+    "type": "color"
     // …
-  },
+  }
 ]
 ```
 
 #### Output
 
-```json5
+```jsonc
 [
   {
     // …
-    name: 'Accent',
-    value: {
-      a: 1,
-      b: 255,
-      g: 189,
-      r: 198,
+    "name": "Accent",
+    "value": {
+      "a": 1,
+      "b": 255,
+      "g": 189,
+      "r": 198
     },
-    type: 'color',
+    "type": "color"
     // …
-  },
+  }
 ]
 ```

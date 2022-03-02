@@ -45,7 +45,7 @@ type output = Array<{ [key: string]: any }>;
 
 ### Config
 
-```json
+```jsonc
 {
   "name": "sort-by",
   "options": {
@@ -59,7 +59,7 @@ type output = Array<{ [key: string]: any }>;
 
 #### Input
 
-```json
+```jsonc
 [
   {
     "type": "color",
@@ -96,7 +96,7 @@ type output = Array<{ [key: string]: any }>;
 
 #### Output
 
-```json
+```jsonc
 [
   {
     "type": "color",

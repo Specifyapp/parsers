@@ -76,7 +76,7 @@ type output = Array<{ id: string; type: string; value: string; name: string } & 
 
 ### Config
 
-```json
+```jsonc
 {
   "name": "link-design-tokens"
 }
@@ -87,85 +87,85 @@ type output = Array<{ id: string; type: string; value: string; name: string } & 
 
 #### Input
 
-```json5
+```jsonc
 [
   {
-    id: '1',
-    type: 'color',
-    value: {
-      a: 1,
-      b: 255,
-      g: 189,
-      r: 198,
+    "id": "1",
+    "type": "color",
+    "value": {
+      "a": 1,
+      "b": 255,
+      "g": 189,
+      "r": 198
     },
-    name: 'color-primary',
+    "name": "color-primary"
   },
   {
-    id: '2',
-    type: 'border',
-    value: {
-      type: 'solid',
-      color: {
-        value: {
+    "id": "2",
+    "type": "border",
+    "value": {
+      "type": "solid",
+      "color": {
+        "value": {
           // <--- This absolute color value must be replaced by its corresponding design token
-          a: 1,
-          b: 255,
-          g: 189,
-          r: 198,
-        },
+          "a": 1,
+          "b": 255,
+          "g": 189,
+          "r": 198
+        }
       },
-      width: {
-        value: {
-          unit: 'px',
-          measure: 2,
-        },
-      },
+      "width": {
+        "value": {
+          "unit": "px",
+          "measure": 2
+        }
+      }
     },
-    name: 'border-active',
-  },
+    "name": "border-active"
+  }
 ]
 ```
 
 #### Output
 
-```json5
+```jsonc
 [
   {
-    id: '1',
-    type: 'color',
-    value: {
-      a: 1,
-      b: 255,
-      g: 189,
-      r: 198,
+    "id": "1",
+    "type": "color",
+    "value": {
+      "a": 1,
+      "b": 255,
+      "g": 189,
+      "r": 198
     },
-    name: 'color-primary',
+    "name": "color-primary"
   },
   {
-    id: '2',
-    type: 'border',
-    value: {
-      type: 'solid',
-      color: {
+    "id": "2",
+    "type": "border",
+    "value": {
+      "type": "solid",
+      "color": {
         // <--- The corresponding design token replaced the absolute color value 🎉
-        id: '1',
-        type: 'color',
-        value: {
-          a: 1,
-          b: 255,
-          g: 189,
-          r: 198,
+        "id": "1",
+        "type": "color",
+        "value": {
+          "a": 1,
+          "b": 255,
+          "g": 189,
+          "r": 198
         },
-        name: 'color-primary',
+        "name": "color-primary"
       },
-      width: {
-        value: {
-          unit: 'px',
-          measure: 2,
-        },
-      },
+      "width": {
+        "value": {
+          "unit": "px",
+          "measure": 2
+        }
+      }
     },
-    name: 'border-active',
-  },
+    "name": "border-active"
+  }
 ]
 ```

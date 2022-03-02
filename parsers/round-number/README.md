@@ -47,7 +47,7 @@ type output = Array<Record<string, any>>;
 
 ### Config
 
-```json
+```jsonc
 {
   "name": "round-number",
   "options": {
@@ -64,47 +64,47 @@ With this config, we will round the measure of a measurement token
 
 #### Input
 
-```json5
+```jsonc
 [
   {
-    type: 'measurement',
-    value: {
-      unit: 'rem',
-      measure: 1.689, // <---
+    "type": "measurement",
+    "value": {
+      "unit": "rem",
+      "measure": 1.689 // <---
     },
-    name: 'size-01',
+    "name": "size-01"
   },
   {
-    type: 'measurement',
-    value: {
-      unit: 'rem',
-      measure: 2.34, // <---
+    "type": "measurement",
+    "value": {
+      "unit": "rem",
+      "measure": 2.34 // <---
     },
-    name: 'size-02',
-  },
+    "name": "size-02"
+  }
 ]
 ```
 
 #### Output
 
-```json5
+```jsonc
 [
   {
-    type: 'measurement',
-    value: {
-      unit: 'rem',
-      measure: 1.7, // <---
+    "type": "measurement",
+    "value": {
+      "unit": "rem",
+      "measure": 1.7 // <---
     },
-    name: 'size-01',
+    "name": "size-01"
   },
   {
-    type: 'measurement',
-    value: {
-      unit: 'rem',
-      measure: 2.3, // <---
+    "type": "measurement",
+    "value": {
+      "unit": "rem",
+      "measure": 2.3 // <---
     },
-    name: 'size-02',
-  },
+    "name": "size-02"
+  }
 ]
 ```
 
@@ -112,17 +112,17 @@ With this config, we will round the measure of a measurement token
 
 ### Config
 
-```json5
+```jsonc
 {
-  name: 'round-number',
-  options: {
-    keys: [
-      'value.fontSize.value.measure',
-      'value.lineHeight.value.measure',
-      'value[*].blur.value.measure',
+  "name": "round-number",
+  "options": {
+    "keys": [
+      "value.fontSize.value.measure",
+      "value.lineHeight.value.measure",
+      "value[*].blur.value.measure"
     ],
-    mode: 'down',
-  },
+    "mode": "down"
+  }
 }
 ```
 
@@ -132,222 +132,222 @@ This config uses patterns. Here the shadow has an array as a value. So we use `[
 
 #### Input
 
-```json5
+```jsonc
 [
   {
-    type: 'textStyle',
-    name: 'app-code',
-    value: {
-      font: {
-        name: 'FiraCode-Medium',
-        type: 'font',
-        value: {
-          isItalic: false,
-          fontFamily: 'Fira Code',
-          fontWeight: 500,
-          fontPostScriptName: 'FiraCode-Medium',
-        },
+    "type": "textStyle",
+    "name": "app-code",
+    "value": {
+      "font": {
+        "name": "FiraCode-Medium",
+        "type": "font",
+        "value": {
+          "isItalic": false,
+          "fontFamily": "Fira Code",
+          "fontWeight": 500,
+          "fontPostScriptName": "FiraCode-Medium"
+        }
       },
-      color: {
-        value: {
-          a: 1,
-          b: 196,
-          g: 196,
-          r: 196,
-        },
+      "color": {
+        "value": {
+          "a": 1,
+          "b": 196,
+          "g": 196,
+          "r": 196
+        }
       },
-      fontSize: {
-        value: {
-          unit: 'px',
-          measure: 12.7, // <--
-        },
+      "fontSize": {
+        "value": {
+          "unit": "px",
+          "measure": 12.7 // <--
+        }
       },
-      textAlign: {
-        vertical: 'top',
-        horizontal: 'left',
+      "textAlign": {
+        "vertical": "top",
+        "horizontal": "left"
       },
-      lineHeight: {
-        value: {
-          unit: 'px',
-          measure: 14.0625, // <--
-        },
-      },
-    },
+      "lineHeight": {
+        "value": {
+          "unit": "px",
+          "measure": 14.0625 // <--
+        }
+      }
+    }
   },
   {
-    type: 'shadow',
-    name: 'Elevation-2',
-    value: [
+    "type": "shadow",
+    "name": "Elevation-2",
+    "value": [
       {
-        blur: {
-          value: {
-            unit: 'px',
-            measure: 28.33, // <--
-          },
+        "blur": {
+          "value": {
+            "unit": "px",
+            "measure": 28.33 // <--
+          }
         },
-        color: {
-          value: {
-            a: 0.1,
-            b: 0,
-            g: 0,
-            r: 0,
-          },
+        "color": {
+          "value": {
+            "a": 0.1,
+            "b": 0,
+            "g": 0,
+            "r": 0
+          }
         },
-        isInner: false,
-        offsetX: {
-          value: {
-            unit: 'px',
-            measure: 0,
-          },
+        "isInner": false,
+        "offsetX": {
+          "value": {
+            "unit": "px",
+            "measure": 0
+          }
         },
-        offsetY: {
-          value: {
-            unit: 'px',
-            measure: 4,
-          },
-        },
+        "offsetY": {
+          "value": {
+            "unit": "px",
+            "measure": 4
+          }
+        }
       },
       {
-        blur: {
-          value: {
-            unit: 'px',
-            measure: 4.66, // <--
-          },
+        "blur": {
+          "value": {
+            "unit": "px",
+            "measure": 4.66 // <--
+          }
         },
-        color: {
-          value: {
-            a: 0.1,
-            b: 0,
-            g: 0,
-            r: 0,
-          },
+        "color": {
+          "value": {
+            "a": 0.1,
+            "b": 0,
+            "g": 0,
+            "r": 0
+          }
         },
-        isInner: false,
-        offsetX: {
-          value: {
-            unit: 'px',
-            measure: 0,
-          },
+        "isInner": false,
+        "offsetX": {
+          "value": {
+            "unit": "px",
+            "measure": 0
+          }
         },
-        offsetY: {
-          value: {
-            unit: 'px',
-            measure: 4,
-          },
-        },
-      },
-    ],
-  },
+        "offsetY": {
+          "value": {
+            "unit": "px",
+            "measure": 4
+          }
+        }
+      }
+    ]
+  }
 ]
 ```
 
 #### Output
 
-```json5
+```jsonc
 [
   {
-    type: 'textStyle',
-    name: 'app-code',
-    value: {
-      font: {
-        name: 'FiraCode-Medium',
-        type: 'font',
-        value: {
-          isItalic: false,
-          fontFamily: 'Fira Code',
-          fontWeight: 500,
-          fontPostScriptName: 'FiraCode-Medium',
-        },
+    "type": "textStyle",
+    "name": "app-code",
+    "value": {
+      "font": {
+        "name": "FiraCode-Medium",
+        "type": "font",
+        "value": {
+          "isItalic": false,
+          "fontFamily": "Fira Code",
+          "fontWeight": 500,
+          "fontPostScriptName": "FiraCode-Medium"
+        }
       },
-      color: {
-        value: {
-          a: 1,
-          b: 196,
-          g: 196,
-          r: 196,
-        },
+      "color": {
+        "value": {
+          "a": 1,
+          "b": 196,
+          "g": 196,
+          "r": 196
+        }
       },
-      fontSize: {
-        value: {
-          unit: 'px',
-          measure: 12, // <--
-        },
+      "fontSize": {
+        "value": {
+          "unit": "px",
+          "measure": 12 // <--
+        }
       },
-      textAlign: {
-        vertical: 'top',
-        horizontal: 'left',
+      "textAlign": {
+        "vertical": "top",
+        "horizontal": "left"
       },
-      lineHeight: {
-        value: {
-          unit: 'px',
-          measure: 14, // <--
-        },
-      },
-    },
+      "lineHeight": {
+        "value": {
+          "unit": "px",
+          "measure": 14 // <--
+        }
+      }
+    }
   },
   {
-    type: 'shadow',
-    name: 'Elevation-2',
-    value: [
+    "type": "shadow",
+    "name": "Elevation-2",
+    "value": [
       {
-        blur: {
-          value: {
-            unit: 'px',
-            measure: 28, // <--
-          },
+        "blur": {
+          "value": {
+            "unit": "px",
+            "measure": 28 // <--
+          }
         },
-        color: {
-          value: {
-            a: 0.1,
-            b: 0,
-            g: 0,
-            r: 0,
-          },
+        "color": {
+          "value": {
+            "a": 0.1,
+            "b": 0,
+            "g": 0,
+            "r": 0
+          }
         },
-        isInner: false,
-        offsetX: {
-          value: {
-            unit: 'px',
-            measure: 0,
-          },
+        "isInner": false,
+        "offsetX": {
+          "value": {
+            "unit": "px",
+            "measure": 0
+          }
         },
-        offsetY: {
-          value: {
-            unit: 'px',
-            measure: 4,
-          },
-        },
+        "offsetY": {
+          "value": {
+            "unit": "px",
+            "measure": 4
+          }
+        }
       },
       {
-        blur: {
-          value: {
-            unit: 'px',
-            measure: 4, // <--
-          },
+        "blur": {
+          "value": {
+            "unit": "px",
+            "measure": 4 // <--
+          }
         },
-        color: {
-          value: {
-            a: 0.1,
-            b: 0,
-            g: 0,
-            r: 0,
-          },
+        "color": {
+          "value": {
+            "a": 0.1,
+            "b": 0,
+            "g": 0,
+            "r": 0
+          }
         },
-        isInner: false,
-        offsetX: {
-          value: {
-            unit: 'px',
-            measure: 0,
-          },
+        "isInner": false,
+        "offsetX": {
+          "value": {
+            "unit": "px",
+            "measure": 0
+          }
         },
-        offsetY: {
-          value: {
-            unit: 'px',
-            measure: 4,
-          },
-        },
-      },
-    ],
-  },
+        "offsetY": {
+          "value": {
+            "unit": "px",
+            "measure": 4
+          }
+        }
+      }
+    ]
+  }
 ]
 ```

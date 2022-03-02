@@ -60,7 +60,7 @@ type output = Array<Record<string, any>>;
 
 ### Config
 
-```json
+```jsonc
 {
   "name": "filter",
   "options": {
@@ -79,50 +79,50 @@ With this config, we will filter the elements containing the word "Background".
 
 #### Input
 
-```json5
+```jsonc
 [
   {
     // …
-    name: 'BackgroundColor',
-    value: {
-      a: 1,
-      b: 128,
-      g: 255,
-      r: 255,
+    "name": "BackgroundColor",
+    "value": {
+      "a": 1,
+      "b": 128,
+      "g": 255,
+      "r": 255
     },
-    type: 'color',
+    "type": "color"
     // …
   },
   {
     // …
-    name: 'Colors/Accent',
-    value: {
-      a: 1,
-      b: 255,
-      g: 189,
-      r: 198,
+    "name": "Colors/Accent",
+    "value": {
+      "a": 1,
+      "b": 255,
+      "g": 189,
+      "r": 198
     },
-    type: 'color',
+    "type": "color"
     // …
-  },
+  }
 ]
 ```
 
 #### Output
 
-```json5
+```jsonc
 [
   {
     // …
-    name: 'BackgroundColor',
-    value: {
-      a: 1,
-      b: 128,
-      g: 255,
-      r: 255,
+    "name": "BackgroundColor",
+    "value": {
+      "a": 1,
+      "b": 128,
+      "g": 255,
+      "r": 255
     },
-    type: 'color',
+    "type": "color"
     // …
-  },
+  }
 ]
 ```

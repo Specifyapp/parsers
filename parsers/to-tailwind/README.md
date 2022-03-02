@@ -80,7 +80,7 @@ type output = string;
 
 ### Config
 
-```json
+```jsonc
 {
   "name": "to-tailwind"
 }
@@ -90,7 +90,7 @@ type output = string;
 
 #### Input
 
-```json
+```jsonc
 [
   {
     "name": "primary",
@@ -170,7 +170,7 @@ export default theme;
 
 ### Config
 
-```json
+```jsonc
 {
   "name": "to-tailwind",
   "options": {
@@ -191,7 +191,7 @@ export default theme;
 
 #### Input
 
-```json
+```jsonc
 [
   {
     "name": "primary",
@@ -271,7 +271,7 @@ module.exports = extend;
 
 ### Config
 
-```json
+```jsonc
 {
   "name": "to-tailwind",
   "options": {
@@ -292,7 +292,7 @@ module.exports = extend;
 
 #### Input
 
-```json
+```jsonc
 [
   {
     "name": "primary",
@@ -334,7 +334,7 @@ module.exports = extend;
 
 ### Config
 
-```json
+```jsonc
 {
   "name": "to-tailwind",
   "options": {
@@ -351,7 +351,7 @@ module.exports = extend;
 
 #### Input
 
-```json
+```jsonc
 [
   {
     "name": "danger/100",
