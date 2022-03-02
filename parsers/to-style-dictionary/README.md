@@ -60,7 +60,7 @@ interface parser {
 Array of objects with at least `name`, `value` and `type`:
 
 ```ts
-Array<{name: string, value: any, type: string}>
+type input = Array<{ name: string; value: any; type: string }>;
 ```
 
 ### Output
@@ -68,13 +68,13 @@ Array<{name: string, value: any, type: string}>
 An array of objects containing a `name` and a `value`. The value is an object containing either an `url` or a `content`. This object is considered as a `DownloadableFile`.
 
 ```ts
-Array<{
+type output = Array<{
   name: string;
   value: {
     content?: string;
     url?: string;
   };
-}>
+}>;
 ```
 
 ## Basic Usage

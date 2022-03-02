@@ -37,13 +37,13 @@ Values must match the type [MeasurementValue](https://github.com/Specifyapp/pars
 \_\_
 
 ```ts
- Array<Record<string, unknown>>
+type input = Array<Record<string, unknown>>;
 ```
 
 ### Output
 
 ```ts
-Array<Record<string, unknown>>
+type output = Array<Record<string, unknown>>;
 ```
 
 ## Usage
@@ -57,7 +57,7 @@ Array<Record<string, unknown>>
     "keys": ["fontSize"]
   }
 }
-...
+// …
 ```
 
 ### Before/After
@@ -66,14 +66,14 @@ Array<Record<string, unknown>>
 
 ```json
 {
-  ...
+  // …
   "fontSize": {
     "value": {
       "unit": "px",
       "measure": 14
     }
-  },
-  ...
+  }
+  // …
 }
 ```
 
@@ -82,14 +82,14 @@ Array<Record<string, unknown>>
 ```json
 [
   {
-    ...
+    // …
     "value": {
       "fontSize": {
         "measure": 0.875,
         "unit": "rem"
-      },
-    },
-    ...
+      }
+    }
+    // …
   }
 ]
 ```

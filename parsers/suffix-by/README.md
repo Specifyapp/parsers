@@ -36,13 +36,13 @@ interface parser {
 Array of object with the keys to apply the suffix
 
 ```ts
-Array<{[key: string]: any}>
+type input = Array<{ [key: string]: any }>;
 ```
 
 ### Output
 
 ```ts
-Array<{[key: string]: any}>
+type output = Array<{ [key: string]: any }>;
 ```
 
 ## Basic usage
@@ -58,7 +58,7 @@ Array<{[key: string]: any}>
     "key": "name"
   }
 }
-...
+// …
 ```
 
 ### Before/After
@@ -107,7 +107,7 @@ Array<{[key: string]: any}>
     "key": "name"
   }
 }
-...
+// …
 ```
 
 ### Before/After

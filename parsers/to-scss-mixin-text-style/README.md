@@ -110,13 +110,13 @@ Array of object with at least the key `name` and the value that match the [TextS
 \_\_
 
 ```ts
- Array<{ name: string; value: TextStyleValue } & Record<any, any>>
+type input = Array<{ name: string; value: TextStyleValue } & Record<any, any>>;
 ```
 
 ### Output
 
 ```ts
-string;
+type output = string;
 ```
 
 ## Usage
@@ -134,7 +134,7 @@ string;
     "genericFamily": "serif"
   }
 }
-...
+// …
 ```
 
 ### Before/After
@@ -185,8 +185,8 @@ string;
         }
       }
     },
-    "type": "textStyle",
-    ...
+    "type": "textStyle"
+    // …
   }
 ]
 ```

@@ -114,7 +114,7 @@ Array of object with at least the key `name` and the value that match the [TextS
 ### Output
 
 ```ts
-string;
+type output = string;
 ```
 
 ## Usage
@@ -132,7 +132,7 @@ string;
     "genericFamily": "serif"
   }
 }
-...
+// …
 ```
 
 ### Before/After
@@ -160,10 +160,10 @@ string;
       },
       "color": {
         "value": {
-            "a": 1,
-            "b": 196,
-            "g": 196,
-            "r": 196
+          "a": 1,
+          "b": 196,
+          "g": 196,
+          "r": 196
         }
       },
       "fontSize": {
@@ -183,8 +183,8 @@ string;
         }
       }
     },
-    "type": "textStyle",
-    ...
+    "type": "textStyle"
+    // …
   }
 ]
 ```

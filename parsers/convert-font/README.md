@@ -36,20 +36,20 @@ interface parser {
 Array of object with at least the key `name`
 
 ```ts
-Array<{
+type input = Array<{
   name: string;
   value: { fontPostScriptName: string; [Key: string]: any };
   [Key: string]: any;
-}>
+}>;
 ```
 
 ### Output
 
 ```ts
-Array<{
-  value: { fontPostScriptName: string; url: string ; [Key: string]: any };
+type output = Array<{
+  value: { fontPostScriptName: string; url: string; [Key: string]: any };
   [Key: string]: any;
-}>
+}>;
 ```
 
 ## Usage
@@ -61,11 +61,11 @@ Array<{
   "name": "convert-font",
   "options": {
     "formats": ["woff2", "woff"],
-    "fileNameKey":  ["fontFamily", "fontWeight"],
+    "fileNameKey": ["fontFamily", "fontWeight"],
     "fileNameFormat": "kebabCase"
   }
 }
-...
+// …
 ```
 
 ### Result

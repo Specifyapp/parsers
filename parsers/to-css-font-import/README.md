@@ -46,7 +46,7 @@ Array<{name: string, [Key: string] : any}>
 ### Output
 
 ```ts
-string;
+type output = string;
 ```
 
 ## Usage

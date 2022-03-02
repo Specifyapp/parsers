@@ -32,13 +32,13 @@ interface parser {
 Array of object with the keys to apply `sort` function
 
 ```ts
-Array<{[key: string]: any}>
+type input = Array<{ [key: string]: any }>;
 ```
 
 ### Output
 
 ```ts
-Array<{[key: string]: any}>
+type output = Array<{ [key: string]: any }>;
 ```
 
 ## Usage
@@ -52,7 +52,7 @@ Array<{[key: string]: any}>
     "keys": ["name"]
   }
 }
-...
+// …
 ```
 
 ### Before/After

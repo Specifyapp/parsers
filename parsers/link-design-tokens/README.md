@@ -63,13 +63,13 @@ interface parser {
 Array of object containing at least the keys described in the pattern option.
 
 ```ts
-Array<{id: string, type: string, value: string, name: string} & Record<any, any>>
+type input = Array<{ id: string; type: string; value: string; name: string } & Record<any, any>>;
 ```
 
 ### Output
 
 ```ts
-Array<{id: string, type: string, value: string, name: string} & Record<any, any>>
+type output = Array<{ id: string; type: string; value: string; name: string } & Record<any, any>>;
 ```
 
 ## Basic usage
@@ -78,9 +78,9 @@ Array<{id: string, type: string, value: string, name: string} & Record<any, any>
 
 ```json
 {
-    "name": "link-design-tokens"
+  "name": "link-design-tokens"
 }
-...
+// …
 ```
 
 ### Before/After
