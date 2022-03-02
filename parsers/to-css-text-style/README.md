@@ -194,7 +194,7 @@ type output = string;
 ```css
 .sp-body-text-style {
   font-family: allan, serif;
-  font-weight: 500,
+  font-weight: 500;
   font-size: 14px;
   line-height: 1;
 }
