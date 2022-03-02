@@ -19,7 +19,7 @@ describe('Filter', () => {
   });
 
   it('Should return only the element matching the RegEx while ignoring the case', async () => {
-    const tokens = seeds().tokens as Array<Token>
+    const tokens = seeds().tokens as Array<Token>;
     const result = await filter(
       tokens,
       { key: 'type', regex: { pattern: 'VeCtOr', flags: 'i' } },

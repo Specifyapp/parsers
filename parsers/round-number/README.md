@@ -10,28 +10,28 @@ By specifying a mode, you can control the round function more precisely.
 
 ```ts
 interface parser {
-  name: 'round-number',
+  name: 'round-number';
   options: {
     keys: Array<string>;
     precision?: number;
     mode?: 'down' | 'up' | 'auto';
-  }
+  };
 }
 ```
 
 ### Options
 
-| Parameter              | Required   | Type             | Default    | Description                                                                                                                |
-| ---------------------- | ---------- | --------------   | ---------- | -------------------------------------------------------------------------------------------------------------------------- |
-| `keys`                 | required   | `Array<string>`  |            | List of key path to apply the rounding |
-| `precision`            | optional   | `number`         | `0`        | Number of decimal expected   |
-| `mode`                 | optional   | `down, up, auto` | `auto`     | up:  rounds a number up to the next largest number with specific decimals </br></br> down:  rounds a number down to the nearest less or equal number with specific decimals </br></br> auto: returns the value of a number rounded to the nearest number with specific decimals |
+| Parameter   | Required | Type             | Default | Description                                                                                                                                                                                                                                                                   |
+| ----------- | -------- | ---------------- | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `keys`      | required | `Array<string>`  |         | List of key path to apply the rounding                                                                                                                                                                                                                                        |
+| `precision` | optional | `number`         | `0`     | Number of decimal expected                                                                                                                                                                                                                                                    |
+| `mode`      | optional | `down, up, auto` | `auto`  | up: rounds a number up to the next largest number with specific decimals </br></br> down: rounds a number down to the nearest less or equal number with specific decimals </br></br> auto: returns the value of a number rounded to the nearest number with specific decimals |
 
 ## Types
 
 ℹ️ **Please be aware that, depending on the order you use parsers, their input and output types have to match.**
-### Input
 
+### Input
 
 ```ts
 Array<Record<string, any>>
@@ -44,6 +44,7 @@ Array<Record<string, any>>
 ```
 
 ## Basic Usage
+
 ### Config
 
 ```json
@@ -57,7 +58,8 @@ Array<Record<string, any>>
 }
 ```
 
-With this config, we will round the measure of a measurement token 
+With this config, we will round the measure of a measurement token
+
 ### Before/After
 
 #### Input
@@ -65,64 +67,67 @@ With this config, we will round the measure of a measurement token
 ```json5
 [
   {
-    "type": "measurement",
-    "value": {
-      "unit": "rem",
-      "measure": 1.689  // <---
+    type: 'measurement',
+    value: {
+      unit: 'rem',
+      measure: 1.689, // <---
     },
-    "name": "size-01"
+    name: 'size-01',
   },
   {
-    "type": "measurement",
-    "value": {
-      "unit": "rem",
-      "measure": 2.34 // <---
+    type: 'measurement',
+    value: {
+      unit: 'rem',
+      measure: 2.34, // <---
     },
-    "name": "size-02"
-  }
+    name: 'size-02',
+  },
 ]
 ```
+
 #### Output
 
 ```json5
 [
   {
-    "type": "measurement",
-    "value": {
-      "unit": "rem",
-      "measure": 1.7 // <---
+    type: 'measurement',
+    value: {
+      unit: 'rem',
+      measure: 1.7, // <---
     },
-    "name": "size-01"
+    name: 'size-01',
   },
   {
-    "type": "measurement",
-    "value": {
-      "unit": "rem",
-      "measure": 2.3 // <---
+    type: 'measurement',
+    value: {
+      unit: 'rem',
+      measure: 2.3, // <---
     },
-    "name": "size-02"
-  }
+    name: 'size-02',
+  },
 ]
 ```
 
 ## Complex Usage - Rounding text style font size and shadows blur
+
 ### Config
 
 ```json5
 {
-  "name": "round-number",
-  "options": {
-    "keys": [
-      "value.fontSize.value.measure",
-      "value.lineHeight.value.measure",
-      "value[*].blur.value.measure"
+  name: 'round-number',
+  options: {
+    keys: [
+      'value.fontSize.value.measure',
+      'value.lineHeight.value.measure',
+      'value[*].blur.value.measure',
     ],
-    "mode": "down"
-  }
+    mode: 'down',
+  },
 }
 ```
 
 This config uses patterns. Here the shadow has an array as a value. So we use `[*]` to round all the blur measures
+
 ### Before/After
 
 #### Input
@@ -130,218 +135,219 @@ This config uses patterns. Here the shadow has an array as a value. So we use `[
 ```json5
 [
   {
-    "type": "textStyle",
-    "name": "app-code",
-    "value": {
-      "font": {
-        "name": "FiraCode-Medium",
-        "type": "font",
-        "value": {
-          "isItalic": false,
-          "fontFamily": "Fira Code",
-          "fontWeight": 500,
-          "fontPostScriptName": "FiraCode-Medium"
-        }
+    type: 'textStyle',
+    name: 'app-code',
+    value: {
+      font: {
+        name: 'FiraCode-Medium',
+        type: 'font',
+        value: {
+          isItalic: false,
+          fontFamily: 'Fira Code',
+          fontWeight: 500,
+          fontPostScriptName: 'FiraCode-Medium',
+        },
       },
-      "color": {
-        "value": {
-          "a": 1,
-          "b": 196,
-          "g": 196,
-          "r": 196
-        }
+      color: {
+        value: {
+          a: 1,
+          b: 196,
+          g: 196,
+          r: 196,
+        },
       },
-      "fontSize": {
-        "value": {
-          "unit": "px",
-          "measure": 12.7 // <--
-        }
+      fontSize: {
+        value: {
+          unit: 'px',
+          measure: 12.7, // <--
+        },
       },
-      "textAlign": {
-        "vertical": "top",
-        "horizontal": "left"
+      textAlign: {
+        vertical: 'top',
+        horizontal: 'left',
       },
-      "lineHeight": {
-        "value": {
-          "unit": "px",
-          "measure": 14.0625 // <--
-        }
-      }
-    }
+      lineHeight: {
+        value: {
+          unit: 'px',
+          measure: 14.0625, // <--
+        },
+      },
+    },
   },
   {
-    "type": "shadow",
-    "name": "Elevation-2",
-    "value": [
+    type: 'shadow',
+    name: 'Elevation-2',
+    value: [
       {
-        "blur": {
-          "value": {
-            "unit": "px",
-            "measure": 28.33 // <--
-          }
+        blur: {
+          value: {
+            unit: 'px',
+            measure: 28.33, // <--
+          },
         },
-        "color": {
-          "value": {
-            "a": 0.1,
-            "b": 0,
-            "g": 0,
-            "r": 0
-          }
+        color: {
+          value: {
+            a: 0.1,
+            b: 0,
+            g: 0,
+            r: 0,
+          },
         },
-        "isInner": false,
-        "offsetX": {
-          "value": {
-            "unit": "px",
-            "measure": 0
-          }
+        isInner: false,
+        offsetX: {
+          value: {
+            unit: 'px',
+            measure: 0,
+          },
         },
-        "offsetY": {
-          "value": {
-            "unit": "px",
-            "measure": 4
-          }
-        }
+        offsetY: {
+          value: {
+            unit: 'px',
+            measure: 4,
+          },
+        },
       },
       {
-        "blur": {
-          "value": {
-            "unit": "px",
-            "measure": 4.66 // <--
-          }
+        blur: {
+          value: {
+            unit: 'px',
+            measure: 4.66, // <--
+          },
         },
-        "color": {
-          "value": {
-            "a": 0.1,
-            "b": 0,
-            "g": 0,
-            "r": 0
-          }
+        color: {
+          value: {
+            a: 0.1,
+            b: 0,
+            g: 0,
+            r: 0,
+          },
         },
-        "isInner": false,
-        "offsetX": {
-          "value": {
-            "unit": "px",
-            "measure": 0
-          }
+        isInner: false,
+        offsetX: {
+          value: {
+            unit: 'px',
+            measure: 0,
+          },
         },
-        "offsetY": {
-          "value": {
-            "unit": "px",
-            "measure": 4
-          }
-        }
-      }
-    ]
-  }
+        offsetY: {
+          value: {
+            unit: 'px',
+            measure: 4,
+          },
+        },
+      },
+    ],
+  },
 ]
 ```
+
 #### Output
 
 ```json5
 [
   {
-    "type": "textStyle",
-    "name": "app-code",
-    "value": {
-      "font": {
-        "name": "FiraCode-Medium",
-        "type": "font",
-        "value": {
-          "isItalic": false,
-          "fontFamily": "Fira Code",
-          "fontWeight": 500,
-          "fontPostScriptName": "FiraCode-Medium"
-        }
+    type: 'textStyle',
+    name: 'app-code',
+    value: {
+      font: {
+        name: 'FiraCode-Medium',
+        type: 'font',
+        value: {
+          isItalic: false,
+          fontFamily: 'Fira Code',
+          fontWeight: 500,
+          fontPostScriptName: 'FiraCode-Medium',
+        },
       },
-      "color": {
-        "value": {
-          "a": 1,
-          "b": 196,
-          "g": 196,
-          "r": 196
-        }
+      color: {
+        value: {
+          a: 1,
+          b: 196,
+          g: 196,
+          r: 196,
+        },
       },
-      "fontSize": {
-        "value": {
-          "unit": "px",
-          "measure": 12 // <--
-        }
+      fontSize: {
+        value: {
+          unit: 'px',
+          measure: 12, // <--
+        },
       },
-      "textAlign": {
-        "vertical": "top",
-        "horizontal": "left"
+      textAlign: {
+        vertical: 'top',
+        horizontal: 'left',
       },
-      "lineHeight": {
-        "value": {
-          "unit": "px",
-          "measure": 14 // <--
-        }
-      }
-    }
+      lineHeight: {
+        value: {
+          unit: 'px',
+          measure: 14, // <--
+        },
+      },
+    },
   },
   {
-    "type": "shadow",
-    "name": "Elevation-2",
-    "value": [
+    type: 'shadow',
+    name: 'Elevation-2',
+    value: [
       {
-        "blur": {
-          "value": {
-            "unit": "px",
-            "measure": 28 // <--
-          }
+        blur: {
+          value: {
+            unit: 'px',
+            measure: 28, // <--
+          },
         },
-        "color": {
-          "value": {
-            "a": 0.1,
-            "b": 0,
-            "g": 0,
-            "r": 0
-          }
+        color: {
+          value: {
+            a: 0.1,
+            b: 0,
+            g: 0,
+            r: 0,
+          },
         },
-        "isInner": false,
-        "offsetX": {
-          "value": {
-            "unit": "px",
-            "measure": 0
-          }
+        isInner: false,
+        offsetX: {
+          value: {
+            unit: 'px',
+            measure: 0,
+          },
         },
-        "offsetY": {
-          "value": {
-            "unit": "px",
-            "measure": 4
-          }
-        }
+        offsetY: {
+          value: {
+            unit: 'px',
+            measure: 4,
+          },
+        },
       },
       {
-        "blur": {
-          "value": {
-            "unit": "px",
-            "measure": 4 // <--
-          }
+        blur: {
+          value: {
+            unit: 'px',
+            measure: 4, // <--
+          },
         },
-        "color": {
-          "value": {
-            "a": 0.1,
-            "b": 0,
-            "g": 0,
-            "r": 0
-          }
+        color: {
+          value: {
+            a: 0.1,
+            b: 0,
+            g: 0,
+            r: 0,
+          },
         },
-        "isInner": false,
-        "offsetX": {
-          "value": {
-            "unit": "px",
-            "measure": 0
-          }
+        isInner: false,
+        offsetX: {
+          value: {
+            unit: 'px',
+            measure: 0,
+          },
         },
-        "offsetY": {
-          "value": {
-            "unit": "px",
-            "measure": 4
-          }
-        }
-      }
-    ]
-  }
+        offsetY: {
+          value: {
+            unit: 'px',
+            measure: 4,
+          },
+        },
+      },
+    ],
+  },
 ]
 ```

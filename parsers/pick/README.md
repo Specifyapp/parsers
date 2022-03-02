@@ -6,26 +6,28 @@ Loop on all tokens and get only keys given in params.
 
 Learn more about how to configure Specify in the API documentation: [https://specifyapp.com/developers/cli](https://specifyapp.com/developers/cli).
 
-## Interface 
+## Interface
+
 ```ts
 interface parser {
-  name: 'pick',
+  name: 'pick';
   options?: {
-    keys: Array<string>
+    keys: Array<string>;
     filter?: {
-      types: Array<string>
-    },
-    flatten?: boolean
-  }
+      types: Array<string>;
+    };
+    flatten?: boolean;
+  };
 }
 ```
+
 ### Options
 
-| Parameter              | Required   | Type      | Default    | Description                                             |
-| ---------------------- | ---------- | --------- | ---------- | ------------------------------------------------------- |
-| `keys`                 | optional   | `Array`   | `["name"]` | The list of keys where the function will be applied.    |
-| `filter.types`         | optional   | `Array`   | `[]`       | The list of token types where the function will be applied.    |
-| `flatten`              | optional   | `boolean` | `false`    | Allow flattening each object after picking their values.|
+| Parameter      | Required | Type      | Default    | Description                                                 |
+| -------------- | -------- | --------- | ---------- | ----------------------------------------------------------- |
+| `keys`         | optional | `Array`   | `["name"]` | The list of keys where the function will be applied.        |
+| `filter.types` | optional | `Array`   | `[]`       | The list of token types where the function will be applied. |
+| `flatten`      | optional | `boolean` | `false`    | Allow flattening each object after picking their values.    |
 
 ## Types
 
@@ -46,7 +48,9 @@ Array of object with the keys given in options
 ```ts
 Array<{[key: string]: any}>
 ```
+
 ## Simple Usage
+
 ### Config
 
 ```json
@@ -58,6 +62,7 @@ Array<{[key: string]: any}>
 }
 ...
 ```
+
 ### Before/After
 
 #### Input
@@ -65,17 +70,18 @@ Array<{[key: string]: any}>
 ```js
 [
   {
-    "type": "color",
-    "value": {
-      "a": 0.96,
-      "b": 20,
-      "g": 227,
-      "r": 122
+    type: 'color',
+    value: {
+      a: 0.96,
+      b: 20,
+      g: 227,
+      r: 122,
     },
-    "name": "Brand / Primary Color"
-  }
-]
+    name: 'Brand / Primary Color',
+  },
+];
 ```
+
 #### Output
 
 ```json
@@ -88,6 +94,7 @@ Array<{[key: string]: any}>
 ```
 
 ## Complexe Usage
+
 ### Config
 
 ```json
@@ -100,6 +107,7 @@ Array<{[key: string]: any}>
 }
 ...
 ```
+
 ### Before/After
 
 #### Input
@@ -133,6 +141,7 @@ Array<{[key: string]: any}>
   }
 ]
 ```
+
 #### Output
 
 ```json

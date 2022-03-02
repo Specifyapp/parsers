@@ -6,6 +6,8 @@ export class Measurement extends MeasurementToken {
     super(token);
   }
   toJss({ measurementFormat = 'string' }: FormatTokenType) {
-    return measurementFormat === 'number' ? this.value.measure : `'${this.value.measure}${this.value.unit}'`;
+    return measurementFormat === 'number'
+      ? this.value.measure
+      : `'${this.value.measure}${this.value.unit}'`;
   }
 }

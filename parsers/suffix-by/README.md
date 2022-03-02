@@ -6,25 +6,26 @@ Allows to concatenate two strings.
 
 Learn more about how to configure Specify in the API documentation: [https://specifyapp.com/developers/cli](https://specifyapp.com/developers/cli).
 
-## Interface 
+## Interface
 
 ```ts
 interface parser {
-  name: 'suffix-by',
+  name: 'suffix-by';
   options?: {
-    key?: string
-    suffix: string,
-    types?: Array<string>,
-  }
+    key?: string;
+    suffix: string;
+    types?: Array<string>;
+  };
 }
 ```
 
 ### Options
-| Parameter | Required | Type             | Default | Description                                  |
-| --------- | -------- | ---------------- | ------- | -------------------------------------------- |
-| `key`     | optional | `string`         | "name"  | The key of the value will be suffixed        |
-| `suffix`  | required | `string`         |         | The pattern used generate suffix string. It must match [mustache](https://github.com/janl/mustache.js#templates) template syntax.        |
-| `types`   | optional | `Array<string>`  |         | The types where the function will be applied |
+
+| Parameter | Required | Type            | Default | Description                                                                                                                       |
+| --------- | -------- | --------------- | ------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| `key`     | optional | `string`        | "name"  | The key of the value will be suffixed                                                                                             |
+| `suffix`  | required | `string`        |         | The pattern used generate suffix string. It must match [mustache](https://github.com/janl/mustache.js#templates) template syntax. |
+| `types`   | optional | `Array<string>` |         | The types where the function will be applied                                                                                      |
 
 ## Types
 
@@ -45,6 +46,7 @@ Array<{[key: string]: any}>
 ```
 
 ## Basic usage
+
 ### Config
 
 ```json
@@ -58,6 +60,7 @@ Array<{[key: string]: any}>
 }
 ...
 ```
+
 ### Before/After
 
 #### Input
@@ -74,6 +77,7 @@ Array<{[key: string]: any}>
   }
 ]
 ```
+
 #### Output
 
 ```json
@@ -91,6 +95,7 @@ Array<{[key: string]: any}>
 ```
 
 ## Complex usage - with condition in template
+
 ### Config
 
 ```json
@@ -104,6 +109,7 @@ Array<{[key: string]: any}>
 }
 ...
 ```
+
 ### Before/After
 
 #### Input
@@ -129,6 +135,7 @@ Array<{[key: string]: any}>
   }
 ]
 ```
+
 #### Output
 
 ```json

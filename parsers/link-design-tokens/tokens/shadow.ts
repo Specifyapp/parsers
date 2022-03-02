@@ -25,9 +25,11 @@ export class Shadow extends ShadowToken {
 
     if (indexes.measurement) {
       this.value = this.value.map(shadow => {
-        (['offsetX', 'offsetY', 'blur', 'spread'] as Array<
-          'offsetX' | 'offsetY' | 'blur' | 'spread'
-        >).forEach(key => {
+        (
+          ['offsetX', 'offsetY', 'blur', 'spread'] as Array<
+            'offsetX' | 'offsetY' | 'blur' | 'spread'
+          >
+        ).forEach(key => {
           if (shadow[key]) {
             shadow[key] = this.match<
               MeasurementToken,

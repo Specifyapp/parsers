@@ -10,22 +10,23 @@ Learn more about how to configure Specify in the API documentation: [https://spe
 
 ```ts
 interface parser {
-  name: 'camelcasify',
+  name: 'camelcasify';
   options?: {
-    keys: Array<string>
-  }
+    keys: Array<string>;
+  };
 }
 ```
 
 ### Options
 
-| Parameter              | Required   | Type      | Default    | Description                                                                                                                |
-| ---------------------- | ---------- | --------- | ---------- | -------------------------------------------------------------------------------------------------------------------------- |
-| `keys`                 | optional   | `Array`   | `["name"]` | The list of keys where the function will be applied                                                                        |
+| Parameter | Required | Type    | Default    | Description                                         |
+| --------- | -------- | ------- | ---------- | --------------------------------------------------- |
+| `keys`    | optional | `Array` | `["name"]` | The list of keys where the function will be applied |
 
 ## Types
 
 ℹ️ **Please be aware that, depending on the order you use parsers, their input and output types have to match.**
+
 ### Input
 
 Array of object with the keys to apply `camelcase` function
@@ -41,6 +42,7 @@ Array<{[key: string]: any}>
 ```
 
 ## Usage
+
 ### Config
 
 ```json
@@ -52,6 +54,7 @@ Array<{[key: string]: any}>
 }
 ...
 ```
+
 ### Before/After
 
 #### Input
@@ -70,6 +73,7 @@ Array<{[key: string]: any}>
   }
 ]
 ```
+
 #### Output
 
 ```json

@@ -20,9 +20,11 @@ export class TextStyle extends TextStyleToken {
     }
 
     if (indexes.measurement) {
-      (['fontSize', 'textIndent', 'letterSpacing', 'lineHeight'] as Array<
-        'fontSize' | 'textIndent' | 'letterSpacing' | 'lineHeight'
-      >).forEach(key => {
+      (
+        ['fontSize', 'textIndent', 'letterSpacing', 'lineHeight'] as Array<
+          'fontSize' | 'textIndent' | 'letterSpacing' | 'lineHeight'
+        >
+      ).forEach(key => {
         if (this.value[key]) {
           this.value[key] = this.match<
             MeasurementToken,

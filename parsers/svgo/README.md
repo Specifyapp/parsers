@@ -10,18 +10,19 @@ Learn more about how to configure Specify in the API documentation: [https://spe
 
 ```ts
 interface parser {
-  name: 'svgo',
+  name: 'svgo';
   options?: {
     // https://github.com/DefinitelyTyped/DefinitelyTyped/blob/3fb92644d8dc475a52147c6315704ece24335469/types/svgo/index.d.ts#L752
-    svgo?: OptimizeOptions
-  }
+    svgo?: OptimizeOptions;
+  };
 }
 ```
 
 ### Options
-| Parameter | Required  | Type           | Default                                                      | Description                                       |
-| --------- | --------- | -------------- | ------------------------------------------------------------ | ------------------------------------------------- |
-| `svgo`    | optional  | `OptimizeOptions` | `{ plugins: [{name: 'preset-default'}]}` | Inherits from [svgo](https://github.com/svg/svgo) |
+
+| Parameter | Required | Type              | Default                                  | Description                                       |
+| --------- | -------- | ----------------- | ---------------------------------------- | ------------------------------------------------- |
+| `svgo`    | optional | `OptimizeOptions` | `{ plugins: [{name: 'preset-default'}]}` | Inherits from [svgo](https://github.com/svg/svgo) |
 
 ## Types
 
@@ -30,7 +31,6 @@ interface parser {
 ### Input
 
 Array of object with at least the key `value.url` and `type`
-
 
 ```ts
 Array<
@@ -53,6 +53,7 @@ Array<
 ```
 
 ## Usage
+
 ### Config
 
 ```json
@@ -74,7 +75,9 @@ Array<
   }
 }
 ```
+
 ### Before/After
+
 #### Input
 
 ```json
@@ -87,7 +90,9 @@ Array<
   ...
 }
 ```
+
 Under the hood, the SVG string returned by the `url` property is the one you want to optimize:
+
 ```xml
 <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
   <path d="M36.6667 20H30L25 35L15 5L9.99999 20H3.33333" stroke="black" stroke-width="3.33333" stroke-linecap="round" stroke-linejoin="round"/>
@@ -107,4 +112,4 @@ Under the hood, the SVG string returned by the `url` property is the one you wan
 }
 ```
 
-ℹ️  Every SVGO option must be in its own object.
+ℹ️ Every SVGO option must be in its own object.

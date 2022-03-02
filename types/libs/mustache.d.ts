@@ -365,11 +365,7 @@ export class MustacheWriter {
    * @param context
    * The context to use for rendering the token.
    */
-  escapedValue(
-    token: string[],
-    context: MustacheContext,
-    config?: RenderOptions,
-  ): string;
+  escapedValue(token: string[], context: MustacheContext, config?: RenderOptions): string;
 
   /**
    * Renders a raw token.
@@ -389,13 +385,21 @@ type COMMENT = '!';
 type PARTIAL = '>';
 type EQUAL = '=';
 
-export type TemplateSpanType = RAW_VALUE | ESCAPED_VALUE | SECTION | UNESCAPED_VALUE | INVERTED | COMMENT | PARTIAL | EQUAL;
+export type TemplateSpanType =
+  | RAW_VALUE
+  | ESCAPED_VALUE
+  | SECTION
+  | UNESCAPED_VALUE
+  | INVERTED
+  | COMMENT
+  | PARTIAL
+  | EQUAL;
 
 export type TemplateSpans = Array<
   | [TemplateSpanType, string, number, number]
   | [TemplateSpanType, string, number, number, TemplateSpans, number]
   | [TemplateSpanType, string, number, number, string, number, boolean]
-  >;
+>;
 
 /**
  * Function responsible for escaping values from the view into the rendered output when templates

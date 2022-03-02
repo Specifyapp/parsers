@@ -41,20 +41,20 @@ interface parser {
 
 ### Options
 
-| Parameter                          | Required | Type                                                              | Default     | Description                                                                                                                                                                                                 |
-| ---------------------------------- | -------- | ----------------------------------------------------------------- |-------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `formatName`                       | optional | `camelCase` `kebabCase` `snakeCase` `pascalCase`                  | `kebabCase` | The case transformation you want to apply to your design token name                                                                                                                                         |
-| `formatConfig.module`              | optional | `es6` `commonjs` `json`                                           | `es6`       | Module loader used to export the result                                                                                                                                                                     |
-| `formatConfig.objectName`          | optional | `string`                                                          | `theme`     | Name of exported variable                                                                                                                                                                                   |
-| `formatConfig.endOfLine`           | optional | `auto` `lf` `crlf` `cr`                                           | `auto`      | [Prettier documentation](https://prettier.io/docs/en/options.html#end-of-line)                                                                                                                              |
-| `formatConfig.tabWidth`            | optional | `number`                                                          | `2`         | [Prettier documentation](https://prettier.io/docs/en/options.html#tab-width)                                                                                                                                |
-| `formatConfig.useTabs`             | optional | `boolean`                                                         | `true`      | [Prettier documentation](https://prettier.io/docs/en/options.html#tabs)                                                                                                                                     |
-| `formatConfig.singleQuote`         | optional | `boolean`                                                         | `false`     | [Prettier documentation](https://prettier.io/docs/en/options.html#quotes)                                                                                                                                   |
-| `formatConfig.exportDefault`       | optional | `boolean`                                                         | `true`      |                                                                                                                                                                                                             |
-| `formatTokens.colorFormat.format`  | optional | `rgb` `prgb` `hex` `hex6` `hex3` `hex4` `hex8` `name` `hsl` `hsv` | `hex`       | The color format you want to apply to your potential color design token                                                                                                                                     |
-| `formatTokens.fontSizeFormat.unit` | optional | `px` `rem`                                                        | `none`      |                                                                                                                                                                                                             |
-| `renameKeys` | optional | `{ colors?: string, spacing?: string... }` [full list](https://github.com/Specifyapp/parsers/blob/master/parsers/to-tailwind/to-tailwind.type.ts#L16) | `none`      | Used to rename the generated tokens based on their Tailwind theme keys                                                                                                                                      | 
-| `splitBy`                          | optional | `string`                                                          | none        | The character used to define the nesting of the values in the generated object |
+| Parameter                          | Required | Type                                                                                                                                                  | Default     | Description                                                                    |
+| ---------------------------------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- | ----------- | ------------------------------------------------------------------------------ |
+| `formatName`                       | optional | `camelCase` `kebabCase` `snakeCase` `pascalCase`                                                                                                      | `kebabCase` | The case transformation you want to apply to your design token name            |
+| `formatConfig.module`              | optional | `es6` `commonjs` `json`                                                                                                                               | `es6`       | Module loader used to export the result                                        |
+| `formatConfig.objectName`          | optional | `string`                                                                                                                                              | `theme`     | Name of exported variable                                                      |
+| `formatConfig.endOfLine`           | optional | `auto` `lf` `crlf` `cr`                                                                                                                               | `auto`      | [Prettier documentation](https://prettier.io/docs/en/options.html#end-of-line) |
+| `formatConfig.tabWidth`            | optional | `number`                                                                                                                                              | `2`         | [Prettier documentation](https://prettier.io/docs/en/options.html#tab-width)   |
+| `formatConfig.useTabs`             | optional | `boolean`                                                                                                                                             | `true`      | [Prettier documentation](https://prettier.io/docs/en/options.html#tabs)        |
+| `formatConfig.singleQuote`         | optional | `boolean`                                                                                                                                             | `false`     | [Prettier documentation](https://prettier.io/docs/en/options.html#quotes)      |
+| `formatConfig.exportDefault`       | optional | `boolean`                                                                                                                                             | `true`      |                                                                                |
+| `formatTokens.colorFormat.format`  | optional | `rgb` `prgb` `hex` `hex6` `hex3` `hex4` `hex8` `name` `hsl` `hsv`                                                                                     | `hex`       | The color format you want to apply to your potential color design token        |
+| `formatTokens.fontSizeFormat.unit` | optional | `px` `rem`                                                                                                                                            | `none`      |                                                                                |
+| `renameKeys`                       | optional | `{ colors?: string, spacing?: string... }` [full list](https://github.com/Specifyapp/parsers/blob/master/parsers/to-tailwind/to-tailwind.type.ts#L16) | `none`      | Used to rename the generated tokens based on their Tailwind theme keys         |
+| `splitBy`                          | optional | `string`                                                                                                                                              | none        | The character used to define the nesting of the values in the generated object |
 
 ## Types
 
@@ -384,8 +384,8 @@ const extend = {
     danger: {
       100: '#ff2187',
       200: '#ff2121',
-    }
-  }
+    },
+  },
 };
 
 module.exports = extend;
