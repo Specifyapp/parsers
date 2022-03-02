@@ -57,13 +57,13 @@ Where `ab+c` is the regex option in `string` or the `regex.pattern` in object. T
 ### Input
 
 ```ts
-Array<Record<string, any>>
+type input = Array<Record<string, any>>;
 ```
 
 ### Output
 
 ```ts
-Array<Record<string, any>>
+type output = Array<Record<string, any>>;
 ```
 
 ## Basic Usage
@@ -93,7 +93,7 @@ With this config, we will change name by keeping only characters after the last 
 ```json5
 [
   {
-    // ...
+    // …
     name: 'Colors/Accent',
     value: {
       a: 1,
@@ -102,7 +102,7 @@ With this config, we will change name by keeping only characters after the last 
       r: 198,
     },
     type: 'color',
-    // ...
+    // …
   },
 ]
 ```
@@ -112,7 +112,7 @@ With this config, we will change name by keeping only characters after the last 
 ```json5
 [
   {
-    // ...
+    // …
     name: 'Accent',
     value: {
       a: 1,
@@ -121,7 +121,7 @@ With this config, we will change name by keeping only characters after the last 
       r: 198,
     },
     type: 'color',
-    // ...
+    // …
   },
 ]
 ```

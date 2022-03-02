@@ -30,13 +30,13 @@ interface parser {
 Array of object containing at least the keys described in the pattern option.
 
 ```ts
-Array<{[key: string]: any}>
+type input = Array<{ [key: string]: any }>;
 ```
 
 ### Output
 
 ```ts
-Array<{[key: string]: any}>
+type output = Array<{ [key: string]: any }>;
 ```
 
 ## Basic usage
@@ -45,12 +45,12 @@ Array<{[key: string]: any}>
 
 ```json
 {
-    "name": "name-assets-files-by-pattern",
-    "options": {
-      "pattern": "{{name}}-{{type}}.{{format}}"
-    }
+  "name": "name-assets-files-by-pattern",
+  "options": {
+    "pattern": "{{name}}-{{type}}.{{format}}"
+  }
 }
-...
+// …
 ```
 
 ### Before/After
@@ -92,12 +92,12 @@ Array<{[key: string]: any}>
 
 ```json
 {
-    "name": "name-assets-files-by-pattern",
-    "options": {
-      "pattern": "{{name}}{{#dimension}}@{{dimension}}{{/dimension}}.{{format}}"
-    }
+  "name": "name-assets-files-by-pattern",
+  "options": {
+    "pattern": "{{name}}{{#dimension}}@{{dimension}}{{/dimension}}.{{format}}"
+  }
 }
-...
+// …
 ```
 
 ### Before/After

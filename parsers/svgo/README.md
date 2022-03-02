@@ -33,23 +33,23 @@ interface parser {
 Array of object with at least the key `value.url` and `type`
 
 ```ts
-Array<
+type input = Array<
   Record<string, any> & {
     type: string;
     value: { url: string } & { [key: string]: any };
   }
->
+>;
 ```
 
 ### Output
 
 ```ts
-Array<
+type output = Array<
   Record<string, any> & {
     type: string;
     value: { content: string } & { [key: string]: any };
   }
->
+>;
 ```
 
 ## Usage
@@ -87,7 +87,7 @@ Array<
   "value": {
     "url": "https://s3-us-west-2.amazonaws.com/figma-alpha-api/img/99b5/b311/257c650341b701d691be78f247b9cf5e"
   }
-  ...
+  // …
 }
 ```
 
@@ -108,7 +108,7 @@ Under the hood, the SVG string returned by the `url` property is the one you wan
   "value": {
     "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 40 40\"><path d=\"M36.667 20H30l-5 15L15 5l-5 15H3.333\" stroke-width=\"3.333\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>"
   }
-  ...
+  // …
 }
 ```
 

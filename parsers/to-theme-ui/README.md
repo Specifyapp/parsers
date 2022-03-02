@@ -134,7 +134,7 @@ Choosing `rem` returns:
 Array of object with at least name, value and type:
 
 ```ts
-Array<{name: string, value: any, type: string}>
+type input = Array<{ name: string; value: any; type: string }>;
 ```
 
 ### Output
@@ -142,7 +142,7 @@ Array<{name: string, value: any, type: string}>
 String formated in js or json.
 
 ```ts
-string;
+type output = string;
 ```
 
 ## Basic Usage

@@ -47,13 +47,13 @@ Where `ab+c` is the regex option in `string` or the `regex.pattern` in object. T
 ### Input
 
 ```ts
-Array<Record<string, any>>
+type input = Array<Record<string, any>>;
 ```
 
 ### Output
 
 ```ts
-Array<Record<string, any>>
+type output = Array<Record<string, any>>;
 ```
 
 ## Basic Usage
@@ -82,7 +82,7 @@ With this config, we will filter the elements containing the word "Background".
 ```json5
 [
   {
-    // ...
+    // …
     name: 'BackgroundColor',
     value: {
       a: 1,
@@ -91,10 +91,10 @@ With this config, we will filter the elements containing the word "Background".
       r: 255,
     },
     type: 'color',
-    // ...
+    // …
   },
   {
-    // ...
+    // …
     name: 'Colors/Accent',
     value: {
       a: 1,
@@ -103,7 +103,7 @@ With this config, we will filter the elements containing the word "Background".
       r: 198,
     },
     type: 'color',
-    // ...
+    // …
   },
 ]
 ```
@@ -113,7 +113,7 @@ With this config, we will filter the elements containing the word "Background".
 ```json5
 [
   {
-    // ...
+    // …
     name: 'BackgroundColor',
     value: {
       a: 1,
@@ -122,7 +122,7 @@ With this config, we will filter the elements containing the word "Background".
       r: 255,
     },
     type: 'color',
-    // ...
+    // …
   },
 ]
 ```
