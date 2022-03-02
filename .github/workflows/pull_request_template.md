@@ -1,5 +1,5 @@
 ## What it does
 
-// Quick description
+<!-- Quick description -->
 
-## Additionnal informations
+## Additional informations
