@@ -53,7 +53,7 @@ type output = Array<{ [key: string]: any }>;
 
 ### Config
 
-```json
+```jsonc
 {
   "name": "pick",
   "options": {
@@ -84,7 +84,7 @@ type output = Array<{ [key: string]: any }>;
 
 #### Output
 
-```json
+```jsonc
 [
   {
     "name": "Brand / Primary Color",
@@ -97,7 +97,7 @@ type output = Array<{ [key: string]: any }>;
 
 ### Config
 
-```json
+```jsonc
 {
   "name": "pick",
   "options": {
@@ -112,7 +112,7 @@ type output = Array<{ [key: string]: any }>;
 
 #### Input
 
-```json
+```jsonc
 [
   {
     "name": "Border / Main",
@@ -144,7 +144,7 @@ type output = Array<{ [key: string]: any }>;
 
 #### Output
 
-```json
+```jsonc
 [
   {
     "name": "Border / Main",

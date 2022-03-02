@@ -70,7 +70,7 @@ type output = string;
 
 ### Config
 
-```jsonc
+```jsoncc
 {
   "name": "Import tokens",
   "path": "src/common/theme/theme.js",
@@ -249,7 +249,7 @@ export default theme;
 
 Downloading assets happens in a seperate rule in `.specifyrc.json`.
 
-```jsonc
+```jsoncc
 // .specifyrc.json
 {
   // …

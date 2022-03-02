@@ -81,7 +81,7 @@ type output = Array<{
 
 ### Config
 
-```json
+```jsonc
 {
   "name": "to-style-dictionary"
 }
@@ -91,7 +91,7 @@ type output = Array<{
 
 #### Input
 
-```json
+```jsonc
 [
   {
     "name": "primary",
@@ -175,7 +175,7 @@ This will create multiple files inside a folder with the following structure:
 
 In each of these files are the tokens usable in Style Dictionary
 
-```json
+```jsonc
 /* color/base.json */
 {
   "color": {
@@ -188,7 +188,7 @@ In each of these files are the tokens usable in Style Dictionary
 }
 ```
 
-```json
+```jsonc
 /* size/base.json */
 {
   "size": {
@@ -201,7 +201,7 @@ In each of these files are the tokens usable in Style Dictionary
 }
 ```
 
-```json
+```jsonc
 /* size/font.json */
 {
   "size": {
@@ -214,7 +214,7 @@ In each of these files are the tokens usable in Style Dictionary
 }
 ```
 
-```json
+```jsonc
 /* size/lineHeight.json */
 {
   "size": {
@@ -227,7 +227,7 @@ In each of these files are the tokens usable in Style Dictionary
 }
 ```
 
-```json
+```jsonc
 /* asset/font.json */
 {
   "asset": {
@@ -246,7 +246,7 @@ In each of these files are the tokens usable in Style Dictionary
 
 ### Config
 
-```json
+```jsonc
 {
   "name": "to-style-dictionary",
   "options": {
@@ -262,7 +262,7 @@ In each of these files are the tokens usable in Style Dictionary
 
 #### Input
 
-```json
+```jsonc
 [
   {
     "name": "primary/main",
@@ -374,7 +374,7 @@ This will create multiple files inside a folder with the following structure:
 
 In each of these files are the tokens usable in Style Dictionary
 
-```json
+```jsonc
 /* color/base.json */
 {
   "color": {
@@ -397,7 +397,7 @@ In each of these files are the tokens usable in Style Dictionary
 }
 ```
 
-```json
+```jsonc
 /* size/base.json */
 {
   "size": {
@@ -415,7 +415,7 @@ In each of these files are the tokens usable in Style Dictionary
 }
 ```
 
-```json
+```jsonc
 /* size/font.json */
 {
   "size": {
@@ -428,7 +428,7 @@ In each of these files are the tokens usable in Style Dictionary
 }
 ```
 
-```json
+```jsonc
 /* size/lineHeight.json */
 {
   "size": {
@@ -441,7 +441,7 @@ In each of these files are the tokens usable in Style Dictionary
 }
 ```
 
-```json
+```jsonc
 /* asset/font.json */
 {
   "asset": {

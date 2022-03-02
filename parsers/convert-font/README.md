@@ -56,7 +56,7 @@ type output = Array<{
 
 ### Config
 
-```json
+```jsonc
 {
   "name": "convert-font",
   "options": {
@@ -70,7 +70,7 @@ type output = Array<{
 
 ### Result
 
-```json
+```jsonc
 [
   {
     "name": "allan-700.woff2",

@@ -88,7 +88,7 @@ The output will differ according to the `path` you set in your rule:
 
 ### Config
 
-```json
+```jsonc
 {
   "name": "svg-to-jsx"
 }
@@ -98,14 +98,14 @@ The output will differ according to the `path` you set in your rule:
 
 #### Input
 
-```json5
+```jsonc
 {
-  type: 'vector',
-  name: 'activity.svg',
-  value: {
-    url: 'https://s3-us-west-2.amazonaws.com/figma-alpha-api/img/99b5/b311/257c650341b701d691be78f247b9cf5e',
+  "type": "vector",
+  "name": "activity.svg",
+  "value": {
+    "url": "https://s3-us-west-2.amazonaws.com/figma-alpha-api/img/99b5/b311/257c650341b701d691be78f247b9cf5e"
     //...
-  },
+  }
   //...
 }
 ```
@@ -144,7 +144,7 @@ The output will differ according to the `path` you set in your rule:
 
 ### Config
 
-```json
+```jsonc
 {
   "name": "svg-to-jsx",
   "options": {
@@ -162,14 +162,14 @@ The output will differ according to the `path` you set in your rule:
 
 #### Input
 
-```json5
+```jsonc
 {
-  type: 'vector',
-  name: 'activity.svg',
-  value: {
-    url: 'https://s3-us-west-2.amazonaws.com/figma-alpha-api/img/99b5/b311/257c650341b701d691be78f247b9cf5e',
+  "type": "vector",
+  "name": "activity.svg",
+  "value": {
+    "url": "https://s3-us-west-2.amazonaws.com/figma-alpha-api/img/99b5/b311/257c650341b701d691be78f247b9cf5e"
     //...
-  },
+  }
   //...
 }
 ```

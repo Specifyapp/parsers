@@ -66,7 +66,7 @@ type output = Array<{
 
 ### Config
 
-```json
+```jsonc
 {
   "name": "to-dsp",
   "options": {
@@ -86,7 +86,7 @@ type output = Array<{
 
 #### Input
 
-```json
+```jsonc
 [
   {
     "type": "color",
@@ -103,7 +103,7 @@ type output = Array<{
 
 #### Output
 
-```json
+```jsonc
 [
   {
     "name": "data/tokens.json",

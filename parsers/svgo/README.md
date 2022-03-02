@@ -56,7 +56,7 @@ type output = Array<
 
 ### Config
 
-```json
+```jsonc
 {
   "name": "svgo",
   "options": {
@@ -80,7 +80,7 @@ type output = Array<
 
 #### Input
 
-```json
+```jsonc
 {
   "type": "vector",
   "name": "activity.svg",
@@ -101,7 +101,7 @@ Under the hood, the SVG string returned by the `url` property is the one you wan
 
 #### Output
 
-```json
+```jsonc
 {
   "type": "vector",
   "name": "activity.svg",

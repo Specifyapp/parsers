@@ -53,7 +53,7 @@ type output = string;
 
 ### Config
 
-```json
+```jsonc
 {
   "name": "to-css-font-import",
   "options": {
@@ -66,7 +66,7 @@ type output = string;
 
 #### Input
 
-```json
+```jsonc
 [
   {
     "type": "font",

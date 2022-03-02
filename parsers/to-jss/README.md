@@ -99,7 +99,7 @@ type output = string;
 
 ### Config
 
-```json
+```jsonc
 {
   "name": "to-jss",
   "options": {

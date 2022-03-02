@@ -88,18 +88,18 @@ All presets can be frozen to prevent their edition.
 
 Using the base preset will return the following object:
 
-```json5
+```jsonc
 // base
 {
-  thin: 100,
-  extraLight: 200,
-  light: 300,
-  normal: 400,
-  medium: 500,
-  semiBold: 600,
-  bold: 700,
-  extraBold: 800,
-  black: 900,
+  "thin": 100,
+  "extraLight": 200,
+  "light": 300,
+  "normal": 400,
+  "medium": 500,
+  "semiBold": 600,
+  "bold": 700,
+  "extraBold": 800,
+  "black": 900
 }
 ```
 
@@ -115,14 +115,14 @@ The base preset depends of the unit.
 
 Choosing `px` returns:
 
-```json5
-['8.19px', '10.24px', '12.8px', '16px', '20px', '25px', '31.25px', '39.06px', '48.83px']
+```jsonc
+["8.19px", "10.24px", "12.8px", "16px", "20px", "25px", "31.25px", "39.06px", "48.83px"]
 ```
 
 Choosing `rem` returns:
 
-```json5
-['0.512rem', '0.64rem', '0.8rem', '1rem', '1.25rem', '1.563rem', '1.953rem', '2.441rem', '3.052rem']
+```jsonc
+["0.512rem", "0.64rem", "0.8rem", "1rem", "1.25rem", "1.563rem", "1.953rem", "2.441rem", "3.052rem"]
 ```
 
 ## Types
@@ -149,7 +149,7 @@ type output = string;
 
 ### Config
 
-```json
+```jsonc
 {
   "name": "to-theme-ui"
 }
@@ -159,7 +159,7 @@ type output = string;
 
 #### Input
 
-```json
+```jsonc
 [
   {
     "name": "primary",
@@ -244,7 +244,7 @@ export default theme;
 
 ### Config
 
-```json
+```jsonc
 {
   "name": "to-theme-ui",
   "options": {
@@ -273,7 +273,7 @@ export default theme;
 
 #### Input
 
-```json
+```jsonc
 [
   {
     "name": "primary",

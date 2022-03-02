@@ -75,7 +75,7 @@ type output = Array<{ name: string; value: { content: string } }>;
 
 ### Config
 
-```json
+```jsonc
 {
   "name": "to-scss-map",
   "options": {}
@@ -87,7 +87,7 @@ type output = Array<{ name: string; value: { content: string } }>;
 
 #### Input
 
-```json
+```jsonc
 [
   {
     "name": "primary",
@@ -256,7 +256,7 @@ In another scss file you can use it like
 
 ### Config
 
-```json
+```jsonc
 {
   "name": "to-scss-map",
   "options": {
@@ -285,7 +285,7 @@ In another scss file you can use it like
 
 #### Input
 
-```json
+```jsonc
 [
   {
     "name": "primary / default",
