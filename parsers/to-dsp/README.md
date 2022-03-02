@@ -53,13 +53,13 @@ Array<{
 An array of object containing a name and a value. The value is an object containing either an url or a content. This object is considered as a DownloadableFile
 
 ```ts
-Array<{
+type output = Array<{
   name: string;
   value: {
     content?: string;
     url?: string;
   };
-}>
+}>;
 ```
 
 ## Usage
@@ -79,7 +79,7 @@ Array<{
     "createAssets": false
   }
 }
-...
+// …
 ```
 
 ### Before/After

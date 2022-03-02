@@ -62,13 +62,13 @@ interface parser {
 Array of object with at least name, value and type:
 
 ```ts
-Array<{name: string, value: any, type: string}>
+type input = Array<{ name: string; value: any; type: string }>;
 ```
 
 ### Output
 
 ```ts
-Array<{name: string, value: {content: string}}>
+type output = Array<{ name: string; value: { content: string } }>;
 ```
 
 ## Basic Usage
@@ -80,7 +80,7 @@ Array<{name: string, value: {content: string}}>
   "name": "to-scss-map",
   "options": {}
 }
-...
+// …
 ```
 
 ### Before/After
@@ -278,7 +278,7 @@ In another scss file you can use it like
     "splitBy": "/"
   }
 }
-...
+// …
 ```
 
 ### Before/After

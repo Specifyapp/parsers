@@ -34,13 +34,13 @@ interface parser {
 ### Input
 
 ```ts
-Array<Record<string, any>>
+type input = Array<Record<string, any>>;
 ```
 
 ### Output
 
 ```ts
-Array<Record<string, any>>
+type output = Array<Record<string, any>>;
 ```
 
 ## Basic Usage

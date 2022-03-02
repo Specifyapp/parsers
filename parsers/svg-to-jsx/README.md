@@ -52,13 +52,13 @@ interface parser {
 Array of object with at least the key `value.url` or `value.content`.
 
 ```ts
-Array<
+type input = Array<
   Record<string, any> & {
     type: string;
     name: string;
     value: ({ url?: string } | { content?: string }) & { [key: string]: any };
   }
->
+>;
 ```
 
 ### Output
@@ -66,10 +66,10 @@ Array<
 Input type extended with `value.content` and `value.fileName`
 
 ```ts
-Array<
+type output = Array<
   Record<string, any> & {
     type: string;
-    value: { content: string; fileName: string; [key: string]: any }
+    value: { content: string; fileName: string; [key: string]: any };
   }
 >;
 ```
@@ -136,7 +136,7 @@ The output will differ according to the `path` you set in your rule:
       </svg>
     );",
   },
-  ...
+  // …
 }
 ```
 
@@ -203,6 +203,6 @@ The output will differ according to the `path` you set in your rule:
         </div>
       );',
   },
-  ...
+  // …
 }
 ```

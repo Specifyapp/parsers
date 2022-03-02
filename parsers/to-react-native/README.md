@@ -57,13 +57,13 @@ interface parser {
 Array of object with at least name, value and type
 
 ```ts
-Array<{name: string, value: any, type: string}>
+type input = Array<{ name: string; value: any; type: string }>;
 ```
 
 ### Output
 
 ```ts
-string;
+type output = string;
 ```
 
 ## Usage
@@ -112,7 +112,7 @@ string;
 
 ```js
 [
-  ...
+  // …
   {
     name: 'activity.svg',
     value: {
@@ -173,7 +173,7 @@ string;
     },
     type: 'color',
   },
-  ...
+  // …
 ];
 ```
 
@@ -252,7 +252,7 @@ Downloading assets happens in a seperate rule in `.specifyrc.json`.
 ```jsonc
 // .specifyrc.json
 {
-  ...
+  // …
   "rules": [
     {
       "name": "Download Assets",
@@ -267,7 +267,7 @@ Downloading assets happens in a seperate rule in `.specifyrc.json`.
       "filter": {
         "types": ["font"]
       }
-    },
+    }
   ]
 }
 ```

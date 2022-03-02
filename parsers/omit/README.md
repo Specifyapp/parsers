@@ -38,7 +38,7 @@ interface parser {
 Array of object with at least a name's key
 
 ```ts
-Array<{[key: string]: any}>
+type input = Array<{ [key: string]: any }>;
 ```
 
 ### Output
@@ -46,7 +46,7 @@ Array<{[key: string]: any}>
 Array of object without the given keys
 
 ```ts
-Array<{[key: string]: any}>
+type output = Array<{ [key: string]: any }>;
 ```
 
 ## Simple Usage
@@ -60,7 +60,7 @@ Array<{[key: string]: any}>
     "keys": ["value.a"]
   }
 }
-...
+// …
 ```
 
 ### Before/After
@@ -110,7 +110,7 @@ Array<{[key: string]: any}>
     "flatten": true
   }
 }
-...
+// …
 ```
 
 ### Before/After

@@ -84,7 +84,7 @@ interface parser {
 Array of object with at least name, value and type
 
 ```ts
-Array<{name: string, value: any, type: string}>
+type input = Array<{ name: string; value: any; type: string }>;
 ```
 
 ### Output
@@ -92,7 +92,7 @@ Array<{name: string, value: any, type: string}>
 String formated in jss
 
 ```ts
-string;
+type output = string;
 ```
 
 ## Usage
@@ -104,10 +104,10 @@ string;
   "name": "to-jss",
   "options": {
     "formatName": "camelCase",
-    "formatTokens":{
+    "formatTokens": {
       "colorFormat": "hex8",
       "textStyleFormat": "classObject",
-      "fontSizeUnit":  "px"
+      "fontSizeUnit": "px"
     },
     "formatConfig": {
       "jssObjectName": "lightTheme",
@@ -117,7 +117,7 @@ string;
     }
   }
 }
-...
+// …
 ```
 
 ### Before/After
