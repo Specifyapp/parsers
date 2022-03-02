@@ -49,7 +49,7 @@ type output = Array<{ [key: string]: any }>;
 
 ### Config
 
-```json
+```jsonc
 {
   "name": "suffix-by",
   "options": {
@@ -65,7 +65,7 @@ type output = Array<{ [key: string]: any }>;
 
 #### Input
 
-```json
+```jsonc
 [
   {
     "type": "vector",
@@ -80,7 +80,7 @@ type output = Array<{ [key: string]: any }>;
 
 #### Output
 
-```json
+```jsonc
 [
   {
     "type": "vector",
@@ -98,7 +98,7 @@ type output = Array<{ [key: string]: any }>;
 
 ### Config
 
-```json
+```jsonc
 {
   "name": "suffix-by",
   "options": {
@@ -114,7 +114,7 @@ type output = Array<{ [key: string]: any }>;
 
 #### Input
 
-```json
+```jsonc
 [
   {
     "type": "bitmap",
@@ -138,7 +138,7 @@ type output = Array<{ [key: string]: any }>;
 
 #### Output
 
-```json
+```jsonc
 [
   {
     "type": "bitmap",

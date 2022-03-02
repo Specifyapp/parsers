@@ -50,7 +50,7 @@ type output = Array<Record<string, unknown>>;
 
 ### Config
 
-```json
+```jsonc
 {
   "name": "px-to-rem",
   "options": {
@@ -64,7 +64,7 @@ type output = Array<Record<string, unknown>>;
 
 #### Input
 
-```json
+```jsonc
 {
   // …
   "fontSize": {
@@ -79,7 +79,7 @@ type output = Array<Record<string, unknown>>;
 
 #### Output
 
-```json
+```jsonc
 [
   {
     // …

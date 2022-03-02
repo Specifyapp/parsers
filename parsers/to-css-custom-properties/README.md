@@ -61,7 +61,7 @@ type output = string;
 
 ### Config
 
-```json
+```jsonc
 {
   "name": "to-css-custom-properties",
   "options": {
@@ -81,7 +81,7 @@ type output = string;
 
 #### Input
 
-```json
+```jsonc
 [
   {
     "type": "color",

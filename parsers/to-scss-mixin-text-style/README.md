@@ -123,7 +123,7 @@ type output = string;
 
 ### Config
 
-```json
+```jsonc
 {
   "name": "to-scss-mixin-text-style",
   "options": {
@@ -141,7 +141,7 @@ type output = string;
 
 #### Input
 
-```json
+```jsonc
 [
   {
     "name": "Body",
