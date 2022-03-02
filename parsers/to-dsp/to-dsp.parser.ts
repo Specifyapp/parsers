@@ -28,15 +28,13 @@ export async function createAssetsFiles(
   }
 
   return await Promise.all(
-    filteredTokens.map(
-      async (token): Promise<DownloadableFile> => {
-        const instance = new (<any>TokensClass)[
-          `${token.type.charAt(0).toUpperCase() + token.type.slice(1)}`
-        ](token);
+    filteredTokens.map(async (token): Promise<DownloadableFile> => {
+      const instance = new (<any>TokensClass)[
+        `${token.type.charAt(0).toUpperCase() + token.type.slice(1)}`
+      ](token);
 
-        return instance.toDspAssets(SpServices);
-      },
-    ),
+      return instance.toDspAssets(SpServices);
+    }),
   );
 }
 
@@ -81,15 +79,13 @@ export default async function (
       const acc = await accPromise;
       const entities = tokens
         .filter(token => (types.length ? (types as Array<string>).includes(token.type) : false))
-        .map(
-          (token): DspEntity => {
-            const instance = new (<any>TokensClass)[
-              `${token.type.charAt(0).toUpperCase() + token.type.slice(1)}`
-            ](token);
+        .map((token): DspEntity => {
+          const instance = new (<any>TokensClass)[
+            `${token.type.charAt(0).toUpperCase() + token.type.slice(1)}`
+          ](token);
 
-            return instance.toDsp();
-          },
-        );
+          return instance.toDsp();
+        });
 
       return [
         ...acc,

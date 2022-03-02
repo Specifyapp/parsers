@@ -25,12 +25,12 @@ interface parser {
 
 ### Options
 
-| Parameter       | Required | Type              | Default | Description                                                                                                                                                                                                                                            |
-| --------------- | -------- | ----------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `key`           | required | `string`          |         | Key path to apply the filter function.                                                                                                                                                                                                                  |
+| Parameter       | Required | Type              | Default | Description                                                                                                                                                                                                                                                  |
+| --------------- | -------- | ----------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `key`           | required | `string`          |         | Key path to apply the filter function.                                                                                                                                                                                                                       |
 | `regex`         | required | `object` `string` |         | If you need to define flags inside the [constructor of the regex](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp#literal_notation_and_constructor), use the `object` notation. Otherwise use the `string` notation. |
-| `regex.pattern` | required | `string`          |         | The pattern of the regex used as first argument of the [constructor of the regex](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp#literal_notation_and_constructor).                                                         |
-| `regex.flags`   | optional | `string`          |         | The flags to use for regex. In the regex constructor it's the second argument [constructor of the regex](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp#literal_notation_and_constructor).                     |
+| `regex.pattern` | required | `string`          |         | The pattern of the regex used as first argument of the [constructor of the regex](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp#literal_notation_and_constructor).                                                 |
+| `regex.flags`   | optional | `string`          |         | The flags to use for regex. In the regex constructor it's the second argument [constructor of the regex](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp#literal_notation_and_constructor).                          |
 
 ### Good to know
 

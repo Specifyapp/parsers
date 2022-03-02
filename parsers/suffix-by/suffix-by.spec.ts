@@ -32,7 +32,11 @@ describe('suffix-by', () => {
       libs,
     );
     if (result instanceof Error) return fail(result);
-    expect(result.every(vector => vector.name?.endsWith('.vector.svg') || vector.name?.endsWith('.vector.pdf'))).toEqual(true);
+    expect(
+      result.every(
+        vector => vector.name?.endsWith('.vector.svg') || vector.name?.endsWith('.vector.pdf'),
+      ),
+    ).toEqual(true);
     return;
   });
 });

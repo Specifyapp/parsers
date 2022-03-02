@@ -8,7 +8,7 @@ This parser helps you wrap SVG files within a JSX component.
 
 ```ts
 interface parser {
-  name: 'svg-to-jsx',
+  name: 'svg-to-jsx';
   options: {
     prepend?: string;
     formatConfig?: Partial<{
@@ -29,19 +29,19 @@ interface parser {
 ```
 
 ### Options
-| Parameter                     | Required  | Type                                             | Default     | Description                                                                                               |
-|-------------------------------| --------- |--------------------------------------------------|-------------|-----------------------------------------------------------------------------------------------------------|
-| `prepend`                     | optional     | `string`                                         |             | A string to append at the top of the generated file                                                       | 
-| `formatConfig.endOfLine`      | optional     | `auto` `lf` `crlf` `cr`                          | `auto`      | [Prettier documentation](https://prettier.io/docs/en/options.html#end-of-line)                            |
-| `formatConfig.tabWidth`       | optional     | `number`                                         | `2`         | [Prettier documentation](https://prettier.io/docs/en/options.html#tab-width)                              |
-| `formatConfig.useTabs`        | optional     | `boolean`                                        | `true`      | [Prettier documentation](https://prettier.io/docs/en/options.html#tabs)                                   |
-| `formatConfig.singleQuote`    | optional     | `boolean`                                        | `false`     | [Prettier documentation](https://prettier.io/docs/en/options.html#quotes)                                 |
-| `formatConfig.exportDefault`  | optional     | `boolean`                                        | `true`      | Defines if the export of the JSX component should be done using default or not.                           |
-| `formatConfig.variableFormat` | optional     | `camelCase` `kebabCase` `snakeCase` `pascalCase` | `kebabCase` | The case transformation you want to apply to the name of JavaScript variable that will be exported.       |
-| `formatConfig.isTsx`          | optional     | `boolean`   | `false`     | Append `.tsx` extension to the generated files.                                                                  |
-| `wrapper.tag`                 | optional     | `string`                                         |             | An HTML parent tag will be used to wrap the SVG tag.                                                      |
-| `wrapper.className`           | optional     | `string`                                         |             | A string or a pattern used to set a className attribute on the potential parent tag wrapping the SVG tag. |
 
+| Parameter                     | Required | Type                                             | Default     | Description                                                                                               |
+| ----------------------------- | -------- | ------------------------------------------------ | ----------- | --------------------------------------------------------------------------------------------------------- |
+| `prepend`                     | optional | `string`                                         |             | A string to append at the top of the generated file                                                       |
+| `formatConfig.endOfLine`      | optional | `auto` `lf` `crlf` `cr`                          | `auto`      | [Prettier documentation](https://prettier.io/docs/en/options.html#end-of-line)                            |
+| `formatConfig.tabWidth`       | optional | `number`                                         | `2`         | [Prettier documentation](https://prettier.io/docs/en/options.html#tab-width)                              |
+| `formatConfig.useTabs`        | optional | `boolean`                                        | `true`      | [Prettier documentation](https://prettier.io/docs/en/options.html#tabs)                                   |
+| `formatConfig.singleQuote`    | optional | `boolean`                                        | `false`     | [Prettier documentation](https://prettier.io/docs/en/options.html#quotes)                                 |
+| `formatConfig.exportDefault`  | optional | `boolean`                                        | `true`      | Defines if the export of the JSX component should be done using default or not.                           |
+| `formatConfig.variableFormat` | optional | `camelCase` `kebabCase` `snakeCase` `pascalCase` | `kebabCase` | The case transformation you want to apply to the name of JavaScript variable that will be exported.       |
+| `formatConfig.isTsx`          | optional | `boolean`                                        | `false`     | Append `.tsx` extension to the generated files.                                                           |
+| `wrapper.tag`                 | optional | `string`                                         |             | An HTML parent tag will be used to wrap the SVG tag.                                                      |
+| `wrapper.className`           | optional | `string`                                         |             | A string or a pattern used to set a className attribute on the potential parent tag wrapping the SVG tag. |
 
 ## Types
 
@@ -60,6 +60,7 @@ Array<
   }
 >
 ```
+
 ### Output
 
 Input type extended with `value.content` and `value.fileName`
@@ -67,20 +68,24 @@ Input type extended with `value.content` and `value.fileName`
 ```ts
 Array<
   Record<string, any> & {
-    type: string; 
+    type: string;
     value: { content: string; fileName: string; [key: string]: any }
   }
 >;
 ```
+
 ### **ℹ️ Good to know**
+
 The content generated by this parser is returned by the `{value.content}` property.
 The output will differ according to the `path` you set in your rule:
+
 1. If the `path` targets a directory, the content will be written as a file.
    By default, this file will be named according to the following pattern: `{assetName}.jsx` (assetName pascalCased).
    If the asset object contains a `filename` property (e.g. by using the [name-assets-files-by-pattern](https://github.com/Specifyapp/parsers/tree/master/parsers/name-assets-files-by-pattern) parser), the file will be named after it.
 2. If the `path` of your rule targets a file, the content will be written as a JSON object inside it.
 
 ## Basic usage
+
 ### Config
 
 ```json
@@ -90,16 +95,17 @@ The output will differ according to the `path` you set in your rule:
 ```
 
 ### Before/After
+
 #### Input
 
 ```json5
 {
-  "type": "vector",
-  "name": "activity.svg",
-  "value": {
-    "url": "https://s3-us-west-2.amazonaws.com/figma-alpha-api/img/99b5/b311/257c650341b701d691be78f247b9cf5e"
+  type: 'vector',
+  name: 'activity.svg',
+  value: {
+    url: 'https://s3-us-west-2.amazonaws.com/figma-alpha-api/img/99b5/b311/257c650341b701d691be78f247b9cf5e',
     //...
-  }
+  },
   //...
 }
 ```
@@ -135,6 +141,7 @@ The output will differ according to the `path` you set in your rule:
 ```
 
 ## Complex usage
+
 ### Config
 
 ```json
@@ -152,18 +159,21 @@ The output will differ according to the `path` you set in your rule:
 ```
 
 ### Before/After
+
 #### Input
+
 ```json5
 {
-  "type": "vector",
-  "name": "activity.svg",
-  "value": {
-    "url": "https://s3-us-west-2.amazonaws.com/figma-alpha-api/img/99b5/b311/257c650341b701d691be78f247b9cf5e"
+  type: 'vector',
+  name: 'activity.svg',
+  value: {
+    url: 'https://s3-us-west-2.amazonaws.com/figma-alpha-api/img/99b5/b311/257c650341b701d691be78f247b9cf5e',
     //...
-  }
+  },
   //...
 }
 ```
+
 #### Output
 
 ```

@@ -1563,9 +1563,7 @@
           "measure": 20
         }
       },
-      "fontVariant": [
-        "small-caps"
-      ]
+      "fontVariant": ["small-caps"]
     },
     "meta": {
       "source": "frames",
@@ -1806,9 +1804,7 @@
         }
       },
       "textTransform": "uppercase",
-      "textDecoration": [
-        "underline"
-      ]
+      "textDecoration": ["underline"]
     },
     "meta": {
       "source": "frames",

@@ -5,22 +5,23 @@
 Loop on all tokens and apply pascalcase function on the given keys.
 
 Learn more about how to configure Specify in the API documentation: [https://specifyapp.com/developers/cli](https://specifyapp.com/developers/cli).
+
 ## Interface
 
 ```ts
 interface parser {
-  name: 'pascalcasify',
+  name: 'pascalcasify';
   options?: {
-    keys: Array<string>
-  }
+    keys: Array<string>;
+  };
 }
 ```
 
 ### Options
 
-| Parameter              | Required   | Type      | Default    | Description                                                                                                                |
-| ---------------------- | ---------- | --------- | ---------- | -------------------------------------------------------------------------------------------------------------------------- |
-| `keys`                 | optional   | `Array`   | `["name"]` | The list of keys where the function will be applied                                                                        |
+| Parameter | Required | Type    | Default    | Description                                         |
+| --------- | -------- | ------- | ---------- | --------------------------------------------------- |
+| `keys`    | optional | `Array` | `["name"]` | The list of keys where the function will be applied |
 
 ## Types
 
@@ -29,6 +30,7 @@ interface parser {
 ### Input
 
 Array of object with the keys to apply `pascalcase` function
+
 ```ts
 Array<{[key: string]: any}>
 ```
@@ -38,7 +40,9 @@ Array<{[key: string]: any}>
 ```ts
 Array<{[key: string]: any}>
 ```
+
 ## Usage
+
 ### Config
 
 ```json
@@ -50,6 +54,7 @@ Array<{[key: string]: any}>
 }
 ...
 ```
+
 ### Before/After
 
 #### Input
@@ -68,6 +73,7 @@ Array<{[key: string]: any}>
   }
 ]
 ```
+
 #### Output
 
 ```json

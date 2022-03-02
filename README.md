@@ -1,21 +1,19 @@
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dwyl/esta/issues)
 ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/Specifyapp/parsers/CI)
-[![Coverage Status](https://coveralls.io/repos/github/Specifyapp/parsers/badge.svg?branch=master)](https://coveralls.io/github/Specifyapp/parsers?branch=master) 
+[![Coverage Status](https://coveralls.io/repos/github/Specifyapp/parsers/badge.svg?branch=master)](https://coveralls.io/github/Specifyapp/parsers?branch=master)
 [![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/Specifyapp/parsers.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/Specifyapp/parsers/context:javascript)
 [![Total alerts](https://img.shields.io/lgtm/alerts/g/Specifyapp/parsers.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/Specifyapp/parsers/alerts/)
 <a href="https://github.com/Specifyapp/parsers/graphs/contributors">
-  <img src="https://img.shields.io/github/contributors/Specifyapp/parsers" alt="Contributors" />
+<img src="https://img.shields.io/github/contributors/Specifyapp/parsers" alt="Contributors" />
 </a>
+
 <!-- [![CI Actions Status](https://github.com/Specifyapp/parsers/workflows/CI/badge.svg)](https://github.com/Specifyapp/parsers/actions) -->
-
-
-
-
 
 # Specify Parsers
 
 ## What is Specify?
-Specify helps you unify your brand identity by collecting, storing and distributing design tokens and assets—automatically. 
+
+Specify helps you unify your brand identity by collecting, storing and distributing design tokens and assets—automatically.
 
 ## What are parsers?
 
@@ -38,6 +36,7 @@ Let's say you want to create a parser named `my-parser`.
 ### Creating a valid parser
 
 To be valid, your parser needs:
+
 - A `README.md` file containing:
   - A description
   - A typed interface with its params ([See the camelcasify one](https://github.com/Specifyapp/parsers/tree/master/parsers/camelcasify#interface))
@@ -49,11 +48,13 @@ To be valid, your parser needs:
 ## Usable libraries
 
 For now, our parsers only use the following libraries:
+
 - [tinycolor2](https://github.com/bgrins/TinyColor)
 - [lodash](https://github.com/lodash/lodash)
 - [svgo](https://github.com/svg/svgo/)
 
 If you need another library to develop your parser:
+
 1. Install it using `yarn` or `npm`
 2. Import and export it in the `parsers/global-libs.ts` file
 
@@ -62,7 +63,8 @@ If you need another library to develop your parser:
 To easily create and test your parsers, we advise you to use them on design tokens provided in the `seeds.json` file.
 It will allow you to use our fake tokens to test your parsers.
 
-To use our design tokens seed: 
+To use our design tokens seed:
+
 1. Import it in your [parser].spec.ts using `import * as seeds from '../../seeds.json';`
 2. Use the `seeds.tokens` variable according to your needs.
 3. Launch `yarn test` to tests your parsers

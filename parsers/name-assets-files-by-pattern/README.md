@@ -8,22 +8,23 @@ This parser helps you set a structured filename on your assets. It won't rename 
 
 ```ts
 interface parser {
-  name: 'name-assets-files-by-pattern',
+  name: 'name-assets-files-by-pattern';
   options: {
-    pattern: string
-  }
+    pattern: string;
+  };
 }
 ```
 
 ### Options
 
-| Parameter              | Required   | Type      | Default    | Description                             |
-| ---------------------- | ---------- | --------- | ---------- | ----------------------------------------|
-| `pattern`              | required   | `string`  |            | The pattern used to generate files names. It must match [mustache](https://github.com/janl/mustache.js#templates) template syntax.|
+| Parameter | Required | Type     | Default | Description                                                                                                                        |
+| --------- | -------- | -------- | ------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| `pattern` | required | `string` |         | The pattern used to generate files names. It must match [mustache](https://github.com/janl/mustache.js#templates) template syntax. |
 
 ## Types
 
 ℹ️ **Please be aware that, depending on the order you use parsers, their input and output types have to match.**
+
 ### Input
 
 Array of object containing at least the keys described in the pattern option.
@@ -38,7 +39,8 @@ Array<{[key: string]: any}>
 Array<{[key: string]: any}>
 ```
 
-## Basic usage 
+## Basic usage
+
 ### Config
 
 ```json
@@ -50,6 +52,7 @@ Array<{[key: string]: any}>
 }
 ...
 ```
+
 ### Before/After
 
 #### Input
@@ -66,6 +69,7 @@ Array<{[key: string]: any}>
   }
 ]
 ```
+
 #### Output
 
 ```json
@@ -83,6 +87,7 @@ Array<{[key: string]: any}>
 ```
 
 ## Complex usage - with condition in template
+
 ### Config
 
 ```json
@@ -94,6 +99,7 @@ Array<{[key: string]: any}>
 }
 ...
 ```
+
 ### Before/After
 
 #### Input
@@ -119,6 +125,7 @@ Array<{[key: string]: any}>
   }
 ]
 ```
+
 #### Output
 
 ```json
