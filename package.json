@@ -31,11 +31,17 @@
     "glob": "^7.1.7",
     "jest": "27.0.6",
     "jest-circus": "^27.0.6",
+    "lint-staged": "^12.3.4",
     "sass": "^1.49.0",
     "ts-jest": "27.0.3"
   },
+  "lint-staged": {
+    "*": "prettier -u -w"
+  },
   "scripts": {
     "test": "jest --coverage --runInBand",
-    "generate:seeds": "ts-node ./tests/helper/generate.seed.ts"
+    "generate:seeds": "ts-node ./tests/helper/generate.seed.ts",
+    "format": "prettier '**/*' -u -w",
+    "prepare": "git config --local core.hooksPath .hooks"
   }
 }

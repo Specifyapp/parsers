@@ -6,26 +6,28 @@ Loop on all tokens and only get keys not given in parameters.
 
 Learn more about how to configure Specify in the API documentation: [https://specifyapp.com/developers/cli](https://specifyapp.com/developers/cli).
 
-## Interface 
+## Interface
+
 ```ts
 interface parser {
-  name: 'omit',
+  name: 'omit';
   options?: {
-    keys: Array<string>
+    keys: Array<string>;
     filter?: {
-      types: Array<string>
-    },
-    flatten?: boolean
-  }
+      types: Array<string>;
+    };
+    flatten?: boolean;
+  };
 }
 ```
+
 ### Options
 
-| Parameter              | Required   | Type      | Default    | Description                                             |
-| ---------------------- | ---------- | --------- | ---------- | ------------------------------------------------------- |
-| `keys`                 | optional   | `Array`   | `[]`       | The list of keys where the function will be applied.    |
-| `filter.types`         | optional   | `Array`   | `[]`       | The list of token types where the function will be applied.    |
-| `flatten`              | optional   | `boolean` | `false`    | Allow flattening each object after omiting their values.|
+| Parameter      | Required | Type      | Default | Description                                                 |
+| -------------- | -------- | --------- | ------- | ----------------------------------------------------------- |
+| `keys`         | optional | `Array`   | `[]`    | The list of keys where the function will be applied.        |
+| `filter.types` | optional | `Array`   | `[]`    | The list of token types where the function will be applied. |
+| `flatten`      | optional | `boolean` | `false` | Allow flattening each object after omiting their values.    |
 
 ## Types
 
@@ -46,7 +48,9 @@ Array of object without the given keys
 ```ts
 Array<{[key: string]: any}>
 ```
+
 ## Simple Usage
+
 ### Config
 
 ```json
@@ -58,6 +62,7 @@ Array<{[key: string]: any}>
 }
 ...
 ```
+
 ### Before/After
 
 #### Input
@@ -76,6 +81,7 @@ Array<{[key: string]: any}>
   }
 ]
 ```
+
 #### Output
 
 ```json
@@ -93,6 +99,7 @@ Array<{[key: string]: any}>
 ```
 
 ## Complexe Usage
+
 ### Config
 
 ```json
@@ -105,6 +112,7 @@ Array<{[key: string]: any}>
 }
 ...
 ```
+
 ### Before/After
 
 #### Input
@@ -139,6 +147,7 @@ Array<{[key: string]: any}>
   }
 ]
 ```
+
 #### Output
 
 ```json
