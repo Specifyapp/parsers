@@ -1,11 +1,11 @@
 # Round number
 
 ## Description
+This parser helps you round any measurement design token with specific precision.
 
-Round any measurement with specific precision.
-Some measurement token values like a font size, a line height or a shadow blur may need to be rounded.
-By specifying a mode, you can control the round function more precisely.
+Some measurement token values like a font size, a line height or a shadow blur may need to be rounded. By specifying a mode, you can control the round function more precisely.
 
+Learn more about how to configure Specify in the API documentation: [https://specifyapp.com/developers](https://specifyapp.com/developers).
 ## Interface
 
 ```ts
@@ -47,19 +47,21 @@ type output = Array<Record<string, any>>;
 
 ### Config
 
+The following config rounds the measure of a measurement design token:
+
 ```jsonc
-{
-  "name": "round-number",
-  "options": {
-    "keys": ["value.measure"],
-    "precision": 1,
-    "mode": "auto"
+"parsers": [
+  {
+    "name": "round-number",
+    "options": {
+      "keys": ["value.measure"],
+      "precision": 1,
+      "mode": "auto"
+    }
   }
-}
+  // …
+]
 ```
-
-With this config, we will round the measure of a measurement token
-
 ### Before/After
 
 #### Input
@@ -111,22 +113,24 @@ With this config, we will round the measure of a measurement token
 ## Complex Usage - Rounding text style font size and shadows blur
 
 ### Config
+This config uses patterns. Here, the shadow has an array as a value. So we use `[*]` to round all the blur measures.
 
 ```jsonc
-{
-  "name": "round-number",
-  "options": {
-    "keys": [
-      "value.fontSize.value.measure",
-      "value.lineHeight.value.measure",
-      "value[*].blur.value.measure"
-    ],
-    "mode": "down"
+"parsers": [
+  {
+    "name": "round-number",
+    "options": {
+      "keys": [
+        "value.fontSize.value.measure",
+        "value.lineHeight.value.measure",
+        "value[*].blur.value.measure"
+      ],
+      "mode": "down"
+    }
   }
-}
+  // …
+]
 ```
-
-This config uses patterns. Here the shadow has an array as a value. So we use `[*]` to round all the blur measures
 
 ### Before/After
 

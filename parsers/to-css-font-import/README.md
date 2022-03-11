@@ -1,10 +1,9 @@
-# To CSS Font Imports
+# To CSS Font Import
 
 ## Description
+This parser helps you create CSS `@font-face` rules to import your font files.
 
-Create the code used to import font file.
-
-Learn more about how to configure Specify in the API documentation: [https://specifyapp.com/developers/cli](https://specifyapp.com/developers/cli).
+Learn more about how to configure Specify in the API documentation: [https://specifyapp.com/developers](https://specifyapp.com/developers).
 
 ## Interface
 
@@ -54,12 +53,15 @@ type output = string;
 ### Config
 
 ```jsonc
-{
-  "name": "to-css-font-import",
-  "options": {
-    "formats": ["woff2", "woff"]
+"parsers": [
+  {
+    "name": "to-css-font-import",
+    "options": {
+      "formats": ["woff2", "woff"]
+    }
   }
-}
+  // …
+]
 ```
 
 ### Before/After

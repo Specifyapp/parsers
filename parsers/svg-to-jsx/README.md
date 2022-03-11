@@ -1,7 +1,6 @@
-# Svg to Jsx
+# SVG to JSX
 
 ## Description
-
 This parser helps you wrap SVG files within a JSX component.
 
 ## Interface
@@ -89,9 +88,12 @@ The output will differ according to the `path` you set in your rule:
 ### Config
 
 ```jsonc
-{
-  "name": "svg-to-jsx"
-}
+"parsers": [
+  {
+    "name": "svg-to-jsx"
+  }
+  // …
+]
 ```
 
 ### Before/After
@@ -145,17 +147,20 @@ The output will differ according to the `path` you set in your rule:
 ### Config
 
 ```jsonc
-{
-  "name": "svg-to-jsx",
-  "options": {
-    "prepend": "import React from 'react';",
-    "variableFormat": "camelCase",
-    "wrapper": {
-      "tag": "div",
-      "className": "icon-{{name}} icon"
+"parsers": [
+  {
+    "name": "svg-to-jsx",
+    "options": {
+      "prepend": "import React from 'react';",
+      "variableFormat": "camelCase",
+      "wrapper": {
+        "tag": "div",
+        "className": "icon-{{name}} icon"
+      }
     }
   }
-}
+  // …
+]
 ```
 
 ### Before/After

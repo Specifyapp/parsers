@@ -1,10 +1,9 @@
-# To SCSS mixin text style
+# To SCSS Mixin Text Style
 
 ## Description
+This parser helps you create text styles formatted as [SCSS mixins](https://sass-lang.com/documentation/at-rules/mixin).
 
-Create text styles formatted as SCSS mixins.
-
-Learn more about how to configure Specify in the API documentation: [https://specifyapp.com/developers/cli](https://specifyapp.com/developers/cli).
+Learn more about how to configure Specify in the API documentation: [https://specifyapp.com/developers](https://specifyapp.com/developers).
 
 ## Interface
 
@@ -107,8 +106,6 @@ Array of object with at least the key `name` and the value that match the [TextS
 
 ### Input
 
-\_\_
-
 ```ts
 type input = Array<{ name: string; value: TextStyleValue } & Record<any, any>>;
 ```
@@ -124,17 +121,19 @@ type output = string;
 ### Config
 
 ```jsonc
-{
-  "name": "to-scss-mixin-text-style",
-  "options": {
-    "exclude": ["color", "text-indent", "vertical-align", "text-align"],
-    "prefix": "sp-",
-    "suffix": "-text-style",
-    "relativeLineHeight": true,
-    "genericFamily": "serif"
+"parsers": [
+  {
+    "name": "to-scss-mixin-text-style",
+    "options": {
+      "exclude": ["color", "text-indent", "vertical-align", "text-align"],
+      "prefix": "sp-",
+      "suffix": "-text-style",
+      "relativeLineHeight": true,
+      "genericFamily": "serif"
+    }
   }
-}
-// …
+  // …
+]
 ```
 
 ### Before/After

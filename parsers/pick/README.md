@@ -1,10 +1,9 @@
 # Pick
 
 ## Description
+This parser helps you get only specific keys from a design token given in params.
 
-Loop on all tokens and get only keys given in params.
-
-Learn more about how to configure Specify in the API documentation: [https://specifyapp.com/developers/cli](https://specifyapp.com/developers/cli).
+Learn more about how to configure Specify in the API documentation: [https://specifyapp.com/developers](https://specifyapp.com/developers).
 
 ## Interface
 
@@ -54,13 +53,15 @@ type output = Array<{ [key: string]: any }>;
 ### Config
 
 ```jsonc
-{
-  "name": "pick",
-  "options": {
-    "keys": ["name", "type"]
+"parsers": [
+  {
+    "name": "pick",
+    "options": {
+      "keys": ["name", "type"]
+    }
   }
-}
-// …
+  // …
+]
 ```
 
 ### Before/After
@@ -98,14 +99,16 @@ type output = Array<{ [key: string]: any }>;
 ### Config
 
 ```jsonc
-{
-  "name": "pick",
-  "options": {
-    "keys": ["name", "meta.originFrameName"],
-    "flatten": true
+"parsers": [
+  {
+    "name": "pick",
+    "options": {
+      "keys": ["name", "meta.originFrameName"],
+      "flatten": true
+    }
   }
-}
-// …
+  // …
+]
 ```
 
 ### Before/After

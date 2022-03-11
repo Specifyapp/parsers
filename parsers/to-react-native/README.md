@@ -1,8 +1,9 @@
 # To React Native
 
 ## Description
+This parser helps you transform design tokens to a JavaScript `theme` object compatible with [React Native](https://reactnative.dev/).
 
-Transform design tokens to a JavaScript `theme` object which can be used in [React Native](https://reactnative.dev/).
+Learn more about how to configure Specify in the API documentation: [https://specifyapp.com/developers](https://specifyapp.com/developers).
 
 ## Interface
 

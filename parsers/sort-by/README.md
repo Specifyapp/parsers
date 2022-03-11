@@ -1,10 +1,9 @@
 # Sort By
 
 ## Description
+This parser helps loop on several design tokens and sort them according to their respective key values.
 
-Loop on all tokens and apply sort function on the given keys.
-
-Learn more about how to configure Specify in the API documentation: [https://specifyapp.com/developers/cli](https://specifyapp.com/developers/cli).
+Learn more about how to configure Specify in the API documentation: [https://specifyapp.com/developers](https://specifyapp.com/developers).
 
 ## Interface
 
@@ -46,13 +45,15 @@ type output = Array<{ [key: string]: any }>;
 ### Config
 
 ```jsonc
-{
-  "name": "sort-by",
-  "options": {
-    "keys": ["name"]
+"parsers": [
+  {
+    "name": "sort-by",
+    "options": {
+      "keys": ["name"]
+    }
   }
-}
-// …
+  // …
+]
 ```
 
 ### Before/After
@@ -106,7 +107,7 @@ type output = Array<{ [key: string]: any }>;
       "g": 125,
       "r": 249
     },
-    "name": "Global / Blue Base"
+    "name": "Global / Blue Base" // <---
   },
   {
     "type": "color",
@@ -116,7 +117,7 @@ type output = Array<{ [key: string]: any }>;
       "g": 142,
       "r": 5
     },
-    "name": "Global / Orange Base"
+    "name": "Global / Orange Base" // <---
   },
   {
     "type": "color",
@@ -126,7 +127,7 @@ type output = Array<{ [key: string]: any }>;
       "g": 72,
       "r": 63
     },
-    "name": "Global / Red Base"
+    "name": "Global / Red Base" // <---
   }
 ]
 ```

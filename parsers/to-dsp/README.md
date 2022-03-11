@@ -1,8 +1,9 @@
 # TO DSP
 
 ## Description
+This parser helps you create a [Design System Package (DSP)](https://github.com/AdobeXD/design-system-package-dsp).
 
-Create your whole Design System Package (DSP) easily.
+Learn more about how to configure Specify in the API documentation: [https://specifyapp.com/developers](https://specifyapp.com/developers).
 
 ## Interface
 
@@ -67,19 +68,21 @@ type output = Array<{
 ### Config
 
 ```jsonc
-{
-  "name": "to-dsp",
-  "options": {
-    "settings": {
-      "name": "My awesome DSP",
-      "buildStatusLabel": "test",
-      "packageVersion": "0.0.1",
-      "snippetTriggerPrefix": "ex-"
-    },
-    "createAssets": false
+"parsers": [
+  {
+    "name": "to-dsp",
+    "options": {
+      "settings": {
+        "name": "My awesome DSP",
+        "buildStatusLabel": "test",
+        "packageVersion": "0.0.1",
+        "snippetTriggerPrefix": "ex-"
+      },
+      "createAssets": false
+    }
   }
-}
-// …
+  // …
+]
 ```
 
 ### Before/After

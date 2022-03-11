@@ -1,12 +1,11 @@
 # Replace string
 
 ## Description
+This parser helps you replace any string matched by a regex by a new string.
 
-Replace any string matched by a regex by a new string.
-
-## Example Use case
-
+## Example use case
 Let's say you have some a color named "Red" in your Figma local styles in a "Colors" folder. The color name returned by Figma is "Colors / Red".
+
 This parser helps you rename your design tokens without characters before the last slash:
 
 - before: "Colors / Red"
@@ -69,22 +68,24 @@ type output = Array<Record<string, any>>;
 ## Basic Usage
 
 ### Config
+The following config changes a design token name property by keeping only characters present after the last slash character (`/`).
 
 ```jsonc
-{
-  "name": "replace-string",
-  "options": {
-    "keys": ["name"],
-    "regex": {
-      "pattern": "(.*?)\\/",
-      "flags": "g"
-    },
-    "trim": true
+"parsers": [
+  {
+    "name": "replace-string",
+    "options": {
+      "keys": ["name"],
+      "regex": {
+        "pattern": "(.*?)\\/",
+        "flags": "g"
+      },
+      "trim": true
+    }
   }
-}
+  // …
+]
 ```
-
-With this config, we will change name by keeping only characters after the last slash
 
 ### Before/After
 

@@ -1,10 +1,9 @@
 # To CSS Custom Properties
 
 ## Description
+This parser helps you transform design tokens in CSS Custom Properties.
 
-Transform design tokens in CSS Custom Properties.
-
-Learn more about how to configure Specify in the API documentation: [https://specifyapp.com/developers/cli](https://specifyapp.com/developers/cli).
+Learn more about how to configure Specify in the API documentation: [https://specifyapp.com/developers](https://specifyapp.com/developers).
 
 ## Interface
 
@@ -57,16 +56,49 @@ String formated in css
 type output = string;
 ```
 
-## Usage
+## Basic Usage
+### Config
+```jsonc
+"parsers": [
+  {
+    "name": "to-css-custom-properties"
+  }
+  // …
+]
+```
 
+### Before/After
+#### Input
+```jsonc
+[
+  {
+    "type": "color",
+    "value": {
+      "a": 0.96,
+      "b": 20,
+      "g": 227,
+      "r": 122
+    },
+    "name": "Primary color"
+  }
+]
+```
+#### Output
+
+```css
+:root {
+  /* COLOR */
+  --primary-color: rgba(122, 227, 20, 0.96);
+}
+```
+## Complex Usage - Create CSS Custom Properties, change format color values and change CSS selector
 ### Config
 
 ```jsonc
 {
   "name": "to-css-custom-properties",
   "options": {
-    "formatName": "kebabCase",
-    "formatTokens": {
+    "formatTokens":{
       "color": "hsl"
     },
     "formatConfig": {

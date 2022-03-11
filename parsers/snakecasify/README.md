@@ -1,10 +1,9 @@
 # Snakecasify
 
 ## Description
+This parser helps you apply snakecase function on specific keys from a design token.
 
-Loop on all tokens and apply snakecase function on the given keys.
-
-Learn more about how to configure Specify in the API documentation: [https://specifyapp.com/developers/cli](https://specifyapp.com/developers/cli).
+Learn more about how to configure Specify in the API documentation: [https://specifyapp.com/developers](https://specifyapp.com/developers).
 
 ## Interface
 
@@ -46,13 +45,15 @@ type output = Array<{ [key: string]: any }>;
 ### Config
 
 ```jsonc
-{
-  "name": "snakecasify",
-  "options": {
-    "keys": ["name"]
+"parsers": [
+  {
+    "name": "snakecasify",
+    "options": {
+      "keys": ["name"]
+    }
   }
-}
-// …
+  // …
+]
 ```
 
 ### Before/After

@@ -1,8 +1,9 @@
 # To JSS
 
 ## Description
+This parser helps you transform design tokens in JSS.
 
-Transform design tokens in JSS.
+Learn more about how to configure Specify in the API documentation: [https://specifyapp.com/developers](https://specifyapp.com/developers).
 
 **Supported JSS syntax**:
 
@@ -100,24 +101,26 @@ type output = string;
 ### Config
 
 ```jsonc
-{
-  "name": "to-jss",
-  "options": {
-    "formatName": "camelCase",
-    "formatTokens": {
-      "colorFormat": "hex8",
-      "textStyleFormat": "classObject",
-      "fontSizeUnit": "px"
-    },
-    "formatConfig": {
-      "jssObjectName": "lightTheme",
-      "exportDefault": false,
-      "tabWidth": 4,
-      "singleQuote": true
+"parsers": [
+  {
+    "name": "to-jss",
+    "options": {
+      "formatName": "camelCase",
+      "formatTokens":{
+        "colorFormat": "hex8",
+        "textStyleFormat": "classObject",
+        "fontSizeUnit":  "px"
+      },
+      "formatConfig": {
+        "jssObjectName": "lightTheme",
+        "exportDefault": false,
+        "tabWidth": 4,
+        "singleQuote": true
+      }
     }
   }
-}
-// …
+  // …
+]
 ```
 
 ### Before/After
