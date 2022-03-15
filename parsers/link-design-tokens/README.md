@@ -1,7 +1,6 @@
 # Link design tokens
 
 ## Description
-
 This parser helps you have design tokens referencing other ones.
 It replaces absolute values by their potential corresponding design token.
 
@@ -14,6 +13,8 @@ For instance, a border design token is composed of:
 - a border color (a color design token)
 
 The border width and the border color absolute values will be replaced by their corresponding design tokens.
+
+Learn more about how to configure Specify in the API documentation: [https://specifyapp.com/developers](https://specifyapp.com/developers).
 
 **ℹ️ Good to know**
 This parser is useful when used before the [`to-theme-ui`](https://github.com/Specifyapp/parsers/tree/master/parsers/to-theme-ui) parser.
@@ -77,10 +78,12 @@ type output = Array<{ id: string; type: string; value: string; name: string } & 
 ### Config
 
 ```jsonc
-{
-  "name": "link-design-tokens"
-}
-// …
+"parsers": [
+  {
+    "name": "link-design-tokens"
+  }
+  // ...
+]
 ```
 
 ### Before/After

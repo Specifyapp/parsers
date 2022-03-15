@@ -1,8 +1,9 @@
 # To Theme Ui
 
 ## Description
-
 Format design tokens to create a theme compatible with the [theme-ui specification](https://theme-ui.com/theme-spec).
+
+Learn more about how to configure Specify in the API documentation: [https://specifyapp.com/developers](https://specifyapp.com/developers).
 
 ## Interface
 
@@ -150,9 +151,12 @@ type output = string;
 ### Config
 
 ```jsonc
-{
-  "name": "to-theme-ui"
-}
+"parsers": [
+  {
+    "name": "to-theme-ui"
+  }
+  // …
+]
 ```
 
 ### Before/After
@@ -245,28 +249,31 @@ export default theme;
 ### Config
 
 ```jsonc
-{
-  "name": "to-theme-ui",
-  "options": {
-    "variants": true,
-    "formatTokens": {
-      "colorFormat": {
-        "format": "hex"
+"parsers": [
+  {
+    "name": "to-theme-ui",
+    "options": {
+      "variants": true,
+      "formatTokens": {
+        "colorFormat": {
+          "format": "hex"
+        },
+        "fontSizeFormat": {
+          "type": "string",
+          "unit": "rem",
+          "freeze": true
+        }
       },
-      "fontSizeFormat": {
-        "type": "string",
-        "unit": "rem",
-        "freeze": true
-      }
-    },
-    "presets": {
-      "fontWeights": {
-        "preset": "base",
-        "freeze": true
+      "presets": {
+        "fontWeights": {
+          "preset": "base",
+          "freeze": true
+        }
       }
     }
   }
-}
+  // …
+]
 ```
 
 ### Before/After

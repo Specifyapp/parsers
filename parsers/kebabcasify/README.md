@@ -1,10 +1,9 @@
 # Kebabcasify
 
 ## Description
+This parser helps you apply kebabcase function on specific keys.
 
-Loop on all tokens and apply kebabcase function on the given keys.
-
-Learn more about how to configure Specify in the API documentation: [https://specifyapp.com/developers/cli](https://specifyapp.com/developers/cli).
+Learn more about how to configure Specify in the API documentation: [https://specifyapp.com/developers](https://specifyapp.com/developers).
 
 ## Interface
 
@@ -46,13 +45,15 @@ type output = Array<{ [key: string]: any }>;
 ### Config
 
 ```jsonc
-{
-  "name": "kebabcasify",
-  "options": {
-    "keys": ["name"]
+"parsers": [
+  {
+    "name": "kebabcasify",
+    "options": {
+      "keys": ["name"]
+    }
   }
-}
-// …
+  // ...
+]
 ```
 
 ### Before/After

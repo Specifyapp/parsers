@@ -1,8 +1,9 @@
 # To Style Dictionary
 
 ## Description
+This parser helps you generate [Style Dictionary](https://amzn.github.io/style-dictionary/#/) configuration files for all your design tokens coming from Specify.
 
-Generates [Style Dictionary](https://amzn.github.io/style-dictionary/#/) configuration files for all design tokens coming from Specify.
+Learn more about how to configure Specify in the API documentation: [https://specifyapp.com/developers](https://specifyapp.com/developers).
 
 ## Interface
 
@@ -82,9 +83,12 @@ type output = Array<{
 ### Config
 
 ```jsonc
-{
-  "name": "to-style-dictionary"
-}
+"parsers": [
+  {
+    "name": "to-style-dictionary"
+  }
+  // …
+]
 ```
 
 ### Before/After
@@ -247,15 +251,18 @@ In each of these files are the tokens usable in Style Dictionary
 ### Config
 
 ```jsonc
-{
-  "name": "to-style-dictionary",
-  "options": {
-    "splitBy": "/",
-    "assetsBaseDirectory": {
-      "fonts": "assets/my-fonts/"
+"parsers": [
+  {
+    "name": "to-style-dictionary",
+    "options": {
+      "splitBy": "/",
+      "assetsBaseDirectory": {
+        "fonts": "assets/my-fonts/"
+      }
     }
   }
-}
+  // …
+]
 ```
 
 ### Before/After

@@ -1,10 +1,9 @@
 # Convert Font
 
 ## Description
+This parser helps you convert font in several formats.
 
-Convert font in several formats.
-
-Learn more about how to configure Specify in the API documentation: [https://specifyapp.com/developers/cli](https://specifyapp.com/developers/cli).
+Learn more about how to configure Specify in the API documentation: [https://specifyapp.com/developers](https://specifyapp.com/developers).
 
 ## Interface
 
@@ -55,17 +54,18 @@ type output = Array<{
 ## Usage
 
 ### Config
-
 ```jsonc
-{
-  "name": "convert-font",
-  "options": {
-    "formats": ["woff2", "woff"],
-    "fileNameKey": ["fontFamily", "fontWeight"],
-    "fileNameFormat": "kebabCase"
+"parsers": [
+  {
+    "name": "convert-font",
+    "options": {
+      "formats": ["woff2", "woff"],
+      "fileNameKey":  ["fontFamily", "fontWeight"],
+      "fileNameFormat": "kebabCase"
+    }
   }
-}
-// …
+  // ...
+]
 ```
 
 ### Result

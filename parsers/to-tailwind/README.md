@@ -1,14 +1,14 @@
 # To Tailwind
 
 ## Description
-
 Format design tokens to create a theme compatible with the [TailwindCSS specification](https://tailwindcss.com/docs/theme).
 The theme is also compatible with [WindiCSS](https://windicss.org/).
 
 This parser creates a file containing the whole theme. It can then be used in the `tailwind.config.js`.
 
-The theme created by this parser is compatible with the Tailwind versions >= 2.x.
+The theme created by this parser is compatible with the Tailwind versions >= `2.x`.
 
+Learn more about how to configure Specify in the API documentation: [https://specifyapp.com/developers](https://specifyapp.com/developers).
 ## Interface
 
 ```ts
@@ -81,9 +81,12 @@ type output = string;
 ### Config
 
 ```jsonc
-{
-  "name": "to-tailwind"
-}
+"parsers": [
+  {
+    "name": "to-tailwind"
+  }
+  // …
+]
 ```
 
 ### Before/After
@@ -171,20 +174,23 @@ export default theme;
 ### Config
 
 ```jsonc
-{
-  "name": "to-tailwind",
-  "options": {
-    "formatTokens": {
-      "colorFormat": {
-        "format": "rgb"
+"parsers": [
+  {
+    "name": "to-tailwind",
+    "options": {
+      "formatTokens": {
+        "colorFormat": {
+          "format": "rgb"
+        }
+      },
+      "formatConfig": {
+        "objectName": "extend",
+        "module": "commonjs"
       }
-    },
-    "formatConfig": {
-      "objectName": "extend",
-      "module": "commonjs"
     }
   }
-}
+  // …
+]
 ```
 
 ### Before/After
@@ -272,20 +278,23 @@ module.exports = extend;
 ### Config
 
 ```jsonc
-{
-  "name": "to-tailwind",
-  "options": {
-    "renameKeys": {
-      "colors": "custom-color-{{name}}",
-      "spacing": "custom-spacing-{{name}}"
-    },
-    "formatName": "kebabCase",
-    "formatConfig": {
-      "objectName": "extend",
-      "module": "commonjs"
+"parsers": [
+  {
+    "name": "to-tailwind",
+    "options": {
+      "renameKeys": {
+        "colors": "custom-color-{{name}}",
+        "spacing": "custom-spacing-{{name}}"
+      },
+      "formatName": "kebabCase",
+      "formatConfig": {
+        "objectName": "extend",
+        "module": "commonjs"
+      }
     }
   }
-}
+  // …
+]
 ```
 
 ### Before/After
@@ -335,16 +344,19 @@ module.exports = extend;
 ### Config
 
 ```jsonc
-{
-  "name": "to-tailwind",
-  "options": {
-    "splitBy": "/",
-    "formatConfig": {
-      "objectName": "extend",
-      "module": "commonjs"
+"parsers": [
+  {
+    "name": "to-tailwind",
+    "options": {
+      "splitBy": "/",
+      "formatConfig": {
+        "objectName": "extend",
+        "module": "commonjs"
+      }
     }
   }
-}
+  // …
+]
 ```
 
 ### Before/After

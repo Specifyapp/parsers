@@ -1,8 +1,9 @@
 # TO SCSS MAP
 
 ## Description
+This parser helps you generate `.scss` files containing Scss map and function / mixin to access the values of the tokens.
 
-Generates scss files containing scss map and function / mixin to access the values of the tokens.
+Learn more about how to configure Specify in the API documentation: [https://specifyapp.com/developers](https://specifyapp.com/developers).
 
 ## Interface
 
@@ -76,15 +77,15 @@ type output = Array<{ name: string; value: { content: string } }>;
 ### Config
 
 ```jsonc
-{
-  "name": "to-scss-map",
-  "options": {}
-}
-// …
+"parsers": [
+  {
+    "name": "to-scss-map"
+  }
+  // …
+]
 ```
 
 ### Before/After
-
 #### Input
 
 ```jsonc
@@ -148,13 +149,13 @@ type output = Array<{ name: string; value: { content: string } }>;
 File tree
 
 ```
-folder
-|- measurement.scss
-|- color.scss
-|- textStyle.scss
+🗂 
+└── measurement.scss
+└── color.scss
+└── textStyle.scss
 ```
 
-measurement.scss
+##### measurement.scss
 
 ```scss
 @use "sass:map";
@@ -179,7 +180,7 @@ $measurement: (
 }
 ```
 
-color.scss
+##### color.scss
 
 ```scss
 @use "sass:map";
@@ -204,7 +205,7 @@ $color: (
 }
 ```
 
-textStyle.scss
+##### textStyle.scss
 
 ```scss
 @use "sass:map";
@@ -257,28 +258,30 @@ In another scss file you can use it like
 ### Config
 
 ```jsonc
-{
-  "name": "to-scss-map",
-  "options": {
-    "variableName": {
-      "color": "custom-color",
-      "measurement": "my-{{type}}",
-      "textStyle": "typography"
-    },
-    "fileName": {
-      "color": "_colors",
-      "measurement": "_sizing",
-      "textStyle": "_typography"
-    },
-    "formatTokens": {
-      "fontSize": {
-        "unit": "rem"
-      }
-    },
-    "splitBy": "/"
+"parsers": [
+  {
+    "name": "to-scss-map",
+    "options": {
+      "variableName": {
+        "color": "custom-color",
+        "measurement": "my-{{type}}",
+        "textStyle": "typography"
+      },
+      "fileName": {
+        "color": "_colors",
+        "measurement": "_sizing",
+        "textStyle": "_typography"
+      },
+      "formatTokens": {
+        "fontSize": {
+          "unit": "rem"
+        }
+      },
+      "splitBy": "/"
+    }
   }
-}
-// …
+  // …
+]
 ```
 
 ### Before/After
@@ -346,13 +349,13 @@ In another scss file you can use it like
 File tree
 
 ```
-folder
-|- _sizing.scss
-|- _colors.scss
-|- _typography.scss
+🗂
+└── _sizing.scss
+└── _colors.scss
+└── _typography.scss
 ```
 
-\_sizing.scss
+##### sizing.scss
 
 ```scss
 @use "sass:map";
@@ -378,7 +381,7 @@ $my-measurement: (
 }
 ```
 
-\_color.scss
+##### _color.scss
 
 ```scss
 @use "sass:map";
@@ -405,7 +408,7 @@ $custom-color: (
 }
 ```
 
-\_typography.scss
+##### _typography.scss
 
 ```scss
 @use "sass:map";
@@ -444,7 +447,7 @@ In another scss file you can use it like
 ```scss
 @import 'color.scss';
 @import 'measurement.scss';
-@import 'textStyle.scss';
+@import 'typography.scss';
 
 .my-example {
   background: get-custom-color(primary, default);

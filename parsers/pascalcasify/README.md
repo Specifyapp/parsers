@@ -1,11 +1,9 @@
 # Pascalcasify
 
 ## Description
+This parser helps you apply pascalcase function on specific keys from a design token.
 
-Loop on all tokens and apply pascalcase function on the given keys.
-
-Learn more about how to configure Specify in the API documentation: [https://specifyapp.com/developers/cli](https://specifyapp.com/developers/cli).
-
+Learn more about how to configure Specify in the API documentation: [https://specifyapp.com/developers](https://specifyapp.com/developers).
 ## Interface
 
 ```ts
@@ -46,13 +44,15 @@ type output = Array<{ [key: string]: any }>;
 ### Config
 
 ```jsonc
-{
-  "name": "pascalcasify",
-  "options": {
-    "keys": ["name"]
+"parsers": [
+  {
+    "name": "pascalcasify",
+    "options": {
+      "keys": ["name"]
+    }
   }
-}
-// …
+  // …
+]
 ```
 
 ### Before/After

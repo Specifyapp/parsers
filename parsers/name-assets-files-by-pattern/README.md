@@ -1,8 +1,9 @@
 # Name asset files by pattern
 
 ## Description
-
 This parser helps you set a structured filename on your assets. It won't rename your asset but only add a new `filename` property on the asset object. The filename structure uses [mustache](https://github.com/janl/mustache.js#templates) as a template engine.
+
+Learn more about how to configure Specify in the API documentation: [https://specifyapp.com/developers](https://specifyapp.com/developers).
 
 ## Interface
 
@@ -44,13 +45,15 @@ type output = Array<{ [key: string]: any }>;
 ### Config
 
 ```jsonc
-{
-  "name": "name-assets-files-by-pattern",
-  "options": {
-    "pattern": "{{name}}-{{type}}.{{format}}"
+"parsers": [
+  {
+    "name": "name-assets-files-by-pattern",
+    "options": {
+      "pattern": "{{name}}-{{type}}.{{format}}"
+    }
   }
-}
-// …
+  // …
+]
 ```
 
 ### Before/After
@@ -91,13 +94,15 @@ type output = Array<{ [key: string]: any }>;
 ### Config
 
 ```jsonc
-{
-  "name": "name-assets-files-by-pattern",
-  "options": {
-    "pattern": "{{name}}{{#dimension}}@{{dimension}}{{/dimension}}.{{format}}"
+"parsers": [
+  {
+    "name": "name-assets-files-by-pattern",
+    "options": {
+      "pattern": "{{name}}{{#dimension}}@{{dimension}}{{/dimension}}.{{format}}"
+    }
   }
-}
-// …
+  // …
+]
 ```
 
 ### Before/After
@@ -136,7 +141,7 @@ type output = Array<{ [key: string]: any }>;
       "url": "https://...",
       "format": "png",
       "dimension": "2x",
-      "fileName": "bitmapExampleWithDimension@2x.png"
+      "fileName": "bitmapExampleWithDimension@2x.png" // <---
     },
     "name": "bitmapExampleWithDimension"
   },
@@ -145,7 +150,7 @@ type output = Array<{ [key: string]: any }>;
     "value": {
       "url": "https://...",
       "format": "webp",
-      "fileName": "bitmapExampleWithoutDimension.webp"
+      "fileName": "bitmapExampleWithoutDimension.webp" // <---
     },
     "name": "bitmapExampleWithoutDimension"
   }

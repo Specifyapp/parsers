@@ -1,9 +1,9 @@
 # TO CSS TEXTSTYLE
 
 ## Description
+This parser helps you create text styles as CSS classes.
 
-Create text styles css classes.
-
+Learn more about how to configure Specify in the API documentation: [https://specifyapp.com/developers](https://specifyapp.com/developers).
 ## Interface
 
 ```ts
@@ -122,17 +122,19 @@ type output = string;
 ### Config
 
 ```jsonc
-{
-  "name": "to-css-text-style",
-  "options": {
-    "exclude": ["color", "text-indent", "vertical-align", "text-align"],
-    "prefix": "sp-",
-    "suffix": "-text-style",
-    "relativeLineHeight": true,
-    "genericFamily": "serif"
+"parsers": [
+  {
+    "name": "to-css-text-style",
+    "options": {
+      "exclude": ["color", "text-indent", "vertical-align", "text-align"],
+      "prefix": "sp-",
+      "suffix": "-text-style",
+      "relativeLineHeight": true,
+      "genericFamily": "serif"
+    }
   }
-}
-// …
+  // …
+]
 ```
 
 ### Before/After

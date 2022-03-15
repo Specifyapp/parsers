@@ -1,10 +1,9 @@
 # SVGO
 
 ## Description
+This parser helps you optimize vectors using [svgo](https://github.com/svg/svgo).
 
-SVG optimizer using [svgo](https://github.com/svg/svgo).
-
-Learn more about how to configure Specify in the API documentation: [https://specifyapp.com/developers/cli](https://specifyapp.com/developers/cli).
+Learn more about how to configure Specify in the API documentation: [https://specifyapp.com/developers](https://specifyapp.com/developers).
 
 ## Interface
 
@@ -57,23 +56,26 @@ type output = Array<
 ### Config
 
 ```jsonc
-{
-  "name": "svgo",
-  "options": {
-    "svgo": {
-      "plugins": [
-        {
-          "removeDimensions": true
-        },
-        {
-          "removeAttrs": {
-            "attrs": "*:(fill|stroke)"
+"parsers": [
+  {
+    "name": "svgo",
+    "options": {
+      "svgo": {
+        "plugins": [
+          {
+            "removeDimensions": true
+          },
+          {
+            "removeAttrs": {
+              "attrs": "*:(fill|stroke)"
+            }
           }
-        }
-      ]
+        ]
+      }
     }
   }
-}
+  // …
+]
 ```
 
 ### Before/After

@@ -1,10 +1,9 @@
 # Omit
 
 ## Description
+This parser helps you omit keys from a design token not given in parameters.
 
-Loop on all tokens and only get keys not given in parameters.
-
-Learn more about how to configure Specify in the API documentation: [https://specifyapp.com/developers/cli](https://specifyapp.com/developers/cli).
+Learn more about how to configure Specify in the API documentation: [https://specifyapp.com/developers](https://specifyapp.com/developers).
 
 ## Interface
 
@@ -54,13 +53,15 @@ type output = Array<{ [key: string]: any }>;
 ### Config
 
 ```jsonc
-{
-  "name": "omit",
-  "options": {
-    "keys": ["value.a"]
+"parsers": [
+  {
+    "name": "omit",
+    "options": {
+      "keys": ["value.a"]
+    }
   }
-}
-// …
+  // …
+]
 ```
 
 ### Before/After
