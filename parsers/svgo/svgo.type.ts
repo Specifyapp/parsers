@@ -1,5 +1,5 @@
 import { DefaultPlugins, DefaultPresetPlugins } from 'svgo';
-import type { default as SVGOV1 } from '../../types/svgo.v1';
+import type { default as SVGOV1 } from '../../types/libs/svgo.v1';
 
 export type DefaultPresetPluginsName = DefaultPresetPlugins['name'];
 
