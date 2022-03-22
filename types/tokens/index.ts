@@ -1,19 +1,204 @@
-import { BitmapToken, BitmapValue } from './Bitmap';
-import { BorderToken, BorderValue } from './Border';
-import { ColorToken, ColorValue } from './Color';
-import { DurationToken, DurationValue } from './Duration';
-import { FontToken, FontValue } from './Font';
-import { GradientToken, GradientValue } from './Gradient';
-import { MeasurementToken, MeasurementValue } from './Measurement';
-import { OpacityToken, OpacityValue } from './Opacity';
-import { ShadowToken, ShadowValue } from './Shadow';
-import { TextStyleToken, TextStyleValue } from './TextStyle';
-import { VectorToken, VectorValue } from './Vector';
-import { DepthToken, DepthValue } from './Depth';
+// VALUES
+
+export type BorderValue = {
+  color: ColorToken | { value: ColorValue };
+  type:
+    | 'none'
+    | 'hidden'
+    | 'dotted'
+    | 'dashed'
+    | 'solid'
+    | 'double'
+    | 'groove'
+    | 'ridge'
+    | 'inset'
+    | 'outset';
+  align?: string;
+  dashes?: (MeasurementToken | { value: MeasurementValue })[];
+  radii?: MeasurementToken | { value: MeasurementValue };
+  rectangleCornerRadii?: (MeasurementToken | { value: MeasurementValue })[];
+  width: MeasurementToken | { value: MeasurementValue };
+};
+
+export type BitmapValue = {
+  url: string;
+  format?: string;
+  dimension?: number;
+  fileName?: string;
+};
+
+export type ColorValue = {
+  r: number;
+  g: number;
+  b: number;
+  a: number;
+};
+
+export type DepthValue = {
+  depth: number;
+};
+
+export type DurationValue = {
+  duration: number;
+  unit: string;
+};
+
+export type FontValue = {
+  fontFamily: string;
+  fontFileMissing?: boolean;
+  fontPostScriptName: string;
+  fontWeight: number;
+  format?: 'woff2' | 'woff' | 'otf' | 'ttf' | 'eot';
+  isItalic?: boolean;
+  provider?: 'Custom font' | 'Google Fonts';
+  url?: string;
+};
+
+export type GradientStep = {
+  type: string;
+  color: ColorToken | { value: ColorValue };
+  position: number;
+};
+
+export type Gradient = { angle: string; colors: GradientStep[] };
+export type GradientValue = { gradients: Gradient[] };
+
+export type MeasurementValue = { measure: number; unit: string };
+export type OpacityValue = { opacity: number };
+
+export type Shadow = {
+  blur: { value: MeasurementValue } | MeasurementToken;
+  color: { value: ColorValue } | ColorToken;
+  isInner: boolean;
+  offsetX: { value: MeasurementValue } | MeasurementToken;
+  offsetY: { value: MeasurementValue } | MeasurementToken;
+  spread?: { value: MeasurementValue } | MeasurementToken;
+};
+
+export type ShadowValue = Shadow[];
+
+export type TextTransformValue =
+  | 'none'
+  | 'capitalize'
+  | 'uppercase'
+  | 'lowercase'
+  | 'full-width'
+  | 'full-size-kana';
+
+export type FontVariantValue =
+  | 'normal'
+  | 'none'
+  | 'small-caps'
+  | 'all-small-caps'
+  | 'petite-caps'
+  | 'all-petite-caps'
+  | 'unicase'
+  | 'titling-caps'
+  | 'common-ligatures'
+  | 'no-common-ligatures'
+  | 'discretionary-ligatures'
+  | 'no-discretionary-ligatures'
+  | 'historical-ligatures'
+  | 'no-historical-ligatures'
+  | 'contextual'
+  | 'no-contextual'
+  | 'ordinal'
+  | 'slashed-zero'
+  | 'lining-nums'
+  | 'proportional-nums'
+  | 'tabular-nums'
+  | 'diagonal-fractions'
+  | 'stacked-fractions'
+  | 'oldstyle-nums';
+
+export type TextDecorationValue =
+  | 'none'
+  | 'underline'
+  | 'overline'
+  | 'line-through'
+  | 'dashed'
+  | 'wavy';
+
+export type TextAlignValue =
+  | 'initial'
+  | 'left'
+  | 'right'
+  | 'center'
+  | 'justify'
+  | 'start'
+  | 'end'
+  | 'justify-all'
+  | 'match-parent';
+
+export type VerticalAlignValue =
+  | 'initial'
+  | 'baseline'
+  | 'sub'
+  | 'super'
+  | 'text-top'
+  | 'text-bottom'
+  | 'middle'
+  | 'top'
+  | 'bottom'
+  | 'center';
+
+export type TextStyleValue = {
+  color?: ColorToken | { value: ColorValue };
+  font: FontToken | { value: FontValue };
+  fontSize: MeasurementToken | { value: MeasurementValue };
+  fontVariant?: FontVariantValue[];
+  letterSpacing?: MeasurementToken | { value: MeasurementValue };
+  lineHeight: MeasurementToken | { value: MeasurementValue };
+  textAlign?: { horizontal?: TextAlignValue; vertical?: VerticalAlignValue };
+  textDecoration?: TextDecorationValue[];
+  textIndent?: MeasurementToken | { value: MeasurementValue };
+  textTransform?: TextTransformValue;
+};
+
+type VectorValue = {
+  url?: string;
+  content?: string;
+  format?: string;
+  fileName?: string;
+};
+
+// TOKEN GENERIC (HAS A BAD NAME)
+
+type TokenG<Type, Value> = {
+  id: string;
+  createdAt: string;
+  updatedAt: string;
+  name: string;
+  value: Value;
+  meta: Record<any, any>;
+  type: Type;
+  originId: string;
+  sourceId: string;
+  repositoryId: string;
+};
+
+// TOKEN TYPES
+
+export type BitmapToken = TokenG<'bitmap', BitmapValue>;
+export type BorderToken = TokenG<'border', BorderValue>;
+export type ColorToken = TokenG<'color', ColorValue>;
+export type DepthToken = TokenG<'depth', DepthValue>;
+export type DurationToken = TokenG<'duration', DurationValue>;
+export type FontToken = TokenG<'font', FontValue>;
+export type GradientToken = TokenG<'gradient', GradientValue>;
+export type MeasurementToken = TokenG<'measurement', MeasurementValue>;
+export type OpacityToken = TokenG<'opacity', OpacityValue>;
+export type ShadowToken = TokenG<'shadow', ShadowValue>;
+export type TextStyleToken = TokenG<'textStyle', TextStyleValue>;
+export type VectorToken = TokenG<'vector', VectorValue>;
+
+// THE GRAAL
 
 export type Token =
+  | BitmapToken
   | BorderToken
   | ColorToken
+  | DepthToken
   | DurationToken
   | FontToken
   | GradientToken
@@ -21,62 +206,7 @@ export type Token =
   | OpacityToken
   | ShadowToken
   | TextStyleToken
-  | VectorToken
-  | DepthToken
-  | BitmapToken;
+  | VectorToken;
 
-export * from './Token';
-export * from './Bitmap';
-export * from './Border';
-export * from './Color';
-export * from './Duration';
-export * from './Font';
-export * from './Gradient';
-export * from './Measurement';
-export * from './Opacity';
-export * from './Shadow';
-export * from './TextStyle';
-export * from './Vector';
-export * from './Depth';
-
-export type DesignTokensType =
-  | 'border'
-  | 'color'
-  | 'gradient'
-  | 'duration'
-  | 'measurement'
-  | 'opacity'
-  | 'shadow'
-  | 'textStyle'
-  | 'depth';
-
-export type AssetsType = 'font' | 'bitmap' | 'vector';
-
-export type TokensType = AssetsType | DesignTokensType;
-
-export type TokensValues =
-  | BitmapValue
-  | BorderValue
-  | ColorValue
-  | DurationValue
-  | FontValue
-  | GradientValue
-  | MeasurementValue
-  | OpacityValue
-  | ShadowValue
-  | TextStyleValue
-  | VectorValue
-  | DepthValue;
-
-export interface IToken {
-  id: string;
-  createdAt: string;
-  updatedAt: string;
-  name: string;
-  value: TokensValues;
-  meta: Record<any, any>;
-  type: TokensType;
-  originId: string;
-  sourceId: string;
-  repositoryId: string;
-}
+export type TokensType = Token['type'];
+export type TokensValues = Token['value'];
