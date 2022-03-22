@@ -2,10 +2,9 @@ import { IToken } from '../../types';
 import prettier from 'prettier/standalone';
 import parserCss from 'prettier/parser-postcss';
 import * as TokensClass from './tokens';
-import { LibsType } from '../global-libs';
+import * as _ from 'lodash';
 
 export type InputDataType = Array<Pick<IToken, 'name' | 'value' | 'type'> & Record<string, any>>;
-export type OutputDataType = string;
 export type ColorsFormat =
   | 'rgb'
   | 'prgb'
@@ -32,11 +31,10 @@ export type OptionsType =
     }>
   | undefined;
 
-export default async function (
-  tokens: InputDataType,
-  options: OptionsType,
-  { _ }: Pick<LibsType, '_'>,
-): Promise<OutputDataType> {
+export default async function toCssCustomProperties<T extends InputDataType>(
+  tokens: T,
+  options?: OptionsType,
+) {
   try {
     const transformNameFn = _[options?.formatName || 'kebabCase'];
     const selector = options?.formatConfig?.selector || ':root';

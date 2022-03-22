@@ -4,6 +4,7 @@
   "license": "CC-BY-NC-SA-4.0",
   "main": "index.js",
   "dependencies": {
+    "@swan-io/boxed": "^0.1.1",
     "@types/lodash": "^4.14.175",
     "@types/mustache": "^4.1.2",
     "@types/node": "16.3.3",
@@ -28,6 +29,8 @@
     "@types/glob": "^7.1.4",
     "@types/jest": "26.0.24",
     "dotenv": "^10.0.0",
+    "eslint": "^8.11.0",
+    "eslint-plugin-lodash-fp": "^2.2.0-a1",
     "glob": "^7.1.7",
     "jest": "27.0.6",
     "jest-circus": "^27.0.6",
@@ -43,5 +46,8 @@
     "generate:seeds": "ts-node ./tests/helper/generate.seed.ts",
     "format": "prettier '**/*' -u -w",
     "prepare": "git config --local core.hooksPath .hooks"
+  },
+  "eslintConfig": {
+    "extends": "plugin:lodash-fp/recommended"
   }
 }

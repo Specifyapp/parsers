@@ -1,8 +1,9 @@
-import { LibsType } from '../global-libs';
-import { TokensType } from '../../types';
+import { IToken, TokensType } from '../../types';
+import _ from 'lodash';
+import { getTokenTypesToApplyFn } from '../../libs/apply-on-types';
+import { Result } from '@swan-io/boxed';
 
-export type InputDataType = Array<Record<string, any>>;
-export type OutputDataType = InputDataType;
+export type InputDataType = Array<object & Partial<Pick<IToken, 'type'>>>;
 export type OptionsType =
   | undefined
   | {
@@ -27,21 +28,20 @@ const flattenObject = (obj: Record<string, any>) => {
   return flattened;
 };
 
-export default async function (
-  tokens: InputDataType,
+export default async function pick<T extends InputDataType>(
+  tokens: T,
   options: OptionsType = { keys: ['name'] },
-  { _ }: Pick<LibsType, '_'>,
-): Promise<OutputDataType> {
-  return tokens.map(token => {
-    if (
-      !options?.filter ||
-      (options?.filter?.types &&
-        options.filter.types.length &&
-        options.filter!.types.includes(token.type))
-    ) {
-      const obj = _.pick(token, options.keys);
-      return options.flatten ? flattenObject(obj) : obj;
-    }
-    return token;
-  });
+) {
+  try {
+    const typesToApplyFn = getTokenTypesToApplyFn(options);
+    return tokens.map<T[0]>(token => {
+      if ('type' in token && typesToApplyFn.includes(token.type!)) {
+        const obj = _.pick(token, ...options.keys);
+        return options.flatten ? flattenObject(obj) : obj;
+      }
+      return token;
+    });
+  } catch (err) {
+    throw err;
+  }
 }

@@ -67,3 +67,16 @@ export type TokensValues =
   | TextStyleValue
   | VectorValue
   | DepthValue;
+
+export interface IToken {
+  id: string;
+  createdAt: string;
+  updatedAt: string;
+  name: string;
+  value: TokensValues;
+  meta: Record<any, any>;
+  type: TokensType;
+  originId: string;
+  sourceId: string;
+  repositoryId: string;
+}

@@ -12,6 +12,7 @@
     "inlineSources": false,
     "resolveJsonModule": true,
     "useUnknownInCatchVariables": false,
+    "noImplicitAny": true,
     "lib": ["es2020", "dom"]
   }
 }

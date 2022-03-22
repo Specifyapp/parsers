@@ -1,22 +1,21 @@
-import { LibsType } from '../global-libs';
+import { camelCase, get, set, has } from 'lodash/fp';
 
-export type InputDataType = Array<Record<string, any>>;
-export type OutputDataType = InputDataType;
+export type InputDataType = Array<object>;
 export type OptionsType =
   | undefined
   | {
       keys: Array<string>;
     };
-export default async function (
-  tokens: InputDataType,
+
+export default async function camelcasify<T extends InputDataType>(
+  tokens: T,
   options: OptionsType = { keys: ['name'] },
-  { _ }: Pick<LibsType, '_'>,
-): Promise<OutputDataType> {
+) {
   try {
-    return tokens.map(token => {
+    return tokens.map<T[0]>(token => {
       options.keys.forEach(key => {
-        if (_.has(token, key)) {
-          _.set(token, key, _.camelCase(_.get(token, key)));
+        if (has(key, token)) {
+          set(key)(camelCase(get(key)(token)))(token);
         }
       });
       return token;
