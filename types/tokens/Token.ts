@@ -3,17 +3,6 @@ import { TokensType, TokensValues } from './index';
 import crypto from 'crypto';
 import { LinkableTokensSignaturesValue } from '../utils/utils';
 
-export interface TokenInterface {
-  originId: string;
-  name: string;
-  type: TokensType;
-  value: TokensValues;
-  meta?: any;
-  createdAt?: string;
-  updatedAt?: string;
-  source?: Source;
-}
-
 export interface IToken {
   originId?: string;
   id: string;

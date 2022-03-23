@@ -1,10 +1,5 @@
 import { OpacityToken } from '../../../types';
 
-export class Opacity extends OpacityToken {
-  constructor(token: Partial<OpacityToken>) {
-    super(token);
-  }
-  toCss() {
-    return this.value.opacity / 100;
-  }
+export function toCss<T extends Pick<OpacityToken, 'value'> & object>(token: T) {
+  return token.value.opacity / 100;
 }

@@ -1,14 +1,8 @@
 import { BorderToken } from '../../../types';
 
-export class Border extends BorderToken {
-  constructor(token: Partial<BorderToken>) {
-    super(token);
-  }
-
-  toCss() {
-    const { color, type, width } = this.value;
-    const { measure, unit } = width.value;
-    const { r, g, b, a } = color.value;
-    return `${measure}${unit} ${type.toLowerCase()} rgba(${r}, ${g}, ${b}, ${a})`;
-  }
+export function toCss<T extends Pick<BorderToken, 'value'> & object>(token: T) {
+  const { color, type, width } = token.value;
+  const { measure, unit } = width.value;
+  const { r, g, b, a } = color.value;
+  return `${measure}${unit} ${type.toLowerCase()} rgba(${r}, ${g}, ${b}, ${a})`;
 }

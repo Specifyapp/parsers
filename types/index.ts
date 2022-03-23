@@ -11,6 +11,7 @@ declare global {
     }
   }
 }
+export type FontsFormat = 'woff2' | 'woff' | 'otf' | 'ttf' | 'eot';
 
 export type ColorsFormat =
   | 'rgb'

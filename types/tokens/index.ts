@@ -192,6 +192,32 @@ export type ShadowToken = TokenG<'shadow', ShadowValue>;
 export type TextStyleToken = TokenG<'textStyle', TextStyleValue>;
 export type VectorToken = TokenG<'vector', VectorValue>;
 
+export type TokenTypeFromToken<T extends Token> = T['type'] extends 'color'
+  ? ColorToken
+  : T['type'] extends 'bitmap'
+  ? BitmapToken
+  : T['type'] extends 'border'
+  ? BorderToken
+  : T['type'] extends 'depth'
+  ? DepthToken
+  : T['type'] extends 'duration'
+  ? DurationToken
+  : T['type'] extends 'font'
+  ? FontToken
+  : T['type'] extends 'gradient'
+  ? GradientToken
+  : T['type'] extends 'measurement'
+  ? MeasurementToken
+  : T['type'] extends 'opacity'
+  ? OpacityToken
+  : T['type'] extends 'shadow'
+  ? ShadowToken
+  : T['type'] extends 'textStyle'
+  ? TextStyleToken
+  : T['type'] extends 'vector'
+  ? VectorToken
+  : never;
+
 // THE GRAAL
 
 export type Token =

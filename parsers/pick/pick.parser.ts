@@ -1,9 +1,10 @@
 import { TokensType } from '../../types';
 import _ from 'lodash';
 import { getTokenTypesToApplyFn } from '../../libs/apply-on-types';
+import { flattenObject } from '../../libs/flatten-deep';
 
 export type InputDataType = Array<object & { type?: TokensType }>;
-export type OptionsType<T> = {
+export type OptionsType<T extends InputDataType[0]> = {
   keys: Array<keyof T>;
   filter?: {
     types: Array<TokensType>;
@@ -11,21 +12,7 @@ export type OptionsType<T> = {
   flatten?: boolean;
 };
 
-const flattenObject = (obj: Record<string, any>) => {
-  const flattened: Record<string, any> = {};
-
-  Object.keys(obj).forEach(key => {
-    if (typeof obj[key] === 'object' && obj[key] !== null) {
-      Object.assign(flattened, flattenObject(obj[key]));
-    } else {
-      flattened[key] = obj[key];
-    }
-  });
-
-  return flattened;
-};
-
-export default async function pick<T extends InputDataType>(tokens: T, options: OptionsType<T[0]>) {
+export function pick<T extends InputDataType>(tokens: T, options: OptionsType<T[0]>) {
   try {
     const typesToApplyFn = getTokenTypesToApplyFn(options);
     return tokens.map<T[0]>(token => {

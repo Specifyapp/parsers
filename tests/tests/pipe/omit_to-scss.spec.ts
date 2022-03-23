@@ -9,21 +9,28 @@ import {
   InputDataType as toScssMixinInputType,
 } from '../../../parsers/to-scss-mixin-text-style/to-scss-mixin-text-style.parser';
 import seeds from '../../seeds';
+import { pipe } from '../../../libs/pipe';
 
 describe('Pipe - omit -> to-scss-map', () => {
   it('Should omit font-family from textStyle with to-scss-map', async () => {
     try {
+      pipe();
       const textStylesWithoutFontName = await omit(
         seeds().tokens.filter(({ type }) => type === 'textStyle'),
         {
           keys: ['value.font.name', 'value.font.value.fontPostScriptName'],
         },
-        libs as LibsType,
       );
       const result = await toScssMap(
         textStylesWithoutFontName as unknown as ToScssMapInputType,
         undefined,
-        libs as LibsType,
+      );
+
+      const result = pipe(
+        omit({
+          keys: ['value.font.name', 'value.font.value.fontPostScriptName'],
+        }),
+        toScssMap(),
       );
 
       result.forEach(file => {

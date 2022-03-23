@@ -7,7 +7,7 @@ export type OptionsType =
       keys: Array<string>;
     };
 
-export default async function camelcasify<T extends InputDataType>(
+export function camelcasify<T extends InputDataType>(
   tokens: T,
   options: OptionsType = { keys: ['name'] },
 ) {

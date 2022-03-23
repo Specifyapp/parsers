@@ -1,12 +1,10 @@
 import tinycolor from 'tinycolor2';
 import { OptionsType } from '../to-css-custom-properties.parser';
-import { ColorToken } from '../../../types';
+import { ColorToken, ColorValue } from '../../../types';
 
-export class Color extends ColorToken {
-  constructor(token: Partial<ColorToken>) {
-    super(token);
-  }
-  toCss(options: OptionsType): string {
-    return tinycolor(this.value).toString(options?.formatTokens?.color || 'rgb');
-  }
+export function toCss<T extends Pick<ColorToken, 'value'> & object>(
+  token: T,
+  options: OptionsType,
+) {
+  return tinycolor(token.value).toString(options?.formatTokens?.color || 'rgb');
 }

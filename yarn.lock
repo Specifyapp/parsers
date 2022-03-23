@@ -4267,10 +4267,10 @@ ts-jest@27.0.3:
     semver "7.x"
     yargs-parser "20.x"
 
-ts-pattern@^3.2.1:
-  version "3.2.1"
-  resolved "https://registry.yarnpkg.com/ts-pattern/-/ts-pattern-3.2.1.tgz#92eb3cf6589579c3b9b7124bdda0557b5d485f7f"
-  integrity sha512-JmcPe/0c9yRLyMga3nxyjEXOB8QXJkjJo2OAp78eHVD0HjWU9WWtKiazxF+Uz6ZFrBkFnwFZFEJrxT0uEo6Jrg==
+ts-pattern@3:
+  version "3.3.5"
+  resolved "https://registry.npmjs.org/ts-pattern/-/ts-pattern-3.3.5.tgz#9a4bde1d44f9afe7e82409820f68790232c2544c"
+  integrity sha512-LD+wFR/RNckk1DrKV0LTH4KIT9wRqnnOjtEf77ovhKcVi8gf83Uf6U7OdywEua6KD9SbHadUdfolayfIUiPxzw==
 
 tslib@^2.1.0:
   version "2.3.1"

@@ -1,11 +1,5 @@
 import { BitmapToken } from '../../../types';
 
-export class Bitmap extends BitmapToken {
-  constructor(token: Partial<BitmapToken>) {
-    super(token);
-  }
-
-  toCss(): string {
-    return JSON.stringify(this.value.url);
-  }
+export function toCss<T extends Pick<BitmapToken, 'value'> & object>(token: T) {
+  return JSON.stringify(token.value.url);
 }

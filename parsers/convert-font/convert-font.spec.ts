@@ -1,7 +1,7 @@
 import Path from 'path';
 import seeds from '../../tests/seeds';
 import convertFont, { OptionsType } from './convert-font.parser';
-import { AllowedFormat, FontToken } from '../../types';
+import { FontsFormat, FontToken } from '../../types';
 import { LibsType } from '../global-libs';
 import libs from '../global-libs';
 
@@ -38,7 +38,7 @@ describe('convert-font', () => {
     result.forEach((item, index) => {
       expect(typeof item.value.url).toMatch('string');
       expect(
-        options.formats!.includes(Path.extname(item.value.format).substring(1) as AllowedFormat),
+        options.formats!.includes(Path.extname(item.value.format).substring(1) as FontsFormat),
       );
       const expectedName = libs._.kebabCase(
         `${fonts[index].value.fontFamily}-${fonts[index].value.fontWeight}-${fonts[index].name}`,

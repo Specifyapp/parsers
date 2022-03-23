@@ -1,12 +1,6 @@
 import { DurationToken } from '../../../types';
 
-export class Duration extends DurationToken {
-  constructor(token: Partial<DurationToken>) {
-    super(token);
-  }
-
-  toCss() {
-    const { duration, unit } = this.value;
-    return `${duration}${unit}`;
-  }
+export function toCss<T extends Pick<DurationToken, 'value'> & object>(token: T) {
+  const { duration, unit } = token.value;
+  return `${duration}${unit}`;
 }

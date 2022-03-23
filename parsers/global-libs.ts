@@ -2,7 +2,7 @@ import _ from 'lodash';
 import tinycolor from 'tinycolor2';
 import SVGO from 'svgo';
 import Mustache from 'mustache';
-import { AllowedFormat, PartialRecord } from '../types';
+import { FontsFormat, PartialRecord } from '../types';
 import { MustacheStatic } from '../types/libs/mustache';
 
 declare module 'lodash' {
@@ -26,8 +26,8 @@ export type SpServicesType = {
   font: {
     convert: (payload: {
       postscriptName: string;
-      formats: Array<AllowedFormat>;
-    }) => Promise<PartialRecord<AllowedFormat, string>>;
+      formats: Array<FontsFormat>;
+    }) => Promise<PartialRecord<FontsFormat, string>>;
   };
   assets: {
     getSource: <T>(payload: string, responseType: 'text' | 'buffer' | 'json') => Promise<T>;

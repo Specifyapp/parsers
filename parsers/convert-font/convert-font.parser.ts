@@ -1,4 +1,4 @@
-import { AllowedFormat } from '../../types';
+import { FontsFormat } from '../../types';
 import type { LibsType } from '../global-libs';
 import { PartialRecord } from '../../types';
 
@@ -48,7 +48,7 @@ export default async function (
     return (
       await Promise.all(
         designTokens.flatMap(async designToken => {
-          const signedUrlsByFormat = await new Promise<PartialRecord<AllowedFormat, string>>(
+          const signedUrlsByFormat = await new Promise<PartialRecord<FontsFormat, string>>(
             resolve =>
               SpServices.font
                 .convert({
@@ -59,7 +59,7 @@ export default async function (
                 .catch(() => resolve({})),
           );
 
-          return (Object.entries(signedUrlsByFormat) as Array<[AllowedFormat, string]>).map(
+          return (Object.entries(signedUrlsByFormat) as Array<[FontsFormat, string]>).map(
             ([format, url]) => {
               return {
                 ...designToken,

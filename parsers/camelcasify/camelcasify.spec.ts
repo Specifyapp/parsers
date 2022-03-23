@@ -1,6 +1,5 @@
 import camelcasify from './camelcasify.parser';
 import { Token } from '../../types';
-import libs from '../global-libs';
 import seeds from '../../tests/seeds';
 
 describe('Camelcasify', () => {

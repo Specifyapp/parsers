@@ -1,8 +1,9 @@
-import { LibsType } from '../global-libs';
 import { TokensType } from '../../types';
+import { getTokenTypesToApplyFn } from '../../libs/apply-on-types';
+import _ from 'lodash';
+import { flattenObject } from '../../libs/flatten-deep';
 
 export type InputDataType = Array<Record<string, any>>;
-export type OutputDataType = InputDataType;
 export type OptionsType =
   | undefined
   | {
@@ -13,31 +14,13 @@ export type OptionsType =
       flatten?: boolean;
     };
 
-const flattenObject = (obj: Record<string, any>) => {
-  const flattened: Record<string, any> = {};
-  Object.keys(obj).forEach(key => {
-    if (typeof obj[key] === 'object' && obj[key] !== null) {
-      Object.assign(flattened, flattenObject(obj[key]));
-    } else {
-      flattened[key] = obj[key];
-    }
-  });
-
-  return flattened;
-};
-
-export default async function (
-  tokens: InputDataType,
+export default function omit<T extends InputDataType>(
+  tokens: T,
   options: OptionsType = { keys: [] },
-  { _ }: Pick<LibsType, '_'>,
-): Promise<OutputDataType> {
-  return tokens.map(token => {
-    if (
-      !options?.filter ||
-      (options?.filter?.types &&
-        options.filter.types.length &&
-        options.filter!.types.includes(token.type))
-    ) {
+) {
+  const typesToApplyFn = getTokenTypesToApplyFn(options);
+  return tokens.map<T[0]>(token => {
+    if ('type' in token && typesToApplyFn.includes(token.type!)) {
       const obj = _.omit(token, options.keys);
       return options.flatten ? flattenObject(obj) : obj;
     }
