@@ -1,18 +1,15 @@
-import { IToken, TokensType } from '../../types';
+import { TokensType } from '../../types';
 import _ from 'lodash';
 import { getTokenTypesToApplyFn } from '../../libs/apply-on-types';
-import { Result } from '@swan-io/boxed';
 
-export type InputDataType = Array<object & Partial<Pick<IToken, 'type'>>>;
-export type OptionsType =
-  | undefined
-  | {
-      keys: Array<string>;
-      filter?: {
-        types: Array<TokensType>;
-      };
-      flatten?: boolean;
-    };
+export type InputDataType = Array<object & { type?: TokensType }>;
+export type OptionsType<T> = {
+  keys: Array<keyof T>;
+  filter?: {
+    types: Array<TokensType>;
+  };
+  flatten?: boolean;
+};
 
 const flattenObject = (obj: Record<string, any>) => {
   const flattened: Record<string, any> = {};
@@ -28,10 +25,7 @@ const flattenObject = (obj: Record<string, any>) => {
   return flattened;
 };
 
-export default async function pick<T extends InputDataType>(
-  tokens: T,
-  options: OptionsType = { keys: ['name'] },
-) {
+export default async function pick<T extends InputDataType>(tokens: T, options: OptionsType<T[0]>) {
   try {
     const typesToApplyFn = getTokenTypesToApplyFn(options);
     return tokens.map<T[0]>(token => {

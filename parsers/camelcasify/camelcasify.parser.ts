@@ -1,4 +1,4 @@
-import { camelCase, get, set, has } from 'lodash/fp';
+import { camelCase, get, set, has } from 'lodash';
 
 export type InputDataType = Array<object>;
 export type OptionsType =
@@ -14,8 +14,8 @@ export default async function camelcasify<T extends InputDataType>(
   try {
     return tokens.map<T[0]>(token => {
       options.keys.forEach(key => {
-        if (has(key, token)) {
-          set(key)(camelCase(get(key)(token)))(token);
+        if (has(token, key)) {
+          set(token, key, camelCase(get(token, key)));
         }
       });
       return token;
