@@ -2,7 +2,7 @@ import { BorderValue } from '../../../types';
 import { sortObjectByKey } from './index';
 import { ScssMapHandlerType } from '../to-scss-map.type';
 
-const handler: ScssMapHandlerType = {
+export const handler: ScssMapHandlerType = {
   name: 'borderRadius',
   run: value => {
     const { radii } = value as BorderValue;
@@ -12,4 +12,3 @@ const handler: ScssMapHandlerType = {
     return sortObjectByKey(list);
   },
 };
-export default handler;

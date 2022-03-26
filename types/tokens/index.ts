@@ -192,29 +192,32 @@ export type ShadowToken = TokenG<'shadow', ShadowValue>;
 export type TextStyleToken = TokenG<'textStyle', TextStyleValue>;
 export type VectorToken = TokenG<'vector', VectorValue>;
 
-export type TokenTypeFromToken<T extends Token> = T['type'] extends 'color'
+export type AssetTokensType = BitmapToken | FontToken | VectorToken;
+export type DesignTokensType = Exclude<Token, AssetTokensType>;
+
+export type TokenTypeFromTokenTypeName<T extends TokensType> = T extends 'color'
   ? ColorToken
-  : T['type'] extends 'bitmap'
+  : T extends 'bitmap'
   ? BitmapToken
-  : T['type'] extends 'border'
+  : T extends 'border'
   ? BorderToken
-  : T['type'] extends 'depth'
+  : T extends 'depth'
   ? DepthToken
-  : T['type'] extends 'duration'
+  : T extends 'duration'
   ? DurationToken
-  : T['type'] extends 'font'
+  : T extends 'font'
   ? FontToken
-  : T['type'] extends 'gradient'
+  : T extends 'gradient'
   ? GradientToken
-  : T['type'] extends 'measurement'
+  : T extends 'measurement'
   ? MeasurementToken
-  : T['type'] extends 'opacity'
+  : T extends 'opacity'
   ? OpacityToken
-  : T['type'] extends 'shadow'
+  : T extends 'shadow'
   ? ShadowToken
-  : T['type'] extends 'textStyle'
+  : T extends 'textStyle'
   ? TextStyleToken
-  : T['type'] extends 'vector'
+  : T extends 'vector'
   ? VectorToken
   : never;
 

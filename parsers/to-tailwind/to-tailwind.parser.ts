@@ -1,5 +1,4 @@
-import { IToken, PartialRecord, TokensType } from '../../types';
-import { LibsType } from '../global-libs';
+import { Token, PartialRecord, TokensType } from '../../types';
 import prettier from 'prettier';
 import os from 'os';
 import * as _ from 'lodash';
@@ -7,9 +6,8 @@ import { ColorsFormat, FormatName, TailwindTokenClass, TailwindType } from './to
 import * as TokensClass from './tokens';
 import deepmerge from 'deepmerge';
 
-export type OutputDataType = string;
 export type InputDataType = Array<
-  Pick<IToken, 'id' | 'name' | 'value' | 'type'> & Record<string, any>
+  Pick<Token, 'id' | 'name' | 'value' | 'type'> & Record<string, any>
 >;
 export type FormatTokenType = Partial<{
   colorFormat: {
@@ -107,11 +105,7 @@ class ToTailwind {
   }
 }
 
-export default async function (
-  tokens: InputDataType,
-  options: OptionsType,
-  { _ }: Pick<LibsType, '_'>,
-): Promise<OutputDataType> {
+export async function toTailwind<T extends InputDataType>(tokens: T, options: OptionsType) {
   try {
     const parserInstance = new ToTailwind(tokens, options);
     return parserInstance.exec();

@@ -22,3 +22,5 @@ export type PartialRecord<K extends keyof any, T> = {
 };
 
 export type RecursiveRecord<T> = Record<PropertyKey, T | Record<PropertyKey, T>>;
+
+export type AtLeast<T extends object> = T & Record<string, any>;

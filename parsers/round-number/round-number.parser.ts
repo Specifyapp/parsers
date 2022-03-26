@@ -1,8 +1,7 @@
-import { LibsType } from '../global-libs';
 import listPathsByPattern from '../../libs/list-paths-by-pattern';
+import { get, set } from 'lodash';
 
 export type InputDataType = Array<Record<string, any>>;
-export type OutputDataType = InputDataType;
 export type OptionsType =
   | undefined
   | {
@@ -13,11 +12,7 @@ export type OptionsType =
 
 const defaultOptions = { keys: [], precision: 0, mode: 'auto' };
 
-export default async function (
-  tokens: InputDataType,
-  options: OptionsType,
-  { _ }: Pick<LibsType, '_'>,
-): Promise<OutputDataType> {
+export async function roundNumber<T extends InputDataType>(tokens: T, options: OptionsType) {
   const mergedOptions = {
     ...defaultOptions,
     ...options,
@@ -27,7 +22,7 @@ export default async function (
     mergedOptions.keys.forEach(pattern => {
       const paths = listPathsByPattern(token, pattern);
       paths.forEach(selector => {
-        const originalValue = _.get(token, selector);
+        const originalValue = get(token, selector);
 
         const roundFunction =
           mergedOptions.mode === 'auto'
@@ -37,7 +32,7 @@ export default async function (
             : Math.floor;
 
         const factor = Math.pow(10, mergedOptions.precision);
-        _.set(token, selector, roundFunction(originalValue * factor) / factor);
+        set(token, selector, roundFunction(originalValue * factor) / factor);
       });
     });
 

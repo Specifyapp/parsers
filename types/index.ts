@@ -13,6 +13,11 @@ declare global {
 }
 export type FontsFormat = 'woff2' | 'woff' | 'otf' | 'ttf' | 'eot';
 
+export type Parser = {
+  name: string;
+  options?: any;
+};
+
 export type ColorsFormat =
   | 'rgb'
   | 'prgb'

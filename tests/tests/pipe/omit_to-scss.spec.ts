@@ -1,39 +1,19 @@
-import libs, { LibsType } from '../../../parsers/global-libs';
-import omit from '../../../parsers/omit/omit.parser';
-import {
-  default as toScssMap,
-  InputDataType as ToScssMapInputType,
-} from '../../../parsers/to-scss-map/to-scss-map.parser';
-import {
-  default as toScssMixin,
-  InputDataType as toScssMixinInputType,
-} from '../../../parsers/to-scss-mixin-text-style/to-scss-mixin-text-style.parser';
-import seeds from '../../seeds';
-import { pipe } from '../../../libs/pipe';
+import { seeds } from '../../seeds';
+import { createConfig } from '../../../libs/create-config';
+import { omit, toScssMap, toScssMixinTextStyle } from '../../../scripts/parsersPipeable';
+import { filter } from '../../../libs/filter';
 
 describe('Pipe - omit -> to-scss-map', () => {
   it('Should omit font-family from textStyle with to-scss-map', async () => {
     try {
-      pipe();
-      const textStylesWithoutFontName = await omit(
-        seeds().tokens.filter(({ type }) => type === 'textStyle'),
-        {
-          keys: ['value.font.name', 'value.font.value.fontPostScriptName'],
-        },
-      );
-      const result = await toScssMap(
-        textStylesWithoutFontName as unknown as ToScssMapInputType,
-        undefined,
-      );
-
-      const result = pipe(
+      const result = createConfig(
         omit({
           keys: ['value.font.name', 'value.font.value.fontPostScriptName'],
         }),
         toScssMap(),
       );
 
-      result.forEach(file => {
+      (await result.run(filter<'textStyle'>(seeds(), 'textStyle'))).forEach(file => {
         expect(typeof file.value.content).toEqual('string');
         expect(file.value.content?.includes('font-family')).toBeFalsy();
         expect(file.value.content?.includes('font-weight')).toBeTruthy();
@@ -45,18 +25,12 @@ describe('Pipe - omit -> to-scss-map', () => {
   });
   it('Should omit font-family from textStyle with to-scss-mixin-text-style', async () => {
     try {
-      const textStylesWithoutFontName = await omit(
-        seeds().tokens.filter(({ type }) => type === 'textStyle'),
-        {
+      const result = await createConfig(
+        omit({
           keys: ['value.font.name', 'value.font.value.fontPostScriptName'],
-        },
-        libs as LibsType,
-      );
-      const result = await toScssMixin(
-        textStylesWithoutFontName as unknown as toScssMixinInputType,
-        undefined,
-        libs as LibsType,
-      );
+        }),
+        toScssMixinTextStyle(),
+      ).run(filter<'textStyle'>(seeds(), 'textStyle'));
       expect(typeof result).toEqual('string');
       expect(result.includes('font-family')).toBeFalsy();
       expect(result.includes('font-weight')).toBeTruthy();

@@ -1,17 +1,15 @@
-import { LibsType } from '../global-libs';
 import Template from '../../libs/template';
+import { set } from 'lodash';
 
 export type InputDataType = Array<Record<string, any>>;
-export type OutputDataType = InputDataType;
 export type OptionsType = {
   pattern: string;
 };
 
-export default async function (
-  assets: InputDataType,
+export async function nameAssetsFilesByPattern<T extends InputDataType>(
+  assets: T,
   options: OptionsType,
-  libs: Pick<LibsType, 'Mustache' | '_'>,
-): Promise<OutputDataType> {
+) {
   const template = new Template(options.pattern);
-  return assets.map(asset => libs._.set(asset, 'value.fileName', template.render(asset)));
+  return assets.map(asset => set(asset, 'value.fileName', template.render(asset)));
 }

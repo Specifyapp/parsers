@@ -1,5 +1,5 @@
 import {
-  camelcasify as camelcase,
+  camelcasify as camelcasifyParser,
   OptionsType as CamelcaseOptionsType,
   InputDataType as CamelcaseInputDataType,
 } from './parsers/camelcasify/camelcasify.parser';
@@ -14,8 +14,8 @@ import {
   InputDataType as ToCssInputDataType,
 } from './parsers/to-css-custom-properties/to-css-custom-properties.parser';
 import { Token } from './types';
-import { pipe } from './libs/pipe';
-import { match, select, when } from 'ts-pattern';
+import { createConfig } from './libs/create-config';
+import { camelcasify, pick, toCssCustomProperties } from './scripts/parsersPipeable';
 
 const tokens: Array<Token> = [
   {
@@ -152,41 +152,26 @@ const tokens: Array<Token> = [
   },
 ];
 
-const camelcasify =
-  (options?: CamelcaseOptionsType) =>
-  <T extends CamelcaseInputDataType>(data: T) =>
-    camelcase(data ?? tokens, options);
+// custom code
+const removeNumbersInString = (options = undefined) => ({
+  name: 'remove-numbers-in-string',
+  options,
+  fn: <I extends string>(data: I) => data.replace(/[0-9]+/g, ''),
+});
 
-const pick =
-  (options: PickOptionsType<any>) =>
-  <T extends PickInputDataType>(data: T) =>
-    pickParser(data, options);
+const config = createConfig(
+  camelcasify({ keys: ['name'] }),
+  pick({ keys: ['name', 'type', 'value'] }),
+  toCssCustomProperties(),
+  removeNumbersInString(),
+);
 
-const toCssCustomProperties =
-  (options?: ToCssOptionsType) =>
-  <T extends ToCssInputDataType>(data: T) =>
-    toCssCustomPropertiesParser(data, options);
+console.log(
+  '>>>>>>>>>>>',
+  JSON.stringify({ rules: [{ name: 'a rule', parsers: config.build() }] }, null, 4),
+);
 
-// const functionIfy =
-//   <Opt, I, R>(handler: (data: I, options?: Opt) => R) =>
-//   (options?: Opt) =>
-//   (data: I) =>
-//     handler(data, options);
-//
-// const camelcasify = functionIfy<CamelcaseOptionsType, Array<Token>, ReturnType<typeof camelcase>>(
-//   camelcase,
-// );
-
-// const pickify = functionIfy<PickOptionsType<any>, Array<Token>, ReturnType<typeof pick>>(pick);
-
-(async () => {
-  const result = pipe(
-    camelcasify({ keys: ['name'] }),
-    pick({ keys: ['name', 'type', 'value'] }),
-    toCssCustomProperties(),
-  );
-  console.log('>>>>>>>>>>>', result);
-})();
+console.log('>>>>>>>>>>>', config.run(tokens));
 
 // TODO: Allow async parser
 // TODO: Improve typing

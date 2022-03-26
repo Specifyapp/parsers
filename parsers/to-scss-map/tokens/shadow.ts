@@ -4,7 +4,7 @@ import { OptionsType } from '../to-scss-map.parser';
 import { sortObjectByKey } from './index';
 import { ScssMapHandlerType } from '../to-scss-map.type';
 
-const handler: ScssMapHandlerType = {
+export const handler: ScssMapHandlerType = {
   name: 'shadow',
   run: (value, options: OptionsType) => {
     const shadows = value as ShadowValue;
@@ -32,5 +32,3 @@ const handler: ScssMapHandlerType = {
     return sortObjectByKey(list);
   },
 };
-
-export default handler;

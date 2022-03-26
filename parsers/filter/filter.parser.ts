@@ -1,7 +1,6 @@
-import { LibsType } from '../global-libs';
+import { get } from 'lodash';
 
 export type InputDataType = Array<Record<string, any>>;
-export type OutputDataType = InputDataType;
 export type OptionsType = {
   key: string;
   regex:
@@ -11,11 +10,7 @@ export type OptionsType = {
       }
     | string;
 };
-export default async function (
-  tokens: InputDataType,
-  options: OptionsType,
-  { _ }: Pick<LibsType, '_'>,
-): Promise<OutputDataType | Error> {
+export async function filter<T extends InputDataType>(tokens: T, options: OptionsType) {
   try {
     const reg =
       typeof options.regex === 'object'
@@ -23,7 +18,7 @@ export default async function (
         : new RegExp(options.regex);
     const result: InputDataType = [];
     tokens.forEach(token => {
-      const valueToCheck = _.get(token, options.key);
+      const valueToCheck = get(token, options.key);
       if (valueToCheck.match(reg)) {
         result.push(token);
       }

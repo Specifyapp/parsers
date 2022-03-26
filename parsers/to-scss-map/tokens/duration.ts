@@ -2,7 +2,7 @@ import { DurationValue } from '../../../types';
 import { sortObjectByValue } from './index';
 import { ScssMapHandlerType } from '../to-scss-map.type';
 
-const handler: ScssMapHandlerType = {
+export const handler: ScssMapHandlerType = {
   name: 'duration',
   run: value => {
     const { duration, unit } = value as DurationValue;
@@ -13,5 +13,3 @@ const handler: ScssMapHandlerType = {
     return sortObjectByValue(list);
   },
 };
-
-export default handler;

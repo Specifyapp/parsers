@@ -3,7 +3,7 @@ import { OptionsType } from '../to-scss-map.parser';
 import { sortObjectByValue } from './index';
 import { ScssMapHandlerType } from '../to-scss-map.type';
 
-const handler: ScssMapHandlerType = {
+export const handler: ScssMapHandlerType = {
   name: 'measurement',
   run: (value, options: OptionsType) => {
     const { measure, unit } = value as MeasurementValue;
@@ -14,5 +14,3 @@ const handler: ScssMapHandlerType = {
     return sortObjectByValue(list);
   },
 };
-
-export default handler;

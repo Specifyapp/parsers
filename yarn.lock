@@ -884,6 +884,11 @@
   resolved "https://registry.yarnpkg.com/@mdx-js/react/-/react-1.6.22.tgz#ae09b4744fddc74714ee9f9d6f17a66e77c43573"
   integrity sha512-TDoPum4SHdfPiGSAaRBw7ECyI8VaHpK8GJugbJIJuqyh6kzw9ZLJZW3HGL3NNrJGxcAixUvqROm+YuQOo5eXtg==
 
+"@mobily/ts-belt@^3.10.0":
+  version "3.10.0"
+  resolved "https://registry.npmjs.org/@mobily/ts-belt/-/ts-belt-3.10.0.tgz#bf264493420e47a6f95e592056de9957513d990a"
+  integrity sha512-F3XLU3zMDzJOf9KlKgnNOz5rdAtMG/UBxEDU4UNA4ewKFRd5DsbIIJmeAifLudNwcXmoIgtZ39KwVjPaL/CjgA==
+
 "@oozcitak/dom@1.15.10":
   version "1.15.10"
   resolved "https://registry.yarnpkg.com/@oozcitak/dom/-/dom-1.15.10.tgz#dca7289f2b292cff2a901ea4fbbcc0a1ab0b05c2"

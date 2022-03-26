@@ -34,4 +34,7 @@ export type SpServicesType = {
   };
 };
 
+// @ts-ignore
+export const SpServices: SpServicesType = {};
+
 export type LibsType = typeof Libs & { SpServices: SpServicesType };

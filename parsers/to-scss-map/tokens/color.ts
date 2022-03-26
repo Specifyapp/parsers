@@ -3,7 +3,7 @@ import tinycolor from 'tinycolor2';
 import { sortObjectByKey } from './index';
 import { ScssMapHandlerType } from '../to-scss-map.type';
 
-const handler: ScssMapHandlerType = {
+export const handler: ScssMapHandlerType = {
   name: 'color',
   run: (value, options) => {
     return tinycolor(value as ColorValue).toString(options?.formatTokens?.color?.format || 'rgb');
@@ -12,5 +12,3 @@ const handler: ScssMapHandlerType = {
     return sortObjectByKey(list);
   },
 };
-
-export default handler;

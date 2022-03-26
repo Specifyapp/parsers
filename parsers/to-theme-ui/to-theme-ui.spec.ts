@@ -1,6 +1,5 @@
-import libs from '../global-libs';
-import seeds from '../../tests/seeds';
-import toThemeUi, { OptionsType } from './to-theme-ui.parser';
+import { seeds } from '../../tests/seeds';
+import { toThemeUi, OptionsType } from './to-theme-ui.parser';
 import * as _ from 'lodash';
 import { ThemeUiConfig, ThemeUiType } from './to-theme-ui.type';
 
@@ -8,9 +7,10 @@ type ObjectOfStringNumber = { [key: string]: number };
 type ObjectOfStringString = { [key: string]: string };
 describe('To theme ui', () => {
   it('Get tokens - apply parsers', async () => {
-    const str = await toThemeUi(seeds().tokens, undefined, libs);
-
-    seeds().tokens.forEach(({ type, name }) => {
+    // @ts-ignore
+    const str = await toThemeUi(seeds());
+    console.log('>>>>>>>>>>>', str);
+    seeds().forEach(({ type, name }) => {
       if (!['vector', 'bitmap', 'opacity'].includes(type)) {
         expect(str).toEqual(expect.stringMatching(_.camelCase(name)));
       }
@@ -18,15 +18,11 @@ describe('To theme ui', () => {
     return;
   });
   it('Get tokens - apply parsers - json', async () => {
-    const str = await toThemeUi(
-      seeds().tokens,
-      {
-        formatConfig: {
-          module: 'json',
-        },
+    const str = await toThemeUi(seeds(), {
+      formatConfig: {
+        module: 'json',
       },
-      libs,
-    );
+    });
     const result = JSON.parse(str) as ThemeUiConfig;
 
     expect(Object.keys(result)).toEqual(
@@ -87,16 +83,12 @@ describe('To theme ui', () => {
     return;
   });
   it('Get tokens - apply parsers - with variant', async () => {
-    const str = await toThemeUi(
-      seeds().tokens,
-      {
-        formatConfig: {
-          module: 'json',
-        },
-        variants: true,
+    const str = await toThemeUi(seeds(), {
+      formatConfig: {
+        module: 'json',
       },
-      libs,
-    );
+      variants: true,
+    });
     const result = JSON.parse(str) as ThemeUiConfig;
 
     expect(Object.keys(result)).toEqual(
@@ -133,35 +125,31 @@ describe('To theme ui', () => {
     return;
   });
   it('Should return variant that matched frozen presets', async () => {
-    const str = await toThemeUi(
-      seeds().tokens,
-      {
-        formatTokens: {
-          fontSizeFormat: {
-            unit: 'rem',
-            type: 'string',
-          },
-          opacityFormat: {
-            unit: 'percent',
-          },
+    const str = await toThemeUi(seeds(), {
+      formatTokens: {
+        fontSizeFormat: {
+          unit: 'rem',
+          type: 'string',
         },
-        formatConfig: {
-          module: 'json',
-        },
-        variants: true,
-        presets: {
-          fontWeights: {
-            freeze: true,
-            preset: 'base',
-          },
-          fontSizes: {
-            freeze: true,
-            preset: 'base',
-          },
+        opacityFormat: {
+          unit: 'percent',
         },
       },
-      libs,
-    );
+      formatConfig: {
+        module: 'json',
+      },
+      variants: true,
+      presets: {
+        fontWeights: {
+          freeze: true,
+          preset: 'base',
+        },
+        fontSizes: {
+          freeze: true,
+          preset: 'base',
+        },
+      },
+    });
     const result = JSON.parse(str) as ThemeUiConfig;
     expect(Object.keys(result.fontWeights).length).toEqual(9);
     Object.values(
@@ -176,22 +164,18 @@ describe('To theme ui', () => {
     return;
   });
   it('Should return variant that matched non frozen presets', async () => {
-    const tokens = seeds().tokens;
-    const str = await toThemeUi(
-      tokens,
-      {
-        formatConfig: {
-          module: 'json',
-        },
-        variants: true,
-        presets: {
-          fontWeights: {
-            preset: 'base',
-          },
+    const tokens = seeds();
+    const str = await toThemeUi(tokens, {
+      formatConfig: {
+        module: 'json',
+      },
+      variants: true,
+      presets: {
+        fontWeights: {
+          preset: 'base',
         },
       },
-      libs,
-    );
+    });
     const result = JSON.parse(str) as ThemeUiConfig;
 
     expect(Object.keys(result.fontWeights).length).toBeGreaterThan(
@@ -206,36 +190,32 @@ describe('To theme ui', () => {
     return;
   });
   it('Should return variant that matched custom presets', async () => {
-    const tokens = seeds().tokens;
-    const str = await toThemeUi(
-      tokens,
-      {
-        formatConfig: {
-          module: 'json',
+    const tokens = seeds();
+    const str = await toThemeUi(tokens, {
+      formatConfig: {
+        module: 'json',
+      },
+      variants: true,
+      presets: {
+        fontWeights: {
+          preset: {
+            thin: 100,
+            extraLight: 200,
+            light: 300,
+            normal: 400,
+            regular: 400,
+            medium: 500,
+            semiBold: 600,
+            bold: 700,
+            extraBold: 800,
+            black: 900,
+          },
         },
-        variants: true,
-        presets: {
-          fontWeights: {
-            preset: {
-              thin: 100,
-              extraLight: 200,
-              light: 300,
-              normal: 400,
-              regular: 400,
-              medium: 500,
-              semiBold: 600,
-              bold: 700,
-              extraBold: 800,
-              black: 900,
-            },
-          },
-          fontSizes: {
-            preset: [4, 8, 12],
-          },
+        fontSizes: {
+          preset: [4, 8, 12],
         },
       },
-      libs,
-    );
+    });
     const result = JSON.parse(str) as ThemeUiConfig;
 
     expect(Object.keys(result.fontWeights).length).toBeGreaterThan(
@@ -253,17 +233,13 @@ describe('To theme ui', () => {
     return;
   });
   it('Should return variant that matched nothing', async () => {
-    const tokens = seeds().tokens.filter(({ type }) => type !== 'measurement' && type !== 'color');
-    const str = await toThemeUi(
-      tokens,
-      {
-        formatConfig: {
-          module: 'json',
-        },
-        variants: true,
+    const tokens = seeds().filter(({ type }) => type !== 'measurement' && type !== 'color');
+    const str = await toThemeUi(tokens, {
+      formatConfig: {
+        module: 'json',
       },
-      libs,
-    );
+      variants: true,
+    });
     const result = JSON.parse(str) as ThemeUiConfig;
     expect(result.colors).toBeFalsy();
     expect(result.sizes).toBeFalsy();
@@ -277,7 +253,7 @@ describe('To theme ui', () => {
       formatConfig: { exportDefault: true, objectName },
     };
 
-    const result = await toThemeUi(seeds().tokens, options, libs);
+    const result = await toThemeUi(seeds(), options);
     expect(result.includes(`export default ${objectName}`)).toBeTruthy();
     expect(result.includes(`export const ${objectName}`)).toBeFalsy();
     expect(result.includes('module.exports')).toBeFalsy();
@@ -290,7 +266,7 @@ describe('To theme ui', () => {
       formatConfig: { exportDefault: false, objectName },
     };
 
-    const result = await toThemeUi(seeds().tokens, options, libs);
+    const result = await toThemeUi(seeds(), options);
 
     expect(result.includes(`export default ${objectName}`)).toBeFalsy();
     expect(result.includes(`export const ${objectName}`)).toBeTruthy();
@@ -304,7 +280,7 @@ describe('To theme ui', () => {
       formatConfig: { module: 'commonjs', exportDefault: true, objectName },
     };
 
-    const result = await toThemeUi(seeds().tokens, options, libs);
+    const result = await toThemeUi(seeds(), options);
 
     expect(result.includes(`export default ${objectName}`)).toBeFalsy();
     expect(result.includes(`export const ${objectName}`)).toBeFalsy();
@@ -318,7 +294,7 @@ describe('To theme ui', () => {
       formatConfig: { module: 'commonjs', exportDefault: false, objectName },
     };
 
-    const result = await toThemeUi(seeds().tokens, options, libs);
+    const result = await toThemeUi(seeds(), options);
     expect(result.includes(`export default ${objectName}`)).toBeFalsy();
     expect(result.includes(`export const ${objectName}`)).toBeFalsy();
     expect(result.includes(`module.exports = { ${objectName} }`)).toBeTruthy();

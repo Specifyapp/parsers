@@ -25,7 +25,7 @@ import {
   ShadowToken,
   VectorToken,
 } from '../../types';
-//
+
 export type InputDataType = Array<
   | Pick<ColorToken, 'value' | 'type' | 'name'>
   | Pick<BorderToken, 'value' | 'type' | 'name'>

@@ -1,4 +1,3 @@
-import { LibsType } from '../global-libs';
 import {
   ColorValue,
   FontToken,
@@ -44,7 +43,6 @@ const propertiesBaseInCss = [
 ] as const;
 
 export type InputDataType = Array<{ name: string; value: TextStyleValue } & Record<any, any>>;
-export type OutputDataType = string;
 type FilterListFromTextStyle = keyof TextStyleValue;
 type FilterListFromCssProperties = typeof propertiesBaseInCss[number];
 type FilterList = FilterListFromTextStyle | FilterListFromCssProperties;
@@ -264,11 +262,10 @@ const applyTransformStr = (str: string, fn?: transformFn) => {
   return str.includes(' ') || str.includes('\n') || str.includes('/') ? JSON.stringify(str) : str;
 };
 
-export default async function (
-  inputData: InputDataType,
+export async function toCssTextStyle<T extends InputDataType>(
+  inputData: T,
   options: OptionsType | undefined,
-  { _ }: Pick<LibsType, '_'>,
-): Promise<OutputDataType | Error> {
+) {
   try {
     const textStylesProperties = getTextStyleProperties(options);
     const cssProperties = getCssProperties(options);

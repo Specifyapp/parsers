@@ -1,5 +1,4 @@
 import prettier from 'prettier';
-import { LibsType } from '../global-libs';
 import { ColorsFormat, DownloadableFile, Token, TokensType } from '../../types';
 import {
   BaseStyleDictionaryTokensFormat,
@@ -9,7 +8,6 @@ import * as TokensClass from './tokens';
 import deepmerge from 'deepmerge';
 import '../../types/utils/utils';
 
-export type OutputDataType = Array<DownloadableFile>;
 export type InputDataType = Array<Token>;
 export type FormatTokenType = Partial<{
   colorFormat: {
@@ -21,6 +19,7 @@ export type FormatTokenType = Partial<{
   fontFormat: Array<'woff2' | 'woff' | 'otf' | 'ttf' | 'eot'>;
 }>;
 export type OptionsType =
+  | undefined
   | Partial<{
       formatName: 'camelCase' | 'kebabCase' | 'snakeCase' | 'pascalCase';
       formatTokens: FormatTokenType;
@@ -35,19 +34,14 @@ export type OptionsType =
         tabWidth: number;
         useTabs: boolean;
       }>;
-    }>
-  | undefined;
+    }>;
 
 function getClassByType(type: string): StyleDictionaryTokenClass | undefined {
   const tokenClassName = `${type.charAt(0).toUpperCase() + type.slice(1)}`;
   return (<any>TokensClass)[tokenClassName];
 }
 
-export default async function (
-  tokens: InputDataType,
-  options: OptionsType = {},
-  { _ }: Pick<LibsType, '_'>,
-): Promise<OutputDataType> {
+export async function toStyleDictionary<T extends InputDataType>(tokens: T, options: OptionsType) {
   const transformNameFn = _[options?.formatName ?? 'camelCase'];
   const tokensGroupByType = _.groupBy(tokens, 'type');
   // loop over specify types

@@ -1,24 +1,20 @@
 import * as _ from 'lodash';
-import { LibsType } from '../global-libs';
 import Template from '../../libs/template';
 import prettier from 'prettier';
-import { IToken, TokensType } from '../../types';
+import { Token, TokensType } from '../../types';
 import * as os from 'os';
 import { create } from 'xmlbuilder2';
 import { parseStringPromise } from 'xml2js';
 import { xml2jsElementType } from './svg-to-jsx.type';
 import { ExpandObject } from 'xmlbuilder2/lib/interfaces';
+import { SpServices } from '../global-libs';
 
 export type InputDataType = Array<
-  IToken & {
+  Token & {
     name: string;
     type: TokensType;
     value: ({ url?: string } | { content?: string }) & { [key: string]: any };
   }
->;
-
-export type OutputDataType = Array<
-  InputDataType[0] & { value: { content: string; fileName: string; [key: string]: any } }
 >;
 
 export type OptionsType =
@@ -98,11 +94,7 @@ const templateExportDefaultModel = `export {{#options.formatConfig.exportDefault
   {{#options.wrapper.tag}}</{{options.wrapper.tag}}>{{/options.wrapper.tag}}
 )`;
 
-export default async function (
-  tokens: InputDataType,
-  options: OptionsType,
-  { SpServices }: Pick<LibsType, 'SpServices'>,
-): Promise<OutputDataType | Error> {
+export async function svgToJsx<T extends InputDataType>(tokens: T, options: OptionsType) {
   try {
     const template = new Template(templateExportDefaultModel);
     const classNameTemplate = options?.wrapper?.className
@@ -121,7 +113,7 @@ export default async function (
       tokens
         // This parser only works on svg, not pdf
         .filter(({ value, type }) => type === 'vector' && value.format === 'svg')
-        .map(async (token): Promise<OutputDataType[0]> => {
+        .map(async (token): Promise<unknown> => {
           if (token.value.url && !token.value.content) {
             token.value.content = await SpServices.assets.getSource<string>(
               token.value.url!,
@@ -159,7 +151,7 @@ export default async function (
           token.value.fileName = token.value.fileName
             ? token.value.fileName
             : `${_.camelCase(token.name)}.${options?.formatConfig?.isTsx ? 'tsx' : 'jsx'}`;
-          return { ...token, value: _.omit(token.value, ['url']) } as OutputDataType[0];
+          return { ...token, value: _.omit(token.value, ['url']) };
         }),
     );
   } catch (err) {

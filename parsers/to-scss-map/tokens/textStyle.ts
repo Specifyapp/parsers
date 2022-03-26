@@ -1,13 +1,10 @@
 import { PartialRecord, TextStyleValue } from '../../../types';
-import { OptionsType } from '../to-scss-map.parser';
+import { FormatTokenType, OptionsType } from '../to-scss-map.parser';
 import convertMeasurement from '../../../libs/size-manipulation';
 import { sortObjectByKey } from './index';
 import { ScssMapHandlerType, TextStyleProperties } from '../to-scss-map.type';
 
-function getFontSize(
-  value: Partial<TextStyleValue>,
-  fontFormat?: NonNullable<OptionsType['formatTokens']>['fontSize'],
-) {
+function getFontSize(value: Partial<TextStyleValue>, fontFormat?: FormatTokenType['fontSize']) {
   const fontSize = value.fontSize;
   if (fontFormat?.unit && value.fontSize?.value.unit !== fontFormat?.unit && value.fontSize) {
     value.fontSize.value = convertMeasurement(value.fontSize.value, fontFormat?.unit);
@@ -27,7 +24,7 @@ function getLineHeight(value: Partial<TextStyleValue>) {
   if (lh) return `${lh.value.measure}${lh.value.unit}`;
 }
 
-const handler: ScssMapHandlerType = {
+export const handler: ScssMapHandlerType = {
   name: 'textStyle',
   run: (value, options: OptionsType) => {
     const textStyle = value as Partial<TextStyleValue>;
@@ -72,5 +69,3 @@ const handler: ScssMapHandlerType = {
     return sortObjectByKey(list);
   },
 };
-
-export default handler;

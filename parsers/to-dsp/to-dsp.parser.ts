@@ -1,12 +1,11 @@
 import { DownloadableFile, Token } from '../../types';
 import * as TokensClass from './tokens';
-import { LibsType } from '../global-libs';
 import { DspEntity, DspJson, DspParserSettings } from './dsp.type';
+import { SpServices } from '../global-libs';
 
 export type InputDataType = Array<
   Pick<Token, 'name' | 'value' | 'type' | 'id'> & Record<string, any>
 >;
-export type OutputDataType = Array<DownloadableFile>;
 
 export type OptionsType =
   | Partial<{
@@ -15,10 +14,7 @@ export type OptionsType =
     }>
   | undefined;
 
-export async function createAssetsFiles(
-  tokens: InputDataType,
-  SpServices: LibsType['SpServices'],
-): Promise<OutputDataType> {
+export async function createAssetsFiles(tokens: InputDataType) {
   const assetsTypes = ['vector', 'bitmap'];
 
   const filteredTokens = tokens.filter(token => assetsTypes.includes(token.type));
@@ -38,11 +34,7 @@ export async function createAssetsFiles(
   );
 }
 
-export default async function (
-  tokens: InputDataType,
-  options: OptionsType,
-  { SpServices }: Pick<LibsType, 'SpServices'>,
-): Promise<OutputDataType> {
+export async function toDsp<T extends InputDataType>(tokens: T, options: OptionsType) {
   const sharedHeaders = {
     dsp_spec_version: '0.5.0',
     last_updated_by: 'Specify',
@@ -126,7 +118,7 @@ export default async function (
   // Create assets needed for dsp
   const assetsFiles =
     options?.createAssets === undefined || options.createAssets
-      ? await createAssetsFiles(tokens, SpServices)
+      ? await createAssetsFiles(tokens)
       : [];
 
   return [

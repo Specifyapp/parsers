@@ -1,5 +1,4 @@
 import type { OptimizeOptions, DefaultPlugins, OptimizedSvg } from 'svgo';
-import { LibsType } from '../global-libs';
 import { DownloadableFile } from '../../types';
 import {
   defaultPresetPlugins,
@@ -10,6 +9,9 @@ import {
   DefaultPresetPluginsName,
   DefaultPresetPluginsParams,
 } from './svgo.type';
+import SVGO from 'svgo';
+import { omit } from 'lodash';
+import { SpServices } from '../global-libs';
 
 export type InputDataType = Array<
   Record<string, any> & {
@@ -17,11 +19,7 @@ export type InputDataType = Array<
     value: { url: string } & { [key: string]: any };
   }
 >;
-export type OutputDataType = Array<
-  InputDataType[0] & {
-    value: DownloadableFile & { [key: string]: any };
-  }
->;
+
 export type OptionsType =
   | undefined
   | {
@@ -79,17 +77,13 @@ function migrateSvgoPlugins(plugins?: Plugins): Array<PluginV2> {
   ];
 }
 
-export default async function (
-  tokens: InputDataType,
-  options: OptionsType,
-  { SVGO, _, SpServices }: Pick<LibsType, 'SVGO' | '_' | 'SpServices'>,
-): Promise<OutputDataType | Error> {
+export async function svgo<T extends InputDataType>(tokens: T, options: OptionsType) {
   try {
     options = options || {};
     options.svgo = options?.svgo || {};
     options.svgo.plugins = migrateSvgoPlugins(options.svgo.plugins);
 
-    return (await Promise.all(
+    return await Promise.all(
       tokens.map(async token => {
         if (token.type === 'vector' && token.value.format === 'svg') {
           const baseString = await SpServices.assets.getSource<string>(token.value.url!, 'text');
@@ -100,12 +94,12 @@ export default async function (
           } catch (err) {
             token.value.content = baseString;
           }
-          return { ...token, value: _.omit(token.value, ['url']) };
+          return { ...token, value: omit(token.value, ['url']) };
         }
 
         return token;
       }),
-    )) as OutputDataType;
+    );
   } catch (err) {
     throw err;
   }

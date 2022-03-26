@@ -1,18 +1,18 @@
 import { DesignTokensType } from '../../../types';
 import { ScssMapHandlerType } from '../to-scss-map.type';
 
-import borderHandler from './border';
-import borderRadiusHandler from './borderRadius';
-import colorHandler from './color';
-import depthHandler from './depth';
-import durationHandler from './duration';
-import gradientHandler from './gradient';
-import measurementHandler from './measurement';
-import opacityHandler from './opacity';
-import shadowHandler from './shadow';
-import textStyleHandler from './textStyle';
+import { handler as borderHandler } from './border';
+import { handler as borderRadiusHandler } from './borderRadius';
+import { handler as colorHandler } from './color';
+import { handler as depthHandler } from './depth';
+import { handler as durationHandler } from './duration';
+import { handler as gradientHandler } from './gradient';
+import { handler as measurementHandler } from './measurement';
+import { handler as opacityHandler } from './opacity';
+import { handler as shadowHandler } from './shadow';
+import { handler as textStyleHandler } from './textStyle';
 
-const handlers: Record<DesignTokensType, Array<ScssMapHandlerType>> = {
+const handlers: Record<Pick<DesignTokensType, 'type'>['type'], Array<ScssMapHandlerType>> = {
   color: [colorHandler],
   depth: [depthHandler],
   border: [borderHandler, borderRadiusHandler],

@@ -1,6 +1,8 @@
 import { FontsFormat } from '../../types';
-import type { LibsType } from '../global-libs';
 import { PartialRecord } from '../../types';
+// todo: rename the specify api
+import { SpServices } from '../global-libs';
+import * as _ from 'lodash';
 
 export type InputDataType = Array<{
   value: {
@@ -11,20 +13,14 @@ export type InputDataType = Array<{
   };
   [Key: string]: any;
 }>;
-export type OutputDataType =
-  | Array<InputDataType[0] & { value: InputDataType[0]['value'] & { url: string } }>
-  | Error;
+
 export type OptionsType = {
   formats?: Array<'woff2' | 'woff' | 'otf' | 'ttf' | 'eot'>;
   fileNameKey?: 'name' | 'fontFamily' | Array<string>;
   fileNameFormat?: 'camelCase' | 'kebabCase' | 'snakeCase' | 'pascalCase';
 };
 
-export default async function (
-  designTokens: InputDataType,
-  options: OptionsType | undefined,
-  { _, SpServices }: LibsType,
-): Promise<OutputDataType> {
+export async function convertFont<T extends InputDataType>(designTokens: T, options: OptionsType) {
   try {
     const formats = options?.formats || ['woff2', 'woff'];
 

@@ -4,7 +4,6 @@ import os from 'os';
 import parserCss from 'prettier/parser-postcss';
 import * as _ from 'lodash';
 export type InputDataType = Array<{ name: string; [Key: string]: any }>;
-export type OutputDataType = string;
 export type OptionsType = {
   formats?: Array<'woff2' | 'woff' | 'otf' | 'ttf' | 'eot'>;
   fontsPath?: string;
@@ -31,7 +30,7 @@ class ToCssFont {
   fontDisplay: NonNullable<OptionsType['fontDisplay']>;
   genericFamily: OptionsType['genericFamily'];
 
-  constructor(tokens: InputDataType, options: OptionsType | undefined) {
+  constructor(tokens: InputDataType, options: OptionsType = {}) {
     this.tokens = tokens;
     this.formats = options?.formats || ['woff2', 'woff'];
     this.fontsPath = options?.fontsPath || '';
@@ -92,10 +91,7 @@ class ToCssFont {
   }
 }
 
-export default async function (
-  tokens: InputDataType,
-  options?: OptionsType,
-): Promise<OutputDataType | Error> {
+export async function toCssFontImport<T extends InputDataType>(tokens: T, options?: OptionsType) {
   try {
     const toCssFont = new ToCssFont(tokens, options);
     return prettier.format(toCssFont.run(), {

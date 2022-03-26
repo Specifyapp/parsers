@@ -1,30 +1,26 @@
 import { MeasurementToken } from '../../../types';
-import { Indexes } from '../to-theme-ui.parser';
-import { Utils } from './index';
+import { Indexes, OptionsType } from '../to-theme-ui.parser';
+import { formatName, sortObject } from './index';
 import { MeasurementMapping } from '../to-theme-ui.type';
 
 interface ThemeUiSizes extends Partial<Record<MeasurementMapping, any>> {
   sizes?: Record<string, string>;
 }
 
-export class Measurement extends MeasurementToken {
-  transformedName: string;
-  constructor(token: Partial<MeasurementToken>, transformNameFn: Function) {
-    super(token);
-    this.transformedName = transformNameFn(token.name);
-  }
-  generate(): ThemeUiSizes {
-    const result = {
-      sizes: {
-        [this.transformedName]: `${this.value.measure}${this.value.unit}`,
-      },
-    };
-    Indexes.Instance.add('sizes', this.id, this.transformedName);
-    return result;
-  }
-
-  static afterGenerate(tokens: ThemeUiSizes) {
-    tokens.sizes = Utils.sortObject(tokens.sizes!);
-    return tokens;
-  }
-}
+export const generate = <T extends Pick<MeasurementToken, 'value' | 'name' | 'id'> & object>(
+  token: T,
+  options: OptionsType,
+) => {
+  const name = formatName(token.name, options?.formatName);
+  const result: ThemeUiSizes = {
+    sizes: {
+      [name]: `${token.value.measure}${token.value.unit}`,
+    },
+  };
+  Indexes.Instance.add('sizes', token.id, name);
+  return result;
+};
+export const afterGenerate = (tokens: ThemeUiSizes) => {
+  tokens.sizes = sortObject(tokens.sizes!);
+  return tokens;
+};

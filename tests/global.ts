@@ -1,5 +1,5 @@
 import { FontsFormat, FontToken, PartialRecord } from '../types';
-import seeds from '../tests/seeds';
+import { seeds } from '../tests/seeds';
 import fs from 'fs';
 import crypto from 'crypto';
 import path from 'path';
@@ -12,7 +12,7 @@ jest.mock('../parsers/global-libs', () => {
       font: {
         convert: async (payload: { postscriptName: string; formats: Array<FontsFormat> }) => {
           let result: PartialRecord<FontsFormat, string> = {};
-          const inSeed = seeds().tokens.find(
+          const inSeed = seeds().find(
             token =>
               token.type === 'font' &&
               (token.value as FontToken['value']).fontPostScriptName === payload.postscriptName,

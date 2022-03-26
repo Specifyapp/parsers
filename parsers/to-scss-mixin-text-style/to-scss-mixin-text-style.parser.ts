@@ -1,13 +1,23 @@
-import { LibsType } from '../global-libs';
 import {
+  BitmapToken,
+  BorderToken,
+  ColorToken,
   ColorValue,
+  DepthToken,
+  DurationToken,
   FontToken,
   FontValue,
   FontVariantValue,
+  GradientToken,
+  MeasurementToken,
   MeasurementValue,
+  OpacityToken,
+  ShadowToken,
   TextDecorationValue,
+  TextStyleToken,
   TextStyleValue,
   TextTransformValue,
+  VectorToken,
 } from '../../types';
 import * as os from 'os';
 import tinycolor from 'tinycolor2';
@@ -43,8 +53,22 @@ const propertiesBaseInCss = [
   'text-indent',
 ] as const;
 
-export type InputDataType = Array<{ name: string; value: TextStyleValue } & Record<any, any>>;
-export type OutputDataType = string;
+export type InputDataType = Array<
+  | Pick<ColorToken, 'value' | 'type' | 'name'>
+  | Pick<BorderToken, 'value' | 'type' | 'name'>
+  | Pick<DepthToken, 'value' | 'type' | 'name'>
+  | Pick<DurationToken, 'value' | 'type' | 'name'>
+  | Pick<GradientToken, 'value' | 'type' | 'name'>
+  | Pick<MeasurementToken, 'value' | 'type' | 'name'>
+  | Pick<OpacityToken, 'value' | 'type' | 'name'>
+  | Pick<ShadowToken, 'value' | 'type' | 'name'>
+  | Pick<VectorToken, 'value' | 'type' | 'name'>
+  | Pick<BitmapToken, 'value' | 'type' | 'name'>
+  | Pick<FontToken, 'value' | 'type' | 'name'>
+  | Pick<TextStyleToken, 'value' | 'type' | 'name'>
+  | Record<string, any>
+>;
+
 type FilterListFromTextStyle = keyof TextStyleValue;
 type FilterListFromCssProperties = typeof propertiesBaseInCss[number];
 type FilterList = FilterListFromTextStyle | FilterListFromCssProperties;
@@ -61,22 +85,24 @@ type ColorsFormat =
   | 'hsl'
   | 'hsv';
 type transformFn = 'camelCase' | 'kebabCase' | 'snakeCase' | 'pascalCase';
-export type OptionsType = Partial<
-  {
-    prefix?: string;
-    suffix?: string;
-    colorFormat?: ColorsFormat;
-    cssClassFormat?: transformFn;
-    fontFamilyFormat?: transformFn;
-    genericFamily?: 'serif' | 'sans-serif' | 'cursive' | 'fantasy' | 'monospace';
-    relativeLineHeight?: boolean;
-    prettierConfig?: Partial<{
-      endOfLine: 'auto' | 'lf' | 'crlf' | 'cr';
-      tabWidth: number;
-      useTabs: boolean;
-    }>;
-  } & Properties
->;
+export type OptionsType =
+  | undefined
+  | Partial<
+      {
+        prefix?: string;
+        suffix?: string;
+        colorFormat?: ColorsFormat;
+        cssClassFormat?: transformFn;
+        fontFamilyFormat?: transformFn;
+        genericFamily?: 'serif' | 'sans-serif' | 'cursive' | 'fantasy' | 'monospace';
+        relativeLineHeight?: boolean;
+        prettierConfig?: Partial<{
+          endOfLine: 'auto' | 'lf' | 'crlf' | 'cr';
+          tabWidth: number;
+          useTabs: boolean;
+        }>;
+      } & Properties
+    >;
 
 class ToCssTextStyle {
   font: FontValue;
@@ -268,11 +294,10 @@ const applyTransformStr = (str: string, fn?: transformFn) => {
   return str.includes(' ') || str.includes('\n') || str.includes('/') ? JSON.stringify(str) : str;
 };
 
-export default async function (
-  inputData: InputDataType,
-  options: OptionsType | undefined,
-  { _ }: Pick<LibsType, '_'>,
-): Promise<OutputDataType> {
+export async function toScssMixinTextStyle<T extends InputDataType>(
+  inputData: T,
+  options: OptionsType,
+) {
   try {
     const textStylesProperties = getTextStyleProperties(options);
     const cssProperties = getCssProperties(options);

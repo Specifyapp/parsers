@@ -1,13 +1,12 @@
-import { IToken, Token } from '../../types';
+import { Token } from '../../types';
 import prettier from 'prettier';
 import * as TokensClass from './tokens';
-import { LibsType } from '../global-libs';
 import Template from '../../libs/template';
+import _ from 'lodash';
 
 export type InputDataType = Array<
-  Pick<IToken, 'id' | 'name' | 'value' | 'type'> & Record<string, any>
+  Pick<Token, 'id' | 'name' | 'value' | 'type'> & Record<string, any>
 >;
-export type OutputDataType = string;
 export type ColorsFormat =
   | 'rgb'
   | 'prgb'
@@ -62,11 +61,7 @@ export type OptionsType =
     }>
   | undefined;
 
-export default async function (
-  tokens: InputDataType,
-  options: OptionsType,
-  { _ }: Pick<LibsType, '_'>,
-): Promise<OutputDataType> {
+export async function toJss<T extends InputDataType>(tokens: T, options: OptionsType) {
   try {
     const transformNameFn = _[options?.formatName || 'camelCase'];
     const objectName = options?.formatConfig?.jssObjectName || 'theme';

@@ -1,27 +1,25 @@
 import { DurationToken } from '../../../types';
-import { Utils } from './index';
+import { formatName, sortObject } from './index';
 import { DurationMapping } from '../to-theme-ui.type';
+import { OptionsType } from '../to-theme-ui.parser';
 
 interface ThemeUiDuration extends Partial<Record<DurationMapping, any>> {
   durations: Record<string, number | string>;
 }
 
-export class Duration extends DurationToken {
-  transformedName: string;
-  constructor(token: Partial<DurationToken>, transformNameFn: Function) {
-    super(token);
-    this.transformedName = transformNameFn(token.name);
-  }
-  generate(): ThemeUiDuration {
-    return {
-      durations: {
-        [this.transformedName]: `${this.value.duration}${this.value.unit}`,
-      },
-    };
-  }
+export const generate = <T extends Pick<DurationToken, 'value' | 'name' | 'id'> & object>(
+  token: T,
+  options: OptionsType,
+) => {
+  const name = formatName(token.name, options?.formatName);
+  return {
+    durations: {
+      [name]: `${token.value.duration}${token.value.unit}`,
+    },
+  };
+};
 
-  static afterGenerate(tokens: ThemeUiDuration) {
-    tokens.durations = Utils.sortObject(tokens.durations);
-    return tokens;
-  }
-}
+export const afterGenerate = (tokens: ThemeUiDuration) => {
+  tokens.durations = sortObject(tokens.durations);
+  return tokens;
+};

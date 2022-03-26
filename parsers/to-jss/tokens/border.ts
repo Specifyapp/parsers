@@ -2,7 +2,7 @@ import { BorderToken } from '../../../types';
 import { FormatTokenType } from '../to-jss.parser';
 import tinycolor from 'tinycolor2';
 
-export class Border extends BorderToken {
+export class Border {
   constructor(token: Partial<BorderToken>) {
     super(token);
   }

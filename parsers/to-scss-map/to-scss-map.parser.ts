@@ -1,18 +1,45 @@
 import * as _ from 'lodash';
 import prettier from 'prettier';
 import * as os from 'os';
-import { LibsType } from '../global-libs';
-import { DesignTokensType, DownloadableFile, IToken, PartialRecord } from '../../types';
+import {
+  BitmapToken,
+  BorderToken,
+  ColorToken,
+  DepthToken,
+  DownloadableFile,
+  DurationToken,
+  FontToken,
+  GradientToken,
+  MeasurementToken,
+  OpacityToken,
+  PartialRecord,
+  ShadowToken,
+  TextStyleToken,
+  Token,
+  TokensType,
+  VectorToken,
+} from '../../types';
 import TokensHandler from './tokens';
 import { ColorsFormat, ScssMapHandlerType, ToScssMapTokenType } from './to-scss-map.type';
 import Template from '../../libs/template';
 
 export type InputDataType = Array<
-  Pick<IToken, 'id' | 'name' | 'value' | 'type'> & Record<string, any>
+  | Pick<ColorToken, 'value' | 'type' | 'name'>
+  | Pick<BorderToken, 'value' | 'type' | 'name'>
+  | Pick<DepthToken, 'value' | 'type' | 'name'>
+  | Pick<DurationToken, 'value' | 'type' | 'name'>
+  | Pick<GradientToken, 'value' | 'type' | 'name'>
+  | Pick<MeasurementToken, 'value' | 'type' | 'name'>
+  | Pick<OpacityToken, 'value' | 'type' | 'name'>
+  | Pick<ShadowToken, 'value' | 'type' | 'name'>
+  | Pick<VectorToken, 'value' | 'type' | 'name'>
+  | Pick<BitmapToken, 'value' | 'type' | 'name'>
+  | Pick<FontToken, 'value' | 'type' | 'name'>
+  | Pick<TextStyleToken, 'value' | 'type' | 'name'>
+  | Record<string, any>
 >;
-export type OutputDataType = Array<DownloadableFile>;
 
-type FormatTokenType = Partial<{
+export type FormatTokenType = Partial<{
   color: {
     format: ColorsFormat;
   };
@@ -20,34 +47,36 @@ type FormatTokenType = Partial<{
     unit?: 'px' | 'rem';
   };
 }>;
-export type OptionsType = {
-  variableName?: string | PartialRecord<ToScssMapTokenType, string>; // pattern or mapped pattern by token type
-  fileName?: string | PartialRecord<ToScssMapTokenType, string>; // pattern or mapped pattern by token type
-  formatTokens?: FormatTokenType;
-  formatName?: 'camelCase' | 'kebabCase' | 'snakeCase' | 'pascalCase';
-  // regex use a regex to match selector used for nesting
-  /* ex:
-   * tokens : [{name: 'color-light-primary', value: '#000000' }]
-   * splitBy: '-'
-   * result: $color: (
-      color: (
-        light: (
-          primary: #000000
+export type OptionsType =
+  | undefined
+  | {
+      variableName?: string | PartialRecord<ToScssMapTokenType, string>; // pattern or mapped pattern by token type
+      fileName?: string | PartialRecord<ToScssMapTokenType, string>; // pattern or mapped pattern by token type
+      formatTokens?: FormatTokenType;
+      formatName?: 'camelCase' | 'kebabCase' | 'snakeCase' | 'pascalCase';
+      // regex use a regex to match selector used for nesting
+      /* ex:
+       * tokens : [{name: 'color-light-primary', value: '#000000' }]
+       * splitBy: '-'
+       * result: $color: (
+          color: (
+            light: (
+              primary: #000000
+            )
+          )
         )
-      )
-    )
-   */
-  splitBy?: string;
-  formatConfig?: Partial<{
-    endOfLine: 'auto' | 'lf' | 'crlf' | 'cr';
-    tabWidth: number;
-    useTabs: boolean;
-    singleQuote: boolean;
-  }>;
-  omitFunctionAndMixin?: boolean;
-  functionName?: string | PartialRecord<ToScssMapTokenType, string>;
-  mixinName?: string | PartialRecord<ToScssMapTokenType, string>;
-};
+       */
+      splitBy?: string;
+      formatConfig?: Partial<{
+        endOfLine: 'auto' | 'lf' | 'crlf' | 'cr';
+        tabWidth: number;
+        useTabs: boolean;
+        singleQuote: boolean;
+      }>;
+      omitFunctionAndMixin?: boolean;
+      functionName?: string | PartialRecord<ToScssMapTokenType, string>;
+      mixinName?: string | PartialRecord<ToScssMapTokenType, string>;
+    };
 
 export const TYPES_USING_FUNCTION = [
   'color',
@@ -84,7 +113,7 @@ const generateFileName = (
 const generateName = (
   interpolableData: Record<string, any>,
   handler: ScssMapHandlerType,
-  options: OptionsType,
+  options: OptionsType = {},
   key: 'variableName' | 'fileName' | 'mixinName' | 'functionName',
 ) => {
   let result = '';
@@ -119,10 +148,10 @@ const getSCSS = (chunk: object | string | number): string => {
 const formatMap = (
   tokensByType: InputDataType,
   handler: ScssMapHandlerType,
-  options: OptionsType,
+  options: NonNullable<OptionsType>,
 ): string | void => {
   const obj = tokensByType.reduce<Record<string, any>>((acc, token) => {
-    const keys = options.splitBy ? token.name.split(options.splitBy) : [token.name];
+    const keys: Array<string> = options.splitBy ? token.name.split(options.splitBy) : [token.name];
     const scssValue = handler.run(token.value as Parameters<ScssMapHandlerType['run']>[0], options);
     if (!scssValue) return acc;
     _.setWith(acc, keys.map(k => _[options.formatName!](k)).join('.'), scssValue, object =>
@@ -191,11 +220,7 @@ const generateMixin = (
   return `${commonBody}${os.EOL}${os.EOL}\t@each $prop, $value in $fetched {${os.EOL}#{$prop}: $value${os.EOL}}${os.EOL}}`;
 };
 
-export default async function (
-  tokens: InputDataType,
-  options: OptionsType = {},
-  { _ }: Pick<LibsType, '_'>,
-): Promise<OutputDataType> {
+export async function toScssMap<T extends InputDataType>(tokens: T, options: OptionsType = {}) {
   try {
     options.formatName = options.formatName || 'camelCase';
     const tokensGroupByType = _.groupBy(tokens, 'type');
@@ -204,40 +229,33 @@ export default async function (
       (typesAcc, [type, tokensByType]: [string, InputDataType]) => {
         if (tokensByType.length === 0 || !(type in TokensHandler)) return typesAcc;
         return typesAcc.concat(
-          TokensHandler[type as DesignTokensType].reduce<Array<DownloadableFile>>(
-            (acc, scssHandler) => {
-              const fileName = generateFileName(
-                { type: tokensByType[0].type },
-                scssHandler,
-                options,
-              );
+          TokensHandler[type as TokensType].reduce<Array<DownloadableFile>>((acc, scssHandler) => {
+            const fileName = generateFileName({ type: tokensByType[0].type }, scssHandler, options);
 
-              const ScssLibs = `@use 'sass:map';${os.EOL}${os.EOL}`;
-              const map = formatMap(tokensByType, scssHandler, options);
-              if (!map) return acc;
-              const ScssFunction =
-                TYPES_USING_FUNCTION.includes(scssHandler.name) && !options.omitFunctionAndMixin
-                  ? generateFunction(tokensByType, scssHandler, options)
-                  : '';
-              const ScssMixin =
-                TYPES_USING_MIXIN.includes(scssHandler.name) && !options.omitFunctionAndMixin
-                  ? generateMixin(tokensByType, scssHandler, options)
-                  : '';
-              return [
-                ...acc,
-                {
-                  name: `${fileName}.scss`,
-                  value: {
-                    content: prettier.format(ScssLibs + map + ScssFunction + ScssMixin, {
-                      parser: 'scss',
-                      ...options.formatConfig,
-                    }),
-                  },
+            const ScssLibs = `@use 'sass:map';${os.EOL}${os.EOL}`;
+            const map = formatMap(tokensByType, scssHandler, options);
+            if (!map) return acc;
+            const ScssFunction =
+              TYPES_USING_FUNCTION.includes(scssHandler.name) && !options.omitFunctionAndMixin
+                ? generateFunction(tokensByType, scssHandler, options)
+                : '';
+            const ScssMixin =
+              TYPES_USING_MIXIN.includes(scssHandler.name) && !options.omitFunctionAndMixin
+                ? generateMixin(tokensByType, scssHandler, options)
+                : '';
+            return [
+              ...acc,
+              {
+                name: `${fileName}.scss`,
+                value: {
+                  content: prettier.format(ScssLibs + map + ScssFunction + ScssMixin, {
+                    parser: 'scss',
+                    ...options.formatConfig,
+                  }),
                 },
-              ];
-            },
-            [],
-          ),
+              },
+            ];
+          }, []),
         );
       },
       [],

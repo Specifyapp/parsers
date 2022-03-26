@@ -2,7 +2,7 @@ import { OpacityValue } from '../../../types';
 import { sortObjectByValue } from './index';
 import { ScssMapHandlerType } from '../to-scss-map.type';
 
-const handler: ScssMapHandlerType = {
+export const handler: ScssMapHandlerType = {
   name: 'opacity',
   run: value => {
     return (value as OpacityValue).opacity / 100;
@@ -11,5 +11,3 @@ const handler: ScssMapHandlerType = {
     return sortObjectByValue(list);
   },
 };
-
-export default handler;

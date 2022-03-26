@@ -1,28 +1,25 @@
 import { DepthToken } from '../../../types';
 import { DepthMapping } from '../to-theme-ui.type';
-import { Utils } from './index';
+import { formatName, sortObject } from './index';
+import { OptionsType } from '../to-theme-ui.parser';
 
 interface ThemeUiDepth extends Partial<Record<DepthMapping, any>> {
   zIndices: Record<string, number>;
 }
 
-export class Depth extends DepthToken {
-  transformedName: string;
-  constructor(token: Partial<DepthToken>, transformNameFn: Function) {
-    super(token);
-    this.transformedName = transformNameFn(token.name);
-  }
+export const generate = <T extends Pick<DepthToken, 'value' | 'name' | 'id'> & object>(
+  token: T,
+  options: OptionsType,
+) => {
+  const name = formatName(token.name, options?.formatName);
+  return {
+    zIndices: {
+      [name]: token.value.depth,
+    },
+  };
+};
 
-  generate(): ThemeUiDepth {
-    return {
-      zIndices: {
-        [this.transformedName]: this.value.depth,
-      },
-    };
-  }
-
-  static afterGenerate(tokens: ThemeUiDepth) {
-    tokens.zIndices = Utils.sortObject(tokens.zIndices);
-    return tokens;
-  }
-}
+export const afterGenerate = (tokens: ThemeUiDepth) => {
+  tokens.zIndices = sortObject(tokens.zIndices);
+  return tokens;
+};

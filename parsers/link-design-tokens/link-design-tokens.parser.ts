@@ -1,20 +1,19 @@
-import { IToken, LinkableTokensSignatures, TokensType } from '../../types';
+import { LinkableTokensSignatures, Token, TokensType } from '../../types';
 import { LinkDesignTokenClass } from './link-design-tokens.type';
-import * as _ from 'lodash';
 import * as TokensClass from './tokens';
+import { groupBy } from 'lodash';
 
-export type InputDataType = Array<IToken>;
-export type OutputDataType = InputDataType;
-export type OptionsType = {};
+export type InputDataType = Array<Token>;
+export type OptionsType = undefined;
 
 function getClassByType(type: string): LinkDesignTokenClass | undefined {
   const tokenClassName = `${type.charAt(0).toUpperCase() + type.slice(1)}`;
   return (<any>TokensClass)[tokenClassName];
 }
 
-export default async function (tokens: InputDataType): Promise<OutputDataType> {
+export async function linkDesignTokens<T extends InputDataType>(tokens: T, options: OptionsType) {
   try {
-    const tokensGroupedByType = _.groupBy(tokens, 'type');
+    const tokensGroupedByType = groupBy(tokens, 'type');
     const types = Object.keys(tokensGroupedByType) as Array<TokensType>;
 
     // create indexes dictionary
@@ -48,7 +47,7 @@ export default async function (tokens: InputDataType): Promise<OutputDataType> {
         acc.push(...tokensGroupedByType[type]);
       }
       return acc;
-    }, [] as Array<IToken>);
+    }, [] as Array<Token>);
   } catch (err) {
     throw err;
   }

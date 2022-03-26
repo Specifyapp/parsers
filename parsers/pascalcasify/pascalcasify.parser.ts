@@ -1,23 +1,21 @@
-import { LibsType } from '../global-libs';
+import { get, has, pascalCase, set } from 'lodash';
 
 export type InputDataType = Array<Record<string, any>>;
-export type OutputDataType = InputDataType;
 export type OptionsType =
   | undefined
   | {
       keys: Array<string>;
     };
 
-export default async function (
-  tokens: InputDataType,
+export async function pascalcasify<T extends InputDataType>(
+  tokens: T,
   options: OptionsType = { keys: ['name'] },
-  { _ }: Pick<LibsType, '_'>,
-): Promise<OutputDataType> {
+) {
   try {
     return tokens.map(token => {
       options.keys.forEach(key => {
-        if (_.has(token, key)) {
-          _.set(token, key, _.pascalCase(_.get(token, key)));
+        if (has(token, key)) {
+          set(token, key, pascalCase(get(token, key)));
         }
       });
       return token;

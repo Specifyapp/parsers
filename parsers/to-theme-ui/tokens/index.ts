@@ -1,28 +1,23 @@
-export * from './color';
-export * from './gradient';
-export * from './shadow';
-export * from './textStyle';
-export * from './opacity';
-export * from './depth';
-export * from './duration';
-export * from './border';
-export * from './measurement';
-export * from './font';
+import * as _ from 'lodash';
+import { OptionsType } from '../to-theme-ui.parser';
 
-export abstract class Utils {
-  static parseFloatIfString(value: string | number) {
-    return typeof value === 'string' ? parseFloat(value) : value;
-  }
+export const parseFloatIfString = (value: string | number) => {
+  return typeof value === 'string' ? parseFloat(value) : value;
+};
 
-  static sortObject(obj: Record<string, string | number>) {
-    return Object.entries(obj)
-      .sort(([, a], [, b]) => this.parseFloatIfString(a) - this.parseFloatIfString(b))
-      .reduce((r, [k, v]) => ({ ...r, [k]: v }), {});
-  }
+export const sortObject = (obj: Record<string, string | number>) => {
+  return Object.entries(obj)
+    .sort(([, a], [, b]) => parseFloatIfString(a) - parseFloatIfString(b))
+    .reduce((r, [k, v]) => ({ ...r, [k]: v }), {});
+};
 
-  static deduplicateAndSortList(list: Array<string | number>) {
-    return [...new Set(list)].sort(
-      (a, b) => this.parseFloatIfString(a) - this.parseFloatIfString(b),
-    );
-  }
-}
+export const deduplicateAndSortList = (list: Array<string | number>) => {
+  return [...new Set(list)].sort((a, b) => parseFloatIfString(a) - parseFloatIfString(b));
+};
+
+export const formatName = (
+  name: string,
+  format: NonNullable<OptionsType>['formatName'] = 'camelCase',
+) => {
+  return _[format](name);
+};

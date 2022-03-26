@@ -1,0 +1,61 @@
+import { toThemeUi as toThemeUiParser, OptionsType as toThemeUiOptionsType, InputDataType as toThemeUiInputDataType} from '../parsers/to-theme-ui/to-theme-ui.parser';
+import { toTailwind as toTailwindParser, OptionsType as toTailwindOptionsType, InputDataType as toTailwindInputDataType} from '../parsers/to-tailwind/to-tailwind.parser';
+import { toStyleDictionary as toStyleDictionaryParser, OptionsType as toStyleDictionaryOptionsType, InputDataType as toStyleDictionaryInputDataType} from '../parsers/to-style-dictionary/to-style-dictionary.parser';
+import { toScssMixinTextStyle as toScssMixinTextStyleParser, OptionsType as toScssMixinTextStyleOptionsType, InputDataType as toScssMixinTextStyleInputDataType} from '../parsers/to-scss-mixin-text-style/to-scss-mixin-text-style.parser';
+import { toScssMap as toScssMapParser, OptionsType as toScssMapOptionsType, InputDataType as toScssMapInputDataType} from '../parsers/to-scss-map/to-scss-map.parser';
+import { toReactNative as toReactNativeParser, OptionsType as toReactNativeOptionsType, InputDataType as toReactNativeInputDataType} from '../parsers/to-react-native/to-react-native.parser';
+import { toJss as toJssParser, OptionsType as toJssOptionsType, InputDataType as toJssInputDataType} from '../parsers/to-jss/to-jss.parser';
+import { toDsp as toDspParser, OptionsType as toDspOptionsType, InputDataType as toDspInputDataType} from '../parsers/to-dsp/to-dsp.parser';
+import { toCssTextStyle as toCssTextStyleParser, OptionsType as toCssTextStyleOptionsType, InputDataType as toCssTextStyleInputDataType} from '../parsers/to-css-text-style/to-css-text-style.parser';
+import { toCssFontImport as toCssFontImportParser, OptionsType as toCssFontImportOptionsType, InputDataType as toCssFontImportInputDataType} from '../parsers/to-css-font-import/to-css-font-import.parser';
+import { toCssCustomProperties as toCssCustomPropertiesParser, OptionsType as toCssCustomPropertiesOptionsType, InputDataType as toCssCustomPropertiesInputDataType} from '../parsers/to-css-custom-properties/to-css-custom-properties.parser';
+import { svgo as svgoParser, OptionsType as svgoOptionsType, InputDataType as svgoInputDataType} from '../parsers/svgo/svgo.parser';
+import { svgToJsx as svgToJsxParser, OptionsType as svgToJsxOptionsType, InputDataType as svgToJsxInputDataType} from '../parsers/svg-to-jsx/svg-to-jsx.parser';
+import { suffixBy as suffixByParser, OptionsType as suffixByOptionsType, InputDataType as suffixByInputDataType} from '../parsers/suffix-by/suffix-by.parser';
+import { sortBy as sortByParser, OptionsType as sortByOptionsType, InputDataType as sortByInputDataType} from '../parsers/sort-by/sort-by.parser';
+import { snakecasify as snakecasifyParser, OptionsType as snakecasifyOptionsType, InputDataType as snakecasifyInputDataType} from '../parsers/snakecasify/snakecasify.parser';
+import { roundNumber as roundNumberParser, OptionsType as roundNumberOptionsType, InputDataType as roundNumberInputDataType} from '../parsers/round-number/round-number.parser';
+import { replaceString as replaceStringParser, OptionsType as replaceStringOptionsType, InputDataType as replaceStringInputDataType} from '../parsers/replace-string/replace-string.parser';
+import { pxToRem as pxToRemParser, OptionsType as pxToRemOptionsType, InputDataType as pxToRemInputDataType} from '../parsers/px-to-rem/px-to-rem.parser';
+import { pick as pickParser, OptionsType as pickOptionsType, InputDataType as pickInputDataType} from '../parsers/pick/pick.parser';
+import { pascalcasify as pascalcasifyParser, OptionsType as pascalcasifyOptionsType, InputDataType as pascalcasifyInputDataType} from '../parsers/pascalcasify/pascalcasify.parser';
+import { omit as omitParser, OptionsType as omitOptionsType, InputDataType as omitInputDataType} from '../parsers/omit/omit.parser';
+import { nameAssetsFilesByPattern as nameAssetsFilesByPatternParser, OptionsType as nameAssetsFilesByPatternOptionsType, InputDataType as nameAssetsFilesByPatternInputDataType} from '../parsers/name-assets-files-by-pattern/name-assets-files-by-pattern.parser';
+import { linkDesignTokens as linkDesignTokensParser, OptionsType as linkDesignTokensOptionsType, InputDataType as linkDesignTokensInputDataType} from '../parsers/link-design-tokens/link-design-tokens.parser';
+import { kebabcasify as kebabcasifyParser, OptionsType as kebabcasifyOptionsType, InputDataType as kebabcasifyInputDataType} from '../parsers/kebabcasify/kebabcasify.parser';
+import { filter as filterParser, OptionsType as filterOptionsType, InputDataType as filterInputDataType} from '../parsers/filter/filter.parser';
+import { convertFont as convertFontParser, OptionsType as convertFontOptionsType, InputDataType as convertFontInputDataType} from '../parsers/convert-font/convert-font.parser';
+import { camelcasify as camelcasifyParser, OptionsType as camelcasifyOptionsType, InputDataType as camelcasifyInputDataType} from '../parsers/camelcasify/camelcasify.parser';
+
+type IsOptional<Opt> = Opt extends undefined ? Opt | void : Opt
+type ExcludeVoid<T> =  Exclude<T, void>
+
+// Parsers Function
+export const camelcasify = (options: IsOptional<camelcasifyOptionsType>) => ({name: 'camelcasify', options, fn: <I extends camelcasifyInputDataType>(data: I) => camelcasifyParser(data, options as ExcludeVoid<camelcasifyOptionsType>)});
+export const convertFont = (options: IsOptional<convertFontOptionsType>) => ({name: 'convert-font', options, fn: <I extends convertFontInputDataType>(data: I) => convertFontParser(data, options as ExcludeVoid<convertFontOptionsType>)});
+export const filter = (options: IsOptional<filterOptionsType>) => ({name: 'filter', options, fn: <I extends filterInputDataType>(data: I) => filterParser(data, options as ExcludeVoid<filterOptionsType>)});
+export const kebabcasify = (options: IsOptional<kebabcasifyOptionsType>) => ({name: 'kebabcasify', options, fn: <I extends kebabcasifyInputDataType>(data: I) => kebabcasifyParser(data, options as ExcludeVoid<kebabcasifyOptionsType>)});
+export const linkDesignTokens = (options: IsOptional<linkDesignTokensOptionsType>) => ({name: 'link-design-tokens', options, fn: <I extends linkDesignTokensInputDataType>(data: I) => linkDesignTokensParser(data, options as ExcludeVoid<linkDesignTokensOptionsType>)});
+export const nameAssetsFilesByPattern = (options: IsOptional<nameAssetsFilesByPatternOptionsType>) => ({name: 'name-assets-files-by-pattern', options, fn: <I extends nameAssetsFilesByPatternInputDataType>(data: I) => nameAssetsFilesByPatternParser(data, options as ExcludeVoid<nameAssetsFilesByPatternOptionsType>)});
+export const omit = (options: IsOptional<omitOptionsType>) => ({name: 'omit', options, fn: <I extends omitInputDataType>(data: I) => omitParser(data, options as ExcludeVoid<omitOptionsType>)});
+export const pascalcasify = (options: IsOptional<pascalcasifyOptionsType>) => ({name: 'pascalcasify', options, fn: <I extends pascalcasifyInputDataType>(data: I) => pascalcasifyParser(data, options as ExcludeVoid<pascalcasifyOptionsType>)});
+export const pick = (options: IsOptional<pickOptionsType>) => ({name: 'pick', options, fn: <I extends pickInputDataType>(data: I) => pickParser(data, options as ExcludeVoid<pickOptionsType>)});
+export const pxToRem = (options: IsOptional<pxToRemOptionsType>) => ({name: 'px-to-rem', options, fn: <I extends pxToRemInputDataType>(data: I) => pxToRemParser(data, options as ExcludeVoid<pxToRemOptionsType>)});
+export const replaceString = (options: IsOptional<replaceStringOptionsType>) => ({name: 'replace-string', options, fn: <I extends replaceStringInputDataType>(data: I) => replaceStringParser(data, options as ExcludeVoid<replaceStringOptionsType>)});
+export const roundNumber = (options: IsOptional<roundNumberOptionsType>) => ({name: 'round-number', options, fn: <I extends roundNumberInputDataType>(data: I) => roundNumberParser(data, options as ExcludeVoid<roundNumberOptionsType>)});
+export const snakecasify = (options: IsOptional<snakecasifyOptionsType>) => ({name: 'snakecasify', options, fn: <I extends snakecasifyInputDataType>(data: I) => snakecasifyParser(data, options as ExcludeVoid<snakecasifyOptionsType>)});
+export const sortBy = (options: IsOptional<sortByOptionsType>) => ({name: 'sort-by', options, fn: <I extends sortByInputDataType>(data: I) => sortByParser(data, options as ExcludeVoid<sortByOptionsType>)});
+export const suffixBy = (options: IsOptional<suffixByOptionsType>) => ({name: 'suffix-by', options, fn: <I extends suffixByInputDataType>(data: I) => suffixByParser(data, options as ExcludeVoid<suffixByOptionsType>)});
+export const svgToJsx = (options: IsOptional<svgToJsxOptionsType>) => ({name: 'svg-to-jsx', options, fn: <I extends svgToJsxInputDataType>(data: I) => svgToJsxParser(data, options as ExcludeVoid<svgToJsxOptionsType>)});
+export const svgo = (options: IsOptional<svgoOptionsType>) => ({name: 'svgo', options, fn: <I extends svgoInputDataType>(data: I) => svgoParser(data, options as ExcludeVoid<svgoOptionsType>)});
+export const toCssCustomProperties = (options: IsOptional<toCssCustomPropertiesOptionsType>) => ({name: 'to-css-custom-properties', options, fn: <I extends toCssCustomPropertiesInputDataType>(data: I) => toCssCustomPropertiesParser(data, options as ExcludeVoid<toCssCustomPropertiesOptionsType>)});
+export const toCssFontImport = (options: IsOptional<toCssFontImportOptionsType>) => ({name: 'to-css-font-import', options, fn: <I extends toCssFontImportInputDataType>(data: I) => toCssFontImportParser(data, options as ExcludeVoid<toCssFontImportOptionsType>)});
+export const toCssTextStyle = (options: IsOptional<toCssTextStyleOptionsType>) => ({name: 'to-css-text-style', options, fn: <I extends toCssTextStyleInputDataType>(data: I) => toCssTextStyleParser(data, options as ExcludeVoid<toCssTextStyleOptionsType>)});
+export const toDsp = (options: IsOptional<toDspOptionsType>) => ({name: 'to-dsp', options, fn: <I extends toDspInputDataType>(data: I) => toDspParser(data, options as ExcludeVoid<toDspOptionsType>)});
+export const toJss = (options: IsOptional<toJssOptionsType>) => ({name: 'to-jss', options, fn: <I extends toJssInputDataType>(data: I) => toJssParser(data, options as ExcludeVoid<toJssOptionsType>)});
+export const toReactNative = (options: IsOptional<toReactNativeOptionsType>) => ({name: 'to-react-native', options, fn: <I extends toReactNativeInputDataType>(data: I) => toReactNativeParser(data, options as ExcludeVoid<toReactNativeOptionsType>)});
+export const toScssMap = (options: IsOptional<toScssMapOptionsType>) => ({name: 'to-scss-map', options, fn: <I extends toScssMapInputDataType>(data: I) => toScssMapParser(data, options as ExcludeVoid<toScssMapOptionsType>)});
+export const toScssMixinTextStyle = (options: IsOptional<toScssMixinTextStyleOptionsType>) => ({name: 'to-scss-mixin-text-style', options, fn: <I extends toScssMixinTextStyleInputDataType>(data: I) => toScssMixinTextStyleParser(data, options as ExcludeVoid<toScssMixinTextStyleOptionsType>)});
+export const toStyleDictionary = (options: IsOptional<toStyleDictionaryOptionsType>) => ({name: 'to-style-dictionary', options, fn: <I extends toStyleDictionaryInputDataType>(data: I) => toStyleDictionaryParser(data, options as ExcludeVoid<toStyleDictionaryOptionsType>)});
+export const toTailwind = (options: IsOptional<toTailwindOptionsType>) => ({name: 'to-tailwind', options, fn: <I extends toTailwindInputDataType>(data: I) => toTailwindParser(data, options as ExcludeVoid<toTailwindOptionsType>)});
+export const toThemeUi = (options: IsOptional<toThemeUiOptionsType>) => ({name: 'to-theme-ui', options, fn: <I extends toThemeUiInputDataType>(data: I) => toThemeUiParser(data, options as ExcludeVoid<toThemeUiOptionsType>)});

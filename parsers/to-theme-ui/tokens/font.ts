@@ -1,34 +1,30 @@
 import { FontToken } from '../../../types';
-import { Utils } from './index';
+import { formatName, sortObject } from './index';
 import { FontMapping } from '../to-theme-ui.type';
-import { Indexes } from '../to-theme-ui.parser';
+import { Indexes, OptionsType } from '../to-theme-ui.parser';
 
 interface ThemeUiFont extends Partial<Record<FontMapping, any>> {
-  fonts?: Record<string, string>;
+  fonts: Record<string, string>;
   fontWeights?: Record<string, string | number>;
 }
 
-export class Font extends FontToken {
-  transformedName: string;
-  constructor(token: Partial<FontToken>, transformNameFn: Function) {
-    super(token);
-    this.transformedName = transformNameFn(token.name);
-  }
+export const generate = <T extends Pick<FontToken, 'value' | 'name' | 'id'> & object>(
+  token: T,
+  options: OptionsType,
+) => {
+  const name = formatName(token.name, options?.formatName);
+  const result: ThemeUiFont = {
+    fonts: {
+      [name]: token.name,
+    },
+    fontWeights: { [name]: token.value.fontWeight },
+  };
+  Indexes.Instance.add('fontWeights', token.id, name, token.value.fontWeight);
+  Indexes.Instance.add('fonts', token.id, name);
+  return result;
+};
 
-  static afterGenerate(tokens: ThemeUiFont) {
-    tokens.fonts = Utils.sortObject(tokens.fonts!);
-    return tokens;
-  }
-
-  generate(): ThemeUiFont {
-    const result: ThemeUiFont = {
-      fonts: {
-        [this.transformedName]: this.name,
-      },
-    };
-    result.fontWeights = { [this.transformedName]: this.value.fontWeight };
-    Indexes.Instance.add('fontWeights', this.id, this.transformedName, this.value.fontWeight);
-    Indexes.Instance.add('fonts', this.id, this.transformedName);
-    return result;
-  }
-}
+export const afterGenerate = (tokens: ThemeUiFont) => {
+  tokens.fonts = sortObject(tokens.fonts!);
+  return tokens;
+};

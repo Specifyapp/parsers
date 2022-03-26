@@ -4,7 +4,7 @@ import { OptionsType } from '../to-scss-map.parser';
 import { sortObjectByKey } from './index';
 import { ScssMapHandlerType } from '../to-scss-map.type';
 
-const handler: ScssMapHandlerType = {
+export const handler: ScssMapHandlerType = {
   name: 'gradient',
   run: (value, options: OptionsType) => {
     const { gradients } = value as GradientValue;
@@ -25,5 +25,3 @@ const handler: ScssMapHandlerType = {
     return sortObjectByKey(list);
   },
 };
-
-export default handler;

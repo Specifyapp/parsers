@@ -1,14 +1,12 @@
-import { BitmapToken, IToken, Token, VectorToken } from '../../types';
+import { BitmapToken, Token, VectorToken } from '../../types';
 import prettier from 'prettier';
 import * as TokensClass from './tokens';
-import { LibsType } from '../global-libs';
 import Template from '../../libs/template';
-import { camelCase } from 'lodash';
+import { camelCase, groupBy } from 'lodash';
 
 export type InputDataType = Array<
-  Pick<IToken, 'id' | 'name' | 'value' | 'type'> & Record<string, any>
+  Pick<Token, 'id' | 'name' | 'value' | 'type'> & Record<string, any>
 >;
-export type OutputDataType = string;
 export type ColorsFormat =
   | 'rgb'
   | 'prgb'
@@ -33,16 +31,12 @@ export type OptionsType =
     }>
   | undefined;
 
-export default async function (
-  tokens: InputDataType,
-  options: OptionsType,
-  { _ }: Pick<LibsType, '_'>,
-): Promise<OutputDataType> {
+export async function toReactNative<T extends InputDataType>(tokens: T, options: OptionsType) {
   try {
     const objectName = options?.objectName || 'theme';
     const pattern =
       '{{name}}{{#dimension}}@{{dimension}}x{{/dimension}}{{#format}}.{{format}}{{/format}}';
-    const tokensGroupByType = _.groupBy(tokens, 'type');
+    const tokensGroupByType = groupBy(tokens, 'type');
     const template = new Template(pattern);
     let imports = '';
     const styles = Object.keys(tokensGroupByType).reduce((result, type) => {
@@ -71,7 +65,7 @@ export default async function (
         .join('');
 
       if (content) {
-        result += `${_.camelCase(type)}: {${content}},`;
+        result += `${camelCase(type)}: {${content}},`;
       }
       return result;
     }, '');
