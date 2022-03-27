@@ -2,11 +2,7 @@ import tinycolor from 'tinycolor2';
 import { Indexes, OptionsType } from '../to-theme-ui.parser';
 import { ColorToken } from '../../../types';
 import { formatName } from './index';
-import { ColorMapping } from '../to-theme-ui.type';
-
-interface ThemeUiColor extends Partial<Record<ColorMapping, any>> {
-  colors: Record<string, string>;
-}
+import { ThemeUiColor } from '../to-theme-ui.type';
 
 export const generate = <T extends Pick<ColorToken, 'value' | 'name' | 'id'> & object>(
   token: T,

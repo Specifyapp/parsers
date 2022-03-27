@@ -24,6 +24,51 @@ export function createConfig<A extends unknown[], B, C, D, E>(
   cd: UnknownParser<(c: C) => D>,
   de: UnknownParser<(d: D) => E>,
 ): ReturnPipe<E>;
+export function createConfig<A extends unknown[], B, C, D, E, F>(
+  ab: UnknownParser<(...a: A) => B>,
+  bc: UnknownParser<(b: B) => C>,
+  cd: UnknownParser<(c: C) => D>,
+  de: UnknownParser<(d: D) => E>,
+  ef: UnknownParser<(e: E) => F>,
+): ReturnPipe<F>;
+export function createConfig<A extends unknown[], B, C, D, E, F, G>(
+  ab: UnknownParser<(...a: A) => B>,
+  bc: UnknownParser<(b: B) => C>,
+  cd: UnknownParser<(c: C) => D>,
+  de: UnknownParser<(d: D) => E>,
+  ef: UnknownParser<(e: E) => F>,
+  fg: UnknownParser<(f: F) => G>,
+): ReturnPipe<G>;
+export function createConfig<A extends unknown[], B, C, D, E, F, G, H>(
+  ab: UnknownParser<(...a: A) => B>,
+  bc: UnknownParser<(b: B) => C>,
+  cd: UnknownParser<(c: C) => D>,
+  de: UnknownParser<(d: D) => E>,
+  ef: UnknownParser<(e: E) => F>,
+  fg: UnknownParser<(f: F) => G>,
+  gh: UnknownParser<(g: G) => H>,
+): ReturnPipe<H>;
+export function createConfig<A extends unknown[], B, C, D, E, F, G, H, I>(
+  ab: UnknownParser<(...a: A) => B>,
+  bc: UnknownParser<(b: B) => C>,
+  cd: UnknownParser<(c: C) => D>,
+  de: UnknownParser<(d: D) => E>,
+  ef: UnknownParser<(e: E) => F>,
+  fg: UnknownParser<(f: F) => G>,
+  gh: UnknownParser<(g: G) => H>,
+  hi: UnknownParser<(h: H) => I>,
+): ReturnPipe<I>;
+export function createConfig<A extends unknown[], B, C, D, E, F, G, H, I, J>(
+  ab: UnknownParser<(...a: A) => B>,
+  bc: UnknownParser<(b: B) => C>,
+  cd: UnknownParser<(c: C) => D>,
+  de: UnknownParser<(d: D) => E>,
+  ef: UnknownParser<(e: E) => F>,
+  fg: UnknownParser<(f: F) => G>,
+  gh: UnknownParser<(g: G) => H>,
+  hi: UnknownParser<(h: H) => I>,
+  ij: UnknownParser<(i: I) => J>,
+): ReturnPipe<J>;
 
 export function createConfig(...parsers: Array<UnknownParser<(...params: unknown[]) => unknown>>): {
   run: (tokens: Array<Token>) => unknown;

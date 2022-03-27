@@ -1,11 +1,5 @@
 import { OpacityToken } from '../../../types';
 import { OptionsType } from '../to-theme-ui.parser';
-import { deduplicateAndSortList } from './index';
-import { OpacityMapping } from '../to-theme-ui.type';
-
-interface ThemeUiOpacities extends Partial<Record<OpacityMapping, any>> {
-  opacities: Array<string | number>;
-}
 
 export const generate = <T extends Pick<OpacityToken, 'value' | 'name' | 'id'> & object>(
   token: T,
@@ -22,9 +16,4 @@ export const generate = <T extends Pick<OpacityToken, 'value' | 'name' | 'id'> &
     opacity = opacity / 100;
   }
   return { opacities: [opacity] };
-};
-
-export const afterGenerate = (tokens: ThemeUiOpacities) => {
-  if (tokens.opacities) tokens.opacities = deduplicateAndSortList(tokens.opacities);
-  return tokens;
 };

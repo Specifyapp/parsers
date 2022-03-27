@@ -1,12 +1,7 @@
-import { MeasurementToken, ShadowToken } from '../../../types';
+import { ShadowToken } from '../../../types';
 import { OptionsType } from '../to-theme-ui.parser';
 import tinycolor from 'tinycolor2';
-import { ShadowMapping } from '../to-theme-ui.type';
 import { formatName } from './index';
-
-interface ThemeUiShadow extends Partial<Record<ShadowMapping, any>> {
-  shadows?: Record<string, string>;
-}
 
 export const generate = <T extends Pick<ShadowToken, 'value' | 'name' | 'id'> & object>(
   token: T,

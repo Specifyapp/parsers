@@ -1,5 +1,4 @@
-import { InputDataType, OptionsType } from './to-theme-ui.parser';
-import Token from '../../types/tokens/Token';
+import { BorderToken } from '../../types';
 
 export type ColorsFormat =
   | 'rgb'
@@ -13,27 +12,6 @@ export type ColorsFormat =
   | 'hsl'
   | 'hsv';
 
-export type ThemeUiType =
-  | 'borderStyles'
-  | 'borderWidths'
-  | 'colors'
-  | 'fonts'
-  | 'fontSizes'
-  | 'fontWeights'
-  | 'letterSpacings'
-  | 'lineHeights'
-  | 'opacities'
-  | 'durations'
-  | 'radii'
-  | 'shadows'
-  | 'sizes'
-  | 'space'
-  | 'transitions'
-  | 'zIndices'
-  | 'gradient'
-  | 'border'
-  | 'text';
-
 export type DepthMapping = 'zIndices';
 export type MeasurementMapping = 'sizes' | 'space' | 'radii';
 export type OpacityMapping = 'opacities';
@@ -46,32 +24,109 @@ export type ColorMapping = 'colors';
 export type GradientMapping = 'gradient';
 export type VariantMapping = 'text' | 'border';
 
-export type ThemeUiTypes =
+export type ThemeUiKeys =
   | DepthMapping
   | MeasurementMapping
   | OpacityMapping
   | ShadowMapping
   | FontMapping
+  | DurationMapping
   | TextStyleMapping
   | BorderMapping
   | ColorMapping
   | GradientMapping
   | VariantMapping;
 
-export type ThemeUiConfig = Partial<Record<ThemeUiType, any>>;
-export type ThemeUiIndexes = Partial<Record<ThemeUiType, Record<string, string | number>>>;
-export interface ThemeUiTokenClass {
-  new (tokens: Partial<Token>, transformNameFn: Function): ThemeUiTokenClassInstance;
-  afterGenerate?(themeUiTokens: Record<ThemeUiTypes, object>): Record<ThemeUiTypes, object>;
-  generateVariants?(
-    themeUiTokens: Partial<Record<ThemeUiTypes, object>>,
-    tokens: InputDataType,
-    options: OptionsType,
-    transformNameFn: Function,
-  ): Record<ThemeUiTypes, any>;
+export type ThemeUiConfig = Partial<Record<ThemeUiKeys, any>>;
+export type ThemeUiIndexes = Partial<Record<ThemeUiKeys, Record<string, string | number>>>;
+
+export interface ThemeUiBorder {
+  border?: Record<string, any>;
+  borderStyles?: Record<string, BorderToken['value']['type']>;
+  borderWidths?: Record<string, string>;
+  radii?: Record<string, number>;
 }
 
-export interface ThemeUiTokenClassInstance {
-  transformedName: string;
-  generate(options: OptionsType, spTokens: InputDataType): Partial<Record<ThemeUiTypes, any>>;
+export interface ThemeUiColor {
+  colors?: Record<string, string>;
 }
+
+export interface ThemeUiDepth {
+  zIndices?: Record<string, number>;
+}
+
+export interface ThemeUiDuration {
+  durations?: Record<string, number | string>;
+}
+
+export interface ThemeUiFont {
+  fonts?: Record<string, string>;
+  fontWeights?: Record<string, string | number>;
+}
+
+export interface ThemeUiGradient {
+  gradients?: Record<string, string>;
+}
+
+export interface ThemeUiSizes {
+  sizes?: Record<string, string>;
+}
+
+export interface ThemeUiOpacities {
+  opacities?: Array<string | number>;
+}
+
+export interface ThemeUiShadow {
+  shadows?: Record<string, string>;
+}
+
+export interface ThemeUiTextStyle {
+  fontSizes?: Array<number | string>;
+  letterSpacings?: Record<string, number | string>;
+  lineHeights?: Record<string, number | string>;
+  fontWeights?: Record<string, string | number>;
+}
+
+export interface ThemeUiTextStyle {
+  fontSizes?: Array<number | string>;
+  letterSpacings?: Record<string, number | string>;
+  lineHeights?: Record<string, number | string>;
+  fontWeights?: Record<string, string | number>;
+}
+
+export interface ThemeUiBorderVariant {
+  borderWidth?: string | number;
+  borderColor?: string;
+  borderRadius?: string | number;
+  borderStyle?: BorderToken['value']['type'];
+}
+
+// export interface ThemeUiTextStyleVariant {
+//   borderWidth?: string | number;
+//   borderColor?: string;
+//   borderRadius?: string | number;
+//   borderStyle?: BorderToken['value']['type'];
+// }
+
+export type ThemeUiObjectUnion =
+  | ThemeUiBorder
+  | ThemeUiColor
+  | ThemeUiDepth
+  | ThemeUiDuration
+  | ThemeUiFont
+  | ThemeUiGradient
+  | ThemeUiSizes
+  | ThemeUiOpacities
+  | ThemeUiShadow
+  | ThemeUiTextStyle;
+
+export type ThemeUiObject = ThemeUiBorder &
+  ThemeUiColor &
+  ThemeUiDepth &
+  ThemeUiDuration &
+  ThemeUiFont &
+  ThemeUiGradient &
+  ThemeUiSizes &
+  ThemeUiOpacities &
+  ThemeUiShadow &
+  ThemeUiTextStyle;

@@ -1,5 +1,7 @@
 // VALUES
 
+import { ValueOf } from '../utils/utils';
+
 export type BorderValue = {
   color: ColorToken | { value: ColorValue };
   type:
@@ -164,13 +166,14 @@ type VectorValue = {
 
 // TOKEN GENERIC (HAS A BAD NAME)
 
+type TokenTypeList = 'color' | 'font' | 'gradient' | 'shadow' | 'text';
 type TokenG<Type, Value> = {
   id: string;
   createdAt: string;
   updatedAt: string;
   name: string;
   value: Value;
-  meta: Record<any, any>;
+  meta: object;
   type: Type;
   originId: string;
   sourceId: string;
@@ -179,8 +182,8 @@ type TokenG<Type, Value> = {
 
 // TOKEN TYPES
 
-export type BitmapToken = TokenG<'bitmap', BitmapValue>;
 export type BorderToken = TokenG<'border', BorderValue>;
+export type BitmapToken = TokenG<'bitmap', BitmapValue>;
 export type ColorToken = TokenG<'color', ColorValue>;
 export type DepthToken = TokenG<'depth', DepthValue>;
 export type DurationToken = TokenG<'duration', DurationValue>;
@@ -195,7 +198,13 @@ export type VectorToken = TokenG<'vector', VectorValue>;
 export type AssetTokensType = BitmapToken | FontToken | VectorToken;
 export type DesignTokensType = Exclude<Token, AssetTokensType>;
 
-export type TokenTypeFromTokenTypeName<T extends TokensType> = T extends 'color'
+// export type TokenUnionByType<T extends TokensType> = ValueOf<
+//   {
+//     [K in T]: ExtractTokenByType<K>;
+//   }
+// >;
+
+export type ExtractTokenByType<T extends TokensType> = T extends 'color'
   ? ColorToken
   : T extends 'bitmap'
   ? BitmapToken

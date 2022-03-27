@@ -1,3 +1,5 @@
+import { ExtractTokenFromType, TokensType } from '../tokens';
+
 export type AllowedFieldsWithType<Obj, Type> = {
   [K in keyof Obj]: Obj[K] extends Type ? K : never;
 }[keyof Obj];
@@ -24,3 +26,5 @@ export type PartialRecord<K extends keyof any, T> = {
 export type RecursiveRecord<T> = Record<PropertyKey, T | Record<PropertyKey, T>>;
 
 export type AtLeast<T extends object> = T & Record<string, any>;
+
+export type ValueOf<T> = T[keyof T];
