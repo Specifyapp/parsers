@@ -1,10 +1,8 @@
-import {
-  ColorToken,
-  LinkableTokensSignatures,
-  MeasurementToken,
-  ShadowToken,
-} from '../../../types';
+import { ShadowToken } from '../../../types/tokens/Shadow';
 import { TokensGroupedByType } from '../link-design-tokens.type';
+import { LinkableTokensSignatures } from '../../../types';
+import { ColorToken } from '../../../types/tokens/Color';
+import { MeasurementToken } from '../../../types/tokens/Measurement';
 
 export class Shadow extends ShadowToken {
   constructor(token: Partial<ShadowToken>) {

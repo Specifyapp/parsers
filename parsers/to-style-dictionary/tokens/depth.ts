@@ -1,4 +1,4 @@
-import { DepthToken } from '../../../types';
+import { DepthToken } from '../../../types/tokens/Depth';
 import { BaseStyleDictionaryTokensFormat } from '../to-style-dictionary.type';
 import * as _ from 'lodash';
 

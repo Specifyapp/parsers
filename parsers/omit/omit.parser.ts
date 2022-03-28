@@ -12,7 +12,7 @@ export type OptionsType = {
   flatten?: boolean;
 };
 
-export function omit<T extends InputDataType>(tokens: T, options: OptionsType) {
+export async function omit<T extends InputDataType>(tokens: T, options: OptionsType) {
   const typesToApplyFn = getTokenTypesToApplyFn(options);
   return tokens.map<T[0]>(token => {
     if ('type' in token && typesToApplyFn.includes(token.type!)) {

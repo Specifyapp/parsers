@@ -1,5 +1,7 @@
-import { ColorToken, GradientToken, LinkableTokensSignatures } from '../../../types';
+import { GradientToken } from '../../../types/tokens/Gradient';
 import { TokensGroupedByType } from '../link-design-tokens.type';
+import { LinkableTokensSignatures } from '../../../types';
+import { ColorToken } from '../../../types/tokens/Color';
 
 export class Gradient extends GradientToken {
   constructor(token: Partial<GradientToken>) {

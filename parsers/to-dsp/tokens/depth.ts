@@ -1,4 +1,4 @@
-import { DepthToken } from '../../../types';
+import { DepthToken } from '../../../types/tokens/Depth';
 import { DspEntity } from '../dsp.type';
 
 export class Depth extends DepthToken {

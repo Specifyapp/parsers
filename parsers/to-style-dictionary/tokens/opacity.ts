@@ -1,4 +1,4 @@
-import { OpacityToken } from '../../../types';
+import { OpacityToken } from '../../../types/tokens/Opacity';
 import { BaseStyleDictionaryTokensFormat } from '../to-style-dictionary.type';
 import * as _ from 'lodash';
 

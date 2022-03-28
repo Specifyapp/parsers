@@ -1,6 +1,6 @@
 import tinycolor from 'tinycolor2';
 import { OptionsType } from '../to-react-native.parser';
-import { ColorToken } from '../../../types';
+import { ColorToken } from '../../../types/tokens/Color';
 
 export class Color extends ColorToken {
   constructor(token: Partial<ColorToken>) {

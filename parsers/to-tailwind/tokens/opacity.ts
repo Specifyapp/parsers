@@ -1,4 +1,4 @@
-import { OpacityToken } from '../../../types';
+import { OpacityToken } from '../../../types/tokens/Opacity';
 import { Utils } from './index';
 import { OpacityMapping } from '../to-tailwind.type';
 import { OptionsType } from '../to-tailwind.parser';

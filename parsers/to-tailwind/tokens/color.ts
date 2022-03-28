@@ -1,5 +1,5 @@
 import tinycolor from 'tinycolor2';
-import { ColorToken } from '../../../types';
+import { ColorToken } from '../../../types/tokens/Color';
 import { ColorMapping } from '../to-tailwind.type';
 import { OptionsType } from '../to-tailwind.parser';
 import { Utils } from './index';

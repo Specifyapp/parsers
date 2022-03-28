@@ -1,4 +1,4 @@
-import { ShadowToken } from '../../../types';
+import { ShadowToken } from '../../../types/tokens/Shadow';
 
 export function toCss<T extends Pick<ShadowToken, 'value'> & object>(token: T) {
   return token.value.reduce((acc, shadow) => {

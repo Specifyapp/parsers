@@ -1,10 +1,10 @@
-import camelcasify from './camelcasify.parser';
+import { camelcasify } from './camelcasify.parser';
 import { Token } from '../../types';
-import seeds from '../../tests/seeds';
+import { seeds } from '../../tests/seeds';
 
 describe('Camelcasify', () => {
   it('Get tokens - apply parsers', async () => {
-    const result = await camelcasify(seeds().tokens as Array<Token>, { keys: ['name'] });
+    const result = await camelcasify(seeds(), { keys: ['name'] });
     if (result instanceof Error) return fail(result);
     result.forEach(token => {
       expect(token.name?.includes(' ')).toEqual(false);
@@ -12,7 +12,7 @@ describe('Camelcasify', () => {
     return;
   });
   it('Get tokens - apply parsers - default', async () => {
-    const result = await camelcasify(seeds().tokens as Array<Token>, undefined);
+    const result = await camelcasify(seeds(), undefined);
     if (result instanceof Error) return fail(result);
     result.forEach(token => {
       expect(token.name?.includes(' ')).toEqual(false);
@@ -27,7 +27,7 @@ describe('Camelcasify', () => {
     return;
   });
   it('Get tokens - apply parsers - unknown target key', async () => {
-    const input = seeds().tokens;
+    const input = seeds();
     const result = await camelcasify(input, { keys: ['name', 'not exist'] });
     expect(Array.isArray(result)).toBeTruthy();
     expect(result.length).toEqual(input.length);

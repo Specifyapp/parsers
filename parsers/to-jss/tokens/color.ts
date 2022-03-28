@@ -1,6 +1,6 @@
 import tinycolor from 'tinycolor2';
 import { FormatTokenType } from '../to-jss.parser';
-import { ColorToken } from '../../../types';
+import { ColorToken } from '../../../types/tokens/Color';
 
 export class Color extends ColorToken {
   constructor(token: Partial<ColorToken>) {

@@ -1,4 +1,4 @@
-import { ShadowToken } from '../../../types';
+import { ShadowToken } from '../../../types/tokens/Shadow';
 import tinycolor from 'tinycolor2';
 import { BaseStyleDictionaryTokensFormat } from '../to-style-dictionary.type';
 import { OptionsType } from '../to-style-dictionary.parser';

@@ -7,6 +7,7 @@ import {
 import * as TokensClass from './tokens';
 import deepmerge from 'deepmerge';
 import '../../types/utils/utils';
+import * as _ from 'lodash';
 
 export type InputDataType = Array<Token>;
 export type FormatTokenType = Partial<{
@@ -48,7 +49,7 @@ export async function toStyleDictionary<T extends InputDataType>(tokens: T, opti
   const data = Object.keys(tokensGroupByType).reduce<BaseStyleDictionaryTokensFormat>(
     (result, type) => {
       // loop over design tokens of one specify type
-      const styleDictionaryTokens = Object.values(tokensGroupByType[type]).reduce(
+      const styleDictionaryTokens = Object.values(tokensGroupByType[type]!).reduce(
         (acc, designDecision) => {
           const tokenHandler = getClassByType(type as TokensType);
           if (!tokenHandler) return {};
@@ -85,7 +86,7 @@ export async function toStyleDictionary<T extends InputDataType>(tokens: T, opti
                 }),
                 {
                   parser: 'json',
-                  ...options.formatConfig,
+                  ...options?.formatConfig,
                 },
               ),
             },

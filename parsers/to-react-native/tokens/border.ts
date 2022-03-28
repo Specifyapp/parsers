@@ -1,4 +1,4 @@
-import { BorderToken } from '../../../types';
+import { BorderToken } from '../../../types/tokens/Border';
 import { OptionsType } from '../to-react-native.parser';
 import tinycolor from 'tinycolor2';
 

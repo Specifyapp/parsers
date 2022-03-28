@@ -1,4 +1,4 @@
-import { DepthToken } from '../../../types';
+import { DepthToken } from '../../../types/tokens/Depth';
 import { OptionsType } from '../to-tailwind.parser';
 import { DepthMapping, TailwindMappingTypes } from '../to-tailwind.type';
 import { Utils } from './index';

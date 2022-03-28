@@ -1,10 +1,8 @@
-import {
-  BorderToken,
-  ColorToken,
-  LinkableTokensSignatures,
-  MeasurementToken,
-} from '../../../types';
+import { BorderToken } from '../../../types/tokens/Border';
 import { TokensGroupedByType } from '../link-design-tokens.type';
+import { LinkableTokensSignatures } from '../../../types';
+import { ColorToken } from '../../../types/tokens/Color';
+import { MeasurementToken } from '../../../types/tokens/Measurement';
 
 export class Border extends BorderToken {
   constructor(token: Partial<BorderToken>) {

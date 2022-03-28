@@ -1,4 +1,4 @@
-import { MeasurementToken } from '../../../types';
+import { MeasurementToken } from '../../../types/tokens/Measurement';
 import { FormatTokenType } from '../to-jss.parser';
 
 export class Measurement extends MeasurementToken {

@@ -1,34 +1,18 @@
-import libs from '../global-libs';
-import seeds from '../../tests/seeds';
-import toJss, { OptionsType } from './to-jss.parser';
-import {
-  ColorToken,
-  ColorValue,
-  Shadow,
-  ShadowToken,
-  Token,
-  MeasurementToken,
-  BorderToken,
-  DepthToken,
-  OpacityToken,
-  DurationToken,
-  BitmapToken,
-  VectorToken,
-} from '../../types';
+import { seeds } from '../../tests/seeds';
+import { OptionsType, toJss } from './to-jss.parser';
 import tinycolor from 'tinycolor2';
 import path from 'path';
+import _ from 'lodash';
 
 describe('To jss', () => {
   it('Get tokens - apply parsers', async () => {
-    const result = await toJss(seeds().tokens as Array<Token>, { formatName: 'camelCase' }, libs);
+    const result = await toJss(seeds(), { formatName: 'camelCase' });
     expect(typeof result).toEqual('string');
-    const color = seeds().tokens.find(token => token.type === 'color') as Token;
-    const measurement = seeds().tokens.find(
-      token => token.type === 'measurement',
-    ) as MeasurementToken;
-    const shadow = seeds().tokens.find(token => token.type === 'shadow') as ShadowToken;
+    const color = seeds(['color'])[0]!;
+    const measurement = seeds(['measurement'])[0]!;
+    const shadow = seeds(['shadow'])[0]!;
 
-    const shadowValue = shadow.value.reduce((acc: string, value: Shadow) => {
+    const shadowValue = shadow.value.reduce((acc: string, value) => {
       const { color, offsetX, offsetY, blur, isInner } = value;
       const x = offsetX.value;
       const y = offsetY.value;
@@ -43,16 +27,12 @@ describe('To jss', () => {
     }, '');
 
     expect(
-      result.includes(
-        `${libs._.camelCase(color.name)}: "${libs
-          .tinycolor(color.value as ColorValue)
-          .toString('rgb')}",`,
-      ),
+      result.includes(`${_.camelCase(color.name)}: "${tinycolor(color.value).toString('rgb')}",`),
     ).toBe(true);
-    expect(result.includes(`${libs._.camelCase(shadow.name)}: "${shadowValue}",`)).toBe(true);
+    expect(result.includes(`${_.camelCase(shadow.name)}: "${shadowValue}",`)).toBe(true);
     expect(
       result.includes(
-        `${libs._.camelCase(measurement.name)}: "${measurement.value.measure}${
+        `${_.camelCase(measurement.name)}: "${measurement.value.measure}${
           measurement.value.unit
         }",`,
       ),
@@ -65,22 +45,20 @@ describe('To jss', () => {
       formatName: 'snakeCase'!,
       formatTokens: { colorFormat: 'hsl' },
     };
-    const result = await toJss(seeds().tokens as Array<Token>, options, libs);
-    const color = seeds().tokens.find(token => token.type === 'color') as ColorToken;
-    const measurement = seeds().tokens.find(
-      token => token.type === 'measurement',
-    ) as MeasurementToken;
+    const result = await toJss(seeds(), options);
+    const color = seeds(['color'])[0]!;
+    const measurement = seeds(['measurement'])[0]!;
 
-    const fnFormatColor = libs._[options.formatName!](color.name);
+    const fnFormatColor = _[options.formatName!](color.name);
     expect(
       result.includes(
-        `${fnFormatColor}: "${libs
-          .tinycolor(color.value as ColorValue)
-          .toString(options.formatTokens?.colorFormat)}",`,
+        `${fnFormatColor}: "${tinycolor(color.value).toString(
+          options.formatTokens?.colorFormat,
+        )}",`,
       ),
     ).toBe(true);
 
-    const fnFormatMeasurement = libs._[options.formatName!](measurement.name);
+    const fnFormatMeasurement = _[options.formatName!](measurement.name);
     expect(
       result.includes(
         `${fnFormatMeasurement}: "${measurement.value.measure}${measurement.value.unit}",`,
@@ -97,22 +75,20 @@ describe('To jss', () => {
         jssObjectName: 'lightTheme',
       },
     };
-    const result = await toJss(seeds().tokens as Array<Token>, options, libs);
-    const color = seeds().tokens.find(token => token.type === 'color') as ColorToken;
-    const measurement = seeds().tokens.find(
-      token => token.type === 'measurement',
-    ) as MeasurementToken;
+    const result = await toJss(seeds(), options);
+    const color = seeds(['color'])[0]!;
+    const measurement = seeds(['measurement'])[0]!;
 
-    const fnFormatColor = libs._[options.formatName!](color.name);
+    const fnFormatColor = _[options.formatName!](color.name);
     expect(
       result.includes(
-        `${fnFormatColor}: "${libs
-          .tinycolor(color.value as ColorValue)
-          .toString(options.formatTokens?.colorFormat)}",`,
+        `${fnFormatColor}: "${tinycolor(color.value).toString(
+          options.formatTokens?.colorFormat,
+        )}",`,
       ),
     ).toBe(true);
 
-    const fnFormatMeasurement = libs._[options.formatName!](measurement.name);
+    const fnFormatMeasurement = _[options.formatName!](measurement.name);
     expect(
       result.includes(
         `${fnFormatMeasurement}: "${measurement.value.measure}${measurement.value.unit}",`,
@@ -127,22 +103,18 @@ describe('To jss', () => {
       formatName: 'snakeCase'!,
       formatTokens: { colorFormat: 'hsl' },
     };
-    const result = await toJss(seeds().tokens as Array<Token>, options, libs);
-    const color = seeds().tokens.find(token => token.type === 'color') as ColorToken;
-    const measurement = seeds().tokens.find(
-      token => token.type === 'measurement',
-    ) as MeasurementToken;
+    const result = await toJss(seeds(), options);
+    const color = seeds(['color'])[0]!;
+    const measurement = seeds(['measurement'])[0]!;
 
-    const fnFormatColor = libs._[options.formatName!](color.name);
+    const fnFormatColor = _[options.formatName!](color.name);
     expect(
       result.includes(
-        `${fnFormatColor}: ${libs
-          .tinycolor(color.value as ColorValue)
-          .toString(options.formatTokens?.colorFormat)}`,
+        `${fnFormatColor}: ${tinycolor(color.value).toString(options.formatTokens?.colorFormat)}`,
       ),
     );
 
-    const fnFormatMeasurement = libs._[options.formatName!](measurement.name);
+    const fnFormatMeasurement = _[options.formatName!](measurement.name);
     expect(
       result.includes(
         `${fnFormatMeasurement}: "${measurement.value.measure}${measurement.value.unit}",`,
@@ -157,22 +129,20 @@ describe('To jss', () => {
       formatName: 'camelCase'!,
       formatTokens: { colorFormat: 'hsl' },
     };
-    const result = await toJss(seeds().tokens as Array<Token>, options, libs);
-    const color = seeds().tokens.find(token => token.type === 'color') as ColorToken;
-    const measurement = seeds().tokens.find(
-      token => token.type === 'measurement',
-    ) as MeasurementToken;
+    const result = await toJss(seeds(), options);
+    const color = seeds(['color'])[0]!;
+    const measurement = seeds(['measurement'])[0]!;
 
-    const fnFormatColor = libs._[options.formatName!](color.name);
+    const fnFormatColor = _[options.formatName!](color.name);
     expect(
       result.includes(
-        `${fnFormatColor}: "${libs
-          .tinycolor(color.value as ColorValue)
-          .toString(options.formatTokens?.colorFormat)}",`,
+        `${fnFormatColor}: "${tinycolor(color.value).toString(
+          options.formatTokens?.colorFormat,
+        )}",`,
       ),
     ).toBe(true);
 
-    const fnFormatName = libs._.camelCase;
+    const fnFormatName = _.camelCase;
     expect(
       result.includes(
         `${fnFormatName(measurement.name)}: "${measurement.value.measure}${
@@ -191,15 +161,15 @@ describe('To jss', () => {
         borderFormat: 'array',
       },
     };
-    const result = await toJss(seeds().tokens as Array<Token>, options, libs);
+    const result = await toJss(seeds(), options);
 
-    const border = seeds().tokens.find(token => token.type === 'border') as BorderToken;
+    const border = seeds(['border'])[0]!;
     const xBorderWidth = border.value.width.value.measure;
     const xBorderType = border.value.type.toLowerCase();
     const xBorderColor = tinycolor(border.value.color.value).toString(
       options.formatTokens?.colorFormat,
     );
-    const xBorder = `${libs._.camelCase(
+    const xBorder = `${_.camelCase(
       border.name,
     )}: [${xBorderWidth}, "${xBorderType}", "${xBorderColor}"],`;
     expect(result.includes(xBorder)).toBe(true);
@@ -214,7 +184,7 @@ describe('To jss', () => {
       formatConfig: { exportDefault: true, jssObjectName },
     };
 
-    const result = await toJss(seeds().tokens as Array<Token>, options, libs);
+    const result = await toJss(seeds(), options);
 
     expect(result.includes(`export default ${jssObjectName}`)).toBeTruthy();
     expect(result.includes(`export const ${jssObjectName}`)).toBeFalsy();
@@ -228,7 +198,7 @@ describe('To jss', () => {
       formatConfig: { exportDefault: false, jssObjectName },
     };
 
-    const result = await toJss(seeds().tokens as Array<Token>, options, libs);
+    const result = await toJss(seeds(), options);
 
     expect(result.includes(`export default ${jssObjectName}`)).toBeFalsy();
     expect(result.includes(`export const ${jssObjectName}`)).toBeTruthy();
@@ -242,7 +212,7 @@ describe('To jss', () => {
       formatConfig: { module: 'commonjs', exportDefault: true, jssObjectName },
     };
 
-    const result = await toJss(seeds().tokens as Array<Token>, options, libs);
+    const result = await toJss(seeds(), options);
 
     expect(result.includes(`export default ${jssObjectName}`)).toBeFalsy();
     expect(result.includes(`export const ${jssObjectName}`)).toBeFalsy();
@@ -256,7 +226,7 @@ describe('To jss', () => {
       formatConfig: { module: 'commonjs', exportDefault: false, jssObjectName },
     };
 
-    const result = await toJss(seeds().tokens as Array<Token>, options, libs);
+    const result = await toJss(seeds(), options);
     expect(result.includes(`export default ${jssObjectName}`)).toBeFalsy();
     expect(result.includes(`export const ${jssObjectName}`)).toBeFalsy();
     expect(result.includes(`module.exports = { ${jssObjectName} }`)).toBeTruthy();
@@ -269,11 +239,7 @@ describe('To jss', () => {
       },
     };
 
-    const result = await toJss(
-      seeds().tokens.filter(({ type }) => type === 'vector' || type === 'bitmap') as Array<Token>,
-      options,
-      libs,
-    );
+    const result = await toJss(seeds(['vector', 'bitmap']), options);
 
     expect(result.includes('http://')).toBeFalsy();
     expect(result.includes('@2x.jpg')).toBeTruthy();
@@ -286,11 +252,7 @@ describe('To jss', () => {
       },
     };
 
-    const result = await toJss(
-      seeds().tokens.filter(({ type }) => type === 'vector' || type === 'bitmap') as Array<Token>,
-      options,
-      libs,
-    );
+    const result = await toJss(seeds(['vector', 'bitmap']), options);
 
     expect(result.includes('http://')).toBeFalsy();
     expect(result.includes('@2x.webp')).toBeFalsy();
@@ -307,26 +269,18 @@ describe('To jss', () => {
         shadowFormat: 'array',
       },
     };
-    const tokens = seeds().tokens;
+    const tokens = seeds();
 
-    const result = await toJss(tokens, options, libs);
+    const result = await toJss(tokens, options);
     tokens.forEach(token => {
       if (token.type === 'depth') {
-        expect(
-          result.includes(`${token.name}: ${(token.value as DepthToken['value']).depth}`),
-        ).toBeTruthy();
+        expect(result.includes(`${token.name}: ${token.value}`)).toBeTruthy();
       } else if (token.type === 'measurement') {
-        expect(
-          result.includes(`${token.name}: ${(token.value as MeasurementToken['value']).measure}`),
-        ).toBeTruthy();
+        expect(result.includes(`${token.name}: ${token.value.measure}`)).toBeTruthy();
       } else if (token.type === 'opacity') {
-        expect(
-          result.includes(`${token.name}: ${(token.value as OpacityToken['value']).opacity / 100}`),
-        ).toBeTruthy();
+        expect(result.includes(`${token.name}: ${token.value.opacity / 100}`)).toBeTruthy();
       } else if (token.type === 'duration') {
-        expect(
-          result.includes(`${token.name}: ${(token.value as DurationToken['value']).duration}`),
-        ).toBeTruthy();
+        expect(result.includes(`${token.name}: ${token.value.duration}`)).toBeTruthy();
       } else if (token.type === 'gradient' || token.type === 'shadow') {
         const arrayReg = new RegExp(`${token.name}: \\[`);
         expect(result).toEqual(expect.stringMatching(arrayReg));
@@ -342,27 +296,27 @@ describe('To jss', () => {
         assetsFolderPath,
       },
     };
-    const tokens = seeds().tokens.filter(({ type }) => type === 'bitmap' || type === 'vector');
+    const tokens = seeds(['bitmap', 'vector']);
 
-    const result = await toJss(tokens, options, libs);
+    const result = await toJss(tokens, options);
     tokens.forEach(token => {
       if (token.type === 'bitmap') {
-        const bitmap = token as BitmapToken;
+        const bitmap = token;
         expect(
           result.includes(
-            `${libs._.camelCase(bitmap.name)}: "${path.join(
+            `${_.camelCase(bitmap.name)}: "${path.join(
               assetsFolderPath.bitmap,
-              `${libs._.camelCase(bitmap.name)}.${bitmap.value.format}"`,
+              `${_.camelCase(bitmap.name)}.${bitmap.value.format}"`,
             )}`,
           ),
         ).toBeTruthy();
       } else {
-        const vector = token as VectorToken;
+        const vector = token;
         expect(
           result.includes(
-            `${libs._.camelCase(vector.name)}: "${path.join(
+            `${_.camelCase(vector.name)}: "${path.join(
               assetsFolderPath.vector,
-              `${libs._.camelCase(vector.name)}.${vector.value.format}"`,
+              `${_.camelCase(vector.name)}.${vector.value.format}"`,
             )}`,
           ),
         ).toBeTruthy();

@@ -1,5 +1,6 @@
-import { BitmapToken, DownloadableFile } from '../../../types';
+import { BitmapToken } from '../../../types/tokens/Bitmap';
 import { DspEntity } from '../dsp.type';
+import { DownloadableFile } from '../../../types';
 
 export class Bitmap extends BitmapToken {
   constructor(token: Partial<BitmapToken>) {

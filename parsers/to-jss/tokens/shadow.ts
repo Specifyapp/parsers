@@ -1,4 +1,4 @@
-import { ShadowToken } from '../../../types';
+import { ShadowToken } from '../../../types/tokens/Shadow';
 import { FormatTokenType } from '../to-jss.parser';
 import tinycolor from 'tinycolor2';
 

@@ -1,5 +1,5 @@
 import tinycolor from 'tinycolor2';
-import { GradientToken } from '../../../types';
+import { GradientToken } from '../../../types/tokens/Gradient';
 import { GradientMappingBeforeWrapper } from '../to-tailwind.type';
 import { Utils } from './index';
 import { OptionsType } from '../to-tailwind.parser';

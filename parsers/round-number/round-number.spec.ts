@@ -1,18 +1,17 @@
-import rounding from './round-number.parser';
+import { roundNumber } from './round-number.parser';
 import { BorderToken, MeasurementToken, ShadowToken, TextStyleToken, Token } from '../../types';
-import libs from '../global-libs';
-import seeds from '../../tests/seeds';
+import { seeds } from '../../tests/seeds';
 
 const countDecimals = function (value: number) {
-  if (Math.floor(value) !== value) return value.toString().split('.')[1].length || 0;
+  if (Math.floor(value) !== value) return value.toString().split('.')[1]!.length || 0;
   return 0;
 };
 
 describe('Rounding', () => {
   it('Should round measurement tokens with 2 decimals (default options)', async () => {
-    const tokens = seeds().tokens;
+    const tokens = seeds();
     const measurementTokens = tokens.filter(token => token.type === 'measurement');
-    const result = await rounding(measurementTokens, { keys: ['value.measure'] }, libs);
+    const result = await roundNumber(measurementTokens, { keys: ['value.measure'] });
     if (result instanceof Error) return fail(result);
     expect(result.length).toEqual(measurementTokens.length);
 
@@ -24,10 +23,10 @@ describe('Rounding', () => {
   });
 
   it('Should round measurement tokens with specific precision', async () => {
-    const tokens = seeds().tokens;
+    const tokens = seeds();
     const measurementTokens = tokens.filter(token => token.type === 'measurement');
     const precision = 3;
-    const result = await rounding(measurementTokens, { keys: ['value.measure'], precision }, libs);
+    const result = await roundNumber(measurementTokens, { keys: ['value.measure'], precision });
     if (result instanceof Error) return fail(result);
 
     expect(result.length).toEqual(measurementTokens.length);
@@ -40,10 +39,10 @@ describe('Rounding', () => {
   });
 
   it('Should truncate measurement if precision is 0', async () => {
-    const tokens = seeds().tokens;
+    const tokens = seeds();
     const measurementTokens = tokens.filter(token => token.type === 'measurement');
     const precision = 0;
-    const result = await rounding(measurementTokens, { keys: ['value.measure'], precision }, libs);
+    const result = await roundNumber(measurementTokens, { keys: ['value.measure'], precision });
     if (result instanceof Error) return fail(result);
 
     expect(result.length).toEqual(measurementTokens.length);
@@ -56,13 +55,9 @@ describe('Rounding', () => {
   });
 
   it('Should round measurement tokens with mode (down)', async () => {
-    const tokens = seeds().tokens;
+    const tokens = seeds();
     const measurementTokens = tokens.filter(token => token.type === 'measurement');
-    const result = await rounding(
-      measurementTokens,
-      { keys: ['value.measure'], mode: 'down' },
-      libs,
-    );
+    const result = await roundNumber(measurementTokens, { keys: ['value.measure'], mode: 'down' });
     if (result instanceof Error) return fail(result);
 
     expect(result.length).toEqual(measurementTokens.length);
@@ -79,9 +74,9 @@ describe('Rounding', () => {
   });
 
   it('Should round measurement tokens with mode (up)', async () => {
-    const tokens = seeds().tokens;
+    const tokens = seeds();
     const measurementTokens = tokens.filter(token => token.type === 'measurement');
-    const result = await rounding(measurementTokens, { keys: ['value.measure'], mode: 'up' }, libs);
+    const result = await roundNumber(measurementTokens, { keys: ['value.measure'], mode: 'up' });
     if (result instanceof Error) return fail(result);
 
     expect(result.length).toEqual(measurementTokens.length);
@@ -98,9 +93,9 @@ describe('Rounding', () => {
   });
 
   it("Should not round if the pattern doesn't match", async () => {
-    const tokens = seeds().tokens;
+    const tokens = seeds();
     const measurementTokens = tokens.filter(token => token.type === 'measurement');
-    const result = await rounding(measurementTokens, { keys: ['value[*].measure'] }, libs);
+    const result = await roundNumber(measurementTokens, { keys: ['value[*].measure'] });
     if (result instanceof Error) return fail(result);
 
     expect(result.length).toEqual(measurementTokens.length);
@@ -110,13 +105,9 @@ describe('Rounding', () => {
   });
 
   it('Should round measurement tokens in a more complex token (Text Style)', async () => {
-    const tokens = seeds().tokens;
+    const tokens = seeds();
     const textStyleTokens = tokens.filter(token => token.type === 'textStyle');
-    const result = await rounding(
-      textStyleTokens,
-      { keys: ['value.fontSize.value.measure'] },
-      libs,
-    );
+    const result = await roundNumber(textStyleTokens, { keys: ['value.fontSize.value.measure'] });
     if (result instanceof Error) return fail(result);
 
     expect(result.length).toEqual(textStyleTokens.length);
@@ -129,13 +120,11 @@ describe('Rounding', () => {
   });
 
   it('Should round with multiple keys', async () => {
-    const tokens = seeds().tokens;
+    const tokens = seeds();
     const textStyleTokens = tokens.filter(token => token.type === 'textStyle');
-    const result = await rounding(
-      textStyleTokens,
-      { keys: ['value.fontSize.value.measure', 'value.lineHeight.value.measure'] },
-      libs,
-    );
+    const result = await roundNumber(textStyleTokens, {
+      keys: ['value.fontSize.value.measure', 'value.lineHeight.value.measure'],
+    });
     if (result instanceof Error) return fail(result);
 
     expect(result.length).toEqual(textStyleTokens.length);
@@ -149,15 +138,13 @@ describe('Rounding', () => {
   });
 
   it('Should round with multiple keys and multiple types', async () => {
-    const tokens = seeds().tokens;
+    const tokens = seeds();
     const textStyleAndBorderTokens = tokens.filter(token =>
       ['textStyle', 'border'].includes(token.type),
     );
-    const result = await rounding(
-      textStyleAndBorderTokens,
-      { keys: ['value.fontSize.value.measure', 'value.width.value.measure'] },
-      libs,
-    );
+    const result = await roundNumber(textStyleAndBorderTokens, {
+      keys: ['value.fontSize.value.measure', 'value.width.value.measure'],
+    });
     if (result instanceof Error) return fail(result);
 
     expect(result.length).toEqual(textStyleAndBorderTokens.length);
@@ -178,9 +165,9 @@ describe('Rounding', () => {
   });
 
   it('Should round within array (blur of shadows)', async () => {
-    const tokens = seeds().tokens;
+    const tokens = seeds();
     const shadowTokens = tokens.filter(token => token.type === 'shadow');
-    const result = await rounding(shadowTokens, { keys: ['value[*].blur.value.measure'] }, libs);
+    const result = await roundNumber(shadowTokens, { keys: ['value[*].blur.value.measure'] });
     if (result instanceof Error) return fail(result);
 
     expect(result.length).toEqual(shadowTokens.length);
@@ -195,12 +182,10 @@ describe('Rounding', () => {
   });
 
   it('Should round only when it founds the pattern', async () => {
-    const tokens = seeds().tokens;
-    const result = await rounding(
-      tokens,
-      { keys: ['value[*].blur.value.measure', 'value.fontSize.value.measure'] },
-      libs,
-    );
+    const tokens = seeds();
+    const result = await roundNumber(tokens, {
+      keys: ['value[*].blur.value.measure', 'value.fontSize.value.measure'],
+    });
     if (result instanceof Error) return fail(result);
 
     expect(result.length).toEqual(tokens.length);

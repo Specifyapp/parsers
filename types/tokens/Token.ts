@@ -17,11 +17,11 @@ export interface IToken {
   repositoryId?: string;
 }
 
-export abstract class Token implements IToken {
+export abstract class Token<T extends TokensValues> implements IToken {
   originId: string;
   id: string;
   type: TokensType;
-  value!: TokensValues;
+  value!: T;
   meta?: any;
   name: string;
   createdAt?: string;
@@ -30,7 +30,7 @@ export abstract class Token implements IToken {
   sourceId?: string;
   repositoryId?: string;
 
-  constructor(element: Partial<Token>) {
+  constructor(element: Partial<Token<TokensValues>>) {
     this.originId = element?.originId || '';
     this.type = element.type!;
     this.meta = element?.meta || {};

@@ -1,5 +1,5 @@
 import * as _ from 'lodash';
-import { FontToken } from '../../../types';
+import { FontToken } from '../../../types/tokens/Font';
 import { OptionsType } from '../to-style-dictionary.parser';
 import { BaseStyleDictionaryTokensFormat } from '../to-style-dictionary.type';
 

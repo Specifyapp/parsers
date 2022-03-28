@@ -1,5 +1,6 @@
-import { LinkableTokensSignatures, MeasurementToken } from '../../../types';
+import { MeasurementToken } from '../../../types/tokens/Measurement';
 import { TokensAliasable } from '../link-design-tokens.type';
+import { LinkableTokensSignatures } from '../../../types';
 
 export class Measurement extends MeasurementToken implements TokensAliasable {
   constructor(token: Partial<MeasurementToken>) {

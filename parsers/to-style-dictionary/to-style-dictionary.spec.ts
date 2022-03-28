@@ -1,22 +1,16 @@
-import toStyleDictionary from './to-style-dictionary.parser';
-import seeds from '../../tests/seeds';
-import libs from '../global-libs';
-import { Token } from '../../types';
-import * as TokensClass from './tokens';
+import { toStyleDictionary } from './to-style-dictionary.parser';
+import { seeds } from '../../tests/seeds';
 import {
   BaseStyleDictionaryTokensFormat,
   StyleDictionaryTokenClass,
 } from './to-style-dictionary.type';
+import * as TokensClass from './tokens';
 
 describe('To Style Dictionary', () => {
   it('Should be able to extract tokens in multiple files', async () => {
-    const result = await toStyleDictionary(
-      seeds().tokens.filter(({ type }) =>
-        ['color', 'textStyle', 'shadow', 'border'].includes(type),
-      ) as Array<Token>,
-      { splitBy: '/' },
-      libs,
-    );
+    const result = await toStyleDictionary(seeds(['color', 'textStyle', 'shadow', 'border']), {
+      splitBy: '/',
+    });
 
     const expectedNames = [
       'color/base.json',
@@ -35,15 +29,11 @@ describe('To Style Dictionary', () => {
   });
 
   it('Should be able to extract Color token type', async () => {
-    const result = await toStyleDictionary(
-      seeds().tokens.filter(({ type }) => type === 'color') as Array<Token>,
-      { splitBy: '/' },
-      libs,
-    );
+    const result = await toStyleDictionary(seeds(['color']), { splitBy: '/' });
 
     expect(Array.isArray(result)).toEqual(true);
     expect(result.length).toEqual(1); // Color token only creates base
-    const file = result[0];
+    const file = result[0]!;
     expect(typeof file.name).toEqual('string');
     expect(file.name).toEqual('color/base.json');
     expect(typeof file.value.content).toEqual('string');
@@ -59,11 +49,7 @@ describe('To Style Dictionary', () => {
   });
 
   it('Should be able to extract Border token type', async () => {
-    const result = await toStyleDictionary(
-      seeds().tokens.filter(({ type }) => type === 'border') as Array<Token>,
-      { splitBy: '/' },
-      libs,
-    );
+    const result = await toStyleDictionary(seeds(['border']), { splitBy: '/' });
 
     const expectedNames = ['color/border.json', 'size/border.json', 'size/radius.json'];
     const expectedTypes = ['color', 'size', 'size'];
@@ -77,7 +63,7 @@ describe('To Style Dictionary', () => {
       expect(typeof file.name).toEqual('string');
       expect(index).toBeGreaterThan(-1);
       expect(typeof file.value.content).toEqual('string');
-      const type = expectedTypes[index];
+      const type = expectedTypes[index]!;
       const content = JSON.parse(file.value.content!) as Record<string, any>;
       expect(typeof content[type]).toEqual('object');
       Object.values(content).forEach(property => {
@@ -87,14 +73,10 @@ describe('To Style Dictionary', () => {
   });
 
   it('Should be able to extract Depth token type', async () => {
-    const result = await toStyleDictionary(
-      seeds().tokens.filter(({ type }) => type === 'depth') as Array<Token>,
-      { splitBy: '/' },
-      libs,
-    );
+    const result = await toStyleDictionary(seeds(['depth']), { splitBy: '/' });
     expect(Array.isArray(result)).toEqual(true);
     expect(result.length).toEqual(1); // Depth token only creates base
-    const file = result[0];
+    const file = result[0]!;
     expect(typeof file.name).toEqual('string');
     expect(file.name).toEqual('depth/base.json');
     expect(typeof file.value.content).toEqual('string');
@@ -107,14 +89,10 @@ describe('To Style Dictionary', () => {
   });
 
   it('Should be able to extract Duration token type', async () => {
-    const result = await toStyleDictionary(
-      seeds().tokens.filter(({ type }) => type === 'duration') as Array<Token>,
-      { splitBy: '/' },
-      libs,
-    );
+    const result = await toStyleDictionary(seeds(['duration']), { splitBy: '/' });
     expect(Array.isArray(result)).toEqual(true);
     expect(result.length).toEqual(1); // Time token only creates base
-    const file = result[0];
+    const file = result[0]!;
     expect(typeof file.name).toEqual('string');
     expect(file.name).toEqual('time/base.json');
     expect(typeof file.value.content).toEqual('string');
@@ -128,14 +106,10 @@ describe('To Style Dictionary', () => {
   });
 
   it('Should be able to extract Measurement token type', async () => {
-    const result = await toStyleDictionary(
-      seeds().tokens.filter(({ type }) => type === 'measurement') as Array<Token>,
-      { splitBy: '/' },
-      libs,
-    );
+    const result = await toStyleDictionary(seeds(['measurement']), { splitBy: '/' });
     expect(Array.isArray(result)).toEqual(true);
     expect(result.length).toEqual(1); // Measurement token only creates base
-    const file = result[0];
+    const file = result[0]!;
     expect(typeof file.name).toEqual('string');
     expect(file.name).toEqual('size/base.json');
     expect(typeof file.value.content).toEqual('string');
@@ -150,14 +124,10 @@ describe('To Style Dictionary', () => {
   });
 
   it('Should be able to extract Opacity token type', async () => {
-    const result = await toStyleDictionary(
-      seeds().tokens.filter(({ type }) => type === 'opacity') as Array<Token>,
-      { splitBy: '/' },
-      libs,
-    );
+    const result = await toStyleDictionary(seeds(['opacity']), { splitBy: '/' });
     expect(Array.isArray(result)).toEqual(true);
     expect(result.length).toEqual(1); // Opacity token only creates base
-    const file = result[0];
+    const file = result[0]!;
     expect(typeof file.name).toEqual('string');
     expect(file.name).toEqual('opacity/base.json');
     expect(typeof file.value.content).toEqual('string');
@@ -170,11 +140,7 @@ describe('To Style Dictionary', () => {
   });
 
   it('Should be able to extract Shadow token type', async () => {
-    const result = await toStyleDictionary(
-      seeds().tokens.filter(({ type }) => type === 'shadow') as Array<Token>,
-      { splitBy: '/' },
-      libs,
-    );
+    const result = await toStyleDictionary(seeds(['shadow']), { splitBy: '/' });
 
     const expectedNames = ['color/shadow.json', 'size/shadow.json'];
 
@@ -204,11 +170,7 @@ describe('To Style Dictionary', () => {
   });
 
   it('Should be able to extract TextStyle token type', async () => {
-    const result = await toStyleDictionary(
-      seeds().tokens.filter(({ type }) => type === 'textStyle') as Array<Token>,
-      { splitBy: '/' },
-      libs,
-    );
+    const result = await toStyleDictionary(seeds(['textStyle']), { splitBy: '/' });
 
     const expectedNames = [
       'color/font.json',
@@ -238,15 +200,11 @@ describe('To Style Dictionary', () => {
   });
 
   it('Should be able to extract Font token type', async () => {
-    const result = await toStyleDictionary(
-      seeds().tokens.filter(({ type }) => type === 'font') as Array<Token>,
-      { splitBy: '/' },
-      libs,
-    );
+    const result = await toStyleDictionary(seeds(['font']), { splitBy: '/' });
 
     expect(Array.isArray(result)).toEqual(true);
     expect(result.length).toEqual(1); // Time token only creates base
-    const file = result[0];
+    const file = result[0]!;
     expect(typeof file.name).toEqual('string');
     expect(file.name).toEqual('asset/font.json');
     expect(typeof file.value.content).toEqual('string');
@@ -267,15 +225,14 @@ describe('To Style Dictionary', () => {
   });
 
   it('Should be able to extract Font token type with assetsBaseDirectory', async () => {
-    const result = await toStyleDictionary(
-      seeds().tokens.filter(({ type }) => type === 'font') as Array<Token>,
-      { splitBy: '/', assetsBaseDirectory: { fonts: 'fonts/' } },
-      libs,
-    );
+    const result = await toStyleDictionary(seeds(['font']), {
+      splitBy: '/',
+      assetsBaseDirectory: { fonts: 'fonts/' },
+    });
 
     expect(Array.isArray(result)).toEqual(true);
     expect(result.length).toEqual(1); // Time token only creates base
-    const file = result[0];
+    const file = result[0]!;
     expect(typeof file.name).toEqual('string');
     expect(file.name).toEqual('asset/font.json');
     expect(typeof file.value.content).toEqual('string');
@@ -297,14 +254,10 @@ describe('To Style Dictionary', () => {
   });
 
   it('Should be able to extract Bitmap token type', async () => {
-    const result = await toStyleDictionary(
-      seeds().tokens.filter(({ type }) => type === 'bitmap') as Array<Token>,
-      { splitBy: '/' },
-      libs,
-    );
+    const result = await toStyleDictionary(seeds(['bitmap']), { splitBy: '/' });
     expect(Array.isArray(result)).toEqual(true);
     expect(result.length).toEqual(1); // Time token only creates base
-    const file = result[0];
+    const file = result[0]!;
     expect(typeof file.name).toEqual('string');
     expect(file.name).toEqual('asset/image.json');
     expect(typeof file.value.content).toEqual('string');
@@ -319,14 +272,13 @@ describe('To Style Dictionary', () => {
   });
 
   it('Should be able to extract Bitmap token type with assetsBaseDirectory', async () => {
-    const result = await toStyleDictionary(
-      seeds().tokens.filter(({ type }) => type === 'bitmap') as Array<Token>,
-      { splitBy: '/', assetsBaseDirectory: { images: 'images/' } },
-      libs,
-    );
+    const result = await toStyleDictionary(seeds(['bitmap']), {
+      splitBy: '/',
+      assetsBaseDirectory: { images: 'images/' },
+    });
     expect(Array.isArray(result)).toEqual(true);
     expect(result.length).toEqual(1); // Time token only creates base
-    const file = result[0];
+    const file = result[0]!;
     expect(typeof file.name).toEqual('string');
     expect(file.name).toEqual('asset/image.json');
     expect(typeof file.value.content).toEqual('string');
@@ -342,14 +294,10 @@ describe('To Style Dictionary', () => {
   });
 
   it('Should be able to extract Vector token type', async () => {
-    const result = await toStyleDictionary(
-      seeds().tokens.filter(({ type }) => type === 'vector') as Array<Token>,
-      { splitBy: '/' },
-      libs,
-    );
+    const result = await toStyleDictionary(seeds(['vector']), { splitBy: '/' });
     expect(Array.isArray(result)).toEqual(true);
     expect(result.length).toEqual(1); // Time token only creates base
-    const file = result[0];
+    const file = result[0]!;
     expect(typeof file.name).toEqual('string');
     expect(file.name).toEqual('asset/icon.json');
     expect(typeof file.value.content).toEqual('string');
@@ -364,14 +312,13 @@ describe('To Style Dictionary', () => {
   });
 
   it('Should be able to extract Vector token type with assetsBaseDirectory', async () => {
-    const result = await toStyleDictionary(
-      seeds().tokens.filter(({ type }) => type === 'vector') as Array<Token>,
-      { splitBy: '/', assetsBaseDirectory: { icons: 'icons/' } },
-      libs,
-    );
+    const result = await toStyleDictionary(seeds(['vector']), {
+      splitBy: '/',
+      assetsBaseDirectory: { icons: 'icons/' },
+    });
     expect(Array.isArray(result)).toEqual(true);
     expect(result.length).toEqual(1); // Time token only creates base
-    const file = result[0];
+    const file = result[0]!;
     expect(typeof file.name).toEqual('string');
     expect(file.name).toEqual('asset/icon.json');
     expect(typeof file.value.content).toEqual('string');
@@ -387,15 +334,11 @@ describe('To Style Dictionary', () => {
   });
 
   it('Should be able to extract without splitBy', async () => {
-    const result = await toStyleDictionary(
-      seeds().tokens.filter(({ type }) => type === 'color') as Array<Token>,
-      {},
-      libs,
-    );
+    const result = await toStyleDictionary(seeds(['color']), {});
 
     expect(Array.isArray(result)).toEqual(true);
     expect(result.length).toEqual(1); // Color token only creates base
-    const file = result[0];
+    const file = result[0]!;
     expect(typeof file.name).toEqual('string');
     expect(file.name).toEqual('color/base.json');
     expect(typeof file.value.content).toEqual('string');
@@ -411,95 +354,85 @@ describe('To Style Dictionary', () => {
 
   describe('Should generate simple token per type', () => {
     it('Color', () => {
-      seeds()
-        .tokens.filter(({ type }) => type === 'color')
-        .map(color => {
-          const tokenClass: StyleDictionaryTokenClass = (<any>TokensClass)['Color'];
-          const instance = new tokenClass(color, color.name.split('/'));
-          const result = instance.generate({ formatTokens: { colorFormat: { format: 'rgb' } } });
-          expect(result).toEqual({
-            color: {
+      seeds(['color']).map(color => {
+        const tokenClass: StyleDictionaryTokenClass = (<any>TokensClass)['Color'];
+        const instance = new tokenClass(color, color.name.split('/'));
+        const result = instance.generate({ formatTokens: { colorFormat: { format: 'rgb' } } });
+        expect(result).toEqual({
+          color: {
+            base: {
+              Colors: {
+                [color.name.split('/').pop() as string]: {
+                  value: expect.any(String),
+                },
+              },
+            },
+          },
+        });
+      });
+    });
+    it('Border', () => {
+      seeds(['border']).map(border => {
+        const tokenClass: StyleDictionaryTokenClass = (<any>TokensClass)['Border'];
+        const instance = new tokenClass(border, border.name.split('-'));
+        const result = instance.generate({ formatTokens: { colorFormat: { format: 'rgb' } } });
+        const expectation: Record<string, any> = {
+          size: {
+            border: { border: expect.any(Object) },
+          },
+          color: {
+            border: { border: expect.any(Object) },
+          },
+        };
+        if ('radii' in border.value) {
+          expectation.size.radius = { border: expect.any(Object) };
+        }
+        expect(result).toEqual(expectation);
+      });
+    });
+    it('Depth', () => {
+      seeds(['depth']).map(depth => {
+        const tokenClass: StyleDictionaryTokenClass = (<any>TokensClass)['Depth'];
+        const instance = new tokenClass(depth, depth.name.split('-'));
+        const result = instance.generate({});
+        expect(result).toEqual({
+          depth: { base: { [depth.name]: { value: expect.any(String) } } },
+        });
+      });
+    });
+    it('Duration', () => {
+      seeds(['duration']).map(duration => {
+        const tokenClass: StyleDictionaryTokenClass = (<any>TokensClass)['Duration'];
+        const instance = new tokenClass(duration, duration.name.split('-'));
+        const result = instance.generate({});
+        expect(result).toEqual({
+          time: { base: { [duration.name]: { value: expect.any(String) } } },
+        });
+      });
+    });
+    it('Measurement', () => {
+      seeds(['measurement']).map(measurement => {
+        const tokenClass: StyleDictionaryTokenClass = (<any>TokensClass)['Measurement'];
+        const instance = new tokenClass(measurement, measurement.name.split('-'));
+        const result = instance.generate({});
+        expect(result).toEqual({
+          size: {
+            base: {
               base: {
-                Colors: {
-                  [color.name.split('/').pop() as string]: {
+                space: {
+                  [measurement.name.split('-').pop() as string]: {
                     value: expect.any(String),
                   },
                 },
               },
             },
-          });
+          },
         });
-    });
-    it('Border', () => {
-      seeds()
-        .tokens.filter(({ type }) => type === 'border')
-        .map(border => {
-          const tokenClass: StyleDictionaryTokenClass = (<any>TokensClass)['Border'];
-          const instance = new tokenClass(border, border.name.split('-'));
-          const result = instance.generate({ formatTokens: { colorFormat: { format: 'rgb' } } });
-          const expectation: Record<string, any> = {
-            size: {
-              border: { border: expect.any(Object) },
-            },
-            color: {
-              border: { border: expect.any(Object) },
-            },
-          };
-          if ('radii' in border.value) {
-            expectation.size.radius = { border: expect.any(Object) };
-          }
-          expect(result).toEqual(expectation);
-        });
-    });
-    it('Depth', () => {
-      seeds()
-        .tokens.filter(({ type }) => type === 'depth')
-        .map(depth => {
-          const tokenClass: StyleDictionaryTokenClass = (<any>TokensClass)['Depth'];
-          const instance = new tokenClass(depth, depth.name.split('-'));
-          const result = instance.generate({});
-          expect(result).toEqual({
-            depth: { base: { [depth.name]: { value: expect.any(String) } } },
-          });
-        });
-    });
-    it('Duration', () => {
-      seeds()
-        .tokens.filter(({ type }) => type === 'duration')
-        .map(duration => {
-          const tokenClass: StyleDictionaryTokenClass = (<any>TokensClass)['Duration'];
-          const instance = new tokenClass(duration, duration.name.split('-'));
-          const result = instance.generate({});
-          expect(result).toEqual({
-            time: { base: { [duration.name]: { value: expect.any(String) } } },
-          });
-        });
-    });
-    it('Measurement', () => {
-      seeds()
-        .tokens.filter(({ type }) => type === 'measurement')
-        .map(measurement => {
-          const tokenClass: StyleDictionaryTokenClass = (<any>TokensClass)['Measurement'];
-          const instance = new tokenClass(measurement, measurement.name.split('-'));
-          const result = instance.generate({});
-          expect(result).toEqual({
-            size: {
-              base: {
-                base: {
-                  space: {
-                    [measurement.name.split('-').pop() as string]: {
-                      value: expect.any(String),
-                    },
-                  },
-                },
-              },
-            },
-          });
-        });
+      });
     });
     it('Opacity', () => {
-      seeds()
-        .tokens.filter(({ type }) => type === 'opacity')
+      seeds(['opacity'])
+        .filter(({ type }) => type === 'opacity')
         .map(opacity => {
           const tokenClass: StyleDictionaryTokenClass = (<any>TokensClass)['Opacity'];
           const instance = new tokenClass(opacity, opacity.name.split('-'));
@@ -516,51 +449,47 @@ describe('To Style Dictionary', () => {
         });
     });
     it('Shadow', () => {
-      seeds()
-        .tokens.filter(({ type }) => type === 'shadow')
-        .map(shadow => {
-          const tokenClass: StyleDictionaryTokenClass = (<any>TokensClass)['Shadow'];
-          const instance = new tokenClass(shadow, shadow.name.split('-'));
-          const result = instance.generate({});
-          expect(result).toEqual({
-            color: {
-              shadow: {
-                Elevation: expect.any(Object),
-              },
+      seeds(['shadow']).map(shadow => {
+        const tokenClass: StyleDictionaryTokenClass = (<any>TokensClass)['Shadow'];
+        const instance = new tokenClass(shadow, shadow.name.split('-'));
+        const result = instance.generate({});
+        expect(result).toEqual({
+          color: {
+            shadow: {
+              Elevation: expect.any(Object),
             },
-            size: {
-              shadow: {
-                Elevation: expect.any(Object),
-              },
+          },
+          size: {
+            shadow: {
+              Elevation: expect.any(Object),
             },
-          });
+          },
         });
+      });
     });
     it('TextStyle', () => {
-      seeds()
-        .tokens.filter(({ type }) => type === 'textStyle')
-        .map(textStyle => {
-          const tokenClass: StyleDictionaryTokenClass = (<any>TokensClass)['TextStyle'];
-          const instance = new tokenClass(textStyle, textStyle.name.split('-'));
-          const result = instance.generate({});
-          const firstLevelSplitedTokenName = textStyle.name.split('-').shift() as string;
-          const expectation: Record<any, any> = {
-            size: {
-              font: { [firstLevelSplitedTokenName]: expect.any(Object) },
-              lineHeight: { [firstLevelSplitedTokenName]: expect.any(Object) },
-            },
-          };
-          if ('color' in textStyle.value) {
-            expectation.color = { font: { [firstLevelSplitedTokenName]: expect.any(Object) } };
-          }
-          if ('letterSpacing' in textStyle.value) {
-            expectation.size.letterSpacing = { [firstLevelSplitedTokenName]: expect.any(Object) };
-          }
-          if ('textIndent' in textStyle.value) {
-            expectation.size.textIndent = { [firstLevelSplitedTokenName]: expect.any(Object) };
-          }
-          expect(result).toEqual(expectation);
-        });
+      seeds(['textStyle']).map(textStyle => {
+        const tokenClass: StyleDictionaryTokenClass = (<any>TokensClass)['TextStyle'];
+        const instance = new tokenClass(textStyle, textStyle.name.split('-'));
+        const result = instance.generate({});
+        const firstLevelSplitedTokenName = textStyle.name.split('-').shift() as string;
+        const expectation: Record<any, any> = {
+          size: {
+            font: { [firstLevelSplitedTokenName]: expect.any(Object) },
+            lineHeight: { [firstLevelSplitedTokenName]: expect.any(Object) },
+          },
+        };
+        if ('color' in textStyle.value) {
+          expectation.color = { font: { [firstLevelSplitedTokenName]: expect.any(Object) } };
+        }
+        if ('letterSpacing' in textStyle.value) {
+          expectation.size.letterSpacing = { [firstLevelSplitedTokenName]: expect.any(Object) };
+        }
+        if ('textIndent' in textStyle.value) {
+          expectation.size.textIndent = { [firstLevelSplitedTokenName]: expect.any(Object) };
+        }
+        expect(result).toEqual(expectation);
+      });
     });
   });
 });

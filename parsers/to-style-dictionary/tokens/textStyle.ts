@@ -1,4 +1,4 @@
-import { TextStyleToken } from '../../../types';
+import { TextStyleToken } from '../../../types/tokens/TextStyle';
 import convertMeasurement from '../../../libs/size-manipulation';
 import tinycolor from 'tinycolor2';
 import { BaseStyleDictionaryTokensFormat } from '../to-style-dictionary.type';

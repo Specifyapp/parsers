@@ -1,10 +1,8 @@
-import {
-  ColorToken,
-  LinkableTokensSignatures,
-  MeasurementToken,
-  TextStyleToken,
-} from '../../../types';
+import { TextStyleToken } from '../../../types/tokens/TextStyle';
 import { TokensGroupedByType } from '../link-design-tokens.type';
+import { LinkableTokensSignatures } from '../../../types';
+import { ColorToken } from '../../../types/tokens/Color';
+import { MeasurementToken } from '../../../types/tokens/Measurement';
 
 export class TextStyle extends TextStyleToken {
   constructor(token: Partial<TextStyleToken>) {

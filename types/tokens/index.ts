@@ -157,7 +157,7 @@ export type TextStyleValue = {
   textTransform?: TextTransformValue;
 };
 
-type VectorValue = {
+export type VectorValue = {
   url?: string;
   content?: string;
   format?: string;
@@ -166,14 +166,13 @@ type VectorValue = {
 
 // TOKEN GENERIC (HAS A BAD NAME)
 
-type TokenTypeList = 'color' | 'font' | 'gradient' | 'shadow' | 'text';
 type TokenG<Type, Value> = {
   id: string;
   createdAt: string;
   updatedAt: string;
   name: string;
   value: Value;
-  meta: object;
+  meta: Record<any, any>;
   type: Type;
   originId: string;
   sourceId: string;

@@ -1,5 +1,5 @@
 import * as _ from 'lodash';
-import { VectorToken } from '../../../types';
+import { VectorToken } from '../../../types/tokens/Vector';
 import { OptionsType } from '../to-style-dictionary.parser';
 import { BaseStyleDictionaryTokensFormat } from '../to-style-dictionary.type';
 

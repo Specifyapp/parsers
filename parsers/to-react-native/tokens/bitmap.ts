@@ -1,4 +1,4 @@
-import { BitmapToken } from '../../../types';
+import { BitmapToken } from '../../../types/tokens/Bitmap';
 import path from 'path';
 import { OptionsType } from '../to-react-native.parser';
 

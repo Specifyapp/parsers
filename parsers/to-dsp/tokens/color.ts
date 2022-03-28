@@ -1,5 +1,5 @@
 import tinycolor from 'tinycolor2';
-import { ColorToken } from '../../../types';
+import { ColorToken } from '../../../types/tokens/Color';
 import { DspEntity } from '../dsp.type';
 
 export class Color extends ColorToken {

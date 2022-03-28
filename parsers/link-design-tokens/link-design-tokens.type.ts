@@ -1,5 +1,6 @@
-import { IToken } from '../../types';
-import { ColorToken, LinkableTokensSignatures, MeasurementToken, TokensValues } from '../../types';
+import { ColorToken } from '../../types/tokens/Color';
+import { MeasurementToken } from '../../types/tokens/Measurement';
+import { LinkableTokensSignatures, Token, TokensValues } from '../../types';
 
 export interface TokensGroupedByType {
   color: Array<ColorToken>;
@@ -13,10 +14,10 @@ export interface TokensAliasable {
 export interface LinkDesignTokenClassInstance extends Partial<TokensAliasable> {
   compute?(
     indexes: LinkableTokensSignatures,
-    tokensGroupedByType: _.Dictionary<[IToken, ...IToken[]]>,
+    tokensGroupedByType: _.Dictionary<[Token, ...Token[]]>,
   ): TokensValues;
 }
 
 export interface LinkDesignTokenClass {
-  new (tokens: Partial<IToken>): LinkDesignTokenClassInstance;
+  new (tokens: Partial<Token>): LinkDesignTokenClassInstance;
 }

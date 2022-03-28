@@ -1,5 +1,5 @@
 import * as _ from 'lodash';
-import { BitmapToken } from '../../../types';
+import { BitmapToken } from '../../../types/tokens/Bitmap';
 import { OptionsType } from '../to-style-dictionary.parser';
 import { BaseStyleDictionaryTokensFormat } from '../to-style-dictionary.type';
 

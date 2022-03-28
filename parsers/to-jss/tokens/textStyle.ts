@@ -1,4 +1,4 @@
-import { TextStyleToken } from '../../../types';
+import { TextStyleToken } from '../../../types/tokens/TextStyle';
 import { FormatTokenType } from '../to-jss.parser';
 import tinycolor from 'tinycolor2';
 

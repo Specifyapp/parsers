@@ -5,7 +5,4 @@ export const seeds = <A extends TokensType>(types?: Array<A>): Array<ExtractToke
   return (tokens as Array<Token>).filter((token): token is ExtractTokenByType<A> =>
     types ? Belt.A.includes<TokensType>(types, token.type) : true,
   );
-  // return Belt.A.filter(
-  //   tokens as ReadonlyArray<Token>,
-  //   token => !types || types?.includes(token.type),
 };

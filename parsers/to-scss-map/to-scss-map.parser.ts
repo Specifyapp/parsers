@@ -6,6 +6,7 @@ import {
   BorderToken,
   ColorToken,
   DepthToken,
+  DesignTokensType,
   DownloadableFile,
   DurationToken,
   FontToken,
@@ -162,7 +163,7 @@ const formatMap = (
 
   // Useful if the border has no radius
   if (Object.keys(obj).length !== 0) {
-    return `${generateVariableName({ type: tokensByType[0].type }, handler, options)}: (${getSCSS(
+    return `${generateVariableName({ type: tokensByType[0]!.type }, handler, options)}: (${getSCSS(
       handler.sort(obj),
     )});`;
   }
@@ -175,10 +176,10 @@ const generateCommon = (
   scssType: 'function' | 'mixin',
   functionNameBase: string = '',
 ): string => {
-  const variableName = generateVariableName({ type: tokensByType[0].type }, handler, options);
+  const variableName = generateVariableName({ type: tokensByType[0]!.type }, handler, options);
   const functionName =
     generateName(
-      { type: tokensByType[0].type },
+      { type: tokensByType[0]!.type },
       handler,
       options,
       (scssType + 'Name') as 'functionName' | 'mixinName',
@@ -229,8 +230,14 @@ export async function toScssMap<T extends InputDataType>(tokens: T, options: Opt
       (typesAcc, [type, tokensByType]: [string, InputDataType]) => {
         if (tokensByType.length === 0 || !(type in TokensHandler)) return typesAcc;
         return typesAcc.concat(
-          TokensHandler[type as TokensType].reduce<Array<DownloadableFile>>((acc, scssHandler) => {
-            const fileName = generateFileName({ type: tokensByType[0].type }, scssHandler, options);
+          TokensHandler[type as Pick<DesignTokensType, 'type'>['type']].reduce<
+            Array<DownloadableFile>
+          >((acc, scssHandler) => {
+            const fileName = generateFileName(
+              { type: tokensByType[0]!.type },
+              scssHandler,
+              options,
+            );
 
             const ScssLibs = `@use 'sass:map';${os.EOL}${os.EOL}`;
             const map = formatMap(tokensByType, scssHandler, options);

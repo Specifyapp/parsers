@@ -1,7 +1,7 @@
 import { BorderToken } from '../../../types';
 import { Indexes, OptionsType } from '../to-theme-ui.parser';
 import tinycolor from 'tinycolor2';
-import { ThemeUiBorder, ThemeUiBorderVariant, ThemeUiKeys } from '../to-theme-ui.type';
+import { ThemeUiBorder, ThemeUiBorderVariant } from '../to-theme-ui.type';
 import { formatName } from './index';
 import * as Belt from '@mobily/ts-belt';
 

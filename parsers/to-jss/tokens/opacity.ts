@@ -1,4 +1,4 @@
-import { OpacityToken } from '../../../types';
+import { OpacityToken } from '../../../types/tokens/Opacity';
 import { FormatTokenType } from '../to-jss.parser';
 
 export class Opacity extends OpacityToken {

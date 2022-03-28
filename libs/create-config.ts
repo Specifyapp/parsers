@@ -2,7 +2,7 @@ import { Parser, Token } from '../types';
 
 type UnknownParser<F> = { options: unknown; fn: F; name: string };
 type ReturnPipe<T> = {
-  run: (tokens: Array<Token>) => T;
+  run: (tokens: Array<Token>) => Promise<T>;
   build: () => unknown;
 };
 
@@ -11,63 +11,63 @@ export function createConfig<A extends unknown[], B>(
 ): ReturnPipe<B>;
 export function createConfig<A extends unknown[], B, C>(
   ab: UnknownParser<(...a: A) => B>,
-  bc: UnknownParser<(b: B) => C>,
+  bc: UnknownParser<(b: Awaited<B>) => C>,
 ): ReturnPipe<C>;
 export function createConfig<A extends unknown[], B, C, D>(
   ab: UnknownParser<(...a: A) => B>,
-  bc: UnknownParser<(b: B) => C>,
-  cd: UnknownParser<(c: C) => D>,
+  bc: UnknownParser<(b: Awaited<B>) => C>,
+  cd: UnknownParser<(c: Awaited<C>) => D>,
 ): ReturnPipe<D>;
 export function createConfig<A extends unknown[], B, C, D, E>(
   ab: UnknownParser<(...a: A) => B>,
-  bc: UnknownParser<(b: B) => C>,
-  cd: UnknownParser<(c: C) => D>,
-  de: UnknownParser<(d: D) => E>,
+  bc: UnknownParser<(b: Awaited<B>) => C>,
+  cd: UnknownParser<(c: Awaited<C>) => D>,
+  de: UnknownParser<(d: Awaited<D>) => E>,
 ): ReturnPipe<E>;
 export function createConfig<A extends unknown[], B, C, D, E, F>(
   ab: UnknownParser<(...a: A) => B>,
-  bc: UnknownParser<(b: B) => C>,
-  cd: UnknownParser<(c: C) => D>,
-  de: UnknownParser<(d: D) => E>,
-  ef: UnknownParser<(e: E) => F>,
+  bc: UnknownParser<(b: Awaited<B>) => C>,
+  cd: UnknownParser<(c: Awaited<C>) => D>,
+  de: UnknownParser<(d: Awaited<D>) => E>,
+  ef: UnknownParser<(e: Awaited<E>) => F>,
 ): ReturnPipe<F>;
 export function createConfig<A extends unknown[], B, C, D, E, F, G>(
   ab: UnknownParser<(...a: A) => B>,
-  bc: UnknownParser<(b: B) => C>,
-  cd: UnknownParser<(c: C) => D>,
-  de: UnknownParser<(d: D) => E>,
-  ef: UnknownParser<(e: E) => F>,
-  fg: UnknownParser<(f: F) => G>,
+  bc: UnknownParser<(b: Awaited<B>) => C>,
+  cd: UnknownParser<(c: Awaited<C>) => D>,
+  de: UnknownParser<(d: Awaited<D>) => E>,
+  ef: UnknownParser<(e: Awaited<E>) => F>,
+  fg: UnknownParser<(f: Awaited<F>) => G>,
 ): ReturnPipe<G>;
 export function createConfig<A extends unknown[], B, C, D, E, F, G, H>(
   ab: UnknownParser<(...a: A) => B>,
-  bc: UnknownParser<(b: B) => C>,
-  cd: UnknownParser<(c: C) => D>,
-  de: UnknownParser<(d: D) => E>,
-  ef: UnknownParser<(e: E) => F>,
-  fg: UnknownParser<(f: F) => G>,
-  gh: UnknownParser<(g: G) => H>,
+  bc: UnknownParser<(b: Awaited<B>) => C>,
+  cd: UnknownParser<(c: Awaited<C>) => D>,
+  de: UnknownParser<(d: Awaited<D>) => E>,
+  ef: UnknownParser<(e: Awaited<E>) => F>,
+  fg: UnknownParser<(f: Awaited<F>) => G>,
+  gh: UnknownParser<(g: Awaited<G>) => H>,
 ): ReturnPipe<H>;
 export function createConfig<A extends unknown[], B, C, D, E, F, G, H, I>(
   ab: UnknownParser<(...a: A) => B>,
-  bc: UnknownParser<(b: B) => C>,
-  cd: UnknownParser<(c: C) => D>,
-  de: UnknownParser<(d: D) => E>,
-  ef: UnknownParser<(e: E) => F>,
-  fg: UnknownParser<(f: F) => G>,
-  gh: UnknownParser<(g: G) => H>,
-  hi: UnknownParser<(h: H) => I>,
+  bc: UnknownParser<(b: Awaited<B>) => C>,
+  cd: UnknownParser<(c: Awaited<C>) => D>,
+  de: UnknownParser<(d: Awaited<D>) => E>,
+  ef: UnknownParser<(e: Awaited<E>) => F>,
+  fg: UnknownParser<(f: Awaited<F>) => G>,
+  gh: UnknownParser<(g: Awaited<G>) => H>,
+  hi: UnknownParser<(h: Awaited<H>) => I>,
 ): ReturnPipe<I>;
 export function createConfig<A extends unknown[], B, C, D, E, F, G, H, I, J>(
   ab: UnknownParser<(...a: A) => B>,
-  bc: UnknownParser<(b: B) => C>,
-  cd: UnknownParser<(c: C) => D>,
-  de: UnknownParser<(d: D) => E>,
-  ef: UnknownParser<(e: E) => F>,
-  fg: UnknownParser<(f: F) => G>,
-  gh: UnknownParser<(g: G) => H>,
-  hi: UnknownParser<(h: H) => I>,
-  ij: UnknownParser<(i: I) => J>,
+  bc: UnknownParser<(b: Awaited<B>) => C>,
+  cd: UnknownParser<(c: Awaited<C>) => D>,
+  de: UnknownParser<(d: Awaited<D>) => E>,
+  ef: UnknownParser<(e: Awaited<E>) => F>,
+  fg: UnknownParser<(f: Awaited<F>) => G>,
+  gh: UnknownParser<(g: Awaited<G>) => H>,
+  hi: UnknownParser<(h: Awaited<H>) => I>,
+  ij: UnknownParser<(i: Awaited<I>) => J>,
 ): ReturnPipe<J>;
 
 export function createConfig(...parsers: Array<UnknownParser<(...params: unknown[]) => unknown>>): {
@@ -85,7 +85,7 @@ export function createConfig(...parsers: Array<UnknownParser<(...params: unknown
         }
         return step;
       }),
-    run: (tokens: Array<Token>): unknown => {
+    run: async (tokens: Array<Token>): Promise<unknown> => {
       return parsers.reduce<unknown>(async (value, parser) => parser.fn(await value), tokens);
     },
   };

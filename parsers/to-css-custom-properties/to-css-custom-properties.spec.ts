@@ -1,19 +1,17 @@
-import libs from '../global-libs';
-import seeds from '../../tests/seeds';
-import toCss, { OptionsType } from './to-css-custom-properties.parser';
-import { ColorToken, ColorValue, Shadow, ShadowToken, Token, MeasurementToken } from '../../types';
+import { seeds } from '../../tests/seeds';
+import { OptionsType, toCssCustomProperties } from './to-css-custom-properties.parser';
+import _ from 'lodash';
+import tinycolor from 'tinycolor2';
 
 describe('To css', () => {
   it('Get tokens - apply parsers', async () => {
-    const result = await toCss(seeds().tokens, undefined, libs);
+    const result = await toCssCustomProperties(seeds(), undefined);
     expect(typeof result).toEqual('string');
-    const color = seeds().tokens.find(token => token.type === 'color') as ColorToken;
-    const measurement = seeds().tokens.find(
-      token => token.type === 'measurement',
-    ) as MeasurementToken;
-    const shadow = seeds().tokens.find(token => token.type === 'shadow') as ShadowToken;
+    const color = seeds(['color'])[0]!;
+    const measurement = seeds(['measurement'])[0]!;
+    const shadow = seeds(['shadow'])[0]!;
 
-    const shadowValue = shadow.value.reduce((acc: string, value: Shadow) => {
+    const shadowValue = shadow.value.reduce((acc: string, value) => {
       const { color, offsetX, offsetY, blur, isInner } = value;
       const x = offsetX.value;
       const y = offsetY.value;
@@ -28,43 +26,37 @@ describe('To css', () => {
     }, '');
 
     expect(
-      result.includes(
-        `${libs._.kebabCase(color.name)}: ${libs
-          .tinycolor(color.value as ColorValue)
-          .toString('rgb')}`,
-      ),
+      result.includes(`${_.kebabCase(color.name)}: ${tinycolor(color.value).toString('rgb')}`),
     ).toBe(true);
     expect(result.includes(`${shadow.name}: ${shadowValue}`)).toBe(true);
     expect(
       result.includes(
-        `${libs._.kebabCase(measurement.name)}: ${measurement.value.measure}${
-          measurement.value.unit
-        }`,
+        `${_.kebabCase(measurement.name)}: ${measurement.value.measure}${measurement.value.unit}`,
       ),
     ).toBe(true);
     return;
   });
   it('Get tokens - apply parsers - with options', async () => {
     const options: OptionsType = {
-      formatName: 'snakeCase'!,
+      formatName: 'snakeCase',
       formatTokens: { color: 'hsl' },
     };
-    const result = await toCss(seeds().tokens, options, libs);
-    const color = seeds().tokens.find(token => token.type === 'color') as ColorToken;
-    const measurement = seeds().tokens.find(
-      token => token.type === 'measurement',
-    ) as MeasurementToken;
+    const result = await toCssCustomProperties(seeds(), {
+      formatName: 'snakeCase',
+      formatTokens: { color: 'hsl' },
+    });
+    const color = seeds(['color'])[0]!;
+    const measurement = seeds(['measurement'])[0]!;
 
-    const fnFormatColor = libs._[options.formatName!](color.name);
+    // @ts-ignore
+    const fnFormatColor = _[options.formatName!](color.name);
     expect(
       result.includes(
-        `${fnFormatColor}: ${libs
-          .tinycolor(color.value as ColorValue)
-          .toString(options.formatTokens?.color)}`,
+        `${fnFormatColor}: ${tinycolor(color.value).toString(options.formatTokens?.color)}`,
       ),
     ).toBe(true);
 
-    const fnFormatMeasurement = libs._[options.formatName!](measurement.name);
+    const fnFormatMeasurement = _[options.formatName!](measurement.name);
     expect(
       result.includes(
         `${fnFormatMeasurement}: ${measurement.value.measure}${measurement.value.unit}`,
@@ -81,22 +73,18 @@ describe('To css', () => {
         selector: 'body[data-theme="light"]',
       },
     };
-    const result = await toCss(seeds().tokens, options, libs);
-    const color = seeds().tokens.find(token => token.type === 'color') as ColorToken;
-    const measurement = seeds().tokens.find(
-      token => token.type === 'measurement',
-    ) as MeasurementToken;
+    const result = await toCssCustomProperties(seeds(), options);
+    const color = seeds(['color'])[0]!;
+    const measurement = seeds(['measurement'])[0]!;
 
-    const fnFormatColor = libs._[options.formatName!](color.name);
+    const fnFormatColor = _[options.formatName!](color.name);
     expect(
       result.includes(
-        `${fnFormatColor}: ${libs
-          .tinycolor(color.value as ColorValue)
-          .toString(options.formatTokens?.color)}`,
+        `${fnFormatColor}: ${tinycolor(color.value).toString(options.formatTokens?.color)}`,
       ),
     ).toBe(true);
 
-    const fnFormatMeasurement = libs._[options.formatName!](measurement.name);
+    const fnFormatMeasurement = _[options.formatName!](measurement.name);
     expect(
       result.includes(
         `${fnFormatMeasurement}: ${measurement.value.measure}${measurement.value.unit}`,
@@ -111,22 +99,18 @@ describe('To css', () => {
       formatName: 'snakeCase'!,
       formatTokens: { color: 'hsl' },
     };
-    const result = await toCss(seeds().tokens, options, libs);
-    const color = seeds().tokens.find(token => token.type === 'color') as ColorToken;
-    const measurement = seeds().tokens.find(
-      token => token.type === 'measurement',
-    ) as MeasurementToken;
+    const result = await toCssCustomProperties(seeds(), options);
+    const color = seeds(['color'])[0]!;
+    const measurement = seeds(['measurement'])[0]!;
 
-    const fnFormatColor = libs._[options.formatName!](color.name);
+    const fnFormatColor = _[options.formatName!](color.name);
     expect(
       result.includes(
-        `${fnFormatColor}: ${libs
-          .tinycolor(color.value as ColorValue)
-          .toString(options.formatTokens?.color)}`,
+        `${fnFormatColor}: ${tinycolor(color.value).toString(options.formatTokens?.color)}`,
       ),
     );
 
-    const fnFormatMeasurement = libs._[options.formatName!](measurement.name);
+    const fnFormatMeasurement = _[options.formatName!](measurement.name);
     expect(
       result.includes(
         `${fnFormatMeasurement}: ${measurement.value.measure}${measurement.value.unit}`,
@@ -141,25 +125,21 @@ describe('To css', () => {
       formatName: 'camelCase'!,
       formatTokens: { color: 'hsl' },
     };
-    const result = await toCss(seeds().tokens, options, libs);
-    const color = seeds().tokens.find(token => token.type === 'color') as ColorToken;
-    const measurement = seeds().tokens.find(
-      token => token.type === 'measurement',
-    ) as MeasurementToken;
+    const result = await toCssCustomProperties(seeds(), options);
+    const color = seeds(['color'])[0]!;
+    const measurement = seeds(['measurement'])[0]!;
 
-    const fnFormatColor = libs._[options.formatName!](color.name);
+    const fnFormatColor = _[options.formatName!](color.name);
     expect(
       result.includes(
-        `${fnFormatColor}: ${libs
-          .tinycolor(color.value as ColorValue)
-          .toString(options.formatTokens?.color)}`,
+        `${fnFormatColor}: ${tinycolor(color.value).toString(options.formatTokens?.color)}`,
       ),
     ).toBe(true);
 
     expect(result.includes('colorsAccent')).toBe(true);
     expect(result.includes('colorsRed')).toBe(true);
 
-    const fnFormatName = libs._.camelCase;
+    const fnFormatName = _.camelCase;
     expect(
       result.includes(
         `${fnFormatName(measurement.name)}: ${measurement.value.measure}${measurement.value.unit}`,
@@ -171,7 +151,7 @@ describe('To css', () => {
 
   it('Get tokens - apply parsers - all tokens', async () => {
     const options: OptionsType = {};
-    const result = await toCss(seeds().tokens, options, libs);
+    const result = await toCssCustomProperties(seeds(), options);
     expect(result.includes('--heuristic-cross-platform-quantify: rgba(51, 15, 99, 0.6);'));
     expect(
       result.includes(

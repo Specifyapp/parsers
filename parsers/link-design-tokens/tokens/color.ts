@@ -1,5 +1,6 @@
-import { ColorToken, LinkableTokensSignatures } from '../../../types';
+import { ColorToken } from '../../../types/tokens/Color';
 import { TokensAliasable } from '../link-design-tokens.type';
+import { LinkableTokensSignatures } from '../../../types';
 
 export class Color extends ColorToken implements TokensAliasable {
   constructor(token: Partial<ColorToken>) {

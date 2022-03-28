@@ -1,22 +1,19 @@
 import * as os from 'os';
-import toScssMap, { TYPES_USING_FUNCTION, TYPES_USING_MIXIN } from './to-scss-map.parser';
-import libs from '../global-libs';
-import seeds from '../../tests/seeds';
+import { toScssMap, TYPES_USING_FUNCTION, TYPES_USING_MIXIN } from './to-scss-map.parser';
+import { seeds } from '../../tests/seeds';
 import { Token } from '../../types';
 import { render } from '../../tests/helper/runScss';
 import { ToScssMapTokenType } from './to-scss-map.type';
-import colorHandler from './tokens/color';
 
 jest.setTimeout(3 * 60 * 1000);
 
 describe('to-scss-map', () => {
   describe('Generate tokens', () => {
     it('Expect result to be a valid downloadable file', async () => {
-      const result = await toScssMap(
-        seeds().tokens.filter(({ type }) => type === 'color') as Array<Token>,
-        { splitBy: '/', formatConfig: { singleQuote: true } },
-        libs,
-      );
+      const result = await toScssMap(seeds(['color']), {
+        splitBy: '/',
+        formatConfig: { singleQuote: true },
+      });
 
       expect(Array.isArray(result)).toEqual(true);
       result.forEach(file => expect(typeof file.value.content).toEqual('string'));
@@ -24,32 +21,18 @@ describe('to-scss-map', () => {
     });
 
     it('Expect result to be a valid downloadable file when there is no options', async () => {
-      const result = await toScssMap(seeds().tokens as Array<Token>, undefined, libs);
+      const result = await toScssMap(seeds(), undefined);
 
       expect(Array.isArray(result)).toEqual(true);
       result.forEach(file => expect(typeof file.value.content).toEqual('string'));
       return;
     });
 
-    it('should throw unexpected error from the parser', async () => {
-      try {
-        jest.spyOn(colorHandler, 'run').mockImplementationOnce(() => {
-          throw new Error('Unexpected error');
-        });
-        await toScssMap(seeds().tokens as Array<Token>, {}, libs);
-        fail();
-      } catch (err) {
-        expect(err.message).toMatch('Unexpected error');
-      }
-      return;
-    });
-
     it('should not have function with the omit option', async () => {
-      const result = await toScssMap(
-        seeds().tokens.filter(({ type }) => type === 'color') as Array<Token>,
-        { splitBy: '/', omitFunctionAndMixin: true },
-        libs,
-      );
+      const result = await toScssMap(seeds(['color']), {
+        splitBy: '/',
+        omitFunctionAndMixin: true,
+      });
 
       expect(Array.isArray(result)).toEqual(true);
       result.forEach(file => {
@@ -61,9 +44,8 @@ describe('to-scss-map', () => {
 
     it('should not have mixin with the omit option', async () => {
       const result = await toScssMap(
-        seeds().tokens.filter(({ type }) => type === 'textStyle') as Array<Token>,
+        seeds().filter(({ type }) => type === 'textStyle') as Array<Token>,
         { splitBy: '/', omitFunctionAndMixin: true },
-        libs,
       );
 
       expect(Array.isArray(result)).toEqual(true);
@@ -101,22 +83,21 @@ describe('to-scss-map', () => {
       };
 
       const ScssMapsResponse = await toScssMap(
-        seeds().tokens.filter(token =>
+        seeds().filter(token =>
           TYPES_USING_FUNCTION.includes(token.type as ToScssMapTokenType),
         ) as Array<Token>,
         { splitBy: '/', formatConfig: { singleQuote: true } },
-        libs,
       );
 
       await Promise.all(
         ScssMapsResponse.map(async fileGenerated => {
           const type = /get-(.*)\(/.exec(fileGenerated.value.content!)![1];
-          const functionExecution = testFunctionMapping[type] ?? '';
+          const functionExecution = testFunctionMapping[type!] ?? '';
           const data = `${fileGenerated.value.content}${os.EOL}${functionExecution}`;
 
           const content = await render(data);
-          if (expectedMapping[type]) {
-            expect(content.css.toString()).toContain(expectedMapping[type]);
+          if (expectedMapping[type!]) {
+            expect(content.css.toString()).toContain(expectedMapping[type!]);
           }
         }),
       );
@@ -135,21 +116,20 @@ describe('to-scss-map', () => {
       };
 
       const ScssMapsResponse = await toScssMap(
-        seeds().tokens.filter(token =>
+        seeds().filter(token =>
           TYPES_USING_MIXIN.includes(token.type as ToScssMapTokenType),
         ) as Array<Token>,
         { splitBy: '/', formatConfig: { singleQuote: true } },
-        libs,
       );
 
       await Promise.all(
         ScssMapsResponse.map(async fileGenerated => {
           const type = /mixin (.*)\(/.exec(fileGenerated.value.content!)![1];
-          const functionExecution = testFunctionMapping[type] ?? '';
+          const functionExecution = testFunctionMapping[type!] ?? '';
           const data = `${fileGenerated.value.content}${os.EOL}${functionExecution}`;
           const content = await render(data);
-          if (expectedMapping[type]) {
-            expect(content.css.toString()).toContain(expectedMapping[type]);
+          if (expectedMapping[type!]) {
+            expect(content.css.toString()).toContain(expectedMapping[type!]);
           }
         }),
       );
@@ -186,23 +166,22 @@ describe('to-scss-map', () => {
       };
 
       const ScssMapsResponse = await toScssMap(
-        seeds().tokens.filter(token =>
+        seeds().filter(token =>
           TYPES_USING_FUNCTION.includes(token.type as ToScssMapTokenType),
         ) as Array<Token>,
         { splitBy: '/', formatConfig: { singleQuote: true } },
-        libs,
       );
 
       await Promise.all(
         ScssMapsResponse.map(async fileGenerated => {
           const type = /get-(.*)\(/.exec(fileGenerated.value.content!)![1];
-          const functionExecution = testFunctionMapping[type] ?? '';
+          const functionExecution = testFunctionMapping[type!] ?? '';
           const data = `${fileGenerated.value.content}${os.EOL}${functionExecution}`;
 
           try {
             await render(data);
           } catch (error) {
-            expect(error.message).toContain(expectedError[type]);
+            expect(error.message).toContain(expectedError[type!]);
             expect(error.message).toContain(`Non usable value. Got \`#{$${type}}\``);
           }
         }),
@@ -222,23 +201,22 @@ describe('to-scss-map', () => {
       };
 
       const scssMapsResponse = await toScssMap(
-        seeds().tokens.filter(token =>
+        seeds().filter(token =>
           TYPES_USING_MIXIN.includes(token.type as ToScssMapTokenType),
         ) as Array<Token>,
         { splitBy: '/', formatConfig: { singleQuote: true } },
-        libs,
       );
 
       await Promise.all(
         scssMapsResponse.map(async fileGenerated => {
           const type = /mixin (.*)\(/.exec(fileGenerated.value.content!)![1];
-          const functionExecution = testFunctionMapping[type] ?? '';
+          const functionExecution = testFunctionMapping[type!] ?? '';
           const data = `${fileGenerated.value.content}${os.EOL}${functionExecution}`;
 
           try {
             await render(data);
           } catch (error) {
-            expect(error.message).toContain(expectedError[type]);
+            expect(error.message).toContain(expectedError[type!]);
           }
         }),
       );
@@ -257,23 +235,22 @@ describe('to-scss-map', () => {
       };
 
       const scssMapsResponse = await toScssMap(
-        seeds().tokens.filter(token =>
+        seeds().filter(token =>
           TYPES_USING_MIXIN.includes(token.type as ToScssMapTokenType),
         ) as Array<Token>,
         { splitBy: '/', formatConfig: { singleQuote: true } },
-        libs,
       );
 
       await Promise.all(
         scssMapsResponse.map(async fileGenerated => {
           const type = /mixin (.*)\(/.exec(fileGenerated.value.content!)![1];
-          const functionExecution = testFunctionMapping[type] ?? '';
+          const functionExecution = testFunctionMapping[type!] ?? '';
           const data = `${fileGenerated.value.content}${os.EOL}${functionExecution}`;
 
           try {
             await render(data);
           } catch (error) {
-            expect(error.message).toContain(expectedError[type]);
+            expect(error.message).toContain(expectedError[type!]);
             expect(error.message).toContain(`Non usable value. Got \`#{$text-style}\``);
           }
         }),
@@ -289,7 +266,7 @@ describe('to-scss-map', () => {
       const expected = '.test{width:32px}';
 
       const ScssMapsResponse = await toScssMap(
-        seeds().tokens.filter(token =>
+        seeds().filter(token =>
           ['measurement'].includes(token.type as ToScssMapTokenType),
         ) as Array<Token>,
         {
@@ -302,7 +279,6 @@ describe('to-scss-map', () => {
             measurement: '_{{type}}-custom',
           },
         },
-        libs,
       );
 
       await Promise.all(
@@ -332,7 +308,7 @@ describe('to-scss-map', () => {
       };
 
       const ScssMapsResponse = await toScssMap(
-        seeds().tokens.filter(token =>
+        seeds().filter(token =>
           TYPES_USING_MIXIN.includes(token.type as ToScssMapTokenType),
         ) as Array<Token>,
         {
@@ -347,20 +323,19 @@ describe('to-scss-map', () => {
             textStyle: '_typography',
           },
         },
-        libs,
       );
 
       await Promise.all(
         ScssMapsResponse.map(async fileGenerated => {
           const type = /mixin (.*)\(/.exec(fileGenerated.value.content!)![1];
-          const functionExecution = testFunctionMapping[type] ?? '';
+          const functionExecution = testFunctionMapping[type!] ?? '';
           const data = `${fileGenerated.value.content}${os.EOL}${functionExecution}`;
           const content = await render(data);
 
-          expect(fileGenerated.name).toEqual(expectedFileName[type]);
+          expect(fileGenerated.name).toEqual(expectedFileName[type!]);
 
           if (expectedMapping) {
-            expect(content.css.toString()).toContain(expectedMapping[type]);
+            expect(content.css.toString()).toContain(expectedMapping[type!]);
           }
         }),
       );
@@ -375,7 +350,7 @@ describe('to-scss-map', () => {
       const expected = '.test{width:32px}';
 
       const ScssMapsResponse = await toScssMap(
-        seeds().tokens.filter(token => token.type === 'measurement') as Array<Token>,
+        seeds().filter(token => token.type === 'measurement') as Array<Token>,
         {
           splitBy: '/',
           formatConfig: { singleQuote: true },
@@ -386,7 +361,6 @@ describe('to-scss-map', () => {
             measurement: '_{{type}}-custom',
           },
         },
-        libs,
       );
 
       await Promise.all(
@@ -408,14 +382,13 @@ describe('to-scss-map', () => {
       const expected = '.test{width:32px}';
 
       const ScssMapsResponse = await toScssMap(
-        seeds().tokens.filter(token => token.type === 'measurement') as Array<Token>,
+        seeds().filter(token => token.type === 'measurement') as Array<Token>,
         {
           splitBy: '/',
           formatConfig: { singleQuote: true },
           variableName: 'my-{{type}}s',
           fileName: '_{{type}}-custom',
         },
-        libs,
       );
 
       await Promise.all(
@@ -442,7 +415,7 @@ describe('to-scss-map', () => {
       };
 
       const ScssMapsResponse = await toScssMap(
-        seeds().tokens.filter(token =>
+        seeds().filter(token =>
           ['measurement', 'color'].includes(token.type as ToScssMapTokenType),
         ) as Array<Token>,
         {
@@ -453,19 +426,18 @@ describe('to-scss-map', () => {
             measurement: 'my-{{type}}s',
           },
         },
-        libs,
       );
 
       await Promise.all(
         ScssMapsResponse.map(async fileGenerated => {
           const type = /function (.*)\(/.exec(fileGenerated.value.content!)![1];
 
-          const functionExecution = testFunctionMapping[type] ?? '';
+          const functionExecution = testFunctionMapping[type!] ?? '';
           const data = `${fileGenerated.value.content}${os.EOL}${functionExecution}`;
 
           const content = await render(data);
-          if (expectedMapping[type]) {
-            expect(content.css.toString().includes(expectedMapping[type]));
+          if (expectedMapping[type!]) {
+            expect(content.css.toString().includes(expectedMapping[type!]!));
           }
         }),
       );
@@ -484,22 +456,21 @@ describe('to-scss-map', () => {
       };
 
       const ScssMapsResponse = await toScssMap(
-        seeds().tokens.filter(token =>
+        seeds().filter(token =>
           TYPES_USING_MIXIN.includes(token.type as ToScssMapTokenType),
         ) as Array<Token>,
         { splitBy: '/', formatConfig: { singleQuote: true }, mixinName: 'typography' },
-        libs,
       );
 
       await Promise.all(
         ScssMapsResponse.map(async fileGenerated => {
           const type = /mixin (.*)\(/.exec(fileGenerated.value.content!)![1];
-          const functionExecution = testFunctionMapping[type] ?? '';
+          const functionExecution = testFunctionMapping[type!] ?? '';
           const data = `${fileGenerated.value.content}${os.EOL}${functionExecution}`;
           const content = await render(data);
 
-          if (expectedMapping[type]) {
-            expect(content.css.toString().includes(expectedMapping[type]));
+          if (expectedMapping[type!]) {
+            expect(content.css.toString().includes(expectedMapping[type!]!));
           }
         }),
       );

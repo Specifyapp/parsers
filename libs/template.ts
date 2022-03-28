@@ -8,6 +8,8 @@ export default class Template {
   mustache: MustacheWriter = new Mustache.Writer();
   constructor(pattern: string) {
     this.mustache.escapedValue = (token, context) => {
+      console.log(token);
+      // @ts-ignore
       return context.lookup(token[1]);
     };
     this.pattern = pattern;

@@ -1,4 +1,4 @@
-import { VectorToken } from '../../../types';
+import { VectorToken } from '../../../types/tokens/Vector';
 import path from 'path';
 import { OptionsType } from '../to-react-native.parser';
 

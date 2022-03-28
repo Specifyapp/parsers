@@ -73,8 +73,8 @@ export async function toJss<T extends InputDataType>(tokens: T, options: Options
     const tokensGroupByType = _.groupBy(tokens, 'type');
     const template = new Template(pattern);
     const styles = Object.keys(tokensGroupByType).reduce((result, type) => {
-      const content = tokensGroupByType[type]
-        .map((token: Pick<Token, 'value' | 'type' | 'name'>) => {
+      const content = tokensGroupByType[type]!.map(
+        (token: Pick<Token, 'value' | 'type' | 'name'>) => {
           const tokenClassName = `${token.type.charAt(0).toUpperCase() + token.type.slice(1)}`;
 
           if (!(<any>TokensClass)[tokenClassName]) return;
@@ -95,8 +95,8 @@ export async function toJss<T extends InputDataType>(tokens: T, options: Options
             { ...options?.formatConfig },
             fileName,
           )},`;
-        })
-        .join('');
+        },
+      ).join('');
       result += `${transformNameFn(type)}: {${content}},`;
       return result;
     }, '');

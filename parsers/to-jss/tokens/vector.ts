@@ -1,4 +1,4 @@
-import { VectorToken } from '../../../types';
+import { VectorToken } from '../../../types/tokens/Vector';
 import path from 'path';
 import { FormatConfigType, FormatTokenType } from '../to-jss.parser';
 

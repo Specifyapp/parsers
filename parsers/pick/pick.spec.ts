@@ -1,37 +1,28 @@
-import seeds from '../../tests/seeds';
-import pick from './pick.parser';
-import libs from '../global-libs';
+import { seeds } from '../../tests/seeds';
+import { pick } from './pick.parser';
 import { has } from 'lodash';
 
 describe('Pick', () => {
   it('Execute parser', async () => {
-    const result = await pick(
-      seeds().tokens,
-      {
-        keys: ['name', 'type'],
-      },
-      libs,
-    );
+    const result = await pick(seeds(), {
+      keys: ['name', 'type'],
+    });
     if (result instanceof Error) return fail(result);
     result.forEach(token => expect(Object.keys(token)).toEqual(['name', 'type']));
     return;
   });
   it('Execute parser without option', async () => {
-    const result = await pick(seeds().tokens, undefined, libs);
+    const result = await pick(seeds(), undefined);
     if (result instanceof Error) return fail(result);
     result.forEach(token => expect(Object.keys(token)).toEqual(['name']));
     return;
   });
   it('Execute parser with flatten option', async () => {
-    const tokens = seeds().tokens;
-    const result = await pick(
-      tokens,
-      {
-        keys: ['id', 'name', 'meta.originFrameName'],
-        flatten: true,
-      },
-      libs,
-    );
+    const tokens = seeds();
+    const result = await pick(tokens, {
+      keys: ['id', 'name', 'meta.originFrameName'],
+      flatten: true,
+    });
 
     if (result instanceof Error) return fail(result);
 
@@ -43,17 +34,13 @@ describe('Pick', () => {
     return;
   });
   it('Execute parser with filter', async () => {
-    const tokens = seeds().tokens;
-    const result = await pick(
-      tokens,
-      {
-        keys: ['value.font'],
-        filter: {
-          types: ['textStyle'],
-        },
+    const tokens = seeds();
+    const result = await pick(tokens, {
+      keys: ['value.font'],
+      filter: {
+        types: ['textStyle'],
       },
-      libs,
-    );
+    });
     if (result instanceof Error) return fail(result);
     expect(tokens.length).toEqual(result.length);
     result.forEach(token => {

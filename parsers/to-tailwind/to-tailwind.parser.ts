@@ -1,4 +1,19 @@
-import { Token, PartialRecord, TokensType } from '../../types';
+import {
+  PartialRecord,
+  TokensType,
+  ColorToken,
+  BorderToken,
+  DepthToken,
+  DurationToken,
+  GradientToken,
+  MeasurementToken,
+  OpacityToken,
+  ShadowToken,
+  FontToken,
+  TextStyleToken,
+  BitmapToken,
+  VectorToken,
+} from '../../types';
 import prettier from 'prettier';
 import os from 'os';
 import * as _ from 'lodash';
@@ -6,8 +21,20 @@ import { ColorsFormat, FormatName, TailwindTokenClass, TailwindType } from './to
 import * as TokensClass from './tokens';
 import deepmerge from 'deepmerge';
 
-export type InputDataType = Array<
-  Pick<Token, 'id' | 'name' | 'value' | 'type'> & Record<string, any>
+export type InputDataType = ReadonlyArray<
+  | Pick<ColorToken, 'value' | 'type' | 'name' | 'id'>
+  | Pick<BorderToken, 'value' | 'type' | 'name' | 'id'>
+  | Pick<DepthToken, 'value' | 'type' | 'name' | 'id'>
+  | Pick<DurationToken, 'value' | 'type' | 'name' | 'id'>
+  | Pick<GradientToken, 'value' | 'type' | 'name' | 'id'>
+  | Pick<MeasurementToken, 'value' | 'type' | 'name' | 'id'>
+  | Pick<OpacityToken, 'value' | 'type' | 'name' | 'id'>
+  | Pick<ShadowToken, 'value' | 'type' | 'name' | 'id'>
+  | Pick<FontToken, 'value' | 'type' | 'name' | 'id'>
+  | Pick<TextStyleToken, 'value' | 'type' | 'name' | 'id'>
+  | Pick<BitmapToken, 'value' | 'type' | 'name' | 'id'>
+  | Pick<VectorToken, 'value' | 'type' | 'name' | 'id'>
+  // | Record<string, any>
 >;
 export type FormatTokenType = Partial<{
   colorFormat: {
@@ -70,7 +97,7 @@ class ToTailwind {
     const TokenHandler = getClassByType(tokenType);
     if (!TokenHandler) return {};
 
-    const tokenByType = this.tokensGroupedByType[tokenType].reduce((acc, token) => {
+    const tokenByType = this.tokensGroupedByType[tokenType]!.reduce((acc, token) => {
       const instance = new TokenHandler(token);
       const tailwindTokens = instance.generate(this.options, this.tokens);
       return deepmerge(acc, tailwindTokens);

@@ -1,5 +1,5 @@
 import type { OptimizeOptions, DefaultPlugins, OptimizedSvg } from 'svgo';
-import { DownloadableFile } from '../../types';
+import { DownloadableFile, VectorToken } from '../../types';
 import {
   defaultPresetPlugins,
   DefaultPresetOverride,
@@ -13,12 +13,7 @@ import SVGO from 'svgo';
 import { omit } from 'lodash';
 import { SpServices } from '../global-libs';
 
-export type InputDataType = Array<
-  Record<string, any> & {
-    type: string;
-    value: { url: string } & { [key: string]: any };
-  }
->;
+export type InputDataType = Array<VectorToken>;
 
 export type OptionsType =
   | undefined
@@ -49,7 +44,7 @@ function migrateSvgoPlugins(plugins?: Plugins): Array<PluginV2> {
   }>(
     (acc, plugin) => {
       const pluginName = Object.keys(plugin)[0];
-      if (defaultPresetPlugins.includes(pluginName)) {
+      if (pluginName && defaultPresetPlugins.includes(pluginName)) {
         acc.overrides[pluginName as DefaultPresetPluginsName] = plugin[
           pluginName as keyof PluginV1
         ] as DefaultPresetPluginsParams;

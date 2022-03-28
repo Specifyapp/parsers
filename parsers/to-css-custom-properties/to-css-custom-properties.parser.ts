@@ -84,14 +84,17 @@ function convertToCss(token: InputDataType[0], options?: OptionsType) {
   return `--${name}: ${css};`;
 }
 
-export function toCssCustomProperties<T extends InputDataType>(tokens: T, options?: OptionsType) {
+export async function toCssCustomProperties<T extends InputDataType>(
+  tokens: T,
+  options?: OptionsType,
+) {
   try {
     const selector = options?.formatConfig?.selector || ':root';
     const tokensGroupByType = _.groupBy(tokens, 'type');
     const styles = Object.keys(tokensGroupByType).reduce((acc, type) => {
-      const formatedCss = tokensGroupByType[type]
-        .map(token => convertToCss(token, options))
-        .join('');
+      const formatedCss = tokensGroupByType[type]!.map(token => convertToCss(token, options)).join(
+        '',
+      );
       if (formatedCss.length > 0) acc += `\n\n/* ${type.toUpperCase()} */\n${formatedCss}`;
       return acc;
     }, '');

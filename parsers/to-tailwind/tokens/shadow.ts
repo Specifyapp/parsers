@@ -1,4 +1,4 @@
-import { ShadowToken } from '../../../types';
+import { ShadowToken } from '../../../types/tokens/Shadow';
 import { OptionsType } from '../to-tailwind.parser';
 import tinycolor from 'tinycolor2';
 import { ShadowMapping } from '../to-tailwind.type';

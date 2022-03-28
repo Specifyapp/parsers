@@ -1,5 +1,5 @@
 import tinycolor from 'tinycolor2';
-import { GradientToken } from '../../../types';
+import { GradientToken } from '../../../types/tokens/Gradient';
 import { OptionsType } from '../to-react-native.parser';
 
 export class Gradient extends GradientToken {

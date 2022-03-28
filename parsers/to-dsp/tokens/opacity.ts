@@ -1,4 +1,4 @@
-import { OpacityToken } from '../../../types';
+import { OpacityToken } from '../../../types/tokens/Opacity';
 import { DspEntity } from '../dsp.type';
 
 export class Opacity extends OpacityToken {

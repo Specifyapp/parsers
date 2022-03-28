@@ -11,7 +11,7 @@ function getClassByType(type: string): LinkDesignTokenClass | undefined {
   return (<any>TokensClass)[tokenClassName];
 }
 
-export async function linkDesignTokens<T extends InputDataType>(tokens: T, options: OptionsType) {
+export async function linkDesignTokens<T extends InputDataType>(tokens: T, options?: OptionsType) {
   try {
     const tokensGroupedByType = groupBy(tokens, 'type');
     const types = Object.keys(tokensGroupedByType) as Array<TokensType>;
@@ -20,7 +20,7 @@ export async function linkDesignTokens<T extends InputDataType>(tokens: T, optio
     const indexes = types.reduce((indexes, type) => {
       const tokenHandler = getClassByType(type);
       if (!tokenHandler) return indexes;
-      tokensGroupedByType[type].forEach(token => {
+      tokensGroupedByType[type]!.forEach(token => {
         const instance = new tokenHandler(token);
         if (!instance.getSignature) return;
         const signatures = instance.getSignature();
@@ -36,7 +36,7 @@ export async function linkDesignTokens<T extends InputDataType>(tokens: T, optio
       const tokenHandler = getClassByType(type);
       if (tokenHandler) {
         acc.push(
-          ...tokensGroupedByType[type].map(token => {
+          ...tokensGroupedByType[type]!.map(token => {
             const instance = new tokenHandler(token);
             if (!instance.compute) return token;
             token.value = instance.compute(indexes, tokensGroupedByType);
@@ -44,7 +44,7 @@ export async function linkDesignTokens<T extends InputDataType>(tokens: T, optio
           }),
         );
       } else {
-        acc.push(...tokensGroupedByType[type]);
+        acc.push(...tokensGroupedByType[type]!);
       }
       return acc;
     }, [] as Array<Token>);

@@ -40,8 +40,8 @@ export async function toReactNative<T extends InputDataType>(tokens: T, options:
     const template = new Template(pattern);
     let imports = '';
     const styles = Object.keys(tokensGroupByType).reduce((result, type) => {
-      const content = tokensGroupByType[type]
-        .map((token: Pick<Token, 'value' | 'type' | 'name'>) => {
+      const content = tokensGroupByType[type]!.map(
+        (token: Pick<Token, 'value' | 'type' | 'name'>) => {
           const tokenClassName = `${token.type.charAt(0).toUpperCase() + token.type.slice(1)}`;
 
           if (!(<any>TokensClass)[tokenClassName]) return;
@@ -61,8 +61,8 @@ export async function toReactNative<T extends InputDataType>(tokens: T, options:
           }
 
           return `'${token.name}': ${instance.toReactNative(options)},`;
-        })
-        .join('');
+        },
+      ).join('');
 
       if (content) {
         result += `${camelCase(type)}: {${content}},`;

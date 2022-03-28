@@ -1,17 +1,15 @@
-import snakecasify from './snakecasify.parser';
-import { Token } from '../../types';
-import libs from '../global-libs';
-import seeds from '../../tests/seeds';
+import { snakecasify } from './snakecasify.parser';
+import { seeds } from '../../tests/seeds';
 
 describe('Snakecasify', () => {
   it('Get tokens - apply parsers', async () => {
-    const result = await snakecasify(seeds().tokens as Array<Token>, { keys: ['name'] }, libs);
+    const result = await snakecasify(seeds(), { keys: ['name'] });
     if (result instanceof Error) return fail(result);
     result.forEach(token => expect(token.name?.includes(' ')).toEqual(false));
     return;
   });
   it('Get tokens - apply parsers - default', async () => {
-    const result = await snakecasify(seeds().tokens as Array<Token>, undefined, libs);
+    const result = await snakecasify(seeds(), undefined);
     if (result instanceof Error) return fail(result);
     result.forEach(token => {
       expect(token.name?.includes(' ')).toEqual(false);
@@ -19,15 +17,15 @@ describe('Snakecasify', () => {
     return;
   });
   it('Get tokens - apply parsers - without tokens', async () => {
-    const result = await snakecasify([], undefined, libs);
+    const result = await snakecasify([], undefined);
     if (result instanceof Error) return fail(result);
     expect(Array.isArray(result)).toBeTruthy();
     expect(result.length).toEqual(0);
     return;
   });
   it('Get tokens - apply parsers - unknown target key', async () => {
-    const input = seeds().tokens;
-    const result = await snakecasify(input, { keys: ['name', 'not exist'] }, libs);
+    const input = seeds();
+    const result = await snakecasify(input, { keys: ['name', 'not exist'] });
     expect(Array.isArray(result)).toBeTruthy();
     expect(result.length).toEqual(input.length);
     return;
@@ -38,7 +36,6 @@ describe('Snakecasify', () => {
         // @ts-ignore
         'wrong type',
         { keys: ['name', 'not exist'] },
-        libs,
       );
     } catch (err) {
       return;

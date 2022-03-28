@@ -1,4 +1,4 @@
-import { MeasurementToken } from '../../../types';
+import { MeasurementToken } from '../../../types/tokens/Measurement';
 import { BaseStyleDictionaryTokensFormat } from '../to-style-dictionary.type';
 import * as _ from 'lodash';
 

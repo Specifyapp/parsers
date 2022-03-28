@@ -14,11 +14,13 @@ export type InputDataType = Array<{
   [Key: string]: any;
 }>;
 
-export type OptionsType = {
-  formats?: Array<'woff2' | 'woff' | 'otf' | 'ttf' | 'eot'>;
-  fileNameKey?: 'name' | 'fontFamily' | Array<string>;
-  fileNameFormat?: 'camelCase' | 'kebabCase' | 'snakeCase' | 'pascalCase';
-};
+export type OptionsType =
+  | undefined
+  | {
+      formats?: Array<'woff2' | 'woff' | 'otf' | 'ttf' | 'eot'>;
+      fileNameKey?: 'name' | 'fontFamily' | Array<string>;
+      fileNameFormat?: 'camelCase' | 'kebabCase' | 'snakeCase' | 'pascalCase';
+    };
 
 export async function convertFont<T extends InputDataType>(designTokens: T, options: OptionsType) {
   try {

@@ -1,14 +1,13 @@
 import Path from 'path';
-import seeds from '../../tests/seeds';
-import convertFont, { OptionsType } from './convert-font.parser';
+import { seeds } from '../../tests/seeds';
+import { convertFont, OptionsType } from './convert-font.parser';
 import { FontsFormat, FontToken } from '../../types';
-import { LibsType } from '../global-libs';
 import libs from '../global-libs';
 
 describe('convert-font', () => {
   it('Default options', async () => {
-    const fonts = seeds().tokens.filter(({ type }) => type === 'font') as Array<FontToken>;
-    const result = await convertFont(fonts, undefined, libs as LibsType);
+    const fonts = seeds(['font']).filter(({ type }) => type === 'font') as Array<FontToken>;
+    const result = await convertFont(fonts, undefined);
     if (result instanceof Error) return fail(result);
     expect(Array.isArray(result)).toEqual(true);
     expect(result.length).toEqual(fonts.filter(({ value }) => !value.fontFileMissing).length * 2);
@@ -25,13 +24,13 @@ describe('convert-font', () => {
     return;
   });
   it('Several options', async () => {
-    const fonts = seeds().tokens.filter(({ type }) => type === 'font') as Array<FontToken>;
+    const fonts = seeds(['font']);
     const options: OptionsType = {
       formats: ['woff'],
       fileNameKey: ['fontFamily', 'value.fontWeight', 'name'],
       fileNameFormat: 'kebabCase',
     };
-    const result = await convertFont(fonts, options, libs as LibsType);
+    const result = await convertFont(fonts, options);
     if (result instanceof Error) return fail(result);
     expect(Array.isArray(result)).toEqual(true);
     expect(result.length).toEqual(fonts.filter(({ value }) => !value.fontFileMissing).length);
@@ -41,7 +40,7 @@ describe('convert-font', () => {
         options.formats!.includes(Path.extname(item.value.format).substring(1) as FontsFormat),
       );
       const expectedName = libs._.kebabCase(
-        `${fonts[index].value.fontFamily}-${fonts[index].value.fontWeight}-${fonts[index].name}`,
+        `${fonts[index]!.value.fontFamily}-${fonts[index]!.value.fontWeight}-${fonts[index]!.name}`,
       );
       expect(item.value.fileName).toEqual(`${expectedName}.woff`);
     });

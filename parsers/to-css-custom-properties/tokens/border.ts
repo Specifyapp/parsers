@@ -1,4 +1,4 @@
-import { BorderToken } from '../../../types';
+import { BorderToken } from '../../../types/tokens/Border';
 
 export function toCss<T extends Pick<BorderToken, 'value'> & object>(token: T) {
   const { color, type, width } = token.value;

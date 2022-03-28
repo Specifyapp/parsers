@@ -1,15 +1,14 @@
-import libs from '../global-libs';
-import seeds from '../../tests/seeds';
-import replaceString from './replace-string.parser';
+import { seeds } from '../../tests/seeds';
+import { replaceString } from './replace-string.parser';
 
 describe('Replace string', () => {
   it('Should return string with characters after the last slash with flags', async () => {
-    const tokens = seeds().tokens;
-    const result = await replaceString(
-      tokens,
-      { keys: ['name'], regex: { pattern: '(.*?)\\/', flags: 'g' }, trim: true },
-      libs,
-    );
+    const tokens = seeds();
+    const result = await replaceString(tokens, {
+      keys: ['name'],
+      regex: { pattern: '(.*?)\\/', flags: 'g' },
+      trim: true,
+    });
     if (result instanceof Error) return fail(result);
     result.map(token => {
       expect(token.name).not.toContain('/');
@@ -19,12 +18,12 @@ describe('Replace string', () => {
     return;
   });
   it('Should return string with characters after the first slash', async () => {
-    const tokens = seeds().tokens;
-    const result = await replaceString(
-      tokens,
-      { keys: ['name'], regex: { pattern: '(.*?)\\/' }, trim: true },
-      libs,
-    );
+    const tokens = seeds();
+    const result = await replaceString(tokens, {
+      keys: ['name'],
+      regex: { pattern: '(.*?)\\/' },
+      trim: true,
+    });
     if (result instanceof Error) return fail(result);
     result.map(token => {
       expect(token.name).not.toContain('/');
@@ -34,12 +33,12 @@ describe('Replace string', () => {
     return;
   });
   it('Should replace all space by dash', async () => {
-    const tokens = seeds().tokens;
-    const result = await replaceString(
-      tokens,
-      { keys: ['name'], regex: { pattern: ' ', flags: 'g' }, replaceBy: '-' },
-      libs,
-    );
+    const tokens = seeds();
+    const result = await replaceString(tokens, {
+      keys: ['name'],
+      regex: { pattern: ' ', flags: 'g' },
+      replaceBy: '-',
+    });
     if (result instanceof Error) return fail(result);
     tokens.map(token => {
       expect(result.find(({ id }) => token.id === id)!.name).toEqual(token.name.replace(/ /g, '-'));
@@ -47,12 +46,13 @@ describe('Replace string', () => {
     return;
   });
   it('Should replace space by size', async () => {
-    const tokens = seeds().tokens;
-    const result = await replaceString(
-      tokens,
-      { keys: ['name'], regex: 'space', replaceBy: 'size', trim: true },
-      libs,
-    );
+    const tokens = seeds();
+    const result = await replaceString(tokens, {
+      keys: ['name'],
+      regex: 'space',
+      replaceBy: 'size',
+      trim: true,
+    });
     if (result instanceof Error) return fail(result);
     result.map(token => {
       expect(token.name).not.toContain('space');
@@ -67,12 +67,8 @@ describe('Replace string', () => {
     return;
   });
   it('Should replace nothing', async () => {
-    const tokens = seeds().tokens;
-    const result = await replaceString(
-      tokens,
-      { keys: ['name'], regex: '', replaceBy: 'nothing' },
-      libs,
-    );
+    const tokens = seeds();
+    const result = await replaceString(tokens, { keys: ['name'], regex: '', replaceBy: 'nothing' });
     if (result instanceof Error) return fail(result);
     tokens.map(token => {
       expect(result.find(({ id }) => token.id === id)).toEqual(token);
@@ -80,12 +76,12 @@ describe('Replace string', () => {
     return;
   });
   it('Should selector match nothing', async () => {
-    const tokens = seeds().tokens;
-    const result = await replaceString(
-      tokens,
-      { keys: ['not-exist'], regex: '', replaceBy: 'nothing' },
-      libs,
-    );
+    const tokens = seeds();
+    const result = await replaceString(tokens, {
+      keys: ['not-exist'],
+      regex: '',
+      replaceBy: 'nothing',
+    });
     if (result instanceof Error) return fail(result);
     tokens.map(token => {
       expect(result.find(({ id }) => token.id === id)).toEqual(token);

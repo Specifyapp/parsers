@@ -1,8 +1,7 @@
 import tinycolor from 'tinycolor2';
 import * as _ from 'lodash';
-import toTailwind from './to-tailwind.parser';
-import seeds from '../../tests/seeds';
-import libs from '../global-libs';
+import { toTailwind } from './to-tailwind.parser';
+import { seeds } from '../../tests/seeds';
 import {
   BorderToken,
   ColorToken,
@@ -20,8 +19,8 @@ import { camelCase } from 'lodash';
 
 describe('To tailwind', () => {
   it('Should generate the colors object', async () => {
-    const tokens = seeds().tokens.filter(token => token.type === 'color') as Array<ColorToken>;
-    const result = await toTailwind(tokens, undefined, libs);
+    const tokens = seeds(['color']);
+    const result = await toTailwind(tokens, undefined);
 
     tokens.forEach(({ name, value }) => {
       expect(result).toEqual(expect.stringMatching(_.camelCase(name)));
@@ -32,8 +31,8 @@ describe('To tailwind', () => {
   });
 
   it('Should generate the border object', async () => {
-    const tokens = seeds().tokens.filter(token => token.type === 'border') as Array<BorderToken>;
-    const result = await toTailwind(tokens, undefined, libs);
+    const tokens = seeds(['border']);
+    const result = await toTailwind(tokens, undefined);
 
     tokens.forEach(({ name, value }) => {
       expect(result).toEqual(expect.stringMatching('borderWidth'));
@@ -69,8 +68,8 @@ describe('To tailwind', () => {
   });
 
   it('Should generate the depth object', async () => {
-    const tokens = seeds().tokens.filter(token => token.type === 'depth') as Array<DepthToken>;
-    const result = await toTailwind(tokens, undefined, libs);
+    const tokens = seeds(['depth']);
+    const result = await toTailwind(tokens, undefined);
 
     tokens.forEach(({ name, value }) => {
       expect(result).toEqual(expect.stringMatching(`${_.camelCase(name)}: "${value.depth}"`));
@@ -80,10 +79,8 @@ describe('To tailwind', () => {
   });
 
   it('Should generate the duration object', async () => {
-    const tokens = seeds().tokens.filter(
-      token => token.type === 'duration',
-    ) as Array<DurationToken>;
-    const result = await toTailwind(tokens, undefined, libs);
+    const tokens = seeds(['duration']);
+    const result = await toTailwind(tokens, undefined);
 
     tokens.forEach(({ name, value }) => {
       expect(result).toEqual(
@@ -95,10 +92,8 @@ describe('To tailwind', () => {
   });
 
   it('Should generate the gradient object', async () => {
-    const tokens = seeds().tokens.filter(
-      token => token.type === 'gradient',
-    ) as Array<GradientToken>;
-    const result = await toTailwind(tokens, undefined, libs);
+    const tokens = seeds(['gradient']);
+    const result = await toTailwind(tokens, undefined);
     tokens.forEach(({ name, value }) => {
       const gradientValue = value.gradients
         .map(gradient => {
@@ -118,10 +113,8 @@ describe('To tailwind', () => {
   });
 
   it('Should generate the measurement object', async () => {
-    const tokens = seeds().tokens.filter(
-      token => token.type === 'measurement',
-    ) as Array<MeasurementToken>;
-    const result = await toTailwind(tokens, undefined, libs);
+    const tokens = seeds(['measurement']);
+    const result = await toTailwind(tokens, undefined);
 
     tokens.forEach(({ name, value }) => {
       expect(result).toEqual(
@@ -133,8 +126,8 @@ describe('To tailwind', () => {
   });
 
   it('Should generate the opacity object', async () => {
-    const tokens = seeds().tokens.filter(token => token.type === 'opacity') as Array<OpacityToken>;
-    const result = await toTailwind(tokens, undefined, libs);
+    const tokens = seeds(['opacity']);
+    const result = await toTailwind(tokens, undefined);
 
     tokens.forEach(({ name, value }) => {
       expect(result).toEqual(
@@ -146,8 +139,8 @@ describe('To tailwind', () => {
   });
 
   it('Should generate the shadow object', async () => {
-    const tokens = seeds().tokens.filter(token => token.type === 'shadow') as Array<ShadowToken>;
-    const result = await toTailwind(tokens, undefined, libs);
+    const tokens = seeds(['shadow']);
+    const result = await toTailwind(tokens, undefined);
 
     tokens.forEach(({ name, value }) => {
       const shadowString = value
@@ -176,10 +169,8 @@ describe('To tailwind', () => {
   });
 
   it('Should generate the textStyle object', async () => {
-    const tokens = seeds().tokens.filter(
-      token => token.type === 'textStyle',
-    ) as Array<TextStyleToken>;
-    const result = await toTailwind(tokens, undefined, libs);
+    const tokens = seeds(['textStyle']);
+    const result = await toTailwind(tokens, undefined);
 
     tokens.forEach(({ name, value }) => {
       // Match font size
@@ -238,18 +229,16 @@ describe('To tailwind', () => {
   });
 
   it('Should generate with multiple types', async () => {
-    const tokens = seeds().tokens.filter(token =>
-      ['color', 'gradient'].includes(token.type),
-    ) as Array<ColorToken | GradientToken>;
-    const result = await toTailwind(tokens, undefined, libs);
+    const tokens = seeds(['color', 'gradient']);
+    const result = await toTailwind(tokens, undefined);
 
     tokens.forEach(token => {
       if (token.type === 'color') {
-        const color = token as ColorToken;
+        const color = token;
         expect(result).toEqual(expect.stringMatching(_.camelCase(color.name)));
         expect(result).toEqual(expect.stringMatching(tinycolor(color.value).toString('hex')));
       } else {
-        const gradient = token as GradientToken;
+        const gradient = token;
 
         const gradientValue = gradient.value.gradients
           .map(gradient => {
@@ -274,8 +263,8 @@ describe('To tailwind', () => {
   });
 
   it('Should generate with specific formatName', async () => {
-    const tokens = seeds().tokens.filter(token => token.type === 'color') as Array<ColorToken>;
-    const result = await toTailwind(tokens, { formatName: 'kebabCase' }, libs);
+    const tokens = seeds(['color']);
+    const result = await toTailwind(tokens, { formatName: 'kebabCase' });
 
     tokens.forEach(({ name, value }) => {
       expect(result).toEqual(expect.stringMatching(_.kebabCase(name)));
@@ -286,18 +275,14 @@ describe('To tailwind', () => {
   });
 
   it('Should generate with specific format on colors', async () => {
-    const tokens = seeds().tokens.filter(token => token.type === 'color') as Array<ColorToken>;
-    const result = await toTailwind(
-      tokens,
-      {
-        formatTokens: {
-          colorFormat: {
-            format: 'hsl',
-          },
+    const tokens = seeds(['color']);
+    const result = await toTailwind(tokens, {
+      formatTokens: {
+        colorFormat: {
+          format: 'hsl',
         },
       },
-      libs,
-    );
+    });
 
     tokens.forEach(({ name, value }) => {
       expect(result).toEqual(
@@ -314,20 +299,14 @@ describe('To tailwind', () => {
   });
 
   it('Should generate with specific format on textStyle', async () => {
-    const tokens = seeds().tokens.filter(
-      token => token.type === 'textStyle',
-    ) as Array<TextStyleToken>;
-    const result = await toTailwind(
-      tokens,
-      {
-        formatTokens: {
-          fontSizeFormat: {
-            unit: 'rem',
-          },
+    const tokens = seeds(['textStyle']);
+    const result = await toTailwind(tokens, {
+      formatTokens: {
+        fontSizeFormat: {
+          unit: 'rem',
         },
       },
-      libs,
-    );
+    });
 
     tokens.forEach(({ name, value }) => {
       // Match font size
@@ -384,17 +363,13 @@ describe('To tailwind', () => {
   });
 
   it('Should generate with specific as es6 exportDefault', async () => {
-    const tokens = seeds().tokens.filter(token => token.type === 'color') as Array<ColorToken>;
-    const result = await toTailwind(
-      tokens,
-      {
-        formatConfig: {
-          module: 'es6',
-          exportDefault: true,
-        },
+    const tokens = seeds(['color']);
+    const result = await toTailwind(tokens, {
+      formatConfig: {
+        module: 'es6',
+        exportDefault: true,
       },
-      libs,
-    );
+    });
 
     tokens.forEach(({ name, value }) => {
       expect(result).toEqual(expect.stringMatching(_.camelCase(name)));
@@ -408,17 +383,13 @@ describe('To tailwind', () => {
   });
 
   it('Should generate with specific as es6 not export default', async () => {
-    const tokens = seeds().tokens.filter(token => token.type === 'color') as Array<ColorToken>;
-    const result = await toTailwind(
-      tokens,
-      {
-        formatConfig: {
-          module: 'es6',
-          exportDefault: false,
-        },
+    const tokens = seeds(['color']);
+    const result = await toTailwind(tokens, {
+      formatConfig: {
+        module: 'es6',
+        exportDefault: false,
       },
-      libs,
-    );
+    });
 
     tokens.forEach(({ name, value }) => {
       expect(result).toEqual(expect.stringMatching(_.camelCase(name)));
@@ -431,17 +402,13 @@ describe('To tailwind', () => {
   });
 
   it('Should generate with specific as commonjs export default', async () => {
-    const tokens = seeds().tokens.filter(token => token.type === 'color') as Array<ColorToken>;
-    const result = await toTailwind(
-      tokens,
-      {
-        formatConfig: {
-          module: 'commonjs',
-          exportDefault: true,
-        },
+    const tokens = seeds(['color']);
+    const result = await toTailwind(tokens, {
+      formatConfig: {
+        module: 'commonjs',
+        exportDefault: true,
       },
-      libs,
-    );
+    });
 
     tokens.forEach(({ name, value }) => {
       expect(result).toEqual(expect.stringMatching(_.camelCase(name)));
@@ -455,17 +422,13 @@ describe('To tailwind', () => {
   });
 
   it('Should generate with specific as commonjs not export default', async () => {
-    const tokens = seeds().tokens.filter(token => token.type === 'color') as Array<ColorToken>;
-    const result = await toTailwind(
-      tokens,
-      {
-        formatConfig: {
-          module: 'commonjs',
-          exportDefault: false,
-        },
+    const tokens = seeds(['color']);
+    const result = await toTailwind(tokens, {
+      formatConfig: {
+        module: 'commonjs',
+        exportDefault: false,
       },
-      libs,
-    );
+    });
 
     tokens.forEach(({ name, value }) => {
       expect(result).toEqual(expect.stringMatching(_.camelCase(name)));
@@ -479,18 +442,14 @@ describe('To tailwind', () => {
   });
 
   it('Should generate with specific objectName', async () => {
-    const tokens = seeds().tokens.filter(token => token.type === 'color') as Array<ColorToken>;
-    const result = await toTailwind(
-      tokens,
-      {
-        formatConfig: {
-          module: 'es6',
-          exportDefault: true,
-          objectName: 'extend',
-        },
+    const tokens = seeds(['color']);
+    const result = await toTailwind(tokens, {
+      formatConfig: {
+        module: 'es6',
+        exportDefault: true,
+        objectName: 'extend',
       },
-      libs,
-    );
+    });
 
     tokens.forEach(({ name, value }) => {
       expect(result).toEqual(expect.stringMatching(_.camelCase(name)));
@@ -504,31 +463,27 @@ describe('To tailwind', () => {
   });
 
   it('Should allow renaming of `border` tokens', async () => {
-    const tokens = seeds().tokens.filter(token => token.type === 'border') as Array<BorderToken>;
+    const tokens = seeds(['border']);
     const borderWidthPrefix = 'border-width-';
     const borderRadiusPrefix = 'border-radius-';
     const borderColorPrefix = 'border-color-';
     const borderOpacityPrefix = 'border-opacity-';
 
     const formatName = 'kebabCase';
-    const result = await toTailwind(
-      tokens,
-      {
-        renameKeys: {
-          borderWidth: `${borderWidthPrefix}{{name}}`,
-          borderRadius: `${borderRadiusPrefix}{{name}}`,
-          borderColor: `${borderColorPrefix}{{name}}`,
-          borderOpacity: `${borderOpacityPrefix}{{name}}`,
-        },
-        formatName,
-        formatConfig: {
-          module: 'es6',
-          exportDefault: true,
-          objectName: 'extend',
-        },
+    const result = await toTailwind(tokens, {
+      renameKeys: {
+        borderWidth: `${borderWidthPrefix}{{name}}`,
+        borderRadius: `${borderRadiusPrefix}{{name}}`,
+        borderColor: `${borderColorPrefix}{{name}}`,
+        borderOpacity: `${borderOpacityPrefix}{{name}}`,
       },
-      libs,
-    );
+      formatName,
+      formatConfig: {
+        module: 'es6',
+        exportDefault: true,
+        objectName: 'extend',
+      },
+    });
 
     tokens.forEach(({ name, value }) => {
       const transformedName = getNameFormatterFunction(formatName)(name);
@@ -547,25 +502,21 @@ describe('To tailwind', () => {
     });
   });
   it('Should allow renaming of `color` tokens', async () => {
-    const tokens = seeds().tokens.filter(token => token.type === 'color') as Array<ColorToken>;
+    const tokens = seeds(['color']);
     const prefix = 'color-';
 
     const formatName = 'kebabCase';
-    const result = await toTailwind(
-      tokens,
-      {
-        renameKeys: {
-          colors: `${prefix}{{name}}`,
-        },
-        formatName,
-        formatConfig: {
-          module: 'es6',
-          exportDefault: true,
-          objectName: 'extend',
-        },
+    const result = await toTailwind(tokens, {
+      renameKeys: {
+        colors: `${prefix}{{name}}`,
       },
-      libs,
-    );
+      formatName,
+      formatConfig: {
+        module: 'es6',
+        exportDefault: true,
+        objectName: 'extend',
+      },
+    });
 
     tokens.forEach(({ name }) => {
       const transformedName = getNameFormatterFunction(formatName)(name);
@@ -573,25 +524,21 @@ describe('To tailwind', () => {
     });
   });
   it('Should allow renaming of `depth` tokens', async () => {
-    const tokens = seeds().tokens.filter(token => token.type === 'depth') as Array<DepthToken>;
+    const tokens = seeds(['depth']);
     const prefix = 'depth-';
 
     const formatName = 'kebabCase';
-    const result = await toTailwind(
-      tokens,
-      {
-        renameKeys: {
-          zIndex: `${prefix}{{name}}`,
-        },
-        formatName,
-        formatConfig: {
-          module: 'es6',
-          exportDefault: true,
-          objectName: 'extend',
-        },
+    const result = await toTailwind(tokens, {
+      renameKeys: {
+        zIndex: `${prefix}{{name}}`,
       },
-      libs,
-    );
+      formatName,
+      formatConfig: {
+        module: 'es6',
+        exportDefault: true,
+        objectName: 'extend',
+      },
+    });
 
     tokens.forEach(({ name }) => {
       const transformedName = getNameFormatterFunction(formatName)(name);
@@ -599,27 +546,21 @@ describe('To tailwind', () => {
     });
   });
   it('Should allow renaming of `duration` tokens', async () => {
-    const tokens = seeds().tokens.filter(
-      token => token.type === 'duration',
-    ) as Array<DurationToken>;
+    const tokens = seeds(['duration']);
     const prefix = 'duration-';
 
     const formatName = 'kebabCase';
-    const result = await toTailwind(
-      tokens,
-      {
-        renameKeys: {
-          transitionDuration: `${prefix}{{name}}`,
-        },
-        formatName,
-        formatConfig: {
-          module: 'es6',
-          exportDefault: true,
-          objectName: 'extend',
-        },
+    const result = await toTailwind(tokens, {
+      renameKeys: {
+        transitionDuration: `${prefix}{{name}}`,
       },
-      libs,
-    );
+      formatName,
+      formatConfig: {
+        module: 'es6',
+        exportDefault: true,
+        objectName: 'extend',
+      },
+    });
 
     tokens.forEach(({ name }) => {
       const transformedName = getNameFormatterFunction(formatName)(name);
@@ -627,27 +568,21 @@ describe('To tailwind', () => {
     });
   });
   it('Should allow renaming of `gradient` tokens', async () => {
-    const tokens = seeds().tokens.filter(
-      token => token.type === 'gradient',
-    ) as Array<GradientToken>;
+    const tokens = seeds(['gradient']);
     const prefix = 'gradient-';
 
     const formatName = 'kebabCase';
-    const result = await toTailwind(
-      tokens,
-      {
-        renameKeys: {
-          backgroundImage: `${prefix}{{name}}`,
-        },
-        formatName,
-        formatConfig: {
-          module: 'es6',
-          exportDefault: true,
-          objectName: 'extend',
-        },
+    const result = await toTailwind(tokens, {
+      renameKeys: {
+        backgroundImage: `${prefix}{{name}}`,
       },
-      libs,
-    );
+      formatName,
+      formatConfig: {
+        module: 'es6',
+        exportDefault: true,
+        objectName: 'extend',
+      },
+    });
 
     tokens.forEach(({ name }) => {
       const transformedName = getNameFormatterFunction(formatName)(name);
@@ -655,27 +590,21 @@ describe('To tailwind', () => {
     });
   });
   it('Should allow renaming of `measurement` tokens', async () => {
-    const tokens = seeds().tokens.filter(
-      token => token.type === 'measurement',
-    ) as Array<MeasurementToken>;
+    const tokens = seeds(['measurement']);
     const prefix = 'measurement-';
 
     const formatName = 'kebabCase';
-    const result = await toTailwind(
-      tokens,
-      {
-        renameKeys: {
-          spacing: `${prefix}{{name}}`,
-        },
-        formatName,
-        formatConfig: {
-          module: 'es6',
-          exportDefault: true,
-          objectName: 'extend',
-        },
+    const result = await toTailwind(tokens, {
+      renameKeys: {
+        spacing: `${prefix}{{name}}`,
       },
-      libs,
-    );
+      formatName,
+      formatConfig: {
+        module: 'es6',
+        exportDefault: true,
+        objectName: 'extend',
+      },
+    });
 
     tokens.forEach(({ name }) => {
       const transformedName = getNameFormatterFunction(formatName)(name);
@@ -683,25 +612,21 @@ describe('To tailwind', () => {
     });
   });
   it('Should allow renaming of `opacity` tokens', async () => {
-    const tokens = seeds().tokens.filter(token => token.type === 'opacity') as Array<OpacityToken>;
+    const tokens = seeds(['opacity']);
     const prefix = 'opacity-';
 
     const formatName = 'kebabCase';
-    const result = await toTailwind(
-      tokens,
-      {
-        renameKeys: {
-          opacity: `${prefix}{{name}}`,
-        },
-        formatName,
-        formatConfig: {
-          module: 'es6',
-          exportDefault: true,
-          objectName: 'extend',
-        },
+    const result = await toTailwind(tokens, {
+      renameKeys: {
+        opacity: `${prefix}{{name}}`,
       },
-      libs,
-    );
+      formatName,
+      formatConfig: {
+        module: 'es6',
+        exportDefault: true,
+        objectName: 'extend',
+      },
+    });
 
     tokens.forEach(({ name }) => {
       const transformedName = getNameFormatterFunction(formatName)(name);
@@ -709,25 +634,21 @@ describe('To tailwind', () => {
     });
   });
   it('Should allow renaming of `shadow` tokens', async () => {
-    const tokens = seeds().tokens.filter(token => token.type === 'shadow') as Array<ShadowToken>;
+    const tokens = seeds(['shadow']);
     const prefix = 'shadow-';
 
     const formatName = 'kebabCase';
-    const result = await toTailwind(
-      tokens,
-      {
-        renameKeys: {
-          boxShadow: `${prefix}{{name}}`,
-        },
-        formatName,
-        formatConfig: {
-          module: 'es6',
-          exportDefault: true,
-          objectName: 'extend',
-        },
+    const result = await toTailwind(tokens, {
+      renameKeys: {
+        boxShadow: `${prefix}{{name}}`,
       },
-      libs,
-    );
+      formatName,
+      formatConfig: {
+        module: 'es6',
+        exportDefault: true,
+        objectName: 'extend',
+      },
+    });
 
     tokens.forEach(({ name }) => {
       const transformedName = getNameFormatterFunction(formatName)(name);
@@ -736,16 +657,20 @@ describe('To tailwind', () => {
   });
 
   it('Should allow to format object with the splitBy options', async () => {
-    const tokens = seeds().tokens.filter(
-      token => !['font', 'vector', 'bitmap'].includes(token.type),
-    );
-    const result = await toTailwind(
-      tokens,
-      {
-        splitBy: '/',
-      },
-      libs,
-    );
+    const tokens = seeds([
+      'border',
+      'color',
+      'depth',
+      'duration',
+      'gradient',
+      'measurement',
+      'opacity',
+      'shadow',
+      'textStyle',
+    ]);
+    const result = await toTailwind(tokens, {
+      splitBy: '/',
+    });
     tokens.forEach(token => {
       if (token.name.includes('/')) {
         expect(result).toEqual(
@@ -759,9 +684,7 @@ describe('To tailwind', () => {
   });
 
   it('Should allow renaming of `textStyle` tokens', async () => {
-    const tokens = seeds().tokens.filter(
-      token => token.type === 'textStyle',
-    ) as Array<TextStyleToken>;
+    const tokens = seeds(['textStyle']);
     const fontSizePrefix = 'text-style-font-size-';
     const letterSpacingPrefix = 'text-style-letter-spacing-';
     const lineHeightPrefix = 'text-style-line-height-';
@@ -771,27 +694,23 @@ describe('To tailwind', () => {
     const fontWeightPrefix = 'text-style-font-weight-';
 
     const formatName = 'kebabCase';
-    const result = await toTailwind(
-      tokens,
-      {
-        renameKeys: {
-          fontSize: `${fontSizePrefix}{{name}}`,
-          letterSpacing: `${letterSpacingPrefix}{{name}}`,
-          lineHeight: `${lineHeightPrefix}{{name}}`,
-          textColor: `${textColorPrefix}{{name}}`,
-          textOpacity: `${textOpacityPrefix}{{name}}`,
-          fontFamily: `${fontFamilyPrefix}{{name}}`,
-          fontWeight: `${fontWeightPrefix}{{name}}`,
-        },
-        formatName,
-        formatConfig: {
-          module: 'es6',
-          exportDefault: true,
-          objectName: 'extend',
-        },
+    const result = await toTailwind(tokens, {
+      renameKeys: {
+        fontSize: `${fontSizePrefix}{{name}}`,
+        letterSpacing: `${letterSpacingPrefix}{{name}}`,
+        lineHeight: `${lineHeightPrefix}{{name}}`,
+        textColor: `${textColorPrefix}{{name}}`,
+        textOpacity: `${textOpacityPrefix}{{name}}`,
+        fontFamily: `${fontFamilyPrefix}{{name}}`,
+        fontWeight: `${fontWeightPrefix}{{name}}`,
       },
-      libs,
-    );
+      formatName,
+      formatConfig: {
+        module: 'es6',
+        exportDefault: true,
+        objectName: 'extend',
+      },
+    });
 
     tokens.forEach(({ name, value }) => {
       const transformedName = getNameFormatterFunction(formatName)(name);

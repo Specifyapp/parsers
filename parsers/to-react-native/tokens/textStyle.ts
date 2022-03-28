@@ -1,4 +1,4 @@
-import { TextStyleToken } from '../../../types';
+import { TextStyleToken } from '../../../types/tokens/TextStyle';
 import { OptionsType } from '../to-react-native.parser';
 import tinycolor from 'tinycolor2';
 

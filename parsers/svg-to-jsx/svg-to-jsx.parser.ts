@@ -1,7 +1,7 @@
 import * as _ from 'lodash';
 import Template from '../../libs/template';
 import prettier from 'prettier';
-import { Token, TokensType } from '../../types';
+import { Token, TokensType, VectorValue } from '../../types';
 import * as os from 'os';
 import { create } from 'xmlbuilder2';
 import { parseStringPromise } from 'xml2js';
@@ -9,13 +9,11 @@ import { xml2jsElementType } from './svg-to-jsx.type';
 import { ExpandObject } from 'xmlbuilder2/lib/interfaces';
 import { SpServices } from '../global-libs';
 
-export type InputDataType = Array<
-  Token & {
-    name: string;
-    type: TokensType;
-    value: ({ url?: string } | { content?: string }) & { [key: string]: any };
-  }
->;
+export type InputDataType = Array<{
+  name: string;
+  type: 'vector';
+  value: VectorValue;
+}>;
 
 export type OptionsType =
   | undefined
@@ -80,7 +78,7 @@ function convertStyleAttrAsJsxObject(content: string) {
       .filter(Boolean)
       .reduce(function (hash: Record<string, string>, rule: string) {
         const keyValue: string[] = rule.split(/\s*:\s*(.*)/);
-        hash[_.camelCase(keyValue[0])] = keyValue[1];
+        hash[_.camelCase(keyValue[0])] = keyValue[1]!;
         return hash;
       }, {});
     //JSX style must be in json object format surrounded by curly braces
@@ -123,7 +121,7 @@ export async function svgToJsx<T extends InputDataType>(tokens: T, options: Opti
           const className = classNameTemplate?.render(token);
           const variableName = _[options?.variableFormat || 'pascalCase'](token.name);
 
-          const xmlObject = await parseStringPromise(token.value.content, {
+          const xmlObject = await parseStringPromise(token.value.content!, {
             explicitArray: true,
             explicitChildren: true,
             explicitRoot: false,

@@ -1,14 +1,12 @@
-import seeds from '../../tests/seeds';
-import optimizeVector, { InputDataType } from './svgo.parser';
-import libs, { LibsType } from '../global-libs';
+import { seeds } from '../../tests/seeds';
+import { svgo } from './svgo.parser';
 import SVGO from 'svgo';
-import { VectorToken } from '../../types';
 
 describe('Optimize vector', () => {
   describe('SVGO v1', () => {
     it('Get tokens - apply parsers', async () => {
-      const tokens = seeds().tokens;
-      const result = await optimizeVector(tokens as InputDataType, undefined, libs as LibsType);
+      const tokens = seeds(['vector']);
+      const result = await svgo(tokens, undefined);
       if (result instanceof Error) return fail(result);
       expect(result.find(({ name }) => name === 'alert-circle')!.value.content).toEqual(
         '<svg width="40" height="40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 36.667c9.205 0 16.667-7.462 16.667-16.667 0-9.205-7.462-16.667-16.667-16.667-9.205 0-16.667 7.462-16.667 16.667 0 9.205 7.462 16.667 16.667 16.667ZM20 13.333V20M20 26.667h.017" stroke="#000" stroke-width="3.333" stroke-linecap="round" stroke-linejoin="round"/></svg>',
@@ -25,116 +23,112 @@ describe('Optimize vector', () => {
       return;
     });
     it('Get tokens - apply parsers - with config', async () => {
-      const tokens = seeds().tokens;
-      const result = await optimizeVector(
-        tokens as InputDataType,
-        {
-          svgo: {
-            plugins: [
-              {
-                cleanupAttrs: false,
-              },
-              {
-                removeDoctype: false,
-              },
-              {
-                removeXMLProcInst: false,
-              },
-              {
-                removeComments: false,
-              },
-              {
-                removeMetadata: false,
-              },
-              {
-                removeTitle: false,
-              },
-              {
-                removeDesc: false,
-              },
-              {
-                removeUselessDefs: false,
-              },
-              {
-                removeEditorsNSData: false,
-              },
-              {
-                removeEmptyAttrs: false,
-              },
-              {
-                removeHiddenElems: false,
-              },
-              {
-                removeEmptyText: false,
-              },
-              {
-                removeEmptyContainers: false,
-              },
-              {
-                removeViewBox: false,
-              },
-              {
-                cleanupEnableBackground: false,
-              },
-              {
-                convertStyleToAttrs: false,
-              },
-              {
-                convertColors: false,
-              },
-              {
-                convertPathData: false,
-              },
-              {
-                convertTransform: false,
-              },
-              {
-                removeUnknownsAndDefaults: false,
-              },
-              {
-                removeNonInheritableGroupAttrs: false,
-              },
-              {
-                removeUselessStrokeAndFill: false,
-              },
-              {
-                removeUnusedNS: false,
-              },
-              {
-                cleanupIDs: false,
-              },
-              {
-                cleanupNumericValues: false,
-              },
-              {
-                moveElemsAttrsToGroup: false,
-              },
-              {
-                moveGroupAttrsToElems: false,
-              },
-              {
-                collapseGroups: false,
-              },
-              {
-                removeRasterImages: false,
-              },
-              {
-                mergePaths: false,
-              },
-              {
-                convertShapeToPath: false,
-              },
-              {
-                sortAttrs: false,
-              },
-              {
-                removeDimensions: false,
-              },
-            ],
-          },
+      const tokens = seeds(['vector']);
+      const result = await svgo(tokens, {
+        svgo: {
+          plugins: [
+            {
+              cleanupAttrs: false,
+            },
+            {
+              removeDoctype: false,
+            },
+            {
+              removeXMLProcInst: false,
+            },
+            {
+              removeComments: false,
+            },
+            {
+              removeMetadata: false,
+            },
+            {
+              removeTitle: false,
+            },
+            {
+              removeDesc: false,
+            },
+            {
+              removeUselessDefs: false,
+            },
+            {
+              removeEditorsNSData: false,
+            },
+            {
+              removeEmptyAttrs: false,
+            },
+            {
+              removeHiddenElems: false,
+            },
+            {
+              removeEmptyText: false,
+            },
+            {
+              removeEmptyContainers: false,
+            },
+            {
+              removeViewBox: false,
+            },
+            {
+              cleanupEnableBackground: false,
+            },
+            {
+              convertStyleToAttrs: false,
+            },
+            {
+              convertColors: false,
+            },
+            {
+              convertPathData: false,
+            },
+            {
+              convertTransform: false,
+            },
+            {
+              removeUnknownsAndDefaults: false,
+            },
+            {
+              removeNonInheritableGroupAttrs: false,
+            },
+            {
+              removeUselessStrokeAndFill: false,
+            },
+            {
+              removeUnusedNS: false,
+            },
+            {
+              cleanupIDs: false,
+            },
+            {
+              cleanupNumericValues: false,
+            },
+            {
+              moveElemsAttrsToGroup: false,
+            },
+            {
+              moveGroupAttrsToElems: false,
+            },
+            {
+              collapseGroups: false,
+            },
+            {
+              removeRasterImages: false,
+            },
+            {
+              mergePaths: false,
+            },
+            {
+              convertShapeToPath: false,
+            },
+            {
+              sortAttrs: false,
+            },
+            {
+              removeDimensions: false,
+            },
+          ],
         },
-        libs as LibsType,
-      );
+      });
       if (result instanceof Error) return fail(result);
       expect(result.find(({ name }) => name === 'alert-circle')!.value.content).toEqual(
         '<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 36.6666C29.2047 36.6666 36.6667 29.2047 36.6667 20C36.6667 10.7952 29.2047 3.33331 20 3.33331C10.7953 3.33331 3.33334 10.7952 3.33334 20C3.33334 29.2047 10.7953 36.6666 20 36.6666Z" stroke="black" stroke-width="3.33333" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 13.3333V20" stroke="black" stroke-width="3.33333" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 26.6667H20.0167" stroke="black" stroke-width="3.33333" stroke-linecap="round" stroke-linejoin="round"/></svg>',
@@ -147,11 +141,10 @@ describe('Optimize vector', () => {
 
     it('should send error', async () => {
       try {
-        await optimizeVector(
+        await svgo(
           // @ts-ignore
           'Wrong data (should be catch by ts in real life)',
           undefined,
-          libs as LibsType,
         );
       } catch (error) {
         expect(error).toBeInstanceOf(TypeError);
@@ -169,28 +162,21 @@ describe('Optimize vector', () => {
         },
       };
 
-      const tokens = seeds().tokens;
-      const result = await optimizeVector(
-        tokens as InputDataType,
-        {
-          svgo: {
-            plugins: [
-              {
-                removeDimensions: true,
+      const tokens = seeds(['vector']);
+      const result = await svgo(tokens, {
+        svgo: {
+          plugins: [
+            {
+              removeDimensions: true,
+            },
+            {
+              removeAttrs: {
+                attrs: '(fill|stroke)',
               },
-              {
-                removeAttrs: {
-                  attrs: '(fill|stroke)',
-                },
-              },
-            ],
-          },
+            },
+          ],
         },
-        {
-          ...libs,
-          SVGO: customSVGO,
-        } as LibsType,
-      );
+      });
       if (result instanceof Error) return fail(result);
       // Dimensions not removed
       expect(result.find(({ name }) => name === 'airplay')!.value.content).toEqual(
@@ -205,20 +191,16 @@ describe('Optimize vector', () => {
     });
 
     it('should remove dimensions', async () => {
-      const tokens = seeds().tokens;
-      const result = await optimizeVector(
-        tokens as InputDataType,
-        {
-          svgo: {
-            plugins: [
-              {
-                removeDimensions: true,
-              },
-            ],
-          },
+      const tokens = seeds(['vector']);
+      const result = await svgo(tokens, {
+        svgo: {
+          plugins: [
+            {
+              removeDimensions: true,
+            },
+          ],
         },
-        libs as LibsType,
-      );
+      });
       if (result instanceof Error) return fail(result);
       expect(result.find(({ name }) => name === 'airplay')!.value.content).toEqual(
         '<svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><path d="M8.333 28.333H6.667A3.333 3.333 0 0 1 3.333 25V8.333A3.333 3.333 0 0 1 6.667 5h26.666a3.333 3.333 0 0 1 3.334 3.333V25a3.333 3.333 0 0 1-3.334 3.333h-1.666" stroke="#000" stroke-width="3.333" stroke-linecap="round" stroke-linejoin="round"/><path d="m20 25 8.333 10H11.667L20 25Z" stroke="#000" stroke-width="3.333" stroke-linecap="round" stroke-linejoin="round"/></svg>',
@@ -229,26 +211,22 @@ describe('Optimize vector', () => {
   });
   describe('SVGO v2', () => {
     it('Get tokens - apply parsers', async () => {
-      const tokens = seeds().tokens.filter(token => token.type === 'vector');
-      const result = await optimizeVector(
-        tokens as InputDataType,
-        {
-          svgo: {
-            plugins: [
-              {
-                name: 'preset-default',
+      const tokens = seeds(['vector']);
+      const result = await svgo(tokens, {
+        svgo: {
+          plugins: [
+            {
+              name: 'preset-default',
+            },
+            {
+              name: 'removeAttrs',
+              params: {
+                attrs: 'fill',
               },
-              {
-                name: 'removeAttrs',
-                params: {
-                  attrs: 'fill',
-                },
-              },
-            ],
-          },
+            },
+          ],
         },
-        libs as LibsType,
-      );
+      });
       if (result instanceof Error) return fail(result);
       expect(result.find(({ name }) => name === 'alert-circle')!.value.content).toEqual(
         '<svg width="40" height="40" xmlns="http://www.w3.org/2000/svg"><path d="M20 36.667c9.205 0 16.667-7.462 16.667-16.667 0-9.205-7.462-16.667-16.667-16.667-9.205 0-16.667 7.462-16.667 16.667 0 9.205 7.462 16.667 16.667 16.667ZM20 13.333V20M20 26.667h.017" stroke="#000" stroke-width="3.333" stroke-linecap="round" stroke-linejoin="round"/></svg>',
@@ -267,8 +245,8 @@ describe('Optimize vector', () => {
   });
   describe('Handle no svg vector', () => {
     it('PDF vector must output an url', async () => {
-      const tokens = seeds().tokens.filter(token => token.type === 'vector') as Array<VectorToken>;
-      const result = await optimizeVector(tokens as InputDataType, undefined, libs as LibsType);
+      const tokens = seeds(['vector']);
+      const result = await svgo(tokens, undefined);
       if (result instanceof Error) return fail(result);
       result.forEach(vector => {
         if (vector.value.format === 'pdf') {

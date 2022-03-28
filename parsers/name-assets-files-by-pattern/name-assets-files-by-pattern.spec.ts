@@ -1,16 +1,12 @@
-import nameAssetsFilesByPattern from './name-assets-files-by-pattern.parser';
-import { VectorToken, BitmapToken } from '../../types';
-import libs from '../global-libs';
-import seeds from '../../tests/seeds';
+import { nameAssetsFilesByPattern } from './name-assets-files-by-pattern.parser';
+import { seeds } from '../../tests/seeds';
 
 describe('Name assets files by pattern', () => {
   it('Get tokens - apply parser', async () => {
-    const vectors = seeds().tokens.filter(({ type }) => type === 'vector') as Array<VectorToken>;
-    const result = await nameAssetsFilesByPattern(
-      vectors,
-      { pattern: '{{name}}-{{type}}.{{format}}' },
-      libs,
-    );
+    const vectors = seeds(['vector']);
+    const result = await nameAssetsFilesByPattern(vectors, {
+      pattern: '{{name}}-{{type}}.{{format}}',
+    });
     if (result instanceof Error) return fail(result);
     vectors.forEach(vector => {
       expect(vector.value.fileName).toEqual(`${vector.name}-vector.${vector.value.format}`);
@@ -18,12 +14,10 @@ describe('Name assets files by pattern', () => {
     return;
   });
   it('Get tokens - apply parser - bitmap', async () => {
-    const bitmaps = seeds().tokens.filter(({ type }) => type === 'bitmap') as Array<BitmapToken>;
-    const result = await nameAssetsFilesByPattern(
-      bitmaps,
-      { pattern: '{{name}}{{#dimension}}@{{dimension}}{{/dimension}}.{{format}}' },
-      libs,
-    );
+    const bitmaps = seeds(['bitmap']);
+    const result = await nameAssetsFilesByPattern(bitmaps, {
+      pattern: '{{name}}{{#dimension}}@{{dimension}}{{/dimension}}.{{format}}',
+    });
     if (result instanceof Error) return fail(result);
     bitmaps.forEach(bitmap => {
       expect(bitmap.value.fileName).toEqual(

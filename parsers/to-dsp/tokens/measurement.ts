@@ -1,4 +1,4 @@
-import { MeasurementToken } from '../../../types';
+import { MeasurementToken } from '../../../types/tokens/Measurement';
 import { DspEntity } from '../dsp.type';
 
 export class Measurement extends MeasurementToken {

@@ -1,4 +1,4 @@
-import { DurationToken } from '../../../types';
+import { DurationToken } from '../../../types/tokens/Duration';
 import { Utils } from './index';
 import { DurationMapping, TailwindMappingTypes } from '../to-tailwind.type';
 import { OptionsType } from '../to-tailwind.parser';

@@ -1,8 +1,5 @@
-import seeds from '../../tests/seeds';
-import toDsp, { OptionsType } from './to-dsp.parser';
-import { Token } from '../../types';
-import { DspParserSettings } from './dsp.type';
-import libs, { LibsType } from '../global-libs';
+import { seeds } from '../../tests/seeds';
+import { toDsp } from './to-dsp.parser';
 
 const entitiesAvailable = [
   'bitmap',
@@ -16,19 +13,30 @@ const entitiesAvailable = [
   'shadow',
   'vector',
 ];
-const entitiesLength = seeds().tokens.filter(({ type }) => entitiesAvailable.includes(type)).length;
+const entitiesLength = seeds([
+  'bitmap',
+  'border',
+  'color',
+  'depth',
+  'duration',
+  'gradient',
+  'measurement',
+  'opacity',
+  'shadow',
+  'vector',
+]).length;
 
 describe('To DSP', () => {
   it('should take settings and be able to return the correct value', async () => {
-    const settings: DspParserSettings = {
+    const settings = {
       name: 'My DSP',
       buildStatusLabel: 'test',
       packageVersion: '0.0.1',
       snippetTriggerPrefix: 'ex-',
     };
 
-    const tokenSeeds = seeds().tokens;
-    const result = await toDsp(tokenSeeds, { settings } as OptionsType, libs as LibsType);
+    const tokenSeeds = seeds();
+    const result = await toDsp(tokenSeeds, { settings });
     expect(Array.isArray(result)).toBe(true);
     expect(result.length).toBe(
       tokenSeeds.filter(({ type }) => type === 'vector' || type === 'bitmap').length + 5,
@@ -76,14 +84,14 @@ describe('To DSP', () => {
   });
 
   it('should send all when no tokens', async () => {
-    const settings: DspParserSettings = {
+    const settings = {
       name: 'My DSP',
       buildStatusLabel: 'test',
       packageVersion: '0.0.1',
       snippetTriggerPrefix: 'ex-',
     };
 
-    const result = await toDsp([] as Array<Token>, { settings } as OptionsType, libs as LibsType);
+    const result = await toDsp([], { settings });
     expect(result.length).toBe(5);
 
     expect(result.some(entity => entity.name === 'dsp.json')).toBe(true);
@@ -106,7 +114,7 @@ describe('To DSP', () => {
   });
 
   it('should work with no settings', async () => {
-    const result = await toDsp([] as Array<Token>, {} as OptionsType, libs as LibsType);
+    const result = await toDsp([], {});
     expect(result.length).toBe(5);
 
     expect(result.some(entity => entity.name === 'dsp.json')).toBe(true);
@@ -122,7 +130,7 @@ describe('To DSP', () => {
   });
 
   it('should work with undefined settings', async () => {
-    const result = await toDsp([] as Array<Token>, undefined as OptionsType, libs as LibsType);
+    const result = await toDsp([], undefined);
     expect(result.length).toBe(5);
 
     expect(result.some(entity => entity.name === 'dsp.json')).toBe(true);
@@ -138,14 +146,14 @@ describe('To DSP', () => {
   });
 
   it('should work with missing name settings', async () => {
-    const settings: DspParserSettings = {
+    const settings = {
       buildStatusLabel: 'test',
       packageVersion: '0.0.1',
       snippetTriggerPrefix: 'ex-',
     };
 
-    const tokenSeeds = seeds().tokens as Array<Token>;
-    const result = await toDsp(tokenSeeds, { settings } as OptionsType, libs as LibsType);
+    const tokenSeeds = seeds();
+    const result = await toDsp(tokenSeeds, { settings });
     expect(Array.isArray(result)).toBe(true);
     expect(result.length).toBe(
       tokenSeeds.filter(({ type }) => type === 'vector' || type === 'bitmap').length + 5,
@@ -178,14 +186,14 @@ describe('To DSP', () => {
   });
 
   it('should work with missing buildStatusLabel setting', async () => {
-    const settings: DspParserSettings = {
+    const settings = {
       name: 'My DSP',
       packageVersion: '0.0.1',
       snippetTriggerPrefix: 'ex-',
     };
 
-    const tokenSeeds = seeds().tokens as Array<Token>;
-    const result = await toDsp(tokenSeeds, { settings } as OptionsType, libs as LibsType);
+    const tokenSeeds = seeds();
+    const result = await toDsp(tokenSeeds, { settings });
     expect(Array.isArray(result)).toBe(true);
     expect(result.length).toBe(
       tokenSeeds.filter(({ type }) => type === 'vector' || type === 'bitmap').length + 5,
@@ -218,14 +226,14 @@ describe('To DSP', () => {
   });
 
   it('should work with missing packageVersion setting', async () => {
-    const settings: DspParserSettings = {
+    const settings = {
       name: 'My DSP',
       buildStatusLabel: 'test',
       snippetTriggerPrefix: 'ex-',
     };
 
-    const tokenSeeds = seeds().tokens as Array<Token>;
-    const result = await toDsp(tokenSeeds, { settings } as OptionsType, libs as LibsType);
+    const tokenSeeds = seeds();
+    const result = await toDsp(tokenSeeds, { settings });
     expect(Array.isArray(result)).toBe(true);
     expect(result.length).toBe(
       tokenSeeds.filter(({ type }) => type === 'vector' || type === 'bitmap').length + 5,
@@ -258,14 +266,14 @@ describe('To DSP', () => {
   });
 
   it('should work with missing snipperTriggerPrefix setting', async () => {
-    const settings: DspParserSettings = {
+    const settings = {
       name: 'My DSP',
       buildStatusLabel: 'test',
       packageVersion: '0.0.1',
     };
 
-    const tokenSeeds = seeds().tokens as Array<Token>;
-    const result = await toDsp(tokenSeeds, { settings } as OptionsType, libs as LibsType);
+    const tokenSeeds = seeds();
+    const result = await toDsp(tokenSeeds, { settings });
     expect(Array.isArray(result)).toBe(true);
     expect(result.length).toBe(
       tokenSeeds.filter(({ type }) => type === 'vector' || type === 'bitmap').length + 5,
@@ -298,18 +306,14 @@ describe('To DSP', () => {
   });
 
   it('should not create assets if asked so', async () => {
-    const settings: DspParserSettings = {
+    const settings = {
       name: 'My DSP',
       buildStatusLabel: 'test',
       packageVersion: '0.0.1',
       snippetTriggerPrefix: 'ex-',
     };
 
-    const result = await toDsp(
-      seeds().tokens as Array<Token>,
-      { settings, createAssets: false } as OptionsType,
-      libs as LibsType,
-    );
+    const result = await toDsp(seeds(), { settings, createAssets: false });
     expect(Array.isArray(result)).toBe(true);
     expect(result.length).toBe(5);
     expect(result.some(entity => entity.name === 'dsp.json')).toBe(true);
@@ -340,19 +344,15 @@ describe('To DSP', () => {
   });
 
   it('should create assets with true value', async () => {
-    const settings: DspParserSettings = {
+    const settings = {
       name: 'My DSP',
       buildStatusLabel: 'test',
       packageVersion: '0.0.1',
       snippetTriggerPrefix: 'ex-',
     };
 
-    const tokenSeeds = seeds().tokens as Array<Token>;
-    const result = await toDsp(
-      tokenSeeds,
-      { settings, createAssets: true } as OptionsType,
-      libs as LibsType,
-    );
+    const tokenSeeds = seeds();
+    const result = await toDsp(tokenSeeds, { settings, createAssets: true });
     expect(Array.isArray(result)).toBe(true);
     expect(result.length).toBe(
       tokenSeeds.filter(({ type }) => type === 'vector' || type === 'bitmap').length + 5,

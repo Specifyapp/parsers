@@ -1,4 +1,4 @@
-import { MeasurementToken } from '../../../types';
+import { MeasurementToken } from '../../../types/tokens/Measurement';
 import { Utils } from './index';
 import { MeasurementMapping, TailwindMappingTypes } from '../to-tailwind.type';
 import { OptionsType } from '../to-tailwind.parser';

@@ -1,6 +1,6 @@
 import listPathsByPattern from '../../../libs/list-paths-by-pattern';
-import seeds from '../../seeds';
-import { ShadowToken } from '../../../types';
+import { seeds } from '../../seeds';
+import { ShadowToken } from '../../../types/tokens/Shadow';
 import _ from 'lodash';
 
 describe('Libs - list path by pattern', () => {

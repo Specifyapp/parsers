@@ -1,4 +1,4 @@
-import { BorderToken } from '../../../types';
+import { BorderToken } from '../../../types/tokens/Border';
 import tinycolor from 'tinycolor2';
 import { BaseStyleDictionaryTokensFormat } from '../to-style-dictionary.type';
 import { OptionsType } from '../to-style-dictionary.parser';

@@ -1,12 +1,10 @@
-import seeds from '../../tests/seeds';
-import libs, { LibsType } from '../global-libs';
-import { InputDataType } from './svg-to-jsx.parser';
-import svgToJsx from './svg-to-jsx.parser';
+import { seeds } from '../../tests/seeds';
+import { svgToJsx } from './svg-to-jsx.parser';
 
 describe('Svg to jsx', () => {
   it('Get tokens - apply parsers', async () => {
-    const tokens = seeds().tokens.filter(({ type }) => type === 'vector');
-    const result = await svgToJsx(tokens as InputDataType, undefined, libs as LibsType);
+    const tokens = seeds(['vector']);
+    const result = await svgToJsx(tokens, undefined);
     if (result instanceof Error) return fail(result);
     expect(Array.isArray(result)).toEqual(true);
     result.forEach(file => {
@@ -21,12 +19,10 @@ describe('Svg to jsx', () => {
     return;
   });
   it('Get tokens - apply parsers without export default', async () => {
-    const tokens = seeds().tokens.filter(({ type }) => type === 'vector');
-    const result = await svgToJsx(
-      JSON.parse(JSON.stringify(tokens)) as InputDataType,
-      { formatConfig: { exportDefault: false } },
-      libs as LibsType,
-    );
+    const tokens = seeds(['vector']);
+    const result = await svgToJsx(JSON.parse(JSON.stringify(tokens)), {
+      formatConfig: { exportDefault: false },
+    });
     if (result instanceof Error) return fail(result);
     expect(Array.isArray(result)).toEqual(true);
     result.forEach(file => {
@@ -41,22 +37,18 @@ describe('Svg to jsx', () => {
     return;
   });
   it('Get tokens - apply parsers with wrapper', async () => {
-    const tokens = seeds().tokens.filter(({ type }) => type === 'vector');
-    const result = await svgToJsx(
-      tokens as InputDataType,
-      {
-        prepend: "import React from 'react';",
-        variableFormat: 'camelCase',
-        wrapper: {
-          tag: 'div',
-          className: 'icon-{{name}} icon',
-        },
-        formatConfig: {
-          exportDefault: false,
-        },
+    const tokens = seeds(['vector']);
+    const result = await svgToJsx(tokens, {
+      prepend: "import React from 'react';",
+      variableFormat: 'camelCase',
+      wrapper: {
+        tag: 'div',
+        className: 'icon-{{name}} icon',
       },
-      libs as LibsType,
-    );
+      formatConfig: {
+        exportDefault: false,
+      },
+    });
 
     if (result instanceof Error) return fail(result);
     expect(Array.isArray(result)).toEqual(true);
@@ -73,8 +65,10 @@ describe('Svg to jsx', () => {
     return;
   });
   it('Validate camelCase on attribute', async () => {
-    const tokens = seeds().tokens.filter(({ name }) => name === 'activity');
-    const result = await svgToJsx(tokens as InputDataType, undefined, libs as LibsType);
+    const tokens = seeds(['vector'])
+      .filter(({ name }) => name === 'activity')
+      .filter(({ name }) => name === 'activity');
+    const result = await svgToJsx(tokens, undefined);
     if (result instanceof Error) return fail(result);
     expect(result).toHaveLength(1);
     expect(result[0].value.content).toContain('strokeWidth');
@@ -84,8 +78,10 @@ describe('Svg to jsx', () => {
     return;
   });
   it('Validate camelCase on Style rules', async () => {
-    const tokens = seeds().tokens.filter(({ name }) => name === 'user-mask');
-    const result = await svgToJsx(tokens as InputDataType, undefined, libs as LibsType);
+    const tokens = seeds()
+      .filter(({ name }) => name === 'user-mask')
+      .filter(({ name }) => name === 'user-mask');
+    const result = await svgToJsx(tokens, undefined);
     if (result instanceof Error) return fail(result);
     expect(result).toHaveLength(1);
     expect(result[0].value.content).toContain('style={{ maskType: "alpha" }}');
@@ -93,12 +89,8 @@ describe('Svg to jsx', () => {
     return;
   });
   it('Should return filename with tsx extension', async () => {
-    const tokens = seeds().tokens.filter(({ type }) => type === 'vector');
-    const result = await svgToJsx(
-      tokens as InputDataType,
-      { formatConfig: { isTsx: true } },
-      libs as LibsType,
-    );
+    const tokens = seeds(['vector']);
+    const result = await svgToJsx(tokens, { formatConfig: { isTsx: true } });
     if (result instanceof Error) return fail(result);
     result.forEach(file => {
       expect(file.value.fileName.endsWith('.tsx')).toEqual(true);

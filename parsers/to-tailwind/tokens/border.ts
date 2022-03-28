@@ -1,4 +1,4 @@
-import { BorderToken } from '../../../types';
+import { BorderToken } from '../../../types/tokens/Border';
 import { BorderMapping } from '../to-tailwind.type';
 import tinycolor from 'tinycolor2';
 import { OptionsType } from '../to-tailwind.parser';

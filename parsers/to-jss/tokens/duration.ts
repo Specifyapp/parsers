@@ -1,4 +1,4 @@
-import { DurationToken } from '../../../types';
+import { DurationToken } from '../../../types/tokens/Duration';
 import { FormatTokenType } from '../to-jss.parser';
 
 export class Duration extends DurationToken {

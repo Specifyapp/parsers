@@ -1,4 +1,4 @@
-import { FontToken } from '../../../types';
+import { FontToken } from '../../../types/tokens/Font';
 
 export class Font extends FontToken {
   constructor(token: Partial<FontToken>) {

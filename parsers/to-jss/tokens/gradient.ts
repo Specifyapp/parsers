@@ -1,5 +1,5 @@
 import tinycolor from 'tinycolor2';
-import { GradientToken, StepForGradient } from '../../../types';
+import { GradientToken } from '../../../types/tokens/Gradient';
 import { FormatTokenType } from '../to-jss.parser';
 
 export class Gradient extends GradientToken {
@@ -8,7 +8,10 @@ export class Gradient extends GradientToken {
   }
 
   toJss({ gradientFormat = 'string' }: FormatTokenType) {
-    const getColorStop = ({ color, position }: StepForGradient) =>
+    const getColorStop = ({
+      color,
+      position,
+    }: GradientToken['value']['gradients'][0]['colors'][0]) =>
       `${tinycolor(color.value).toString('rgb')} ${position}%`;
 
     const value: string = this.value.gradients

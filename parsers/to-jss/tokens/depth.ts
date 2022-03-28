@@ -1,4 +1,4 @@
-import { DepthToken } from '../../../types';
+import { DepthToken } from '../../../types/tokens/Depth';
 import { FormatTokenType } from '../to-jss.parser';
 
 export class Depth extends DepthToken {

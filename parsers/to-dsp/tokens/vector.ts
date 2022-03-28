@@ -1,6 +1,7 @@
-import { DownloadableFile, VectorToken } from '../../../types';
+import { VectorToken } from '../../../types/tokens/Vector';
 import { DspEntity } from '../dsp.type';
 import { LibsType } from '../../global-libs';
+import { DownloadableFile } from '../../../types';
 
 export class Vector extends VectorToken {
   constructor(token: Partial<VectorToken>) {

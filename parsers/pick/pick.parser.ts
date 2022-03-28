@@ -12,7 +12,10 @@ export type OptionsType = {
   flatten?: boolean;
 };
 
-export function pick<T extends InputDataType>(tokens: T, options: OptionsType) {
+export function pick<T extends InputDataType>(
+  tokens: T,
+  options: OptionsType = { keys: ['name'] },
+) {
   try {
     const typesToApplyFn = getTokenTypesToApplyFn(options);
     return tokens.map<T[0]>(token => {

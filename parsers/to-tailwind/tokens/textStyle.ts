@@ -1,4 +1,5 @@
-import { FontToken, TextStyleToken } from '../../../types';
+import { TextStyleToken } from '../../../types/tokens/TextStyle';
+import { FontToken } from '../../../types/tokens/Font';
 import convertMeasurement from '../../../libs/size-manipulation';
 import { Utils } from './index';
 import { ColorsFormat, TailwindMappingTypes, TextStyleMapping } from '../to-tailwind.type';

@@ -1,4 +1,4 @@
-import { DurationToken } from '../../../types';
+import { DurationToken } from '../../../types/tokens/Duration';
 import { BaseStyleDictionaryTokensFormat } from '../to-style-dictionary.type';
 import * as _ from 'lodash';
 
