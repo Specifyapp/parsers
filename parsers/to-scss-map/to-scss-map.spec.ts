@@ -203,7 +203,7 @@ describe('to-scss-map', () => {
             await render(data);
           } catch (error) {
             expect(error.message).toContain(expectedError[type]);
-            expect(error.message).toContain(`Non usable value. Got \`#{$${type}}\``);
+            expect(error.message).toContain(`Non usable value`);
           }
         }),
       );
@@ -274,7 +274,7 @@ describe('to-scss-map', () => {
             await render(data);
           } catch (error) {
             expect(error.message).toContain(expectedError[type]);
-            expect(error.message).toContain(`Non usable value. Got \`#{$text-style}\``);
+            expect(error.message).toContain(`Non usable value`);
           }
         }),
       );
