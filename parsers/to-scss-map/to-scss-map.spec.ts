@@ -96,7 +96,8 @@ describe('to-scss-map', () => {
         color: '.test{color:#fff}',
         shadow:
           '.test{box-shadow:0px 1.8518518209px 3.1481480598px rgba(0,0,0,.02),0px 8.1481485367px 6.5185184479px rgba(0,0,0,.03),0px 20px 13px rgba(0,0,0,.04),0px 38.5185203552px 25.4814815521px rgba(0,0,0,.04),0px 64.8148117065px 46.851852417px rgba(0,0,0,.05),0px 100px 80px 1px rgba(0,0,0,.07)}',
-        gradient: '.test{background-image:linear-gradient(90deg, #f5483f 0%, #ff8e05 100%)}',
+        gradient:
+          '.test{background-image:linear-gradient(90deg, rgb(245, 72, 63) 0%, rgb(255, 142, 5) 100%)}',
         opacity: '.test{opacity:.5}',
       };
 
@@ -175,13 +176,13 @@ describe('to-scss-map', () => {
         measurement:
           "(baseSpace01: 4px, baseSpace02: 8px, baseSpace03: 12px, baseSpace04: 16px, baseSpace05: 32px, baseSpace06: 48px, baseSpace07: 64px, baseSpace08: 80px, baseSpace09: 96px, baseSpace10: 112px) isn't a valid CSS value.",
         border:
-          "(borderAccent: 2px solid #6650ef, borderAccentWithOpacity: 2px solid rgba(102, 80, 239, 0.5), borderAccentWithoutRadii: 2px solid rgba(102, 80, 239, 0.5), borderDashed: 1px dashed #1e212b) isn't a valid CSS value.",
+          "(borderAccent: 2px solid rgb(102, 80, 239), borderAccentWithOpacity: 2px solid rgba(102, 80, 239, 0.5), borderAccentWithoutRadii: 2px solid rgba(102, 80, 239, 0.5), borderDashed: 1px dashed rgb(30, 33, 43)) isn't a valid CSS value.",
         color:
-          "(colors: (accent: #577cfe, black: #1e212b, green: #58cd52, grey: #ccd5e1, orange: #ff8e05, red: #f5483f, white: white)) isn't a valid CSS value.",
+          "(colors: (accent: rgb(87, 124, 254), black: rgb(30, 33, 43), green: rgb(88, 205, 82), grey: rgb(204, 213, 225), orange: rgb(255, 142, 5), red: rgb(245, 72, 63), white: rgb(255, 255, 255))) isn't a valid CSS value.",
         shadow:
           "(elevation1: ((0px 4px 8px rgba(0, 0, 0, 0.1),)), elevation2: (0px 4px 28px rgba(0, 0, 0, 0.1), 0px 4px 4px rgba(0, 0, 0, 0.1)), elevation3: (0px 1.8518518209px 3.1481480598px rgba(0, 0, 0, 0.02), 0px 8.1481485367px 6.5185184479px rgba(0, 0, 0, 0.03), 0px 20px 13px rgba(0, 0, 0, 0.04), 0px 38.5185203552px 25.4814815521px rgba(0, 0, 0, 0.04), 0px 64.8148117065px 46.851852417px rgba(0, 0, 0, 0.05), 0px 100px 80px 1px rgba(0, 0, 0, 0.07))) isn't a valid CSS value.",
         gradient:
-          "(gradients: (colored: linear-gradient(90deg, #f5483f 0%, #ff8e05 100%), dark: linear-gradient(90deg, #1e212b 0%, #ccd5e1 100%), neutral: linear-gradient(90deg, #ccd5e1 0%, white 100%), safari: linear-gradient(90deg, #ff8e05 0%, white 100%))) isn't a valid CSS value.",
+          "(gradients: (colored: linear-gradient(90deg, rgb(245, 72, 63) 0%, rgb(255, 142, 5) 100%), dark: linear-gradient(90deg, rgb(30, 33, 43) 0%, rgb(204, 213, 225) 100%), neutral: linear-gradient(90deg, rgb(204, 213, 225) 0%, rgb(255, 255, 255) 100%), safari: linear-gradient(90deg, rgb(255, 142, 5) 0%, rgb(255, 255, 255) 100%))) isn't a valid CSS value.",
         opacity: "(transparent: 0.1, subtle: 0.5, visible: 0.95) isn't a valid CSS value.",
       };
 
