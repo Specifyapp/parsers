@@ -1,6 +1,7 @@
 # To Theme Ui
 
 ## Description
+
 Format design tokens to create a theme compatible with the [theme-ui specification](https://theme-ui.com/theme-spec).
 
 Learn more about how to configure Specify in the API documentation: [https://specifyapp.com/developers](https://specifyapp.com/developers).
@@ -11,7 +12,7 @@ Learn more about how to configure Specify in the API documentation: [https://spe
 interface parser {
   name: 'to-theme-ui';
   options: Partial<{
-    formatName: 'camelCase' | 'kebabCase' | 'snakeCase' | 'pascalCase';
+    formatName: 'camelCase' | 'kebabCase' | 'snakeCase' | 'pascalCase' | 'none';
     variants: boolean;
     formatConfig: Partial<{
       module: 'es6' | 'commonjs' | 'json';
@@ -54,7 +55,7 @@ interface parser {
 
 | Parameter                          | Required | Type                                                              | Default     | Description                                                                                                                       |
 | ---------------------------------- | -------- | ----------------------------------------------------------------- | ----------- | --------------------------------------------------------------------------------------------------------------------------------- |
-| `formatName`                       | optional | `camelCase` `kebabCase` `snakeCase` `pascalCase`                  | `kebabCase` | The case transformation you want to apply to your design token name                                                               |
+| `formatName`                       | optional | `camelCase` `kebabCase` `snakeCase` `pascalCase` `none`           | `kebabCase` | The case transformation you want to apply to your design token name                                                               |
 | `variants`                         | optional | `boolean`                                                         | `false`     | Generate variants. Currently `texts` and `borders` are generated as variants. [source](https://theme-ui.com/theme-spec#variants). |
 | `formatConfig.module`              | optional | `es6` `commonjs` `json`                                           | `es6`       | Module loader used to export the result                                                                                           |
 | `formatConfig.objectName`          | optional | `string`                                                          | `theme`     | Name of exported variable                                                                                                         |
