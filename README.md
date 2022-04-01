@@ -10,6 +10,7 @@
 <!-- [![CI Actions Status](https://github.com/Specifyapp/parsers/workflows/CI/badge.svg)](https://github.com/Specifyapp/parsers/actions) -->
 
 # Specify Parsers
+<img width="1440" alt="Repository Header" src="https://user-images.githubusercontent.com/16894359/161260523-376f533e-ec72-46c0-9f87-9cd31befe04f.png">
 
 ## What is Specify?
 
