@@ -1,10 +1,10 @@
 import { LibsType } from '../global-libs';
 import listPathsByPattern from '../../libs/list-paths-by-pattern';
 
-export type InputDataType = Array<Record<string, any>>;
+export type InputDataType = string | Array<Record<string, any>>;
 export type OutputDataType = InputDataType;
 export type OptionsType = {
-  keys: Array<string>;
+  keys?: Array<string>;
   regex:
     | {
         pattern: string;
@@ -15,23 +15,41 @@ export type OptionsType = {
   trim?: boolean;
 };
 
-export default async function (
-  tokens: InputDataType,
+async function replaceString(
+  input: string,
   options: OptionsType,
   { _ }: Pick<LibsType, '_'>,
-): Promise<OutputDataType> {
+): Promise<string>;
+async function replaceString(
+  input: Array<Record<string, any>>,
+  options: OptionsType,
+  { _ }: Pick<LibsType, '_'>,
+): Promise<Array<Record<string, any>>>;
+async function replaceString(
+  input: InputDataType,
+  options: OptionsType,
+  { _ }: Pick<LibsType, '_'>,
+): Promise<string | Array<Record<string, any>>> {
   const reg =
     typeof options.regex === 'object'
       ? new RegExp(options.regex.pattern, options.regex.flags || '')
       : new RegExp(options.regex);
-  return tokens.map(token => {
-    options.keys.forEach(pattern => {
-      const paths = listPathsByPattern(token, pattern);
-      paths.forEach(selector => {
-        const newValue = _.get(token, selector).replace(reg, options.replaceBy || '');
-        _.set(token, selector, options.trim ? newValue.trim() : newValue);
+
+  if (typeof input === 'string') {
+    const result = input.replace(reg, options.replaceBy || '');
+    return options.trim ? result.trim() : result;
+  } else {
+    return input.map(token => {
+      options.keys!.forEach(pattern => {
+        const paths = listPathsByPattern(token, pattern);
+        paths.forEach(selector => {
+          const newValue = _.get(token, selector).replace(reg, options.replaceBy || '');
+          _.set(token, selector, options.trim ? newValue.trim() : newValue);
+        });
       });
+      return token;
     });
-    return token;
-  });
+  }
 }
+
+export default replaceString;
