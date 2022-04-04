@@ -16,7 +16,6 @@ describe('Replace string', () => {
       expect(token.name.charAt(0)).not.toContain(' ');
       expect(token.name.charAt(token.name.length - 1)).not.toContain(' ');
     });
-    return;
   });
   it('Should return string with characters after the first slash', async () => {
     const tokens = seeds().tokens;
@@ -31,7 +30,6 @@ describe('Replace string', () => {
       expect(token.name.charAt(0)).not.toContain(' ');
       expect(token.name.charAt(token.name.length - 1)).not.toContain(' ');
     });
-    return;
   });
   it('Should replace all space by dash', async () => {
     const tokens = seeds().tokens;
@@ -44,7 +42,6 @@ describe('Replace string', () => {
     tokens.map(token => {
       expect(result.find(({ id }) => token.id === id)!.name).toEqual(token.name.replace(/ /g, '-'));
     });
-    return;
   });
   it('Should replace space by size', async () => {
     const tokens = seeds().tokens;
@@ -64,7 +61,6 @@ describe('Replace string', () => {
         expect(result.find(({ id }) => token.id === id)).toContain('size');
       }
     });
-    return;
   });
   it('Should replace nothing', async () => {
     const tokens = seeds().tokens;
@@ -77,7 +73,6 @@ describe('Replace string', () => {
     tokens.map(token => {
       expect(result.find(({ id }) => token.id === id)).toEqual(token);
     });
-    return;
   });
   it('Should selector match nothing', async () => {
     const tokens = seeds().tokens;
@@ -90,6 +85,10 @@ describe('Replace string', () => {
     tokens.map(token => {
       expect(result.find(({ id }) => token.id === id)).toEqual(token);
     });
-    return;
+  });
+  it('Should replace string input', async () => {
+    const input = ':root { color: red; }';
+    const result = await replaceString(input, { regex: ':root ', replaceBy: '' }, libs);
+    expect(result).toEqual(input.replace(':root ', ''));
   });
 });
