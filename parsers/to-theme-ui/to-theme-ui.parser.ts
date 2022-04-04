@@ -43,7 +43,7 @@ type PresetsType = Partial<{
 }>;
 export type OptionsType =
   | Partial<{
-      formatName: 'camelCase' | 'kebabCase' | 'snakeCase' | 'pascalCase';
+      formatName: 'camelCase' | 'kebabCase' | 'snakeCase' | 'pascalCase' | 'none';
       formatTokens: FormatTokenType;
       formatConfig: Partial<{
         module: 'es6' | 'commonjs' | 'json';

@@ -30,7 +30,7 @@ export type ThemeUiType =
   | 'space'
   | 'transitions'
   | 'zIndices'
-  | 'gradient'
+  | 'gradients'
   | 'border'
   | 'text';
 
@@ -43,7 +43,7 @@ export type TextStyleMapping = 'fontSizes' | 'fontWeights' | 'letterSpacings' | 
 export type BorderMapping = 'borderStyles' | 'borderWidths';
 export type DurationMapping = 'durations';
 export type ColorMapping = 'colors';
-export type GradientMapping = 'gradient';
+export type GradientMapping = 'gradients';
 export type VariantMapping = 'text' | 'border';
 
 export type ThemeUiTypes =

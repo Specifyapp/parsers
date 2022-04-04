@@ -269,6 +269,24 @@ describe('To theme ui', () => {
     expect(result.sizes).toBeFalsy();
     return;
   });
+  it('Should return tokens wihtout any transformation on name', async () => {
+    const tokens = seeds().tokens.filter(({ type }) => type !== 'measurement' && type !== 'color');
+    const str = await toThemeUi(
+      tokens,
+      {
+        formatName: 'none',
+        formatConfig: {
+          module: 'json',
+        },
+      },
+      libs,
+    );
+    const result = JSON.parse(str) as ThemeUiConfig;
+    const themeUiTokensNameList = Object.values(result)
+      .map(values => (Array.isArray(values) ? [] : Object.keys(values)))
+      .flat(2);
+    expect(tokens.map(({ name }) => name)).toEqual(expect.arrayContaining(themeUiTokensNameList));
+  });
 
   it('Module Format - es6 - export default', async () => {
     const objectName = 'moduleTheme';
