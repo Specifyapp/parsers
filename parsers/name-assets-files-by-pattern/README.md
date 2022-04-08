@@ -22,6 +22,45 @@ interface parser {
 | --------- | -------- | -------- | ------- | ---------------------------------------------------------------------------------------------------------------------------------- |
 | `pattern` | required | `string` |         | The pattern used to generate files names. It must match [mustache](https://github.com/janl/mustache.js#templates) template syntax. |
 
+## Output
+Please keep in mind that this parser generates files. This is why you should always set a folder as the final `path` in your parent rule.
+
+<details open>
+<summary>See Do & Don't config examples</summary>
+
+✅ Do
+```
+// ...
+"rules": [
+  {
+    "name": "Assets",
+    "path": "assets", // <-- path set as a folder
+    "parsers": [
+      {
+        "name": "name-assets-files-by-pattern"
+      }
+    ]
+  }
+]
+```
+
+🚫 Don't
+```
+// ...
+"rules": [
+  {
+    "name": "Assets",
+    "path": "assets/assets.json", // <-- path set as a file
+    "parsers": [
+      {
+        "name": "name-assets-files-by-pattern"
+      }
+    ]
+  }
+]
+```
+</details>
+
 ## Types
 
 ℹ️ **Please be aware that, depending on the order you use parsers, their input and output types have to match.**

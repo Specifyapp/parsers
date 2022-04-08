@@ -54,6 +54,46 @@ interface parser {
 | `splitBy`                    | optional | `string`                                                          |             | The character used to define the nesting of the values in the map object (e.g. The name of the color in [this example](https://github.com/Specifyapp/parsers/tree/master/parsers/to-scss-map#input-2))                               |
 | `omitFunctionAndMixin`       | optional | `boolean`                                                         | `false`     | When set to true, blocks the creation of the getter functions and mixins.                                                                                                                                                            |
 
+## Output
+Please keep in mind that this parser generates files. This is why you should always set a folder as the final `path` in your parent rule.
+
+<details open>
+<summary>See Do & Don't config examples</summary>
+
+✅ Do
+```
+// ...
+"rules": [
+  {
+    "name": "Design Tokens / Colors",
+    "path": "colors", // <-- path set as a folder
+    "parsers": [
+      {
+        "name": "to-scss-map"
+      }
+    ]
+  }
+]
+```
+
+🚫 Don't
+```
+// ...
+"rules": [
+  {
+    "name": "Design Tokens / Colors",
+    "path": "colors/colors.json", // <-- path set as a file
+    "parsers": [
+      {
+        "name": "to-scss-map"
+      }
+    ]
+  }
+]
+```
+</details>
+
+
 ## Types
 
 ℹ️ **Please be aware that, depending on the order you use parsers, their input and output types have to match.**

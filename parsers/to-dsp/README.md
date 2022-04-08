@@ -32,6 +32,46 @@ interface x {
 | `settings.snippetTriggerPrefix` | optional | `string` |                        | Trigger for snippets on components (examples: 'sp-' or 'ex-") |
 | `createAssets`                  | true     | `true`   | `true`                 | Defines if you want the assets to be created or not           |
 
+
+## Output
+Please keep in mind that this parser generates files. This is why you should always set a folder as the final `path` in your parent rule.
+
+<details open>
+<summary>See Do & Don't config examples</summary>
+
+✅ Do
+```
+// ...
+"rules": [
+  {
+    "name": "DSP",
+    "path": "dsp", // <-- path set as a folder
+    "parsers": [
+      {
+        "name": "to-dsp"
+      }
+    ]
+  }
+]
+```
+
+🚫 Don't
+```
+// ...
+"rules": [
+  {
+    "name": "DSP",
+    "path": "dsp/dsp.json", // <-- path set as a file
+    "parsers": [
+      {
+        "name": "to-dsp"
+      }
+    ]
+  }
+]
+```
+</details>
+
 ## Types
 
 ℹ️ **Please be aware that, depending on the order you use parsers, their input and output types have to match.**
