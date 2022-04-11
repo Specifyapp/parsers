@@ -42,6 +42,45 @@ interface parser {
 | `wrapper.tag`                 | optional | `string`                                         |             | An HTML parent tag will be used to wrap the SVG tag.                                                      |
 | `wrapper.className`           | optional | `string`                                         |             | A string or a pattern used to set a className attribute on the potential parent tag wrapping the SVG tag. |
 
+## Output
+Please keep in mind that this parser generates files. This is why you should always set a folder as the final `path` in your parent rule.
+
+<details open>
+<summary>See Do & Don't config examples</summary>
+
+✅ Do
+```
+// ...
+"rules": [
+  {
+    "name": "Design Tokens / JSX Icons",
+    "path": "icons", // <-- path set as a folder
+    "parsers": [
+      {
+        "name": "svg-to-jsx"
+      }
+    ]
+  }
+]
+```
+
+🚫 Don't
+```
+// ...
+"rules": [
+  {
+    "name": "Design Tokens / JSX Icons",
+    "path": "icons/icons.json", // <-- path set as a file
+    "parsers": [
+      {
+        "name": "svg-to-jsx"
+      }
+    ]
+  }
+]
+```
+</details>
+
 ## Types
 
 ℹ️ **Please be aware that, depending on the order you use parsers, their input and output types have to match.**

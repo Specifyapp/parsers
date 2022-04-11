@@ -52,6 +52,45 @@ interface parser {
 | `formatConfig.tabWidth`            | optional | `number`                                                          | `2`         | [Prettier documentation](https://prettier.io/docs/en/options.html#tab-width)                                                                                                                               |
 | `formatConfig.useTabs`             | optional | `boolean`                                                         | `true`      | [Prettier documentation](https://prettier.io/docs/en/options.html#tabs)                                                                                                                                    |
 
+## Output
+Please keep in mind that this parser generates files. This is why you should always set a folder as the final `path` in your parent rule.
+
+<details open>
+<summary>Shopping list</summary>
+
+✅ Do
+```
+// ...
+"rules": [
+  {
+    "name": "Design Tokens / Colors",
+    "path": "tokens", // <-- path set as a folder
+    "parsers": [
+      {
+        "name": "to-style-dictionary"
+      }
+    ]
+  }
+]
+```
+
+🚫 Don't
+```
+// ...
+"rules": [
+  {
+    "name": "Design Tokens / Colors",
+    "path": "tokens/colors.json", // <-- path set as a file
+    "parsers": [
+      {
+        "name": "to-style-dictionary"
+      }
+    ]
+  }
+]
+```
+</details>
+
 ## Types
 
 ℹ️ **Please be aware that, depending on the order you use parsers, their input and output types have to match.**
@@ -165,16 +204,15 @@ type output = Array<{
 This will create multiple files inside a folder with the following structure:
 
 ```
-| folder-defined-in-the-rule
-|- color
-| |- base.json
-|- size
-| |- base.json
-| |- font.json
-| |- lineHeight.json
-|- asset
-| |- font.json
-
+🗂 folder-defined-in-the-rule
+└── 🗂 color
+│   └── base.json
+├── 🗂 size
+│   └── base.json
+│   └── font.json
+│   └── lineHeight.json
+└── 🗂 asset
+    └── font.json
 ```
 
 In each of these files are the tokens usable in Style Dictionary
@@ -367,16 +405,15 @@ In each of these files are the tokens usable in Style Dictionary
 This will create multiple files inside a folder with the following structure:
 
 ```
-| folder-defined-in-the-rule
-|- color
-| |- base.json
-|- size
-| |- base.json
-| |- font.json
-| |- lineHeight.json
-|- asset
-| |- font.json
-
+🗂 folder-defined-in-the-rule
+└── 🗂 color
+│   └── base.json
+├── 🗂 size
+│   └── base.json
+│   └── font.json
+│   └── lineHeight.json
+└── 🗂 asset
+    └── font.json
 ```
 
 In each of these files are the tokens usable in Style Dictionary

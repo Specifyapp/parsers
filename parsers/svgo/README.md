@@ -23,6 +23,45 @@ interface parser {
 | --------- | -------- | ----------------- | ---------------------------------------- | ------------------------------------------------- |
 | `svgo`    | optional | `OptimizeOptions` | `{ plugins: [{name: 'preset-default'}]}` | Inherits from [svgo](https://github.com/svg/svgo) |
 
+## Output
+Please keep in mind that this parser generates files. This is why you should always set a folder as the final `path` in your parent rule.
+
+<details open>
+<summary>See Do & Don't config examples</summary>
+
+✅ Do
+```
+// ...
+"rules": [
+  {
+    "name": "Icons",
+    "path": "icons", // <-- path set as a folder
+    "parsers": [
+      {
+        "name": "svgo"
+      }
+    ]
+  }
+]
+```
+
+🚫 Don't
+```
+// ...
+"rules": [
+  {
+    "name": "Icons",
+    "path": "icons/icons.json", // <-- path set as a file
+    "parsers": [
+      {
+        "name": "svgo"
+      }
+    ]
+  }
+]
+```
+</details>
+
 ## Types
 
 ℹ️ **Please be aware that, depending on the order you use parsers, their input and output types have to match.**

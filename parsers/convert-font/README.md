@@ -26,6 +26,45 @@ interface parser {
 | `fileNameKey`    | optional | `name`, `fontFamily`, `fontPostScriptName`, `Array<string>` | `name`              | The design token's keys that will be used to create the file name. These keys will be separated by a space to create the file name. |
 | `fileNameFormat` | optional | `camelCase` `kebabCase` `snakeCase` `pascalCase`            |                     | The function to normalize the file name                                                                                             |
 
+## Output
+Please keep in mind that this parser generates files. This is why you should always set a folder as the final `path` in your parent rule.
+
+<details open>
+<summary>See Do & Don't config examples</summary>
+
+✅ Do
+```
+// ...
+"rules": [
+  {
+    "name": "Design Tokens / Fonts",
+    "path": "fonts", // <-- path set as a folder
+    "parsers": [
+      {
+        "name": "convert-font"
+      }
+    ]
+  }
+]
+```
+
+🚫 Don't
+```
+// ...
+"rules": [
+  {
+    "name": "Design Tokens / Fonts",
+    "path": "fonts/fonts.json", // <-- path set as a file
+    "parsers": [
+      {
+        "name": "convert-font"
+      }
+    ]
+  }
+]
+```
+</details>
+
 ## Types
 
 ℹ️ **Please be aware that, depending on the order you use parsers, their input and output types have to match.**
