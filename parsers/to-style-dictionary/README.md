@@ -56,7 +56,7 @@ interface parser {
 Please keep in mind that this parser generates files. This is why you should always set a folder as the final `path` in your parent rule.
 
 <details open>
-<summary>Shopping list</summary>
+<summary>See Do & Don't config examples</summary>
 
 ✅ Do
 ```
