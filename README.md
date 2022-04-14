@@ -16,6 +16,8 @@
 
 Specify helps you unify your brand identity by collecting, storing and distributing design tokens and assets—automatically.
 
+<img width="1440" alt="Possibilities offered by design apis like specify" src="https://user-images.githubusercontent.com/3913276/163355794-337b67e3-baf2-4a58-88fe-0dbbce9c71f3.jpg">
+
 ## Parsers
 ### Why you need parsers
 By default, without any parsers, Specify will return your design data as raw data:
@@ -25,8 +27,9 @@ By default, without any parsers, Specify will return your design data as raw dat
 Parsers help you transform design data coming from Specify to make it work with your environment.
 
 ### What are parsers?
-
 Parsers are functions allowing you to transform design tokens and assets you get from Specify's API.
+
+<img width="1440" alt="How parsers work" src="https://user-images.githubusercontent.com/3913276/163356071-159bec67-13d2-4549-a48c-d1f8d17522e3.jpg">
 
 A parser does the following job:
 1. Receive design data as input
