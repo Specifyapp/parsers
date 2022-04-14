@@ -195,31 +195,27 @@ type output = string;
 #### Output
 
 ```js
-const lightTheme = {
-  vector: {
-    activitySvg:
-      'https://s3-us-west-2.amazonaws.com/figma-alpha-api/img/a114/ce5c/947dcb83ea93c2da18ee2ea16f470a30',
-    airplaySvg:
-      'https://s3-us-west-2.amazonaws.com/figma-alpha-api/img/5148/a0f1/0663fcd2f52eec2c5dde0777fa3c46bd',
-    alertCircleSvg:
-      'https://s3-us-west-2.amazonaws.com/figma-alpha-api/img/f60c/0138/26feed37c70d80aa0ad4645e46ab0991',
-    alertOctagonSvg:
-      'https://s3-us-west-2.amazonaws.com/figma-alpha-api/img/c4b2/4bfb/f0eae481bb0c109c90cd6dc53e0f0ea4',
-    alertTriangleSvg:
-      'https://s3-us-west-2.amazonaws.com/figma-alpha-api/img/6bd2/c758/aa455203b7511cd948d58cbe421754f9',
-    alignCenterSvg:
-      'https://s3-us-west-2.amazonaws.com/figma-alpha-api/img/6a6f/e126/49e0b9d2833cf674438551c2ab458538',
-  },
-  color: {
-    colorsAccent: '#6650efff',
-    colorsBlack: '#1e212bff',
-    colorsGreen: '#58cd52ff',
-    colorsGrey: '#ccd5e1ff',
-    colorsOrange: '#ff8e05ff',
-    colorsRed: '#f5483fff',
-    colorsWhite: '#ffffffff',
-  },
+export const lightTheme = {
+    vector: {
+        activity:
+            'https://s3-us-west-2.amazonaws.com/figma-alpha-api/img/96dc/8825/c166b559140a0a64b28441924700a0b2'
+    },
+    textStyle: {
+        body: {
+            color: '#1e212bff',
+            font: {
+                style: null,
+                variant: null,
+                weight: 500,
+                size: 14,
+                lineHeight: 20,
+                family: 'Inter-Medium',
+            },
+            letterSpacing: 10,
+        }
+    },
+    color: {
+        colorsAccent: '#577cfeff',
+    },
 };
-
-export default lightTheme;
 ```

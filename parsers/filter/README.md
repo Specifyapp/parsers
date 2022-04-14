@@ -1,7 +1,7 @@
 # Filter
 
 ## Description
-This parser helps you filter the tokens by their name using a provided regular expression.
+This parser helps you filter tokens and assets by their name using a regular expression.
 
 Learn more about how to configure Specify in the API documentation: [https://specifyapp.com/developers](https://specifyapp.com/developers).
 

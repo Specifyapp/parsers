@@ -1,7 +1,7 @@
 # Camelcasify
 
 ## Description
-This parser helps you apply camelcase function on specific keys.
+This parser helps you apply camelcase function on specific keys from a design token.
 
 Learn more about how to configure Specify in the API documentation: [https://specifyapp.com/developers](https://specifyapp.com/developers).
 
