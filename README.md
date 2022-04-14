@@ -32,8 +32,8 @@ Parsers are functions allowing you to transform design tokens and assets you get
 <img width="1440" alt="How parsers work" src="https://user-images.githubusercontent.com/3913276/163356071-159bec67-13d2-4549-a48c-d1f8d17522e3.jpg">
 
 A parser does the following job:
-1. Receive design data as input
-2. Transform this design data
+1. Receives design data as input
+2. Transforms this design data
 3. Returns the transformed data
 
 The data returned by a parser can either be:
