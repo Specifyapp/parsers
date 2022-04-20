@@ -16,7 +16,7 @@
 
 Specify helps you unify your brand identity by collecting, storing and distributing design tokens and assets—automatically.
 
-<img width="1440" alt="Possibilities offered by design apis like specify" src="https://user-images.githubusercontent.com/3913276/163355794-337b67e3-baf2-4a58-88fe-0dbbce9c71f3.jpg">
+![Possibilities offered by design apis like specify](https://user-images.githubusercontent.com/3913276/163355794-337b67e3-baf2-4a58-88fe-0dbbce9c71f3.jpg#gh-dark-mode-only)
 
 ## Parsers
 ### Why you need parsers
