@@ -16,7 +16,9 @@
 
 Specify helps you unify your brand identity by collecting, storing and distributing design tokens and assets—automatically.
 
-<img width="1440" alt="Possibilities offered by design apis like specify" src="https://user-images.githubusercontent.com/3913276/163355794-337b67e3-baf2-4a58-88fe-0dbbce9c71f3.jpg">
+![Possibilities offered by design apis like specify](https://user-images.githubusercontent.com/3913276/163355794-337b67e3-baf2-4a58-88fe-0dbbce9c71f3.jpg#gh-dark-mode-only)
+![Possibilities offered by design apis like specify](https://user-images.githubusercontent.com/3913276/164198710-76f2e024-fdb1-4fc7-bcce-20e7dd676085.jpg#gh-light-mode-only)
+
 
 ## Parsers
 ### Why you need parsers
@@ -29,7 +31,8 @@ Parsers help you transform design data coming from Specify to make it work with 
 ### What are parsers?
 Parsers are functions allowing you to transform design tokens and assets you get from Specify's API.
 
-<img width="1440" alt="How parsers work" src="https://user-images.githubusercontent.com/3913276/163356071-159bec67-13d2-4549-a48c-d1f8d17522e3.jpg">
+![How parsers work](https://user-images.githubusercontent.com/3913276/163356071-159bec67-13d2-4549-a48c-d1f8d17522e3.jpg#gh-dark-mode-only)
+![How parsers work](https://user-images.githubusercontent.com/3913276/164199138-0e4daadd-d125-42b3-a065-526cc3ce4025.jpg#gh-light-mode-only)
 
 A parser does the following job:
 1. Receives design data as input
