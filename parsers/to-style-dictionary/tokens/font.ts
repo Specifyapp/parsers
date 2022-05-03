@@ -13,13 +13,12 @@ export class Font extends FontToken {
     return {
       asset: {
         font: (options?.formatTokens?.fontFormat ?? ['ttf']).reduce((acc, format) => {
+          const keys = [...this.keys, format];
           _.setWith(
             acc,
-            this.keys,
+            keys,
             {
-              [format]: {
-                value: (options?.assetsBaseDirectory?.fonts ?? '') + `${this.name}.${format}`,
-              },
+              value: (options?.assetsBaseDirectory?.fonts ?? '') + `${this.name}.${format}`,
             },
             Object,
           );
