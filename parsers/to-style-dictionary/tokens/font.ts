@@ -13,10 +13,10 @@ export class Font extends FontToken {
     return {
       asset: {
         font: (options?.formatTokens?.fontFormat ?? ['ttf']).reduce((acc, format) => {
-          const keys = [...this.keys, format];
+          const path = [...this.keys, format];
           _.setWith(
             acc,
-            keys,
+            path,
             {
               value: (options?.assetsBaseDirectory?.fonts ?? '') + `${this.name}.${format}`,
             },
