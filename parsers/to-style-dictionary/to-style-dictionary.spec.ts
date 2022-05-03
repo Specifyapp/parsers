@@ -1,7 +1,7 @@
 import toStyleDictionary from './to-style-dictionary.parser';
 import seeds from '../../tests/seeds';
 import libs from '../global-libs';
-import { Token } from '../../types';
+import { AllowedFormat, FontFormatList, Token } from '../../types';
 import * as TokensClass from './tokens';
 import {
   BaseStyleDictionaryTokensFormat,
@@ -560,6 +560,36 @@ describe('To Style Dictionary', () => {
             expectation.size.textIndent = { [firstLevelSplitedTokenName]: expect.any(Object) };
           }
           expect(result).toEqual(expectation);
+        });
+    });
+    it('Font', () => {
+      seeds()
+        .tokens.filter(({ type }) => type === 'font')
+        .map(font => {
+          const tokenClass: StyleDictionaryTokenClass = (<any>TokensClass)['Font'];
+          const [familyName, subFamilyName] = font.name.split('-');
+          const instance = new tokenClass(font, [familyName, subFamilyName]);
+          const expectedFormats: Array<AllowedFormat> = ['woff', 'woff2'];
+          const result = instance.generate({
+            formatTokens: {
+              fontFormat: expectedFormats,
+            },
+          });
+
+          expect(result).toEqual({
+            asset: {
+              font: {
+                [familyName]: {
+                  [subFamilyName]: expectedFormats.reduce<Record<string, object>>((acc, format) => {
+                    acc[format] = {
+                      value: `${font.name}.${format}`,
+                    };
+                    return acc;
+                  }, {}),
+                },
+              },
+            },
+          });
         });
     });
   });
