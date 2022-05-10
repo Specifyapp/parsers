@@ -278,6 +278,7 @@ describe('To jss', () => {
     expect(result.includes('http://')).toBeFalsy();
     expect(result.includes('@2x.jpg')).toBeTruthy();
   });
+
   it('Relative path with custom pattern', async () => {
     const options: OptionsType = {
       formatConfig: {
@@ -295,6 +296,7 @@ describe('To jss', () => {
     expect(result.includes('http://')).toBeFalsy();
     expect(result.includes('@2x.webp')).toBeFalsy();
   });
+
   it('No assets folder path - type by tokens', async () => {
     const options: OptionsType = {
       formatName: 'camelCase',
@@ -333,6 +335,7 @@ describe('To jss', () => {
       }
     });
   });
+
   it('Define assets folder path by type', async () => {
     const assetsFolderPath = { bitmap: 'bitmap/', vector: 'vector/' };
     const options: OptionsType = {
@@ -368,5 +371,15 @@ describe('To jss', () => {
         ).toBeTruthy();
       }
     });
+  });
+
+  it('Enclose text-style object key in quote to be valid with js syntax', async () => {
+    const options: OptionsType = {
+      formatName: 'kebabCase',
+    };
+    const tokens = seeds().tokens.filter(({ type }) => type === 'textStyle');
+
+    const result = await toJss(tokens, options, libs);
+    expect(result).toContain('"text-style"');
   });
 });

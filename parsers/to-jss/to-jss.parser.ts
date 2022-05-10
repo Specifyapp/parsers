@@ -102,7 +102,7 @@ export default async function (
           )},`;
         })
         .join('');
-      result += `${transformNameFn(type)}: {${content}},`;
+      result += `'${transformNameFn(type)}': {${content}},`;
       return result;
     }, '');
 
