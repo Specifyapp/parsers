@@ -29,7 +29,7 @@ By default, without any parsers, Specify will return your design data as raw dat
 Parsers help you transform design data coming from Specify to make it work with your environment.
 
 ### What are parsers?
-Parsers are functions allowing you to transform design tokens and assets you get from Specify's API.
+Parsers are functions allowing you to transform design tokens and assets coming from Specify to fit your needs and company standards.
 
 ![How parsers work](https://user-images.githubusercontent.com/3913276/163356071-159bec67-13d2-4549-a48c-d1f8d17522e3.jpg#gh-dark-mode-only)
 ![How parsers work](https://user-images.githubusercontent.com/3913276/164199138-0e4daadd-d125-42b3-a065-526cc3ce4025.jpg#gh-light-mode-only)
