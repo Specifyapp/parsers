@@ -172,29 +172,35 @@ describe('To css', () => {
   it('Get tokens - apply parsers - all tokens', async () => {
     const options: OptionsType = {};
     const result = await toCss(seeds().tokens, options, libs);
-    expect(result.includes('--heuristic-cross-platform-quantify: rgba(51, 15, 99, 0.6);'));
+    expect(result.includes('--heuristic-cross-platform-quantify: rgba(51, 15, 99, 0.6);')).toBe(
+      true,
+    );
     expect(
       result.includes(
         '--open-system-markets-hard-drive: "https://specifyapp.com/_nuxt/img/881a6b6.webp";',
       ),
-    );
-    expect(result.includes('--invoice-system-worthy-payment: 7px solid rgba(199, 48, 37, 0.93);'));
-    expect(result.includes('--digital-sas-avon: 805ms;'));
-    expect(result.includes('--frozen-withdrawal-gorgeous: Allan-Bold;'));
-    expect(result.includes('--paanga-calculate-plum: 73px;'));
-    expect(result.includes('--keyboard-fork-loaf: 0.13;'));
+    ).toBe(true);
+    expect(
+      result.includes('--invoice-system-worthy-payment: 7px solid rgba(199, 48, 37, 0.93);'),
+    ).toBe(true);
+    expect(result.includes('--digital-sas-avon: 805ms;')).toBe(true);
+    expect(result.includes('--frozen-withdrawal-gorgeous: Allan-Bold;')).toBe(true);
+    expect(result.includes('--paanga-calculate-plum: 73px;')).toBe(true);
+    expect(result.includes('--keyboard-fork-loaf: 0.13;')).toBe(true);
     expect(
       result.includes(
         '--car-ergonomic-licensed-cotton-pants: 37px 71px 2px rgba(144, 63, 6, 0.28);',
       ),
+    ).toBe(true);
+    expect(result.includes('--kids-iowa-ergonomic: Allan-Bold 5pt rgba(86, 225, 86, 0.52);')).toBe(
+      true,
     );
-    expect(result.includes('--kids-iowa-ergonomic: Allan-Bold 5pt rgba(86, 225, 86, 0.52);'));
     expect(
       result.includes(
         '--handcrafted-rubber-computer-sky-blue-bandwidth: "https://raw.githubusercontent.com/feathericons/feather/master/icons/alert-circle.svg";',
       ),
-    );
-    expect(result.includes('--towels-uniform-tasty: 8;'));
+    ).toBe(true);
+    expect(result.includes('--towels-uniform-tasty: 8;')).toBe(true);
     expect(
       result.includes(
         '      --concrete-next-generation-palladium: linear-gradient(\n' +
@@ -203,7 +209,7 @@ describe('To css', () => {
           '          rgba(229, 120, 89, 0.79) 13%\n' +
           '        ),\n',
       ),
-    );
+    ).toBe(true);
     return;
   });
 });
