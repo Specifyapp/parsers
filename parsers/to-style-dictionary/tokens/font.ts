@@ -23,7 +23,7 @@ export class Font extends FontToken {
             Object,
           );
           return acc;
-        }, {}),
+        }, _.set({}, [...this.keys, 'name'], { value: this.name })),
       },
     };
   }
