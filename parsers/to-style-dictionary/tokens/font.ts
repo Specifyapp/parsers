@@ -1,3 +1,4 @@
+import Path from 'path';
 import * as _ from 'lodash';
 import { FontToken } from '../../../types';
 import { OptionsType } from '../to-style-dictionary.parser';
@@ -18,7 +19,7 @@ export class Font extends FontToken {
             acc,
             path,
             {
-              value: (options?.assetsBaseDirectory?.fonts ?? '') + `${this.name}.${format}`,
+              value: Path.join(options?.assetsBaseDirectory?.fonts ?? '', `${this.name}.${format}`),
             },
             Object,
           );

@@ -1,3 +1,4 @@
+import Path from 'path';
 import * as _ from 'lodash';
 import { VectorToken } from '../../../types';
 import { OptionsType } from '../to-style-dictionary.parser';
@@ -14,7 +15,10 @@ export class Vector extends VectorToken {
       {},
       this.keys,
       {
-        value: (options?.assetsBaseDirectory?.icons ?? '') + `${this.name}.${this.value.format}`,
+        value: Path.join(
+          options?.assetsBaseDirectory?.icons ?? '',
+          `${this.name}.${this.value.format}`,
+        ),
       },
       Object,
     );

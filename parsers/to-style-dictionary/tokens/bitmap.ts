@@ -1,3 +1,4 @@
+import Path from 'path';
 import * as _ from 'lodash';
 import { BitmapToken } from '../../../types';
 import { OptionsType } from '../to-style-dictionary.parser';
@@ -14,9 +15,10 @@ export class Bitmap extends BitmapToken {
       {},
       this.keys,
       {
-        value:
-          (options?.assetsBaseDirectory?.images ?? '') +
+        value: Path.join(
+          options?.assetsBaseDirectory?.images ?? '',
           `${this.name}@${this.value.dimension ?? 1}.${this.value.format}`,
+        ),
       },
       Object,
     );
