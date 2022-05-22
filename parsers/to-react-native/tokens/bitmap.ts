@@ -23,7 +23,7 @@ export class Bitmap extends BitmapToken {
 
     const fullPath = path.join(relPath || '', fileName);
     return {
-      theme: `require('${fullPath}')`,
+      theme: `require('./${fullPath}')`,
     };
   }
 }

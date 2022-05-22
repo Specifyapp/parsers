@@ -205,21 +205,21 @@ export default theme;
 `;
 
 exports[`To React Native Should use assetsFolderPath 1`] = `
-"import assetActivity from \\"path/activity.svg\\";
-import assetAirplay from \\"path/airplay.svg\\";
-import assetAlertCircle from \\"path/alertCircle.svg\\";
-import assetAlertOctagon from \\"path/alertOctagon.svg\\";
-import assetAlertTriangle from \\"path/alertTriangle.pdf\\";
-import assetAlertTriangle from \\"path/alertTriangle.svg\\";
-import assetAlignCenter from \\"path/alignCenter.svg\\";
-import assetAlignCenter from \\"path/alignCenter.pdf\\";
-import assetUserMask from \\"path/userMask.svg\\";
-import assetUserMask from \\"path/userMask.pdf\\";
+"import assetActivity from \\"./path/activity.svg\\";
+import assetAirplay from \\"./path/airplay.svg\\";
+import assetAlertCircle from \\"./path/alertCircle.svg\\";
+import assetAlertOctagon from \\"./path/alertOctagon.svg\\";
+import assetAlertTriangle from \\"./path/alertTriangle.pdf\\";
+import assetAlertTriangle from \\"./path/alertTriangle.svg\\";
+import assetAlignCenter from \\"./path/alignCenter.svg\\";
+import assetAlignCenter from \\"./path/alignCenter.pdf\\";
+import assetUserMask from \\"./path/userMask.svg\\";
+import assetUserMask from \\"./path/userMask.pdf\\";
 
 const theme = {
   bitmap: {
-    acmeLogo: require(\\"path/acmeLogo.png\\"),
-    photoExample: require(\\"path/photoExample.png\\"),
+    acmeLogo: require(\\"./path/acmeLogo.png\\"),
+    photoExample: require(\\"./path/photoExample.png\\"),
   },
   vector: {
     activity: assetActivity,
