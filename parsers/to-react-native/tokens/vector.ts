@@ -26,7 +26,7 @@ export class Vector extends VectorToken {
     const fullPath = path.join(relPath || '', fileName);
     return {
       theme: symbol,
-      imports: `import ${symbol} from '${fullPath}';\n`,
+      imports: `import ${symbol} from './${fullPath}';\n`,
     };
   }
 }
