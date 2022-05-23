@@ -286,9 +286,12 @@ describe('To Style Dictionary', () => {
       Object.values(property).forEach(nestedProperty => {
         Object.values(nestedProperty as Record<string, Record<string, { value: string }>>).forEach(
           format => {
-            Object.values(format).forEach(value => {
-              expect(value.value.includes('fonts/')).toBeTruthy();
-              expect(value.value).toEqual(expect.any(String));
+            Object.entries(format).forEach(([format, value]) => {
+              if (format === 'name') {
+                expect(value.value).toEqual(expect.any(String));
+              } else {
+                expect(value.value).toContain('fonts/');
+              }
             });
           },
         );
@@ -580,12 +583,19 @@ describe('To Style Dictionary', () => {
             asset: {
               font: {
                 [familyName]: {
-                  [subFamilyName]: expectedFormats.reduce<Record<string, object>>((acc, format) => {
-                    acc[format] = {
-                      value: `${font.name}.${format}`,
-                    };
-                    return acc;
-                  }, {}),
+                  [subFamilyName]: expectedFormats.reduce<Record<string, object>>(
+                    (acc, format) => {
+                      acc[format] = {
+                        value: `${font.name}.${format}`,
+                      };
+                      return acc;
+                    },
+                    {
+                      name: {
+                        value: font.name,
+                      },
+                    },
+                  ),
                 },
               },
             },
