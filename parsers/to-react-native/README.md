@@ -71,40 +71,22 @@ type output = string;
 
 ### Config
 
-```jsoncc
-{
-  "name": "Import tokens",
-  "path": "src/common/theme/theme.js",
-  "filter": {
-    "types": [
-      "bitmap",
-      "border",
-      "color",
-      "depth",
-      "duration",
-      "fonts",
-      "gradient",
-      "measurement",
-      "opacity",
-      "textStyle",
-      "vector"
-    ]
-  },
-  "parsers": [
-    {
-      "name": "to-react-native",
-      "options": {
-        "colorFormat": "hex",
-        "assetsFolderPath": "src/common/assets",
-        "objectName": "myTheme",
-        "prettierConfig": {
-          "tabWidth": 4,
-          "singleQuote": true
-        }
+```jsonc
+"parsers": [
+  {
+    "name": "to-react-native",
+    "options": {
+      "colorFormat": "hex",
+      "assetsFolderPath": "src/common/assets",
+      "objectName": "myTheme",
+      "prettierConfig": {
+        "tabWidth": 4,
+        "singleQuote": true
       }
     }
-  ]
-}
+  }
+]
+// ...
 ```
 
 ### Before/After
