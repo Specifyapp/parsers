@@ -299,6 +299,36 @@ describe('To Style Dictionary', () => {
     });
   });
 
+  it('Should be able to extract Font token type with assetsBaseDirectory without trailing slash', async () => {
+    const result = await toStyleDictionary(
+      seeds().tokens.filter(({ type }) => type === 'font') as Array<Token>,
+      { splitBy: '/', assetsBaseDirectory: { fonts: 'fonts' } },
+      libs,
+    );
+
+    expect(Array.isArray(result)).toEqual(true);
+    expect(result.length).toEqual(1); // Time token only creates base
+    const file = result[0];
+    expect(typeof file.name).toEqual('string');
+    expect(file.name).toEqual('asset/font.json');
+    expect(typeof file.value.content).toEqual('string');
+    const content = JSON.parse(file.value.content!) as Record<string, any>;
+    expect(Object.keys(content)[0]).toEqual('asset');
+    expect(Object.keys(content.asset)[0]).toEqual('font');
+    Object.values(content).forEach(property => {
+      Object.values(property).forEach(nestedProperty => {
+        Object.values(nestedProperty as Record<string, Record<string, { value: string }>>).forEach(
+          format => {
+            Object.values(format).forEach(value => {
+              expect(value.value.includes('fonts/')).toBeTruthy();
+              expect(value.value).toEqual(expect.any(String));
+            });
+          },
+        );
+      });
+    });
+  });
+
   it('Should be able to extract Bitmap token type', async () => {
     const result = await toStyleDictionary(
       seeds().tokens.filter(({ type }) => type === 'bitmap') as Array<Token>,
@@ -344,6 +374,29 @@ describe('To Style Dictionary', () => {
     });
   });
 
+  it('Should be able to extract Bitmap token type with assetsBaseDirectory without trailing slash', async () => {
+    const result = await toStyleDictionary(
+      seeds().tokens.filter(({ type }) => type === 'bitmap') as Array<Token>,
+      { splitBy: '/', assetsBaseDirectory: { images: 'images' } },
+      libs,
+    );
+    expect(Array.isArray(result)).toEqual(true);
+    expect(result.length).toEqual(1); // Time token only creates base
+    const file = result[0];
+    expect(typeof file.name).toEqual('string');
+    expect(file.name).toEqual('asset/image.json');
+    expect(typeof file.value.content).toEqual('string');
+    const content = JSON.parse(file.value.content!) as Record<string, any>;
+    expect(Object.keys(content)[0]).toEqual('asset');
+    expect(Object.keys(content.asset)[0]).toEqual('image');
+    Object.values(content.asset).forEach(property => {
+      Object.values(property as Record<string, { value: string }>).forEach(nestedProperty => {
+        expect(nestedProperty.value.includes('images/')).toBeTruthy();
+        expect(nestedProperty.value).toEqual(expect.any(String));
+      });
+    });
+  });
+
   it('Should be able to extract Vector token type', async () => {
     const result = await toStyleDictionary(
       seeds().tokens.filter(({ type }) => type === 'vector') as Array<Token>,
@@ -370,6 +423,29 @@ describe('To Style Dictionary', () => {
     const result = await toStyleDictionary(
       seeds().tokens.filter(({ type }) => type === 'vector') as Array<Token>,
       { splitBy: '/', assetsBaseDirectory: { icons: 'icons/' } },
+      libs,
+    );
+    expect(Array.isArray(result)).toEqual(true);
+    expect(result.length).toEqual(1); // Time token only creates base
+    const file = result[0];
+    expect(typeof file.name).toEqual('string');
+    expect(file.name).toEqual('asset/icon.json');
+    expect(typeof file.value.content).toEqual('string');
+    const content = JSON.parse(file.value.content!) as Record<string, any>;
+    expect(Object.keys(content)[0]).toEqual('asset');
+    expect(Object.keys(content.asset)[0]).toEqual('icon');
+    Object.values(content.asset).forEach(property => {
+      Object.values(property as Record<string, { value: string }>).forEach(nestedProperty => {
+        expect(nestedProperty.value.includes('icons/')).toBeTruthy();
+        expect(nestedProperty.value).toEqual(expect.any(String));
+      });
+    });
+  });
+
+  it('Should be able to extract Vector token type with assetsBaseDirectory without trailing slash', async () => {
+    const result = await toStyleDictionary(
+      seeds().tokens.filter(({ type }) => type === 'vector') as Array<Token>,
+      { splitBy: '/', assetsBaseDirectory: { icons: 'icons' } },
       libs,
     );
     expect(Array.isArray(result)).toEqual(true);
