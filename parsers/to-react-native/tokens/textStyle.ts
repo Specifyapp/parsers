@@ -20,7 +20,7 @@ export class TextStyle extends TextStyleToken {
       fontSize,
       lineHeight,
       fontFamily: fontPostScriptName,
-      color: tinycolor(color).toString(colorFormat),
+      color: color ? tinycolor(color).toString(colorFormat) : undefined,
       letterSpacing,
     };
     return JSON.stringify(fontObject);
