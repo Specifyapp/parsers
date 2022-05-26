@@ -1,6 +1,6 @@
 import prettier from 'prettier';
 import { LibsType } from '../global-libs';
-import { ColorsFormat, DownloadableFile, Token, TokensType } from '../../types';
+import { ColorsFormat, DownloadableFile, IToken, TokensType } from '../../types';
 import {
   BaseStyleDictionaryTokensFormat,
   StyleDictionaryTokenClass,
@@ -10,7 +10,9 @@ import deepmerge from 'deepmerge';
 import '../../types/utils/utils';
 
 export type OutputDataType = Array<DownloadableFile>;
-export type InputDataType = Array<Token>;
+export type InputDataType = Array<
+  Pick<IToken, 'id' | 'name' | 'value' | 'type'> & Record<string, any>
+>;
 export type FormatTokenType = Partial<{
   colorFormat: {
     format: ColorsFormat;
