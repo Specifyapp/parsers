@@ -104,7 +104,6 @@ exports[`To React Native Should generate the theme object 1`] = `
       fontSize: 14,
       lineHeight: 20,
       fontFamily: \\"Roboto-Regular\\",
-      color: \\"rgb(0, 0, 0)\\",
     },
     title: {
       fontWeight: \\"600\\",
@@ -295,7 +294,6 @@ const theme = {
       fontSize: 14,
       lineHeight: 20,
       fontFamily: \\"Roboto-Regular\\",
-      color: \\"rgb(0, 0, 0)\\",
     },
     title: {
       fontWeight: \\"600\\",
