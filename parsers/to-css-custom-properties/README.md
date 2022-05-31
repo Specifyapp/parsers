@@ -1,6 +1,7 @@
 # To CSS Custom Properties
 
 ## Description
+
 This parser helps you transform design tokens in CSS Custom Properties.
 
 Learn more about how to configure Specify in the API documentation: [https://specifyapp.com/developers](https://specifyapp.com/developers).
@@ -27,14 +28,14 @@ interface parser {
 
 ### Options
 
-| Parameter                | Required | Type                                                              | Default     | Description                                                                    |
-| ------------------------ | -------- | ----------------------------------------------------------------- | ----------- | ------------------------------------------------------------------------------ |
-| `formatName`             | optional | `camelCase` `kebabCase` `snakeCase` `pascalCase`                  | `kebabCase` | The case transformation you want to apply to your design token name            |
-| `formatTokens.color`     | optional | `rgb` `prgb` `hex` `hex6` `hex3` `hex4` `hex8` `name` `hsl` `hsv` | `rgb`       | The color format you want to apply to your potential color design token        |
-| `formatConfig.selector`  | optional | `string`                                                          | `:root`     | The CSS selector containing your CSS custom properties                         |
-| `formatConfig.endOfLine` | optional | `auto` `lf` `crlf` `cr`                                           | `auto`      | [Prettier documentation](https://prettier.io/docs/en/options.html#end-of-line) |
-| `formatConfig.tabWidth`  | optional | `number`                                                          | `2`         | [Prettier documentation](https://prettier.io/docs/en/options.html#tab-width)   |
-| `formatConfig.useTabs`   | optional | `boolean`                                                         | `false`     | [Prettier documentation](https://prettier.io/docs/en/options.html#tabs)        |
+| Parameter                | Required | Type                                                              | Default | Description                                                                                                                   |
+| ------------------------ | -------- | ----------------------------------------------------------------- | ------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| `formatName`             | optional | `camelCase` `kebabCase` `snakeCase` `pascalCase`                  |         | The case transformation you want to apply to your design token name. Learn more in [our dedicated section](#ℹ️-good-to-know). |
+| `formatTokens.color`     | optional | `rgb` `prgb` `hex` `hex6` `hex3` `hex4` `hex8` `name` `hsl` `hsv` | `rgb`   | The color format you want to apply to your potential color design token                                                       |
+| `formatConfig.selector`  | optional | `string`                                                          | `:root` | The CSS selector containing your CSS custom properties                                                                        |
+| `formatConfig.endOfLine` | optional | `auto` `lf` `crlf` `cr`                                           | `auto`  | [Prettier documentation](https://prettier.io/docs/en/options.html#end-of-line)                                                |
+| `formatConfig.tabWidth`  | optional | `number`                                                          | `2`     | [Prettier documentation](https://prettier.io/docs/en/options.html#tab-width)                                                  |
+| `formatConfig.useTabs`   | optional | `boolean`                                                         | `false` | [Prettier documentation](https://prettier.io/docs/en/options.html#tabs)                                                       |
 
 ## Types
 
@@ -57,7 +58,9 @@ type output = string;
 ```
 
 ## Basic Usage
+
 ### Config
+
 ```jsonc
 "parsers": [
   {
@@ -68,7 +71,9 @@ type output = string;
 ```
 
 ### Before/After
+
 #### Input
+
 ```jsonc
 [
   {
@@ -83,6 +88,7 @@ type output = string;
   }
 ]
 ```
+
 #### Output
 
 ```css
@@ -91,14 +97,16 @@ type output = string;
   --primary-color: rgba(122, 227, 20, 0.96);
 }
 ```
+
 ## Complex Usage - Create CSS Custom Properties, change format color values and change CSS selector
+
 ### Config
 
 ```jsonc
 {
   "name": "to-css-custom-properties",
   "options": {
-    "formatTokens":{
+    "formatTokens": {
       "color": "hsl"
     },
     "formatConfig": {
@@ -134,5 +142,59 @@ type output = string;
 body[data-theme='light'] {
   /* COLOR */
   --primary-color: hsla(90, 84%, 48%, 0.96);
+}
+```
+
+## ℹ️ Good to know
+
+This parser will always generate valid CSS. Thus, if design tokens coming from Specify have a name incorrectly formatted, this parser will automatically "kebabcasify" your CSS Custom Properties.
+
+### Input example #1
+
+Let's say a color design token coming from Specify has the following structure:
+
+```jsonc
+{
+  "type": "color",
+  "value": {
+    "a": 0.96,
+    "b": 20,
+    "g": 227,
+    "r": 122
+  },
+  "name": "Color / Red" <-- String contains invalid CSS characters like spaces and "/" 🚫
+}
+```
+
+This parser will generate: `--color-red: rgba(122, 227, 20, 0.96);`
+
+### Input example #2
+
+Let's say a color design token coming from Specify has the following structure:
+
+```jsonc
+{
+  "type": "color",
+  "value": {
+    "a": 0.96,
+    "b": 20,
+    "g": 227,
+    "r": 122
+  },
+  "name": "Red" <-- String is valid CSS ✅
+}
+```
+
+This parser will generate: `--Red: rgba(122, 227, 20, 0.96);`.
+
+Don't want uppercase in your CSS Custom Property?
+Apply the following `formatName` options:
+
+```jsonc
+{
+  "name": "to-css-custom-properties",
+  "options": {
+    "formatName": "kebabCase"
+  }
 }
 ```
