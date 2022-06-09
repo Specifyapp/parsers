@@ -29,7 +29,7 @@ By default, without any parsers, Specify will return your design data as raw dat
 - Design tokens are returned in JSON
 - Assets are returned as files
 
-There is high chances you need to transform those design data to fit your needs. Parsers help you do just that.
+There are high chances you need to transform those design data to fit your needs. Parsers help you do just that.
 
 ### What are parsers?
 
