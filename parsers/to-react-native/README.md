@@ -1,6 +1,7 @@
 # To React Native
 
 ## Description
+
 This parser helps you transform design tokens to a JavaScript `theme` object compatible with [React Native](https://reactnative.dev/).
 
 Learn more about how to configure Specify in the API documentation: [https://specifyapp.com/developers](https://specifyapp.com/developers).
@@ -29,6 +30,7 @@ interface parser {
       tabWidth: number;
       useTabs: boolean;
     }>;
+    formatFileName: 'camelCase' | 'kebabCase' | 'snakeCase' | 'pascalCase' | 'none';
   }>;
 }
 ```
@@ -37,17 +39,18 @@ interface parser {
 
 ### Options
 
-| Parameter                    | Required | Type                                                                       | Default     | Description                                                                                                           |
-| ---------------------------- | -------- | -------------------------------------------------------------------------- | ----------- | --------------------------------------------------------------------------------------------------------------------- |
-| `colorFormat`                | optional | `rgb`, `prgb`, `hex`, `hex6`, `hex3`, `hex4`, `hex8`, `name`, `hsl`, `hsv` | `rgb`       | The format of all colors (gradients, borders, textStyles etc.)                                                        |
-| `objectName`                 | optional | `string`                                                                   | `'theme'`   | The name of the JS object containing the theme (it will be the default export of the file).                           |
-| `assetsFolderPath`           | optional | `string`                                                                   | `undefined` | The relative location of the folder to import the assets from, if not provided, the assets will be referenced by URL. |
-| `assetsFolderPath.vector`    | optional | `string`                                                                   | `undefined` | The relative location of the folder to import the **vector** assets from.                                             |
-| `assetsFolderPath.bitmap`    | optional | `string`                                                                   | `undefined` | The relative location of the folder to import the **bitmap** assets from.                                             |
-| `prettierConfig.endOfLine`   | optional | `auto, lf, crlf, cr`                                                       | `auto`      | [Prettier documentation](https://prettier.io/docs/en/options.html#end-of-line)                                        |
-| `prettierConfig.tabWidth`    | optional | `number`                                                                   | `2`         | [Prettier documentation](https://prettier.io/docs/en/options.html#tab-width)                                          |
-| `prettierConfig.useTabs`     | optional | `boolean`                                                                  | `false`     | [Prettier documentation](https://prettier.io/docs/en/options.html#tabs)                                               |
-| `prettierConfig.singleQuote` | optional | `boolean`                                                                  | `false`     | [Prettier documentation](https://prettier.io/docs/en/options.html#quotes)                                             |
+| Parameter                    | Required | Type                                                                       | Default     | Description                                                                                                                                                     |
+| ---------------------------- | -------- | -------------------------------------------------------------------------- | ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `colorFormat`                | optional | `rgb`, `prgb`, `hex`, `hex6`, `hex3`, `hex4`, `hex8`, `name`, `hsl`, `hsv` | `rgb`       | The format of all colors (gradients, borders, textStyles etc.)                                                                                                  |
+| `objectName`                 | optional | `string`                                                                   | `'theme'`   | The name of the JS object containing the theme (it will be the default export of the file).                                                                     |
+| `assetsFolderPath`           | optional | `string`                                                                   | `undefined` | The relative location of the folder to import the assets from, if not provided, the assets will be referenced by URL.                                           |
+| `assetsFolderPath.vector`    | optional | `string`                                                                   | `undefined` | The relative location of the folder to import the **vector** assets from.                                                                                       |
+| `assetsFolderPath.bitmap`    | optional | `string`                                                                   | `undefined` | The relative location of the folder to import the **bitmap** assets from.                                                                                       |
+| `prettierConfig.endOfLine`   | optional | `auto, lf, crlf, cr`                                                       | `auto`      | [Prettier documentation](https://prettier.io/docs/en/options.html#end-of-line)                                                                                  |
+| `prettierConfig.tabWidth`    | optional | `number`                                                                   | `2`         | [Prettier documentation](https://prettier.io/docs/en/options.html#tab-width)                                                                                    |
+| `prettierConfig.useTabs`     | optional | `boolean`                                                                  | `false`     | [Prettier documentation](https://prettier.io/docs/en/options.html#tabs)                                                                                         |
+| `prettierConfig.singleQuote` | optional | `boolean`                                                                  | `false`     | [Prettier documentation](https://prettier.io/docs/en/options.html#quotes)                                                                                       |
+| `formatFileName`             | optional | `camelCase` , `kebabCase` , `snakeCase` , `pascalCase` , `none`            | `camelCase` | Apply formatting to the file name in the import statements of vectors and bitmaps. Use this if you used transformations on the file names of downloaded assets. |
 
 ## Types
 
@@ -82,7 +85,8 @@ type output = string;
       "prettierConfig": {
         "tabWidth": 4,
         "singleQuote": true
-      }
+      },
+      "formatFileName": "none"
     }
   }
 ]
@@ -167,7 +171,7 @@ import assetActivity from '../src/assets/activity.svg';
 
 const theme = {
   bitmap: {
-    acmeLogo: require('../src/assets/acmeLogo.png'),
+    acmeLogo: require('../src/assets/acme-logo.png'),
   },
   vector: {
     activity: assetActivity,

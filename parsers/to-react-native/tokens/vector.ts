@@ -1,6 +1,7 @@
 import { VectorToken } from '../../../types';
 import path from 'path';
 import { OptionsType } from '../to-react-native.parser';
+import { pascalCase } from 'lodash';
 
 export class Vector extends VectorToken {
   constructor(token: Partial<VectorToken>) {
@@ -22,7 +23,7 @@ export class Vector extends VectorToken {
         ? options.assetsFolderPath
         : options.assetsFolderPath!.vector;
 
-    const symbol = `asset${this.name.charAt(0).toUpperCase()}${this.name.slice(1)}`;
+    const symbol = `asset${pascalCase(this.name)}`;
     const fullPath = path.join(relPath || '', fileName);
     return {
       theme: symbol,

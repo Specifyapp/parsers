@@ -13,6 +13,19 @@ describe('To React Native', () => {
     const result = await toReactNative(tokens, { assetsFolderPath: 'path' }, libs);
     expect(result).toMatchSnapshot();
   });
+  it('Should support different formatName options', async () => {
+    (['camelCase', 'kebabCase', 'snakeCase', 'pascalCase', 'none'] as const).map(
+      async formatName => {
+        const tokens = seeds().tokens;
+        const result = await toReactNative(
+          tokens,
+          { assetsFolderPath: 'path', formatFileName: formatName },
+          libs,
+        );
+        expect(result).toMatchSnapshot();
+      },
+    );
+  });
   it('Should support different duration types', async () => {
     const tokens: InputDataType = [
       {
