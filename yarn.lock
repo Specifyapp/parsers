@@ -855,6 +855,11 @@
   resolved "https://registry.yarnpkg.com/@mdx-js/react/-/react-1.6.22.tgz#ae09b4744fddc74714ee9f9d6f17a66e77c43573"
   integrity sha512-TDoPum4SHdfPiGSAaRBw7ECyI8VaHpK8GJugbJIJuqyh6kzw9ZLJZW3HGL3NNrJGxcAixUvqROm+YuQOo5eXtg==
 
+"@mobily/ts-belt@^3.12.0":
+  version "3.12.0"
+  resolved "https://registry.yarnpkg.com/@mobily/ts-belt/-/ts-belt-3.12.0.tgz#8dd2d362f2466eb3f903afd0f4bf784b7e215c69"
+  integrity sha512-3eY87cZztoPm71h9VsFV9z981GYNXrmbsmBHSv14ux7UWuCEnSFxNAx8TMR1V1NqSF6k1eLzKGnYrC757umCyw==
+
 "@oozcitak/dom@1.15.10":
   version "1.15.10"
   resolved "https://registry.yarnpkg.com/@oozcitak/dom/-/dom-1.15.10.tgz#dca7289f2b292cff2a901ea4fbbcc0a1ab0b05c2"
@@ -3921,6 +3926,11 @@ ts-jest@27.0.3:
     mkdirp "1.x"
     semver "7.x"
     yargs-parser "20.x"
+
+ts-pattern@^4.0.3:
+  version "4.0.3"
+  resolved "https://registry.yarnpkg.com/ts-pattern/-/ts-pattern-4.0.3.tgz#4b5a08ff61fcd5a9bbfe3c1e686c35420ef87bda"
+  integrity sha512-OxQStbr1MKcYYz3YaXsFSBkMo3zjFODVkV8kaLfOak+sWSfx4B+jkOm/VoaWLhnMP+icnIcJ7ENYEnmpAv3jLg==
 
 tslib@^2.1.0:
   version "2.3.1"
