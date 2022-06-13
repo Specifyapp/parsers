@@ -19,7 +19,6 @@ export function generateColorFile(
   colors: Array<ColorToken>,
   options: OptionsType,
 ): DownloadableFile {
-  console.log(colors.length);
   return {
     name: options?.formatByType?.color?.fileName ?? 'colors.dart',
     value: {

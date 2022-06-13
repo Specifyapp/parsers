@@ -1,5 +1,97 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`To Flutter Should generate list of files containing design tokens 1`] = `
+Array [
+  Object {
+    "name": "measurements.dart",
+    "value": Object {
+      "content": "
+import 'dart:ui';
+
+class SpecifyMeasurement {
+    SpecifyMeasurement._();
+
+    static const baseSpace01 = 8.00;
+    static const baseSpace02 = 16.00;
+    static const baseSpace03 = 24.00;
+    static const baseSpace04 = 32.00;
+    static const baseSpace05 = 64.00;
+    static const baseSpace06 = 96.00;
+    static const baseSpace07 = 128.00;
+    static const baseSpace08 = 160.00;
+    static const baseSpace09 = 192.00;
+    static const baseSpace10 = 224.00;
+}",
+    },
+  },
+  Object {
+    "name": "colors.dart",
+    "value": Object {
+      "content": "
+import 'dart:ui';
+
+class SpecifyColor {
+    SpecifyColor._();
+
+    static const colorsAccent = Color(0x577CFEFF);
+    static const colorsBlack = Color(0x1E212BFF);
+    static const colorsGreen = Color(0x58CD52FF);
+    static const colorsGrey = Color(0xCCD5E1FF);
+    static const colorsOrange = Color(0xFF8E05FF);
+    static const colorsRed = Color(0xF5483FFF);
+    static const colorsWhite = Color(0xFFFFFFFF);
+}",
+    },
+  },
+]
+`;
+
+exports[`To Flutter Should generate list of valid files containing design tokens 1`] = `
+Array [
+  Object {
+    "name": "measurements.dart",
+    "value": Object {
+      "content": "
+import 'dart:ui';
+
+class SpecifyMeasurement {
+    SpecifyMeasurement._();
+
+    static const baseSpace01 = 8.00;
+    static const baseSpace02 = 16.00;
+    static const baseSpace03 = 24.00;
+    static const baseSpace04 = 32.00;
+    static const baseSpace05 = 64.00;
+    static const baseSpace06 = 96.00;
+    static const baseSpace07 = 128.00;
+    static const baseSpace08 = 160.00;
+    static const baseSpace09 = 192.00;
+    static const baseSpace10 = 224.00;
+}",
+    },
+  },
+  Object {
+    "name": "colors.dart",
+    "value": Object {
+      "content": "
+import 'dart:ui';
+
+class SpecifyColor {
+    SpecifyColor._();
+
+    static const colorsAccent = Color(0x577CFEFF);
+    static const colorsBlack = Color(0x1E212BFF);
+    static const colorsGreen = Color(0x58CD52FF);
+    static const colorsGrey = Color(0xCCD5E1FF);
+    static const colorsOrange = Color(0xFF8E05FF);
+    static const colorsRed = Color(0xF5483FFF);
+    static const colorsWhite = Color(0xFFFFFFFF);
+}",
+    },
+  },
+]
+`;
+
 exports[`To Flutter Should generate the color theme with custom file name and custom class name 1`] = `
 Array [
   Object {
