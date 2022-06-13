@@ -31,11 +31,11 @@ interface parser {
 
 | Parameter                                   | Required | Type     | Default              | Description                                                      |
 | ------------------------------------------- | -------- | -------- | -------------------- | ---------------------------------------------------------------- |
-| `formatConfig.color.className`              | optional | `string` | `SpecifyColor`       | Name of the class encapsulating your color design tokens.        |
-| `formatConfig.color.fileName`               | optional | `string` | `colors.dart`        | Name of the Dart file containing your color design tokens.       |
-| `formatConfig.measurement.devicePixelRatio` | optional | `number` | `2`                  | Default pixel ratio use to scale your measurement design tokens. |
-| `formatConfig.measurement.className`        | optional | `string` | `SpecifyMeasurement` | Name of the Dart file containing your measurement design tokens. |
-| `formatConfig.measurement.fileName`         | optional | `string` | `measurements.dart`  | Name of the Dart file containing your measurement design tokens. |
+| `formatByType.color.className`              | optional | `string` | `SpecifyColor`       | Name of the class encapsulating your color design tokens.        |
+| `formatByType.color.fileName`               | optional | `string` | `colors.dart`        | Name of the Dart file containing your color design tokens.       |
+| `formatByType.measurement.devicePixelRatio` | optional | `number` | `2`                  | Default pixel ratio use to scale your measurement design tokens. |
+| `formatByType.measurement.className`        | optional | `string` | `SpecifyMeasurement` | Name of the class encapsulating your measurement design tokens.  |
+| `formatByType.measurement.fileName`         | optional | `string` | `measurements.dart`  | Name of the Dart file containing your measurement design tokens. |
 
 ## Types
 
@@ -135,16 +135,10 @@ class SpecifyMeasurement {
           "className": "LightTheme",
           "fileName": "custom-colors-file-name.dart"
         },
-        "color": {
+        "measurement": {
           "devicePixelRatio": 3.0,
           "className": "CustomTheme",
           "fileName": "custom-measurement-file-name.dart"
-        },
-      },
-      "presets": {
-        "fontWeights": {
-          "preset": "base",
-          "freeze": true
         }
       }
     }
@@ -176,91 +170,30 @@ class SpecifyMeasurement {
       "measure": 4
     },
     "type": "measurement"
-  },
-  {
-    "name": "body",
-    "value": {
-      "font": {
-        "id": "69d2d62e-4d62-45d7-b85f-5da2f9f0c0d4",
-        "name": "Roboto-Regular",
-        "value": {
-          "fontFamily": "Roboto",
-          "fontWeight": 400,
-          "fontPostScriptName": "Roboto-Regular"
-        },
-        "type": "font"
-      },
-      "fontSize": {
-        "value": {
-          "unit": "px",
-          "measure": 16
-        }
-      },
-      "textAlign": {
-        "vertical": "top",
-        "horizontal": "left"
-      },
-      "lineHeight": {
-        "value": {
-          "unit": "px",
-          "measure": 20
-        }
-      },
-      "fontVariant": ["small-caps"]
-    },
-    "type": "textStyle"
   }
 ]
 ```
 
 #### Output
 
-```js
-const theme = {
-  fontWeights: {
-    thin: 100,
-    extraLight: 200,
-    light: 300,
-    normal: 400,
-    medium: 500,
-    semiBold: 600,
-    bold: 700,
-    extraBold: 800,
-    black: 900,
-  },
-  fontSizes: [
-    '0.512rem',
-    '0.64rem',
-    '0.8rem',
-    '0.875rem',
-    '1rem',
-    '1.25rem',
-    '1.563rem',
-    '1.953rem',
-    '2.441rem',
-    '3.052rem',
-  ],
-  colors: { primary: '#c6bdff' },
-  sizes: { baseSpace01: '4px' },
-  lineHeights: { body: '20px' },
-  text: {
-    body: {
-      fontFamily: 'Roboto-Regular',
-      lineHeight: '20px',
-      fontSize: '0.875rem',
-      fontWeight: 400,
-      textAlign: 'left',
-      verticalAlign: 'top',
-      fontVariant: 'small-caps',
-    },
-  },
-};
+```dart
+// custom-colors-file-name.dart
+import 'dart:ui';
 
-export default theme;
+class LightTheme {
+    LightTheme._();
+
+    static const colorsBlack = Color(0x1E212BFF);
+}
 ```
 
-## ℹ️ Good to know
+```dart
+// // custom-measurements-file-name.dart
+import 'dart:ui';
 
-Use the [link-design-tokens](https://github.com/Specifyapp/parsers/tree/master/parsers/link-design-tokens) parser before this parser to reference color and measurement design tokens in [variants](https://theme-ui.com/theme-spec/#variants).
+class CustomTheme {
+    CustomTheme._();
 
-With this flow you will be able to link `fontSizes, colors` with variants like `texts` or `borders`.
+    static const baseSpace01 = 12.00;
+}
+```

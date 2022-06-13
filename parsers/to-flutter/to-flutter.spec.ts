@@ -5,7 +5,6 @@ describe('To Flutter', () => {
   it('Should generate list of files containing design tokens', async () => {
     const tokens = seeds().tokens;
     const result = await toFlutter(tokens, undefined);
-    console.log(result);
     expect(Array.isArray(result)).toBeTruthy();
     expect(result).toMatchSnapshot();
   });
@@ -36,7 +35,7 @@ describe('To Flutter', () => {
           measurement: {
             fileName: 'custom-measurements-file-name.dart',
             className: 'CustomTheme',
-            devicePixelRatio: 3,
+            devicePixelRatio: 3.0,
           },
         },
       },
