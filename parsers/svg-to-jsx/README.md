@@ -1,6 +1,7 @@
 # SVG to JSX
 
 ## Description
+
 This parser helps you wrap SVG files within a JSX component.
 
 ## Interface
@@ -43,12 +44,14 @@ interface parser {
 | `wrapper.className`           | optional | `string`                                         |             | A string or a pattern used to set a className attribute on the potential parent tag wrapping the SVG tag. |
 
 ## Output
+
 Please keep in mind that this parser generates files. This is why you should always set a folder as the final `path` in your parent rule.
 
 <details open>
 <summary>See Do & Don't config examples</summary>
 
 ✅ Do
+
 ```
 // ...
 "rules": [
@@ -65,6 +68,7 @@ Please keep in mind that this parser generates files. This is why you should alw
 ```
 
 🚫 Don't
+
 ```
 // ...
 "rules": [
@@ -79,6 +83,7 @@ Please keep in mind that this parser generates files. This is why you should alw
   }
 ]
 ```
+
 </details>
 
 ## Types
@@ -220,7 +225,7 @@ The output will differ according to the `path` you set in your rule:
 
 #### Output
 
-```
+```jsonc
 {
   "type": "vector",
   "name": "activity",
@@ -245,7 +250,7 @@ The output will differ according to the `path` you set in your rule:
             />
           </svg>
         </div>
-      );',
+      );",
   },
   // …
 }
