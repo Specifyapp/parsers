@@ -1,10 +1,11 @@
 # Link design tokens
 
 ## Description
+
 This parser helps you have design tokens referencing other ones.
 It replaces absolute values by their potential corresponding design token.
 
-You may want to use this parser to make your borders, shadows and gradient reference other design token types like measurement or color.
+You may want to use this parser to make your borders, shadows and gradients reference other design token types like a measurement or a color.
 
 For instance, a border design token is composed of:
 
