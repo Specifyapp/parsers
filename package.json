@@ -14,7 +14,7 @@
     "@types/tinycolor2": "^1.4.3",
     "@types/xml2js": "^0.4.9",
     "deepmerge": "^4.2.2",
-    "got": "^11.8.2",
+    "got": "^11.8.5",
     "lodash": "^4.17.21",
     "mustache": "^4.2.0",
     "prettier": "2.3.2",
