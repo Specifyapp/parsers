@@ -13,6 +13,20 @@
 
 <img width="1440" alt="Repository Header" src="https://user-images.githubusercontent.com/16894359/161260523-376f533e-ec72-46c0-9f87-9cd31befe04f.png">
 
+<p align="center">
+  <br />
+  <a href="https://specifyapp.com/developers/" rel="dofollow"><strong>Explore the docs »</strong></a>
+  <br />
+  <br />
+  <a href="https://github.com/Specifyapp/parsers/issues">Report Bug</a>
+  ·
+  <a href="https://specify.canny.io">Request Feature</a>
+  ·
+  <a href="https://discord.com/invite/vMkDk4CbG4">Join Our Discord</a>
+  ·
+  <a href="https://twitter.com/specifyapp">Twitter</a>
+</p>
+
 ## What is Specify?
 
 Specify helps you unify your brand identity by collecting, storing and distributing design tokens and assets—automatically.
