@@ -24,7 +24,7 @@ export default async function (
     const result: InputDataType = [];
     tokens.forEach(token => {
       const valueToCheck = _.get(token, options.key);
-      if (valueToCheck.match(reg)) {
+      if (!!valueToCheck && String(valueToCheck).match(reg)) {
         result.push(token);
       }
     });
