@@ -44,16 +44,6 @@ describe('Filter', () => {
     return;
   });
 
-  it('should throw error when key is wrong', async () => {
-    await expect(
-      filter(
-        seeds().tokens as Array<Token>,
-        { key: 'not exist', regex: { pattern: '', flags: 'g' } },
-        libs,
-      ),
-    ).rejects.toThrow(Error);
-  });
-
   it('Should return one element when RegEx is without flag', async () => {
     const result = await filter(
       seeds().tokens as Array<Token>,
@@ -86,6 +76,15 @@ describe('Filter', () => {
       { key: 'name', regex: 'Background' },
       libs,
     );
+    if (result instanceof Error) return fail(result);
+    expect(result).toBeDefined();
+    expect(Array.isArray(result)).toEqual(true);
+    expect(result.length).toEqual(1);
+    return;
+  });
+
+  it('Should work on non-string values', async () => {
+    const result = await filter(seeds().tokens, { key: 'meta.dimension', regex: '2' }, libs);
     if (result instanceof Error) return fail(result);
     expect(result).toBeDefined();
     expect(Array.isArray(result)).toEqual(true);
