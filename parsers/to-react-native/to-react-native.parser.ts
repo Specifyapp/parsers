@@ -3,7 +3,6 @@ import prettier from 'prettier';
 import * as TokensClass from './tokens';
 import { LibsType } from '../global-libs';
 import Template from '../../libs/template';
-import { camelCase } from 'lodash';
 
 export type InputDataType = Array<
   Pick<IToken, 'id' | 'name' | 'value' | 'type'> & Record<string, any>
@@ -25,11 +24,12 @@ export type FormatTokenType = Partial<{}>;
 
 export type OptionsType =
   | Partial<{
-      assetsFolderPath?: string | { vector?: string; bitmap?: string };
+      assetsFolderPath: string | { vector?: string; bitmap?: string };
       colorFormat: ColorsFormat;
       header: string;
       objectName: string;
       prettierConfig: prettier.Options;
+      formatFileName: 'camelCase' | 'kebabCase' | 'snakeCase' | 'pascalCase' | 'none';
     }>
   | undefined;
 
@@ -52,7 +52,13 @@ export default async function (
 
           if (!(<any>TokensClass)[tokenClassName]) return;
 
-          token.name = camelCase(token.name);
+          const tokenNameCamelCase = _.camelCase(token.name);
+
+          token.name =
+            options?.formatFileName !== 'none'
+              ? _[options?.formatFileName ?? 'camelCase'](token.name)
+              : token.name;
+
           const instance = new (<any>TokensClass)[tokenClassName](token);
 
           if (token.type === 'vector' || token.type === 'bitmap') {
@@ -63,10 +69,10 @@ export default async function (
             const { theme, imports: tokenImports } = instance.toReactNative(options, fileName);
             imports += tokenImports ?? '';
 
-            return `'${token.name}': ${theme},`;
+            return `'${tokenNameCamelCase}': ${theme},`;
           }
 
-          return `'${token.name}': ${instance.toReactNative(options)},`;
+          return `'${tokenNameCamelCase}': ${instance.toReactNative(options)},`;
         })
         .join('');
 
