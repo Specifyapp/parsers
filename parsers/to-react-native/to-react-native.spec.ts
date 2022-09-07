@@ -10,8 +10,10 @@ describe('To React Native', () => {
   });
   it('Should use assetsFolderPath', async () => {
     const tokens = seeds().tokens;
-    const result = await toReactNative(tokens, { assetsFolderPath: 'path' }, libs);
-    expect(result).toMatchSnapshot();
+    expect(await toReactNative(tokens, { assetsFolderPath: 'path' }, libs)).toMatchSnapshot();
+    expect(await toReactNative(tokens, { assetsFolderPath: './path' }, libs)).toMatchSnapshot();
+    expect(await toReactNative(tokens, { assetsFolderPath: '../path' }, libs)).toMatchSnapshot();
+    expect(await toReactNative(tokens, { assetsFolderPath: '../path/' }, libs)).toMatchSnapshot();
   });
   it('Should support different formatName options', async () => {
     (['camelCase', 'kebabCase', 'snakeCase', 'pascalCase', 'none'] as const).map(

@@ -167,14 +167,15 @@ type output = string;
 #### Output
 
 ```js
-import assetActivity from '../src/assets/activity.svg';
+import vectorActivity from '../src/assets/activity.svg';
+import bitmapAcmeLogo from '../src/assets/acme-logo.png';
 
 const theme = {
   bitmap: {
-    acmeLogo: require('../src/assets/acme-logo.png'),
+    acmeLogo: bitmapAcmeLogo,
   },
   vector: {
-    activity: assetActivity,
+    activity: vectorActivity,
   },
   depth: {
     background: {

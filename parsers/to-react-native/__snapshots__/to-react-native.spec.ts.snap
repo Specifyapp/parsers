@@ -204,33 +204,32 @@ export default theme;
 `;
 
 exports[`To React Native Should support different formatName options 1`] = `
-"import assetActivity from \\"./path/activity.svg\\";
-import assetAirplay from \\"./path/airplay.svg\\";
-import assetAlertCircle from \\"./path/alertCircle.svg\\";
-import assetAlertOctagon from \\"./path/alertOctagon.svg\\";
-import assetAlertTriangle from \\"./path/alertTriangle.pdf\\";
-import assetAlertTriangle from \\"./path/alertTriangle.svg\\";
-import assetAlignCenter from \\"./path/alignCenter.svg\\";
-import assetAlignCenter from \\"./path/alignCenter.pdf\\";
-import assetUserMask from \\"./path/userMask.svg\\";
-import assetUserMask from \\"./path/userMask.pdf\\";
+"import bitmapAcmeLogo from \\"./path/acmeLogo.png\\";
+import bitmapPhotoExample from \\"./path/photoExample.png\\";
+import vectorActivity from \\"./path/activity.svg\\";
+import vectorAirplay from \\"./path/airplay.svg\\";
+import vectorAlertCircle from \\"./path/alertCircle.svg\\";
+import vectorAlertOctagon from \\"./path/alertOctagon.svg\\";
+import vectorAlertTriangle from \\"./path/alertTriangle.pdf\\";
+import vectorAlertTriangle from \\"./path/alertTriangle.svg\\";
+import vectorAlignCenter from \\"./path/alignCenter.svg\\";
+import vectorAlignCenter from \\"./path/alignCenter.pdf\\";
+import vectorUserMask from \\"./path/userMask.svg\\";
+import vectorUserMask from \\"./path/userMask.pdf\\";
 
 const theme = {
-  bitmap: {
-    acmeLogo: require(\\"./path/acmeLogo.png\\"),
-    photoExample: require(\\"./path/photoExample.png\\"),
-  },
+  bitmap: { acmeLogo: bitmapAcmeLogo, photoExample: bitmapPhotoExample },
   vector: {
-    activity: assetActivity,
-    airplay: assetAirplay,
-    alertCircle: assetAlertCircle,
-    alertOctagon: assetAlertOctagon,
-    alertTriangle: assetAlertTriangle,
-    alertTriangle: assetAlertTriangle,
-    alignCenter: assetAlignCenter,
-    alignCenter: assetAlignCenter,
-    userMask: assetUserMask,
-    userMask: assetUserMask,
+    activity: vectorActivity,
+    airplay: vectorAirplay,
+    alertCircle: vectorAlertCircle,
+    alertOctagon: vectorAlertOctagon,
+    alertTriangle: vectorAlertTriangle,
+    alertTriangle: vectorAlertTriangle,
+    alignCenter: vectorAlignCenter,
+    alignCenter: vectorAlignCenter,
+    userMask: vectorUserMask,
+    userMask: vectorUserMask,
   },
   depth: {
     background: {
@@ -380,33 +379,32 @@ export default theme;
 `;
 
 exports[`To React Native Should support different formatName options 2`] = `
-"import assetActivity from \\"./path/activity.svg\\";
-import assetAirplay from \\"./path/airplay.svg\\";
-import assetAlertCircle from \\"./path/alert-circle.svg\\";
-import assetAlertOctagon from \\"./path/alert-octagon.svg\\";
-import assetAlertTriangle from \\"./path/alert-triangle.pdf\\";
-import assetAlertTriangle from \\"./path/alert-triangle.svg\\";
-import assetAlignCenter from \\"./path/align-center.svg\\";
-import assetAlignCenter from \\"./path/align-center.pdf\\";
-import assetUserMask from \\"./path/user-mask.svg\\";
-import assetUserMask from \\"./path/user-mask.pdf\\";
+"import bitmapAcmeLogo from \\"./path/acme-logo.png\\";
+import bitmapPhotoExample from \\"./path/photo-example.png\\";
+import vectorActivity from \\"./path/activity.svg\\";
+import vectorAirplay from \\"./path/airplay.svg\\";
+import vectorAlertCircle from \\"./path/alert-circle.svg\\";
+import vectorAlertOctagon from \\"./path/alert-octagon.svg\\";
+import vectorAlertTriangle from \\"./path/alert-triangle.pdf\\";
+import vectorAlertTriangle from \\"./path/alert-triangle.svg\\";
+import vectorAlignCenter from \\"./path/align-center.svg\\";
+import vectorAlignCenter from \\"./path/align-center.pdf\\";
+import vectorUserMask from \\"./path/user-mask.svg\\";
+import vectorUserMask from \\"./path/user-mask.pdf\\";
 
 const theme = {
-  bitmap: {
-    acmeLogo: require(\\"./path/acme-logo.png\\"),
-    photoExample: require(\\"./path/photo-example.png\\"),
-  },
+  bitmap: { acmeLogo: bitmapAcmeLogo, photoExample: bitmapPhotoExample },
   vector: {
-    activity: assetActivity,
-    airplay: assetAirplay,
-    alertCircle: assetAlertCircle,
-    alertOctagon: assetAlertOctagon,
-    alertTriangle: assetAlertTriangle,
-    alertTriangle: assetAlertTriangle,
-    alignCenter: assetAlignCenter,
-    alignCenter: assetAlignCenter,
-    userMask: assetUserMask,
-    userMask: assetUserMask,
+    activity: vectorActivity,
+    airplay: vectorAirplay,
+    alertCircle: vectorAlertCircle,
+    alertOctagon: vectorAlertOctagon,
+    alertTriangle: vectorAlertTriangle,
+    alertTriangle: vectorAlertTriangle,
+    alignCenter: vectorAlignCenter,
+    alignCenter: vectorAlignCenter,
+    userMask: vectorUserMask,
+    userMask: vectorUserMask,
   },
   depth: {
     background: {
@@ -556,33 +554,32 @@ export default theme;
 `;
 
 exports[`To React Native Should support different formatName options 3`] = `
-"import assetActivity from \\"./path/activity.svg\\";
-import assetAirplay from \\"./path/airplay.svg\\";
-import assetAlertCircle from \\"./path/alert_circle.svg\\";
-import assetAlertOctagon from \\"./path/alert_octagon.svg\\";
-import assetAlertTriangle from \\"./path/alert_triangle.pdf\\";
-import assetAlertTriangle from \\"./path/alert_triangle.svg\\";
-import assetAlignCenter from \\"./path/align_center.svg\\";
-import assetAlignCenter from \\"./path/align_center.pdf\\";
-import assetUserMask from \\"./path/user_mask.svg\\";
-import assetUserMask from \\"./path/user_mask.pdf\\";
+"import bitmapAcmeLogo from \\"./path/acme_logo.png\\";
+import bitmapPhotoExample from \\"./path/photo_example.png\\";
+import vectorActivity from \\"./path/activity.svg\\";
+import vectorAirplay from \\"./path/airplay.svg\\";
+import vectorAlertCircle from \\"./path/alert_circle.svg\\";
+import vectorAlertOctagon from \\"./path/alert_octagon.svg\\";
+import vectorAlertTriangle from \\"./path/alert_triangle.pdf\\";
+import vectorAlertTriangle from \\"./path/alert_triangle.svg\\";
+import vectorAlignCenter from \\"./path/align_center.svg\\";
+import vectorAlignCenter from \\"./path/align_center.pdf\\";
+import vectorUserMask from \\"./path/user_mask.svg\\";
+import vectorUserMask from \\"./path/user_mask.pdf\\";
 
 const theme = {
-  bitmap: {
-    acmeLogo: require(\\"./path/acme_logo.png\\"),
-    photoExample: require(\\"./path/photo_example.png\\"),
-  },
+  bitmap: { acmeLogo: bitmapAcmeLogo, photoExample: bitmapPhotoExample },
   vector: {
-    activity: assetActivity,
-    airplay: assetAirplay,
-    alertCircle: assetAlertCircle,
-    alertOctagon: assetAlertOctagon,
-    alertTriangle: assetAlertTriangle,
-    alertTriangle: assetAlertTriangle,
-    alignCenter: assetAlignCenter,
-    alignCenter: assetAlignCenter,
-    userMask: assetUserMask,
-    userMask: assetUserMask,
+    activity: vectorActivity,
+    airplay: vectorAirplay,
+    alertCircle: vectorAlertCircle,
+    alertOctagon: vectorAlertOctagon,
+    alertTriangle: vectorAlertTriangle,
+    alertTriangle: vectorAlertTriangle,
+    alignCenter: vectorAlignCenter,
+    alignCenter: vectorAlignCenter,
+    userMask: vectorUserMask,
+    userMask: vectorUserMask,
   },
   depth: {
     background: {
@@ -732,33 +729,32 @@ export default theme;
 `;
 
 exports[`To React Native Should support different formatName options 4`] = `
-"import assetActivity from \\"./path/Activity.svg\\";
-import assetAirplay from \\"./path/Airplay.svg\\";
-import assetAlertCircle from \\"./path/AlertCircle.svg\\";
-import assetAlertOctagon from \\"./path/AlertOctagon.svg\\";
-import assetAlertTriangle from \\"./path/AlertTriangle.pdf\\";
-import assetAlertTriangle from \\"./path/AlertTriangle.svg\\";
-import assetAlignCenter from \\"./path/AlignCenter.svg\\";
-import assetAlignCenter from \\"./path/AlignCenter.pdf\\";
-import assetUserMask from \\"./path/UserMask.svg\\";
-import assetUserMask from \\"./path/UserMask.pdf\\";
+"import bitmapAcmeLogo from \\"./path/AcmeLogo.png\\";
+import bitmapPhotoExample from \\"./path/PhotoExample.png\\";
+import vectorActivity from \\"./path/Activity.svg\\";
+import vectorAirplay from \\"./path/Airplay.svg\\";
+import vectorAlertCircle from \\"./path/AlertCircle.svg\\";
+import vectorAlertOctagon from \\"./path/AlertOctagon.svg\\";
+import vectorAlertTriangle from \\"./path/AlertTriangle.pdf\\";
+import vectorAlertTriangle from \\"./path/AlertTriangle.svg\\";
+import vectorAlignCenter from \\"./path/AlignCenter.svg\\";
+import vectorAlignCenter from \\"./path/AlignCenter.pdf\\";
+import vectorUserMask from \\"./path/UserMask.svg\\";
+import vectorUserMask from \\"./path/UserMask.pdf\\";
 
 const theme = {
-  bitmap: {
-    acmeLogo: require(\\"./path/AcmeLogo.png\\"),
-    photoExample: require(\\"./path/PhotoExample.png\\"),
-  },
+  bitmap: { acmeLogo: bitmapAcmeLogo, photoExample: bitmapPhotoExample },
   vector: {
-    activity: assetActivity,
-    airplay: assetAirplay,
-    alertCircle: assetAlertCircle,
-    alertOctagon: assetAlertOctagon,
-    alertTriangle: assetAlertTriangle,
-    alertTriangle: assetAlertTriangle,
-    alignCenter: assetAlignCenter,
-    alignCenter: assetAlignCenter,
-    userMask: assetUserMask,
-    userMask: assetUserMask,
+    activity: vectorActivity,
+    airplay: vectorAirplay,
+    alertCircle: vectorAlertCircle,
+    alertOctagon: vectorAlertOctagon,
+    alertTriangle: vectorAlertTriangle,
+    alertTriangle: vectorAlertTriangle,
+    alignCenter: vectorAlignCenter,
+    alignCenter: vectorAlignCenter,
+    userMask: vectorUserMask,
+    userMask: vectorUserMask,
   },
   depth: {
     background: {
@@ -908,33 +904,32 @@ export default theme;
 `;
 
 exports[`To React Native Should support different formatName options 5`] = `
-"import assetActivity from \\"./path/activity.svg\\";
-import assetAirplay from \\"./path/airplay.svg\\";
-import assetAlertCircle from \\"./path/alert-circle.svg\\";
-import assetAlertOctagon from \\"./path/alert-octagon.svg\\";
-import assetAlertTriangle from \\"./path/alert-triangle.pdf\\";
-import assetAlertTriangle from \\"./path/alert-triangle.svg\\";
-import assetAlignCenter from \\"./path/align-center.svg\\";
-import assetAlignCenter from \\"./path/align-center.pdf\\";
-import assetUserMask from \\"./path/user-mask.svg\\";
-import assetUserMask from \\"./path/user-mask.pdf\\";
+"import bitmapAcmeLogo from \\"./path/acme-logo.png\\";
+import bitmapPhotoExample from \\"./path/photo-example.png\\";
+import vectorActivity from \\"./path/activity.svg\\";
+import vectorAirplay from \\"./path/airplay.svg\\";
+import vectorAlertCircle from \\"./path/alert-circle.svg\\";
+import vectorAlertOctagon from \\"./path/alert-octagon.svg\\";
+import vectorAlertTriangle from \\"./path/alert-triangle.pdf\\";
+import vectorAlertTriangle from \\"./path/alert-triangle.svg\\";
+import vectorAlignCenter from \\"./path/align-center.svg\\";
+import vectorAlignCenter from \\"./path/align-center.pdf\\";
+import vectorUserMask from \\"./path/user-mask.svg\\";
+import vectorUserMask from \\"./path/user-mask.pdf\\";
 
 const theme = {
-  bitmap: {
-    acmeLogo: require(\\"./path/acme-logo.png\\"),
-    photoExample: require(\\"./path/photo-example.png\\"),
-  },
+  bitmap: { acmeLogo: bitmapAcmeLogo, photoExample: bitmapPhotoExample },
   vector: {
-    activity: assetActivity,
-    airplay: assetAirplay,
-    alertCircle: assetAlertCircle,
-    alertOctagon: assetAlertOctagon,
-    alertTriangle: assetAlertTriangle,
-    alertTriangle: assetAlertTriangle,
-    alignCenter: assetAlignCenter,
-    alignCenter: assetAlignCenter,
-    userMask: assetUserMask,
-    userMask: assetUserMask,
+    activity: vectorActivity,
+    airplay: vectorAirplay,
+    alertCircle: vectorAlertCircle,
+    alertOctagon: vectorAlertOctagon,
+    alertTriangle: vectorAlertTriangle,
+    alertTriangle: vectorAlertTriangle,
+    alignCenter: vectorAlignCenter,
+    alignCenter: vectorAlignCenter,
+    userMask: vectorUserMask,
+    userMask: vectorUserMask,
   },
   depth: {
     background: {
@@ -1084,33 +1079,557 @@ export default theme;
 `;
 
 exports[`To React Native Should use assetsFolderPath 1`] = `
-"import assetActivity from \\"./path/activity.svg\\";
-import assetAirplay from \\"./path/airplay.svg\\";
-import assetAlertCircle from \\"./path/alertCircle.svg\\";
-import assetAlertOctagon from \\"./path/alertOctagon.svg\\";
-import assetAlertTriangle from \\"./path/alertTriangle.pdf\\";
-import assetAlertTriangle from \\"./path/alertTriangle.svg\\";
-import assetAlignCenter from \\"./path/alignCenter.svg\\";
-import assetAlignCenter from \\"./path/alignCenter.pdf\\";
-import assetUserMask from \\"./path/userMask.svg\\";
-import assetUserMask from \\"./path/userMask.pdf\\";
+"import bitmapAcmeLogo from \\"./path/acmeLogo.png\\";
+import bitmapPhotoExample from \\"./path/photoExample.png\\";
+import vectorActivity from \\"./path/activity.svg\\";
+import vectorAirplay from \\"./path/airplay.svg\\";
+import vectorAlertCircle from \\"./path/alertCircle.svg\\";
+import vectorAlertOctagon from \\"./path/alertOctagon.svg\\";
+import vectorAlertTriangle from \\"./path/alertTriangle.pdf\\";
+import vectorAlertTriangle from \\"./path/alertTriangle.svg\\";
+import vectorAlignCenter from \\"./path/alignCenter.svg\\";
+import vectorAlignCenter from \\"./path/alignCenter.pdf\\";
+import vectorUserMask from \\"./path/userMask.svg\\";
+import vectorUserMask from \\"./path/userMask.pdf\\";
 
 const theme = {
-  bitmap: {
-    acmeLogo: require(\\"./path/acmeLogo.png\\"),
-    photoExample: require(\\"./path/photoExample.png\\"),
-  },
+  bitmap: { acmeLogo: bitmapAcmeLogo, photoExample: bitmapPhotoExample },
   vector: {
-    activity: assetActivity,
-    airplay: assetAirplay,
-    alertCircle: assetAlertCircle,
-    alertOctagon: assetAlertOctagon,
-    alertTriangle: assetAlertTriangle,
-    alertTriangle: assetAlertTriangle,
-    alignCenter: assetAlignCenter,
-    alignCenter: assetAlignCenter,
-    userMask: assetUserMask,
-    userMask: assetUserMask,
+    activity: vectorActivity,
+    airplay: vectorAirplay,
+    alertCircle: vectorAlertCircle,
+    alertOctagon: vectorAlertOctagon,
+    alertTriangle: vectorAlertTriangle,
+    alertTriangle: vectorAlertTriangle,
+    alignCenter: vectorAlignCenter,
+    alignCenter: vectorAlignCenter,
+    userMask: vectorUserMask,
+    userMask: vectorUserMask,
+  },
+  depth: {
+    background: {
+      elevation: 1,
+      shadowOpacity: 0.1815,
+      shadowRadius: 0.54,
+      shadowOffset: { width: 0.6, height: 0.6 },
+    },
+    foreground: {
+      elevation: 100,
+      shadowOpacity: 0.32999999999999996,
+      shadowRadius: 54,
+      shadowOffset: { width: 60, height: 60 },
+    },
+    middle: {
+      elevation: 50,
+      shadowOpacity: 0.255,
+      shadowRadius: 27,
+      shadowOffset: { width: 30, height: 30 },
+    },
+  },
+  duration: { base: 300, long: 700, short: 100, veryLong: 3000 },
+  measurement: {
+    baseSpace01: 4,
+    baseSpace02: 8,
+    baseSpace03: 12,
+    baseSpace04: 16,
+    baseSpace05: 32,
+    baseSpace06: 48,
+    baseSpace07: 64,
+    baseSpace08: 80,
+    baseSpace09: 96,
+    baseSpace10: 112,
+  },
+  textStyle: {
+    body: {
+      fontWeight: \\"500\\",
+      fontSize: 14,
+      lineHeight: 20,
+      fontFamily: \\"Inter-Medium\\",
+      color: \\"rgb(30, 33, 43)\\",
+      letterSpacing: 10,
+    },
+    bodyWithOpacity: {
+      fontWeight: \\"500\\",
+      fontSize: 14,
+      lineHeight: 20,
+      fontFamily: \\"Inter-Medium\\",
+      color: \\"rgba(30, 33, 43, 0.3)\\",
+      letterSpacing: 10,
+    },
+    code: {
+      fontWeight: \\"500\\",
+      fontSize: 13,
+      lineHeight: 20,
+      fontFamily: \\"FiraCode-Medium\\",
+      color: \\"rgb(255, 142, 5)\\",
+    },
+    list: {
+      fontWeight: \\"400\\",
+      fontSize: 14,
+      lineHeight: 20,
+      fontFamily: \\"Roboto-Regular\\",
+    },
+    title: {
+      fontWeight: \\"600\\",
+      fontSize: 32,
+      lineHeight: 40,
+      fontFamily: \\"Inter-SemiBold\\",
+      color: \\"rgb(30, 33, 43)\\",
+    },
+  },
+  border: {
+    borderAccent: {
+      borderWidth: 2,
+      borderStyle: \\"solid\\",
+      borderColor: \\"rgb(102, 80, 239)\\",
+      borderRadius: 16,
+    },
+    borderAccentWithOpacity: {
+      borderWidth: 2,
+      borderStyle: \\"solid\\",
+      borderColor: \\"rgba(102, 80, 239, 0.5)\\",
+      borderRadius: 16,
+    },
+    borderAccentWithoutRadii: {
+      borderWidth: 2,
+      borderStyle: \\"solid\\",
+      borderColor: \\"rgba(102, 80, 239, 0.5)\\",
+    },
+    borderDashed: {
+      borderWidth: 1,
+      borderStyle: \\"dashed\\",
+      borderColor: \\"rgb(30, 33, 43)\\",
+      borderRadius: 16,
+    },
+  },
+  color: {
+    colorsAccent: \\"rgb(87, 124, 254)\\",
+    colorsBlack: \\"rgb(30, 33, 43)\\",
+    colorsGreen: \\"rgb(88, 205, 82)\\",
+    colorsGrey: \\"rgb(204, 213, 225)\\",
+    colorsOrange: \\"rgb(255, 142, 5)\\",
+    colorsRed: \\"rgb(245, 72, 63)\\",
+    colorsWhite: \\"rgb(255, 255, 255)\\",
+  },
+  font: {
+    firaCodeMedium: \\"FiraCode-Medium\\",
+    interMedium: \\"Inter-Medium\\",
+    interSemiBold: \\"Inter-SemiBold\\",
+    robotoRegular: \\"Roboto-Regular\\",
+  },
+  gradient: {
+    gradientsColored: [
+      {
+        angle: 90,
+        colors: [\\"rgb(245, 72, 63)\\", \\"rgb(255, 142, 5)\\"],
+        locations: [0, 1],
+      },
+    ],
+    gradientsDark: [
+      {
+        angle: 90,
+        colors: [\\"rgb(30, 33, 43)\\", \\"rgb(204, 213, 225)\\"],
+        locations: [0, 1],
+      },
+    ],
+    gradientsNeutral: [
+      {
+        angle: 90,
+        colors: [\\"rgb(204, 213, 225)\\", \\"rgb(255, 255, 255)\\"],
+        locations: [0, 1],
+      },
+    ],
+    gradientsSafari: [
+      {
+        angle: 90,
+        colors: [\\"rgb(255, 142, 5)\\", \\"rgb(255, 255, 255)\\"],
+        locations: [0, 1],
+      },
+    ],
+  },
+  opacity: { subtle: 0.5, transparent: 0.1, visible: 0.95 },
+};
+export default theme;
+"
+`;
+
+exports[`To React Native Should use assetsFolderPath 2`] = `
+"import bitmapAcmeLogo from \\"./path/acmeLogo.png\\";
+import bitmapPhotoExample from \\"./path/photoExample.png\\";
+import vectorActivity from \\"./path/activity.svg\\";
+import vectorAirplay from \\"./path/airplay.svg\\";
+import vectorAlertCircle from \\"./path/alertCircle.svg\\";
+import vectorAlertOctagon from \\"./path/alertOctagon.svg\\";
+import vectorAlertTriangle from \\"./path/alertTriangle.pdf\\";
+import vectorAlertTriangle from \\"./path/alertTriangle.svg\\";
+import vectorAlignCenter from \\"./path/alignCenter.svg\\";
+import vectorAlignCenter from \\"./path/alignCenter.pdf\\";
+import vectorUserMask from \\"./path/userMask.svg\\";
+import vectorUserMask from \\"./path/userMask.pdf\\";
+
+const theme = {
+  bitmap: { acmeLogo: bitmapAcmeLogo, photoExample: bitmapPhotoExample },
+  vector: {
+    activity: vectorActivity,
+    airplay: vectorAirplay,
+    alertCircle: vectorAlertCircle,
+    alertOctagon: vectorAlertOctagon,
+    alertTriangle: vectorAlertTriangle,
+    alertTriangle: vectorAlertTriangle,
+    alignCenter: vectorAlignCenter,
+    alignCenter: vectorAlignCenter,
+    userMask: vectorUserMask,
+    userMask: vectorUserMask,
+  },
+  depth: {
+    background: {
+      elevation: 1,
+      shadowOpacity: 0.1815,
+      shadowRadius: 0.54,
+      shadowOffset: { width: 0.6, height: 0.6 },
+    },
+    foreground: {
+      elevation: 100,
+      shadowOpacity: 0.32999999999999996,
+      shadowRadius: 54,
+      shadowOffset: { width: 60, height: 60 },
+    },
+    middle: {
+      elevation: 50,
+      shadowOpacity: 0.255,
+      shadowRadius: 27,
+      shadowOffset: { width: 30, height: 30 },
+    },
+  },
+  duration: { base: 300, long: 700, short: 100, veryLong: 3000 },
+  measurement: {
+    baseSpace01: 4,
+    baseSpace02: 8,
+    baseSpace03: 12,
+    baseSpace04: 16,
+    baseSpace05: 32,
+    baseSpace06: 48,
+    baseSpace07: 64,
+    baseSpace08: 80,
+    baseSpace09: 96,
+    baseSpace10: 112,
+  },
+  textStyle: {
+    body: {
+      fontWeight: \\"500\\",
+      fontSize: 14,
+      lineHeight: 20,
+      fontFamily: \\"Inter-Medium\\",
+      color: \\"rgb(30, 33, 43)\\",
+      letterSpacing: 10,
+    },
+    bodyWithOpacity: {
+      fontWeight: \\"500\\",
+      fontSize: 14,
+      lineHeight: 20,
+      fontFamily: \\"Inter-Medium\\",
+      color: \\"rgba(30, 33, 43, 0.3)\\",
+      letterSpacing: 10,
+    },
+    code: {
+      fontWeight: \\"500\\",
+      fontSize: 13,
+      lineHeight: 20,
+      fontFamily: \\"FiraCode-Medium\\",
+      color: \\"rgb(255, 142, 5)\\",
+    },
+    list: {
+      fontWeight: \\"400\\",
+      fontSize: 14,
+      lineHeight: 20,
+      fontFamily: \\"Roboto-Regular\\",
+    },
+    title: {
+      fontWeight: \\"600\\",
+      fontSize: 32,
+      lineHeight: 40,
+      fontFamily: \\"Inter-SemiBold\\",
+      color: \\"rgb(30, 33, 43)\\",
+    },
+  },
+  border: {
+    borderAccent: {
+      borderWidth: 2,
+      borderStyle: \\"solid\\",
+      borderColor: \\"rgb(102, 80, 239)\\",
+      borderRadius: 16,
+    },
+    borderAccentWithOpacity: {
+      borderWidth: 2,
+      borderStyle: \\"solid\\",
+      borderColor: \\"rgba(102, 80, 239, 0.5)\\",
+      borderRadius: 16,
+    },
+    borderAccentWithoutRadii: {
+      borderWidth: 2,
+      borderStyle: \\"solid\\",
+      borderColor: \\"rgba(102, 80, 239, 0.5)\\",
+    },
+    borderDashed: {
+      borderWidth: 1,
+      borderStyle: \\"dashed\\",
+      borderColor: \\"rgb(30, 33, 43)\\",
+      borderRadius: 16,
+    },
+  },
+  color: {
+    colorsAccent: \\"rgb(87, 124, 254)\\",
+    colorsBlack: \\"rgb(30, 33, 43)\\",
+    colorsGreen: \\"rgb(88, 205, 82)\\",
+    colorsGrey: \\"rgb(204, 213, 225)\\",
+    colorsOrange: \\"rgb(255, 142, 5)\\",
+    colorsRed: \\"rgb(245, 72, 63)\\",
+    colorsWhite: \\"rgb(255, 255, 255)\\",
+  },
+  font: {
+    firaCodeMedium: \\"FiraCode-Medium\\",
+    interMedium: \\"Inter-Medium\\",
+    interSemiBold: \\"Inter-SemiBold\\",
+    robotoRegular: \\"Roboto-Regular\\",
+  },
+  gradient: {
+    gradientsColored: [
+      {
+        angle: 90,
+        colors: [\\"rgb(245, 72, 63)\\", \\"rgb(255, 142, 5)\\"],
+        locations: [0, 1],
+      },
+    ],
+    gradientsDark: [
+      {
+        angle: 90,
+        colors: [\\"rgb(30, 33, 43)\\", \\"rgb(204, 213, 225)\\"],
+        locations: [0, 1],
+      },
+    ],
+    gradientsNeutral: [
+      {
+        angle: 90,
+        colors: [\\"rgb(204, 213, 225)\\", \\"rgb(255, 255, 255)\\"],
+        locations: [0, 1],
+      },
+    ],
+    gradientsSafari: [
+      {
+        angle: 90,
+        colors: [\\"rgb(255, 142, 5)\\", \\"rgb(255, 255, 255)\\"],
+        locations: [0, 1],
+      },
+    ],
+  },
+  opacity: { subtle: 0.5, transparent: 0.1, visible: 0.95 },
+};
+export default theme;
+"
+`;
+
+exports[`To React Native Should use assetsFolderPath 3`] = `
+"import bitmapAcmeLogo from \\"../path/acmeLogo.png\\";
+import bitmapPhotoExample from \\"../path/photoExample.png\\";
+import vectorActivity from \\"../path/activity.svg\\";
+import vectorAirplay from \\"../path/airplay.svg\\";
+import vectorAlertCircle from \\"../path/alertCircle.svg\\";
+import vectorAlertOctagon from \\"../path/alertOctagon.svg\\";
+import vectorAlertTriangle from \\"../path/alertTriangle.pdf\\";
+import vectorAlertTriangle from \\"../path/alertTriangle.svg\\";
+import vectorAlignCenter from \\"../path/alignCenter.svg\\";
+import vectorAlignCenter from \\"../path/alignCenter.pdf\\";
+import vectorUserMask from \\"../path/userMask.svg\\";
+import vectorUserMask from \\"../path/userMask.pdf\\";
+
+const theme = {
+  bitmap: { acmeLogo: bitmapAcmeLogo, photoExample: bitmapPhotoExample },
+  vector: {
+    activity: vectorActivity,
+    airplay: vectorAirplay,
+    alertCircle: vectorAlertCircle,
+    alertOctagon: vectorAlertOctagon,
+    alertTriangle: vectorAlertTriangle,
+    alertTriangle: vectorAlertTriangle,
+    alignCenter: vectorAlignCenter,
+    alignCenter: vectorAlignCenter,
+    userMask: vectorUserMask,
+    userMask: vectorUserMask,
+  },
+  depth: {
+    background: {
+      elevation: 1,
+      shadowOpacity: 0.1815,
+      shadowRadius: 0.54,
+      shadowOffset: { width: 0.6, height: 0.6 },
+    },
+    foreground: {
+      elevation: 100,
+      shadowOpacity: 0.32999999999999996,
+      shadowRadius: 54,
+      shadowOffset: { width: 60, height: 60 },
+    },
+    middle: {
+      elevation: 50,
+      shadowOpacity: 0.255,
+      shadowRadius: 27,
+      shadowOffset: { width: 30, height: 30 },
+    },
+  },
+  duration: { base: 300, long: 700, short: 100, veryLong: 3000 },
+  measurement: {
+    baseSpace01: 4,
+    baseSpace02: 8,
+    baseSpace03: 12,
+    baseSpace04: 16,
+    baseSpace05: 32,
+    baseSpace06: 48,
+    baseSpace07: 64,
+    baseSpace08: 80,
+    baseSpace09: 96,
+    baseSpace10: 112,
+  },
+  textStyle: {
+    body: {
+      fontWeight: \\"500\\",
+      fontSize: 14,
+      lineHeight: 20,
+      fontFamily: \\"Inter-Medium\\",
+      color: \\"rgb(30, 33, 43)\\",
+      letterSpacing: 10,
+    },
+    bodyWithOpacity: {
+      fontWeight: \\"500\\",
+      fontSize: 14,
+      lineHeight: 20,
+      fontFamily: \\"Inter-Medium\\",
+      color: \\"rgba(30, 33, 43, 0.3)\\",
+      letterSpacing: 10,
+    },
+    code: {
+      fontWeight: \\"500\\",
+      fontSize: 13,
+      lineHeight: 20,
+      fontFamily: \\"FiraCode-Medium\\",
+      color: \\"rgb(255, 142, 5)\\",
+    },
+    list: {
+      fontWeight: \\"400\\",
+      fontSize: 14,
+      lineHeight: 20,
+      fontFamily: \\"Roboto-Regular\\",
+    },
+    title: {
+      fontWeight: \\"600\\",
+      fontSize: 32,
+      lineHeight: 40,
+      fontFamily: \\"Inter-SemiBold\\",
+      color: \\"rgb(30, 33, 43)\\",
+    },
+  },
+  border: {
+    borderAccent: {
+      borderWidth: 2,
+      borderStyle: \\"solid\\",
+      borderColor: \\"rgb(102, 80, 239)\\",
+      borderRadius: 16,
+    },
+    borderAccentWithOpacity: {
+      borderWidth: 2,
+      borderStyle: \\"solid\\",
+      borderColor: \\"rgba(102, 80, 239, 0.5)\\",
+      borderRadius: 16,
+    },
+    borderAccentWithoutRadii: {
+      borderWidth: 2,
+      borderStyle: \\"solid\\",
+      borderColor: \\"rgba(102, 80, 239, 0.5)\\",
+    },
+    borderDashed: {
+      borderWidth: 1,
+      borderStyle: \\"dashed\\",
+      borderColor: \\"rgb(30, 33, 43)\\",
+      borderRadius: 16,
+    },
+  },
+  color: {
+    colorsAccent: \\"rgb(87, 124, 254)\\",
+    colorsBlack: \\"rgb(30, 33, 43)\\",
+    colorsGreen: \\"rgb(88, 205, 82)\\",
+    colorsGrey: \\"rgb(204, 213, 225)\\",
+    colorsOrange: \\"rgb(255, 142, 5)\\",
+    colorsRed: \\"rgb(245, 72, 63)\\",
+    colorsWhite: \\"rgb(255, 255, 255)\\",
+  },
+  font: {
+    firaCodeMedium: \\"FiraCode-Medium\\",
+    interMedium: \\"Inter-Medium\\",
+    interSemiBold: \\"Inter-SemiBold\\",
+    robotoRegular: \\"Roboto-Regular\\",
+  },
+  gradient: {
+    gradientsColored: [
+      {
+        angle: 90,
+        colors: [\\"rgb(245, 72, 63)\\", \\"rgb(255, 142, 5)\\"],
+        locations: [0, 1],
+      },
+    ],
+    gradientsDark: [
+      {
+        angle: 90,
+        colors: [\\"rgb(30, 33, 43)\\", \\"rgb(204, 213, 225)\\"],
+        locations: [0, 1],
+      },
+    ],
+    gradientsNeutral: [
+      {
+        angle: 90,
+        colors: [\\"rgb(204, 213, 225)\\", \\"rgb(255, 255, 255)\\"],
+        locations: [0, 1],
+      },
+    ],
+    gradientsSafari: [
+      {
+        angle: 90,
+        colors: [\\"rgb(255, 142, 5)\\", \\"rgb(255, 255, 255)\\"],
+        locations: [0, 1],
+      },
+    ],
+  },
+  opacity: { subtle: 0.5, transparent: 0.1, visible: 0.95 },
+};
+export default theme;
+"
+`;
+
+exports[`To React Native Should use assetsFolderPath 4`] = `
+"import bitmapAcmeLogo from \\"../path/acmeLogo.png\\";
+import bitmapPhotoExample from \\"../path/photoExample.png\\";
+import vectorActivity from \\"../path/activity.svg\\";
+import vectorAirplay from \\"../path/airplay.svg\\";
+import vectorAlertCircle from \\"../path/alertCircle.svg\\";
+import vectorAlertOctagon from \\"../path/alertOctagon.svg\\";
+import vectorAlertTriangle from \\"../path/alertTriangle.pdf\\";
+import vectorAlertTriangle from \\"../path/alertTriangle.svg\\";
+import vectorAlignCenter from \\"../path/alignCenter.svg\\";
+import vectorAlignCenter from \\"../path/alignCenter.pdf\\";
+import vectorUserMask from \\"../path/userMask.svg\\";
+import vectorUserMask from \\"../path/userMask.pdf\\";
+
+const theme = {
+  bitmap: { acmeLogo: bitmapAcmeLogo, photoExample: bitmapPhotoExample },
+  vector: {
+    activity: vectorActivity,
+    airplay: vectorAirplay,
+    alertCircle: vectorAlertCircle,
+    alertOctagon: vectorAlertOctagon,
+    alertTriangle: vectorAlertTriangle,
+    alertTriangle: vectorAlertTriangle,
+    alignCenter: vectorAlignCenter,
+    alignCenter: vectorAlignCenter,
+    userMask: vectorUserMask,
+    userMask: vectorUserMask,
   },
   depth: {
     background: {
