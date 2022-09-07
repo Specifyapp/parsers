@@ -1,18 +1,20 @@
 import { BitmapToken } from '../../../types';
-import path from 'path';
 import { OptionsType } from '../to-react-native.parser';
+import { pascalCase } from 'lodash';
+import { join } from '../util/path';
 
 export class Bitmap extends BitmapToken {
   constructor(token: Partial<BitmapToken>) {
     super(token);
   }
 
-  toReactNative(options: OptionsType, fileName: string): { theme: string } {
+  toReactNative(options: OptionsType, fileName: string): { theme: string; imports: string } {
     if (!options?.assetsFolderPath) {
       return {
         theme: JSON.stringify({
           uri: `'${this.value.url}'`,
         }),
+        imports: '',
       };
     }
 
@@ -21,9 +23,11 @@ export class Bitmap extends BitmapToken {
         ? options.assetsFolderPath
         : options.assetsFolderPath!.bitmap;
 
-    const fullPath = path.join(relPath || '', fileName);
+    const symbol = `bitmap${pascalCase(this.name)}`;
+    const fullPath = join(relPath || '', fileName);
     return {
-      theme: `require('./${fullPath}')`,
+      theme: symbol,
+      imports: `import ${symbol} from '${fullPath}';\n`,
     };
   }
 }
