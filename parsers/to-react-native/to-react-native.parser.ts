@@ -45,42 +45,44 @@ export default async function (
     const tokensGroupByType = _.groupBy(tokens, 'type');
     const template = new Template(pattern);
     let imports = '';
-    const styles = Object.keys(tokensGroupByType).reduce((result, type) => {
-      const content = tokensGroupByType[type]
-        .map((token: Pick<Token, 'value' | 'type' | 'name'>) => {
-          const tokenClassName = `${token.type.charAt(0).toUpperCase() + token.type.slice(1)}`;
+    const styles = Object.keys(tokensGroupByType)
+      .sort()
+      .reduce((result, type) => {
+        const content = tokensGroupByType[type]
+          .map((token: Pick<Token, 'value' | 'type' | 'name'>) => {
+            const tokenClassName = `${token.type.charAt(0).toUpperCase() + token.type.slice(1)}`;
 
-          if (!(<any>TokensClass)[tokenClassName]) return;
+            if (!(<any>TokensClass)[tokenClassName]) return;
 
-          const tokenNameCamelCase = _.camelCase(token.name);
+            const tokenNameCamelCase = _.camelCase(token.name);
 
-          token.name =
-            options?.formatFileName !== 'none'
-              ? _[options?.formatFileName ?? 'camelCase'](token.name)
-              : token.name;
+            token.name =
+              options?.formatFileName !== 'none'
+                ? _[options?.formatFileName ?? 'camelCase'](token.name)
+                : token.name;
 
-          const instance = new (<any>TokensClass)[tokenClassName](token);
+            const instance = new (<any>TokensClass)[tokenClassName](token);
 
-          if (token.type === 'vector' || token.type === 'bitmap') {
-            if ((token as VectorToken | BitmapToken).meta.dimension !== 1) {
-              return; // Do nothing with @2, @3 etc.
+            if (token.type === 'vector' || token.type === 'bitmap') {
+              if ((token as VectorToken | BitmapToken).meta.dimension !== 1) {
+                return; // Do nothing with @2, @3 etc.
+              }
+              const fileName = template.render(token);
+              const { theme, imports: tokenImports } = instance.toReactNative(options, fileName);
+              imports += tokenImports ?? '';
+
+              return `'${tokenNameCamelCase}': ${theme},`;
             }
-            const fileName = template.render(token);
-            const { theme, imports: tokenImports } = instance.toReactNative(options, fileName);
-            imports += tokenImports ?? '';
 
-            return `'${tokenNameCamelCase}': ${theme},`;
-          }
+            return `'${tokenNameCamelCase}': ${instance.toReactNative(options)},`;
+          })
+          .join('');
 
-          return `'${tokenNameCamelCase}': ${instance.toReactNative(options)},`;
-        })
-        .join('');
-
-      if (content) {
-        result += `${_.camelCase(type)}: {${content}},`;
-      }
-      return result;
-    }, '');
+        if (content) {
+          result += `${_.camelCase(type)}: {${content}},`;
+        }
+        return result;
+      }, '');
 
     return prettier.format(
       (() => {
