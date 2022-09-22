@@ -30,6 +30,7 @@ export type OptionsType =
       objectName: string;
       prettierConfig: prettier.Options;
       formatFileName: 'camelCase' | 'kebabCase' | 'snakeCase' | 'pascalCase' | 'none';
+      formatKeys: 'camelCase' | 'kebabCase' | 'snakeCase' | 'pascalCase';
     }>
   | undefined;
 
@@ -52,7 +53,7 @@ export default async function (
 
           if (!(<any>TokensClass)[tokenClassName]) return;
 
-          const tokenNameCamelCase = _.camelCase(token.name);
+          const formattedTokenName = _[options?.formatKeys ?? 'camelCase'](token.name);
 
           token.name =
             options?.formatFileName !== 'none'
@@ -69,10 +70,10 @@ export default async function (
             const { theme, imports: tokenImports } = instance.toReactNative(options, fileName);
             imports += tokenImports ?? '';
 
-            return `'${tokenNameCamelCase}': ${theme},`;
+            return `'${formattedTokenName}': ${theme},`;
           }
 
-          return `'${tokenNameCamelCase}': ${instance.toReactNative(options)},`;
+          return `'${formattedTokenName}': ${instance.toReactNative(options)},`;
         })
         .join('');
 

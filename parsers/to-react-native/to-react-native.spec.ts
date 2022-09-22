@@ -28,6 +28,13 @@ describe('To React Native', () => {
       },
     );
   });
+  it('Should support different formatKey options', async () => {
+    (['camelCase', 'kebabCase', 'snakeCase', 'pascalCase'] as const).map(async formatKeys => {
+      const tokens = seeds().tokens;
+      const result = await toReactNative(tokens, { assetsFolderPath: 'path', formatKeys }, libs);
+      expect(result).toMatchSnapshot();
+    });
+  });
   it('Should support different duration types', async () => {
     const tokens: InputDataType = [
       {
