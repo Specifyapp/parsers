@@ -203,6 +203,706 @@ export default theme;
 "
 `;
 
+exports[`To React Native Should support different formatKey options 1`] = `
+"import bitmapAcmeLogo from \\"./path/acmeLogo.png\\";
+import bitmapPhotoExample from \\"./path/photoExample.png\\";
+import vectorActivity from \\"./path/activity.svg\\";
+import vectorAirplay from \\"./path/airplay.svg\\";
+import vectorAlertCircle from \\"./path/alertCircle.svg\\";
+import vectorAlertOctagon from \\"./path/alertOctagon.svg\\";
+import vectorAlertTriangle from \\"./path/alertTriangle.pdf\\";
+import vectorAlertTriangle from \\"./path/alertTriangle.svg\\";
+import vectorAlignCenter from \\"./path/alignCenter.svg\\";
+import vectorAlignCenter from \\"./path/alignCenter.pdf\\";
+import vectorUserMask from \\"./path/userMask.svg\\";
+import vectorUserMask from \\"./path/userMask.pdf\\";
+
+const theme = {
+  bitmap: { acmeLogo: bitmapAcmeLogo, photoExample: bitmapPhotoExample },
+  vector: {
+    activity: vectorActivity,
+    airplay: vectorAirplay,
+    alertCircle: vectorAlertCircle,
+    alertOctagon: vectorAlertOctagon,
+    alertTriangle: vectorAlertTriangle,
+    alertTriangle: vectorAlertTriangle,
+    alignCenter: vectorAlignCenter,
+    alignCenter: vectorAlignCenter,
+    userMask: vectorUserMask,
+    userMask: vectorUserMask,
+  },
+  depth: {
+    background: {
+      elevation: 1,
+      shadowOpacity: 0.1815,
+      shadowRadius: 0.54,
+      shadowOffset: { width: 0.6, height: 0.6 },
+    },
+    foreground: {
+      elevation: 100,
+      shadowOpacity: 0.32999999999999996,
+      shadowRadius: 54,
+      shadowOffset: { width: 60, height: 60 },
+    },
+    middle: {
+      elevation: 50,
+      shadowOpacity: 0.255,
+      shadowRadius: 27,
+      shadowOffset: { width: 30, height: 30 },
+    },
+  },
+  duration: { base: 300, long: 700, short: 100, veryLong: 3000 },
+  measurement: {
+    baseSpace01: 4,
+    baseSpace02: 8,
+    baseSpace03: 12,
+    baseSpace04: 16,
+    baseSpace05: 32,
+    baseSpace06: 48,
+    baseSpace07: 64,
+    baseSpace08: 80,
+    baseSpace09: 96,
+    baseSpace10: 112,
+  },
+  textStyle: {
+    body: {
+      fontWeight: \\"500\\",
+      fontSize: 14,
+      lineHeight: 20,
+      fontFamily: \\"Inter-Medium\\",
+      color: \\"rgb(30, 33, 43)\\",
+      letterSpacing: 10,
+    },
+    bodyWithOpacity: {
+      fontWeight: \\"500\\",
+      fontSize: 14,
+      lineHeight: 20,
+      fontFamily: \\"Inter-Medium\\",
+      color: \\"rgba(30, 33, 43, 0.3)\\",
+      letterSpacing: 10,
+    },
+    code: {
+      fontWeight: \\"500\\",
+      fontSize: 13,
+      lineHeight: 20,
+      fontFamily: \\"FiraCode-Medium\\",
+      color: \\"rgb(255, 142, 5)\\",
+    },
+    list: {
+      fontWeight: \\"400\\",
+      fontSize: 14,
+      lineHeight: 20,
+      fontFamily: \\"Roboto-Regular\\",
+    },
+    title: {
+      fontWeight: \\"600\\",
+      fontSize: 32,
+      lineHeight: 40,
+      fontFamily: \\"Inter-SemiBold\\",
+      color: \\"rgb(30, 33, 43)\\",
+    },
+  },
+  border: {
+    borderAccent: {
+      borderWidth: 2,
+      borderStyle: \\"solid\\",
+      borderColor: \\"rgb(102, 80, 239)\\",
+      borderRadius: 16,
+    },
+    borderAccentWithOpacity: {
+      borderWidth: 2,
+      borderStyle: \\"solid\\",
+      borderColor: \\"rgba(102, 80, 239, 0.5)\\",
+      borderRadius: 16,
+    },
+    borderAccentWithoutRadii: {
+      borderWidth: 2,
+      borderStyle: \\"solid\\",
+      borderColor: \\"rgba(102, 80, 239, 0.5)\\",
+    },
+    borderDashed: {
+      borderWidth: 1,
+      borderStyle: \\"dashed\\",
+      borderColor: \\"rgb(30, 33, 43)\\",
+      borderRadius: 16,
+    },
+  },
+  color: {
+    colorsAccent: \\"rgb(87, 124, 254)\\",
+    colorsBlack: \\"rgb(30, 33, 43)\\",
+    colorsGreen: \\"rgb(88, 205, 82)\\",
+    colorsGrey: \\"rgb(204, 213, 225)\\",
+    colorsOrange: \\"rgb(255, 142, 5)\\",
+    colorsRed: \\"rgb(245, 72, 63)\\",
+    colorsWhite: \\"rgb(255, 255, 255)\\",
+  },
+  font: {
+    firaCodeMedium: \\"FiraCode-Medium\\",
+    interMedium: \\"Inter-Medium\\",
+    interSemiBold: \\"Inter-SemiBold\\",
+    robotoRegular: \\"Roboto-Regular\\",
+  },
+  gradient: {
+    gradientsColored: [
+      {
+        angle: 90,
+        colors: [\\"rgb(245, 72, 63)\\", \\"rgb(255, 142, 5)\\"],
+        locations: [0, 1],
+      },
+    ],
+    gradientsDark: [
+      {
+        angle: 90,
+        colors: [\\"rgb(30, 33, 43)\\", \\"rgb(204, 213, 225)\\"],
+        locations: [0, 1],
+      },
+    ],
+    gradientsNeutral: [
+      {
+        angle: 90,
+        colors: [\\"rgb(204, 213, 225)\\", \\"rgb(255, 255, 255)\\"],
+        locations: [0, 1],
+      },
+    ],
+    gradientsSafari: [
+      {
+        angle: 90,
+        colors: [\\"rgb(255, 142, 5)\\", \\"rgb(255, 255, 255)\\"],
+        locations: [0, 1],
+      },
+    ],
+  },
+  opacity: { subtle: 0.5, transparent: 0.1, visible: 0.95 },
+};
+export default theme;
+"
+`;
+
+exports[`To React Native Should support different formatKey options 2`] = `
+"import bitmapAcmeLogo from \\"./path/acmeLogo.png\\";
+import bitmapPhotoExample from \\"./path/photoExample.png\\";
+import vectorActivity from \\"./path/activity.svg\\";
+import vectorAirplay from \\"./path/airplay.svg\\";
+import vectorAlertCircle from \\"./path/alertCircle.svg\\";
+import vectorAlertOctagon from \\"./path/alertOctagon.svg\\";
+import vectorAlertTriangle from \\"./path/alertTriangle.pdf\\";
+import vectorAlertTriangle from \\"./path/alertTriangle.svg\\";
+import vectorAlignCenter from \\"./path/alignCenter.svg\\";
+import vectorAlignCenter from \\"./path/alignCenter.pdf\\";
+import vectorUserMask from \\"./path/userMask.svg\\";
+import vectorUserMask from \\"./path/userMask.pdf\\";
+
+const theme = {
+  bitmap: { \\"acme-logo\\": bitmapAcmeLogo, \\"photo-example\\": bitmapPhotoExample },
+  vector: {
+    activity: vectorActivity,
+    airplay: vectorAirplay,
+    \\"alert-circle\\": vectorAlertCircle,
+    \\"alert-octagon\\": vectorAlertOctagon,
+    \\"alert-triangle\\": vectorAlertTriangle,
+    \\"alert-triangle\\": vectorAlertTriangle,
+    \\"align-center\\": vectorAlignCenter,
+    \\"align-center\\": vectorAlignCenter,
+    \\"user-mask\\": vectorUserMask,
+    \\"user-mask\\": vectorUserMask,
+  },
+  depth: {
+    background: {
+      elevation: 1,
+      shadowOpacity: 0.1815,
+      shadowRadius: 0.54,
+      shadowOffset: { width: 0.6, height: 0.6 },
+    },
+    foreground: {
+      elevation: 100,
+      shadowOpacity: 0.32999999999999996,
+      shadowRadius: 54,
+      shadowOffset: { width: 60, height: 60 },
+    },
+    middle: {
+      elevation: 50,
+      shadowOpacity: 0.255,
+      shadowRadius: 27,
+      shadowOffset: { width: 30, height: 30 },
+    },
+  },
+  duration: { base: 300, long: 700, short: 100, \\"very-long\\": 3000 },
+  measurement: {
+    \\"base-space-01\\": 4,
+    \\"base-space-02\\": 8,
+    \\"base-space-03\\": 12,
+    \\"base-space-04\\": 16,
+    \\"base-space-05\\": 32,
+    \\"base-space-06\\": 48,
+    \\"base-space-07\\": 64,
+    \\"base-space-08\\": 80,
+    \\"base-space-09\\": 96,
+    \\"base-space-10\\": 112,
+  },
+  textStyle: {
+    body: {
+      fontWeight: \\"500\\",
+      fontSize: 14,
+      lineHeight: 20,
+      fontFamily: \\"Inter-Medium\\",
+      color: \\"rgb(30, 33, 43)\\",
+      letterSpacing: 10,
+    },
+    \\"body-with-opacity\\": {
+      fontWeight: \\"500\\",
+      fontSize: 14,
+      lineHeight: 20,
+      fontFamily: \\"Inter-Medium\\",
+      color: \\"rgba(30, 33, 43, 0.3)\\",
+      letterSpacing: 10,
+    },
+    code: {
+      fontWeight: \\"500\\",
+      fontSize: 13,
+      lineHeight: 20,
+      fontFamily: \\"FiraCode-Medium\\",
+      color: \\"rgb(255, 142, 5)\\",
+    },
+    list: {
+      fontWeight: \\"400\\",
+      fontSize: 14,
+      lineHeight: 20,
+      fontFamily: \\"Roboto-Regular\\",
+    },
+    title: {
+      fontWeight: \\"600\\",
+      fontSize: 32,
+      lineHeight: 40,
+      fontFamily: \\"Inter-SemiBold\\",
+      color: \\"rgb(30, 33, 43)\\",
+    },
+  },
+  border: {
+    \\"border-accent\\": {
+      borderWidth: 2,
+      borderStyle: \\"solid\\",
+      borderColor: \\"rgb(102, 80, 239)\\",
+      borderRadius: 16,
+    },
+    \\"border-accent-with-opacity\\": {
+      borderWidth: 2,
+      borderStyle: \\"solid\\",
+      borderColor: \\"rgba(102, 80, 239, 0.5)\\",
+      borderRadius: 16,
+    },
+    \\"border-accent-without-radii\\": {
+      borderWidth: 2,
+      borderStyle: \\"solid\\",
+      borderColor: \\"rgba(102, 80, 239, 0.5)\\",
+    },
+    \\"border-dashed\\": {
+      borderWidth: 1,
+      borderStyle: \\"dashed\\",
+      borderColor: \\"rgb(30, 33, 43)\\",
+      borderRadius: 16,
+    },
+  },
+  color: {
+    \\"colors-accent\\": \\"rgb(87, 124, 254)\\",
+    \\"colors-black\\": \\"rgb(30, 33, 43)\\",
+    \\"colors-green\\": \\"rgb(88, 205, 82)\\",
+    \\"colors-grey\\": \\"rgb(204, 213, 225)\\",
+    \\"colors-orange\\": \\"rgb(255, 142, 5)\\",
+    \\"colors-red\\": \\"rgb(245, 72, 63)\\",
+    \\"colors-white\\": \\"rgb(255, 255, 255)\\",
+  },
+  font: {
+    \\"fira-code-medium\\": \\"FiraCode-Medium\\",
+    \\"inter-medium\\": \\"Inter-Medium\\",
+    \\"inter-semi-bold\\": \\"Inter-SemiBold\\",
+    \\"roboto-regular\\": \\"Roboto-Regular\\",
+  },
+  gradient: {
+    \\"gradients-colored\\": [
+      {
+        angle: 90,
+        colors: [\\"rgb(245, 72, 63)\\", \\"rgb(255, 142, 5)\\"],
+        locations: [0, 1],
+      },
+    ],
+    \\"gradients-dark\\": [
+      {
+        angle: 90,
+        colors: [\\"rgb(30, 33, 43)\\", \\"rgb(204, 213, 225)\\"],
+        locations: [0, 1],
+      },
+    ],
+    \\"gradients-neutral\\": [
+      {
+        angle: 90,
+        colors: [\\"rgb(204, 213, 225)\\", \\"rgb(255, 255, 255)\\"],
+        locations: [0, 1],
+      },
+    ],
+    \\"gradients-safari\\": [
+      {
+        angle: 90,
+        colors: [\\"rgb(255, 142, 5)\\", \\"rgb(255, 255, 255)\\"],
+        locations: [0, 1],
+      },
+    ],
+  },
+  opacity: { subtle: 0.5, transparent: 0.1, visible: 0.95 },
+};
+export default theme;
+"
+`;
+
+exports[`To React Native Should support different formatKey options 3`] = `
+"import bitmapAcmeLogo from \\"./path/acmeLogo.png\\";
+import bitmapPhotoExample from \\"./path/photoExample.png\\";
+import vectorActivity from \\"./path/activity.svg\\";
+import vectorAirplay from \\"./path/airplay.svg\\";
+import vectorAlertCircle from \\"./path/alertCircle.svg\\";
+import vectorAlertOctagon from \\"./path/alertOctagon.svg\\";
+import vectorAlertTriangle from \\"./path/alertTriangle.pdf\\";
+import vectorAlertTriangle from \\"./path/alertTriangle.svg\\";
+import vectorAlignCenter from \\"./path/alignCenter.svg\\";
+import vectorAlignCenter from \\"./path/alignCenter.pdf\\";
+import vectorUserMask from \\"./path/userMask.svg\\";
+import vectorUserMask from \\"./path/userMask.pdf\\";
+
+const theme = {
+  bitmap: { acme_logo: bitmapAcmeLogo, photo_example: bitmapPhotoExample },
+  vector: {
+    activity: vectorActivity,
+    airplay: vectorAirplay,
+    alert_circle: vectorAlertCircle,
+    alert_octagon: vectorAlertOctagon,
+    alert_triangle: vectorAlertTriangle,
+    alert_triangle: vectorAlertTriangle,
+    align_center: vectorAlignCenter,
+    align_center: vectorAlignCenter,
+    user_mask: vectorUserMask,
+    user_mask: vectorUserMask,
+  },
+  depth: {
+    background: {
+      elevation: 1,
+      shadowOpacity: 0.1815,
+      shadowRadius: 0.54,
+      shadowOffset: { width: 0.6, height: 0.6 },
+    },
+    foreground: {
+      elevation: 100,
+      shadowOpacity: 0.32999999999999996,
+      shadowRadius: 54,
+      shadowOffset: { width: 60, height: 60 },
+    },
+    middle: {
+      elevation: 50,
+      shadowOpacity: 0.255,
+      shadowRadius: 27,
+      shadowOffset: { width: 30, height: 30 },
+    },
+  },
+  duration: { base: 300, long: 700, short: 100, very_long: 3000 },
+  measurement: {
+    base_space_01: 4,
+    base_space_02: 8,
+    base_space_03: 12,
+    base_space_04: 16,
+    base_space_05: 32,
+    base_space_06: 48,
+    base_space_07: 64,
+    base_space_08: 80,
+    base_space_09: 96,
+    base_space_10: 112,
+  },
+  textStyle: {
+    body: {
+      fontWeight: \\"500\\",
+      fontSize: 14,
+      lineHeight: 20,
+      fontFamily: \\"Inter-Medium\\",
+      color: \\"rgb(30, 33, 43)\\",
+      letterSpacing: 10,
+    },
+    body_with_opacity: {
+      fontWeight: \\"500\\",
+      fontSize: 14,
+      lineHeight: 20,
+      fontFamily: \\"Inter-Medium\\",
+      color: \\"rgba(30, 33, 43, 0.3)\\",
+      letterSpacing: 10,
+    },
+    code: {
+      fontWeight: \\"500\\",
+      fontSize: 13,
+      lineHeight: 20,
+      fontFamily: \\"FiraCode-Medium\\",
+      color: \\"rgb(255, 142, 5)\\",
+    },
+    list: {
+      fontWeight: \\"400\\",
+      fontSize: 14,
+      lineHeight: 20,
+      fontFamily: \\"Roboto-Regular\\",
+    },
+    title: {
+      fontWeight: \\"600\\",
+      fontSize: 32,
+      lineHeight: 40,
+      fontFamily: \\"Inter-SemiBold\\",
+      color: \\"rgb(30, 33, 43)\\",
+    },
+  },
+  border: {
+    border_accent: {
+      borderWidth: 2,
+      borderStyle: \\"solid\\",
+      borderColor: \\"rgb(102, 80, 239)\\",
+      borderRadius: 16,
+    },
+    border_accent_with_opacity: {
+      borderWidth: 2,
+      borderStyle: \\"solid\\",
+      borderColor: \\"rgba(102, 80, 239, 0.5)\\",
+      borderRadius: 16,
+    },
+    border_accent_without_radii: {
+      borderWidth: 2,
+      borderStyle: \\"solid\\",
+      borderColor: \\"rgba(102, 80, 239, 0.5)\\",
+    },
+    border_dashed: {
+      borderWidth: 1,
+      borderStyle: \\"dashed\\",
+      borderColor: \\"rgb(30, 33, 43)\\",
+      borderRadius: 16,
+    },
+  },
+  color: {
+    colors_accent: \\"rgb(87, 124, 254)\\",
+    colors_black: \\"rgb(30, 33, 43)\\",
+    colors_green: \\"rgb(88, 205, 82)\\",
+    colors_grey: \\"rgb(204, 213, 225)\\",
+    colors_orange: \\"rgb(255, 142, 5)\\",
+    colors_red: \\"rgb(245, 72, 63)\\",
+    colors_white: \\"rgb(255, 255, 255)\\",
+  },
+  font: {
+    fira_code_medium: \\"FiraCode-Medium\\",
+    inter_medium: \\"Inter-Medium\\",
+    inter_semi_bold: \\"Inter-SemiBold\\",
+    roboto_regular: \\"Roboto-Regular\\",
+  },
+  gradient: {
+    gradients_colored: [
+      {
+        angle: 90,
+        colors: [\\"rgb(245, 72, 63)\\", \\"rgb(255, 142, 5)\\"],
+        locations: [0, 1],
+      },
+    ],
+    gradients_dark: [
+      {
+        angle: 90,
+        colors: [\\"rgb(30, 33, 43)\\", \\"rgb(204, 213, 225)\\"],
+        locations: [0, 1],
+      },
+    ],
+    gradients_neutral: [
+      {
+        angle: 90,
+        colors: [\\"rgb(204, 213, 225)\\", \\"rgb(255, 255, 255)\\"],
+        locations: [0, 1],
+      },
+    ],
+    gradients_safari: [
+      {
+        angle: 90,
+        colors: [\\"rgb(255, 142, 5)\\", \\"rgb(255, 255, 255)\\"],
+        locations: [0, 1],
+      },
+    ],
+  },
+  opacity: { subtle: 0.5, transparent: 0.1, visible: 0.95 },
+};
+export default theme;
+"
+`;
+
+exports[`To React Native Should support different formatKey options 4`] = `
+"import bitmapAcmeLogo from \\"./path/acmeLogo.png\\";
+import bitmapPhotoExample from \\"./path/photoExample.png\\";
+import vectorActivity from \\"./path/activity.svg\\";
+import vectorAirplay from \\"./path/airplay.svg\\";
+import vectorAlertCircle from \\"./path/alertCircle.svg\\";
+import vectorAlertOctagon from \\"./path/alertOctagon.svg\\";
+import vectorAlertTriangle from \\"./path/alertTriangle.pdf\\";
+import vectorAlertTriangle from \\"./path/alertTriangle.svg\\";
+import vectorAlignCenter from \\"./path/alignCenter.svg\\";
+import vectorAlignCenter from \\"./path/alignCenter.pdf\\";
+import vectorUserMask from \\"./path/userMask.svg\\";
+import vectorUserMask from \\"./path/userMask.pdf\\";
+
+const theme = {
+  bitmap: { AcmeLogo: bitmapAcmeLogo, PhotoExample: bitmapPhotoExample },
+  vector: {
+    Activity: vectorActivity,
+    Airplay: vectorAirplay,
+    AlertCircle: vectorAlertCircle,
+    AlertOctagon: vectorAlertOctagon,
+    AlertTriangle: vectorAlertTriangle,
+    AlertTriangle: vectorAlertTriangle,
+    AlignCenter: vectorAlignCenter,
+    AlignCenter: vectorAlignCenter,
+    UserMask: vectorUserMask,
+    UserMask: vectorUserMask,
+  },
+  depth: {
+    Background: {
+      elevation: 1,
+      shadowOpacity: 0.1815,
+      shadowRadius: 0.54,
+      shadowOffset: { width: 0.6, height: 0.6 },
+    },
+    Foreground: {
+      elevation: 100,
+      shadowOpacity: 0.32999999999999996,
+      shadowRadius: 54,
+      shadowOffset: { width: 60, height: 60 },
+    },
+    Middle: {
+      elevation: 50,
+      shadowOpacity: 0.255,
+      shadowRadius: 27,
+      shadowOffset: { width: 30, height: 30 },
+    },
+  },
+  duration: { Base: 300, Long: 700, Short: 100, VeryLong: 3000 },
+  measurement: {
+    BaseSpace01: 4,
+    BaseSpace02: 8,
+    BaseSpace03: 12,
+    BaseSpace04: 16,
+    BaseSpace05: 32,
+    BaseSpace06: 48,
+    BaseSpace07: 64,
+    BaseSpace08: 80,
+    BaseSpace09: 96,
+    BaseSpace10: 112,
+  },
+  textStyle: {
+    Body: {
+      fontWeight: \\"500\\",
+      fontSize: 14,
+      lineHeight: 20,
+      fontFamily: \\"Inter-Medium\\",
+      color: \\"rgb(30, 33, 43)\\",
+      letterSpacing: 10,
+    },
+    BodyWithOpacity: {
+      fontWeight: \\"500\\",
+      fontSize: 14,
+      lineHeight: 20,
+      fontFamily: \\"Inter-Medium\\",
+      color: \\"rgba(30, 33, 43, 0.3)\\",
+      letterSpacing: 10,
+    },
+    Code: {
+      fontWeight: \\"500\\",
+      fontSize: 13,
+      lineHeight: 20,
+      fontFamily: \\"FiraCode-Medium\\",
+      color: \\"rgb(255, 142, 5)\\",
+    },
+    List: {
+      fontWeight: \\"400\\",
+      fontSize: 14,
+      lineHeight: 20,
+      fontFamily: \\"Roboto-Regular\\",
+    },
+    Title: {
+      fontWeight: \\"600\\",
+      fontSize: 32,
+      lineHeight: 40,
+      fontFamily: \\"Inter-SemiBold\\",
+      color: \\"rgb(30, 33, 43)\\",
+    },
+  },
+  border: {
+    BorderAccent: {
+      borderWidth: 2,
+      borderStyle: \\"solid\\",
+      borderColor: \\"rgb(102, 80, 239)\\",
+      borderRadius: 16,
+    },
+    BorderAccentWithOpacity: {
+      borderWidth: 2,
+      borderStyle: \\"solid\\",
+      borderColor: \\"rgba(102, 80, 239, 0.5)\\",
+      borderRadius: 16,
+    },
+    BorderAccentWithoutRadii: {
+      borderWidth: 2,
+      borderStyle: \\"solid\\",
+      borderColor: \\"rgba(102, 80, 239, 0.5)\\",
+    },
+    BorderDashed: {
+      borderWidth: 1,
+      borderStyle: \\"dashed\\",
+      borderColor: \\"rgb(30, 33, 43)\\",
+      borderRadius: 16,
+    },
+  },
+  color: {
+    ColorsAccent: \\"rgb(87, 124, 254)\\",
+    ColorsBlack: \\"rgb(30, 33, 43)\\",
+    ColorsGreen: \\"rgb(88, 205, 82)\\",
+    ColorsGrey: \\"rgb(204, 213, 225)\\",
+    ColorsOrange: \\"rgb(255, 142, 5)\\",
+    ColorsRed: \\"rgb(245, 72, 63)\\",
+    ColorsWhite: \\"rgb(255, 255, 255)\\",
+  },
+  font: {
+    FiraCodeMedium: \\"FiraCode-Medium\\",
+    InterMedium: \\"Inter-Medium\\",
+    InterSemiBold: \\"Inter-SemiBold\\",
+    RobotoRegular: \\"Roboto-Regular\\",
+  },
+  gradient: {
+    GradientsColored: [
+      {
+        angle: 90,
+        colors: [\\"rgb(245, 72, 63)\\", \\"rgb(255, 142, 5)\\"],
+        locations: [0, 1],
+      },
+    ],
+    GradientsDark: [
+      {
+        angle: 90,
+        colors: [\\"rgb(30, 33, 43)\\", \\"rgb(204, 213, 225)\\"],
+        locations: [0, 1],
+      },
+    ],
+    GradientsNeutral: [
+      {
+        angle: 90,
+        colors: [\\"rgb(204, 213, 225)\\", \\"rgb(255, 255, 255)\\"],
+        locations: [0, 1],
+      },
+    ],
+    GradientsSafari: [
+      {
+        angle: 90,
+        colors: [\\"rgb(255, 142, 5)\\", \\"rgb(255, 255, 255)\\"],
+        locations: [0, 1],
+      },
+    ],
+  },
+  opacity: { Subtle: 0.5, Transparent: 0.1, Visible: 0.95 },
+};
+export default theme;
+"
+`;
+
 exports[`To React Native Should support different formatName options 1`] = `
 "import bitmapAcmeLogo from \\"./path/acmeLogo.png\\";
 import bitmapPhotoExample from \\"./path/photoExample.png\\";
