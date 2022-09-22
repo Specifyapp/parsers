@@ -31,6 +31,7 @@ export type OptionsType =
       prettierConfig: prettier.Options;
       formatFileName: 'camelCase' | 'kebabCase' | 'snakeCase' | 'pascalCase' | 'none';
       formatKeys: 'camelCase' | 'kebabCase' | 'snakeCase' | 'pascalCase';
+      formatKeyFunction: (key: string) => string;
     }>
   | undefined;
 
@@ -53,7 +54,9 @@ export default async function (
 
           if (!(<any>TokensClass)[tokenClassName]) return;
 
-          const formattedTokenName = _[options?.formatKeys ?? 'camelCase'](token.name);
+          const customParsedTokenName = options?.formatKeyFunction?.(token.name);
+          const formattedTokenName =
+            customParsedTokenName ?? _[options?.formatKeys ?? 'camelCase'](token.name);
 
           token.name =
             options?.formatFileName !== 'none'

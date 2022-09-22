@@ -35,6 +35,23 @@ describe('To React Native', () => {
       expect(result).toMatchSnapshot();
     });
   });
+  it('Should support custom formatKeyFunction functions', async () => {
+    const formatKeyAsShouting = (key: string) => {
+      return key.replace(/[^A-z0-9]/g, '').toUpperCase();
+    };
+
+    const tokens = seeds().tokens;
+    const result = await toReactNative(
+      tokens,
+      {
+        assetsFolderPath: 'path',
+        formatKeyFunction: formatKeyAsShouting,
+      },
+      libs,
+    );
+
+    expect(result).toMatchSnapshot();
+  });
   it('Should support different duration types', async () => {
     const tokens: InputDataType = [
       {
