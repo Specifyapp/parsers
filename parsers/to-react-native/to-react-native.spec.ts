@@ -15,11 +15,11 @@ describe('To React Native', () => {
     expect(await toReactNative(tokens, { assetsFolderPath: '../path' }, libs)).toMatchSnapshot();
     expect(await toReactNative(tokens, { assetsFolderPath: '../path/' }, libs)).toMatchSnapshot();
   });
-  it('Should support the isTypescript option', async () => {
+  it('Should support the typescript.castToConst option', async () => {
     const tokens = seeds().tokens;
     const result = await toReactNative(
       tokens,
-      { assetsFolderPath: 'path', isTypescript: true },
+      { assetsFolderPath: 'path', typescript: { castToConst: true } },
       libs,
     );
     expect(result).toMatchSnapshot();
