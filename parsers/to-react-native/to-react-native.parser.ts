@@ -84,8 +84,6 @@ export default async function (
       return result;
     }, '');
 
-    const isTypescript = typeof options?.typescript === 'object';
-
     return prettier.format(
       (() => {
         return [
@@ -99,7 +97,7 @@ export default async function (
       })(),
       {
         ...options?.prettierConfig,
-        parser: isTypescript ? 'typescript' : 'babel',
+        parser: 'babel-ts',
       },
     );
   } catch (err) {
