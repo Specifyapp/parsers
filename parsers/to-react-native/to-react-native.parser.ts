@@ -31,6 +31,7 @@ export type OptionsType =
       prettierConfig: prettier.Options;
       formatFileName: 'camelCase' | 'kebabCase' | 'snakeCase' | 'pascalCase' | 'none';
       formatKeys: 'camelCase' | 'kebabCase' | 'snakeCase' | 'pascalCase';
+      isTypescript: boolean;
     }>
   | undefined;
 
@@ -88,13 +89,13 @@ export default async function (
         return [
           options?.header || '',
           imports,
-          `const ${objectName} = {${styles}} as const;`,
+          `const ${objectName} = {${styles}}${options?.isTypescript ? ' as const' : ''};`,
           `export default ${objectName};`,
         ].join('\n');
       })(),
       {
         ...options?.prettierConfig,
-        parser: 'babel',
+        parser: options?.isTypescript ? 'typescript' : 'babel',
       },
     );
   } catch (err) {

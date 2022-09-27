@@ -30,8 +30,9 @@ interface parser {
       tabWidth: number;
       useTabs: boolean;
     }>;
-    formatFileName: 'camelCase' | 'kebabCase' | 'snakeCase' | 'pascalCase' | 'none';
-    formatKeys: 'camelCase' | 'kebabCase' | 'snakeCase' | 'pascalCase';
+    formatFileName?: 'camelCase' | 'kebabCase' | 'snakeCase' | 'pascalCase' | 'none';
+    formatKeys?: 'camelCase' | 'kebabCase' | 'snakeCase' | 'pascalCase';
+    isTypescript?: boolean;
   }>;
 }
 ```
@@ -53,6 +54,7 @@ interface parser {
 | `prettierConfig.singleQuote` | optional | `boolean`                                                                  | `false`     | [Prettier documentation](https://prettier.io/docs/en/options.html#quotes)                                                                                       |
 | `formatFileName`             | optional | `camelCase` , `kebabCase` , `snakeCase` , `pascalCase` , `none`            | `camelCase` | Apply formatting to the file name in the import statements of vectors and bitmaps. Use this if you used transformations on the file names of downloaded assets. |
 | `formatKeys`                 | optional | `camelCase` , `kebabCase` , `snakeCase` , `pascalCase`                     | `camelCase` | Apply formatting to each keyof the imported assets.                                                                                                             |
+| `isTypescript`               | optional | `boolean`                                                                  | `false`     | Adds `as const` to the end of the resulting exported object.                                                                                                    |
 
 ## Types
 
