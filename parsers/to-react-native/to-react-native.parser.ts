@@ -88,7 +88,7 @@ export default async function (
         return [
           options?.header || '',
           imports,
-          `const ${objectName} = {${styles}};`,
+          `const ${objectName} = {${styles}} as const;`,
           `export default ${objectName};`,
         ].join('\n');
       })(),
