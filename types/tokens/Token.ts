@@ -26,6 +26,7 @@ export interface IToken {
   source?: Source;
   sourceId?: string;
   repositoryId?: string;
+  description?: string | null;
 }
 
 export abstract class Token implements IToken {
@@ -40,6 +41,7 @@ export abstract class Token implements IToken {
   source?: Source;
   sourceId?: string;
   repositoryId?: string;
+  description?: string | null;
 
   constructor(element: Partial<Token>) {
     this.originId = element?.originId || '';
@@ -51,6 +53,7 @@ export abstract class Token implements IToken {
     this.source = element?.source || undefined;
     this.sourceId = element?.sourceId || element?.source?.id || undefined;
     this.id = element.id!;
+    this.description = element?.description || null;
     // if (element?.id) this.id = element.id;
   }
 

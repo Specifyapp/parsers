@@ -102,7 +102,7 @@ describe('To scss', () => {
     ).toBe(true);
   });
 
-  it.only('Get tokens - apply parsers - all tokens', async () => {
+  it('Get tokens - apply parsers - all tokens', async () => {
     const options: OptionsType = {
       formatName: 'kebabCase'!,
     };

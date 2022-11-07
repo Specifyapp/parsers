@@ -53,7 +53,7 @@ describe('Omit', () => {
     result.forEach(token => {
       Object.keys(token).forEach(key => {
         expect(token['value']).toBeFalsy();
-        expect(typeof token[key] !== 'object').toBeTruthy();
+        expect(typeof token[key] !== 'object' || token[key] === null).toBeTruthy();
       });
     });
     return;
