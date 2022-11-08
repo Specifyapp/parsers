@@ -1,8 +1,8 @@
-# PX to REM
+# TO TAILWIND VAR
 
 ## Description
 
-This parser helps you convert the value of a measurement design token from pixel to rem.
+This parser helps you convert the value of a token to match the name of the variable
 
 Learn more about how to configure Specify in the API documentation: [https://specifyapp.com/developers](https://specifyapp.com/developers).
 
@@ -22,10 +22,10 @@ interface parser {
 
 ### Options
 
-| Parameter      | Required | Type                                             | Default | Description                                                                                                                   |
-| -------------- | -------- | ------------------------------------------------ | ------- | ----------------------------------------------------------------------------------------------------------------------------- | --- |
-| `filter.types` | optional | `Array`                                          | `[]`    | The list of token types where the function will be applied.                                                                   |     |
-| `formatName`   | optional | `camelCase` `kebabCase` `snakeCase` `pascalCase` |         | The case transformation you want to apply to your design token name. Learn more in [our dedicated section](#ℹ️-good-to-know). |
+| Parameter      | Required | Type     | Default | Description                                                                                                                   |
+| -------------- | -------- | -------- | ------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| `filter.types` | optional | `Array`  | `[]`    | The list of token types where the function will be applied.                                                                   |
+| `formatName`   | optional | `String` | `'`     | The case transformation you want to apply to your design token name. Learn more in [our dedicated section](#ℹ️-good-to-know). |
 
 ℹ️ **Please be aware that, depending on the order you use parsers, their input and output types have to match.**
 
