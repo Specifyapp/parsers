@@ -15,7 +15,11 @@ describe('Svg to tailwind component', () => {
       expect(typeof file.value.content).toEqual('string');
       expect(file.value.fileName.endsWith('.tsx')).toEqual(true);
 
-      console.warn(file);
+      expect(file.value.content).toContain('SvgContainer');
+      expect(file.value.content).toContain('width={width}');
+      expect(file.value.content).toContain('height={height}');
+      expect(file.value.content).toContain('className={className}');
+      expect(file.value.content).toContain('color={color}');
     });
     return;
   });
