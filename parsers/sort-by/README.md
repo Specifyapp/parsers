@@ -40,7 +40,7 @@ type input = Array<{ [key: string]: any }>;
 type output = Array<{ [key: string]: any }>;
 ```
 
-## Usage
+## Usage 1: Sort alphabetically colors by their name
 
 ### Config
 
@@ -129,5 +129,69 @@ type output = Array<{ [key: string]: any }>;
     },
     "name": "Global / Red Base" // <---
   }
+]
+```
+
+## Usage 2: Sort dimension design tokens by their value (ascending order)
+
+### Config
+
+```jsonc
+"parsers": [
+  {
+    "name": "sort-by",
+    "options": {
+      "keys": ["value.measure"]
+    }
+  }
+  // …
+]
+```
+
+### Before/After
+
+#### Input
+
+```jsonc
+[
+  {
+    "name": "base-space-02",
+    "type": "measurement",
+    "value": {
+      "unit": "px",
+      "measure": 8
+    },
+  },
+  {
+    "name": "base-space-01",
+    "type": "measurement",
+    "value": {
+      "unit": "px",
+      "measure": 4
+    },
+  },
+]
+```
+
+#### Output
+
+```jsonc
+[
+  {
+    "name": "base-space-01",
+    "type": "measurement",
+    "value": {
+      "unit": "px",
+      "measure": 4 // <---
+    },
+  },
+  {
+    "name": "base-space-02",
+    "type": "measurement",
+    "value": {
+      "unit": "px",
+      "measure": 8 // <---
+    },
+  },
 ]
 ```
