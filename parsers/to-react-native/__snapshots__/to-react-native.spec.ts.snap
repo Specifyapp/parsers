@@ -4,42 +4,42 @@ exports[`To React Native Should generate the theme object 1`] = `
 "const theme = {
   bitmap: {
     acmeLogo: {
-      uri: \\"'https://s3-us-west-2.amazonaws.com/figma-alpha-api/img/13d6/2eb6/a2626d914998754ac0b704e2cdb7a813'\\",
+      uri: \\"'https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/863c6a9c-090a-4360-bbf2-1e2026577306'\\",
     },
     photoExample: {
-      uri: \\"'https://s3-us-west-2.amazonaws.com/figma-alpha-api/img/3302/0ec5/79870771c0861eaa8f1af4e4ed5a8790'\\",
+      uri: \\"'https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/ff09d8fc-73d8-446d-91c4-772e88e776c5'\\",
     },
   },
   vector: {
     activity: {
-      uri: \\"'https://s3-us-west-2.amazonaws.com/figma-alpha-api/img/96dc/8825/c166b559140a0a64b28441924700a0b2'\\",
+      uri: \\"'https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/11ad3755-7b54-4035-9edb-cc62a39fe408'\\",
     },
     airplay: {
-      uri: \\"'https://s3-us-west-2.amazonaws.com/figma-alpha-api/img/ba89/d0aa/da2310c63c85699af43c8d128619cfdc'\\",
+      uri: \\"'https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/45ac371d-ac26-4bc7-9695-d1d3b6f019ed'\\",
     },
     alertCircle: {
-      uri: \\"'https://s3-us-west-2.amazonaws.com/figma-alpha-api/img/e8be/d9ce/4595ffa4510b7427d42e113c33632ae9'\\",
+      uri: \\"'https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/28a59bd7-1fb4-4a9d-9d12-db3dfe9be73d'\\",
     },
     alertOctagon: {
-      uri: \\"'https://s3-us-west-2.amazonaws.com/figma-alpha-api/img/fda9/f3ef/d31ed18fd324eb97190f34e0497214df'\\",
+      uri: \\"'https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/28fcb1c7-0fb4-4f7b-8abf-3bcc10ac1afa'\\",
     },
     alertTriangle: {
-      uri: \\"'https://s3-us-west-2.amazonaws.com/figma-alpha-api/img/877f/7e96/57aa1df766cf179f3610bf3b84cc268a'\\",
+      uri: \\"'https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/054aa470-1754-4dfd-ae68-2f31c4c19b86'\\",
     },
     alertTriangle: {
-      uri: \\"'https://s3-us-west-2.amazonaws.com/figma-alpha-api/img/880e/672c/155447c7e27185832ded7310ac9a02e7'\\",
+      uri: \\"'https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/ba1b77ff-11c3-4003-8cee-61992840eefa'\\",
     },
     alignCenter: {
-      uri: \\"'https://s3-us-west-2.amazonaws.com/figma-alpha-api/img/44e1/3537/07081649495a48e2f2de80b83e69a876'\\",
+      uri: \\"'https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/81d4289d-cec7-41d5-93cb-be5c38dcb650'\\",
     },
     alignCenter: {
-      uri: \\"'https://s3-us-west-2.amazonaws.com/figma-alpha-api/img/60d9/4a66/69c02a6b502dec9e745acdfb8418093d'\\",
+      uri: \\"'https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/fc217b3e-7aa3-480d-adca-3f1d2b6d073c'\\",
     },
     userMask: {
-      uri: \\"'https://s3-us-west-2.amazonaws.com/figma-alpha-api/img/5e90/27b6/3e136d25798fc5013fce51eea15ad48c'\\",
+      uri: \\"'https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/b1fb6cad-4404-403f-927c-16a5e225106e'\\",
     },
     userMask: {
-      uri: \\"'https://s3-us-west-2.amazonaws.com/figma-alpha-api/img/8005/3a2c/7ab7a74d1b3b57bd5151e9c48669b4f7'\\",
+      uri: \\"'https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/cddf0251-0850-4f58-93e7-a3448ecce596'\\",
     },
   },
   depth: {
@@ -139,11 +139,13 @@ exports[`To React Native Should generate the theme object 1`] = `
     },
   },
   color: {
-    colorsAccent: \\"rgb(87, 124, 254)\\",
+    colorsAccent: \\"rgb(120, 133, 183)\\",
+    colorsAlmostBlack: \\"rgb(28, 28, 28)\\",
     colorsBlack: \\"rgb(30, 33, 43)\\",
     colorsGreen: \\"rgb(88, 205, 82)\\",
     colorsGrey: \\"rgb(204, 213, 225)\\",
     colorsOrange: \\"rgb(255, 142, 5)\\",
+    colorsPureBlack: \\"rgb(0, 0, 0)\\",
     colorsRed: \\"rgb(245, 72, 63)\\",
     colorsWhite: \\"rgb(255, 255, 255)\\",
   },
@@ -210,10 +212,10 @@ import vectorActivity from \\"./path/activity.svg\\";
 import vectorAirplay from \\"./path/airplay.svg\\";
 import vectorAlertCircle from \\"./path/alertCircle.svg\\";
 import vectorAlertOctagon from \\"./path/alertOctagon.svg\\";
-import vectorAlertTriangle from \\"./path/alertTriangle.pdf\\";
 import vectorAlertTriangle from \\"./path/alertTriangle.svg\\";
-import vectorAlignCenter from \\"./path/alignCenter.svg\\";
+import vectorAlertTriangle from \\"./path/alertTriangle.pdf\\";
 import vectorAlignCenter from \\"./path/alignCenter.pdf\\";
+import vectorAlignCenter from \\"./path/alignCenter.svg\\";
 import vectorUserMask from \\"./path/userMask.svg\\";
 import vectorUserMask from \\"./path/userMask.pdf\\";
 
@@ -328,11 +330,13 @@ const theme = {
     },
   },
   color: {
-    colorsAccent: \\"rgb(87, 124, 254)\\",
+    colorsAccent: \\"rgb(120, 133, 183)\\",
+    colorsAlmostBlack: \\"rgb(28, 28, 28)\\",
     colorsBlack: \\"rgb(30, 33, 43)\\",
     colorsGreen: \\"rgb(88, 205, 82)\\",
     colorsGrey: \\"rgb(204, 213, 225)\\",
     colorsOrange: \\"rgb(255, 142, 5)\\",
+    colorsPureBlack: \\"rgb(0, 0, 0)\\",
     colorsRed: \\"rgb(245, 72, 63)\\",
     colorsWhite: \\"rgb(255, 255, 255)\\",
   },
@@ -385,10 +389,10 @@ import vectorActivity from \\"./path/activity.svg\\";
 import vectorAirplay from \\"./path/airplay.svg\\";
 import vectorAlertCircle from \\"./path/alertCircle.svg\\";
 import vectorAlertOctagon from \\"./path/alertOctagon.svg\\";
-import vectorAlertTriangle from \\"./path/alertTriangle.pdf\\";
 import vectorAlertTriangle from \\"./path/alertTriangle.svg\\";
-import vectorAlignCenter from \\"./path/alignCenter.svg\\";
+import vectorAlertTriangle from \\"./path/alertTriangle.pdf\\";
 import vectorAlignCenter from \\"./path/alignCenter.pdf\\";
+import vectorAlignCenter from \\"./path/alignCenter.svg\\";
 import vectorUserMask from \\"./path/userMask.svg\\";
 import vectorUserMask from \\"./path/userMask.pdf\\";
 
@@ -503,11 +507,13 @@ const theme = {
     },
   },
   color: {
-    \\"colors-accent\\": \\"rgb(87, 124, 254)\\",
+    \\"colors-accent\\": \\"rgb(120, 133, 183)\\",
+    \\"colors-almost-black\\": \\"rgb(28, 28, 28)\\",
     \\"colors-black\\": \\"rgb(30, 33, 43)\\",
     \\"colors-green\\": \\"rgb(88, 205, 82)\\",
     \\"colors-grey\\": \\"rgb(204, 213, 225)\\",
     \\"colors-orange\\": \\"rgb(255, 142, 5)\\",
+    \\"colors-pure-black\\": \\"rgb(0, 0, 0)\\",
     \\"colors-red\\": \\"rgb(245, 72, 63)\\",
     \\"colors-white\\": \\"rgb(255, 255, 255)\\",
   },
@@ -560,10 +566,10 @@ import vectorActivity from \\"./path/activity.svg\\";
 import vectorAirplay from \\"./path/airplay.svg\\";
 import vectorAlertCircle from \\"./path/alertCircle.svg\\";
 import vectorAlertOctagon from \\"./path/alertOctagon.svg\\";
-import vectorAlertTriangle from \\"./path/alertTriangle.pdf\\";
 import vectorAlertTriangle from \\"./path/alertTriangle.svg\\";
-import vectorAlignCenter from \\"./path/alignCenter.svg\\";
+import vectorAlertTriangle from \\"./path/alertTriangle.pdf\\";
 import vectorAlignCenter from \\"./path/alignCenter.pdf\\";
+import vectorAlignCenter from \\"./path/alignCenter.svg\\";
 import vectorUserMask from \\"./path/userMask.svg\\";
 import vectorUserMask from \\"./path/userMask.pdf\\";
 
@@ -678,11 +684,13 @@ const theme = {
     },
   },
   color: {
-    colors_accent: \\"rgb(87, 124, 254)\\",
+    colors_accent: \\"rgb(120, 133, 183)\\",
+    colors_almost_black: \\"rgb(28, 28, 28)\\",
     colors_black: \\"rgb(30, 33, 43)\\",
     colors_green: \\"rgb(88, 205, 82)\\",
     colors_grey: \\"rgb(204, 213, 225)\\",
     colors_orange: \\"rgb(255, 142, 5)\\",
+    colors_pure_black: \\"rgb(0, 0, 0)\\",
     colors_red: \\"rgb(245, 72, 63)\\",
     colors_white: \\"rgb(255, 255, 255)\\",
   },
@@ -735,10 +743,10 @@ import vectorActivity from \\"./path/activity.svg\\";
 import vectorAirplay from \\"./path/airplay.svg\\";
 import vectorAlertCircle from \\"./path/alertCircle.svg\\";
 import vectorAlertOctagon from \\"./path/alertOctagon.svg\\";
-import vectorAlertTriangle from \\"./path/alertTriangle.pdf\\";
 import vectorAlertTriangle from \\"./path/alertTriangle.svg\\";
-import vectorAlignCenter from \\"./path/alignCenter.svg\\";
+import vectorAlertTriangle from \\"./path/alertTriangle.pdf\\";
 import vectorAlignCenter from \\"./path/alignCenter.pdf\\";
+import vectorAlignCenter from \\"./path/alignCenter.svg\\";
 import vectorUserMask from \\"./path/userMask.svg\\";
 import vectorUserMask from \\"./path/userMask.pdf\\";
 
@@ -853,11 +861,13 @@ const theme = {
     },
   },
   color: {
-    ColorsAccent: \\"rgb(87, 124, 254)\\",
+    ColorsAccent: \\"rgb(120, 133, 183)\\",
+    ColorsAlmostBlack: \\"rgb(28, 28, 28)\\",
     ColorsBlack: \\"rgb(30, 33, 43)\\",
     ColorsGreen: \\"rgb(88, 205, 82)\\",
     ColorsGrey: \\"rgb(204, 213, 225)\\",
     ColorsOrange: \\"rgb(255, 142, 5)\\",
+    ColorsPureBlack: \\"rgb(0, 0, 0)\\",
     ColorsRed: \\"rgb(245, 72, 63)\\",
     ColorsWhite: \\"rgb(255, 255, 255)\\",
   },
@@ -910,10 +920,10 @@ import vectorActivity from \\"./path/activity.svg\\";
 import vectorAirplay from \\"./path/airplay.svg\\";
 import vectorAlertCircle from \\"./path/alertCircle.svg\\";
 import vectorAlertOctagon from \\"./path/alertOctagon.svg\\";
-import vectorAlertTriangle from \\"./path/alertTriangle.pdf\\";
 import vectorAlertTriangle from \\"./path/alertTriangle.svg\\";
-import vectorAlignCenter from \\"./path/alignCenter.svg\\";
+import vectorAlertTriangle from \\"./path/alertTriangle.pdf\\";
 import vectorAlignCenter from \\"./path/alignCenter.pdf\\";
+import vectorAlignCenter from \\"./path/alignCenter.svg\\";
 import vectorUserMask from \\"./path/userMask.svg\\";
 import vectorUserMask from \\"./path/userMask.pdf\\";
 
@@ -1028,11 +1038,13 @@ const theme = {
     },
   },
   color: {
-    colorsAccent: \\"rgb(87, 124, 254)\\",
+    colorsAccent: \\"rgb(120, 133, 183)\\",
+    colorsAlmostBlack: \\"rgb(28, 28, 28)\\",
     colorsBlack: \\"rgb(30, 33, 43)\\",
     colorsGreen: \\"rgb(88, 205, 82)\\",
     colorsGrey: \\"rgb(204, 213, 225)\\",
     colorsOrange: \\"rgb(255, 142, 5)\\",
+    colorsPureBlack: \\"rgb(0, 0, 0)\\",
     colorsRed: \\"rgb(245, 72, 63)\\",
     colorsWhite: \\"rgb(255, 255, 255)\\",
   },
@@ -1085,10 +1097,10 @@ import vectorActivity from \\"./path/activity.svg\\";
 import vectorAirplay from \\"./path/airplay.svg\\";
 import vectorAlertCircle from \\"./path/alert-circle.svg\\";
 import vectorAlertOctagon from \\"./path/alert-octagon.svg\\";
-import vectorAlertTriangle from \\"./path/alert-triangle.pdf\\";
 import vectorAlertTriangle from \\"./path/alert-triangle.svg\\";
-import vectorAlignCenter from \\"./path/align-center.svg\\";
+import vectorAlertTriangle from \\"./path/alert-triangle.pdf\\";
 import vectorAlignCenter from \\"./path/align-center.pdf\\";
+import vectorAlignCenter from \\"./path/align-center.svg\\";
 import vectorUserMask from \\"./path/user-mask.svg\\";
 import vectorUserMask from \\"./path/user-mask.pdf\\";
 
@@ -1203,11 +1215,13 @@ const theme = {
     },
   },
   color: {
-    colorsAccent: \\"rgb(87, 124, 254)\\",
+    colorsAccent: \\"rgb(120, 133, 183)\\",
+    colorsAlmostBlack: \\"rgb(28, 28, 28)\\",
     colorsBlack: \\"rgb(30, 33, 43)\\",
     colorsGreen: \\"rgb(88, 205, 82)\\",
     colorsGrey: \\"rgb(204, 213, 225)\\",
     colorsOrange: \\"rgb(255, 142, 5)\\",
+    colorsPureBlack: \\"rgb(0, 0, 0)\\",
     colorsRed: \\"rgb(245, 72, 63)\\",
     colorsWhite: \\"rgb(255, 255, 255)\\",
   },
@@ -1260,10 +1274,10 @@ import vectorActivity from \\"./path/activity.svg\\";
 import vectorAirplay from \\"./path/airplay.svg\\";
 import vectorAlertCircle from \\"./path/alert_circle.svg\\";
 import vectorAlertOctagon from \\"./path/alert_octagon.svg\\";
-import vectorAlertTriangle from \\"./path/alert_triangle.pdf\\";
 import vectorAlertTriangle from \\"./path/alert_triangle.svg\\";
-import vectorAlignCenter from \\"./path/align_center.svg\\";
+import vectorAlertTriangle from \\"./path/alert_triangle.pdf\\";
 import vectorAlignCenter from \\"./path/align_center.pdf\\";
+import vectorAlignCenter from \\"./path/align_center.svg\\";
 import vectorUserMask from \\"./path/user_mask.svg\\";
 import vectorUserMask from \\"./path/user_mask.pdf\\";
 
@@ -1378,11 +1392,13 @@ const theme = {
     },
   },
   color: {
-    colorsAccent: \\"rgb(87, 124, 254)\\",
+    colorsAccent: \\"rgb(120, 133, 183)\\",
+    colorsAlmostBlack: \\"rgb(28, 28, 28)\\",
     colorsBlack: \\"rgb(30, 33, 43)\\",
     colorsGreen: \\"rgb(88, 205, 82)\\",
     colorsGrey: \\"rgb(204, 213, 225)\\",
     colorsOrange: \\"rgb(255, 142, 5)\\",
+    colorsPureBlack: \\"rgb(0, 0, 0)\\",
     colorsRed: \\"rgb(245, 72, 63)\\",
     colorsWhite: \\"rgb(255, 255, 255)\\",
   },
@@ -1435,10 +1451,10 @@ import vectorActivity from \\"./path/Activity.svg\\";
 import vectorAirplay from \\"./path/Airplay.svg\\";
 import vectorAlertCircle from \\"./path/AlertCircle.svg\\";
 import vectorAlertOctagon from \\"./path/AlertOctagon.svg\\";
-import vectorAlertTriangle from \\"./path/AlertTriangle.pdf\\";
 import vectorAlertTriangle from \\"./path/AlertTriangle.svg\\";
-import vectorAlignCenter from \\"./path/AlignCenter.svg\\";
+import vectorAlertTriangle from \\"./path/AlertTriangle.pdf\\";
 import vectorAlignCenter from \\"./path/AlignCenter.pdf\\";
+import vectorAlignCenter from \\"./path/AlignCenter.svg\\";
 import vectorUserMask from \\"./path/UserMask.svg\\";
 import vectorUserMask from \\"./path/UserMask.pdf\\";
 
@@ -1553,11 +1569,13 @@ const theme = {
     },
   },
   color: {
-    colorsAccent: \\"rgb(87, 124, 254)\\",
+    colorsAccent: \\"rgb(120, 133, 183)\\",
+    colorsAlmostBlack: \\"rgb(28, 28, 28)\\",
     colorsBlack: \\"rgb(30, 33, 43)\\",
     colorsGreen: \\"rgb(88, 205, 82)\\",
     colorsGrey: \\"rgb(204, 213, 225)\\",
     colorsOrange: \\"rgb(255, 142, 5)\\",
+    colorsPureBlack: \\"rgb(0, 0, 0)\\",
     colorsRed: \\"rgb(245, 72, 63)\\",
     colorsWhite: \\"rgb(255, 255, 255)\\",
   },
@@ -1610,10 +1628,10 @@ import vectorActivity from \\"./path/activity.svg\\";
 import vectorAirplay from \\"./path/airplay.svg\\";
 import vectorAlertCircle from \\"./path/alert-circle.svg\\";
 import vectorAlertOctagon from \\"./path/alert-octagon.svg\\";
-import vectorAlertTriangle from \\"./path/alert-triangle.pdf\\";
 import vectorAlertTriangle from \\"./path/alert-triangle.svg\\";
-import vectorAlignCenter from \\"./path/align-center.svg\\";
+import vectorAlertTriangle from \\"./path/alert-triangle.pdf\\";
 import vectorAlignCenter from \\"./path/align-center.pdf\\";
+import vectorAlignCenter from \\"./path/align-center.svg\\";
 import vectorUserMask from \\"./path/user-mask.svg\\";
 import vectorUserMask from \\"./path/user-mask.pdf\\";
 
@@ -1728,11 +1746,13 @@ const theme = {
     },
   },
   color: {
-    colorsAccent: \\"rgb(87, 124, 254)\\",
+    colorsAccent: \\"rgb(120, 133, 183)\\",
+    colorsAlmostBlack: \\"rgb(28, 28, 28)\\",
     colorsBlack: \\"rgb(30, 33, 43)\\",
     colorsGreen: \\"rgb(88, 205, 82)\\",
     colorsGrey: \\"rgb(204, 213, 225)\\",
     colorsOrange: \\"rgb(255, 142, 5)\\",
+    colorsPureBlack: \\"rgb(0, 0, 0)\\",
     colorsRed: \\"rgb(245, 72, 63)\\",
     colorsWhite: \\"rgb(255, 255, 255)\\",
   },
@@ -1785,10 +1805,10 @@ import vectorActivity from \\"./path/activity.svg\\";
 import vectorAirplay from \\"./path/airplay.svg\\";
 import vectorAlertCircle from \\"./path/alertCircle.svg\\";
 import vectorAlertOctagon from \\"./path/alertOctagon.svg\\";
-import vectorAlertTriangle from \\"./path/alertTriangle.pdf\\";
 import vectorAlertTriangle from \\"./path/alertTriangle.svg\\";
-import vectorAlignCenter from \\"./path/alignCenter.svg\\";
+import vectorAlertTriangle from \\"./path/alertTriangle.pdf\\";
 import vectorAlignCenter from \\"./path/alignCenter.pdf\\";
+import vectorAlignCenter from \\"./path/alignCenter.svg\\";
 import vectorUserMask from \\"./path/userMask.svg\\";
 import vectorUserMask from \\"./path/userMask.pdf\\";
 
@@ -1903,11 +1923,13 @@ const theme = {
     },
   },
   color: {
-    colorsAccent: \\"rgb(87, 124, 254)\\",
+    colorsAccent: \\"rgb(120, 133, 183)\\",
+    colorsAlmostBlack: \\"rgb(28, 28, 28)\\",
     colorsBlack: \\"rgb(30, 33, 43)\\",
     colorsGreen: \\"rgb(88, 205, 82)\\",
     colorsGrey: \\"rgb(204, 213, 225)\\",
     colorsOrange: \\"rgb(255, 142, 5)\\",
+    colorsPureBlack: \\"rgb(0, 0, 0)\\",
     colorsRed: \\"rgb(245, 72, 63)\\",
     colorsWhite: \\"rgb(255, 255, 255)\\",
   },
@@ -1960,10 +1982,10 @@ import vectorActivity from \\"./path/activity.svg\\";
 import vectorAirplay from \\"./path/airplay.svg\\";
 import vectorAlertCircle from \\"./path/alertCircle.svg\\";
 import vectorAlertOctagon from \\"./path/alertOctagon.svg\\";
-import vectorAlertTriangle from \\"./path/alertTriangle.pdf\\";
 import vectorAlertTriangle from \\"./path/alertTriangle.svg\\";
-import vectorAlignCenter from \\"./path/alignCenter.svg\\";
+import vectorAlertTriangle from \\"./path/alertTriangle.pdf\\";
 import vectorAlignCenter from \\"./path/alignCenter.pdf\\";
+import vectorAlignCenter from \\"./path/alignCenter.svg\\";
 import vectorUserMask from \\"./path/userMask.svg\\";
 import vectorUserMask from \\"./path/userMask.pdf\\";
 
@@ -2078,11 +2100,13 @@ const theme = {
     },
   },
   color: {
-    colorsAccent: \\"rgb(87, 124, 254)\\",
+    colorsAccent: \\"rgb(120, 133, 183)\\",
+    colorsAlmostBlack: \\"rgb(28, 28, 28)\\",
     colorsBlack: \\"rgb(30, 33, 43)\\",
     colorsGreen: \\"rgb(88, 205, 82)\\",
     colorsGrey: \\"rgb(204, 213, 225)\\",
     colorsOrange: \\"rgb(255, 142, 5)\\",
+    colorsPureBlack: \\"rgb(0, 0, 0)\\",
     colorsRed: \\"rgb(245, 72, 63)\\",
     colorsWhite: \\"rgb(255, 255, 255)\\",
   },
@@ -2135,10 +2159,10 @@ import vectorActivity from \\"./path/activity.svg\\";
 import vectorAirplay from \\"./path/airplay.svg\\";
 import vectorAlertCircle from \\"./path/alertCircle.svg\\";
 import vectorAlertOctagon from \\"./path/alertOctagon.svg\\";
-import vectorAlertTriangle from \\"./path/alertTriangle.pdf\\";
 import vectorAlertTriangle from \\"./path/alertTriangle.svg\\";
-import vectorAlignCenter from \\"./path/alignCenter.svg\\";
+import vectorAlertTriangle from \\"./path/alertTriangle.pdf\\";
 import vectorAlignCenter from \\"./path/alignCenter.pdf\\";
+import vectorAlignCenter from \\"./path/alignCenter.svg\\";
 import vectorUserMask from \\"./path/userMask.svg\\";
 import vectorUserMask from \\"./path/userMask.pdf\\";
 
@@ -2253,11 +2277,13 @@ const theme = {
     },
   },
   color: {
-    colorsAccent: \\"rgb(87, 124, 254)\\",
+    colorsAccent: \\"rgb(120, 133, 183)\\",
+    colorsAlmostBlack: \\"rgb(28, 28, 28)\\",
     colorsBlack: \\"rgb(30, 33, 43)\\",
     colorsGreen: \\"rgb(88, 205, 82)\\",
     colorsGrey: \\"rgb(204, 213, 225)\\",
     colorsOrange: \\"rgb(255, 142, 5)\\",
+    colorsPureBlack: \\"rgb(0, 0, 0)\\",
     colorsRed: \\"rgb(245, 72, 63)\\",
     colorsWhite: \\"rgb(255, 255, 255)\\",
   },
@@ -2310,10 +2336,10 @@ import vectorActivity from \\"../path/activity.svg\\";
 import vectorAirplay from \\"../path/airplay.svg\\";
 import vectorAlertCircle from \\"../path/alertCircle.svg\\";
 import vectorAlertOctagon from \\"../path/alertOctagon.svg\\";
-import vectorAlertTriangle from \\"../path/alertTriangle.pdf\\";
 import vectorAlertTriangle from \\"../path/alertTriangle.svg\\";
-import vectorAlignCenter from \\"../path/alignCenter.svg\\";
+import vectorAlertTriangle from \\"../path/alertTriangle.pdf\\";
 import vectorAlignCenter from \\"../path/alignCenter.pdf\\";
+import vectorAlignCenter from \\"../path/alignCenter.svg\\";
 import vectorUserMask from \\"../path/userMask.svg\\";
 import vectorUserMask from \\"../path/userMask.pdf\\";
 
@@ -2428,11 +2454,13 @@ const theme = {
     },
   },
   color: {
-    colorsAccent: \\"rgb(87, 124, 254)\\",
+    colorsAccent: \\"rgb(120, 133, 183)\\",
+    colorsAlmostBlack: \\"rgb(28, 28, 28)\\",
     colorsBlack: \\"rgb(30, 33, 43)\\",
     colorsGreen: \\"rgb(88, 205, 82)\\",
     colorsGrey: \\"rgb(204, 213, 225)\\",
     colorsOrange: \\"rgb(255, 142, 5)\\",
+    colorsPureBlack: \\"rgb(0, 0, 0)\\",
     colorsRed: \\"rgb(245, 72, 63)\\",
     colorsWhite: \\"rgb(255, 255, 255)\\",
   },
@@ -2485,10 +2513,10 @@ import vectorActivity from \\"../path/activity.svg\\";
 import vectorAirplay from \\"../path/airplay.svg\\";
 import vectorAlertCircle from \\"../path/alertCircle.svg\\";
 import vectorAlertOctagon from \\"../path/alertOctagon.svg\\";
-import vectorAlertTriangle from \\"../path/alertTriangle.pdf\\";
 import vectorAlertTriangle from \\"../path/alertTriangle.svg\\";
-import vectorAlignCenter from \\"../path/alignCenter.svg\\";
+import vectorAlertTriangle from \\"../path/alertTriangle.pdf\\";
 import vectorAlignCenter from \\"../path/alignCenter.pdf\\";
+import vectorAlignCenter from \\"../path/alignCenter.svg\\";
 import vectorUserMask from \\"../path/userMask.svg\\";
 import vectorUserMask from \\"../path/userMask.pdf\\";
 
@@ -2603,11 +2631,13 @@ const theme = {
     },
   },
   color: {
-    colorsAccent: \\"rgb(87, 124, 254)\\",
+    colorsAccent: \\"rgb(120, 133, 183)\\",
+    colorsAlmostBlack: \\"rgb(28, 28, 28)\\",
     colorsBlack: \\"rgb(30, 33, 43)\\",
     colorsGreen: \\"rgb(88, 205, 82)\\",
     colorsGrey: \\"rgb(204, 213, 225)\\",
     colorsOrange: \\"rgb(255, 142, 5)\\",
+    colorsPureBlack: \\"rgb(0, 0, 0)\\",
     colorsRed: \\"rgb(245, 72, 63)\\",
     colorsWhite: \\"rgb(255, 255, 255)\\",
   },
