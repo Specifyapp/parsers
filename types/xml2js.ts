@@ -1,4 +1,4 @@
-import { PartialRecord } from '../../types';
+import { PartialRecord } from '.';
 
 export type xml2jsElementType = {
   '#name': string; //tagName

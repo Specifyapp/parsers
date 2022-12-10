@@ -3,6 +3,7 @@ import { SpServicesType } from '../parsers/global-libs';
 export * from './tokens';
 export * from './Providers';
 export * from './utils/utils';
+export * from './xml2js';
 
 declare global {
   namespace NodeJS {

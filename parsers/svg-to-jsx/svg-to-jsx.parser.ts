@@ -6,7 +6,7 @@ import { IToken, TokensType } from '../../types';
 import * as os from 'os';
 import { create } from 'xmlbuilder2';
 import { parseStringPromise } from 'xml2js';
-import { xml2jsElementType } from './svg-to-jsx.type';
+import { xml2jsElementType } from '../../types';
 import { ExpandObject } from 'xmlbuilder2/lib/interfaces';
 
 export type InputDataType = Array<

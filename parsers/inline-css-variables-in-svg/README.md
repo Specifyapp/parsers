@@ -108,7 +108,7 @@ And `cssVariablesFormat` is `kebabCase`
 >
     <path
         d="M36.6667 20H30L25 35L15 5L10 20H3.33334"
-        stroke="--var(--colors-black)"
+        stroke="var(--colors-black)"
         stroke-width="3.33333"
         stroke-linecap="round"
         stroke-linejoin="round"

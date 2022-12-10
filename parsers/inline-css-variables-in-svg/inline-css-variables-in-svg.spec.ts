@@ -1,7 +1,10 @@
 import seeds from '../../tests/seeds';
 import { IToken } from '../../types';
 import libs, { LibsType } from '../global-libs';
-import svgWithCssVariables, { InputDataType, OptionsType } from './svg-with-css-variables.parser';
+import svgWithCssVariables, {
+  InputDataType,
+  OptionsType,
+} from './inline-css-variables-in-svg.parser';
 
 const getValuesToTest = async (options?: OptionsType) => {
   const tokens = seeds().tokens.filter(({ type }) => type === 'vector' || type === 'color');
@@ -31,35 +34,6 @@ describe('Svg with css variables', () => {
 
       if (
         (beforeSvg.includes('fill="black"') &&
-          !afterSvg.includes('fill="var(--\\"Colors/PureBlack\\")"')) ||
-        (beforeSvg.includes('stroke="black"') &&
-          !afterSvg.includes('stroke="var(--\\"Colors/PureBlack\\")"'))
-      ) {
-        throw new Error("'black' hasn't been converted to variable");
-      }
-
-      if (
-        (beforeSvg.includes('fill="#1A1A1C"') &&
-          !afterSvg.includes('fill="var(--\\"Colors/AlmostBlack\\")"')) ||
-        (beforeSvg.includes('stroke="#1A1A1C"') &&
-          !afterSvg.includes('stroke="var(--\\"Colors/AlmostBlack\\")"'))
-      ) {
-        throw new Error("'#1A1A1C' hasn't been converted to variable");
-      }
-    }
-  });
-
-  it('Get tokens - apply parsers with kebabCase format', async () => {
-    const [beforeSvgs, afterSvgs] = await getValuesToTest({ cssVariablesFormat: 'kebabCase' });
-
-    expect(beforeSvgs.length).toEqual(afterSvgs.length);
-
-    for (let i = 0; i < beforeSvgs.length; i++) {
-      const beforeSvg = (beforeSvgs[i] as IToken & { value: { content: string } }).value.content;
-      const afterSvg = (afterSvgs[i] as IToken & { value: { content: string } }).value.content;
-
-      if (
-        (beforeSvg.includes('fill="black"') &&
           !afterSvg.includes('fill="var(--colors-pure-black)"')) ||
         (beforeSvg.includes('stroke="black"') &&
           !afterSvg.includes('stroke="var(--colors-pure-black)"'))
@@ -72,6 +46,35 @@ describe('Svg with css variables', () => {
           !afterSvg.includes('fill="var(--colors-almost-black)"')) ||
         (beforeSvg.includes('stroke="#1A1A1C"') &&
           !afterSvg.includes('stroke="var(--colors-almost-black)"'))
+      ) {
+        throw new Error("'#1A1A1C' hasn't been converted to variable");
+      }
+    }
+  });
+
+  it('Get tokens - apply parsers with none format', async () => {
+    const [beforeSvgs, afterSvgs] = await getValuesToTest({ cssVariablesFormat: 'none' });
+
+    expect(beforeSvgs.length).toEqual(afterSvgs.length);
+
+    for (let i = 0; i < beforeSvgs.length; i++) {
+      const beforeSvg = (beforeSvgs[i] as IToken & { value: { content: string } }).value.content;
+      const afterSvg = (afterSvgs[i] as IToken & { value: { content: string } }).value.content;
+
+      if (
+        (beforeSvg.includes('fill="black"') &&
+          !afterSvg.includes('fill="var(--\\"Colors/PureBlack\\")"')) ||
+        (beforeSvg.includes('stroke="black"') &&
+          !afterSvg.includes('stroke="var(--\\"Colors/PureBlack\\")"'))
+      ) {
+        throw new Error("'black' hasn't been converted to variable");
+      }
+
+      if (
+        (beforeSvg.includes('fill="#1A1A1C"') &&
+          !afterSvg.includes('fill="var(--\\"Colors/AlmostBlack\\")"')) ||
+        (beforeSvg.includes('stroke="#1A1A1C"') &&
+          !afterSvg.includes('stroke="var(--\\"Colors/AlmostBlack\\")"'))
       ) {
         throw new Error("'#1A1A1C' hasn't been converted to variable");
       }

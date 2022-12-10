@@ -1,10 +1,10 @@
 import * as _ from 'lodash';
 import { parseStringPromise } from 'xml2js';
 import { create } from 'xmlbuilder2';
-import Color from 'color';
+import color from 'tinycolor2';
 import { ColorValue, IToken, TokensType } from '../../types';
 import { LibsType } from '../global-libs';
-import { xml2jsElementType } from '../svg-to-jsx/svg-to-jsx.type';
+import { xml2jsElementType } from '../../types';
 
 export type InputDataType = Array<
   IToken & {
@@ -16,7 +16,9 @@ export type InputDataType = Array<
 
 export type OutputDataType = InputDataType;
 
-type format = 'camelCase' | 'kebabCase' | 'snakeCase' | 'pascalCase';
+type format = 'camelCase' | 'kebabCase' | 'snakeCase' | 'pascalCase' | 'none';
+const DEFAULT_FORMAT: format = 'kebabCase';
+
 export type OptionsType =
   | undefined
   | {
@@ -30,7 +32,7 @@ type SvgNode = {
 };
 
 const applyFormat = (str: string, fn?: format) => {
-  if (fn) return _[fn](str);
+  if (fn && fn !== 'none') return _[fn](str);
   return str.includes(' ') || str.includes('\n') || str.includes('/') ? JSON.stringify(str) : str;
 };
 
@@ -40,14 +42,14 @@ type TokenColor = {
 };
 
 const getColor = (attr: string, colors: TokenColor[]) => {
-  const attrColor = new Color(attr);
+  const attrColor = color(attr).toRgb();
 
   return colors.find(
     ({ color }) =>
-      color.a === attrColor.alpha() &&
-      color.r === attrColor.red() &&
-      color.g === attrColor.green() &&
-      color.b === attrColor.blue(),
+      color.a === attrColor.a &&
+      color.r === attrColor.r &&
+      color.g === attrColor.g &&
+      color.b === attrColor.b,
   );
 };
 
@@ -72,15 +74,13 @@ const updateNodesColors = (svgNode: SvgNode, colors: TokenColor[]): SvgNode => (
   })(),
 
   '#': svgNode['#']?.map(nodes => {
-    const ret: { [k: string]: SvgNode } = {};
+    const newNodes: { [k: string]: SvgNode } = {};
 
     for (const key in nodes) {
-      if (!Object.prototype.hasOwnProperty.call(nodes, key)) continue;
-
-      ret[key] = updateNodesColors(nodes[key], colors);
+      newNodes[key] = updateNodesColors(nodes[key], colors);
     }
 
-    return ret;
+    return newNodes;
   }),
 });
 
@@ -108,7 +108,7 @@ export default async function svgWithCssVariables(
   const colors = tokens
     .filter(({ type }) => type === 'color')
     .map(color => ({
-      cssVar: `var(--${applyFormat(color.name, options?.cssVariablesFormat)})`,
+      cssVar: `var(--${applyFormat(color.name, options?.cssVariablesFormat ?? DEFAULT_FORMAT)})`,
       color: color.value as ColorValue,
     }));
 
@@ -134,13 +134,11 @@ export default async function svgWithCssVariables(
         validator: formatObject4XMLBuilder,
       });
 
-      const updatedNodes = updateNodesColors(xmlObject.svg, colors);
-
       return {
         ...token,
         value: {
           ...token.value,
-          content: create({ svg: updatedNodes })
+          content: create({ svg: updateNodesColors(xmlObject.svg, colors) })
             .end({
               headless: true,
               prettyPrint: false,
