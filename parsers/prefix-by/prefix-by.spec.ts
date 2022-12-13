@@ -6,7 +6,11 @@ import libs from '../global-libs';
 describe('prefix-by', () => {
   it('Execute parser', async () => {
     const prefix = 'ds-';
-    const result = await prefixBy(seeds().tokens, { key: 'name', prefix, applyOn: ['color'] }, libs);
+    const result = await prefixBy(
+      seeds().tokens,
+      { key: 'name', prefix, applyOn: ['color'] },
+      libs,
+    );
     if (result instanceof Error) return fail(result);
     expect(
       result.every(token =>
@@ -32,12 +36,15 @@ describe('prefix-by', () => {
       libs,
     );
     if (result instanceof Error) return fail(result);
-    console.log(result)
     expect(
       result.every(
-        bitmap => bitmap.name?.startsWith(bitmap.name) || bitmap.name?.startsWith('@1x.') || bitmap.name?.startsWith('@2x.') || bitmap.name?.startsWith('@3x.'),
+        bitmap =>
+          bitmap.name?.startsWith(bitmap.name) ||
+          bitmap.name?.startsWith('@1x.') ||
+          bitmap.name?.startsWith('@2x.') ||
+          bitmap.name?.startsWith('@3x.'),
       ),
-    ).toEqual(true);    
+    ).toEqual(true);
     return;
   });
   it('Execute parser on string as InputDataType', async () => {
