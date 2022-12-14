@@ -853,8 +853,8 @@
     "value": {
       "a": 1,
       "b": 28,
-      "g": 28,
-      "r": 28
+      "g": 26,
+      "r": 26
     },
     "meta": {
       "source": "localStyles"
@@ -884,46 +884,6 @@
     "sourceId": "6232b157-22db-4ef1-9437-f7f8066849e1",
     "description": "",
     "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
-  },
-  {
-    "id": "6af4032f-37e7-465a-966d-2c10031b24a3",
-    "createdAt": "2021-07-23T09:26:45.164Z",
-    "updatedAt": "2021-07-23T09:26:45.164Z",
-    "name": "Colors/PureBlack",
-    "value": {
-      "a": 1,
-      "b": 0,
-      "g": 0,
-      "r": 0
-    },
-    "meta": {
-      "source": "localStyles"
-    },
-    "type": "color",
-    "originId": "12:151",
-    "sourceId": "6232b157-22db-4ef1-9437-f7f8066849e1",
-    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed",
-    "description": "a description"
-  },
-  {
-    "id": "0fc770ae-a09b-4969-8f3c-117cc8c79ddc",
-    "createdAt": "2021-07-23T09:26:45.164Z",
-    "updatedAt": "2021-07-23T09:26:45.164Z",
-    "name": "Colors/AlmostBlack",
-    "value": {
-      "a": 1,
-      "b": 28,
-      "g": 26,
-      "r": 26
-    },
-    "meta": {
-      "source": "localStyles"
-    },
-    "type": "color",
-    "originId": "12:151",
-    "sourceId": "6232b157-22db-4ef1-9437-f7f8066849e1",
-    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed",
-    "description": "a description"
   },
   {
     "id": "9fababfd-ec20-4d39-a815-22419306fe33",
