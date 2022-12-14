@@ -12,34 +12,34 @@ exports[`To React Native Should generate the theme object 1`] = `
   },
   vector: {
     activity: {
-      uri: \\"'https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/11ad3755-7b54-4035-9edb-cc62a39fe408'\\",
+      uri: \\"'https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/b63a7f88-0ea2-4e17-a5e8-11935562621f'\\",
     },
     airplay: {
-      uri: \\"'https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/45ac371d-ac26-4bc7-9695-d1d3b6f019ed'\\",
+      uri: \\"'https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/71edeeb4-6622-490e-b59a-dd768d3414a8'\\",
     },
     alertCircle: {
-      uri: \\"'https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/28a59bd7-1fb4-4a9d-9d12-db3dfe9be73d'\\",
+      uri: \\"'https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/587bd701-750c-4aa2-9b5b-843235eb5d5b'\\",
     },
     alertOctagon: {
-      uri: \\"'https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/28fcb1c7-0fb4-4f7b-8abf-3bcc10ac1afa'\\",
+      uri: \\"'https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/e15614aa-5e39-43c7-9a88-9ea102df8854'\\",
     },
     alertTriangle: {
-      uri: \\"'https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/054aa470-1754-4dfd-ae68-2f31c4c19b86'\\",
+      uri: \\"'https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/e4d03b25-dc16-4e25-b2b3-5ffe6a68d41d'\\",
     },
     alertTriangle: {
-      uri: \\"'https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/ba1b77ff-11c3-4003-8cee-61992840eefa'\\",
+      uri: \\"'https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/00e59368-656f-46f1-b1bf-1200ec945dd1'\\",
     },
     alignCenter: {
-      uri: \\"'https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/81d4289d-cec7-41d5-93cb-be5c38dcb650'\\",
+      uri: \\"'https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/9e21c78b-dd71-42c5-9e2f-8a81f729ebd5'\\",
     },
     alignCenter: {
-      uri: \\"'https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/fc217b3e-7aa3-480d-adca-3f1d2b6d073c'\\",
+      uri: \\"'https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/0256731e-92b1-474d-b0ed-7a7d5e17338e'\\",
     },
     userMask: {
-      uri: \\"'https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/b1fb6cad-4404-403f-927c-16a5e225106e'\\",
+      uri: \\"'https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/a131429d-f992-4daf-8f37-5b389b98e410'\\",
     },
     userMask: {
-      uri: \\"'https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/cddf0251-0850-4f58-93e7-a3448ecce596'\\",
+      uri: \\"'https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/4e70632a-014a-4594-84bb-6f6e18e9b2e3'\\",
     },
   },
   depth: {
