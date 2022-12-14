@@ -42,12 +42,12 @@ describe('Svg with css variables', () => {
       }
 
       if (
-        (beforeSvg.includes('fill="#1A1A1C"') &&
+        (beforeSvg.includes('fill="#1C1C1C"') &&
           !afterSvg.includes('fill="var(--colors-almost-black)"')) ||
-        (beforeSvg.includes('stroke="#1A1A1C"') &&
+        (beforeSvg.includes('stroke="#1C1C1C"') &&
           !afterSvg.includes('stroke="var(--colors-almost-black)"'))
       ) {
-        throw new Error("'#1A1A1C' hasn't been converted to variable");
+        throw new Error("'#1C1C1C' hasn't been converted to variable");
       }
     }
   });
@@ -71,12 +71,12 @@ describe('Svg with css variables', () => {
       }
 
       if (
-        (beforeSvg.includes('fill="#1A1A1C"') &&
+        (beforeSvg.includes('fill="#1C1C1C"') &&
           !afterSvg.includes('fill="var(--\\"Colors/AlmostBlack\\")"')) ||
-        (beforeSvg.includes('stroke="#1A1A1C"') &&
+        (beforeSvg.includes('stroke="#1C1C1C"') &&
           !afterSvg.includes('stroke="var(--\\"Colors/AlmostBlack\\")"'))
       ) {
-        throw new Error("'#1A1A1C' hasn't been converted to variable");
+        throw new Error("'#1C1C1C' hasn't been converted to variable");
       }
     }
   });
