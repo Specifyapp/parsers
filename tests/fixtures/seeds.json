@@ -2,10 +2,10 @@
   {
     "id": "f9ac3798-01e8-4a4e-8331-e877cbc0fdd1",
     "createdAt": "2021-04-02T09:55:29.276Z",
-    "updatedAt": "2021-07-28T16:09:12.986Z",
+    "updatedAt": "2022-12-09T19:51:57.826Z",
     "name": "acme-logo",
     "value": {
-      "url": "https://s3-us-west-2.amazonaws.com/figma-alpha-api/img/13d6/2eb6/a2626d914998754ac0b704e2cdb7a813",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/863c6a9c-090a-4360-bbf2-1e2026577306",
       "format": "png"
     },
     "meta": {
@@ -19,16 +19,16 @@
     "type": "bitmap",
     "originId": "12:14-png-1",
     "sourceId": "ded1694b-249a-42e8-add9-35df05d36f80",
-    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed",
-    "description": null
+    "description": null,
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
   },
   {
     "id": "db9c9a96-2185-4622-a6f9-0df150315fcd",
     "createdAt": "2021-04-02T09:54:57.048Z",
-    "updatedAt": "2021-07-28T16:09:34.270Z",
+    "updatedAt": "2022-12-09T19:51:58.253Z",
     "name": "activity",
     "value": {
-      "url": "https://s3-us-west-2.amazonaws.com/figma-alpha-api/img/96dc/8825/c166b559140a0a64b28441924700a0b2",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/11ad3755-7b54-4035-9edb-cc62a39fe408",
       "format": "svg"
     },
     "meta": {
@@ -42,16 +42,16 @@
     "type": "vector",
     "originId": "12:48-svg-1",
     "sourceId": "d38b4d2f-23c7-4ad9-b087-8c1f468d878f",
-    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed",
-    "description": null
+    "description": null,
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
   },
   {
     "id": "927911b9-99b6-42de-89d6-2984689b6233",
     "createdAt": "2021-04-02T09:54:57.048Z",
-    "updatedAt": "2021-07-28T16:09:34.276Z",
+    "updatedAt": "2022-12-09T19:51:58.252Z",
     "name": "airplay",
     "value": {
-      "url": "https://s3-us-west-2.amazonaws.com/figma-alpha-api/img/ba89/d0aa/da2310c63c85699af43c8d128619cfdc",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/45ac371d-ac26-4bc7-9695-d1d3b6f019ed",
       "format": "svg"
     },
     "meta": {
@@ -65,16 +65,16 @@
     "type": "vector",
     "originId": "12:45-svg-1",
     "sourceId": "d38b4d2f-23c7-4ad9-b087-8c1f468d878f",
-    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed",
-    "description": null
+    "description": null,
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
   },
   {
     "id": "a87ef1ab-6cf9-41b2-9933-9dc25928f3fa",
     "createdAt": "2021-04-02T09:54:57.048Z",
-    "updatedAt": "2021-07-28T16:09:34.277Z",
+    "updatedAt": "2022-12-09T19:51:58.253Z",
     "name": "alert-circle",
     "value": {
-      "url": "https://s3-us-west-2.amazonaws.com/figma-alpha-api/img/e8be/d9ce/4595ffa4510b7427d42e113c33632ae9",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/28a59bd7-1fb4-4a9d-9d12-db3dfe9be73d",
       "format": "svg"
     },
     "meta": {
@@ -88,16 +88,16 @@
     "type": "vector",
     "originId": "12:41-svg-1",
     "sourceId": "d38b4d2f-23c7-4ad9-b087-8c1f468d878f",
-    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed",
-    "description": null
+    "description": null,
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
   },
   {
     "id": "6e5413cf-d1f6-465e-b3ab-004e2ce57d76",
     "createdAt": "2021-04-02T09:54:57.048Z",
-    "updatedAt": "2021-07-28T16:09:34.275Z",
+    "updatedAt": "2022-12-09T19:51:58.252Z",
     "name": "alert-octagon",
     "value": {
-      "url": "https://s3-us-west-2.amazonaws.com/figma-alpha-api/img/fda9/f3ef/d31ed18fd324eb97190f34e0497214df",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/28fcb1c7-0fb4-4f7b-8abf-3bcc10ac1afa",
       "format": "svg"
     },
     "meta": {
@@ -111,39 +111,16 @@
     "type": "vector",
     "originId": "12:37-svg-1",
     "sourceId": "d38b4d2f-23c7-4ad9-b087-8c1f468d878f",
-    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed",
-    "description": null
-  },
-  {
-    "id": "26be8e46-d125-442c-b47f-4563c3db9a07",
-    "createdAt": "2021-11-11T07:00:53.764Z",
-    "updatedAt": "2021-11-16T10:06:55.168Z",
-    "name": "alert-triangle",
-    "value": {
-      "url": "https://s3-us-west-2.amazonaws.com/figma-alpha-api/img/877f/7e96/57aa1df766cf179f3610bf3b84cc268a",
-      "format": "pdf"
-    },
-    "meta": {
-      "file": "Specify - Seeds",
-      "page": "Seeds",
-      "frame": "alert-triangle",
-      "format": "pdf",
-      "dimension": 1,
-      "parentFrame": "Vector · Frame Example"
-    },
-    "type": "vector",
-    "originId": "12:33-pdf-1",
-    "sourceId": "d38b4d2f-23c7-4ad9-b087-8c1f468d878f",
-    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed",
-    "description": null
+    "description": null,
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
   },
   {
     "id": "7aa11aa4-b3bf-4b72-9fbf-2f40c73233cb",
     "createdAt": "2021-04-02T09:54:57.054Z",
-    "updatedAt": "2021-07-28T16:09:34.267Z",
+    "updatedAt": "2022-12-09T19:51:58.253Z",
     "name": "alert-triangle",
     "value": {
-      "url": "https://s3-us-west-2.amazonaws.com/figma-alpha-api/img/880e/672c/155447c7e27185832ded7310ac9a02e7",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/054aa470-1754-4dfd-ae68-2f31c4c19b86",
       "format": "svg"
     },
     "meta": {
@@ -157,39 +134,39 @@
     "type": "vector",
     "originId": "12:33-svg-1",
     "sourceId": "d38b4d2f-23c7-4ad9-b087-8c1f468d878f",
-    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed",
-    "description": null
+    "description": null,
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
   },
   {
-    "id": "9893b356-1d54-464c-9a74-db4c692a0c8c",
-    "createdAt": "2021-04-02T09:54:57.057Z",
-    "updatedAt": "2021-07-28T16:09:34.259Z",
-    "name": "align-center",
+    "id": "26be8e46-d125-442c-b47f-4563c3db9a07",
+    "createdAt": "2021-11-11T07:00:53.764Z",
+    "updatedAt": "2022-12-09T19:51:58.308Z",
+    "name": "alert-triangle",
     "value": {
-      "url": "https://s3-us-west-2.amazonaws.com/figma-alpha-api/img/44e1/3537/07081649495a48e2f2de80b83e69a876",
-      "format": "svg"
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/ba1b77ff-11c3-4003-8cee-61992840eefa",
+      "format": "pdf"
     },
     "meta": {
       "file": "Specify - Seeds",
       "page": "Seeds",
-      "frame": "align-center",
-      "format": "svg",
+      "frame": "alert-triangle",
+      "format": "pdf",
       "dimension": 1,
       "parentFrame": "Vector · Frame Example"
     },
     "type": "vector",
-    "originId": "12:28-svg-1",
+    "originId": "12:33-pdf-1",
     "sourceId": "d38b4d2f-23c7-4ad9-b087-8c1f468d878f",
-    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed",
-    "description": null
+    "description": null,
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
   },
   {
     "id": "4bdd4088-7ffc-43b9-8d91-f8ac6064a1bc",
     "createdAt": "2021-11-11T07:00:53.764Z",
-    "updatedAt": "2021-11-16T10:06:55.167Z",
+    "updatedAt": "2022-12-09T19:51:58.297Z",
     "name": "align-center",
     "value": {
-      "url": "https://s3-us-west-2.amazonaws.com/figma-alpha-api/img/60d9/4a66/69c02a6b502dec9e745acdfb8418093d",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/81d4289d-cec7-41d5-93cb-be5c38dcb650",
       "format": "pdf"
     },
     "meta": {
@@ -203,8 +180,31 @@
     "type": "vector",
     "originId": "12:28-pdf-1",
     "sourceId": "d38b4d2f-23c7-4ad9-b087-8c1f468d878f",
-    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed",
-    "description": null
+    "description": null,
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
+  },
+  {
+    "id": "9893b356-1d54-464c-9a74-db4c692a0c8c",
+    "createdAt": "2021-04-02T09:54:57.057Z",
+    "updatedAt": "2022-12-09T19:51:58.266Z",
+    "name": "align-center",
+    "value": {
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/fc217b3e-7aa3-480d-adca-3f1d2b6d073c",
+      "format": "svg"
+    },
+    "meta": {
+      "file": "Specify - Seeds",
+      "page": "Seeds",
+      "frame": "align-center",
+      "format": "svg",
+      "dimension": 1,
+      "parentFrame": "Vector · Frame Example"
+    },
+    "type": "vector",
+    "originId": "12:28-svg-1",
+    "sourceId": "d38b4d2f-23c7-4ad9-b087-8c1f468d878f",
+    "description": null,
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
   },
   {
     "id": "474282bd-140e-4fee-9f09-e33bf847672a",
@@ -222,8 +222,8 @@
     "type": "depth",
     "originId": "1:53",
     "sourceId": "cce5bc1c-60c6-45b4-95f2-5b8ee29864fc",
-    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed",
-    "description": null
+    "description": null,
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
   },
   {
     "id": "a0d2ca43-7f35-45ca-a4bb-fcc4071c0e6c",
@@ -242,8 +242,8 @@
     "type": "duration",
     "originId": "1:66",
     "sourceId": "c79c5c65-f70b-4bba-a410-976465f0713e",
-    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed",
-    "description": null
+    "description": null,
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
   },
   {
     "id": "f2bd8978-a12a-45a1-a707-e78f800f642b",
@@ -262,8 +262,8 @@
     "type": "measurement",
     "originId": "12:101",
     "sourceId": "8744ed2c-6640-4707-930d-8a8e72b7ba39",
-    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed",
-    "description": null
+    "description": null,
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
   },
   {
     "id": "17cbb046-6e79-4ae5-a0e3-36f1eea99709",
@@ -282,8 +282,8 @@
     "type": "measurement",
     "originId": "12:102",
     "sourceId": "8744ed2c-6640-4707-930d-8a8e72b7ba39",
-    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed",
-    "description": null
+    "description": null,
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
   },
   {
     "id": "8c3d54d0-a64d-42cd-85bd-90e95b7e68a4",
@@ -302,8 +302,8 @@
     "type": "measurement",
     "originId": "12:103",
     "sourceId": "8744ed2c-6640-4707-930d-8a8e72b7ba39",
-    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed",
-    "description": null
+    "description": null,
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
   },
   {
     "id": "b482d5f2-ef06-45f9-8b31-ab8d39467c85",
@@ -322,8 +322,8 @@
     "type": "measurement",
     "originId": "12:104",
     "sourceId": "8744ed2c-6640-4707-930d-8a8e72b7ba39",
-    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed",
-    "description": null
+    "description": null,
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
   },
   {
     "id": "61e73802-cb82-47b3-b9d0-d8ccca00987f",
@@ -342,8 +342,8 @@
     "type": "measurement",
     "originId": "12:105",
     "sourceId": "8744ed2c-6640-4707-930d-8a8e72b7ba39",
-    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed",
-    "description": null
+    "description": null,
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
   },
   {
     "id": "3e8ba795-4c0a-4935-8148-3f71880321f7",
@@ -362,8 +362,8 @@
     "type": "measurement",
     "originId": "12:106",
     "sourceId": "8744ed2c-6640-4707-930d-8a8e72b7ba39",
-    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed",
-    "description": null
+    "description": null,
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
   },
   {
     "id": "fdea4e31-287f-4e84-8e0e-8a308ff39854",
@@ -382,8 +382,8 @@
     "type": "measurement",
     "originId": "12:107",
     "sourceId": "8744ed2c-6640-4707-930d-8a8e72b7ba39",
-    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed",
-    "description": null
+    "description": null,
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
   },
   {
     "id": "706a79f5-aa4c-4305-ac93-c55d61c47f87",
@@ -402,8 +402,8 @@
     "type": "measurement",
     "originId": "12:108",
     "sourceId": "8744ed2c-6640-4707-930d-8a8e72b7ba39",
-    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed",
-    "description": null
+    "description": null,
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
   },
   {
     "id": "ca3765a7-5164-459e-a8fc-76995bf2e063",
@@ -422,8 +422,8 @@
     "type": "measurement",
     "originId": "12:109",
     "sourceId": "8744ed2c-6640-4707-930d-8a8e72b7ba39",
-    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed",
-    "description": null
+    "description": null,
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
   },
   {
     "id": "7e0e6088-e6bf-4ab0-84f7-43b5a11d635d",
@@ -442,8 +442,8 @@
     "type": "measurement",
     "originId": "12:110",
     "sourceId": "8744ed2c-6640-4707-930d-8a8e72b7ba39",
-    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed",
-    "description": null
+    "description": null,
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
   },
   {
     "id": "466e4b10-44de-4065-b4f7-25446b024f8c",
@@ -454,7 +454,7 @@
       "font": {
         "id": "e69237ab-05db-4380-81e5-70db7f5448f1",
         "createdAt": "2021-04-02T08:01:57.087Z",
-        "updatedAt": "2021-06-28T14:00:49.527Z",
+        "updatedAt": "2022-12-09T19:51:56.051Z",
         "name": "Inter-Medium",
         "value": {
           "format": "ttf",
@@ -464,7 +464,7 @@
           "fontWeight": 500,
           "fontFileMissing": false,
           "fontPostScriptName": "Inter-Medium",
-          "url": "https://ddp-assets-prod.s3.eu-west-1.amazonaws.com/927e26f6-da29-40d6-b9de-530bdcddf1ed/font/Inter-Medium/Inter-Medium.ttf?AWSAccessKeyId=ASIAYLKZPEWOA5AIAGXG&Expires=1637085259&Signature=FKdkizmRoUonqUersrJ%2BXU2Akcg%3D&x-amz-security-token=IQoJb3JpZ2luX2VjENb%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCWV1LXdlc3QtMSJHMEUCIGFX94Yth2vFvW3PSBoO6RNmv%2BCE5R%2BITpRJWGIheNpvAiEA1nLfIHU7jW%2FKNq3MToab%2FdlO1ar3hn87w9UwdIoGAdsq7gMIj%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARACGgw1NzQxMDI2NDQxMjQiDG5SAHpNXoTtQDh78SrCA8n%2FGwEyOei4m4fHRBmILFSJBKvCfd6tInbiksDJwArZGvc94tubYbYDscaQLm8HF2Z2vOnSQG3sXvqsLAYVq9yuWCZXq6NB5hw%2FkCCxkTSF6zolHD1ZledxUICqQZhqj0NB8565%2BEjIGpH5Qyn75CELA%2FhhHwiKUj%2B5dF3rm6rBNxrEh08auTpy4LLvGnydFsYUAGkWiioqtnKCIMgqz7j1hsJdFMd7RlsQEszj%2BdxeWWBCcXuO5a5Jzs4%2BZNB3w1R2XMSxzwkllTRkNbwrpjjd%2F9GTDWvhZyn7pQbR9N7oDAoX95dI74OLqFQaQaAzl%2FVzV7Tmg6HAqo1P2QePJrrTGnWFpvpM4bveWIWDhsAOg8QpSDndthYC7jOL3YFRLfS%2BcuK6iAsqJiMdmze6Mt07kXOKm7iPmPZpw5zo13Jdmv9H4G7sFmRF9wlVIP3uqVS%2B0qHuxwWHBBwyXr0k41ACV%2BOButgDUGW%2F77DhAh2I6jXB5zqIbrs4bPFj3%2FNlAYtO1bmih%2F20ZeVua5nvi5W%2BRkG8z26IUPaoyi8wOMAK30lwLUPPujVtHSBrIJ2UbO3g%2BWKn2e2ks5fQ5qw799GCSzDR6M6MBjqlASuAUq%2FpTEQNndarf%2FM66QWUpKxis1YJeae3fWkjtzYLvUMUD0O5bwz6JEjoJJu8G5wQrQpErDAv%2FzRQRgHa%2F9%2FImM0kVJK%2FUsko7bVJvY2eTp%2FC0Q5qrSJhz3OP7CP6oIyzyvE1AUsYfMMdUK859g42qtJK0QouFOX2XqHGWO99xS%2BjZS5qIPwjqah2wmhwWAxd5Bbg%2BKKLFWoVlw3zw0zxsJAi0w%3D%3D"
+          "url": "https://ddp-assets-prod.s3.eu-west-1.amazonaws.com/927e26f6-da29-40d6-b9de-530bdcddf1ed/font/Inter-Medium/Inter-Medium.ttf?AWSAccessKeyId=ASIAYLKZPEWOERC2MF4Q&Expires=1670619133&Signature=wdylC%2BYPtPFOlz2bMnyzq7jeTN0%3D&x-amz-security-token=IQoJb3JpZ2luX2VjEDoaCWV1LXdlc3QtMSJHMEUCIQDLAL2JLoQKInBneYHbWii7M6SqR89HX1qyZABF9xE05QIgT4t1nhHM90MTjA%2BuFvHvn2VwVtUPQoPv3jXQtBioxggq7wMIYxADGgw1NzQxMDI2NDQxMjQiDFicyDbG2%2B%2BVQfB68irMA65N49b6EbSledhXq5qjEwOvMH3lEHM0qmabhd5rzsneVtphG2um7aqefH%2F3%2BGvs%2Bv1I%2FEFGGLpSHj1MXXja%2F8elIAVt2Ay9uShZZ2OnhHqLFdVhN3nK2grRmRbrSFF8jmE8K4DLEzloyu5NHHX4A9Bo3tLMv7jiWR2mKw%2B%2Fw34wZiu3pY48t595z%2FF3%2FOYDkBNGWGcS2vLjjdsBYu1bg4xpirQV4mT3yF9AZdipruKian6nMlaPte%2BZz7wwCQrsCyQuHQq1bF0bvt0ekJclOQ8kRSpvs2btnU6oQE14x%2BYWDSvYUhURZk2ih9xKhxbVpEHXuWWBkOeA94wJ2ckOQCUccitrxIQOU7D7K1X322GAgbqCiNFKDaYpWZrUjE%2FixwPL2MkHseLsvWQXPENtPw2qF02SqGn4KffQBko7yQbgyIMptnzdBwLuHP1Q%2Fkjcs35UjKB4grW7vnb9Oy6TdkTabY9PGJ3FpMq1aYwOXW77O2exCMme5lrkVe5lVGGYYTm8mdIKjEvK224o61ldnWTlLKVzdCjfyiI46v1PxSnPcp6JbbZfs5N5UcOIU5dvqwIzRFlQlydRrA17HfXBrJMxAP9yXx1d8ypz8jkwgOfNnAY6pQFh9aPBYws40ApUlHr4Mq420Qeslm%2Bn2sPz6sEvBI4RQoJkqXbixzk4uqBR2a%2FsakbF79MQkb0kL18dodNlfgFwSecOwoL2fctPvLffIGfYchXUv5IZyi1kq6EiEIPSB%2FyAoEOXHXBzHijS3LwxLR%2Fg9G5NPYVas2FSynSw%2BiIzYkH3vPaMefwIVqsdof7HdUCCKXfuddQu7%2FJWmuEgrtU1tGOmZkI%3D"
         },
         "meta": {
           "source": "frames",
@@ -474,6 +474,7 @@
         "type": "font",
         "originId": "Inter-Medium",
         "sourceId": "2ec31677-436c-4ebe-9740-96acd5193b06",
+        "description": null,
         "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
       },
       "color": {
@@ -515,8 +516,8 @@
     "type": "textStyle",
     "originId": "12:64",
     "sourceId": "2ec31677-436c-4ebe-9740-96acd5193b06",
-    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed",
-    "description": null
+    "description": null,
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
   },
   {
     "id": "9d6fb0c8-28f7-4382-9889-d8f7362f6d3b",
@@ -527,7 +528,7 @@
       "font": {
         "id": "e69237ab-05db-4380-81e5-70db7f5448f1",
         "createdAt": "2021-04-02T08:01:57.087Z",
-        "updatedAt": "2021-06-28T14:00:49.527Z",
+        "updatedAt": "2022-12-09T19:51:56.051Z",
         "name": "Inter-Medium",
         "value": {
           "format": "ttf",
@@ -537,7 +538,7 @@
           "fontWeight": 500,
           "fontFileMissing": false,
           "fontPostScriptName": "Inter-Medium",
-          "url": "https://ddp-assets-prod.s3.eu-west-1.amazonaws.com/927e26f6-da29-40d6-b9de-530bdcddf1ed/font/Inter-Medium/Inter-Medium.ttf?AWSAccessKeyId=ASIAYLKZPEWOA5AIAGXG&Expires=1637085259&Signature=FKdkizmRoUonqUersrJ%2BXU2Akcg%3D&x-amz-security-token=IQoJb3JpZ2luX2VjENb%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCWV1LXdlc3QtMSJHMEUCIGFX94Yth2vFvW3PSBoO6RNmv%2BCE5R%2BITpRJWGIheNpvAiEA1nLfIHU7jW%2FKNq3MToab%2FdlO1ar3hn87w9UwdIoGAdsq7gMIj%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARACGgw1NzQxMDI2NDQxMjQiDG5SAHpNXoTtQDh78SrCA8n%2FGwEyOei4m4fHRBmILFSJBKvCfd6tInbiksDJwArZGvc94tubYbYDscaQLm8HF2Z2vOnSQG3sXvqsLAYVq9yuWCZXq6NB5hw%2FkCCxkTSF6zolHD1ZledxUICqQZhqj0NB8565%2BEjIGpH5Qyn75CELA%2FhhHwiKUj%2B5dF3rm6rBNxrEh08auTpy4LLvGnydFsYUAGkWiioqtnKCIMgqz7j1hsJdFMd7RlsQEszj%2BdxeWWBCcXuO5a5Jzs4%2BZNB3w1R2XMSxzwkllTRkNbwrpjjd%2F9GTDWvhZyn7pQbR9N7oDAoX95dI74OLqFQaQaAzl%2FVzV7Tmg6HAqo1P2QePJrrTGnWFpvpM4bveWIWDhsAOg8QpSDndthYC7jOL3YFRLfS%2BcuK6iAsqJiMdmze6Mt07kXOKm7iPmPZpw5zo13Jdmv9H4G7sFmRF9wlVIP3uqVS%2B0qHuxwWHBBwyXr0k41ACV%2BOButgDUGW%2F77DhAh2I6jXB5zqIbrs4bPFj3%2FNlAYtO1bmih%2F20ZeVua5nvi5W%2BRkG8z26IUPaoyi8wOMAK30lwLUPPujVtHSBrIJ2UbO3g%2BWKn2e2ks5fQ5qw799GCSzDR6M6MBjqlASuAUq%2FpTEQNndarf%2FM66QWUpKxis1YJeae3fWkjtzYLvUMUD0O5bwz6JEjoJJu8G5wQrQpErDAv%2FzRQRgHa%2F9%2FImM0kVJK%2FUsko7bVJvY2eTp%2FC0Q5qrSJhz3OP7CP6oIyzyvE1AUsYfMMdUK859g42qtJK0QouFOX2XqHGWO99xS%2BjZS5qIPwjqah2wmhwWAxd5Bbg%2BKKLFWoVlw3zw0zxsJAi0w%3D%3D"
+          "url": "https://ddp-assets-prod.s3.eu-west-1.amazonaws.com/927e26f6-da29-40d6-b9de-530bdcddf1ed/font/Inter-Medium/Inter-Medium.ttf?AWSAccessKeyId=ASIAYLKZPEWOERC2MF4Q&Expires=1670619133&Signature=wdylC%2BYPtPFOlz2bMnyzq7jeTN0%3D&x-amz-security-token=IQoJb3JpZ2luX2VjEDoaCWV1LXdlc3QtMSJHMEUCIQDLAL2JLoQKInBneYHbWii7M6SqR89HX1qyZABF9xE05QIgT4t1nhHM90MTjA%2BuFvHvn2VwVtUPQoPv3jXQtBioxggq7wMIYxADGgw1NzQxMDI2NDQxMjQiDFicyDbG2%2B%2BVQfB68irMA65N49b6EbSledhXq5qjEwOvMH3lEHM0qmabhd5rzsneVtphG2um7aqefH%2F3%2BGvs%2Bv1I%2FEFGGLpSHj1MXXja%2F8elIAVt2Ay9uShZZ2OnhHqLFdVhN3nK2grRmRbrSFF8jmE8K4DLEzloyu5NHHX4A9Bo3tLMv7jiWR2mKw%2B%2Fw34wZiu3pY48t595z%2FF3%2FOYDkBNGWGcS2vLjjdsBYu1bg4xpirQV4mT3yF9AZdipruKian6nMlaPte%2BZz7wwCQrsCyQuHQq1bF0bvt0ekJclOQ8kRSpvs2btnU6oQE14x%2BYWDSvYUhURZk2ih9xKhxbVpEHXuWWBkOeA94wJ2ckOQCUccitrxIQOU7D7K1X322GAgbqCiNFKDaYpWZrUjE%2FixwPL2MkHseLsvWQXPENtPw2qF02SqGn4KffQBko7yQbgyIMptnzdBwLuHP1Q%2Fkjcs35UjKB4grW7vnb9Oy6TdkTabY9PGJ3FpMq1aYwOXW77O2exCMme5lrkVe5lVGGYYTm8mdIKjEvK224o61ldnWTlLKVzdCjfyiI46v1PxSnPcp6JbbZfs5N5UcOIU5dvqwIzRFlQlydRrA17HfXBrJMxAP9yXx1d8ypz8jkwgOfNnAY6pQFh9aPBYws40ApUlHr4Mq420Qeslm%2Bn2sPz6sEvBI4RQoJkqXbixzk4uqBR2a%2FsakbF79MQkb0kL18dodNlfgFwSecOwoL2fctPvLffIGfYchXUv5IZyi1kq6EiEIPSB%2FyAoEOXHXBzHijS3LwxLR%2Fg9G5NPYVas2FSynSw%2BiIzYkH3vPaMefwIVqsdof7HdUCCKXfuddQu7%2FJWmuEgrtU1tGOmZkI%3D"
         },
         "meta": {
           "source": "frames",
@@ -547,6 +548,7 @@
         "type": "font",
         "originId": "Inter-Medium",
         "sourceId": "2ec31677-436c-4ebe-9740-96acd5193b06",
+        "description": null,
         "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
       },
       "color": {
@@ -588,8 +590,8 @@
     "type": "textStyle",
     "originId": "251:3",
     "sourceId": "2ec31677-436c-4ebe-9740-96acd5193b06",
-    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed",
-    "description": null
+    "description": null,
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
   },
   {
     "id": "72e7b628-cf2c-4691-b3d2-8248b492a60b",
@@ -627,8 +629,8 @@
     "type": "border",
     "originId": "12:76",
     "sourceId": "eb1a26cd-abfb-4ffa-b0da-9499d0d4602e",
-    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed",
-    "description": null
+    "description": null,
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
   },
   {
     "id": "f523cb6f-a2cd-4e38-a194-69cfa3544d32",
@@ -666,8 +668,8 @@
     "type": "border",
     "originId": "251:2",
     "sourceId": "eb1a26cd-abfb-4ffa-b0da-9499d0d4602e",
-    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed",
-    "description": "a description"
+    "description": null,
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
   },
   {
     "id": "9a0c99ef-a0fc-4cd4-9364-9b856242b7b6",
@@ -699,8 +701,8 @@
     "type": "border",
     "originId": "346:2",
     "sourceId": "eb1a26cd-abfb-4ffa-b0da-9499d0d4602e",
-    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed",
-    "description": "a description"
+    "description": null,
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
   },
   {
     "id": "84ccd8de-71a9-4b65-8581-4fb40c6af5a0",
@@ -752,8 +754,8 @@
     "type": "border",
     "originId": "12:75",
     "sourceId": "eb1a26cd-abfb-4ffa-b0da-9499d0d4602e",
-    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed",
-    "description": "a description"
+    "description": null,
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
   },
   {
     "id": "a8417035-326b-45c4-b2d0-7e929aae9bcf",
@@ -764,7 +766,7 @@
       "font": {
         "id": "6bf09330-71a6-475e-88d1-d3b72122bab3",
         "createdAt": "2021-04-02T09:54:13.112Z",
-        "updatedAt": "2021-06-28T14:00:49.527Z",
+        "updatedAt": "2022-12-09T19:51:56.070Z",
         "name": "FiraCode-Medium",
         "value": {
           "format": "ttf",
@@ -774,7 +776,7 @@
           "fontWeight": 500,
           "fontFileMissing": false,
           "fontPostScriptName": "FiraCode-Medium",
-          "url": "https://ddp-assets-prod.s3.eu-west-1.amazonaws.com/927e26f6-da29-40d6-b9de-530bdcddf1ed/font/FiraCode-Medium/FiraCode-Medium.ttf?AWSAccessKeyId=ASIAYLKZPEWOA5AIAGXG&Expires=1637085259&Signature=EAF0s6KC7NY7IxpoU76gnBd7Xsk%3D&x-amz-security-token=IQoJb3JpZ2luX2VjENb%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCWV1LXdlc3QtMSJHMEUCIGFX94Yth2vFvW3PSBoO6RNmv%2BCE5R%2BITpRJWGIheNpvAiEA1nLfIHU7jW%2FKNq3MToab%2FdlO1ar3hn87w9UwdIoGAdsq7gMIj%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARACGgw1NzQxMDI2NDQxMjQiDG5SAHpNXoTtQDh78SrCA8n%2FGwEyOei4m4fHRBmILFSJBKvCfd6tInbiksDJwArZGvc94tubYbYDscaQLm8HF2Z2vOnSQG3sXvqsLAYVq9yuWCZXq6NB5hw%2FkCCxkTSF6zolHD1ZledxUICqQZhqj0NB8565%2BEjIGpH5Qyn75CELA%2FhhHwiKUj%2B5dF3rm6rBNxrEh08auTpy4LLvGnydFsYUAGkWiioqtnKCIMgqz7j1hsJdFMd7RlsQEszj%2BdxeWWBCcXuO5a5Jzs4%2BZNB3w1R2XMSxzwkllTRkNbwrpjjd%2F9GTDWvhZyn7pQbR9N7oDAoX95dI74OLqFQaQaAzl%2FVzV7Tmg6HAqo1P2QePJrrTGnWFpvpM4bveWIWDhsAOg8QpSDndthYC7jOL3YFRLfS%2BcuK6iAsqJiMdmze6Mt07kXOKm7iPmPZpw5zo13Jdmv9H4G7sFmRF9wlVIP3uqVS%2B0qHuxwWHBBwyXr0k41ACV%2BOButgDUGW%2F77DhAh2I6jXB5zqIbrs4bPFj3%2FNlAYtO1bmih%2F20ZeVua5nvi5W%2BRkG8z26IUPaoyi8wOMAK30lwLUPPujVtHSBrIJ2UbO3g%2BWKn2e2ks5fQ5qw799GCSzDR6M6MBjqlASuAUq%2FpTEQNndarf%2FM66QWUpKxis1YJeae3fWkjtzYLvUMUD0O5bwz6JEjoJJu8G5wQrQpErDAv%2FzRQRgHa%2F9%2FImM0kVJK%2FUsko7bVJvY2eTp%2FC0Q5qrSJhz3OP7CP6oIyzyvE1AUsYfMMdUK859g42qtJK0QouFOX2XqHGWO99xS%2BjZS5qIPwjqah2wmhwWAxd5Bbg%2BKKLFWoVlw3zw0zxsJAi0w%3D%3D"
+          "url": "https://ddp-assets-prod.s3.eu-west-1.amazonaws.com/927e26f6-da29-40d6-b9de-530bdcddf1ed/font/FiraCode-Medium/FiraCode-Medium.ttf?AWSAccessKeyId=ASIAYLKZPEWOERC2MF4Q&Expires=1670619133&Signature=14sd3y0SVv089r0Br65Q3z6Gdpo%3D&x-amz-security-token=IQoJb3JpZ2luX2VjEDoaCWV1LXdlc3QtMSJHMEUCIQDLAL2JLoQKInBneYHbWii7M6SqR89HX1qyZABF9xE05QIgT4t1nhHM90MTjA%2BuFvHvn2VwVtUPQoPv3jXQtBioxggq7wMIYxADGgw1NzQxMDI2NDQxMjQiDFicyDbG2%2B%2BVQfB68irMA65N49b6EbSledhXq5qjEwOvMH3lEHM0qmabhd5rzsneVtphG2um7aqefH%2F3%2BGvs%2Bv1I%2FEFGGLpSHj1MXXja%2F8elIAVt2Ay9uShZZ2OnhHqLFdVhN3nK2grRmRbrSFF8jmE8K4DLEzloyu5NHHX4A9Bo3tLMv7jiWR2mKw%2B%2Fw34wZiu3pY48t595z%2FF3%2FOYDkBNGWGcS2vLjjdsBYu1bg4xpirQV4mT3yF9AZdipruKian6nMlaPte%2BZz7wwCQrsCyQuHQq1bF0bvt0ekJclOQ8kRSpvs2btnU6oQE14x%2BYWDSvYUhURZk2ih9xKhxbVpEHXuWWBkOeA94wJ2ckOQCUccitrxIQOU7D7K1X322GAgbqCiNFKDaYpWZrUjE%2FixwPL2MkHseLsvWQXPENtPw2qF02SqGn4KffQBko7yQbgyIMptnzdBwLuHP1Q%2Fkjcs35UjKB4grW7vnb9Oy6TdkTabY9PGJ3FpMq1aYwOXW77O2exCMme5lrkVe5lVGGYYTm8mdIKjEvK224o61ldnWTlLKVzdCjfyiI46v1PxSnPcp6JbbZfs5N5UcOIU5dvqwIzRFlQlydRrA17HfXBrJMxAP9yXx1d8ypz8jkwgOfNnAY6pQFh9aPBYws40ApUlHr4Mq420Qeslm%2Bn2sPz6sEvBI4RQoJkqXbixzk4uqBR2a%2FsakbF79MQkb0kL18dodNlfgFwSecOwoL2fctPvLffIGfYchXUv5IZyi1kq6EiEIPSB%2FyAoEOXHXBzHijS3LwxLR%2Fg9G5NPYVas2FSynSw%2BiIzYkH3vPaMefwIVqsdof7HdUCCKXfuddQu7%2FJWmuEgrtU1tGOmZkI%3D"
         },
         "meta": {
           "source": "frames",
@@ -784,6 +786,7 @@
         "type": "font",
         "originId": "FiraCode-Medium",
         "sourceId": "2ec31677-436c-4ebe-9740-96acd5193b06",
+        "description": null,
         "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
       },
       "color": {
@@ -819,19 +822,19 @@
     "type": "textStyle",
     "originId": "12:165",
     "sourceId": "2ec31677-436c-4ebe-9740-96acd5193b06",
-    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed",
-    "description": "a description"
+    "description": null,
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
   },
   {
     "id": "5c819ba1-d0bc-43d8-91f6-952998eb345b",
     "createdAt": "2021-07-23T09:26:45.160Z",
-    "updatedAt": "2021-07-23T09:26:45.160Z",
+    "updatedAt": "2022-12-09T19:22:00.367Z",
     "name": "Colors/Accent",
     "value": {
       "a": 1,
-      "b": 254,
-      "g": 124,
-      "r": 87
+      "b": 183,
+      "g": 133,
+      "r": 120
     },
     "meta": {
       "source": "localStyles"
@@ -839,13 +842,33 @@
     "type": "color",
     "originId": "12:150",
     "sourceId": "6232b157-22db-4ef1-9437-f7f8066849e1",
-    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed",
-    "description": "a description"
+    "description": "",
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
+  },
+  {
+    "id": "a69b03e6-e5b0-4d74-a866-74b3161320f6",
+    "createdAt": "2022-12-09T19:30:32.105Z",
+    "updatedAt": "2022-12-09T19:30:32.105Z",
+    "name": "Colors/AlmostBlack",
+    "value": {
+      "a": 1,
+      "b": 28,
+      "g": 28,
+      "r": 28
+    },
+    "meta": {
+      "source": "localStyles"
+    },
+    "type": "color",
+    "originId": "1917:5",
+    "sourceId": "6232b157-22db-4ef1-9437-f7f8066849e1",
+    "description": "",
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
   },
   {
     "id": "bb7b5be0-b79f-4b7c-9b0e-a8a2d264970a",
     "createdAt": "2021-07-23T09:26:45.164Z",
-    "updatedAt": "2021-07-23T09:26:45.164Z",
+    "updatedAt": "2022-12-09T19:22:00.382Z",
     "name": "Colors/Black",
     "value": {
       "a": 1,
@@ -859,8 +882,8 @@
     "type": "color",
     "originId": "12:151",
     "sourceId": "6232b157-22db-4ef1-9437-f7f8066849e1",
-    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed",
-    "description": "a description"
+    "description": "",
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
   },
   {
     "id": "6af4032f-37e7-465a-966d-2c10031b24a3",
@@ -905,7 +928,7 @@
   {
     "id": "9fababfd-ec20-4d39-a815-22419306fe33",
     "createdAt": "2021-07-23T09:26:45.149Z",
-    "updatedAt": "2021-07-23T09:26:45.149Z",
+    "updatedAt": "2022-12-09T19:22:00.385Z",
     "name": "Colors/Green",
     "value": {
       "a": 1,
@@ -919,13 +942,13 @@
     "type": "color",
     "originId": "12:154",
     "sourceId": "6232b157-22db-4ef1-9437-f7f8066849e1",
-    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed",
-    "description": "a description"
+    "description": "",
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
   },
   {
     "id": "44cbbbdb-798c-4c5f-980a-b2debe0971a8",
     "createdAt": "2021-07-23T09:26:45.164Z",
-    "updatedAt": "2021-07-23T09:26:45.164Z",
+    "updatedAt": "2022-12-09T19:22:00.358Z",
     "name": "Colors/Grey",
     "value": {
       "a": 1,
@@ -939,13 +962,13 @@
     "type": "color",
     "originId": "12:152",
     "sourceId": "6232b157-22db-4ef1-9437-f7f8066849e1",
-    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed",
-    "description": "a description"
+    "description": "",
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
   },
   {
     "id": "f7b87b0b-df4a-4220-a4b3-0902c37ffadd",
     "createdAt": "2021-07-23T09:26:45.169Z",
-    "updatedAt": "2021-07-23T09:26:45.169Z",
+    "updatedAt": "2022-12-09T19:22:00.377Z",
     "name": "Colors/Orange",
     "value": {
       "a": 1,
@@ -959,13 +982,33 @@
     "type": "color",
     "originId": "12:156",
     "sourceId": "6232b157-22db-4ef1-9437-f7f8066849e1",
-    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed",
-    "description": "a description"
+    "description": "",
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
+  },
+  {
+    "id": "c5fcfbc8-cb0c-41b1-87a7-9179ca634e45",
+    "createdAt": "2022-12-09T19:30:32.114Z",
+    "updatedAt": "2022-12-09T19:30:32.114Z",
+    "name": "Colors/PureBlack",
+    "value": {
+      "a": 1,
+      "b": 0,
+      "g": 0,
+      "r": 0
+    },
+    "meta": {
+      "source": "localStyles"
+    },
+    "type": "color",
+    "originId": "1917:4",
+    "sourceId": "6232b157-22db-4ef1-9437-f7f8066849e1",
+    "description": "",
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
   },
   {
     "id": "c15b6717-b70e-4feb-94ef-9765a8037847",
     "createdAt": "2021-07-23T09:26:45.162Z",
-    "updatedAt": "2021-07-23T09:26:45.162Z",
+    "updatedAt": "2022-12-09T19:22:00.380Z",
     "name": "Colors/Red",
     "value": {
       "a": 1,
@@ -979,13 +1022,13 @@
     "type": "color",
     "originId": "12:155",
     "sourceId": "6232b157-22db-4ef1-9437-f7f8066849e1",
-    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed",
-    "description": "a description"
+    "description": "",
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
   },
   {
     "id": "6b5fbe98-bff8-4156-8720-98d9eb776cd4",
     "createdAt": "2021-07-23T09:26:45.164Z",
-    "updatedAt": "2021-07-23T09:26:45.164Z",
+    "updatedAt": "2022-12-09T19:22:00.381Z",
     "name": "Colors/White",
     "value": {
       "a": 1,
@@ -999,13 +1042,13 @@
     "type": "color",
     "originId": "12:153",
     "sourceId": "6232b157-22db-4ef1-9437-f7f8066849e1",
-    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed",
-    "description": "a description"
+    "description": "",
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
   },
   {
     "id": "2f7c7f1a-3d84-4def-88a3-fb456387639b",
     "createdAt": "2021-07-23T09:27:34.711Z",
-    "updatedAt": "2021-07-23T09:27:34.711Z",
+    "updatedAt": "2022-12-09T19:51:56.796Z",
     "name": "Elevation-1",
     "value": [
       {
@@ -1044,13 +1087,13 @@
     "type": "shadow",
     "originId": "12:157",
     "sourceId": "271e7266-1534-4397-9a64-6807de56582c",
-    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed",
-    "description": "a description"
+    "description": "",
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
   },
   {
     "id": "c4e943cb-9acb-4476-b35e-e2252e09d080",
     "createdAt": "2021-07-23T09:27:34.701Z",
-    "updatedAt": "2021-07-23T09:27:34.701Z",
+    "updatedAt": "2022-12-09T19:51:56.795Z",
     "name": "Elevation-2",
     "value": [
       {
@@ -1118,13 +1161,13 @@
     "type": "shadow",
     "originId": "12:158",
     "sourceId": "271e7266-1534-4397-9a64-6807de56582c",
-    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed",
-    "description": "a description"
+    "description": "",
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
   },
   {
     "id": "6f2228ae-f502-4ee2-ace8-0527e1f3709c",
     "createdAt": "2021-07-23T09:27:34.711Z",
-    "updatedAt": "2021-07-23T09:27:34.711Z",
+    "updatedAt": "2022-12-09T19:51:56.794Z",
     "name": "Elevation-3",
     "value": [
       {
@@ -1314,13 +1357,13 @@
     "type": "shadow",
     "originId": "12:159",
     "sourceId": "271e7266-1534-4397-9a64-6807de56582c",
-    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed",
-    "description": "a description"
+    "description": "",
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
   },
   {
     "id": "6bf09330-71a6-475e-88d1-d3b72122bab3",
     "createdAt": "2021-04-02T09:54:13.112Z",
-    "updatedAt": "2021-06-28T14:00:49.527Z",
+    "updatedAt": "2022-12-09T19:51:56.070Z",
     "name": "FiraCode-Medium",
     "value": {
       "format": "ttf",
@@ -1330,7 +1373,7 @@
       "fontWeight": 500,
       "fontFileMissing": false,
       "fontPostScriptName": "FiraCode-Medium",
-      "url": "https://ddp-assets-prod.s3.eu-west-1.amazonaws.com/927e26f6-da29-40d6-b9de-530bdcddf1ed/font/FiraCode-Medium/FiraCode-Medium.ttf?AWSAccessKeyId=ASIAYLKZPEWOA5AIAGXG&Expires=1637085259&Signature=EAF0s6KC7NY7IxpoU76gnBd7Xsk%3D&x-amz-security-token=IQoJb3JpZ2luX2VjENb%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCWV1LXdlc3QtMSJHMEUCIGFX94Yth2vFvW3PSBoO6RNmv%2BCE5R%2BITpRJWGIheNpvAiEA1nLfIHU7jW%2FKNq3MToab%2FdlO1ar3hn87w9UwdIoGAdsq7gMIj%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARACGgw1NzQxMDI2NDQxMjQiDG5SAHpNXoTtQDh78SrCA8n%2FGwEyOei4m4fHRBmILFSJBKvCfd6tInbiksDJwArZGvc94tubYbYDscaQLm8HF2Z2vOnSQG3sXvqsLAYVq9yuWCZXq6NB5hw%2FkCCxkTSF6zolHD1ZledxUICqQZhqj0NB8565%2BEjIGpH5Qyn75CELA%2FhhHwiKUj%2B5dF3rm6rBNxrEh08auTpy4LLvGnydFsYUAGkWiioqtnKCIMgqz7j1hsJdFMd7RlsQEszj%2BdxeWWBCcXuO5a5Jzs4%2BZNB3w1R2XMSxzwkllTRkNbwrpjjd%2F9GTDWvhZyn7pQbR9N7oDAoX95dI74OLqFQaQaAzl%2FVzV7Tmg6HAqo1P2QePJrrTGnWFpvpM4bveWIWDhsAOg8QpSDndthYC7jOL3YFRLfS%2BcuK6iAsqJiMdmze6Mt07kXOKm7iPmPZpw5zo13Jdmv9H4G7sFmRF9wlVIP3uqVS%2B0qHuxwWHBBwyXr0k41ACV%2BOButgDUGW%2F77DhAh2I6jXB5zqIbrs4bPFj3%2FNlAYtO1bmih%2F20ZeVua5nvi5W%2BRkG8z26IUPaoyi8wOMAK30lwLUPPujVtHSBrIJ2UbO3g%2BWKn2e2ks5fQ5qw799GCSzDR6M6MBjqlASuAUq%2FpTEQNndarf%2FM66QWUpKxis1YJeae3fWkjtzYLvUMUD0O5bwz6JEjoJJu8G5wQrQpErDAv%2FzRQRgHa%2F9%2FImM0kVJK%2FUsko7bVJvY2eTp%2FC0Q5qrSJhz3OP7CP6oIyzyvE1AUsYfMMdUK859g42qtJK0QouFOX2XqHGWO99xS%2BjZS5qIPwjqah2wmhwWAxd5Bbg%2BKKLFWoVlw3zw0zxsJAi0w%3D%3D"
+      "url": "https://ddp-assets-prod.s3.eu-west-1.amazonaws.com/927e26f6-da29-40d6-b9de-530bdcddf1ed/font/FiraCode-Medium/FiraCode-Medium.ttf?AWSAccessKeyId=ASIAYLKZPEWOERC2MF4Q&Expires=1670619133&Signature=14sd3y0SVv089r0Br65Q3z6Gdpo%3D&x-amz-security-token=IQoJb3JpZ2luX2VjEDoaCWV1LXdlc3QtMSJHMEUCIQDLAL2JLoQKInBneYHbWii7M6SqR89HX1qyZABF9xE05QIgT4t1nhHM90MTjA%2BuFvHvn2VwVtUPQoPv3jXQtBioxggq7wMIYxADGgw1NzQxMDI2NDQxMjQiDFicyDbG2%2B%2BVQfB68irMA65N49b6EbSledhXq5qjEwOvMH3lEHM0qmabhd5rzsneVtphG2um7aqefH%2F3%2BGvs%2Bv1I%2FEFGGLpSHj1MXXja%2F8elIAVt2Ay9uShZZ2OnhHqLFdVhN3nK2grRmRbrSFF8jmE8K4DLEzloyu5NHHX4A9Bo3tLMv7jiWR2mKw%2B%2Fw34wZiu3pY48t595z%2FF3%2FOYDkBNGWGcS2vLjjdsBYu1bg4xpirQV4mT3yF9AZdipruKian6nMlaPte%2BZz7wwCQrsCyQuHQq1bF0bvt0ekJclOQ8kRSpvs2btnU6oQE14x%2BYWDSvYUhURZk2ih9xKhxbVpEHXuWWBkOeA94wJ2ckOQCUccitrxIQOU7D7K1X322GAgbqCiNFKDaYpWZrUjE%2FixwPL2MkHseLsvWQXPENtPw2qF02SqGn4KffQBko7yQbgyIMptnzdBwLuHP1Q%2Fkjcs35UjKB4grW7vnb9Oy6TdkTabY9PGJ3FpMq1aYwOXW77O2exCMme5lrkVe5lVGGYYTm8mdIKjEvK224o61ldnWTlLKVzdCjfyiI46v1PxSnPcp6JbbZfs5N5UcOIU5dvqwIzRFlQlydRrA17HfXBrJMxAP9yXx1d8ypz8jkwgOfNnAY6pQFh9aPBYws40ApUlHr4Mq420Qeslm%2Bn2sPz6sEvBI4RQoJkqXbixzk4uqBR2a%2FsakbF79MQkb0kL18dodNlfgFwSecOwoL2fctPvLffIGfYchXUv5IZyi1kq6EiEIPSB%2FyAoEOXHXBzHijS3LwxLR%2Fg9G5NPYVas2FSynSw%2BiIzYkH3vPaMefwIVqsdof7HdUCCKXfuddQu7%2FJWmuEgrtU1tGOmZkI%3D"
     },
     "meta": {
       "source": "frames",
@@ -1340,8 +1383,8 @@
     "type": "font",
     "originId": "FiraCode-Medium",
     "sourceId": "2ec31677-436c-4ebe-9740-96acd5193b06",
-    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed",
-    "description": "a description"
+    "description": null,
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
   },
   {
     "id": "e173819d-4410-446c-93e0-02e5dbbe5c5c",
@@ -1359,13 +1402,13 @@
     "type": "depth",
     "originId": "1:55",
     "sourceId": "cce5bc1c-60c6-45b4-95f2-5b8ee29864fc",
-    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed",
-    "description": "a description"
+    "description": null,
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
   },
   {
     "id": "a8f2ce1d-8817-4396-ac5a-8a3de7a76fff",
     "createdAt": "2021-04-02T09:45:46.293Z",
-    "updatedAt": "2021-04-29T13:07:12.376Z",
+    "updatedAt": "2022-12-09T19:51:56.994Z",
     "name": "Gradients/ Colored",
     "value": {
       "gradients": [
@@ -1406,13 +1449,13 @@
     "type": "gradient",
     "originId": "12:161",
     "sourceId": "0196b1d4-7def-4a07-a407-c63a40ba3aa8",
-    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed",
-    "description": "a description"
+    "description": "",
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
   },
   {
     "id": "639e2352-a6a6-4d1f-94d1-8c9aa8e9a3a0",
     "createdAt": "2021-04-02T09:45:46.293Z",
-    "updatedAt": "2021-04-29T13:07:12.377Z",
+    "updatedAt": "2022-12-09T19:51:56.995Z",
     "name": "Gradients/ Dark",
     "value": {
       "gradients": [
@@ -1453,13 +1496,13 @@
     "type": "gradient",
     "originId": "12:160",
     "sourceId": "0196b1d4-7def-4a07-a407-c63a40ba3aa8",
-    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed",
-    "description": "a description"
+    "description": "",
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
   },
   {
     "id": "f0b78f3d-ed48-44af-8a7f-05ec90971a2b",
     "createdAt": "2021-04-02T09:45:46.293Z",
-    "updatedAt": "2021-04-29T13:07:12.375Z",
+    "updatedAt": "2022-12-09T19:51:56.995Z",
     "name": "Gradients/ Neutral",
     "value": {
       "gradients": [
@@ -1500,13 +1543,13 @@
     "type": "gradient",
     "originId": "12:162",
     "sourceId": "0196b1d4-7def-4a07-a407-c63a40ba3aa8",
-    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed",
-    "description": "a description"
+    "description": "",
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
   },
   {
     "id": "01a2e852-50d6-4b8e-84f1-2fbbc27aac79",
     "createdAt": "2021-04-12T17:56:57.106Z",
-    "updatedAt": "2021-04-29T13:07:12.378Z",
+    "updatedAt": "2022-12-09T19:51:56.996Z",
     "name": "Gradients / Safari",
     "value": {
       "gradients": [
@@ -1547,13 +1590,13 @@
     "type": "gradient",
     "originId": "52:3",
     "sourceId": "0196b1d4-7def-4a07-a407-c63a40ba3aa8",
-    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed",
-    "description": "a description"
+    "description": "",
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
   },
   {
     "id": "e69237ab-05db-4380-81e5-70db7f5448f1",
     "createdAt": "2021-04-02T08:01:57.087Z",
-    "updatedAt": "2021-06-28T14:00:49.527Z",
+    "updatedAt": "2022-12-09T19:51:56.051Z",
     "name": "Inter-Medium",
     "value": {
       "format": "ttf",
@@ -1563,7 +1606,7 @@
       "fontWeight": 500,
       "fontFileMissing": false,
       "fontPostScriptName": "Inter-Medium",
-      "url": "https://ddp-assets-prod.s3.eu-west-1.amazonaws.com/927e26f6-da29-40d6-b9de-530bdcddf1ed/font/Inter-Medium/Inter-Medium.ttf?AWSAccessKeyId=ASIAYLKZPEWOA5AIAGXG&Expires=1637085259&Signature=FKdkizmRoUonqUersrJ%2BXU2Akcg%3D&x-amz-security-token=IQoJb3JpZ2luX2VjENb%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCWV1LXdlc3QtMSJHMEUCIGFX94Yth2vFvW3PSBoO6RNmv%2BCE5R%2BITpRJWGIheNpvAiEA1nLfIHU7jW%2FKNq3MToab%2FdlO1ar3hn87w9UwdIoGAdsq7gMIj%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARACGgw1NzQxMDI2NDQxMjQiDG5SAHpNXoTtQDh78SrCA8n%2FGwEyOei4m4fHRBmILFSJBKvCfd6tInbiksDJwArZGvc94tubYbYDscaQLm8HF2Z2vOnSQG3sXvqsLAYVq9yuWCZXq6NB5hw%2FkCCxkTSF6zolHD1ZledxUICqQZhqj0NB8565%2BEjIGpH5Qyn75CELA%2FhhHwiKUj%2B5dF3rm6rBNxrEh08auTpy4LLvGnydFsYUAGkWiioqtnKCIMgqz7j1hsJdFMd7RlsQEszj%2BdxeWWBCcXuO5a5Jzs4%2BZNB3w1R2XMSxzwkllTRkNbwrpjjd%2F9GTDWvhZyn7pQbR9N7oDAoX95dI74OLqFQaQaAzl%2FVzV7Tmg6HAqo1P2QePJrrTGnWFpvpM4bveWIWDhsAOg8QpSDndthYC7jOL3YFRLfS%2BcuK6iAsqJiMdmze6Mt07kXOKm7iPmPZpw5zo13Jdmv9H4G7sFmRF9wlVIP3uqVS%2B0qHuxwWHBBwyXr0k41ACV%2BOButgDUGW%2F77DhAh2I6jXB5zqIbrs4bPFj3%2FNlAYtO1bmih%2F20ZeVua5nvi5W%2BRkG8z26IUPaoyi8wOMAK30lwLUPPujVtHSBrIJ2UbO3g%2BWKn2e2ks5fQ5qw799GCSzDR6M6MBjqlASuAUq%2FpTEQNndarf%2FM66QWUpKxis1YJeae3fWkjtzYLvUMUD0O5bwz6JEjoJJu8G5wQrQpErDAv%2FzRQRgHa%2F9%2FImM0kVJK%2FUsko7bVJvY2eTp%2FC0Q5qrSJhz3OP7CP6oIyzyvE1AUsYfMMdUK859g42qtJK0QouFOX2XqHGWO99xS%2BjZS5qIPwjqah2wmhwWAxd5Bbg%2BKKLFWoVlw3zw0zxsJAi0w%3D%3D"
+      "url": "https://ddp-assets-prod.s3.eu-west-1.amazonaws.com/927e26f6-da29-40d6-b9de-530bdcddf1ed/font/Inter-Medium/Inter-Medium.ttf?AWSAccessKeyId=ASIAYLKZPEWOERC2MF4Q&Expires=1670619133&Signature=wdylC%2BYPtPFOlz2bMnyzq7jeTN0%3D&x-amz-security-token=IQoJb3JpZ2luX2VjEDoaCWV1LXdlc3QtMSJHMEUCIQDLAL2JLoQKInBneYHbWii7M6SqR89HX1qyZABF9xE05QIgT4t1nhHM90MTjA%2BuFvHvn2VwVtUPQoPv3jXQtBioxggq7wMIYxADGgw1NzQxMDI2NDQxMjQiDFicyDbG2%2B%2BVQfB68irMA65N49b6EbSledhXq5qjEwOvMH3lEHM0qmabhd5rzsneVtphG2um7aqefH%2F3%2BGvs%2Bv1I%2FEFGGLpSHj1MXXja%2F8elIAVt2Ay9uShZZ2OnhHqLFdVhN3nK2grRmRbrSFF8jmE8K4DLEzloyu5NHHX4A9Bo3tLMv7jiWR2mKw%2B%2Fw34wZiu3pY48t595z%2FF3%2FOYDkBNGWGcS2vLjjdsBYu1bg4xpirQV4mT3yF9AZdipruKian6nMlaPte%2BZz7wwCQrsCyQuHQq1bF0bvt0ekJclOQ8kRSpvs2btnU6oQE14x%2BYWDSvYUhURZk2ih9xKhxbVpEHXuWWBkOeA94wJ2ckOQCUccitrxIQOU7D7K1X322GAgbqCiNFKDaYpWZrUjE%2FixwPL2MkHseLsvWQXPENtPw2qF02SqGn4KffQBko7yQbgyIMptnzdBwLuHP1Q%2Fkjcs35UjKB4grW7vnb9Oy6TdkTabY9PGJ3FpMq1aYwOXW77O2exCMme5lrkVe5lVGGYYTm8mdIKjEvK224o61ldnWTlLKVzdCjfyiI46v1PxSnPcp6JbbZfs5N5UcOIU5dvqwIzRFlQlydRrA17HfXBrJMxAP9yXx1d8ypz8jkwgOfNnAY6pQFh9aPBYws40ApUlHr4Mq420Qeslm%2Bn2sPz6sEvBI4RQoJkqXbixzk4uqBR2a%2FsakbF79MQkb0kL18dodNlfgFwSecOwoL2fctPvLffIGfYchXUv5IZyi1kq6EiEIPSB%2FyAoEOXHXBzHijS3LwxLR%2Fg9G5NPYVas2FSynSw%2BiIzYkH3vPaMefwIVqsdof7HdUCCKXfuddQu7%2FJWmuEgrtU1tGOmZkI%3D"
     },
     "meta": {
       "source": "frames",
@@ -1573,13 +1616,13 @@
     "type": "font",
     "originId": "Inter-Medium",
     "sourceId": "2ec31677-436c-4ebe-9740-96acd5193b06",
-    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed",
-    "description": "a description"
+    "description": null,
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
   },
   {
     "id": "55662ae4-7078-4e36-8392-eca72647acbf",
     "createdAt": "2021-04-02T08:01:57.087Z",
-    "updatedAt": "2021-06-28T14:00:49.528Z",
+    "updatedAt": "2022-12-09T19:51:56.048Z",
     "name": "Inter-SemiBold",
     "value": {
       "format": "ttf",
@@ -1589,7 +1632,7 @@
       "fontWeight": 600,
       "fontFileMissing": false,
       "fontPostScriptName": "Inter-SemiBold",
-      "url": "https://ddp-assets-prod.s3.eu-west-1.amazonaws.com/927e26f6-da29-40d6-b9de-530bdcddf1ed/font/Inter-SemiBold/Inter-SemiBold.ttf?AWSAccessKeyId=ASIAYLKZPEWOA5AIAGXG&Expires=1637085259&Signature=1cxqGIIOS5%2FoD3lcx5Q16z85bEU%3D&x-amz-security-token=IQoJb3JpZ2luX2VjENb%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCWV1LXdlc3QtMSJHMEUCIGFX94Yth2vFvW3PSBoO6RNmv%2BCE5R%2BITpRJWGIheNpvAiEA1nLfIHU7jW%2FKNq3MToab%2FdlO1ar3hn87w9UwdIoGAdsq7gMIj%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARACGgw1NzQxMDI2NDQxMjQiDG5SAHpNXoTtQDh78SrCA8n%2FGwEyOei4m4fHRBmILFSJBKvCfd6tInbiksDJwArZGvc94tubYbYDscaQLm8HF2Z2vOnSQG3sXvqsLAYVq9yuWCZXq6NB5hw%2FkCCxkTSF6zolHD1ZledxUICqQZhqj0NB8565%2BEjIGpH5Qyn75CELA%2FhhHwiKUj%2B5dF3rm6rBNxrEh08auTpy4LLvGnydFsYUAGkWiioqtnKCIMgqz7j1hsJdFMd7RlsQEszj%2BdxeWWBCcXuO5a5Jzs4%2BZNB3w1R2XMSxzwkllTRkNbwrpjjd%2F9GTDWvhZyn7pQbR9N7oDAoX95dI74OLqFQaQaAzl%2FVzV7Tmg6HAqo1P2QePJrrTGnWFpvpM4bveWIWDhsAOg8QpSDndthYC7jOL3YFRLfS%2BcuK6iAsqJiMdmze6Mt07kXOKm7iPmPZpw5zo13Jdmv9H4G7sFmRF9wlVIP3uqVS%2B0qHuxwWHBBwyXr0k41ACV%2BOButgDUGW%2F77DhAh2I6jXB5zqIbrs4bPFj3%2FNlAYtO1bmih%2F20ZeVua5nvi5W%2BRkG8z26IUPaoyi8wOMAK30lwLUPPujVtHSBrIJ2UbO3g%2BWKn2e2ks5fQ5qw799GCSzDR6M6MBjqlASuAUq%2FpTEQNndarf%2FM66QWUpKxis1YJeae3fWkjtzYLvUMUD0O5bwz6JEjoJJu8G5wQrQpErDAv%2FzRQRgHa%2F9%2FImM0kVJK%2FUsko7bVJvY2eTp%2FC0Q5qrSJhz3OP7CP6oIyzyvE1AUsYfMMdUK859g42qtJK0QouFOX2XqHGWO99xS%2BjZS5qIPwjqah2wmhwWAxd5Bbg%2BKKLFWoVlw3zw0zxsJAi0w%3D%3D"
+      "url": "https://ddp-assets-prod.s3.eu-west-1.amazonaws.com/927e26f6-da29-40d6-b9de-530bdcddf1ed/font/Inter-SemiBold/Inter-SemiBold.ttf?AWSAccessKeyId=ASIAYLKZPEWOERC2MF4Q&Expires=1670619133&Signature=isiOooiJNCMRmwBBkVgWz%2FQ34Dk%3D&x-amz-security-token=IQoJb3JpZ2luX2VjEDoaCWV1LXdlc3QtMSJHMEUCIQDLAL2JLoQKInBneYHbWii7M6SqR89HX1qyZABF9xE05QIgT4t1nhHM90MTjA%2BuFvHvn2VwVtUPQoPv3jXQtBioxggq7wMIYxADGgw1NzQxMDI2NDQxMjQiDFicyDbG2%2B%2BVQfB68irMA65N49b6EbSledhXq5qjEwOvMH3lEHM0qmabhd5rzsneVtphG2um7aqefH%2F3%2BGvs%2Bv1I%2FEFGGLpSHj1MXXja%2F8elIAVt2Ay9uShZZ2OnhHqLFdVhN3nK2grRmRbrSFF8jmE8K4DLEzloyu5NHHX4A9Bo3tLMv7jiWR2mKw%2B%2Fw34wZiu3pY48t595z%2FF3%2FOYDkBNGWGcS2vLjjdsBYu1bg4xpirQV4mT3yF9AZdipruKian6nMlaPte%2BZz7wwCQrsCyQuHQq1bF0bvt0ekJclOQ8kRSpvs2btnU6oQE14x%2BYWDSvYUhURZk2ih9xKhxbVpEHXuWWBkOeA94wJ2ckOQCUccitrxIQOU7D7K1X322GAgbqCiNFKDaYpWZrUjE%2FixwPL2MkHseLsvWQXPENtPw2qF02SqGn4KffQBko7yQbgyIMptnzdBwLuHP1Q%2Fkjcs35UjKB4grW7vnb9Oy6TdkTabY9PGJ3FpMq1aYwOXW77O2exCMme5lrkVe5lVGGYYTm8mdIKjEvK224o61ldnWTlLKVzdCjfyiI46v1PxSnPcp6JbbZfs5N5UcOIU5dvqwIzRFlQlydRrA17HfXBrJMxAP9yXx1d8ypz8jkwgOfNnAY6pQFh9aPBYws40ApUlHr4Mq420Qeslm%2Bn2sPz6sEvBI4RQoJkqXbixzk4uqBR2a%2FsakbF79MQkb0kL18dodNlfgFwSecOwoL2fctPvLffIGfYchXUv5IZyi1kq6EiEIPSB%2FyAoEOXHXBzHijS3LwxLR%2Fg9G5NPYVas2FSynSw%2BiIzYkH3vPaMefwIVqsdof7HdUCCKXfuddQu7%2FJWmuEgrtU1tGOmZkI%3D"
     },
     "meta": {
       "source": "frames",
@@ -1599,8 +1642,8 @@
     "type": "font",
     "originId": "Inter-SemiBold",
     "sourceId": "2ec31677-436c-4ebe-9740-96acd5193b06",
-    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed",
-    "description": "a description"
+    "description": null,
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
   },
   {
     "id": "c4cd5ca0-65c0-498d-8512-5d168c275ca0",
@@ -1611,7 +1654,7 @@
       "font": {
         "id": "69d2d62e-4d62-45d7-b85f-5da2f9f0c0d4",
         "createdAt": "2021-04-12T09:24:32.704Z",
-        "updatedAt": "2021-06-28T14:00:49.527Z",
+        "updatedAt": "2022-12-09T19:51:56.084Z",
         "name": "Roboto-Regular",
         "value": {
           "format": "ttf",
@@ -1621,7 +1664,7 @@
           "fontWeight": 400,
           "fontFileMissing": false,
           "fontPostScriptName": "Roboto-Regular",
-          "url": "https://ddp-assets-prod.s3.eu-west-1.amazonaws.com/927e26f6-da29-40d6-b9de-530bdcddf1ed/font/Roboto-Regular/Roboto-Regular.ttf?AWSAccessKeyId=ASIAYLKZPEWOA5AIAGXG&Expires=1637085259&Signature=rWvnfrsC5qQLn1StA6JZJoWg2cw%3D&x-amz-security-token=IQoJb3JpZ2luX2VjENb%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCWV1LXdlc3QtMSJHMEUCIGFX94Yth2vFvW3PSBoO6RNmv%2BCE5R%2BITpRJWGIheNpvAiEA1nLfIHU7jW%2FKNq3MToab%2FdlO1ar3hn87w9UwdIoGAdsq7gMIj%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARACGgw1NzQxMDI2NDQxMjQiDG5SAHpNXoTtQDh78SrCA8n%2FGwEyOei4m4fHRBmILFSJBKvCfd6tInbiksDJwArZGvc94tubYbYDscaQLm8HF2Z2vOnSQG3sXvqsLAYVq9yuWCZXq6NB5hw%2FkCCxkTSF6zolHD1ZledxUICqQZhqj0NB8565%2BEjIGpH5Qyn75CELA%2FhhHwiKUj%2B5dF3rm6rBNxrEh08auTpy4LLvGnydFsYUAGkWiioqtnKCIMgqz7j1hsJdFMd7RlsQEszj%2BdxeWWBCcXuO5a5Jzs4%2BZNB3w1R2XMSxzwkllTRkNbwrpjjd%2F9GTDWvhZyn7pQbR9N7oDAoX95dI74OLqFQaQaAzl%2FVzV7Tmg6HAqo1P2QePJrrTGnWFpvpM4bveWIWDhsAOg8QpSDndthYC7jOL3YFRLfS%2BcuK6iAsqJiMdmze6Mt07kXOKm7iPmPZpw5zo13Jdmv9H4G7sFmRF9wlVIP3uqVS%2B0qHuxwWHBBwyXr0k41ACV%2BOButgDUGW%2F77DhAh2I6jXB5zqIbrs4bPFj3%2FNlAYtO1bmih%2F20ZeVua5nvi5W%2BRkG8z26IUPaoyi8wOMAK30lwLUPPujVtHSBrIJ2UbO3g%2BWKn2e2ks5fQ5qw799GCSzDR6M6MBjqlASuAUq%2FpTEQNndarf%2FM66QWUpKxis1YJeae3fWkjtzYLvUMUD0O5bwz6JEjoJJu8G5wQrQpErDAv%2FzRQRgHa%2F9%2FImM0kVJK%2FUsko7bVJvY2eTp%2FC0Q5qrSJhz3OP7CP6oIyzyvE1AUsYfMMdUK859g42qtJK0QouFOX2XqHGWO99xS%2BjZS5qIPwjqah2wmhwWAxd5Bbg%2BKKLFWoVlw3zw0zxsJAi0w%3D%3D"
+          "url": "https://ddp-assets-prod.s3.eu-west-1.amazonaws.com/927e26f6-da29-40d6-b9de-530bdcddf1ed/font/Roboto-Regular/Roboto-Regular.ttf?AWSAccessKeyId=ASIAYLKZPEWOERC2MF4Q&Expires=1670619133&Signature=RCiY2UMwW68ZLzk11Sow8R0Odnk%3D&x-amz-security-token=IQoJb3JpZ2luX2VjEDoaCWV1LXdlc3QtMSJHMEUCIQDLAL2JLoQKInBneYHbWii7M6SqR89HX1qyZABF9xE05QIgT4t1nhHM90MTjA%2BuFvHvn2VwVtUPQoPv3jXQtBioxggq7wMIYxADGgw1NzQxMDI2NDQxMjQiDFicyDbG2%2B%2BVQfB68irMA65N49b6EbSledhXq5qjEwOvMH3lEHM0qmabhd5rzsneVtphG2um7aqefH%2F3%2BGvs%2Bv1I%2FEFGGLpSHj1MXXja%2F8elIAVt2Ay9uShZZ2OnhHqLFdVhN3nK2grRmRbrSFF8jmE8K4DLEzloyu5NHHX4A9Bo3tLMv7jiWR2mKw%2B%2Fw34wZiu3pY48t595z%2FF3%2FOYDkBNGWGcS2vLjjdsBYu1bg4xpirQV4mT3yF9AZdipruKian6nMlaPte%2BZz7wwCQrsCyQuHQq1bF0bvt0ekJclOQ8kRSpvs2btnU6oQE14x%2BYWDSvYUhURZk2ih9xKhxbVpEHXuWWBkOeA94wJ2ckOQCUccitrxIQOU7D7K1X322GAgbqCiNFKDaYpWZrUjE%2FixwPL2MkHseLsvWQXPENtPw2qF02SqGn4KffQBko7yQbgyIMptnzdBwLuHP1Q%2Fkjcs35UjKB4grW7vnb9Oy6TdkTabY9PGJ3FpMq1aYwOXW77O2exCMme5lrkVe5lVGGYYTm8mdIKjEvK224o61ldnWTlLKVzdCjfyiI46v1PxSnPcp6JbbZfs5N5UcOIU5dvqwIzRFlQlydRrA17HfXBrJMxAP9yXx1d8ypz8jkwgOfNnAY6pQFh9aPBYws40ApUlHr4Mq420Qeslm%2Bn2sPz6sEvBI4RQoJkqXbixzk4uqBR2a%2FsakbF79MQkb0kL18dodNlfgFwSecOwoL2fctPvLffIGfYchXUv5IZyi1kq6EiEIPSB%2FyAoEOXHXBzHijS3LwxLR%2Fg9G5NPYVas2FSynSw%2BiIzYkH3vPaMefwIVqsdof7HdUCCKXfuddQu7%2FJWmuEgrtU1tGOmZkI%3D"
         },
         "meta": {
           "source": "frames",
@@ -1631,6 +1674,7 @@
         "type": "font",
         "originId": "Roboto-Regular",
         "sourceId": "2ec31677-436c-4ebe-9740-96acd5193b06",
+        "description": null,
         "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
       },
       "fontSize": {
@@ -1659,8 +1703,8 @@
     "type": "textStyle",
     "originId": "48:1133",
     "sourceId": "2ec31677-436c-4ebe-9740-96acd5193b06",
-    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed",
-    "description": "a description"
+    "description": null,
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
   },
   {
     "id": "51102746-9435-4437-80d5-b03b03b0d518",
@@ -1679,8 +1723,8 @@
     "type": "duration",
     "originId": "1:64",
     "sourceId": "c79c5c65-f70b-4bba-a410-976465f0713e",
-    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed",
-    "description": "a description"
+    "description": null,
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
   },
   {
     "id": "b104bf03-1079-4ee0-a823-b44cc4b59a12",
@@ -1698,40 +1742,16 @@
     "type": "depth",
     "originId": "1:56",
     "sourceId": "cce5bc1c-60c6-45b4-95f2-5b8ee29864fc",
-    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed",
-    "description": "a description"
-  },
-  {
-    "id": "038e3d7d-1cdf-4e17-86ab-003c84e92893",
-    "createdAt": "2021-04-02T09:55:29.275Z",
-    "updatedAt": "2021-07-28T16:09:12.983Z",
-    "name": "photo-example",
-    "value": {
-      "url": "https://s3-us-west-2.amazonaws.com/figma-alpha-api/img/3dc2/2924/69dc19737d174f7a50bdbb680eecd234",
-      "format": "jpg",
-      "dimension": 2
-    },
-    "meta": {
-      "file": "Specify - Seeds",
-      "page": "Seeds",
-      "frame": "photo-example",
-      "format": "jpg",
-      "dimension": 2,
-      "parentFrame": "Bitmap · Frame Example"
-    },
-    "type": "bitmap",
-    "originId": "12:13-jpg-2",
-    "sourceId": "ded1694b-249a-42e8-add9-35df05d36f80",
-    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed",
-    "description": "a description"
+    "description": null,
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
   },
   {
     "id": "7bb27a1b-6e06-4585-b7a3-b1dee660d869",
     "createdAt": "2021-04-02T09:55:29.275Z",
-    "updatedAt": "2021-07-28T16:09:12.984Z",
+    "updatedAt": "2022-12-09T19:51:57.829Z",
     "name": "photo-example",
     "value": {
-      "url": "https://s3-us-west-2.amazonaws.com/figma-alpha-api/img/b37d/0363/619821e8608769bcfdde017aadf0dc9b",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/c27d7c62-1414-49c4-ba3e-dc03aa4bd085",
       "format": "jpg",
       "dimension": 3
     },
@@ -1746,16 +1766,16 @@
     "type": "bitmap",
     "originId": "12:13-jpg-3",
     "sourceId": "ded1694b-249a-42e8-add9-35df05d36f80",
-    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed",
-    "description": "a description"
+    "description": null,
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
   },
   {
     "id": "1d05cb87-2403-4952-a972-56933e84d8d5",
     "createdAt": "2021-04-02T09:55:29.270Z",
-    "updatedAt": "2021-07-28T16:09:12.975Z",
+    "updatedAt": "2022-12-09T19:51:57.826Z",
     "name": "photo-example",
     "value": {
-      "url": "https://s3-us-west-2.amazonaws.com/figma-alpha-api/img/3302/0ec5/79870771c0861eaa8f1af4e4ed5a8790",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/ff09d8fc-73d8-446d-91c4-772e88e776c5",
       "format": "png"
     },
     "meta": {
@@ -1769,13 +1789,37 @@
     "type": "bitmap",
     "originId": "12:13-png-1",
     "sourceId": "ded1694b-249a-42e8-add9-35df05d36f80",
-    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed",
-    "description": "a description"
+    "description": null,
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
+  },
+  {
+    "id": "038e3d7d-1cdf-4e17-86ab-003c84e92893",
+    "createdAt": "2021-04-02T09:55:29.275Z",
+    "updatedAt": "2022-12-09T19:51:57.828Z",
+    "name": "photo-example",
+    "value": {
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/d4ea441b-e83d-40a0-8f2d-604c28ae4c17",
+      "format": "jpg",
+      "dimension": 2
+    },
+    "meta": {
+      "file": "Specify - Seeds",
+      "page": "Seeds",
+      "frame": "photo-example",
+      "format": "jpg",
+      "dimension": 2,
+      "parentFrame": "Bitmap · Frame Example"
+    },
+    "type": "bitmap",
+    "originId": "12:13-jpg-2",
+    "sourceId": "ded1694b-249a-42e8-add9-35df05d36f80",
+    "description": null,
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
   },
   {
     "id": "69d2d62e-4d62-45d7-b85f-5da2f9f0c0d4",
     "createdAt": "2021-04-12T09:24:32.704Z",
-    "updatedAt": "2021-06-28T14:00:49.527Z",
+    "updatedAt": "2022-12-09T19:51:56.084Z",
     "name": "Roboto-Regular",
     "value": {
       "format": "ttf",
@@ -1785,7 +1829,7 @@
       "fontWeight": 400,
       "fontFileMissing": false,
       "fontPostScriptName": "Roboto-Regular",
-      "url": "https://ddp-assets-prod.s3.eu-west-1.amazonaws.com/927e26f6-da29-40d6-b9de-530bdcddf1ed/font/Roboto-Regular/Roboto-Regular.ttf?AWSAccessKeyId=ASIAYLKZPEWOA5AIAGXG&Expires=1637085259&Signature=rWvnfrsC5qQLn1StA6JZJoWg2cw%3D&x-amz-security-token=IQoJb3JpZ2luX2VjENb%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCWV1LXdlc3QtMSJHMEUCIGFX94Yth2vFvW3PSBoO6RNmv%2BCE5R%2BITpRJWGIheNpvAiEA1nLfIHU7jW%2FKNq3MToab%2FdlO1ar3hn87w9UwdIoGAdsq7gMIj%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARACGgw1NzQxMDI2NDQxMjQiDG5SAHpNXoTtQDh78SrCA8n%2FGwEyOei4m4fHRBmILFSJBKvCfd6tInbiksDJwArZGvc94tubYbYDscaQLm8HF2Z2vOnSQG3sXvqsLAYVq9yuWCZXq6NB5hw%2FkCCxkTSF6zolHD1ZledxUICqQZhqj0NB8565%2BEjIGpH5Qyn75CELA%2FhhHwiKUj%2B5dF3rm6rBNxrEh08auTpy4LLvGnydFsYUAGkWiioqtnKCIMgqz7j1hsJdFMd7RlsQEszj%2BdxeWWBCcXuO5a5Jzs4%2BZNB3w1R2XMSxzwkllTRkNbwrpjjd%2F9GTDWvhZyn7pQbR9N7oDAoX95dI74OLqFQaQaAzl%2FVzV7Tmg6HAqo1P2QePJrrTGnWFpvpM4bveWIWDhsAOg8QpSDndthYC7jOL3YFRLfS%2BcuK6iAsqJiMdmze6Mt07kXOKm7iPmPZpw5zo13Jdmv9H4G7sFmRF9wlVIP3uqVS%2B0qHuxwWHBBwyXr0k41ACV%2BOButgDUGW%2F77DhAh2I6jXB5zqIbrs4bPFj3%2FNlAYtO1bmih%2F20ZeVua5nvi5W%2BRkG8z26IUPaoyi8wOMAK30lwLUPPujVtHSBrIJ2UbO3g%2BWKn2e2ks5fQ5qw799GCSzDR6M6MBjqlASuAUq%2FpTEQNndarf%2FM66QWUpKxis1YJeae3fWkjtzYLvUMUD0O5bwz6JEjoJJu8G5wQrQpErDAv%2FzRQRgHa%2F9%2FImM0kVJK%2FUsko7bVJvY2eTp%2FC0Q5qrSJhz3OP7CP6oIyzyvE1AUsYfMMdUK859g42qtJK0QouFOX2XqHGWO99xS%2BjZS5qIPwjqah2wmhwWAxd5Bbg%2BKKLFWoVlw3zw0zxsJAi0w%3D%3D"
+      "url": "https://ddp-assets-prod.s3.eu-west-1.amazonaws.com/927e26f6-da29-40d6-b9de-530bdcddf1ed/font/Roboto-Regular/Roboto-Regular.ttf?AWSAccessKeyId=ASIAYLKZPEWOERC2MF4Q&Expires=1670619133&Signature=RCiY2UMwW68ZLzk11Sow8R0Odnk%3D&x-amz-security-token=IQoJb3JpZ2luX2VjEDoaCWV1LXdlc3QtMSJHMEUCIQDLAL2JLoQKInBneYHbWii7M6SqR89HX1qyZABF9xE05QIgT4t1nhHM90MTjA%2BuFvHvn2VwVtUPQoPv3jXQtBioxggq7wMIYxADGgw1NzQxMDI2NDQxMjQiDFicyDbG2%2B%2BVQfB68irMA65N49b6EbSledhXq5qjEwOvMH3lEHM0qmabhd5rzsneVtphG2um7aqefH%2F3%2BGvs%2Bv1I%2FEFGGLpSHj1MXXja%2F8elIAVt2Ay9uShZZ2OnhHqLFdVhN3nK2grRmRbrSFF8jmE8K4DLEzloyu5NHHX4A9Bo3tLMv7jiWR2mKw%2B%2Fw34wZiu3pY48t595z%2FF3%2FOYDkBNGWGcS2vLjjdsBYu1bg4xpirQV4mT3yF9AZdipruKian6nMlaPte%2BZz7wwCQrsCyQuHQq1bF0bvt0ekJclOQ8kRSpvs2btnU6oQE14x%2BYWDSvYUhURZk2ih9xKhxbVpEHXuWWBkOeA94wJ2ckOQCUccitrxIQOU7D7K1X322GAgbqCiNFKDaYpWZrUjE%2FixwPL2MkHseLsvWQXPENtPw2qF02SqGn4KffQBko7yQbgyIMptnzdBwLuHP1Q%2Fkjcs35UjKB4grW7vnb9Oy6TdkTabY9PGJ3FpMq1aYwOXW77O2exCMme5lrkVe5lVGGYYTm8mdIKjEvK224o61ldnWTlLKVzdCjfyiI46v1PxSnPcp6JbbZfs5N5UcOIU5dvqwIzRFlQlydRrA17HfXBrJMxAP9yXx1d8ypz8jkwgOfNnAY6pQFh9aPBYws40ApUlHr4Mq420Qeslm%2Bn2sPz6sEvBI4RQoJkqXbixzk4uqBR2a%2FsakbF79MQkb0kL18dodNlfgFwSecOwoL2fctPvLffIGfYchXUv5IZyi1kq6EiEIPSB%2FyAoEOXHXBzHijS3LwxLR%2Fg9G5NPYVas2FSynSw%2BiIzYkH3vPaMefwIVqsdof7HdUCCKXfuddQu7%2FJWmuEgrtU1tGOmZkI%3D"
     },
     "meta": {
       "source": "frames",
@@ -1795,8 +1839,8 @@
     "type": "font",
     "originId": "Roboto-Regular",
     "sourceId": "2ec31677-436c-4ebe-9740-96acd5193b06",
-    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed",
-    "description": "another description"
+    "description": null,
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
   },
   {
     "id": "71b2d400-f330-4ab0-9c16-30cea2d5a1ce",
@@ -1815,8 +1859,8 @@
     "type": "duration",
     "originId": "1:63",
     "sourceId": "c79c5c65-f70b-4bba-a410-976465f0713e",
-    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed",
-    "description": "another description"
+    "description": null,
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
   },
   {
     "id": "3f75eab5-2fe3-4a96-a0e0-1080e1c67c4b",
@@ -1834,8 +1878,8 @@
     "type": "opacity",
     "originId": "1:74",
     "sourceId": "a327147a-357f-4e96-9413-f41e42b9b3c8",
-    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed",
-    "description": "another description"
+    "description": null,
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
   },
   {
     "id": "63a8bb04-9631-4c08-92cf-7b75a7a078b3",
@@ -1846,7 +1890,7 @@
       "font": {
         "id": "55662ae4-7078-4e36-8392-eca72647acbf",
         "createdAt": "2021-04-02T08:01:57.087Z",
-        "updatedAt": "2021-06-28T14:00:49.528Z",
+        "updatedAt": "2022-12-09T19:51:56.048Z",
         "name": "Inter-SemiBold",
         "value": {
           "format": "ttf",
@@ -1856,7 +1900,7 @@
           "fontWeight": 600,
           "fontFileMissing": false,
           "fontPostScriptName": "Inter-SemiBold",
-          "url": "https://ddp-assets-prod.s3.eu-west-1.amazonaws.com/927e26f6-da29-40d6-b9de-530bdcddf1ed/font/Inter-SemiBold/Inter-SemiBold.ttf?AWSAccessKeyId=ASIAYLKZPEWOA5AIAGXG&Expires=1637085259&Signature=1cxqGIIOS5%2FoD3lcx5Q16z85bEU%3D&x-amz-security-token=IQoJb3JpZ2luX2VjENb%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCWV1LXdlc3QtMSJHMEUCIGFX94Yth2vFvW3PSBoO6RNmv%2BCE5R%2BITpRJWGIheNpvAiEA1nLfIHU7jW%2FKNq3MToab%2FdlO1ar3hn87w9UwdIoGAdsq7gMIj%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARACGgw1NzQxMDI2NDQxMjQiDG5SAHpNXoTtQDh78SrCA8n%2FGwEyOei4m4fHRBmILFSJBKvCfd6tInbiksDJwArZGvc94tubYbYDscaQLm8HF2Z2vOnSQG3sXvqsLAYVq9yuWCZXq6NB5hw%2FkCCxkTSF6zolHD1ZledxUICqQZhqj0NB8565%2BEjIGpH5Qyn75CELA%2FhhHwiKUj%2B5dF3rm6rBNxrEh08auTpy4LLvGnydFsYUAGkWiioqtnKCIMgqz7j1hsJdFMd7RlsQEszj%2BdxeWWBCcXuO5a5Jzs4%2BZNB3w1R2XMSxzwkllTRkNbwrpjjd%2F9GTDWvhZyn7pQbR9N7oDAoX95dI74OLqFQaQaAzl%2FVzV7Tmg6HAqo1P2QePJrrTGnWFpvpM4bveWIWDhsAOg8QpSDndthYC7jOL3YFRLfS%2BcuK6iAsqJiMdmze6Mt07kXOKm7iPmPZpw5zo13Jdmv9H4G7sFmRF9wlVIP3uqVS%2B0qHuxwWHBBwyXr0k41ACV%2BOButgDUGW%2F77DhAh2I6jXB5zqIbrs4bPFj3%2FNlAYtO1bmih%2F20ZeVua5nvi5W%2BRkG8z26IUPaoyi8wOMAK30lwLUPPujVtHSBrIJ2UbO3g%2BWKn2e2ks5fQ5qw799GCSzDR6M6MBjqlASuAUq%2FpTEQNndarf%2FM66QWUpKxis1YJeae3fWkjtzYLvUMUD0O5bwz6JEjoJJu8G5wQrQpErDAv%2FzRQRgHa%2F9%2FImM0kVJK%2FUsko7bVJvY2eTp%2FC0Q5qrSJhz3OP7CP6oIyzyvE1AUsYfMMdUK859g42qtJK0QouFOX2XqHGWO99xS%2BjZS5qIPwjqah2wmhwWAxd5Bbg%2BKKLFWoVlw3zw0zxsJAi0w%3D%3D"
+          "url": "https://ddp-assets-prod.s3.eu-west-1.amazonaws.com/927e26f6-da29-40d6-b9de-530bdcddf1ed/font/Inter-SemiBold/Inter-SemiBold.ttf?AWSAccessKeyId=ASIAYLKZPEWOERC2MF4Q&Expires=1670619133&Signature=isiOooiJNCMRmwBBkVgWz%2FQ34Dk%3D&x-amz-security-token=IQoJb3JpZ2luX2VjEDoaCWV1LXdlc3QtMSJHMEUCIQDLAL2JLoQKInBneYHbWii7M6SqR89HX1qyZABF9xE05QIgT4t1nhHM90MTjA%2BuFvHvn2VwVtUPQoPv3jXQtBioxggq7wMIYxADGgw1NzQxMDI2NDQxMjQiDFicyDbG2%2B%2BVQfB68irMA65N49b6EbSledhXq5qjEwOvMH3lEHM0qmabhd5rzsneVtphG2um7aqefH%2F3%2BGvs%2Bv1I%2FEFGGLpSHj1MXXja%2F8elIAVt2Ay9uShZZ2OnhHqLFdVhN3nK2grRmRbrSFF8jmE8K4DLEzloyu5NHHX4A9Bo3tLMv7jiWR2mKw%2B%2Fw34wZiu3pY48t595z%2FF3%2FOYDkBNGWGcS2vLjjdsBYu1bg4xpirQV4mT3yF9AZdipruKian6nMlaPte%2BZz7wwCQrsCyQuHQq1bF0bvt0ekJclOQ8kRSpvs2btnU6oQE14x%2BYWDSvYUhURZk2ih9xKhxbVpEHXuWWBkOeA94wJ2ckOQCUccitrxIQOU7D7K1X322GAgbqCiNFKDaYpWZrUjE%2FixwPL2MkHseLsvWQXPENtPw2qF02SqGn4KffQBko7yQbgyIMptnzdBwLuHP1Q%2Fkjcs35UjKB4grW7vnb9Oy6TdkTabY9PGJ3FpMq1aYwOXW77O2exCMme5lrkVe5lVGGYYTm8mdIKjEvK224o61ldnWTlLKVzdCjfyiI46v1PxSnPcp6JbbZfs5N5UcOIU5dvqwIzRFlQlydRrA17HfXBrJMxAP9yXx1d8ypz8jkwgOfNnAY6pQFh9aPBYws40ApUlHr4Mq420Qeslm%2Bn2sPz6sEvBI4RQoJkqXbixzk4uqBR2a%2FsakbF79MQkb0kL18dodNlfgFwSecOwoL2fctPvLffIGfYchXUv5IZyi1kq6EiEIPSB%2FyAoEOXHXBzHijS3LwxLR%2Fg9G5NPYVas2FSynSw%2BiIzYkH3vPaMefwIVqsdof7HdUCCKXfuddQu7%2FJWmuEgrtU1tGOmZkI%3D"
         },
         "meta": {
           "source": "frames",
@@ -1866,6 +1910,7 @@
         "type": "font",
         "originId": "Inter-SemiBold",
         "sourceId": "2ec31677-436c-4ebe-9740-96acd5193b06",
+        "description": null,
         "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
       },
       "color": {
@@ -1909,8 +1954,8 @@
     "type": "textStyle",
     "originId": "12:63",
     "sourceId": "2ec31677-436c-4ebe-9740-96acd5193b06",
-    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed",
-    "description": "another description"
+    "description": null,
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
   },
   {
     "id": "a644be4a-8294-448c-a90e-f8a4c2906bf3",
@@ -1928,16 +1973,16 @@
     "type": "opacity",
     "originId": "1:72",
     "sourceId": "a327147a-357f-4e96-9413-f41e42b9b3c8",
-    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed",
-    "description": "another description"
+    "description": null,
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
   },
   {
     "id": "0fd1cbdf-e26b-4a0e-a7b0-cf6a58e32345",
     "createdAt": "2021-11-16T10:44:44.642Z",
-    "updatedAt": "2021-11-16T10:44:44.642Z",
+    "updatedAt": "2022-12-09T19:51:58.294Z",
     "name": "user-mask",
     "value": {
-      "url": "https://s3-us-west-2.amazonaws.com/figma-alpha-api/img/5e90/27b6/3e136d25798fc5013fce51eea15ad48c",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/b1fb6cad-4404-403f-927c-16a5e225106e",
       "format": "svg"
     },
     "meta": {
@@ -1951,16 +1996,16 @@
     "type": "vector",
     "originId": "918:2-svg-1",
     "sourceId": "d38b4d2f-23c7-4ad9-b087-8c1f468d878f",
-    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed",
-    "description": "another description"
+    "description": null,
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
   },
   {
     "id": "dadb28db-9be8-4773-a2ab-6868506963f0",
     "createdAt": "2021-11-16T10:44:44.647Z",
-    "updatedAt": "2021-11-16T10:44:44.647Z",
+    "updatedAt": "2022-12-09T19:51:58.308Z",
     "name": "user-mask",
     "value": {
-      "url": "https://s3-us-west-2.amazonaws.com/figma-alpha-api/img/8005/3a2c/7ab7a74d1b3b57bd5151e9c48669b4f7",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/cddf0251-0850-4f58-93e7-a3448ecce596",
       "format": "pdf"
     },
     "meta": {
@@ -1974,8 +2019,8 @@
     "type": "vector",
     "originId": "918:2-pdf-1",
     "sourceId": "d38b4d2f-23c7-4ad9-b087-8c1f468d878f",
-    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed",
-    "description": "another description"
+    "description": null,
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
   },
   {
     "id": "d7f7616e-cc95-4248-a0a7-d301d1fb1144",
@@ -1994,8 +2039,8 @@
     "type": "duration",
     "originId": "1:65",
     "sourceId": "c79c5c65-f70b-4bba-a410-976465f0713e",
-    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed",
-    "description": "another description"
+    "description": null,
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
   },
   {
     "id": "24ae6eb2-f61e-4505-9634-dc4724420bf2",
@@ -2013,7 +2058,7 @@
     "type": "opacity",
     "originId": "1:75",
     "sourceId": "a327147a-357f-4e96-9413-f41e42b9b3c8",
-    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed",
-    "description": "another description"
+    "description": null,
+    "repositoryId": "927e26f6-da29-40d6-b9de-530bdcddf1ed"
   }
 ]

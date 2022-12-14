@@ -1,0 +1,102 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`To css Get tokens - apply parsers - all tokens 1`] = `
+":root {
+  /* BITMAP */
+  --acme-logo: \\"https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/863c6a9c-090a-4360-bbf2-1e2026577306\\";
+  --photo-example: \\"https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/c27d7c62-1414-49c4-ba3e-dc03aa4bd085\\";
+  --photo-example: \\"https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/ff09d8fc-73d8-446d-91c4-772e88e776c5\\";
+  --photo-example: \\"https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/d4ea441b-e83d-40a0-8f2d-604c28ae4c17\\";
+
+  /* VECTOR */
+  --activity: \\"https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/11ad3755-7b54-4035-9edb-cc62a39fe408\\";
+  --airplay: \\"https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/45ac371d-ac26-4bc7-9695-d1d3b6f019ed\\";
+  --alert-circle: \\"https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/28a59bd7-1fb4-4a9d-9d12-db3dfe9be73d\\";
+  --alert-octagon: \\"https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/28fcb1c7-0fb4-4f7b-8abf-3bcc10ac1afa\\";
+  --alert-triangle: \\"https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/054aa470-1754-4dfd-ae68-2f31c4c19b86\\";
+  --alert-triangle: \\"https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/ba1b77ff-11c3-4003-8cee-61992840eefa\\";
+  --align-center: \\"https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/81d4289d-cec7-41d5-93cb-be5c38dcb650\\";
+  --align-center: \\"https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/fc217b3e-7aa3-480d-adca-3f1d2b6d073c\\";
+  --user-mask: \\"https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/b1fb6cad-4404-403f-927c-16a5e225106e\\";
+  --user-mask: \\"https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/cddf0251-0850-4f58-93e7-a3448ecce596\\";
+
+  /* DEPTH */
+  --background: 1;
+  --foreground: 100;
+  --middle: 50;
+
+  /* DURATION */
+  --base: 300ms;
+  --long: 700ms;
+  --short: 100ms;
+  --very-long: 3s;
+
+  /* MEASUREMENT */
+  --base-space-01: 4px;
+  --base-space-02: 8px;
+  --base-space-03: 12px;
+  --base-space-04: 16px;
+  --base-space-05: 32px;
+  --base-space-06: 48px;
+  --base-space-07: 64px;
+  --base-space-08: 80px;
+  --base-space-09: 96px;
+  --base-space-10: 112px;
+
+  /* BORDER */
+  --border-accent: 2px solid rgba(102, 80, 239, 1);
+  --border-accent-with-opacity: 2px solid rgba(102, 80, 239, 0.5);
+  --border-accent-without-radii: 2px solid rgba(102, 80, 239, 0.5);
+  --border-dashed: 1px dashed rgba(30, 33, 43, 1);
+
+  /* COLOR */
+  --colors-accent: rgb(120, 133, 183);
+  --colors-almost-black: rgb(28, 28, 28);
+  --colors-black: rgb(30, 33, 43);
+  --colors-green: rgb(88, 205, 82);
+  --colors-grey: rgb(204, 213, 225);
+  --colors-orange: rgb(255, 142, 5);
+  --colors-pure-black: rgb(0, 0, 0);
+  --colors-red: rgb(245, 72, 63);
+  --colors-white: rgb(255, 255, 255);
+
+  /* SHADOW */
+  --elevation-1: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  --elevation-2: 0px 4px 28px rgba(0, 0, 0, 0.1), 0px 4px 4px rgba(0, 0, 0, 0.1);
+  --elevation-3: 0px 1.8518518209457397px 3.1481480598449707px
+      rgba(0, 0, 0, 0.02),
+    0px 8.148148536682129px 6.518518447875977px rgba(0, 0, 0, 0.03),
+    0px 20px 13px rgba(0, 0, 0, 0.04),
+    0px 38.51852035522461px 25.481481552124023px rgba(0, 0, 0, 0.04),
+    0px 64.81481170654297px 46.85185241699219px rgba(0, 0, 0, 0.05),
+    0px 100px 80px 1px rgba(0, 0, 0, 0.07);
+
+  /* GRADIENT */
+  --gradients-colored: linear-gradient(
+    90deg,
+    rgb(245, 72, 63) 0%,
+    rgb(255, 142, 5) 100%
+  );
+  --gradients-dark: linear-gradient(
+    90deg,
+    rgb(30, 33, 43) 0%,
+    rgb(204, 213, 225) 100%
+  );
+  --gradients-neutral: linear-gradient(
+    90deg,
+    rgb(204, 213, 225) 0%,
+    rgb(255, 255, 255) 100%
+  );
+  --gradients-safari: linear-gradient(
+    90deg,
+    rgb(255, 142, 5) 0%,
+    rgb(255, 255, 255) 100%
+  );
+
+  /* OPACITY */
+  --subtle: 0.5;
+  --transparent: 0.1;
+  --visible: 0.95;
+}
+"
+`;

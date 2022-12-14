@@ -33,11 +33,13 @@ import 'dart:ui';
 class SpecifyColor {
     SpecifyColor._();
 
-    static const colorsAccent = Color(0x577CFEFF);
+    static const colorsAccent = Color(0x7885B7FF);
+    static const colorsAlmostBlack = Color(0x1C1C1CFF);
     static const colorsBlack = Color(0x1E212BFF);
     static const colorsGreen = Color(0x58CD52FF);
     static const colorsGrey = Color(0xCCD5E1FF);
     static const colorsOrange = Color(0xFF8E05FF);
+    static const colorsPureBlack = Color(0x000000FF);
     static const colorsRed = Color(0xF5483FFF);
     static const colorsWhite = Color(0xFFFFFFFF);
 }",
@@ -57,11 +59,13 @@ import 'dart:ui';
 class LightTheme {
     LightTheme._();
 
-    static const colorsAccent = Color(0x577CFEFF);
+    static const colorsAccent = Color(0x7885B7FF);
+    static const colorsAlmostBlack = Color(0x1C1C1CFF);
     static const colorsBlack = Color(0x1E212BFF);
     static const colorsGreen = Color(0x58CD52FF);
     static const colorsGrey = Color(0xCCD5E1FF);
     static const colorsOrange = Color(0xFF8E05FF);
+    static const colorsPureBlack = Color(0x000000FF);
     static const colorsRed = Color(0xF5483FFF);
     static const colorsWhite = Color(0xFFFFFFFF);
 }",
@@ -103,11 +107,13 @@ import 'dart:ui';
 class SpecifyColor {
     SpecifyColor._();
 
-    static const colorsAccent = Color(0x577CFEFF);
+    static const colorsAccent = Color(0x7885B7FF);
+    static const colorsAlmostBlack = Color(0x1C1C1CFF);
     static const colorsBlack = Color(0x1E212BFF);
     static const colorsGreen = Color(0x58CD52FF);
     static const colorsGrey = Color(0xCCD5E1FF);
     static const colorsOrange = Color(0xFF8E05FF);
+    static const colorsPureBlack = Color(0x000000FF);
     static const colorsRed = Color(0xF5483FFF);
     static const colorsWhite = Color(0xFFFFFFFF);
 }",
