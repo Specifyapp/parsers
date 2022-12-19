@@ -2,15 +2,18 @@
 
 ## Description
 
-This parser will replace all the `stroke` and `fill` values by a Css variable if it can finds the color in the tokens, otherwise it'll let the raw value.
+This parser helps you replace all the `stroke` and `fill` attribute raw color value by its corresponding design token as a CSS variable. If no design token match, the raw value will be left as is.
 
+`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="#6d28d9">...</svg>`
+↓<br>
+`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="var(--primary-color)">...</svg>`
 ## Interface
 
 ```ts
 interface parser {
   name: 'inline-css-variables-in-svg';
   options: {
-    cssVariablesFormat?: 'camelCase' | 'kebabCase' | 'snakeCase' | 'pascalCase';
+    cssVariablesFormat?: 'camelCase' | 'kebabCase' | 'snakeCase' | 'pascalCase' | 'none';
   };
 }
 ```
@@ -19,7 +22,7 @@ interface parser {
 
 | Parameter            | Required | Type                                             | Default     | Description                                                                                         |
 | -------------------- | -------- | ------------------------------------------------ | ----------- | --------------------------------------------------------------------------------------------------- |
-| `cssVariablesFormat` | optional | `camelCase` `kebabCase` `snakeCase` `pascalCase` | `kebabCase` | The case transformation you want to apply to the name of JavaScript variable that will be exported. |
+| `cssVariablesFormat` | optional | `camelCase` `kebabCase` `snakeCase` `pascalCase` `none` | `kebabCase` | The case transformation you want to apply to the name of the CSS variable that will be exported. |
 
 ## Types
 
@@ -27,7 +30,7 @@ interface parser {
 
 ### Input
 
-Array of object with at least the key `value.url` or `value.content`.
+Array of objects with at least the key `value.url` or `value.content`.
 
 ```ts
 type input = Array<
@@ -75,43 +78,53 @@ Here, we suppose we have defined the followings tokens:
 And `cssVariablesFormat` is `kebabCase`
 
 #### Input
-
-```xml
-<svg
-    width="40"
-    height="40"
-    viewBox="0 0 40 40"
-    fill="none"
-    stroke="#ff0000"
-    xmlns="http://www.w3.org/2000/svg"
->
-    <path
-        d="M36.6667 20H30L25 35L15 5L10 20H3.33334"
-        stroke="black"
-        stroke-width="3.33333"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-    />
-</svg>
+##### Color
+```jsonc
+[
+  {
+    "type": "color",
+    "value": {
+      "a": 0.96,
+      "b": 20,
+      "g": 227,
+      "r": 122
+    },
+    "name": "Primary Color"
+  }
+]
+```
+##### SVG
+```jsonc
+[
+  {
+    "type": "vector",
+    "name": "activity.svg",
+    "value": {
+      "url": "https://s3-us-west-2.amazonaws.com/figma-alpha-api/img/99b5/b311/257c650341b701d691be78f247b9cf5e"
+    }
+    // …
+  }
+]
 ```
 
+The `url` value returns:
+```xml
+<svg
+  viewBox="0 0 20 20"
+  stroke="#6d28d9"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path d="M36.6667 20H30L25 35L15 5L10 20H3.33334" />
+</svg>
+```
 #### Output
 
 ```xml
 <svg
-    width="40"
-    height="40"
-    viewBox="0 0 40 40"
-    fill="none"
-    stroke="var(--colors-primary)"
-    xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 20 20"
+  stroke="var(--primary-color)"
+  xmlns="http://www.w3.org/2000/svg"
 >
-    <path
-        d="M36.6667 20H30L25 35L15 5L10 20H3.33334"
-        stroke="var(--colors-black)"
-        stroke-width="3.33333"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-    />
+  <path d="M36.6667 20H30L25 35L15 5L10 20H3.33334" />
 </svg>
 ```
