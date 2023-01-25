@@ -3,6 +3,7 @@ import Token from '../../types/tokens/Token';
 import { RecursiveRecord } from '../../types';
 
 export type ColorsFormat =
+  | 'raw'
   | 'rgb'
   | 'prgb'
   | 'hex'

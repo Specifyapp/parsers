@@ -11,12 +11,13 @@ export class Color extends ColorToken {
     this.token = token;
   }
   generate(options: OptionsType): ColorMapping {
+    const colorFormat = options?.formatTokens?.colorFormat?.format ?? 'hex';
     return {
       colors: Utils.go<ConstructorParameters<typeof Color>[0]>(
         this.token,
         options,
         'colors',
-        tinycolor(this.value).toString(options?.formatTokens?.colorFormat?.format || 'hex'),
+        colorFormat === 'raw' ? this.value : tinycolor(this.value).toString(colorFormat),
       ),
     };
   }

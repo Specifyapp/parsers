@@ -34,11 +34,13 @@ export class Border extends BorderToken {
     }
 
     if (color && color.value) {
+      const colorFormat = options?.formatTokens?.colorFormat?.format ?? 'hex';
+
       result.borderColor = Utils.go<ConstructorParameters<typeof BorderToken>[0]>(
         this.token,
         options,
         'borderColor',
-        tinycolor(color.value).toString(options?.formatTokens?.colorFormat?.format || 'hex'),
+        colorFormat === 'raw' ? color.value : tinycolor(color.value).toString(colorFormat),
       );
       if (color.value.a && color.value.a !== 1) {
         result.borderOpacity = Utils.go<ConstructorParameters<typeof BorderToken>[0]>(
