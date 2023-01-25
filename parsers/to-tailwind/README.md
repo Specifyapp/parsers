@@ -1,6 +1,7 @@
 # To Tailwind
 
 ## Description
+
 Format design tokens to create a theme compatible with the [TailwindCSS specification](https://tailwindcss.com/docs/theme).
 The theme is also compatible with [WindiCSS](https://windicss.org/).
 
@@ -9,6 +10,7 @@ This parser creates a file containing the whole theme. It can then be used in th
 The theme created by this parser is compatible with the Tailwind versions >= `2.x`.
 
 Learn more about how to configure Specify in the API documentation: [https://specifyapp.com/developers](https://specifyapp.com/developers).
+
 ## Interface
 
 ```ts
@@ -51,7 +53,7 @@ interface parser {
 | `formatConfig.useTabs`             | optional | `boolean`                                                                                                                                             | `true`      | [Prettier documentation](https://prettier.io/docs/en/options.html#tabs)        |
 | `formatConfig.singleQuote`         | optional | `boolean`                                                                                                                                             | `false`     | [Prettier documentation](https://prettier.io/docs/en/options.html#quotes)      |
 | `formatConfig.exportDefault`       | optional | `boolean`                                                                                                                                             | `true`      |                                                                                |
-| `formatTokens.colorFormat.format`  | optional | `rgb` `prgb` `hex` `hex6` `hex3` `hex4` `hex8` `name` `hsl` `hsv`                                                                                     | `hex`       | The color format you want to apply to your potential color design token        |
+| `formatTokens.colorFormat.format`  | optional | `rgb` `prgb` `hex` `hex6` `hex3` `hex4` `hex8` `name` `hsl` `hsv` `raw`                                                                               | `hex`       | The color format you want to apply to your potential color design token        |
 | `formatTokens.fontSizeFormat.unit` | optional | `px` `rem`                                                                                                                                            | `none`      |                                                                                |
 | `renameKeys`                       | optional | `{ colors?: string, spacing?: string... }` [full list](https://github.com/Specifyapp/parsers/blob/master/parsers/to-tailwind/to-tailwind.type.ts#L16) | `none`      | Used to rename the generated tokens based on their Tailwind theme keys         |
 | `splitBy`                          | optional | `string`                                                                                                                                              | none        | The character used to define the nesting of the values in the generated object |

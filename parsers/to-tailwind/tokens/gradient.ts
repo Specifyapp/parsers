@@ -12,6 +12,8 @@ export class Gradient extends GradientToken {
   }
 
   generate(options: OptionsType): GradientMappingBeforeWrapper {
+    const colorFormat = options?.formatTokens?.colorFormat?.format ?? 'hex';
+
     return {
       backgroundImage: Utils.go<ConstructorParameters<typeof GradientToken>[0]>(
         this.token,
@@ -22,9 +24,11 @@ export class Gradient extends GradientToken {
             return `linear-gradient(${gradient.angle}, ${gradient.colors
               .map(
                 ({ color, position }) =>
-                  `${tinycolor(color.value).toString(
-                    options?.formatTokens?.colorFormat?.format || 'hex',
-                  )} ${position}%`,
+                  `${
+                    colorFormat === 'raw'
+                      ? color.value
+                      : tinycolor(color.value).toString(colorFormat)
+                  } ${position}%`,
               )
               .join(', ')})`;
           })

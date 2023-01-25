@@ -25,7 +25,9 @@ export class TextStyle extends TextStyleToken {
   }
   private getColor(format: ColorsFormat) {
     if (this.value.color?.value) {
-      return tinycolor(this.value.color?.value).toString(format);
+      return format === 'raw'
+        ? this.value.color.value
+        : tinycolor(this.value.color?.value).toString(format);
     }
   }
   private getOpacity() {

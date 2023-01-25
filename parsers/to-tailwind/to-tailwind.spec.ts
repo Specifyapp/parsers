@@ -31,6 +31,28 @@ describe('To tailwind', () => {
     return;
   });
 
+  it('Should user raw color value ', async () => {
+    const tokens = seeds().tokens.filter(token => token.type === 'color') as Array<ColorToken>;
+    const result = await toTailwind(
+      tokens,
+      {
+        formatTokens: {
+          colorFormat: {
+            format: 'raw',
+          },
+        },
+      },
+      libs,
+    );
+
+    tokens.forEach(({ name, value }) => {
+      expect(result).toEqual(expect.stringMatching(_.camelCase(name)));
+      expect(result).toEqual(expect.stringMatching(`${value}`));
+    });
+
+    return;
+  });
+
   it('Should generate the border object', async () => {
     const tokens = seeds().tokens.filter(token => token.type === 'border') as Array<BorderToken>;
     const result = await toTailwind(tokens, undefined, libs);

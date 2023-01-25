@@ -11,6 +11,8 @@ export class Shadow extends ShadowToken {
     this.token = token;
   }
   generate(options: OptionsType): ShadowMapping {
+    const colorFormat = options?.formatTokens?.colorFormat?.format ?? 'hex';
+
     return {
       boxShadow: Utils.go<ConstructorParameters<typeof ShadowToken>[0]>(
         this.token,
@@ -24,9 +26,8 @@ export class Shadow extends ShadowToken {
             const blurString = `${blur.value.measure}${blur.value.unit}`;
             const spreadString = spread ? ` ${spread.value.measure}${spread.value.unit}` : '';
             const innerText = isInner ? 'inset ' : '';
-            const colorString = tinycolor(color.value).toString(
-              options?.formatTokens?.colorFormat?.format ?? 'hex',
-            );
+            const colorString =
+              colorFormat === 'raw' ? color.value : tinycolor(color.value).toString(colorFormat);
             acc.push(`${innerText}${x} ${y} ${blurString}${spreadString} ${colorString}`);
             return acc;
           }, [])
