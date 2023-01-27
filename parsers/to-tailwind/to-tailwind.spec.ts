@@ -360,9 +360,7 @@ describe('To tailwind', () => {
       // Match line height
       expect(result).toEqual(expect.stringMatching('lineHeight'));
       expect(result).toEqual(
-        expect.stringMatching(
-          `${_.camelCase(name)}: "${value.lineHeight.value.measure}${value.lineHeight.value.unit}"`,
-        ),
+        expect.stringMatching(`${_.camelCase(name)}: "${value.lineHeight.value.measure}rem"`),
       );
       // Match fontFamily
       expect(result).toEqual(expect.stringMatching('fontFamily'));
@@ -393,11 +391,7 @@ describe('To tailwind', () => {
       expect(result).toEqual(expect.stringMatching('letterSpacing'));
       if (value.letterSpacing?.value) {
         expect(result).toEqual(
-          expect.stringMatching(
-            `${_.camelCase(name)}: "${value.letterSpacing.value.measure}${
-              value.letterSpacing.value.unit
-            }"`,
-          ),
+          expect.stringMatching(`${_.camelCase(name)}: "${value.letterSpacing.value.measure}rem"`),
         );
       }
     });

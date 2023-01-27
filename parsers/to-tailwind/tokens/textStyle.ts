@@ -15,11 +15,27 @@ export class TextStyle extends TextStyleToken {
   private getFontWeight() {
     return this.value.font.value.fontWeight;
   }
-  private getLetterSpacing() {
+  private getLetterSpacing(fontFormat: FormatTokenType['fontSizeFormat']) {
+    if (
+      fontFormat?.unit &&
+      this.value.letterSpacing &&
+      this.value.letterSpacing.value.unit !== fontFormat?.unit
+    ) {
+      this.value.letterSpacing.value = convertMeasurement(
+        this.value.letterSpacing.value,
+        fontFormat?.unit,
+      );
+    }
     const ls = this.value.letterSpacing;
     if (ls) return `${ls.value.measure}${ls.value.unit}`;
   }
-  private getLineHeight() {
+  private getLineHeight(fontFormat: FormatTokenType['fontSizeFormat']) {
+    if (fontFormat?.unit && this.value.lineHeight.value.unit !== fontFormat?.unit) {
+      this.value.lineHeight.value = convertMeasurement(
+        this.value.lineHeight.value,
+        fontFormat?.unit,
+      );
+    }
     const lh = this.value.lineHeight;
     return `${lh.value.measure}${lh.value.unit}`;
   }
@@ -57,7 +73,7 @@ export class TextStyle extends TextStyleToken {
       this.getFontSize(options?.formatTokens?.fontSizeFormat),
     );
 
-    const letterSpacing = this.getLetterSpacing();
+    const letterSpacing = this.getLetterSpacing(options?.formatTokens?.fontSizeFormat);
     if (letterSpacing) {
       result.letterSpacing = Utils.go<ConstructorParameters<typeof TextStyleToken>[0]>(
         this.token,
@@ -67,7 +83,7 @@ export class TextStyle extends TextStyleToken {
       );
     }
 
-    const lineHeight = this.getLineHeight();
+    const lineHeight = this.getLineHeight(options?.formatTokens?.fontSizeFormat);
     result.lineHeight = Utils.go<ConstructorParameters<typeof TextStyleToken>[0]>(
       this.token,
       options,
