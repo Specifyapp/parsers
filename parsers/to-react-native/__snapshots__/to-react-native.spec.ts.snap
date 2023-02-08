@@ -4,42 +4,42 @@ exports[`To React Native Should generate the theme object 1`] = `
 "const theme = {
   bitmap: {
     acmeLogo: {
-      uri: \\"'https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/863c6a9c-090a-4360-bbf2-1e2026577306'\\",
+      uri: "'https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/863c6a9c-090a-4360-bbf2-1e2026577306'",
     },
     photoExample: {
-      uri: \\"'https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/ff09d8fc-73d8-446d-91c4-772e88e776c5'\\",
+      uri: "'https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/ff09d8fc-73d8-446d-91c4-772e88e776c5'",
     },
   },
   vector: {
     activity: {
-      uri: \\"'https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/b63a7f88-0ea2-4e17-a5e8-11935562621f'\\",
+      uri: "'https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/b63a7f88-0ea2-4e17-a5e8-11935562621f'",
     },
     airplay: {
-      uri: \\"'https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/71edeeb4-6622-490e-b59a-dd768d3414a8'\\",
+      uri: "'https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/71edeeb4-6622-490e-b59a-dd768d3414a8'",
     },
     alertCircle: {
-      uri: \\"'https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/587bd701-750c-4aa2-9b5b-843235eb5d5b'\\",
+      uri: "'https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/587bd701-750c-4aa2-9b5b-843235eb5d5b'",
     },
     alertOctagon: {
-      uri: \\"'https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/e15614aa-5e39-43c7-9a88-9ea102df8854'\\",
+      uri: "'https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/e15614aa-5e39-43c7-9a88-9ea102df8854'",
     },
     alertTriangle: {
-      uri: \\"'https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/e4d03b25-dc16-4e25-b2b3-5ffe6a68d41d'\\",
+      uri: "'https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/e4d03b25-dc16-4e25-b2b3-5ffe6a68d41d'",
     },
     alertTriangle: {
-      uri: \\"'https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/00e59368-656f-46f1-b1bf-1200ec945dd1'\\",
+      uri: "'https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/00e59368-656f-46f1-b1bf-1200ec945dd1'",
     },
     alignCenter: {
-      uri: \\"'https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/9e21c78b-dd71-42c5-9e2f-8a81f729ebd5'\\",
+      uri: "'https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/9e21c78b-dd71-42c5-9e2f-8a81f729ebd5'",
     },
     alignCenter: {
-      uri: \\"'https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/0256731e-92b1-474d-b0ed-7a7d5e17338e'\\",
+      uri: "'https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/0256731e-92b1-474d-b0ed-7a7d5e17338e'",
     },
     userMask: {
-      uri: \\"'https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/a131429d-f992-4daf-8f37-5b389b98e410'\\",
+      uri: "'https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/a131429d-f992-4daf-8f37-5b389b98e410'",
     },
     userMask: {
-      uri: \\"'https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/4e70632a-014a-4594-84bb-6f6e18e9b2e3'\\",
+      uri: "'https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/4e70632a-014a-4594-84bb-6f6e18e9b2e3'",
     },
   },
   depth: {
@@ -77,110 +77,110 @@ exports[`To React Native Should generate the theme object 1`] = `
   },
   textStyle: {
     body: {
-      fontWeight: \\"500\\",
+      fontWeight: "500",
       fontSize: 14,
       lineHeight: 20,
-      fontFamily: \\"Inter-Medium\\",
-      color: \\"rgb(30, 33, 43)\\",
+      fontFamily: "Inter-Medium",
+      color: "rgb(30, 33, 43)",
       letterSpacing: 10,
     },
     bodyWithOpacity: {
-      fontWeight: \\"500\\",
+      fontWeight: "500",
       fontSize: 14,
       lineHeight: 20,
-      fontFamily: \\"Inter-Medium\\",
-      color: \\"rgba(30, 33, 43, 0.3)\\",
+      fontFamily: "Inter-Medium",
+      color: "rgba(30, 33, 43, 0.3)",
       letterSpacing: 10,
     },
     code: {
-      fontWeight: \\"500\\",
+      fontWeight: "500",
       fontSize: 13,
       lineHeight: 20,
-      fontFamily: \\"FiraCode-Medium\\",
-      color: \\"rgb(255, 142, 5)\\",
+      fontFamily: "FiraCode-Medium",
+      color: "rgb(255, 142, 5)",
     },
     list: {
-      fontWeight: \\"400\\",
+      fontWeight: "400",
       fontSize: 14,
       lineHeight: 20,
-      fontFamily: \\"Roboto-Regular\\",
+      fontFamily: "Roboto-Regular",
     },
     title: {
-      fontWeight: \\"600\\",
+      fontWeight: "600",
       fontSize: 32,
       lineHeight: 40,
-      fontFamily: \\"Inter-SemiBold\\",
-      color: \\"rgb(30, 33, 43)\\",
+      fontFamily: "Inter-SemiBold",
+      color: "rgb(30, 33, 43)",
     },
   },
   border: {
     borderAccent: {
       borderWidth: 2,
-      borderStyle: \\"solid\\",
-      borderColor: \\"rgb(102, 80, 239)\\",
+      borderStyle: "solid",
+      borderColor: "rgb(102, 80, 239)",
       borderRadius: 16,
     },
     borderAccentWithOpacity: {
       borderWidth: 2,
-      borderStyle: \\"solid\\",
-      borderColor: \\"rgba(102, 80, 239, 0.5)\\",
+      borderStyle: "solid",
+      borderColor: "rgba(102, 80, 239, 0.5)",
       borderRadius: 16,
     },
     borderAccentWithoutRadii: {
       borderWidth: 2,
-      borderStyle: \\"solid\\",
-      borderColor: \\"rgba(102, 80, 239, 0.5)\\",
+      borderStyle: "solid",
+      borderColor: "rgba(102, 80, 239, 0.5)",
     },
     borderDashed: {
       borderWidth: 1,
-      borderStyle: \\"dashed\\",
-      borderColor: \\"rgb(30, 33, 43)\\",
+      borderStyle: "dashed",
+      borderColor: "rgb(30, 33, 43)",
       borderRadius: 16,
     },
   },
   color: {
-    colorsAccent: \\"rgb(120, 133, 183)\\",
-    colorsAlmostBlack: \\"rgb(28, 28, 28)\\",
-    colorsBlack: \\"rgb(30, 33, 43)\\",
-    colorsGreen: \\"rgb(88, 205, 82)\\",
-    colorsGrey: \\"rgb(204, 213, 225)\\",
-    colorsOrange: \\"rgb(255, 142, 5)\\",
-    colorsPureBlack: \\"rgb(0, 0, 0)\\",
-    colorsRed: \\"rgb(245, 72, 63)\\",
-    colorsWhite: \\"rgb(255, 255, 255)\\",
+    colorsAccent: "rgb(120, 133, 183)",
+    colorsAlmostBlack: "rgb(28, 28, 28)",
+    colorsBlack: "rgb(30, 33, 43)",
+    colorsGreen: "rgb(88, 205, 82)",
+    colorsGrey: "rgb(204, 213, 225)",
+    colorsOrange: "rgb(255, 142, 5)",
+    colorsPureBlack: "rgb(0, 0, 0)",
+    colorsRed: "rgb(245, 72, 63)",
+    colorsWhite: "rgb(255, 255, 255)",
   },
   font: {
-    firaCodeMedium: \\"FiraCode-Medium\\",
-    interMedium: \\"Inter-Medium\\",
-    interSemiBold: \\"Inter-SemiBold\\",
-    robotoRegular: \\"Roboto-Regular\\",
+    firaCodeMedium: "FiraCode-Medium",
+    interMedium: "Inter-Medium",
+    interSemiBold: "Inter-SemiBold",
+    robotoRegular: "Roboto-Regular",
   },
   gradient: {
     gradientsColored: [
       {
         angle: 90,
-        colors: [\\"rgb(245, 72, 63)\\", \\"rgb(255, 142, 5)\\"],
+        colors: ["rgb(245, 72, 63)", "rgb(255, 142, 5)"],
         locations: [0, 1],
       },
     ],
     gradientsDark: [
       {
         angle: 90,
-        colors: [\\"rgb(30, 33, 43)\\", \\"rgb(204, 213, 225)\\"],
+        colors: ["rgb(30, 33, 43)", "rgb(204, 213, 225)"],
         locations: [0, 1],
       },
     ],
     gradientsNeutral: [
       {
         angle: 90,
-        colors: [\\"rgb(204, 213, 225)\\", \\"rgb(255, 255, 255)\\"],
+        colors: ["rgb(204, 213, 225)", "rgb(255, 255, 255)"],
         locations: [0, 1],
       },
     ],
     gradientsSafari: [
       {
         angle: 90,
-        colors: [\\"rgb(255, 142, 5)\\", \\"rgb(255, 255, 255)\\"],
+        colors: ["rgb(255, 142, 5)", "rgb(255, 255, 255)"],
         locations: [0, 1],
       },
     ],
@@ -194,11 +194,11 @@ export default theme;
 exports[`To React Native Should support different duration types 1`] = `
 "const theme = {
   duration: {
-    \\"2Hours\\": 7200000,
-    \\"2Minutes\\": 120000,
-    \\"2Seconds\\": 2000,
-    \\"2Milliseconds\\": 2,
-    \\"2Nanoseconds\\": 0.002,
+    "2Hours": 7200000,
+    "2Minutes": 120000,
+    "2Seconds": 2000,
+    "2Milliseconds": 2,
+    "2Nanoseconds": 0.002,
   },
 };
 export default theme;
@@ -206,18 +206,18 @@ export default theme;
 `;
 
 exports[`To React Native Should support different formatKey options 1`] = `
-"import bitmapAcmeLogo from \\"./path/acmeLogo.png\\";
-import bitmapPhotoExample from \\"./path/photoExample.png\\";
-import vectorActivity from \\"./path/activity.svg\\";
-import vectorAirplay from \\"./path/airplay.svg\\";
-import vectorAlertCircle from \\"./path/alertCircle.svg\\";
-import vectorAlertOctagon from \\"./path/alertOctagon.svg\\";
-import vectorAlertTriangle from \\"./path/alertTriangle.svg\\";
-import vectorAlertTriangle from \\"./path/alertTriangle.pdf\\";
-import vectorAlignCenter from \\"./path/alignCenter.pdf\\";
-import vectorAlignCenter from \\"./path/alignCenter.svg\\";
-import vectorUserMask from \\"./path/userMask.svg\\";
-import vectorUserMask from \\"./path/userMask.pdf\\";
+"import bitmapAcmeLogo from "./path/acmeLogo.png";
+import bitmapPhotoExample from "./path/photoExample.png";
+import vectorActivity from "./path/activity.svg";
+import vectorAirplay from "./path/airplay.svg";
+import vectorAlertCircle from "./path/alertCircle.svg";
+import vectorAlertOctagon from "./path/alertOctagon.svg";
+import vectorAlertTriangle from "./path/alertTriangle.svg";
+import vectorAlertTriangle from "./path/alertTriangle.pdf";
+import vectorAlignCenter from "./path/alignCenter.pdf";
+import vectorAlignCenter from "./path/alignCenter.svg";
+import vectorUserMask from "./path/userMask.svg";
+import vectorUserMask from "./path/userMask.pdf";
 
 const theme = {
   bitmap: { acmeLogo: bitmapAcmeLogo, photoExample: bitmapPhotoExample },
@@ -268,110 +268,110 @@ const theme = {
   },
   textStyle: {
     body: {
-      fontWeight: \\"500\\",
+      fontWeight: "500",
       fontSize: 14,
       lineHeight: 20,
-      fontFamily: \\"Inter-Medium\\",
-      color: \\"rgb(30, 33, 43)\\",
+      fontFamily: "Inter-Medium",
+      color: "rgb(30, 33, 43)",
       letterSpacing: 10,
     },
     bodyWithOpacity: {
-      fontWeight: \\"500\\",
+      fontWeight: "500",
       fontSize: 14,
       lineHeight: 20,
-      fontFamily: \\"Inter-Medium\\",
-      color: \\"rgba(30, 33, 43, 0.3)\\",
+      fontFamily: "Inter-Medium",
+      color: "rgba(30, 33, 43, 0.3)",
       letterSpacing: 10,
     },
     code: {
-      fontWeight: \\"500\\",
+      fontWeight: "500",
       fontSize: 13,
       lineHeight: 20,
-      fontFamily: \\"FiraCode-Medium\\",
-      color: \\"rgb(255, 142, 5)\\",
+      fontFamily: "FiraCode-Medium",
+      color: "rgb(255, 142, 5)",
     },
     list: {
-      fontWeight: \\"400\\",
+      fontWeight: "400",
       fontSize: 14,
       lineHeight: 20,
-      fontFamily: \\"Roboto-Regular\\",
+      fontFamily: "Roboto-Regular",
     },
     title: {
-      fontWeight: \\"600\\",
+      fontWeight: "600",
       fontSize: 32,
       lineHeight: 40,
-      fontFamily: \\"Inter-SemiBold\\",
-      color: \\"rgb(30, 33, 43)\\",
+      fontFamily: "Inter-SemiBold",
+      color: "rgb(30, 33, 43)",
     },
   },
   border: {
     borderAccent: {
       borderWidth: 2,
-      borderStyle: \\"solid\\",
-      borderColor: \\"rgb(102, 80, 239)\\",
+      borderStyle: "solid",
+      borderColor: "rgb(102, 80, 239)",
       borderRadius: 16,
     },
     borderAccentWithOpacity: {
       borderWidth: 2,
-      borderStyle: \\"solid\\",
-      borderColor: \\"rgba(102, 80, 239, 0.5)\\",
+      borderStyle: "solid",
+      borderColor: "rgba(102, 80, 239, 0.5)",
       borderRadius: 16,
     },
     borderAccentWithoutRadii: {
       borderWidth: 2,
-      borderStyle: \\"solid\\",
-      borderColor: \\"rgba(102, 80, 239, 0.5)\\",
+      borderStyle: "solid",
+      borderColor: "rgba(102, 80, 239, 0.5)",
     },
     borderDashed: {
       borderWidth: 1,
-      borderStyle: \\"dashed\\",
-      borderColor: \\"rgb(30, 33, 43)\\",
+      borderStyle: "dashed",
+      borderColor: "rgb(30, 33, 43)",
       borderRadius: 16,
     },
   },
   color: {
-    colorsAccent: \\"rgb(120, 133, 183)\\",
-    colorsAlmostBlack: \\"rgb(28, 28, 28)\\",
-    colorsBlack: \\"rgb(30, 33, 43)\\",
-    colorsGreen: \\"rgb(88, 205, 82)\\",
-    colorsGrey: \\"rgb(204, 213, 225)\\",
-    colorsOrange: \\"rgb(255, 142, 5)\\",
-    colorsPureBlack: \\"rgb(0, 0, 0)\\",
-    colorsRed: \\"rgb(245, 72, 63)\\",
-    colorsWhite: \\"rgb(255, 255, 255)\\",
+    colorsAccent: "rgb(120, 133, 183)",
+    colorsAlmostBlack: "rgb(28, 28, 28)",
+    colorsBlack: "rgb(30, 33, 43)",
+    colorsGreen: "rgb(88, 205, 82)",
+    colorsGrey: "rgb(204, 213, 225)",
+    colorsOrange: "rgb(255, 142, 5)",
+    colorsPureBlack: "rgb(0, 0, 0)",
+    colorsRed: "rgb(245, 72, 63)",
+    colorsWhite: "rgb(255, 255, 255)",
   },
   font: {
-    firaCodeMedium: \\"FiraCode-Medium\\",
-    interMedium: \\"Inter-Medium\\",
-    interSemiBold: \\"Inter-SemiBold\\",
-    robotoRegular: \\"Roboto-Regular\\",
+    firaCodeMedium: "FiraCode-Medium",
+    interMedium: "Inter-Medium",
+    interSemiBold: "Inter-SemiBold",
+    robotoRegular: "Roboto-Regular",
   },
   gradient: {
     gradientsColored: [
       {
         angle: 90,
-        colors: [\\"rgb(245, 72, 63)\\", \\"rgb(255, 142, 5)\\"],
+        colors: ["rgb(245, 72, 63)", "rgb(255, 142, 5)"],
         locations: [0, 1],
       },
     ],
     gradientsDark: [
       {
         angle: 90,
-        colors: [\\"rgb(30, 33, 43)\\", \\"rgb(204, 213, 225)\\"],
+        colors: ["rgb(30, 33, 43)", "rgb(204, 213, 225)"],
         locations: [0, 1],
       },
     ],
     gradientsNeutral: [
       {
         angle: 90,
-        colors: [\\"rgb(204, 213, 225)\\", \\"rgb(255, 255, 255)\\"],
+        colors: ["rgb(204, 213, 225)", "rgb(255, 255, 255)"],
         locations: [0, 1],
       },
     ],
     gradientsSafari: [
       {
         angle: 90,
-        colors: [\\"rgb(255, 142, 5)\\", \\"rgb(255, 255, 255)\\"],
+        colors: ["rgb(255, 142, 5)", "rgb(255, 255, 255)"],
         locations: [0, 1],
       },
     ],
@@ -383,32 +383,32 @@ export default theme;
 `;
 
 exports[`To React Native Should support different formatKey options 2`] = `
-"import bitmapAcmeLogo from \\"./path/acmeLogo.png\\";
-import bitmapPhotoExample from \\"./path/photoExample.png\\";
-import vectorActivity from \\"./path/activity.svg\\";
-import vectorAirplay from \\"./path/airplay.svg\\";
-import vectorAlertCircle from \\"./path/alertCircle.svg\\";
-import vectorAlertOctagon from \\"./path/alertOctagon.svg\\";
-import vectorAlertTriangle from \\"./path/alertTriangle.svg\\";
-import vectorAlertTriangle from \\"./path/alertTriangle.pdf\\";
-import vectorAlignCenter from \\"./path/alignCenter.pdf\\";
-import vectorAlignCenter from \\"./path/alignCenter.svg\\";
-import vectorUserMask from \\"./path/userMask.svg\\";
-import vectorUserMask from \\"./path/userMask.pdf\\";
+"import bitmapAcmeLogo from "./path/acmeLogo.png";
+import bitmapPhotoExample from "./path/photoExample.png";
+import vectorActivity from "./path/activity.svg";
+import vectorAirplay from "./path/airplay.svg";
+import vectorAlertCircle from "./path/alertCircle.svg";
+import vectorAlertOctagon from "./path/alertOctagon.svg";
+import vectorAlertTriangle from "./path/alertTriangle.svg";
+import vectorAlertTriangle from "./path/alertTriangle.pdf";
+import vectorAlignCenter from "./path/alignCenter.pdf";
+import vectorAlignCenter from "./path/alignCenter.svg";
+import vectorUserMask from "./path/userMask.svg";
+import vectorUserMask from "./path/userMask.pdf";
 
 const theme = {
-  bitmap: { \\"acme-logo\\": bitmapAcmeLogo, \\"photo-example\\": bitmapPhotoExample },
+  bitmap: { "acme-logo": bitmapAcmeLogo, "photo-example": bitmapPhotoExample },
   vector: {
     activity: vectorActivity,
     airplay: vectorAirplay,
-    \\"alert-circle\\": vectorAlertCircle,
-    \\"alert-octagon\\": vectorAlertOctagon,
-    \\"alert-triangle\\": vectorAlertTriangle,
-    \\"alert-triangle\\": vectorAlertTriangle,
-    \\"align-center\\": vectorAlignCenter,
-    \\"align-center\\": vectorAlignCenter,
-    \\"user-mask\\": vectorUserMask,
-    \\"user-mask\\": vectorUserMask,
+    "alert-circle": vectorAlertCircle,
+    "alert-octagon": vectorAlertOctagon,
+    "alert-triangle": vectorAlertTriangle,
+    "alert-triangle": vectorAlertTriangle,
+    "align-center": vectorAlignCenter,
+    "align-center": vectorAlignCenter,
+    "user-mask": vectorUserMask,
+    "user-mask": vectorUserMask,
   },
   depth: {
     background: {
@@ -430,125 +430,125 @@ const theme = {
       shadowOffset: { width: 30, height: 30 },
     },
   },
-  duration: { base: 300, long: 700, short: 100, \\"very-long\\": 3000 },
+  duration: { base: 300, long: 700, short: 100, "very-long": 3000 },
   measurement: {
-    \\"base-space-01\\": 4,
-    \\"base-space-02\\": 8,
-    \\"base-space-03\\": 12,
-    \\"base-space-04\\": 16,
-    \\"base-space-05\\": 32,
-    \\"base-space-06\\": 48,
-    \\"base-space-07\\": 64,
-    \\"base-space-08\\": 80,
-    \\"base-space-09\\": 96,
-    \\"base-space-10\\": 112,
+    "base-space-01": 4,
+    "base-space-02": 8,
+    "base-space-03": 12,
+    "base-space-04": 16,
+    "base-space-05": 32,
+    "base-space-06": 48,
+    "base-space-07": 64,
+    "base-space-08": 80,
+    "base-space-09": 96,
+    "base-space-10": 112,
   },
   textStyle: {
     body: {
-      fontWeight: \\"500\\",
+      fontWeight: "500",
       fontSize: 14,
       lineHeight: 20,
-      fontFamily: \\"Inter-Medium\\",
-      color: \\"rgb(30, 33, 43)\\",
+      fontFamily: "Inter-Medium",
+      color: "rgb(30, 33, 43)",
       letterSpacing: 10,
     },
-    \\"body-with-opacity\\": {
-      fontWeight: \\"500\\",
+    "body-with-opacity": {
+      fontWeight: "500",
       fontSize: 14,
       lineHeight: 20,
-      fontFamily: \\"Inter-Medium\\",
-      color: \\"rgba(30, 33, 43, 0.3)\\",
+      fontFamily: "Inter-Medium",
+      color: "rgba(30, 33, 43, 0.3)",
       letterSpacing: 10,
     },
     code: {
-      fontWeight: \\"500\\",
+      fontWeight: "500",
       fontSize: 13,
       lineHeight: 20,
-      fontFamily: \\"FiraCode-Medium\\",
-      color: \\"rgb(255, 142, 5)\\",
+      fontFamily: "FiraCode-Medium",
+      color: "rgb(255, 142, 5)",
     },
     list: {
-      fontWeight: \\"400\\",
+      fontWeight: "400",
       fontSize: 14,
       lineHeight: 20,
-      fontFamily: \\"Roboto-Regular\\",
+      fontFamily: "Roboto-Regular",
     },
     title: {
-      fontWeight: \\"600\\",
+      fontWeight: "600",
       fontSize: 32,
       lineHeight: 40,
-      fontFamily: \\"Inter-SemiBold\\",
-      color: \\"rgb(30, 33, 43)\\",
+      fontFamily: "Inter-SemiBold",
+      color: "rgb(30, 33, 43)",
     },
   },
   border: {
-    \\"border-accent\\": {
+    "border-accent": {
       borderWidth: 2,
-      borderStyle: \\"solid\\",
-      borderColor: \\"rgb(102, 80, 239)\\",
+      borderStyle: "solid",
+      borderColor: "rgb(102, 80, 239)",
       borderRadius: 16,
     },
-    \\"border-accent-with-opacity\\": {
+    "border-accent-with-opacity": {
       borderWidth: 2,
-      borderStyle: \\"solid\\",
-      borderColor: \\"rgba(102, 80, 239, 0.5)\\",
+      borderStyle: "solid",
+      borderColor: "rgba(102, 80, 239, 0.5)",
       borderRadius: 16,
     },
-    \\"border-accent-without-radii\\": {
+    "border-accent-without-radii": {
       borderWidth: 2,
-      borderStyle: \\"solid\\",
-      borderColor: \\"rgba(102, 80, 239, 0.5)\\",
+      borderStyle: "solid",
+      borderColor: "rgba(102, 80, 239, 0.5)",
     },
-    \\"border-dashed\\": {
+    "border-dashed": {
       borderWidth: 1,
-      borderStyle: \\"dashed\\",
-      borderColor: \\"rgb(30, 33, 43)\\",
+      borderStyle: "dashed",
+      borderColor: "rgb(30, 33, 43)",
       borderRadius: 16,
     },
   },
   color: {
-    \\"colors-accent\\": \\"rgb(120, 133, 183)\\",
-    \\"colors-almost-black\\": \\"rgb(28, 28, 28)\\",
-    \\"colors-black\\": \\"rgb(30, 33, 43)\\",
-    \\"colors-green\\": \\"rgb(88, 205, 82)\\",
-    \\"colors-grey\\": \\"rgb(204, 213, 225)\\",
-    \\"colors-orange\\": \\"rgb(255, 142, 5)\\",
-    \\"colors-pure-black\\": \\"rgb(0, 0, 0)\\",
-    \\"colors-red\\": \\"rgb(245, 72, 63)\\",
-    \\"colors-white\\": \\"rgb(255, 255, 255)\\",
+    "colors-accent": "rgb(120, 133, 183)",
+    "colors-almost-black": "rgb(28, 28, 28)",
+    "colors-black": "rgb(30, 33, 43)",
+    "colors-green": "rgb(88, 205, 82)",
+    "colors-grey": "rgb(204, 213, 225)",
+    "colors-orange": "rgb(255, 142, 5)",
+    "colors-pure-black": "rgb(0, 0, 0)",
+    "colors-red": "rgb(245, 72, 63)",
+    "colors-white": "rgb(255, 255, 255)",
   },
   font: {
-    \\"fira-code-medium\\": \\"FiraCode-Medium\\",
-    \\"inter-medium\\": \\"Inter-Medium\\",
-    \\"inter-semi-bold\\": \\"Inter-SemiBold\\",
-    \\"roboto-regular\\": \\"Roboto-Regular\\",
+    "fira-code-medium": "FiraCode-Medium",
+    "inter-medium": "Inter-Medium",
+    "inter-semi-bold": "Inter-SemiBold",
+    "roboto-regular": "Roboto-Regular",
   },
   gradient: {
-    \\"gradients-colored\\": [
+    "gradients-colored": [
       {
         angle: 90,
-        colors: [\\"rgb(245, 72, 63)\\", \\"rgb(255, 142, 5)\\"],
+        colors: ["rgb(245, 72, 63)", "rgb(255, 142, 5)"],
         locations: [0, 1],
       },
     ],
-    \\"gradients-dark\\": [
+    "gradients-dark": [
       {
         angle: 90,
-        colors: [\\"rgb(30, 33, 43)\\", \\"rgb(204, 213, 225)\\"],
+        colors: ["rgb(30, 33, 43)", "rgb(204, 213, 225)"],
         locations: [0, 1],
       },
     ],
-    \\"gradients-neutral\\": [
+    "gradients-neutral": [
       {
         angle: 90,
-        colors: [\\"rgb(204, 213, 225)\\", \\"rgb(255, 255, 255)\\"],
+        colors: ["rgb(204, 213, 225)", "rgb(255, 255, 255)"],
         locations: [0, 1],
       },
     ],
-    \\"gradients-safari\\": [
+    "gradients-safari": [
       {
         angle: 90,
-        colors: [\\"rgb(255, 142, 5)\\", \\"rgb(255, 255, 255)\\"],
+        colors: ["rgb(255, 142, 5)", "rgb(255, 255, 255)"],
         locations: [0, 1],
       },
     ],
@@ -560,18 +560,18 @@ export default theme;
 `;
 
 exports[`To React Native Should support different formatKey options 3`] = `
-"import bitmapAcmeLogo from \\"./path/acmeLogo.png\\";
-import bitmapPhotoExample from \\"./path/photoExample.png\\";
-import vectorActivity from \\"./path/activity.svg\\";
-import vectorAirplay from \\"./path/airplay.svg\\";
-import vectorAlertCircle from \\"./path/alertCircle.svg\\";
-import vectorAlertOctagon from \\"./path/alertOctagon.svg\\";
-import vectorAlertTriangle from \\"./path/alertTriangle.svg\\";
-import vectorAlertTriangle from \\"./path/alertTriangle.pdf\\";
-import vectorAlignCenter from \\"./path/alignCenter.pdf\\";
-import vectorAlignCenter from \\"./path/alignCenter.svg\\";
-import vectorUserMask from \\"./path/userMask.svg\\";
-import vectorUserMask from \\"./path/userMask.pdf\\";
+"import bitmapAcmeLogo from "./path/acmeLogo.png";
+import bitmapPhotoExample from "./path/photoExample.png";
+import vectorActivity from "./path/activity.svg";
+import vectorAirplay from "./path/airplay.svg";
+import vectorAlertCircle from "./path/alertCircle.svg";
+import vectorAlertOctagon from "./path/alertOctagon.svg";
+import vectorAlertTriangle from "./path/alertTriangle.svg";
+import vectorAlertTriangle from "./path/alertTriangle.pdf";
+import vectorAlignCenter from "./path/alignCenter.pdf";
+import vectorAlignCenter from "./path/alignCenter.svg";
+import vectorUserMask from "./path/userMask.svg";
+import vectorUserMask from "./path/userMask.pdf";
 
 const theme = {
   bitmap: { acme_logo: bitmapAcmeLogo, photo_example: bitmapPhotoExample },
@@ -622,110 +622,110 @@ const theme = {
   },
   textStyle: {
     body: {
-      fontWeight: \\"500\\",
+      fontWeight: "500",
       fontSize: 14,
       lineHeight: 20,
-      fontFamily: \\"Inter-Medium\\",
-      color: \\"rgb(30, 33, 43)\\",
+      fontFamily: "Inter-Medium",
+      color: "rgb(30, 33, 43)",
       letterSpacing: 10,
     },
     body_with_opacity: {
-      fontWeight: \\"500\\",
+      fontWeight: "500",
       fontSize: 14,
       lineHeight: 20,
-      fontFamily: \\"Inter-Medium\\",
-      color: \\"rgba(30, 33, 43, 0.3)\\",
+      fontFamily: "Inter-Medium",
+      color: "rgba(30, 33, 43, 0.3)",
       letterSpacing: 10,
     },
     code: {
-      fontWeight: \\"500\\",
+      fontWeight: "500",
       fontSize: 13,
       lineHeight: 20,
-      fontFamily: \\"FiraCode-Medium\\",
-      color: \\"rgb(255, 142, 5)\\",
+      fontFamily: "FiraCode-Medium",
+      color: "rgb(255, 142, 5)",
     },
     list: {
-      fontWeight: \\"400\\",
+      fontWeight: "400",
       fontSize: 14,
       lineHeight: 20,
-      fontFamily: \\"Roboto-Regular\\",
+      fontFamily: "Roboto-Regular",
     },
     title: {
-      fontWeight: \\"600\\",
+      fontWeight: "600",
       fontSize: 32,
       lineHeight: 40,
-      fontFamily: \\"Inter-SemiBold\\",
-      color: \\"rgb(30, 33, 43)\\",
+      fontFamily: "Inter-SemiBold",
+      color: "rgb(30, 33, 43)",
     },
   },
   border: {
     border_accent: {
       borderWidth: 2,
-      borderStyle: \\"solid\\",
-      borderColor: \\"rgb(102, 80, 239)\\",
+      borderStyle: "solid",
+      borderColor: "rgb(102, 80, 239)",
       borderRadius: 16,
     },
     border_accent_with_opacity: {
       borderWidth: 2,
-      borderStyle: \\"solid\\",
-      borderColor: \\"rgba(102, 80, 239, 0.5)\\",
+      borderStyle: "solid",
+      borderColor: "rgba(102, 80, 239, 0.5)",
       borderRadius: 16,
     },
     border_accent_without_radii: {
       borderWidth: 2,
-      borderStyle: \\"solid\\",
-      borderColor: \\"rgba(102, 80, 239, 0.5)\\",
+      borderStyle: "solid",
+      borderColor: "rgba(102, 80, 239, 0.5)",
     },
     border_dashed: {
       borderWidth: 1,
-      borderStyle: \\"dashed\\",
-      borderColor: \\"rgb(30, 33, 43)\\",
+      borderStyle: "dashed",
+      borderColor: "rgb(30, 33, 43)",
       borderRadius: 16,
     },
   },
   color: {
-    colors_accent: \\"rgb(120, 133, 183)\\",
-    colors_almost_black: \\"rgb(28, 28, 28)\\",
-    colors_black: \\"rgb(30, 33, 43)\\",
-    colors_green: \\"rgb(88, 205, 82)\\",
-    colors_grey: \\"rgb(204, 213, 225)\\",
-    colors_orange: \\"rgb(255, 142, 5)\\",
-    colors_pure_black: \\"rgb(0, 0, 0)\\",
-    colors_red: \\"rgb(245, 72, 63)\\",
-    colors_white: \\"rgb(255, 255, 255)\\",
+    colors_accent: "rgb(120, 133, 183)",
+    colors_almost_black: "rgb(28, 28, 28)",
+    colors_black: "rgb(30, 33, 43)",
+    colors_green: "rgb(88, 205, 82)",
+    colors_grey: "rgb(204, 213, 225)",
+    colors_orange: "rgb(255, 142, 5)",
+    colors_pure_black: "rgb(0, 0, 0)",
+    colors_red: "rgb(245, 72, 63)",
+    colors_white: "rgb(255, 255, 255)",
   },
   font: {
-    fira_code_medium: \\"FiraCode-Medium\\",
-    inter_medium: \\"Inter-Medium\\",
-    inter_semi_bold: \\"Inter-SemiBold\\",
-    roboto_regular: \\"Roboto-Regular\\",
+    fira_code_medium: "FiraCode-Medium",
+    inter_medium: "Inter-Medium",
+    inter_semi_bold: "Inter-SemiBold",
+    roboto_regular: "Roboto-Regular",
   },
   gradient: {
     gradients_colored: [
       {
         angle: 90,
-        colors: [\\"rgb(245, 72, 63)\\", \\"rgb(255, 142, 5)\\"],
+        colors: ["rgb(245, 72, 63)", "rgb(255, 142, 5)"],
         locations: [0, 1],
       },
     ],
     gradients_dark: [
       {
         angle: 90,
-        colors: [\\"rgb(30, 33, 43)\\", \\"rgb(204, 213, 225)\\"],
+        colors: ["rgb(30, 33, 43)", "rgb(204, 213, 225)"],
         locations: [0, 1],
       },
     ],
     gradients_neutral: [
       {
         angle: 90,
-        colors: [\\"rgb(204, 213, 225)\\", \\"rgb(255, 255, 255)\\"],
+        colors: ["rgb(204, 213, 225)", "rgb(255, 255, 255)"],
         locations: [0, 1],
       },
     ],
     gradients_safari: [
       {
         angle: 90,
-        colors: [\\"rgb(255, 142, 5)\\", \\"rgb(255, 255, 255)\\"],
+        colors: ["rgb(255, 142, 5)", "rgb(255, 255, 255)"],
         locations: [0, 1],
       },
     ],
@@ -737,18 +737,18 @@ export default theme;
 `;
 
 exports[`To React Native Should support different formatKey options 4`] = `
-"import bitmapAcmeLogo from \\"./path/acmeLogo.png\\";
-import bitmapPhotoExample from \\"./path/photoExample.png\\";
-import vectorActivity from \\"./path/activity.svg\\";
-import vectorAirplay from \\"./path/airplay.svg\\";
-import vectorAlertCircle from \\"./path/alertCircle.svg\\";
-import vectorAlertOctagon from \\"./path/alertOctagon.svg\\";
-import vectorAlertTriangle from \\"./path/alertTriangle.svg\\";
-import vectorAlertTriangle from \\"./path/alertTriangle.pdf\\";
-import vectorAlignCenter from \\"./path/alignCenter.pdf\\";
-import vectorAlignCenter from \\"./path/alignCenter.svg\\";
-import vectorUserMask from \\"./path/userMask.svg\\";
-import vectorUserMask from \\"./path/userMask.pdf\\";
+"import bitmapAcmeLogo from "./path/acmeLogo.png";
+import bitmapPhotoExample from "./path/photoExample.png";
+import vectorActivity from "./path/activity.svg";
+import vectorAirplay from "./path/airplay.svg";
+import vectorAlertCircle from "./path/alertCircle.svg";
+import vectorAlertOctagon from "./path/alertOctagon.svg";
+import vectorAlertTriangle from "./path/alertTriangle.svg";
+import vectorAlertTriangle from "./path/alertTriangle.pdf";
+import vectorAlignCenter from "./path/alignCenter.pdf";
+import vectorAlignCenter from "./path/alignCenter.svg";
+import vectorUserMask from "./path/userMask.svg";
+import vectorUserMask from "./path/userMask.pdf";
 
 const theme = {
   bitmap: { AcmeLogo: bitmapAcmeLogo, PhotoExample: bitmapPhotoExample },
@@ -799,110 +799,110 @@ const theme = {
   },
   textStyle: {
     Body: {
-      fontWeight: \\"500\\",
+      fontWeight: "500",
       fontSize: 14,
       lineHeight: 20,
-      fontFamily: \\"Inter-Medium\\",
-      color: \\"rgb(30, 33, 43)\\",
+      fontFamily: "Inter-Medium",
+      color: "rgb(30, 33, 43)",
       letterSpacing: 10,
     },
     BodyWithOpacity: {
-      fontWeight: \\"500\\",
+      fontWeight: "500",
       fontSize: 14,
       lineHeight: 20,
-      fontFamily: \\"Inter-Medium\\",
-      color: \\"rgba(30, 33, 43, 0.3)\\",
+      fontFamily: "Inter-Medium",
+      color: "rgba(30, 33, 43, 0.3)",
       letterSpacing: 10,
     },
     Code: {
-      fontWeight: \\"500\\",
+      fontWeight: "500",
       fontSize: 13,
       lineHeight: 20,
-      fontFamily: \\"FiraCode-Medium\\",
-      color: \\"rgb(255, 142, 5)\\",
+      fontFamily: "FiraCode-Medium",
+      color: "rgb(255, 142, 5)",
     },
     List: {
-      fontWeight: \\"400\\",
+      fontWeight: "400",
       fontSize: 14,
       lineHeight: 20,
-      fontFamily: \\"Roboto-Regular\\",
+      fontFamily: "Roboto-Regular",
     },
     Title: {
-      fontWeight: \\"600\\",
+      fontWeight: "600",
       fontSize: 32,
       lineHeight: 40,
-      fontFamily: \\"Inter-SemiBold\\",
-      color: \\"rgb(30, 33, 43)\\",
+      fontFamily: "Inter-SemiBold",
+      color: "rgb(30, 33, 43)",
     },
   },
   border: {
     BorderAccent: {
       borderWidth: 2,
-      borderStyle: \\"solid\\",
-      borderColor: \\"rgb(102, 80, 239)\\",
+      borderStyle: "solid",
+      borderColor: "rgb(102, 80, 239)",
       borderRadius: 16,
     },
     BorderAccentWithOpacity: {
       borderWidth: 2,
-      borderStyle: \\"solid\\",
-      borderColor: \\"rgba(102, 80, 239, 0.5)\\",
+      borderStyle: "solid",
+      borderColor: "rgba(102, 80, 239, 0.5)",
       borderRadius: 16,
     },
     BorderAccentWithoutRadii: {
       borderWidth: 2,
-      borderStyle: \\"solid\\",
-      borderColor: \\"rgba(102, 80, 239, 0.5)\\",
+      borderStyle: "solid",
+      borderColor: "rgba(102, 80, 239, 0.5)",
     },
     BorderDashed: {
       borderWidth: 1,
-      borderStyle: \\"dashed\\",
-      borderColor: \\"rgb(30, 33, 43)\\",
+      borderStyle: "dashed",
+      borderColor: "rgb(30, 33, 43)",
       borderRadius: 16,
     },
   },
   color: {
-    ColorsAccent: \\"rgb(120, 133, 183)\\",
-    ColorsAlmostBlack: \\"rgb(28, 28, 28)\\",
-    ColorsBlack: \\"rgb(30, 33, 43)\\",
-    ColorsGreen: \\"rgb(88, 205, 82)\\",
-    ColorsGrey: \\"rgb(204, 213, 225)\\",
-    ColorsOrange: \\"rgb(255, 142, 5)\\",
-    ColorsPureBlack: \\"rgb(0, 0, 0)\\",
-    ColorsRed: \\"rgb(245, 72, 63)\\",
-    ColorsWhite: \\"rgb(255, 255, 255)\\",
+    ColorsAccent: "rgb(120, 133, 183)",
+    ColorsAlmostBlack: "rgb(28, 28, 28)",
+    ColorsBlack: "rgb(30, 33, 43)",
+    ColorsGreen: "rgb(88, 205, 82)",
+    ColorsGrey: "rgb(204, 213, 225)",
+    ColorsOrange: "rgb(255, 142, 5)",
+    ColorsPureBlack: "rgb(0, 0, 0)",
+    ColorsRed: "rgb(245, 72, 63)",
+    ColorsWhite: "rgb(255, 255, 255)",
   },
   font: {
-    FiraCodeMedium: \\"FiraCode-Medium\\",
-    InterMedium: \\"Inter-Medium\\",
-    InterSemiBold: \\"Inter-SemiBold\\",
-    RobotoRegular: \\"Roboto-Regular\\",
+    FiraCodeMedium: "FiraCode-Medium",
+    InterMedium: "Inter-Medium",
+    InterSemiBold: "Inter-SemiBold",
+    RobotoRegular: "Roboto-Regular",
   },
   gradient: {
     GradientsColored: [
       {
         angle: 90,
-        colors: [\\"rgb(245, 72, 63)\\", \\"rgb(255, 142, 5)\\"],
+        colors: ["rgb(245, 72, 63)", "rgb(255, 142, 5)"],
         locations: [0, 1],
       },
     ],
     GradientsDark: [
       {
         angle: 90,
-        colors: [\\"rgb(30, 33, 43)\\", \\"rgb(204, 213, 225)\\"],
+        colors: ["rgb(30, 33, 43)", "rgb(204, 213, 225)"],
         locations: [0, 1],
       },
     ],
     GradientsNeutral: [
       {
         angle: 90,
-        colors: [\\"rgb(204, 213, 225)\\", \\"rgb(255, 255, 255)\\"],
+        colors: ["rgb(204, 213, 225)", "rgb(255, 255, 255)"],
         locations: [0, 1],
       },
     ],
     GradientsSafari: [
       {
         angle: 90,
-        colors: [\\"rgb(255, 142, 5)\\", \\"rgb(255, 255, 255)\\"],
+        colors: ["rgb(255, 142, 5)", "rgb(255, 255, 255)"],
         locations: [0, 1],
       },
     ],
@@ -914,18 +914,18 @@ export default theme;
 `;
 
 exports[`To React Native Should support different formatName options 1`] = `
-"import bitmapAcmeLogo from \\"./path/acmeLogo.png\\";
-import bitmapPhotoExample from \\"./path/photoExample.png\\";
-import vectorActivity from \\"./path/activity.svg\\";
-import vectorAirplay from \\"./path/airplay.svg\\";
-import vectorAlertCircle from \\"./path/alertCircle.svg\\";
-import vectorAlertOctagon from \\"./path/alertOctagon.svg\\";
-import vectorAlertTriangle from \\"./path/alertTriangle.svg\\";
-import vectorAlertTriangle from \\"./path/alertTriangle.pdf\\";
-import vectorAlignCenter from \\"./path/alignCenter.pdf\\";
-import vectorAlignCenter from \\"./path/alignCenter.svg\\";
-import vectorUserMask from \\"./path/userMask.svg\\";
-import vectorUserMask from \\"./path/userMask.pdf\\";
+"import bitmapAcmeLogo from "./path/acmeLogo.png";
+import bitmapPhotoExample from "./path/photoExample.png";
+import vectorActivity from "./path/activity.svg";
+import vectorAirplay from "./path/airplay.svg";
+import vectorAlertCircle from "./path/alertCircle.svg";
+import vectorAlertOctagon from "./path/alertOctagon.svg";
+import vectorAlertTriangle from "./path/alertTriangle.svg";
+import vectorAlertTriangle from "./path/alertTriangle.pdf";
+import vectorAlignCenter from "./path/alignCenter.pdf";
+import vectorAlignCenter from "./path/alignCenter.svg";
+import vectorUserMask from "./path/userMask.svg";
+import vectorUserMask from "./path/userMask.pdf";
 
 const theme = {
   bitmap: { acmeLogo: bitmapAcmeLogo, photoExample: bitmapPhotoExample },
@@ -976,110 +976,110 @@ const theme = {
   },
   textStyle: {
     body: {
-      fontWeight: \\"500\\",
+      fontWeight: "500",
       fontSize: 14,
       lineHeight: 20,
-      fontFamily: \\"Inter-Medium\\",
-      color: \\"rgb(30, 33, 43)\\",
+      fontFamily: "Inter-Medium",
+      color: "rgb(30, 33, 43)",
       letterSpacing: 10,
     },
     bodyWithOpacity: {
-      fontWeight: \\"500\\",
+      fontWeight: "500",
       fontSize: 14,
       lineHeight: 20,
-      fontFamily: \\"Inter-Medium\\",
-      color: \\"rgba(30, 33, 43, 0.3)\\",
+      fontFamily: "Inter-Medium",
+      color: "rgba(30, 33, 43, 0.3)",
       letterSpacing: 10,
     },
     code: {
-      fontWeight: \\"500\\",
+      fontWeight: "500",
       fontSize: 13,
       lineHeight: 20,
-      fontFamily: \\"FiraCode-Medium\\",
-      color: \\"rgb(255, 142, 5)\\",
+      fontFamily: "FiraCode-Medium",
+      color: "rgb(255, 142, 5)",
     },
     list: {
-      fontWeight: \\"400\\",
+      fontWeight: "400",
       fontSize: 14,
       lineHeight: 20,
-      fontFamily: \\"Roboto-Regular\\",
+      fontFamily: "Roboto-Regular",
     },
     title: {
-      fontWeight: \\"600\\",
+      fontWeight: "600",
       fontSize: 32,
       lineHeight: 40,
-      fontFamily: \\"Inter-SemiBold\\",
-      color: \\"rgb(30, 33, 43)\\",
+      fontFamily: "Inter-SemiBold",
+      color: "rgb(30, 33, 43)",
     },
   },
   border: {
     borderAccent: {
       borderWidth: 2,
-      borderStyle: \\"solid\\",
-      borderColor: \\"rgb(102, 80, 239)\\",
+      borderStyle: "solid",
+      borderColor: "rgb(102, 80, 239)",
       borderRadius: 16,
     },
     borderAccentWithOpacity: {
       borderWidth: 2,
-      borderStyle: \\"solid\\",
-      borderColor: \\"rgba(102, 80, 239, 0.5)\\",
+      borderStyle: "solid",
+      borderColor: "rgba(102, 80, 239, 0.5)",
       borderRadius: 16,
     },
     borderAccentWithoutRadii: {
       borderWidth: 2,
-      borderStyle: \\"solid\\",
-      borderColor: \\"rgba(102, 80, 239, 0.5)\\",
+      borderStyle: "solid",
+      borderColor: "rgba(102, 80, 239, 0.5)",
     },
     borderDashed: {
       borderWidth: 1,
-      borderStyle: \\"dashed\\",
-      borderColor: \\"rgb(30, 33, 43)\\",
+      borderStyle: "dashed",
+      borderColor: "rgb(30, 33, 43)",
       borderRadius: 16,
     },
   },
   color: {
-    colorsAccent: \\"rgb(120, 133, 183)\\",
-    colorsAlmostBlack: \\"rgb(28, 28, 28)\\",
-    colorsBlack: \\"rgb(30, 33, 43)\\",
-    colorsGreen: \\"rgb(88, 205, 82)\\",
-    colorsGrey: \\"rgb(204, 213, 225)\\",
-    colorsOrange: \\"rgb(255, 142, 5)\\",
-    colorsPureBlack: \\"rgb(0, 0, 0)\\",
-    colorsRed: \\"rgb(245, 72, 63)\\",
-    colorsWhite: \\"rgb(255, 255, 255)\\",
+    colorsAccent: "rgb(120, 133, 183)",
+    colorsAlmostBlack: "rgb(28, 28, 28)",
+    colorsBlack: "rgb(30, 33, 43)",
+    colorsGreen: "rgb(88, 205, 82)",
+    colorsGrey: "rgb(204, 213, 225)",
+    colorsOrange: "rgb(255, 142, 5)",
+    colorsPureBlack: "rgb(0, 0, 0)",
+    colorsRed: "rgb(245, 72, 63)",
+    colorsWhite: "rgb(255, 255, 255)",
   },
   font: {
-    firaCodeMedium: \\"FiraCode-Medium\\",
-    interMedium: \\"Inter-Medium\\",
-    interSemiBold: \\"Inter-SemiBold\\",
-    robotoRegular: \\"Roboto-Regular\\",
+    firaCodeMedium: "FiraCode-Medium",
+    interMedium: "Inter-Medium",
+    interSemiBold: "Inter-SemiBold",
+    robotoRegular: "Roboto-Regular",
   },
   gradient: {
     gradientsColored: [
       {
         angle: 90,
-        colors: [\\"rgb(245, 72, 63)\\", \\"rgb(255, 142, 5)\\"],
+        colors: ["rgb(245, 72, 63)", "rgb(255, 142, 5)"],
         locations: [0, 1],
       },
     ],
     gradientsDark: [
       {
         angle: 90,
-        colors: [\\"rgb(30, 33, 43)\\", \\"rgb(204, 213, 225)\\"],
+        colors: ["rgb(30, 33, 43)", "rgb(204, 213, 225)"],
         locations: [0, 1],
       },
     ],
     gradientsNeutral: [
       {
         angle: 90,
-        colors: [\\"rgb(204, 213, 225)\\", \\"rgb(255, 255, 255)\\"],
+        colors: ["rgb(204, 213, 225)", "rgb(255, 255, 255)"],
         locations: [0, 1],
       },
     ],
     gradientsSafari: [
       {
         angle: 90,
-        colors: [\\"rgb(255, 142, 5)\\", \\"rgb(255, 255, 255)\\"],
+        colors: ["rgb(255, 142, 5)", "rgb(255, 255, 255)"],
         locations: [0, 1],
       },
     ],
@@ -1091,18 +1091,18 @@ export default theme;
 `;
 
 exports[`To React Native Should support different formatName options 2`] = `
-"import bitmapAcmeLogo from \\"./path/acme-logo.png\\";
-import bitmapPhotoExample from \\"./path/photo-example.png\\";
-import vectorActivity from \\"./path/activity.svg\\";
-import vectorAirplay from \\"./path/airplay.svg\\";
-import vectorAlertCircle from \\"./path/alert-circle.svg\\";
-import vectorAlertOctagon from \\"./path/alert-octagon.svg\\";
-import vectorAlertTriangle from \\"./path/alert-triangle.svg\\";
-import vectorAlertTriangle from \\"./path/alert-triangle.pdf\\";
-import vectorAlignCenter from \\"./path/align-center.pdf\\";
-import vectorAlignCenter from \\"./path/align-center.svg\\";
-import vectorUserMask from \\"./path/user-mask.svg\\";
-import vectorUserMask from \\"./path/user-mask.pdf\\";
+"import bitmapAcmeLogo from "./path/acme-logo.png";
+import bitmapPhotoExample from "./path/photo-example.png";
+import vectorActivity from "./path/activity.svg";
+import vectorAirplay from "./path/airplay.svg";
+import vectorAlertCircle from "./path/alert-circle.svg";
+import vectorAlertOctagon from "./path/alert-octagon.svg";
+import vectorAlertTriangle from "./path/alert-triangle.svg";
+import vectorAlertTriangle from "./path/alert-triangle.pdf";
+import vectorAlignCenter from "./path/align-center.pdf";
+import vectorAlignCenter from "./path/align-center.svg";
+import vectorUserMask from "./path/user-mask.svg";
+import vectorUserMask from "./path/user-mask.pdf";
 
 const theme = {
   bitmap: { acmeLogo: bitmapAcmeLogo, photoExample: bitmapPhotoExample },
@@ -1153,110 +1153,110 @@ const theme = {
   },
   textStyle: {
     body: {
-      fontWeight: \\"500\\",
+      fontWeight: "500",
       fontSize: 14,
       lineHeight: 20,
-      fontFamily: \\"Inter-Medium\\",
-      color: \\"rgb(30, 33, 43)\\",
+      fontFamily: "Inter-Medium",
+      color: "rgb(30, 33, 43)",
       letterSpacing: 10,
     },
     bodyWithOpacity: {
-      fontWeight: \\"500\\",
+      fontWeight: "500",
       fontSize: 14,
       lineHeight: 20,
-      fontFamily: \\"Inter-Medium\\",
-      color: \\"rgba(30, 33, 43, 0.3)\\",
+      fontFamily: "Inter-Medium",
+      color: "rgba(30, 33, 43, 0.3)",
       letterSpacing: 10,
     },
     code: {
-      fontWeight: \\"500\\",
+      fontWeight: "500",
       fontSize: 13,
       lineHeight: 20,
-      fontFamily: \\"FiraCode-Medium\\",
-      color: \\"rgb(255, 142, 5)\\",
+      fontFamily: "FiraCode-Medium",
+      color: "rgb(255, 142, 5)",
     },
     list: {
-      fontWeight: \\"400\\",
+      fontWeight: "400",
       fontSize: 14,
       lineHeight: 20,
-      fontFamily: \\"Roboto-Regular\\",
+      fontFamily: "Roboto-Regular",
     },
     title: {
-      fontWeight: \\"600\\",
+      fontWeight: "600",
       fontSize: 32,
       lineHeight: 40,
-      fontFamily: \\"Inter-SemiBold\\",
-      color: \\"rgb(30, 33, 43)\\",
+      fontFamily: "Inter-SemiBold",
+      color: "rgb(30, 33, 43)",
     },
   },
   border: {
     borderAccent: {
       borderWidth: 2,
-      borderStyle: \\"solid\\",
-      borderColor: \\"rgb(102, 80, 239)\\",
+      borderStyle: "solid",
+      borderColor: "rgb(102, 80, 239)",
       borderRadius: 16,
     },
     borderAccentWithOpacity: {
       borderWidth: 2,
-      borderStyle: \\"solid\\",
-      borderColor: \\"rgba(102, 80, 239, 0.5)\\",
+      borderStyle: "solid",
+      borderColor: "rgba(102, 80, 239, 0.5)",
       borderRadius: 16,
     },
     borderAccentWithoutRadii: {
       borderWidth: 2,
-      borderStyle: \\"solid\\",
-      borderColor: \\"rgba(102, 80, 239, 0.5)\\",
+      borderStyle: "solid",
+      borderColor: "rgba(102, 80, 239, 0.5)",
     },
     borderDashed: {
       borderWidth: 1,
-      borderStyle: \\"dashed\\",
-      borderColor: \\"rgb(30, 33, 43)\\",
+      borderStyle: "dashed",
+      borderColor: "rgb(30, 33, 43)",
       borderRadius: 16,
     },
   },
   color: {
-    colorsAccent: \\"rgb(120, 133, 183)\\",
-    colorsAlmostBlack: \\"rgb(28, 28, 28)\\",
-    colorsBlack: \\"rgb(30, 33, 43)\\",
-    colorsGreen: \\"rgb(88, 205, 82)\\",
-    colorsGrey: \\"rgb(204, 213, 225)\\",
-    colorsOrange: \\"rgb(255, 142, 5)\\",
-    colorsPureBlack: \\"rgb(0, 0, 0)\\",
-    colorsRed: \\"rgb(245, 72, 63)\\",
-    colorsWhite: \\"rgb(255, 255, 255)\\",
+    colorsAccent: "rgb(120, 133, 183)",
+    colorsAlmostBlack: "rgb(28, 28, 28)",
+    colorsBlack: "rgb(30, 33, 43)",
+    colorsGreen: "rgb(88, 205, 82)",
+    colorsGrey: "rgb(204, 213, 225)",
+    colorsOrange: "rgb(255, 142, 5)",
+    colorsPureBlack: "rgb(0, 0, 0)",
+    colorsRed: "rgb(245, 72, 63)",
+    colorsWhite: "rgb(255, 255, 255)",
   },
   font: {
-    firaCodeMedium: \\"FiraCode-Medium\\",
-    interMedium: \\"Inter-Medium\\",
-    interSemiBold: \\"Inter-SemiBold\\",
-    robotoRegular: \\"Roboto-Regular\\",
+    firaCodeMedium: "FiraCode-Medium",
+    interMedium: "Inter-Medium",
+    interSemiBold: "Inter-SemiBold",
+    robotoRegular: "Roboto-Regular",
   },
   gradient: {
     gradientsColored: [
       {
         angle: 90,
-        colors: [\\"rgb(245, 72, 63)\\", \\"rgb(255, 142, 5)\\"],
+        colors: ["rgb(245, 72, 63)", "rgb(255, 142, 5)"],
         locations: [0, 1],
       },
     ],
     gradientsDark: [
       {
         angle: 90,
-        colors: [\\"rgb(30, 33, 43)\\", \\"rgb(204, 213, 225)\\"],
+        colors: ["rgb(30, 33, 43)", "rgb(204, 213, 225)"],
         locations: [0, 1],
       },
     ],
     gradientsNeutral: [
       {
         angle: 90,
-        colors: [\\"rgb(204, 213, 225)\\", \\"rgb(255, 255, 255)\\"],
+        colors: ["rgb(204, 213, 225)", "rgb(255, 255, 255)"],
         locations: [0, 1],
       },
     ],
     gradientsSafari: [
       {
         angle: 90,
-        colors: [\\"rgb(255, 142, 5)\\", \\"rgb(255, 255, 255)\\"],
+        colors: ["rgb(255, 142, 5)", "rgb(255, 255, 255)"],
         locations: [0, 1],
       },
     ],
@@ -1268,18 +1268,18 @@ export default theme;
 `;
 
 exports[`To React Native Should support different formatName options 3`] = `
-"import bitmapAcmeLogo from \\"./path/acme_logo.png\\";
-import bitmapPhotoExample from \\"./path/photo_example.png\\";
-import vectorActivity from \\"./path/activity.svg\\";
-import vectorAirplay from \\"./path/airplay.svg\\";
-import vectorAlertCircle from \\"./path/alert_circle.svg\\";
-import vectorAlertOctagon from \\"./path/alert_octagon.svg\\";
-import vectorAlertTriangle from \\"./path/alert_triangle.svg\\";
-import vectorAlertTriangle from \\"./path/alert_triangle.pdf\\";
-import vectorAlignCenter from \\"./path/align_center.pdf\\";
-import vectorAlignCenter from \\"./path/align_center.svg\\";
-import vectorUserMask from \\"./path/user_mask.svg\\";
-import vectorUserMask from \\"./path/user_mask.pdf\\";
+"import bitmapAcmeLogo from "./path/acme_logo.png";
+import bitmapPhotoExample from "./path/photo_example.png";
+import vectorActivity from "./path/activity.svg";
+import vectorAirplay from "./path/airplay.svg";
+import vectorAlertCircle from "./path/alert_circle.svg";
+import vectorAlertOctagon from "./path/alert_octagon.svg";
+import vectorAlertTriangle from "./path/alert_triangle.svg";
+import vectorAlertTriangle from "./path/alert_triangle.pdf";
+import vectorAlignCenter from "./path/align_center.pdf";
+import vectorAlignCenter from "./path/align_center.svg";
+import vectorUserMask from "./path/user_mask.svg";
+import vectorUserMask from "./path/user_mask.pdf";
 
 const theme = {
   bitmap: { acmeLogo: bitmapAcmeLogo, photoExample: bitmapPhotoExample },
@@ -1330,110 +1330,110 @@ const theme = {
   },
   textStyle: {
     body: {
-      fontWeight: \\"500\\",
+      fontWeight: "500",
       fontSize: 14,
       lineHeight: 20,
-      fontFamily: \\"Inter-Medium\\",
-      color: \\"rgb(30, 33, 43)\\",
+      fontFamily: "Inter-Medium",
+      color: "rgb(30, 33, 43)",
       letterSpacing: 10,
     },
     bodyWithOpacity: {
-      fontWeight: \\"500\\",
+      fontWeight: "500",
       fontSize: 14,
       lineHeight: 20,
-      fontFamily: \\"Inter-Medium\\",
-      color: \\"rgba(30, 33, 43, 0.3)\\",
+      fontFamily: "Inter-Medium",
+      color: "rgba(30, 33, 43, 0.3)",
       letterSpacing: 10,
     },
     code: {
-      fontWeight: \\"500\\",
+      fontWeight: "500",
       fontSize: 13,
       lineHeight: 20,
-      fontFamily: \\"FiraCode-Medium\\",
-      color: \\"rgb(255, 142, 5)\\",
+      fontFamily: "FiraCode-Medium",
+      color: "rgb(255, 142, 5)",
     },
     list: {
-      fontWeight: \\"400\\",
+      fontWeight: "400",
       fontSize: 14,
       lineHeight: 20,
-      fontFamily: \\"Roboto-Regular\\",
+      fontFamily: "Roboto-Regular",
     },
     title: {
-      fontWeight: \\"600\\",
+      fontWeight: "600",
       fontSize: 32,
       lineHeight: 40,
-      fontFamily: \\"Inter-SemiBold\\",
-      color: \\"rgb(30, 33, 43)\\",
+      fontFamily: "Inter-SemiBold",
+      color: "rgb(30, 33, 43)",
     },
   },
   border: {
     borderAccent: {
       borderWidth: 2,
-      borderStyle: \\"solid\\",
-      borderColor: \\"rgb(102, 80, 239)\\",
+      borderStyle: "solid",
+      borderColor: "rgb(102, 80, 239)",
       borderRadius: 16,
     },
     borderAccentWithOpacity: {
       borderWidth: 2,
-      borderStyle: \\"solid\\",
-      borderColor: \\"rgba(102, 80, 239, 0.5)\\",
+      borderStyle: "solid",
+      borderColor: "rgba(102, 80, 239, 0.5)",
       borderRadius: 16,
     },
     borderAccentWithoutRadii: {
       borderWidth: 2,
-      borderStyle: \\"solid\\",
-      borderColor: \\"rgba(102, 80, 239, 0.5)\\",
+      borderStyle: "solid",
+      borderColor: "rgba(102, 80, 239, 0.5)",
     },
     borderDashed: {
       borderWidth: 1,
-      borderStyle: \\"dashed\\",
-      borderColor: \\"rgb(30, 33, 43)\\",
+      borderStyle: "dashed",
+      borderColor: "rgb(30, 33, 43)",
       borderRadius: 16,
     },
   },
   color: {
-    colorsAccent: \\"rgb(120, 133, 183)\\",
-    colorsAlmostBlack: \\"rgb(28, 28, 28)\\",
-    colorsBlack: \\"rgb(30, 33, 43)\\",
-    colorsGreen: \\"rgb(88, 205, 82)\\",
-    colorsGrey: \\"rgb(204, 213, 225)\\",
-    colorsOrange: \\"rgb(255, 142, 5)\\",
-    colorsPureBlack: \\"rgb(0, 0, 0)\\",
-    colorsRed: \\"rgb(245, 72, 63)\\",
-    colorsWhite: \\"rgb(255, 255, 255)\\",
+    colorsAccent: "rgb(120, 133, 183)",
+    colorsAlmostBlack: "rgb(28, 28, 28)",
+    colorsBlack: "rgb(30, 33, 43)",
+    colorsGreen: "rgb(88, 205, 82)",
+    colorsGrey: "rgb(204, 213, 225)",
+    colorsOrange: "rgb(255, 142, 5)",
+    colorsPureBlack: "rgb(0, 0, 0)",
+    colorsRed: "rgb(245, 72, 63)",
+    colorsWhite: "rgb(255, 255, 255)",
   },
   font: {
-    firaCodeMedium: \\"FiraCode-Medium\\",
-    interMedium: \\"Inter-Medium\\",
-    interSemiBold: \\"Inter-SemiBold\\",
-    robotoRegular: \\"Roboto-Regular\\",
+    firaCodeMedium: "FiraCode-Medium",
+    interMedium: "Inter-Medium",
+    interSemiBold: "Inter-SemiBold",
+    robotoRegular: "Roboto-Regular",
   },
   gradient: {
     gradientsColored: [
       {
         angle: 90,
-        colors: [\\"rgb(245, 72, 63)\\", \\"rgb(255, 142, 5)\\"],
+        colors: ["rgb(245, 72, 63)", "rgb(255, 142, 5)"],
         locations: [0, 1],
       },
     ],
     gradientsDark: [
       {
         angle: 90,
-        colors: [\\"rgb(30, 33, 43)\\", \\"rgb(204, 213, 225)\\"],
+        colors: ["rgb(30, 33, 43)", "rgb(204, 213, 225)"],
         locations: [0, 1],
       },
     ],
     gradientsNeutral: [
       {
         angle: 90,
-        colors: [\\"rgb(204, 213, 225)\\", \\"rgb(255, 255, 255)\\"],
+        colors: ["rgb(204, 213, 225)", "rgb(255, 255, 255)"],
         locations: [0, 1],
       },
     ],
     gradientsSafari: [
       {
         angle: 90,
-        colors: [\\"rgb(255, 142, 5)\\", \\"rgb(255, 255, 255)\\"],
+        colors: ["rgb(255, 142, 5)", "rgb(255, 255, 255)"],
         locations: [0, 1],
       },
     ],
@@ -1445,18 +1445,18 @@ export default theme;
 `;
 
 exports[`To React Native Should support different formatName options 4`] = `
-"import bitmapAcmeLogo from \\"./path/AcmeLogo.png\\";
-import bitmapPhotoExample from \\"./path/PhotoExample.png\\";
-import vectorActivity from \\"./path/Activity.svg\\";
-import vectorAirplay from \\"./path/Airplay.svg\\";
-import vectorAlertCircle from \\"./path/AlertCircle.svg\\";
-import vectorAlertOctagon from \\"./path/AlertOctagon.svg\\";
-import vectorAlertTriangle from \\"./path/AlertTriangle.svg\\";
-import vectorAlertTriangle from \\"./path/AlertTriangle.pdf\\";
-import vectorAlignCenter from \\"./path/AlignCenter.pdf\\";
-import vectorAlignCenter from \\"./path/AlignCenter.svg\\";
-import vectorUserMask from \\"./path/UserMask.svg\\";
-import vectorUserMask from \\"./path/UserMask.pdf\\";
+"import bitmapAcmeLogo from "./path/AcmeLogo.png";
+import bitmapPhotoExample from "./path/PhotoExample.png";
+import vectorActivity from "./path/Activity.svg";
+import vectorAirplay from "./path/Airplay.svg";
+import vectorAlertCircle from "./path/AlertCircle.svg";
+import vectorAlertOctagon from "./path/AlertOctagon.svg";
+import vectorAlertTriangle from "./path/AlertTriangle.svg";
+import vectorAlertTriangle from "./path/AlertTriangle.pdf";
+import vectorAlignCenter from "./path/AlignCenter.pdf";
+import vectorAlignCenter from "./path/AlignCenter.svg";
+import vectorUserMask from "./path/UserMask.svg";
+import vectorUserMask from "./path/UserMask.pdf";
 
 const theme = {
   bitmap: { acmeLogo: bitmapAcmeLogo, photoExample: bitmapPhotoExample },
@@ -1507,110 +1507,110 @@ const theme = {
   },
   textStyle: {
     body: {
-      fontWeight: \\"500\\",
+      fontWeight: "500",
       fontSize: 14,
       lineHeight: 20,
-      fontFamily: \\"Inter-Medium\\",
-      color: \\"rgb(30, 33, 43)\\",
+      fontFamily: "Inter-Medium",
+      color: "rgb(30, 33, 43)",
       letterSpacing: 10,
     },
     bodyWithOpacity: {
-      fontWeight: \\"500\\",
+      fontWeight: "500",
       fontSize: 14,
       lineHeight: 20,
-      fontFamily: \\"Inter-Medium\\",
-      color: \\"rgba(30, 33, 43, 0.3)\\",
+      fontFamily: "Inter-Medium",
+      color: "rgba(30, 33, 43, 0.3)",
       letterSpacing: 10,
     },
     code: {
-      fontWeight: \\"500\\",
+      fontWeight: "500",
       fontSize: 13,
       lineHeight: 20,
-      fontFamily: \\"FiraCode-Medium\\",
-      color: \\"rgb(255, 142, 5)\\",
+      fontFamily: "FiraCode-Medium",
+      color: "rgb(255, 142, 5)",
     },
     list: {
-      fontWeight: \\"400\\",
+      fontWeight: "400",
       fontSize: 14,
       lineHeight: 20,
-      fontFamily: \\"Roboto-Regular\\",
+      fontFamily: "Roboto-Regular",
     },
     title: {
-      fontWeight: \\"600\\",
+      fontWeight: "600",
       fontSize: 32,
       lineHeight: 40,
-      fontFamily: \\"Inter-SemiBold\\",
-      color: \\"rgb(30, 33, 43)\\",
+      fontFamily: "Inter-SemiBold",
+      color: "rgb(30, 33, 43)",
     },
   },
   border: {
     borderAccent: {
       borderWidth: 2,
-      borderStyle: \\"solid\\",
-      borderColor: \\"rgb(102, 80, 239)\\",
+      borderStyle: "solid",
+      borderColor: "rgb(102, 80, 239)",
       borderRadius: 16,
     },
     borderAccentWithOpacity: {
       borderWidth: 2,
-      borderStyle: \\"solid\\",
-      borderColor: \\"rgba(102, 80, 239, 0.5)\\",
+      borderStyle: "solid",
+      borderColor: "rgba(102, 80, 239, 0.5)",
       borderRadius: 16,
     },
     borderAccentWithoutRadii: {
       borderWidth: 2,
-      borderStyle: \\"solid\\",
-      borderColor: \\"rgba(102, 80, 239, 0.5)\\",
+      borderStyle: "solid",
+      borderColor: "rgba(102, 80, 239, 0.5)",
     },
     borderDashed: {
       borderWidth: 1,
-      borderStyle: \\"dashed\\",
-      borderColor: \\"rgb(30, 33, 43)\\",
+      borderStyle: "dashed",
+      borderColor: "rgb(30, 33, 43)",
       borderRadius: 16,
     },
   },
   color: {
-    colorsAccent: \\"rgb(120, 133, 183)\\",
-    colorsAlmostBlack: \\"rgb(28, 28, 28)\\",
-    colorsBlack: \\"rgb(30, 33, 43)\\",
-    colorsGreen: \\"rgb(88, 205, 82)\\",
-    colorsGrey: \\"rgb(204, 213, 225)\\",
-    colorsOrange: \\"rgb(255, 142, 5)\\",
-    colorsPureBlack: \\"rgb(0, 0, 0)\\",
-    colorsRed: \\"rgb(245, 72, 63)\\",
-    colorsWhite: \\"rgb(255, 255, 255)\\",
+    colorsAccent: "rgb(120, 133, 183)",
+    colorsAlmostBlack: "rgb(28, 28, 28)",
+    colorsBlack: "rgb(30, 33, 43)",
+    colorsGreen: "rgb(88, 205, 82)",
+    colorsGrey: "rgb(204, 213, 225)",
+    colorsOrange: "rgb(255, 142, 5)",
+    colorsPureBlack: "rgb(0, 0, 0)",
+    colorsRed: "rgb(245, 72, 63)",
+    colorsWhite: "rgb(255, 255, 255)",
   },
   font: {
-    firaCodeMedium: \\"FiraCode-Medium\\",
-    interMedium: \\"Inter-Medium\\",
-    interSemiBold: \\"Inter-SemiBold\\",
-    robotoRegular: \\"Roboto-Regular\\",
+    firaCodeMedium: "FiraCode-Medium",
+    interMedium: "Inter-Medium",
+    interSemiBold: "Inter-SemiBold",
+    robotoRegular: "Roboto-Regular",
   },
   gradient: {
     gradientsColored: [
       {
         angle: 90,
-        colors: [\\"rgb(245, 72, 63)\\", \\"rgb(255, 142, 5)\\"],
+        colors: ["rgb(245, 72, 63)", "rgb(255, 142, 5)"],
         locations: [0, 1],
       },
     ],
     gradientsDark: [
       {
         angle: 90,
-        colors: [\\"rgb(30, 33, 43)\\", \\"rgb(204, 213, 225)\\"],
+        colors: ["rgb(30, 33, 43)", "rgb(204, 213, 225)"],
         locations: [0, 1],
       },
     ],
     gradientsNeutral: [
       {
         angle: 90,
-        colors: [\\"rgb(204, 213, 225)\\", \\"rgb(255, 255, 255)\\"],
+        colors: ["rgb(204, 213, 225)", "rgb(255, 255, 255)"],
         locations: [0, 1],
       },
     ],
     gradientsSafari: [
       {
         angle: 90,
-        colors: [\\"rgb(255, 142, 5)\\", \\"rgb(255, 255, 255)\\"],
+        colors: ["rgb(255, 142, 5)", "rgb(255, 255, 255)"],
         locations: [0, 1],
       },
     ],
@@ -1622,18 +1622,18 @@ export default theme;
 `;
 
 exports[`To React Native Should support different formatName options 5`] = `
-"import bitmapAcmeLogo from \\"./path/acme-logo.png\\";
-import bitmapPhotoExample from \\"./path/photo-example.png\\";
-import vectorActivity from \\"./path/activity.svg\\";
-import vectorAirplay from \\"./path/airplay.svg\\";
-import vectorAlertCircle from \\"./path/alert-circle.svg\\";
-import vectorAlertOctagon from \\"./path/alert-octagon.svg\\";
-import vectorAlertTriangle from \\"./path/alert-triangle.svg\\";
-import vectorAlertTriangle from \\"./path/alert-triangle.pdf\\";
-import vectorAlignCenter from \\"./path/align-center.pdf\\";
-import vectorAlignCenter from \\"./path/align-center.svg\\";
-import vectorUserMask from \\"./path/user-mask.svg\\";
-import vectorUserMask from \\"./path/user-mask.pdf\\";
+"import bitmapAcmeLogo from "./path/acme-logo.png";
+import bitmapPhotoExample from "./path/photo-example.png";
+import vectorActivity from "./path/activity.svg";
+import vectorAirplay from "./path/airplay.svg";
+import vectorAlertCircle from "./path/alert-circle.svg";
+import vectorAlertOctagon from "./path/alert-octagon.svg";
+import vectorAlertTriangle from "./path/alert-triangle.svg";
+import vectorAlertTriangle from "./path/alert-triangle.pdf";
+import vectorAlignCenter from "./path/align-center.pdf";
+import vectorAlignCenter from "./path/align-center.svg";
+import vectorUserMask from "./path/user-mask.svg";
+import vectorUserMask from "./path/user-mask.pdf";
 
 const theme = {
   bitmap: { acmeLogo: bitmapAcmeLogo, photoExample: bitmapPhotoExample },
@@ -1684,110 +1684,110 @@ const theme = {
   },
   textStyle: {
     body: {
-      fontWeight: \\"500\\",
+      fontWeight: "500",
       fontSize: 14,
       lineHeight: 20,
-      fontFamily: \\"Inter-Medium\\",
-      color: \\"rgb(30, 33, 43)\\",
+      fontFamily: "Inter-Medium",
+      color: "rgb(30, 33, 43)",
       letterSpacing: 10,
     },
     bodyWithOpacity: {
-      fontWeight: \\"500\\",
+      fontWeight: "500",
       fontSize: 14,
       lineHeight: 20,
-      fontFamily: \\"Inter-Medium\\",
-      color: \\"rgba(30, 33, 43, 0.3)\\",
+      fontFamily: "Inter-Medium",
+      color: "rgba(30, 33, 43, 0.3)",
       letterSpacing: 10,
     },
     code: {
-      fontWeight: \\"500\\",
+      fontWeight: "500",
       fontSize: 13,
       lineHeight: 20,
-      fontFamily: \\"FiraCode-Medium\\",
-      color: \\"rgb(255, 142, 5)\\",
+      fontFamily: "FiraCode-Medium",
+      color: "rgb(255, 142, 5)",
     },
     list: {
-      fontWeight: \\"400\\",
+      fontWeight: "400",
       fontSize: 14,
       lineHeight: 20,
-      fontFamily: \\"Roboto-Regular\\",
+      fontFamily: "Roboto-Regular",
     },
     title: {
-      fontWeight: \\"600\\",
+      fontWeight: "600",
       fontSize: 32,
       lineHeight: 40,
-      fontFamily: \\"Inter-SemiBold\\",
-      color: \\"rgb(30, 33, 43)\\",
+      fontFamily: "Inter-SemiBold",
+      color: "rgb(30, 33, 43)",
     },
   },
   border: {
     borderAccent: {
       borderWidth: 2,
-      borderStyle: \\"solid\\",
-      borderColor: \\"rgb(102, 80, 239)\\",
+      borderStyle: "solid",
+      borderColor: "rgb(102, 80, 239)",
       borderRadius: 16,
     },
     borderAccentWithOpacity: {
       borderWidth: 2,
-      borderStyle: \\"solid\\",
-      borderColor: \\"rgba(102, 80, 239, 0.5)\\",
+      borderStyle: "solid",
+      borderColor: "rgba(102, 80, 239, 0.5)",
       borderRadius: 16,
     },
     borderAccentWithoutRadii: {
       borderWidth: 2,
-      borderStyle: \\"solid\\",
-      borderColor: \\"rgba(102, 80, 239, 0.5)\\",
+      borderStyle: "solid",
+      borderColor: "rgba(102, 80, 239, 0.5)",
     },
     borderDashed: {
       borderWidth: 1,
-      borderStyle: \\"dashed\\",
-      borderColor: \\"rgb(30, 33, 43)\\",
+      borderStyle: "dashed",
+      borderColor: "rgb(30, 33, 43)",
       borderRadius: 16,
     },
   },
   color: {
-    colorsAccent: \\"rgb(120, 133, 183)\\",
-    colorsAlmostBlack: \\"rgb(28, 28, 28)\\",
-    colorsBlack: \\"rgb(30, 33, 43)\\",
-    colorsGreen: \\"rgb(88, 205, 82)\\",
-    colorsGrey: \\"rgb(204, 213, 225)\\",
-    colorsOrange: \\"rgb(255, 142, 5)\\",
-    colorsPureBlack: \\"rgb(0, 0, 0)\\",
-    colorsRed: \\"rgb(245, 72, 63)\\",
-    colorsWhite: \\"rgb(255, 255, 255)\\",
+    colorsAccent: "rgb(120, 133, 183)",
+    colorsAlmostBlack: "rgb(28, 28, 28)",
+    colorsBlack: "rgb(30, 33, 43)",
+    colorsGreen: "rgb(88, 205, 82)",
+    colorsGrey: "rgb(204, 213, 225)",
+    colorsOrange: "rgb(255, 142, 5)",
+    colorsPureBlack: "rgb(0, 0, 0)",
+    colorsRed: "rgb(245, 72, 63)",
+    colorsWhite: "rgb(255, 255, 255)",
   },
   font: {
-    firaCodeMedium: \\"FiraCode-Medium\\",
-    interMedium: \\"Inter-Medium\\",
-    interSemiBold: \\"Inter-SemiBold\\",
-    robotoRegular: \\"Roboto-Regular\\",
+    firaCodeMedium: "FiraCode-Medium",
+    interMedium: "Inter-Medium",
+    interSemiBold: "Inter-SemiBold",
+    robotoRegular: "Roboto-Regular",
   },
   gradient: {
     gradientsColored: [
       {
         angle: 90,
-        colors: [\\"rgb(245, 72, 63)\\", \\"rgb(255, 142, 5)\\"],
+        colors: ["rgb(245, 72, 63)", "rgb(255, 142, 5)"],
         locations: [0, 1],
       },
     ],
     gradientsDark: [
       {
         angle: 90,
-        colors: [\\"rgb(30, 33, 43)\\", \\"rgb(204, 213, 225)\\"],
+        colors: ["rgb(30, 33, 43)", "rgb(204, 213, 225)"],
         locations: [0, 1],
       },
     ],
     gradientsNeutral: [
       {
         angle: 90,
-        colors: [\\"rgb(204, 213, 225)\\", \\"rgb(255, 255, 255)\\"],
+        colors: ["rgb(204, 213, 225)", "rgb(255, 255, 255)"],
         locations: [0, 1],
       },
     ],
     gradientsSafari: [
       {
         angle: 90,
-        colors: [\\"rgb(255, 142, 5)\\", \\"rgb(255, 255, 255)\\"],
+        colors: ["rgb(255, 142, 5)", "rgb(255, 255, 255)"],
         locations: [0, 1],
       },
     ],
@@ -1799,18 +1799,18 @@ export default theme;
 `;
 
 exports[`To React Native Should support the typescript.castToConst option 1`] = `
-"import bitmapAcmeLogo from \\"./path/acmeLogo.png\\";
-import bitmapPhotoExample from \\"./path/photoExample.png\\";
-import vectorActivity from \\"./path/activity.svg\\";
-import vectorAirplay from \\"./path/airplay.svg\\";
-import vectorAlertCircle from \\"./path/alertCircle.svg\\";
-import vectorAlertOctagon from \\"./path/alertOctagon.svg\\";
-import vectorAlertTriangle from \\"./path/alertTriangle.svg\\";
-import vectorAlertTriangle from \\"./path/alertTriangle.pdf\\";
-import vectorAlignCenter from \\"./path/alignCenter.pdf\\";
-import vectorAlignCenter from \\"./path/alignCenter.svg\\";
-import vectorUserMask from \\"./path/userMask.svg\\";
-import vectorUserMask from \\"./path/userMask.pdf\\";
+"import bitmapAcmeLogo from "./path/acmeLogo.png";
+import bitmapPhotoExample from "./path/photoExample.png";
+import vectorActivity from "./path/activity.svg";
+import vectorAirplay from "./path/airplay.svg";
+import vectorAlertCircle from "./path/alertCircle.svg";
+import vectorAlertOctagon from "./path/alertOctagon.svg";
+import vectorAlertTriangle from "./path/alertTriangle.svg";
+import vectorAlertTriangle from "./path/alertTriangle.pdf";
+import vectorAlignCenter from "./path/alignCenter.pdf";
+import vectorAlignCenter from "./path/alignCenter.svg";
+import vectorUserMask from "./path/userMask.svg";
+import vectorUserMask from "./path/userMask.pdf";
 
 const theme = {
   bitmap: { acmeLogo: bitmapAcmeLogo, photoExample: bitmapPhotoExample },
@@ -1861,110 +1861,110 @@ const theme = {
   },
   textStyle: {
     body: {
-      fontWeight: \\"500\\",
+      fontWeight: "500",
       fontSize: 14,
       lineHeight: 20,
-      fontFamily: \\"Inter-Medium\\",
-      color: \\"rgb(30, 33, 43)\\",
+      fontFamily: "Inter-Medium",
+      color: "rgb(30, 33, 43)",
       letterSpacing: 10,
     },
     bodyWithOpacity: {
-      fontWeight: \\"500\\",
+      fontWeight: "500",
       fontSize: 14,
       lineHeight: 20,
-      fontFamily: \\"Inter-Medium\\",
-      color: \\"rgba(30, 33, 43, 0.3)\\",
+      fontFamily: "Inter-Medium",
+      color: "rgba(30, 33, 43, 0.3)",
       letterSpacing: 10,
     },
     code: {
-      fontWeight: \\"500\\",
+      fontWeight: "500",
       fontSize: 13,
       lineHeight: 20,
-      fontFamily: \\"FiraCode-Medium\\",
-      color: \\"rgb(255, 142, 5)\\",
+      fontFamily: "FiraCode-Medium",
+      color: "rgb(255, 142, 5)",
     },
     list: {
-      fontWeight: \\"400\\",
+      fontWeight: "400",
       fontSize: 14,
       lineHeight: 20,
-      fontFamily: \\"Roboto-Regular\\",
+      fontFamily: "Roboto-Regular",
     },
     title: {
-      fontWeight: \\"600\\",
+      fontWeight: "600",
       fontSize: 32,
       lineHeight: 40,
-      fontFamily: \\"Inter-SemiBold\\",
-      color: \\"rgb(30, 33, 43)\\",
+      fontFamily: "Inter-SemiBold",
+      color: "rgb(30, 33, 43)",
     },
   },
   border: {
     borderAccent: {
       borderWidth: 2,
-      borderStyle: \\"solid\\",
-      borderColor: \\"rgb(102, 80, 239)\\",
+      borderStyle: "solid",
+      borderColor: "rgb(102, 80, 239)",
       borderRadius: 16,
     },
     borderAccentWithOpacity: {
       borderWidth: 2,
-      borderStyle: \\"solid\\",
-      borderColor: \\"rgba(102, 80, 239, 0.5)\\",
+      borderStyle: "solid",
+      borderColor: "rgba(102, 80, 239, 0.5)",
       borderRadius: 16,
     },
     borderAccentWithoutRadii: {
       borderWidth: 2,
-      borderStyle: \\"solid\\",
-      borderColor: \\"rgba(102, 80, 239, 0.5)\\",
+      borderStyle: "solid",
+      borderColor: "rgba(102, 80, 239, 0.5)",
     },
     borderDashed: {
       borderWidth: 1,
-      borderStyle: \\"dashed\\",
-      borderColor: \\"rgb(30, 33, 43)\\",
+      borderStyle: "dashed",
+      borderColor: "rgb(30, 33, 43)",
       borderRadius: 16,
     },
   },
   color: {
-    colorsAccent: \\"rgb(120, 133, 183)\\",
-    colorsAlmostBlack: \\"rgb(28, 28, 28)\\",
-    colorsBlack: \\"rgb(30, 33, 43)\\",
-    colorsGreen: \\"rgb(88, 205, 82)\\",
-    colorsGrey: \\"rgb(204, 213, 225)\\",
-    colorsOrange: \\"rgb(255, 142, 5)\\",
-    colorsPureBlack: \\"rgb(0, 0, 0)\\",
-    colorsRed: \\"rgb(245, 72, 63)\\",
-    colorsWhite: \\"rgb(255, 255, 255)\\",
+    colorsAccent: "rgb(120, 133, 183)",
+    colorsAlmostBlack: "rgb(28, 28, 28)",
+    colorsBlack: "rgb(30, 33, 43)",
+    colorsGreen: "rgb(88, 205, 82)",
+    colorsGrey: "rgb(204, 213, 225)",
+    colorsOrange: "rgb(255, 142, 5)",
+    colorsPureBlack: "rgb(0, 0, 0)",
+    colorsRed: "rgb(245, 72, 63)",
+    colorsWhite: "rgb(255, 255, 255)",
   },
   font: {
-    firaCodeMedium: \\"FiraCode-Medium\\",
-    interMedium: \\"Inter-Medium\\",
-    interSemiBold: \\"Inter-SemiBold\\",
-    robotoRegular: \\"Roboto-Regular\\",
+    firaCodeMedium: "FiraCode-Medium",
+    interMedium: "Inter-Medium",
+    interSemiBold: "Inter-SemiBold",
+    robotoRegular: "Roboto-Regular",
   },
   gradient: {
     gradientsColored: [
       {
         angle: 90,
-        colors: [\\"rgb(245, 72, 63)\\", \\"rgb(255, 142, 5)\\"],
+        colors: ["rgb(245, 72, 63)", "rgb(255, 142, 5)"],
         locations: [0, 1],
       },
     ],
     gradientsDark: [
       {
         angle: 90,
-        colors: [\\"rgb(30, 33, 43)\\", \\"rgb(204, 213, 225)\\"],
+        colors: ["rgb(30, 33, 43)", "rgb(204, 213, 225)"],
         locations: [0, 1],
       },
     ],
     gradientsNeutral: [
       {
         angle: 90,
-        colors: [\\"rgb(204, 213, 225)\\", \\"rgb(255, 255, 255)\\"],
+        colors: ["rgb(204, 213, 225)", "rgb(255, 255, 255)"],
         locations: [0, 1],
       },
     ],
     gradientsSafari: [
       {
         angle: 90,
-        colors: [\\"rgb(255, 142, 5)\\", \\"rgb(255, 255, 255)\\"],
+        colors: ["rgb(255, 142, 5)", "rgb(255, 255, 255)"],
         locations: [0, 1],
       },
     ],
@@ -1976,18 +1976,18 @@ export default theme;
 `;
 
 exports[`To React Native Should use assetsFolderPath 1`] = `
-"import bitmapAcmeLogo from \\"./path/acmeLogo.png\\";
-import bitmapPhotoExample from \\"./path/photoExample.png\\";
-import vectorActivity from \\"./path/activity.svg\\";
-import vectorAirplay from \\"./path/airplay.svg\\";
-import vectorAlertCircle from \\"./path/alertCircle.svg\\";
-import vectorAlertOctagon from \\"./path/alertOctagon.svg\\";
-import vectorAlertTriangle from \\"./path/alertTriangle.svg\\";
-import vectorAlertTriangle from \\"./path/alertTriangle.pdf\\";
-import vectorAlignCenter from \\"./path/alignCenter.pdf\\";
-import vectorAlignCenter from \\"./path/alignCenter.svg\\";
-import vectorUserMask from \\"./path/userMask.svg\\";
-import vectorUserMask from \\"./path/userMask.pdf\\";
+"import bitmapAcmeLogo from "./path/acmeLogo.png";
+import bitmapPhotoExample from "./path/photoExample.png";
+import vectorActivity from "./path/activity.svg";
+import vectorAirplay from "./path/airplay.svg";
+import vectorAlertCircle from "./path/alertCircle.svg";
+import vectorAlertOctagon from "./path/alertOctagon.svg";
+import vectorAlertTriangle from "./path/alertTriangle.svg";
+import vectorAlertTriangle from "./path/alertTriangle.pdf";
+import vectorAlignCenter from "./path/alignCenter.pdf";
+import vectorAlignCenter from "./path/alignCenter.svg";
+import vectorUserMask from "./path/userMask.svg";
+import vectorUserMask from "./path/userMask.pdf";
 
 const theme = {
   bitmap: { acmeLogo: bitmapAcmeLogo, photoExample: bitmapPhotoExample },
@@ -2038,110 +2038,110 @@ const theme = {
   },
   textStyle: {
     body: {
-      fontWeight: \\"500\\",
+      fontWeight: "500",
       fontSize: 14,
       lineHeight: 20,
-      fontFamily: \\"Inter-Medium\\",
-      color: \\"rgb(30, 33, 43)\\",
+      fontFamily: "Inter-Medium",
+      color: "rgb(30, 33, 43)",
       letterSpacing: 10,
     },
     bodyWithOpacity: {
-      fontWeight: \\"500\\",
+      fontWeight: "500",
       fontSize: 14,
       lineHeight: 20,
-      fontFamily: \\"Inter-Medium\\",
-      color: \\"rgba(30, 33, 43, 0.3)\\",
+      fontFamily: "Inter-Medium",
+      color: "rgba(30, 33, 43, 0.3)",
       letterSpacing: 10,
     },
     code: {
-      fontWeight: \\"500\\",
+      fontWeight: "500",
       fontSize: 13,
       lineHeight: 20,
-      fontFamily: \\"FiraCode-Medium\\",
-      color: \\"rgb(255, 142, 5)\\",
+      fontFamily: "FiraCode-Medium",
+      color: "rgb(255, 142, 5)",
     },
     list: {
-      fontWeight: \\"400\\",
+      fontWeight: "400",
       fontSize: 14,
       lineHeight: 20,
-      fontFamily: \\"Roboto-Regular\\",
+      fontFamily: "Roboto-Regular",
     },
     title: {
-      fontWeight: \\"600\\",
+      fontWeight: "600",
       fontSize: 32,
       lineHeight: 40,
-      fontFamily: \\"Inter-SemiBold\\",
-      color: \\"rgb(30, 33, 43)\\",
+      fontFamily: "Inter-SemiBold",
+      color: "rgb(30, 33, 43)",
     },
   },
   border: {
     borderAccent: {
       borderWidth: 2,
-      borderStyle: \\"solid\\",
-      borderColor: \\"rgb(102, 80, 239)\\",
+      borderStyle: "solid",
+      borderColor: "rgb(102, 80, 239)",
       borderRadius: 16,
     },
     borderAccentWithOpacity: {
       borderWidth: 2,
-      borderStyle: \\"solid\\",
-      borderColor: \\"rgba(102, 80, 239, 0.5)\\",
+      borderStyle: "solid",
+      borderColor: "rgba(102, 80, 239, 0.5)",
       borderRadius: 16,
     },
     borderAccentWithoutRadii: {
       borderWidth: 2,
-      borderStyle: \\"solid\\",
-      borderColor: \\"rgba(102, 80, 239, 0.5)\\",
+      borderStyle: "solid",
+      borderColor: "rgba(102, 80, 239, 0.5)",
     },
     borderDashed: {
       borderWidth: 1,
-      borderStyle: \\"dashed\\",
-      borderColor: \\"rgb(30, 33, 43)\\",
+      borderStyle: "dashed",
+      borderColor: "rgb(30, 33, 43)",
       borderRadius: 16,
     },
   },
   color: {
-    colorsAccent: \\"rgb(120, 133, 183)\\",
-    colorsAlmostBlack: \\"rgb(28, 28, 28)\\",
-    colorsBlack: \\"rgb(30, 33, 43)\\",
-    colorsGreen: \\"rgb(88, 205, 82)\\",
-    colorsGrey: \\"rgb(204, 213, 225)\\",
-    colorsOrange: \\"rgb(255, 142, 5)\\",
-    colorsPureBlack: \\"rgb(0, 0, 0)\\",
-    colorsRed: \\"rgb(245, 72, 63)\\",
-    colorsWhite: \\"rgb(255, 255, 255)\\",
+    colorsAccent: "rgb(120, 133, 183)",
+    colorsAlmostBlack: "rgb(28, 28, 28)",
+    colorsBlack: "rgb(30, 33, 43)",
+    colorsGreen: "rgb(88, 205, 82)",
+    colorsGrey: "rgb(204, 213, 225)",
+    colorsOrange: "rgb(255, 142, 5)",
+    colorsPureBlack: "rgb(0, 0, 0)",
+    colorsRed: "rgb(245, 72, 63)",
+    colorsWhite: "rgb(255, 255, 255)",
   },
   font: {
-    firaCodeMedium: \\"FiraCode-Medium\\",
-    interMedium: \\"Inter-Medium\\",
-    interSemiBold: \\"Inter-SemiBold\\",
-    robotoRegular: \\"Roboto-Regular\\",
+    firaCodeMedium: "FiraCode-Medium",
+    interMedium: "Inter-Medium",
+    interSemiBold: "Inter-SemiBold",
+    robotoRegular: "Roboto-Regular",
   },
   gradient: {
     gradientsColored: [
       {
         angle: 90,
-        colors: [\\"rgb(245, 72, 63)\\", \\"rgb(255, 142, 5)\\"],
+        colors: ["rgb(245, 72, 63)", "rgb(255, 142, 5)"],
         locations: [0, 1],
       },
     ],
     gradientsDark: [
       {
         angle: 90,
-        colors: [\\"rgb(30, 33, 43)\\", \\"rgb(204, 213, 225)\\"],
+        colors: ["rgb(30, 33, 43)", "rgb(204, 213, 225)"],
         locations: [0, 1],
       },
     ],
     gradientsNeutral: [
       {
         angle: 90,
-        colors: [\\"rgb(204, 213, 225)\\", \\"rgb(255, 255, 255)\\"],
+        colors: ["rgb(204, 213, 225)", "rgb(255, 255, 255)"],
         locations: [0, 1],
       },
     ],
     gradientsSafari: [
       {
         angle: 90,
-        colors: [\\"rgb(255, 142, 5)\\", \\"rgb(255, 255, 255)\\"],
+        colors: ["rgb(255, 142, 5)", "rgb(255, 255, 255)"],
         locations: [0, 1],
       },
     ],
@@ -2153,18 +2153,18 @@ export default theme;
 `;
 
 exports[`To React Native Should use assetsFolderPath 2`] = `
-"import bitmapAcmeLogo from \\"./path/acmeLogo.png\\";
-import bitmapPhotoExample from \\"./path/photoExample.png\\";
-import vectorActivity from \\"./path/activity.svg\\";
-import vectorAirplay from \\"./path/airplay.svg\\";
-import vectorAlertCircle from \\"./path/alertCircle.svg\\";
-import vectorAlertOctagon from \\"./path/alertOctagon.svg\\";
-import vectorAlertTriangle from \\"./path/alertTriangle.svg\\";
-import vectorAlertTriangle from \\"./path/alertTriangle.pdf\\";
-import vectorAlignCenter from \\"./path/alignCenter.pdf\\";
-import vectorAlignCenter from \\"./path/alignCenter.svg\\";
-import vectorUserMask from \\"./path/userMask.svg\\";
-import vectorUserMask from \\"./path/userMask.pdf\\";
+"import bitmapAcmeLogo from "./path/acmeLogo.png";
+import bitmapPhotoExample from "./path/photoExample.png";
+import vectorActivity from "./path/activity.svg";
+import vectorAirplay from "./path/airplay.svg";
+import vectorAlertCircle from "./path/alertCircle.svg";
+import vectorAlertOctagon from "./path/alertOctagon.svg";
+import vectorAlertTriangle from "./path/alertTriangle.svg";
+import vectorAlertTriangle from "./path/alertTriangle.pdf";
+import vectorAlignCenter from "./path/alignCenter.pdf";
+import vectorAlignCenter from "./path/alignCenter.svg";
+import vectorUserMask from "./path/userMask.svg";
+import vectorUserMask from "./path/userMask.pdf";
 
 const theme = {
   bitmap: { acmeLogo: bitmapAcmeLogo, photoExample: bitmapPhotoExample },
@@ -2215,110 +2215,110 @@ const theme = {
   },
   textStyle: {
     body: {
-      fontWeight: \\"500\\",
+      fontWeight: "500",
       fontSize: 14,
       lineHeight: 20,
-      fontFamily: \\"Inter-Medium\\",
-      color: \\"rgb(30, 33, 43)\\",
+      fontFamily: "Inter-Medium",
+      color: "rgb(30, 33, 43)",
       letterSpacing: 10,
     },
     bodyWithOpacity: {
-      fontWeight: \\"500\\",
+      fontWeight: "500",
       fontSize: 14,
       lineHeight: 20,
-      fontFamily: \\"Inter-Medium\\",
-      color: \\"rgba(30, 33, 43, 0.3)\\",
+      fontFamily: "Inter-Medium",
+      color: "rgba(30, 33, 43, 0.3)",
       letterSpacing: 10,
     },
     code: {
-      fontWeight: \\"500\\",
+      fontWeight: "500",
       fontSize: 13,
       lineHeight: 20,
-      fontFamily: \\"FiraCode-Medium\\",
-      color: \\"rgb(255, 142, 5)\\",
+      fontFamily: "FiraCode-Medium",
+      color: "rgb(255, 142, 5)",
     },
     list: {
-      fontWeight: \\"400\\",
+      fontWeight: "400",
       fontSize: 14,
       lineHeight: 20,
-      fontFamily: \\"Roboto-Regular\\",
+      fontFamily: "Roboto-Regular",
     },
     title: {
-      fontWeight: \\"600\\",
+      fontWeight: "600",
       fontSize: 32,
       lineHeight: 40,
-      fontFamily: \\"Inter-SemiBold\\",
-      color: \\"rgb(30, 33, 43)\\",
+      fontFamily: "Inter-SemiBold",
+      color: "rgb(30, 33, 43)",
     },
   },
   border: {
     borderAccent: {
       borderWidth: 2,
-      borderStyle: \\"solid\\",
-      borderColor: \\"rgb(102, 80, 239)\\",
+      borderStyle: "solid",
+      borderColor: "rgb(102, 80, 239)",
       borderRadius: 16,
     },
     borderAccentWithOpacity: {
       borderWidth: 2,
-      borderStyle: \\"solid\\",
-      borderColor: \\"rgba(102, 80, 239, 0.5)\\",
+      borderStyle: "solid",
+      borderColor: "rgba(102, 80, 239, 0.5)",
       borderRadius: 16,
     },
     borderAccentWithoutRadii: {
       borderWidth: 2,
-      borderStyle: \\"solid\\",
-      borderColor: \\"rgba(102, 80, 239, 0.5)\\",
+      borderStyle: "solid",
+      borderColor: "rgba(102, 80, 239, 0.5)",
     },
     borderDashed: {
       borderWidth: 1,
-      borderStyle: \\"dashed\\",
-      borderColor: \\"rgb(30, 33, 43)\\",
+      borderStyle: "dashed",
+      borderColor: "rgb(30, 33, 43)",
       borderRadius: 16,
     },
   },
   color: {
-    colorsAccent: \\"rgb(120, 133, 183)\\",
-    colorsAlmostBlack: \\"rgb(28, 28, 28)\\",
-    colorsBlack: \\"rgb(30, 33, 43)\\",
-    colorsGreen: \\"rgb(88, 205, 82)\\",
-    colorsGrey: \\"rgb(204, 213, 225)\\",
-    colorsOrange: \\"rgb(255, 142, 5)\\",
-    colorsPureBlack: \\"rgb(0, 0, 0)\\",
-    colorsRed: \\"rgb(245, 72, 63)\\",
-    colorsWhite: \\"rgb(255, 255, 255)\\",
+    colorsAccent: "rgb(120, 133, 183)",
+    colorsAlmostBlack: "rgb(28, 28, 28)",
+    colorsBlack: "rgb(30, 33, 43)",
+    colorsGreen: "rgb(88, 205, 82)",
+    colorsGrey: "rgb(204, 213, 225)",
+    colorsOrange: "rgb(255, 142, 5)",
+    colorsPureBlack: "rgb(0, 0, 0)",
+    colorsRed: "rgb(245, 72, 63)",
+    colorsWhite: "rgb(255, 255, 255)",
   },
   font: {
-    firaCodeMedium: \\"FiraCode-Medium\\",
-    interMedium: \\"Inter-Medium\\",
-    interSemiBold: \\"Inter-SemiBold\\",
-    robotoRegular: \\"Roboto-Regular\\",
+    firaCodeMedium: "FiraCode-Medium",
+    interMedium: "Inter-Medium",
+    interSemiBold: "Inter-SemiBold",
+    robotoRegular: "Roboto-Regular",
   },
   gradient: {
     gradientsColored: [
       {
         angle: 90,
-        colors: [\\"rgb(245, 72, 63)\\", \\"rgb(255, 142, 5)\\"],
+        colors: ["rgb(245, 72, 63)", "rgb(255, 142, 5)"],
         locations: [0, 1],
       },
     ],
     gradientsDark: [
       {
         angle: 90,
-        colors: [\\"rgb(30, 33, 43)\\", \\"rgb(204, 213, 225)\\"],
+        colors: ["rgb(30, 33, 43)", "rgb(204, 213, 225)"],
         locations: [0, 1],
       },
     ],
     gradientsNeutral: [
       {
         angle: 90,
-        colors: [\\"rgb(204, 213, 225)\\", \\"rgb(255, 255, 255)\\"],
+        colors: ["rgb(204, 213, 225)", "rgb(255, 255, 255)"],
         locations: [0, 1],
       },
     ],
     gradientsSafari: [
       {
         angle: 90,
-        colors: [\\"rgb(255, 142, 5)\\", \\"rgb(255, 255, 255)\\"],
+        colors: ["rgb(255, 142, 5)", "rgb(255, 255, 255)"],
         locations: [0, 1],
       },
     ],
@@ -2330,18 +2330,18 @@ export default theme;
 `;
 
 exports[`To React Native Should use assetsFolderPath 3`] = `
-"import bitmapAcmeLogo from \\"../path/acmeLogo.png\\";
-import bitmapPhotoExample from \\"../path/photoExample.png\\";
-import vectorActivity from \\"../path/activity.svg\\";
-import vectorAirplay from \\"../path/airplay.svg\\";
-import vectorAlertCircle from \\"../path/alertCircle.svg\\";
-import vectorAlertOctagon from \\"../path/alertOctagon.svg\\";
-import vectorAlertTriangle from \\"../path/alertTriangle.svg\\";
-import vectorAlertTriangle from \\"../path/alertTriangle.pdf\\";
-import vectorAlignCenter from \\"../path/alignCenter.pdf\\";
-import vectorAlignCenter from \\"../path/alignCenter.svg\\";
-import vectorUserMask from \\"../path/userMask.svg\\";
-import vectorUserMask from \\"../path/userMask.pdf\\";
+"import bitmapAcmeLogo from "../path/acmeLogo.png";
+import bitmapPhotoExample from "../path/photoExample.png";
+import vectorActivity from "../path/activity.svg";
+import vectorAirplay from "../path/airplay.svg";
+import vectorAlertCircle from "../path/alertCircle.svg";
+import vectorAlertOctagon from "../path/alertOctagon.svg";
+import vectorAlertTriangle from "../path/alertTriangle.svg";
+import vectorAlertTriangle from "../path/alertTriangle.pdf";
+import vectorAlignCenter from "../path/alignCenter.pdf";
+import vectorAlignCenter from "../path/alignCenter.svg";
+import vectorUserMask from "../path/userMask.svg";
+import vectorUserMask from "../path/userMask.pdf";
 
 const theme = {
   bitmap: { acmeLogo: bitmapAcmeLogo, photoExample: bitmapPhotoExample },
@@ -2392,110 +2392,110 @@ const theme = {
   },
   textStyle: {
     body: {
-      fontWeight: \\"500\\",
+      fontWeight: "500",
       fontSize: 14,
       lineHeight: 20,
-      fontFamily: \\"Inter-Medium\\",
-      color: \\"rgb(30, 33, 43)\\",
+      fontFamily: "Inter-Medium",
+      color: "rgb(30, 33, 43)",
       letterSpacing: 10,
     },
     bodyWithOpacity: {
-      fontWeight: \\"500\\",
+      fontWeight: "500",
       fontSize: 14,
       lineHeight: 20,
-      fontFamily: \\"Inter-Medium\\",
-      color: \\"rgba(30, 33, 43, 0.3)\\",
+      fontFamily: "Inter-Medium",
+      color: "rgba(30, 33, 43, 0.3)",
       letterSpacing: 10,
     },
     code: {
-      fontWeight: \\"500\\",
+      fontWeight: "500",
       fontSize: 13,
       lineHeight: 20,
-      fontFamily: \\"FiraCode-Medium\\",
-      color: \\"rgb(255, 142, 5)\\",
+      fontFamily: "FiraCode-Medium",
+      color: "rgb(255, 142, 5)",
     },
     list: {
-      fontWeight: \\"400\\",
+      fontWeight: "400",
       fontSize: 14,
       lineHeight: 20,
-      fontFamily: \\"Roboto-Regular\\",
+      fontFamily: "Roboto-Regular",
     },
     title: {
-      fontWeight: \\"600\\",
+      fontWeight: "600",
       fontSize: 32,
       lineHeight: 40,
-      fontFamily: \\"Inter-SemiBold\\",
-      color: \\"rgb(30, 33, 43)\\",
+      fontFamily: "Inter-SemiBold",
+      color: "rgb(30, 33, 43)",
     },
   },
   border: {
     borderAccent: {
       borderWidth: 2,
-      borderStyle: \\"solid\\",
-      borderColor: \\"rgb(102, 80, 239)\\",
+      borderStyle: "solid",
+      borderColor: "rgb(102, 80, 239)",
       borderRadius: 16,
     },
     borderAccentWithOpacity: {
       borderWidth: 2,
-      borderStyle: \\"solid\\",
-      borderColor: \\"rgba(102, 80, 239, 0.5)\\",
+      borderStyle: "solid",
+      borderColor: "rgba(102, 80, 239, 0.5)",
       borderRadius: 16,
     },
     borderAccentWithoutRadii: {
       borderWidth: 2,
-      borderStyle: \\"solid\\",
-      borderColor: \\"rgba(102, 80, 239, 0.5)\\",
+      borderStyle: "solid",
+      borderColor: "rgba(102, 80, 239, 0.5)",
     },
     borderDashed: {
       borderWidth: 1,
-      borderStyle: \\"dashed\\",
-      borderColor: \\"rgb(30, 33, 43)\\",
+      borderStyle: "dashed",
+      borderColor: "rgb(30, 33, 43)",
       borderRadius: 16,
     },
   },
   color: {
-    colorsAccent: \\"rgb(120, 133, 183)\\",
-    colorsAlmostBlack: \\"rgb(28, 28, 28)\\",
-    colorsBlack: \\"rgb(30, 33, 43)\\",
-    colorsGreen: \\"rgb(88, 205, 82)\\",
-    colorsGrey: \\"rgb(204, 213, 225)\\",
-    colorsOrange: \\"rgb(255, 142, 5)\\",
-    colorsPureBlack: \\"rgb(0, 0, 0)\\",
-    colorsRed: \\"rgb(245, 72, 63)\\",
-    colorsWhite: \\"rgb(255, 255, 255)\\",
+    colorsAccent: "rgb(120, 133, 183)",
+    colorsAlmostBlack: "rgb(28, 28, 28)",
+    colorsBlack: "rgb(30, 33, 43)",
+    colorsGreen: "rgb(88, 205, 82)",
+    colorsGrey: "rgb(204, 213, 225)",
+    colorsOrange: "rgb(255, 142, 5)",
+    colorsPureBlack: "rgb(0, 0, 0)",
+    colorsRed: "rgb(245, 72, 63)",
+    colorsWhite: "rgb(255, 255, 255)",
   },
   font: {
-    firaCodeMedium: \\"FiraCode-Medium\\",
-    interMedium: \\"Inter-Medium\\",
-    interSemiBold: \\"Inter-SemiBold\\",
-    robotoRegular: \\"Roboto-Regular\\",
+    firaCodeMedium: "FiraCode-Medium",
+    interMedium: "Inter-Medium",
+    interSemiBold: "Inter-SemiBold",
+    robotoRegular: "Roboto-Regular",
   },
   gradient: {
     gradientsColored: [
       {
         angle: 90,
-        colors: [\\"rgb(245, 72, 63)\\", \\"rgb(255, 142, 5)\\"],
+        colors: ["rgb(245, 72, 63)", "rgb(255, 142, 5)"],
         locations: [0, 1],
       },
     ],
     gradientsDark: [
       {
         angle: 90,
-        colors: [\\"rgb(30, 33, 43)\\", \\"rgb(204, 213, 225)\\"],
+        colors: ["rgb(30, 33, 43)", "rgb(204, 213, 225)"],
         locations: [0, 1],
       },
     ],
     gradientsNeutral: [
       {
         angle: 90,
-        colors: [\\"rgb(204, 213, 225)\\", \\"rgb(255, 255, 255)\\"],
+        colors: ["rgb(204, 213, 225)", "rgb(255, 255, 255)"],
         locations: [0, 1],
       },
     ],
     gradientsSafari: [
       {
         angle: 90,
-        colors: [\\"rgb(255, 142, 5)\\", \\"rgb(255, 255, 255)\\"],
+        colors: ["rgb(255, 142, 5)", "rgb(255, 255, 255)"],
         locations: [0, 1],
       },
     ],
@@ -2507,18 +2507,18 @@ export default theme;
 `;
 
 exports[`To React Native Should use assetsFolderPath 4`] = `
-"import bitmapAcmeLogo from \\"../path/acmeLogo.png\\";
-import bitmapPhotoExample from \\"../path/photoExample.png\\";
-import vectorActivity from \\"../path/activity.svg\\";
-import vectorAirplay from \\"../path/airplay.svg\\";
-import vectorAlertCircle from \\"../path/alertCircle.svg\\";
-import vectorAlertOctagon from \\"../path/alertOctagon.svg\\";
-import vectorAlertTriangle from \\"../path/alertTriangle.svg\\";
-import vectorAlertTriangle from \\"../path/alertTriangle.pdf\\";
-import vectorAlignCenter from \\"../path/alignCenter.pdf\\";
-import vectorAlignCenter from \\"../path/alignCenter.svg\\";
-import vectorUserMask from \\"../path/userMask.svg\\";
-import vectorUserMask from \\"../path/userMask.pdf\\";
+"import bitmapAcmeLogo from "../path/acmeLogo.png";
+import bitmapPhotoExample from "../path/photoExample.png";
+import vectorActivity from "../path/activity.svg";
+import vectorAirplay from "../path/airplay.svg";
+import vectorAlertCircle from "../path/alertCircle.svg";
+import vectorAlertOctagon from "../path/alertOctagon.svg";
+import vectorAlertTriangle from "../path/alertTriangle.svg";
+import vectorAlertTriangle from "../path/alertTriangle.pdf";
+import vectorAlignCenter from "../path/alignCenter.pdf";
+import vectorAlignCenter from "../path/alignCenter.svg";
+import vectorUserMask from "../path/userMask.svg";
+import vectorUserMask from "../path/userMask.pdf";
 
 const theme = {
   bitmap: { acmeLogo: bitmapAcmeLogo, photoExample: bitmapPhotoExample },
@@ -2569,110 +2569,110 @@ const theme = {
   },
   textStyle: {
     body: {
-      fontWeight: \\"500\\",
+      fontWeight: "500",
       fontSize: 14,
       lineHeight: 20,
-      fontFamily: \\"Inter-Medium\\",
-      color: \\"rgb(30, 33, 43)\\",
+      fontFamily: "Inter-Medium",
+      color: "rgb(30, 33, 43)",
       letterSpacing: 10,
     },
     bodyWithOpacity: {
-      fontWeight: \\"500\\",
+      fontWeight: "500",
       fontSize: 14,
       lineHeight: 20,
-      fontFamily: \\"Inter-Medium\\",
-      color: \\"rgba(30, 33, 43, 0.3)\\",
+      fontFamily: "Inter-Medium",
+      color: "rgba(30, 33, 43, 0.3)",
       letterSpacing: 10,
     },
     code: {
-      fontWeight: \\"500\\",
+      fontWeight: "500",
       fontSize: 13,
       lineHeight: 20,
-      fontFamily: \\"FiraCode-Medium\\",
-      color: \\"rgb(255, 142, 5)\\",
+      fontFamily: "FiraCode-Medium",
+      color: "rgb(255, 142, 5)",
     },
     list: {
-      fontWeight: \\"400\\",
+      fontWeight: "400",
       fontSize: 14,
       lineHeight: 20,
-      fontFamily: \\"Roboto-Regular\\",
+      fontFamily: "Roboto-Regular",
     },
     title: {
-      fontWeight: \\"600\\",
+      fontWeight: "600",
       fontSize: 32,
       lineHeight: 40,
-      fontFamily: \\"Inter-SemiBold\\",
-      color: \\"rgb(30, 33, 43)\\",
+      fontFamily: "Inter-SemiBold",
+      color: "rgb(30, 33, 43)",
     },
   },
   border: {
     borderAccent: {
       borderWidth: 2,
-      borderStyle: \\"solid\\",
-      borderColor: \\"rgb(102, 80, 239)\\",
+      borderStyle: "solid",
+      borderColor: "rgb(102, 80, 239)",
       borderRadius: 16,
     },
     borderAccentWithOpacity: {
       borderWidth: 2,
-      borderStyle: \\"solid\\",
-      borderColor: \\"rgba(102, 80, 239, 0.5)\\",
+      borderStyle: "solid",
+      borderColor: "rgba(102, 80, 239, 0.5)",
       borderRadius: 16,
     },
     borderAccentWithoutRadii: {
       borderWidth: 2,
-      borderStyle: \\"solid\\",
-      borderColor: \\"rgba(102, 80, 239, 0.5)\\",
+      borderStyle: "solid",
+      borderColor: "rgba(102, 80, 239, 0.5)",
     },
     borderDashed: {
       borderWidth: 1,
-      borderStyle: \\"dashed\\",
-      borderColor: \\"rgb(30, 33, 43)\\",
+      borderStyle: "dashed",
+      borderColor: "rgb(30, 33, 43)",
       borderRadius: 16,
     },
   },
   color: {
-    colorsAccent: \\"rgb(120, 133, 183)\\",
-    colorsAlmostBlack: \\"rgb(28, 28, 28)\\",
-    colorsBlack: \\"rgb(30, 33, 43)\\",
-    colorsGreen: \\"rgb(88, 205, 82)\\",
-    colorsGrey: \\"rgb(204, 213, 225)\\",
-    colorsOrange: \\"rgb(255, 142, 5)\\",
-    colorsPureBlack: \\"rgb(0, 0, 0)\\",
-    colorsRed: \\"rgb(245, 72, 63)\\",
-    colorsWhite: \\"rgb(255, 255, 255)\\",
+    colorsAccent: "rgb(120, 133, 183)",
+    colorsAlmostBlack: "rgb(28, 28, 28)",
+    colorsBlack: "rgb(30, 33, 43)",
+    colorsGreen: "rgb(88, 205, 82)",
+    colorsGrey: "rgb(204, 213, 225)",
+    colorsOrange: "rgb(255, 142, 5)",
+    colorsPureBlack: "rgb(0, 0, 0)",
+    colorsRed: "rgb(245, 72, 63)",
+    colorsWhite: "rgb(255, 255, 255)",
   },
   font: {
-    firaCodeMedium: \\"FiraCode-Medium\\",
-    interMedium: \\"Inter-Medium\\",
-    interSemiBold: \\"Inter-SemiBold\\",
-    robotoRegular: \\"Roboto-Regular\\",
+    firaCodeMedium: "FiraCode-Medium",
+    interMedium: "Inter-Medium",
+    interSemiBold: "Inter-SemiBold",
+    robotoRegular: "Roboto-Regular",
   },
   gradient: {
     gradientsColored: [
       {
         angle: 90,
-        colors: [\\"rgb(245, 72, 63)\\", \\"rgb(255, 142, 5)\\"],
+        colors: ["rgb(245, 72, 63)", "rgb(255, 142, 5)"],
         locations: [0, 1],
       },
     ],
     gradientsDark: [
       {
         angle: 90,
-        colors: [\\"rgb(30, 33, 43)\\", \\"rgb(204, 213, 225)\\"],
+        colors: ["rgb(30, 33, 43)", "rgb(204, 213, 225)"],
         locations: [0, 1],
       },
     ],
     gradientsNeutral: [
       {
         angle: 90,
-        colors: [\\"rgb(204, 213, 225)\\", \\"rgb(255, 255, 255)\\"],
+        colors: ["rgb(204, 213, 225)", "rgb(255, 255, 255)"],
         locations: [0, 1],
       },
     ],
     gradientsSafari: [
       {
         angle: 90,
-        colors: [\\"rgb(255, 142, 5)\\", \\"rgb(255, 255, 255)\\"],
+        colors: ["rgb(255, 142, 5)", "rgb(255, 255, 255)"],
         locations: [0, 1],
       },
     ],

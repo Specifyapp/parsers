@@ -1,5 +1,8 @@
 module.exports = {
   preset: 'ts-jest',
+  transform: {
+    '\\.ts$': ['ts-jest'],
+  },
   testEnvironment: 'node',
   globals: {
     collectCoverageFrom: ['parsers/**/*.ts', '!parsers/**/*.spec.ts'],
