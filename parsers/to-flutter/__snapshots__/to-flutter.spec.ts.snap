@@ -1,10 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`To Flutter Should generate list of files containing design tokens 1`] = `
-Array [
-  Object {
+[
+  {
     "name": "measurements.dart",
-    "value": Object {
+    "value": {
       "content": "
 import 'dart:ui';
 
@@ -24,9 +24,9 @@ class SpecifyMeasurement {
 }",
     },
   },
-  Object {
+  {
     "name": "colors.dart",
-    "value": Object {
+    "value": {
       "content": "
 import 'dart:ui';
 
@@ -49,10 +49,10 @@ class SpecifyColor {
 `;
 
 exports[`To Flutter Should generate the color theme with custom file name and custom class name 1`] = `
-Array [
-  Object {
+[
+  {
     "name": "custom-colors-file-name.dart",
-    "value": Object {
+    "value": {
       "content": "
 import 'dart:ui';
 
@@ -75,10 +75,10 @@ class LightTheme {
 `;
 
 exports[`To Flutter Should generate the measurement theme with custom file name, class name and ratio 1`] = `
-Array [
-  Object {
+[
+  {
     "name": "custom-measurements-file-name.dart",
-    "value": Object {
+    "value": {
       "content": "
 import 'dart:ui';
 
@@ -98,9 +98,9 @@ class CustomTheme {
 }",
     },
   },
-  Object {
+  {
     "name": "colors.dart",
-    "value": Object {
+    "value": {
       "content": "
 import 'dart:ui';
 

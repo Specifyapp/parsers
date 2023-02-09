@@ -3,22 +3,22 @@
 exports[`To css Get tokens - apply parsers - all tokens 1`] = `
 ":root {
   /* BITMAP */
-  --acme-logo: \\"https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/863c6a9c-090a-4360-bbf2-1e2026577306\\";
-  --photo-example: \\"https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/d4ea441b-e83d-40a0-8f2d-604c28ae4c17\\";
-  --photo-example: \\"https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/ff09d8fc-73d8-446d-91c4-772e88e776c5\\";
-  --photo-example: \\"https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/c27d7c62-1414-49c4-ba3e-dc03aa4bd085\\";
+  --acme-logo: "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/863c6a9c-090a-4360-bbf2-1e2026577306";
+  --photo-example: "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/d4ea441b-e83d-40a0-8f2d-604c28ae4c17";
+  --photo-example: "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/ff09d8fc-73d8-446d-91c4-772e88e776c5";
+  --photo-example: "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/c27d7c62-1414-49c4-ba3e-dc03aa4bd085";
 
   /* VECTOR */
-  --activity: \\"https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/b63a7f88-0ea2-4e17-a5e8-11935562621f\\";
-  --airplay: \\"https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/71edeeb4-6622-490e-b59a-dd768d3414a8\\";
-  --alert-circle: \\"https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/587bd701-750c-4aa2-9b5b-843235eb5d5b\\";
-  --alert-octagon: \\"https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/e15614aa-5e39-43c7-9a88-9ea102df8854\\";
-  --alert-triangle: \\"https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/e4d03b25-dc16-4e25-b2b3-5ffe6a68d41d\\";
-  --alert-triangle: \\"https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/00e59368-656f-46f1-b1bf-1200ec945dd1\\";
-  --align-center: \\"https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/9e21c78b-dd71-42c5-9e2f-8a81f729ebd5\\";
-  --align-center: \\"https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/0256731e-92b1-474d-b0ed-7a7d5e17338e\\";
-  --user-mask: \\"https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/a131429d-f992-4daf-8f37-5b389b98e410\\";
-  --user-mask: \\"https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/4e70632a-014a-4594-84bb-6f6e18e9b2e3\\";
+  --activity: "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/b63a7f88-0ea2-4e17-a5e8-11935562621f";
+  --airplay: "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/71edeeb4-6622-490e-b59a-dd768d3414a8";
+  --alert-circle: "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/587bd701-750c-4aa2-9b5b-843235eb5d5b";
+  --alert-octagon: "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/e15614aa-5e39-43c7-9a88-9ea102df8854";
+  --alert-triangle: "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/e4d03b25-dc16-4e25-b2b3-5ffe6a68d41d";
+  --alert-triangle: "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/00e59368-656f-46f1-b1bf-1200ec945dd1";
+  --align-center: "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/9e21c78b-dd71-42c5-9e2f-8a81f729ebd5";
+  --align-center: "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/0256731e-92b1-474d-b0ed-7a7d5e17338e";
+  --user-mask: "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/a131429d-f992-4daf-8f37-5b389b98e410";
+  --user-mask: "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/4e70632a-014a-4594-84bb-6f6e18e9b2e3";
 
   /* DEPTH */
   --background: 1;
