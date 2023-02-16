@@ -1,10 +1,6 @@
 import seeds from '../../tests/seeds';
-import { IToken } from '../../types';
 import libs, { LibsType } from '../global-libs';
-import toTypescriptDefinition, {
-  InputDataType,
-  OptionsType,
-} from './to-typescript-definition.parser';
+import toTypescriptDefinition, { InputDataType } from './to-typescript-definition.parser';
 
 const tokens = seeds().tokens;
 
