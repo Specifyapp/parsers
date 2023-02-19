@@ -130,7 +130,7 @@ type output = string;
 #### Output
 
 ```ts
-type color = 'primary' | 'secondary';
+export type color = 'primary' | 'secondary';
 
-type measurement = 'base-space-01' | 'base-space-02';
+export type measurement = 'base-space-01' | 'base-space-02';
 ```
