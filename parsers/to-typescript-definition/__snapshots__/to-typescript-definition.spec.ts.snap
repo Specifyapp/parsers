@@ -1,0 +1,85 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tokens to Typescript types definitions Should generate all the types with correct type name 1`] = `
+"export type bitmap = 'acme-logo' | 'photo-example' | 'photo-example' | 'photo-example'
+
+export type myVector = 'activity' | 'airplay' | 'alert-circle' | 'alert-octagon' | 'alert-triangle' | 'alert-triangle' | 'align-center' | 'align-center' | 'user-mask' | 'user-mask'
+
+export type depth = 'background' | 'foreground' | 'middle'
+
+export type duration = 'base' | 'long' | 'short' | 'very-long'
+
+export type measurement = 'base-space-01' | 'base-space-02' | 'base-space-03' | 'base-space-04' | 'base-space-05' | 'base-space-06' | 'base-space-07' | 'base-space-08' | 'base-space-09' | 'base-space-10'
+
+export type text_style = 'body' | 'body-with-opacity' | 'code' | 'list' | 'title'
+
+export type border = 'border-accent' | 'border-accent-with-opacity' | 'border-accent-without-radii' | 'border-dashed'
+
+export type helloColor = 'colors-accent' | 'colors-almost-black' | 'colors-black' | 'colors-green' | 'colors-grey' | 'colors-orange' | 'colors-pure-black' | 'colors-red' | 'colors-white'
+
+export type shadow = 'elevation-1' | 'elevation-2' | 'elevation-3'
+
+export type font = 'fira-code-medium' | 'inter-medium' | 'inter-semi-bold' | 'roboto-regular'
+
+export type gradient = 'gradients-colored' | 'gradients-dark' | 'gradients-neutral' | 'gradients-safari'
+
+export type opacity = 'subtle' | 'transparent' | 'visible'
+
+"
+`;
+
+exports[`Tokens to Typescript types definitions Should generate all the types with correct type name and formatting 1`] = `
+"export type bitmap = 'acme_logo' | 'photo_example' | 'photo_example' | 'photo_example'
+
+export type vector = 'activity' | 'airplay' | 'alert_circle' | 'alert_octagon' | 'alert_triangle' | 'alert_triangle' | 'align_center' | 'align_center' | 'user_mask' | 'user_mask'
+
+export type depth = 'background' | 'foreground' | 'middle'
+
+export type duration = 'base' | 'long' | 'short' | 'very_long'
+
+export type not = 'base_space_01' | 'base_space_02' | 'base_space_03' | 'base_space_04' | 'base_space_05' | 'base_space_06' | 'base_space_07' | 'base_space_08' | 'base_space_09' | 'base_space_10'
+
+export type textStyle = 'body' | 'body_with_opacity' | 'code' | 'list' | 'title'
+
+export type border = 'border_accent' | 'border_accent_with_opacity' | 'border_accent_without_radii' | 'border_dashed'
+
+export type another = 'colors_accent' | 'colors_almost_black' | 'colors_black' | 'colors_green' | 'colors_grey' | 'colors_orange' | 'colors_pure_black' | 'colors_red' | 'colors_white'
+
+export type why = 'elevation_1' | 'elevation_2' | 'elevation_3'
+
+export type font = 'fira_code_medium' | 'inter_medium' | 'inter_semi_bold' | 'roboto_regular'
+
+export type gradient = 'gradients_colored' | 'gradients_dark' | 'gradients_neutral' | 'gradients_safari'
+
+export type name = 'subtle' | 'transparent' | 'visible'
+
+"
+`;
+
+exports[`Tokens to Typescript types definitions Should generate all the types with default formatting 1`] = `
+"export type bitmap = 'acme-logo' | 'photo-example' | 'photo-example' | 'photo-example'
+
+export type vector = 'activity' | 'airplay' | 'alert-circle' | 'alert-octagon' | 'alert-triangle' | 'alert-triangle' | 'align-center' | 'align-center' | 'user-mask' | 'user-mask'
+
+export type depth = 'background' | 'foreground' | 'middle'
+
+export type duration = 'base' | 'long' | 'short' | 'very-long'
+
+export type measurement = 'base-space-01' | 'base-space-02' | 'base-space-03' | 'base-space-04' | 'base-space-05' | 'base-space-06' | 'base-space-07' | 'base-space-08' | 'base-space-09' | 'base-space-10'
+
+export type textStyle = 'body' | 'body-with-opacity' | 'code' | 'list' | 'title'
+
+export type border = 'border-accent' | 'border-accent-with-opacity' | 'border-accent-without-radii' | 'border-dashed'
+
+export type color = 'colors-accent' | 'colors-almost-black' | 'colors-black' | 'colors-green' | 'colors-grey' | 'colors-orange' | 'colors-pure-black' | 'colors-red' | 'colors-white'
+
+export type shadow = 'elevation-1' | 'elevation-2' | 'elevation-3'
+
+export type font = 'fira-code-medium' | 'inter-medium' | 'inter-semi-bold' | 'roboto-regular'
+
+export type gradient = 'gradients-colored' | 'gradients-dark' | 'gradients-neutral' | 'gradients-safari'
+
+export type opacity = 'subtle' | 'transparent' | 'visible'
+
+"
+`;
