@@ -2,9 +2,9 @@
 
 ## Description
 
-Format design tokens to create a Typescript types definition file.
+Format design tokens to create their corresponding TypeScript types.
 
-This parser creates a Typescript types definition file with types names being tokens types, and the values of the types the name of the tokens.
+This parser generates TypeScript types corresponding to [Specify Token types](https://docs.specifyapp.com/concepts/token-types). All types respective values match the name of your design tokens returned by Specify.
 
 ## Interface
 
@@ -63,13 +63,13 @@ type input = Array<{ name: string; type: string }>;
 
 ### Output
 
-String containing Typescript types exports
+String containing TypesScript types exports
 
 ```ts
 type output = string;
 ```
 
-## Basic Usage
+## Usage
 
 ### Config
 
