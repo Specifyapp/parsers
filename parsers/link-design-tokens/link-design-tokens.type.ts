@@ -1,5 +1,6 @@
 import { IToken } from '../../types';
 import { ColorToken, LinkableTokensSignatures, MeasurementToken, TokensValues } from '../../types';
+import type _ from 'lodash';
 
 export interface TokensGroupedByType {
   color: Array<ColorToken>;
@@ -13,7 +14,7 @@ export interface TokensAliasable {
 export interface LinkDesignTokenClassInstance extends Partial<TokensAliasable> {
   compute?(
     indexes: LinkableTokensSignatures,
-    tokensGroupedByType: _.Dictionary<[IToken, ...IToken[]]>,
+    tokensGroupedByType: _.Dictionary<Array<IToken>>,
   ): TokensValues;
 }
 
