@@ -13,7 +13,7 @@
 
 <p align="center">
   <br />
-  <a href="https://specifyapp.com/developers/" rel="dofollow"><strong>Explore the docs »</strong></a>
+  <a href="https://docs.specifyapp.com" rel="dofollow"><strong>Explore the docs »</strong></a>
   <br />
   <br />
   <a href="https://github.com/Specifyapp/parsers/issues">Report Bug</a>
