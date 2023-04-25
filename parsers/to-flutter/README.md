@@ -83,7 +83,7 @@ type output = string;
       "b": 43,
       "g": 33,
       "r": 30
-    }
+    },
     "type": "color"
   },
   {
