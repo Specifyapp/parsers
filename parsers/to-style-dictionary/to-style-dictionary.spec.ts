@@ -1,7 +1,7 @@
 import toStyleDictionary from './to-style-dictionary.parser';
 import seeds from '../../tests/seeds';
 import libs from '../global-libs';
-import { AllowedFormat, FontFormatList, Token } from '../../types';
+import { AllowedFormat, Token } from '../../types';
 import * as TokensClass from './tokens';
 import {
   BaseStyleDictionaryTokensFormat,
@@ -121,10 +121,10 @@ describe('To Style Dictionary', () => {
     const content = JSON.parse(file.value.content!) as Record<string, any>;
     expect(Object.keys(content)[0]).toEqual('time');
     expect(Object.keys(content.time)[0]).toEqual('base');
-    expect(content.time.base.base).toEqual({ value: expect.any(String) });
-    expect(content.time.base.long).toEqual({ value: expect.any(String) });
-    expect(content.time.base.short).toEqual({ value: expect.any(String) });
-    expect(content.time.base.veryLong).toEqual({ value: expect.any(String) });
+    expect(content.time.base.base).toEqual({ value: '300' });
+    expect(content.time.base.long).toEqual({ value: '700' });
+    expect(content.time.base.short).toEqual({ value: '100' });
+    expect(content.time.base.veryLong).toEqual({ value: '3000' });
   });
 
   it('Should be able to extract Measurement token type', async () => {
