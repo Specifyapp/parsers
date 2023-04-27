@@ -1,6 +1,7 @@
 # To Style Dictionary
 
 ## Description
+
 This parser helps you generate [Style Dictionary](https://amzn.github.io/style-dictionary/#/) configuration files for all your design tokens coming from Specify.
 
 Learn more about how to configure Specify in the API documentation: [https://specifyapp.com/developers](https://specifyapp.com/developers).
@@ -20,6 +21,7 @@ interface parser {
         unit: 'px' | 'rem' | 'none';
       };
       fontFormat: Array<'woff2' | 'woff' | 'otf' | 'ttf' | 'eot'>;
+      timeAsIntegers: boolean;
     }>;
     splitBy?: string;
     assetsBaseDirectory?: Partial<{
@@ -44,6 +46,7 @@ interface parser {
 | `formatTokens.colorFormat.format`  | optional | `rgb` `prgb` `hex` `hex6` `hex3` `hex4` `hex8` `name` `hsl` `hsv` | `hex`       | The color format you want to apply to your color design tokens.                                                                                                                                            |
 | `formatTokens.fontSizeFormat.unit` | optional | `px` `rem`                                                        | `none`      |                                                                                                                                                                                                            |
 | `formatTokens.fontFormat`          | optional | `woff2` `woff` `otf` `ttf` `eot`                                  | `ttf`       | The formats of your font files.                                                                                                                                                                            |
+| `formatTokens.timeAsIntegers`      | optional | `boolean`                                                         | `false`     | The time format.                                                                                                                                                                                           |
 | `splitBy`                          | optional | `string`                                                          |             | The character used to define the nesting of the values in the object (e.g. The name of the color in [this example](https://github.com/Specifyapp/parsers/tree/master/parsers/to-style-dictionary#input-2)) |
 | `assetsBaseDirectory.fonts`        | optional | `string`                                                          | `none`      | The base directory containing your font files.                                                                                                                                                             |
 | `assetsBaseDirectory.images`       | optional | `string`                                                          | `none`      | The base directory containing your images.                                                                                                                                                                 |
@@ -53,12 +56,14 @@ interface parser {
 | `formatConfig.useTabs`             | optional | `boolean`                                                         | `true`      | [Prettier documentation](https://prettier.io/docs/en/options.html#tabs)                                                                                                                                    |
 
 ## Output
+
 Please keep in mind that this parser generates files. This is why you should always set a folder as the final `path` in your parent rule.
 
 <details open>
 <summary>See Do & Don't config examples</summary>
 
 ✅ Do
+
 ```
 // ...
 "rules": [
@@ -75,6 +80,7 @@ Please keep in mind that this parser generates files. This is why you should alw
 ```
 
 🚫 Don't
+
 ```
 // ...
 "rules": [
@@ -89,6 +95,7 @@ Please keep in mind that this parser generates files. This is why you should alw
   }
 ]
 ```
+
 </details>
 
 ## Types

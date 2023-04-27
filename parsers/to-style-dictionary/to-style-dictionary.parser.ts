@@ -21,6 +21,7 @@ export type FormatTokenType = Partial<{
     unit: 'px' | 'rem' | 'none';
   };
   fontFormat: Array<'woff2' | 'woff' | 'otf' | 'ttf' | 'eot'>;
+  timeAsIntegers: boolean;
 }>;
 export type OptionsType =
   | Partial<{
