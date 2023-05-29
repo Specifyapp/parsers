@@ -10,6 +10,7 @@ import {
   DefaultPresetPluginsName,
   DefaultPresetPluginsParams,
 } from './svgo.type';
+import { CustomPlugin } from 'svgo';
 
 export type InputDataType = Array<
   Record<string, any> & {
@@ -26,10 +27,7 @@ export type OptionsType =
   | undefined
   | {
       svgo?: Omit<OptimizeOptions, 'plugins'> &
-        (
-          | { plugins?: Array<DefaultPlugins | DefaultPlugins['name']> }
-          | { plugins: Array<PluginV1> }
-        );
+        ({ plugins?: Array<PluginV2> } | { plugins: Array<PluginV1> });
     };
 
 function getSyntaxPlugin(plugins: NonNullable<Plugins>): 'v1' | 'v2' {
@@ -39,6 +37,35 @@ function getSyntaxPlugin(plugins: NonNullable<Plugins>): 'v1' | 'v2' {
 function migrateSvgoPlugins(plugins?: Plugins): Array<PluginV2> {
   if (!plugins) {
     return [{ name: 'preset-default' }];
+  }
+
+  const replaceFillAndStrokeByCurrentColorIndex = plugins.findIndex(
+    elm =>
+      (typeof elm === 'object' &&
+        'name' in elm &&
+        elm.name === 'replace-fill-and-stroke-by-current-color') ||
+      (typeof elm === 'string' && elm === 'replace-fill-and-stroke-by-current-color'),
+  );
+  if (replaceFillAndStrokeByCurrentColorIndex !== -1) {
+    plugins[replaceFillAndStrokeByCurrentColorIndex] = {
+      type: 'perItem',
+      name: 'replace-fill-and-stroke-by-current-color',
+      fn: item => {
+        if (!item.isElem()) return;
+        if (!item.hasAttr('stroke') && !item.hasAttr('fill') && !item.hasAttr('color')) return;
+
+        // @ts-ignore
+        item.eachAttr(attr => {
+          const name = attr.name;
+          const value = attr.value;
+          const isColorAttr = name === 'stroke' || name === 'fill' || name === 'color';
+
+          if (!isColorAttr || value === 'none') return;
+
+          item.attr(name).value = 'currentColor';
+        });
+      },
+    } as CustomPlugin;
   }
 
   if (getSyntaxPlugin(plugins) === 'v2') {
