@@ -47,12 +47,13 @@ export function generateTextStyleFile(
         textStyleClass: options?.formatByType?.color?.className ?? 'SpecifyTextStyle',
         textStyles: textStyles.map(textStyle => ({
           name: camelCase(textStyle.name),
-          type: options?.formatByType?.textStyles?.classType ?? 'TextStyle',
+          type: options?.formatByType?.textStyle?.classType ?? 'TextStyle',
           fontFamilly: textStyle.value.font.value.fontFamily,
           fontSize: textStyle.value.fontSize.value.measure.toFixed(2),
           fontStyle: `FontStyle.${!!textStyle.value.font.value.isItalic ? 'italic' : 'normal'}`,
           fontWeight: textStyle.value.font.value.fontWeight,
           decoration: pipe(
+            // Flutter only accept 1 text decoration
             O.fromNullable(textStyle.value.textDecoration?.[0]),
             O.map(v => `TextDecoration.${textDecorationToFlutter(v)}`),
             O.toUndefined,

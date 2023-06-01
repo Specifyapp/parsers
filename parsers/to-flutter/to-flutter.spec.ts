@@ -58,7 +58,7 @@ describe('To Flutter', () => {
       tokens.filter(({ type }) => type === 'textStyle'),
       {
         formatByType: {
-          textStyles: {
+          textStyle: {
             fileName: 'custom-text-styles-file-name.dart',
             className: 'CustomTheme',
             classType: 'TextStyle',

@@ -26,7 +26,7 @@ export type OptionsType =
         measurement?: tokenCommons & {
           devicePixelRatio?: number;
         };
-        textStyles?: tokenCommons;
+        textStyle?: tokenCommons;
       };
     }
   | undefined;
