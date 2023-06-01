@@ -33,14 +33,14 @@ import 'dart:ui';
 class SpecifyColor {
     SpecifyColor._();
 
-    static const colorsAccent = Color(0x7885B7FF);
-    static const colorsAlmostBlack = Color(0x1C1C1CFF);
-    static const colorsBlack = Color(0x1E212BFF);
-    static const colorsGreen = Color(0x58CD52FF);
-    static const colorsGrey = Color(0xCCD5E1FF);
-    static const colorsOrange = Color(0xFF8E05FF);
-    static const colorsPureBlack = Color(0x000000FF);
-    static const colorsRed = Color(0xF5483FFF);
+    static const colorsAccent = Color(0xFF7885B7);
+    static const colorsAlmostBlack = Color(0xFF1C1C1C);
+    static const colorsBlack = Color(0xFF1E212B);
+    static const colorsGreen = Color(0xFF58CD52);
+    static const colorsGrey = Color(0xFFCCD5E1);
+    static const colorsOrange = Color(0xFFFF8E05);
+    static const colorsPureBlack = Color(0xFF000000);
+    static const colorsRed = Color(0xFFF5483F);
     static const colorsWhite = Color(0xFFFFFFFF);
 }",
     },
@@ -59,14 +59,14 @@ import 'dart:ui';
 class LightTheme {
     LightTheme._();
 
-    static const colorsAccent = Color(0x7885B7FF);
-    static const colorsAlmostBlack = Color(0x1C1C1CFF);
-    static const colorsBlack = Color(0x1E212BFF);
-    static const colorsGreen = Color(0x58CD52FF);
-    static const colorsGrey = Color(0xCCD5E1FF);
-    static const colorsOrange = Color(0xFF8E05FF);
-    static const colorsPureBlack = Color(0x000000FF);
-    static const colorsRed = Color(0xF5483FFF);
+    static const colorsAccent = Color(0xFF7885B7);
+    static const colorsAlmostBlack = Color(0xFF1C1C1C);
+    static const colorsBlack = Color(0xFF1E212B);
+    static const colorsGreen = Color(0xFF58CD52);
+    static const colorsGrey = Color(0xFFCCD5E1);
+    static const colorsOrange = Color(0xFFFF8E05);
+    static const colorsPureBlack = Color(0xFF000000);
+    static const colorsRed = Color(0xFFF5483F);
     static const colorsWhite = Color(0xFFFFFFFF);
 }",
     },
@@ -107,14 +107,14 @@ import 'dart:ui';
 class SpecifyColor {
     SpecifyColor._();
 
-    static const colorsAccent = Color(0x7885B7FF);
-    static const colorsAlmostBlack = Color(0x1C1C1CFF);
-    static const colorsBlack = Color(0x1E212BFF);
-    static const colorsGreen = Color(0x58CD52FF);
-    static const colorsGrey = Color(0xCCD5E1FF);
-    static const colorsOrange = Color(0xFF8E05FF);
-    static const colorsPureBlack = Color(0x000000FF);
-    static const colorsRed = Color(0xF5483FFF);
+    static const colorsAccent = Color(0xFF7885B7);
+    static const colorsAlmostBlack = Color(0xFF1C1C1C);
+    static const colorsBlack = Color(0xFF1E212B);
+    static const colorsGreen = Color(0xFF58CD52);
+    static const colorsGrey = Color(0xFFCCD5E1);
+    static const colorsOrange = Color(0xFFFF8E05);
+    static const colorsPureBlack = Color(0xFF000000);
+    static const colorsRed = Color(0xFFF5483F);
     static const colorsWhite = Color(0xFFFFFFFF);
 }",
     },

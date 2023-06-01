@@ -24,10 +24,14 @@ export function generateColorFile(
     value: {
       content: templateContent.render({
         colorClass: options?.formatByType?.color?.className ?? 'SpecifyColor',
-        colors: colors.map(color => ({
-          name: camelCase(color.name),
-          value: `0x${tinycolor(color.value).toString('hex8').substring(1).toUpperCase()}`,
-        })),
+        colors: colors.map(color => {
+          const hex8 = tinycolor(color.value).toString('hex8').substring(1).toUpperCase();
+
+          return {
+            name: camelCase(color.name),
+            value: `0x${hex8.substring(6)}${hex8.substring(0, 6)}`,
+          };
+        }),
       }),
     },
   };
