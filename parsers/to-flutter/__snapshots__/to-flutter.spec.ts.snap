@@ -11,16 +11,73 @@ import 'dart:ui';
 class SpecifyMeasurement {
     SpecifyMeasurement._();
 
-    static const baseSpace01 = 8.00;
-    static const baseSpace02 = 16.00;
-    static const baseSpace03 = 24.00;
-    static const baseSpace04 = 32.00;
-    static const baseSpace05 = 64.00;
-    static const baseSpace06 = 96.00;
-    static const baseSpace07 = 128.00;
-    static const baseSpace08 = 160.00;
-    static const baseSpace09 = 192.00;
-    static const baseSpace10 = 224.00;
+    static const double baseSpace01 = 8.00;
+    static const double baseSpace02 = 16.00;
+    static const double baseSpace03 = 24.00;
+    static const double baseSpace04 = 32.00;
+    static const double baseSpace05 = 64.00;
+    static const double baseSpace06 = 96.00;
+    static const double baseSpace07 = 128.00;
+    static const double baseSpace08 = 160.00;
+    static const double baseSpace09 = 192.00;
+    static const double baseSpace10 = 224.00;
+}",
+    },
+  },
+  {
+    "name": "text-styles.dart",
+    "value": {
+      "content": "
+import 'dart:ui';
+
+class SpecifyTextStyle {
+    SpecifyTextStyle._();
+
+    static const TextStyle body = TextStyle(
+      fontFamily: 'Inter',
+      fontSize: 14.00,
+      fontStyle: FontStyle.normal,
+      fontWeight: FontWeight.w500,
+      
+      letterSpacing: 10.00,
+      color: Color(0xFF1E212B),
+    );
+    static const TextStyle bodyWithOpacity = TextStyle(
+      fontFamily: 'Inter',
+      fontSize: 14.00,
+      fontStyle: FontStyle.normal,
+      fontWeight: FontWeight.w500,
+      
+      letterSpacing: 10.00,
+      color: Color(0x4D1E212B),
+    );
+    static const TextStyle code = TextStyle(
+      fontFamily: 'Fira Code',
+      fontSize: 13.00,
+      fontStyle: FontStyle.normal,
+      fontWeight: FontWeight.w500,
+      
+      
+      color: Color(0xFFFF8E05),
+    );
+    static const TextStyle list = TextStyle(
+      fontFamily: 'Roboto',
+      fontSize: 14.00,
+      fontStyle: FontStyle.normal,
+      fontWeight: FontWeight.w400,
+      
+      
+      
+    );
+    static const TextStyle title = TextStyle(
+      fontFamily: 'Inter',
+      fontSize: 32.00,
+      fontStyle: FontStyle.normal,
+      fontWeight: FontWeight.w600,
+      decoration: TextDecoration.underline,
+      
+      color: Color(0xFF1E212B),
+    );
 }",
     },
   },
@@ -33,22 +90,22 @@ import 'dart:ui';
 class SpecifyColor {
     SpecifyColor._();
 
-    static const colorsAccent = Color(0x7885B7FF);
-    static const colorsAlmostBlack = Color(0x1C1C1CFF);
-    static const colorsBlack = Color(0x1E212BFF);
-    static const colorsGreen = Color(0x58CD52FF);
-    static const colorsGrey = Color(0xCCD5E1FF);
-    static const colorsOrange = Color(0xFF8E05FF);
-    static const colorsPureBlack = Color(0x000000FF);
-    static const colorsRed = Color(0xF5483FFF);
-    static const colorsWhite = Color(0xFFFFFFFF);
+    static const Color colorsAccent = Color(0xFF7885B7);
+    static const Color colorsAlmostBlack = Color(0xFF1C1C1C);
+    static const Color colorsBlack = Color(0xFF1E212B);
+    static const Color colorsGreen = Color(0xFF58CD52);
+    static const Color colorsGrey = Color(0xFFCCD5E1);
+    static const Color colorsOrange = Color(0xFFFF8E05);
+    static const Color colorsPureBlack = Color(0xFF000000);
+    static const Color colorsRed = Color(0xFFF5483F);
+    static const Color colorsWhite = Color(0xFFFFFFFF);
 }",
     },
   },
 ]
 `;
 
-exports[`To Flutter Should generate the color theme with custom file name and custom class name 1`] = `
+exports[`To Flutter Should generate the color theme with custom file name, custom class name and custom type 1`] = `
 [
   {
     "name": "custom-colors-file-name.dart",
@@ -59,22 +116,22 @@ import 'dart:ui';
 class LightTheme {
     LightTheme._();
 
-    static const colorsAccent = Color(0x7885B7FF);
-    static const colorsAlmostBlack = Color(0x1C1C1CFF);
-    static const colorsBlack = Color(0x1E212BFF);
-    static const colorsGreen = Color(0x58CD52FF);
-    static const colorsGrey = Color(0xCCD5E1FF);
-    static const colorsOrange = Color(0xFF8E05FF);
-    static const colorsPureBlack = Color(0x000000FF);
-    static const colorsRed = Color(0xF5483FFF);
-    static const colorsWhite = Color(0xFFFFFFFF);
+    static const Color colorsAccent = Color(0xFF7885B7);
+    static const Color colorsAlmostBlack = Color(0xFF1C1C1C);
+    static const Color colorsBlack = Color(0xFF1E212B);
+    static const Color colorsGreen = Color(0xFF58CD52);
+    static const Color colorsGrey = Color(0xFFCCD5E1);
+    static const Color colorsOrange = Color(0xFFFF8E05);
+    static const Color colorsPureBlack = Color(0xFF000000);
+    static const Color colorsRed = Color(0xFFF5483F);
+    static const Color colorsWhite = Color(0xFFFFFFFF);
 }",
     },
   },
 ]
 `;
 
-exports[`To Flutter Should generate the measurement theme with custom file name, class name and ratio 1`] = `
+exports[`To Flutter Should generate the measurement theme with custom file name, class name, ratio and type 1`] = `
 [
   {
     "name": "custom-measurements-file-name.dart",
@@ -85,37 +142,78 @@ import 'dart:ui';
 class CustomTheme {
     CustomTheme._();
 
-    static const baseSpace01 = 12.00;
-    static const baseSpace02 = 24.00;
-    static const baseSpace03 = 36.00;
-    static const baseSpace04 = 48.00;
-    static const baseSpace05 = 96.00;
-    static const baseSpace06 = 144.00;
-    static const baseSpace07 = 192.00;
-    static const baseSpace08 = 240.00;
-    static const baseSpace09 = 288.00;
-    static const baseSpace10 = 336.00;
+    static const double baseSpace01 = 12.00;
+    static const double baseSpace02 = 24.00;
+    static const double baseSpace03 = 36.00;
+    static const double baseSpace04 = 48.00;
+    static const double baseSpace05 = 96.00;
+    static const double baseSpace06 = 144.00;
+    static const double baseSpace07 = 192.00;
+    static const double baseSpace08 = 240.00;
+    static const double baseSpace09 = 288.00;
+    static const double baseSpace10 = 336.00;
 }",
     },
   },
+]
+`;
+
+exports[`To Flutter Should generate the text styles theme with custom file name, class name and type 1`] = `
+[
   {
-    "name": "colors.dart",
+    "name": "text-styles.dart",
     "value": {
       "content": "
 import 'dart:ui';
 
-class SpecifyColor {
-    SpecifyColor._();
+class SpecifyTextStyle {
+    SpecifyTextStyle._();
 
-    static const colorsAccent = Color(0x7885B7FF);
-    static const colorsAlmostBlack = Color(0x1C1C1CFF);
-    static const colorsBlack = Color(0x1E212BFF);
-    static const colorsGreen = Color(0x58CD52FF);
-    static const colorsGrey = Color(0xCCD5E1FF);
-    static const colorsOrange = Color(0xFF8E05FF);
-    static const colorsPureBlack = Color(0x000000FF);
-    static const colorsRed = Color(0xF5483FFF);
-    static const colorsWhite = Color(0xFFFFFFFF);
+    static const TextStyle body = TextStyle(
+      fontFamily: 'Inter',
+      fontSize: 14.00,
+      fontStyle: FontStyle.normal,
+      fontWeight: FontWeight.w500,
+      
+      letterSpacing: 10.00,
+      color: Color(0xFF1E212B),
+    );
+    static const TextStyle bodyWithOpacity = TextStyle(
+      fontFamily: 'Inter',
+      fontSize: 14.00,
+      fontStyle: FontStyle.normal,
+      fontWeight: FontWeight.w500,
+      
+      letterSpacing: 10.00,
+      color: Color(0x4D1E212B),
+    );
+    static const TextStyle code = TextStyle(
+      fontFamily: 'Fira Code',
+      fontSize: 13.00,
+      fontStyle: FontStyle.normal,
+      fontWeight: FontWeight.w500,
+      
+      
+      color: Color(0xFFFF8E05),
+    );
+    static const TextStyle list = TextStyle(
+      fontFamily: 'Roboto',
+      fontSize: 14.00,
+      fontStyle: FontStyle.normal,
+      fontWeight: FontWeight.w400,
+      
+      
+      
+    );
+    static const TextStyle title = TextStyle(
+      fontFamily: 'Inter',
+      fontSize: 32.00,
+      fontStyle: FontStyle.normal,
+      fontWeight: FontWeight.w600,
+      decoration: TextDecoration.underline,
+      
+      color: Color(0xFF1E212B),
+    );
 }",
     },
   },
