@@ -41,7 +41,6 @@
   },
   "scripts": {
     "test": "jest --coverage --runInBand",
-    "test:dev": "jest --watch parsers/to-flutter",
     "generate:seeds": "ts-node ./tests/helper/generate.seed.ts",
     "format": "prettier '**/*' -u -w",
     "prepare": "git config --local core.hooksPath .hooks"

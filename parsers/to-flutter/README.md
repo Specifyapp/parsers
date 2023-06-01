@@ -289,11 +289,11 @@ class CustomTheme {
 ```
 
 ```dart
-// textStyles.dart
+// custom-text-styles-file-name.dart
 import 'dart:ui';
 
-class SpecifyTextStyle {
-    SpecifyTextStyle._();
+class CustomStyle {
+    CustomStyle._();
 
     static const CoolText body = TextStyle(
       fontFamily: 'Inter',
