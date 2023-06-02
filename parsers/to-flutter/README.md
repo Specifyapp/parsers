@@ -301,7 +301,5 @@ class CustomStyle {
       fontStyle: FontStyle.normal,
       fontWeight: FontWeight.w100,
       decoration: TextDecoration.underline,
-
-
     );
 ```
