@@ -33,49 +33,45 @@ import 'dart:ui';
 class SpecifyTextStyle {
     SpecifyTextStyle._();
 
+    static const String _inter = 'Inter';
+    static const String _firaCode = 'Fira Code';
+    static const String _roboto = 'Roboto';
+
     static const TextStyle body = TextStyle(
-      fontFamily: 'Inter',
+      fontFamily: _inter,
       fontSize: 14.00,
       fontStyle: FontStyle.normal,
       fontWeight: FontWeight.w500,
-      
       letterSpacing: 10.00,
       color: Color(0xFF1E212B),
     );
     static const TextStyle bodyWithOpacity = TextStyle(
-      fontFamily: 'Inter',
+      fontFamily: _inter,
       fontSize: 14.00,
       fontStyle: FontStyle.normal,
       fontWeight: FontWeight.w500,
-      
       letterSpacing: 10.00,
       color: Color(0x4D1E212B),
     );
     static const TextStyle code = TextStyle(
-      fontFamily: 'Fira Code',
+      fontFamily: _firaCode,
       fontSize: 13.00,
       fontStyle: FontStyle.normal,
       fontWeight: FontWeight.w500,
-      
-      
       color: Color(0xFFFF8E05),
     );
     static const TextStyle list = TextStyle(
-      fontFamily: 'Roboto',
+      fontFamily: _roboto,
       fontSize: 14.00,
       fontStyle: FontStyle.normal,
       fontWeight: FontWeight.w400,
-      
-      
-      
     );
     static const TextStyle title = TextStyle(
-      fontFamily: 'Inter',
+      fontFamily: _inter,
       fontSize: 32.00,
       fontStyle: FontStyle.normal,
       fontWeight: FontWeight.w600,
       decoration: TextDecoration.underline,
-      
       color: Color(0xFF1E212B),
     );
 }",
@@ -169,49 +165,45 @@ import 'dart:ui';
 class SpecifyTextStyle {
     SpecifyTextStyle._();
 
+    static const String _inter = 'Inter';
+    static const String _firaCode = 'Fira Code';
+    static const String _roboto = 'Roboto';
+
     static const TextStyle body = TextStyle(
-      fontFamily: 'Inter',
+      fontFamily: _inter,
       fontSize: 14.00,
       fontStyle: FontStyle.normal,
       fontWeight: FontWeight.w500,
-      
       letterSpacing: 10.00,
       color: Color(0xFF1E212B),
     );
     static const TextStyle bodyWithOpacity = TextStyle(
-      fontFamily: 'Inter',
+      fontFamily: _inter,
       fontSize: 14.00,
       fontStyle: FontStyle.normal,
       fontWeight: FontWeight.w500,
-      
       letterSpacing: 10.00,
       color: Color(0x4D1E212B),
     );
     static const TextStyle code = TextStyle(
-      fontFamily: 'Fira Code',
+      fontFamily: _firaCode,
       fontSize: 13.00,
       fontStyle: FontStyle.normal,
       fontWeight: FontWeight.w500,
-      
-      
       color: Color(0xFFFF8E05),
     );
     static const TextStyle list = TextStyle(
-      fontFamily: 'Roboto',
+      fontFamily: _roboto,
       fontSize: 14.00,
       fontStyle: FontStyle.normal,
       fontWeight: FontWeight.w400,
-      
-      
-      
     );
     static const TextStyle title = TextStyle(
-      fontFamily: 'Inter',
+      fontFamily: _inter,
       fontSize: 32.00,
       fontStyle: FontStyle.normal,
       fontWeight: FontWeight.w600,
       decoration: TextDecoration.underline,
-      
       color: Color(0xFF1E212B),
     );
 }",

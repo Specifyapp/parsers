@@ -11,15 +11,16 @@ import 'dart:ui';
 class {{textStyleClass}} {
     {{textStyleClass}}._();
 
+    {{#fontFamillies}}
+    static const String {{varName}} = '{{fontName}}';
+    {{/fontFamillies}}
+
     {{#textStyles}}
     static const {{#type}}{{type}} {{/type}}{{name}} = TextStyle(
-      fontFamily: '{{fontFamilly}}',
+      fontFamily: {{fontFamilly}},
       fontSize: {{fontSize}},
       fontStyle: {{fontStyle}},
-      fontWeight: FontWeight.w{{fontWeight}},
-      {{#decoration}}decoration: {{decoration}},{{/decoration}}
-      {{#letterSpacing}}letterSpacing: {{letterSpacing}},{{/letterSpacing}}
-      {{#color}}color: Color({{color}}),{{/color}}
+      fontWeight: FontWeight.w{{fontWeight}},{{#decoration}}\n      decoration: {{decoration}},{{/decoration}}{{#letterSpacing}}\n      letterSpacing: {{letterSpacing}},{{/letterSpacing}}{{#color}}\n      color: Color({{color}}),{{/color}}
     );
     {{/textStyles}}
 }`);
@@ -45,10 +46,16 @@ export function generateTextStyleFile(
     value: {
       content: templateContent.render({
         textStyleClass: options?.formatByType?.color?.className ?? 'SpecifyTextStyle',
+        fontFamillies: [...new Set(textStyles.map(v => v.value.font.value.fontFamily))].map(
+          fontName => ({
+            fontName,
+            varName: `_${camelCase(fontName)}`,
+          }),
+        ),
         textStyles: textStyles.map(textStyle => ({
           name: camelCase(textStyle.name),
           type: options?.formatByType?.textStyle?.classType ?? 'TextStyle',
-          fontFamilly: textStyle.value.font.value.fontFamily,
+          fontFamilly: `_${camelCase(textStyle.value.font.value.fontFamily)}`,
           fontSize: textStyle.value.fontSize.value.measure.toFixed(2),
           fontStyle: `FontStyle.${!!textStyle.value.font.value.isItalic ? 'italic' : 'normal'}`,
           fontWeight: textStyle.value.font.value.fontWeight,
