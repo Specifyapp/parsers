@@ -10,7 +10,7 @@ class {{measurementClass}} {
     {{measurementClass}}._();
 
     {{#measurements}}
-    static const {{name}} = {{value}};
+    static const {{#type}}{{type}} {{/type}}{{name}} = {{value}};
     {{/measurements}}
 }`);
 
@@ -28,6 +28,7 @@ export function generateMeasurementFile(
           value: (
             measurement.value.measure * (options?.formatByType?.measurement?.devicePixelRatio ?? 2)
           ).toFixed(2),
+          type: options?.formatByType?.measurement?.classType ?? 'double',
         })),
       }),
     },

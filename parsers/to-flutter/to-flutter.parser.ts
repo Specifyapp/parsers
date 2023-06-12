@@ -1,23 +1,32 @@
-import { DownloadableFile, IToken, ColorToken, MeasurementToken } from '../../types';
+import {
+  DownloadableFile,
+  IToken,
+  ColorToken,
+  MeasurementToken,
+  TextStyleToken,
+} from '../../types';
 import { match, P } from 'ts-pattern';
 import { generateColorFile } from './tokens/color';
 import { generateMeasurementFile } from './tokens/measurement';
 import { A, D, G, O, F, pipe } from '@mobily/ts-belt';
+import { generateTextStyleFile } from './tokens/textStyle';
+
+type tokenCommons = {
+  className?: string;
+  fileName?: string;
+  classType?: string;
+};
 
 export type InputDataType = Array<Pick<IToken, 'name' | 'value' | 'type'> & Record<string, any>>;
 export type OutputDataType = Array<DownloadableFile>;
 export type OptionsType =
   | {
       formatByType?: {
-        color?: {
-          className?: string;
-          fileName?: string;
-        };
-        measurement?: {
+        color?: tokenCommons;
+        measurement?: tokenCommons & {
           devicePixelRatio?: number;
-          className?: string;
-          fileName?: string;
         };
+        textStyle?: tokenCommons;
       };
     }
   | undefined;
@@ -36,6 +45,9 @@ export default async function (
         )
         .with({ type: 'measurement', tokens: P.array(P._) }, res =>
           generateMeasurementFile(res.tokens as Array<MeasurementToken>, options),
+        )
+        .with({ type: 'textStyle', tokens: P.array(P._) }, res =>
+          generateTextStyleFile(res.tokens as Array<TextStyleToken>, options),
         )
         .otherwise(() => null),
     ),
