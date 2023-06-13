@@ -64,6 +64,8 @@ function camelCaseAttribute(attrName: string) {
     maskunits: 'maskUnits',
     gradientunits: 'gradientUnits',
     gradienttransform: 'gradientTransform',
+    filterunits: 'filterUnits',
+    stddeviation: 'stdDeviation',
   };
   attrName = attrName.toLowerCase();
 
