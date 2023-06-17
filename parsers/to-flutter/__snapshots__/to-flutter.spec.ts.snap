@@ -157,13 +157,13 @@ class CustomTheme {
 exports[`To Flutter Should generate the text styles theme with custom file name, class name and type 1`] = `
 [
   {
-    "name": "text-styles.dart",
+    "name": "custom-text-styles-file-name.dart",
     "value": {
       "content": "
 import 'dart:ui';
 
-class SpecifyTextStyle {
-    SpecifyTextStyle._();
+class CustomTheme {
+    CustomTheme._();
 
     static const String _inter = 'Inter';
     static const String _firaCode = 'Fira Code';
