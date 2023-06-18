@@ -44,6 +44,7 @@ class SpecifyTextStyle {
       fontWeight: FontWeight.w500,
       letterSpacing: 10.00,
       color: Color(0xFF1E212B),
+      height: 20.00,
     );
     static const TextStyle bodyWithOpacity = TextStyle(
       fontFamily: _inter,
@@ -52,6 +53,7 @@ class SpecifyTextStyle {
       fontWeight: FontWeight.w500,
       letterSpacing: 10.00,
       color: Color(0x4D1E212B),
+      height: 20.00,
     );
     static const TextStyle code = TextStyle(
       fontFamily: _firaCode,
@@ -59,12 +61,14 @@ class SpecifyTextStyle {
       fontStyle: FontStyle.normal,
       fontWeight: FontWeight.w500,
       color: Color(0xFFFF8E05),
+      height: 20.00,
     );
     static const TextStyle list = TextStyle(
       fontFamily: _roboto,
       fontSize: 14.00,
       fontStyle: FontStyle.normal,
       fontWeight: FontWeight.w400,
+      height: 20.00,
     );
     static const TextStyle title = TextStyle(
       fontFamily: _inter,
@@ -73,6 +77,7 @@ class SpecifyTextStyle {
       fontWeight: FontWeight.w600,
       decoration: TextDecoration.underline,
       color: Color(0xFF1E212B),
+      height: 40.00,
     );
 }",
     },
@@ -176,6 +181,7 @@ class CustomTheme {
       fontWeight: FontWeight.w500,
       letterSpacing: 10.00,
       color: Color(0xFF1E212B),
+      height: 20.00,
     );
     static const TextStyle bodyWithOpacity = TextStyle(
       fontFamily: _inter,
@@ -184,6 +190,7 @@ class CustomTheme {
       fontWeight: FontWeight.w500,
       letterSpacing: 10.00,
       color: Color(0x4D1E212B),
+      height: 20.00,
     );
     static const TextStyle code = TextStyle(
       fontFamily: _firaCode,
@@ -191,12 +198,14 @@ class CustomTheme {
       fontStyle: FontStyle.normal,
       fontWeight: FontWeight.w500,
       color: Color(0xFFFF8E05),
+      height: 20.00,
     );
     static const TextStyle list = TextStyle(
       fontFamily: _roboto,
       fontSize: 14.00,
       fontStyle: FontStyle.normal,
       fontWeight: FontWeight.w400,
+      height: 20.00,
     );
     static const TextStyle title = TextStyle(
       fontFamily: _inter,
@@ -205,6 +214,7 @@ class CustomTheme {
       fontWeight: FontWeight.w600,
       decoration: TextDecoration.underline,
       color: Color(0xFF1E212B),
+      height: 40.00,
     );
 }",
     },
