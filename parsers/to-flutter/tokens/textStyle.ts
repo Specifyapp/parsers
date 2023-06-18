@@ -20,7 +20,7 @@ class {{textStyleClass}} {
       fontFamily: {{fontFamily}},
       fontSize: {{fontSize}},
       fontStyle: {{fontStyle}},
-      fontWeight: FontWeight.w{{fontWeight}},{{#decoration}}\n      decoration: {{decoration}},{{/decoration}}{{#letterSpacing}}\n      letterSpacing: {{letterSpacing}},{{/letterSpacing}}{{#color}}\n      color: Color({{color}}),{{/color}}
+      fontWeight: FontWeight.w{{fontWeight}},{{#decoration}}\n      decoration: {{decoration}},{{/decoration}}{{#letterSpacing}}\n      letterSpacing: {{letterSpacing}},{{/letterSpacing}}{{#color}}\n      color: Color({{color}}),{{/color}}{{#height}}\n      height: {{height}},{{/height}}
     );
     {{/textStyles}}
 }`);
@@ -59,6 +59,11 @@ export function generateTextStyleFile(
           fontSize: textStyle.value.fontSize.value.measure.toFixed(2),
           fontStyle: `FontStyle.${!!textStyle.value.font.value.isItalic ? 'italic' : 'normal'}`,
           fontWeight: textStyle.value.font.value.fontWeight,
+          height: pipe(
+            O.fromNullable(textStyle.value.lineHeight),
+            O.map(v => v.value.measure.toFixed(2)),
+            O.toUndefined,
+          ),
           decoration: pipe(
             // Flutter only accept 1 text decoration
             O.fromNullable(textStyle.value.textDecoration?.[0]),
