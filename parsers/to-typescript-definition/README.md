@@ -2,7 +2,7 @@
 
 ## Description
 
-Format design tokens to create their corresponding TypeScript types.
+This parser helps you format design tokens to create their corresponding TypeScript types.
 
 This parser generates TypeScript types corresponding to [Specify Token types](https://docs.specifyapp.com/concepts/token-types). All types respective values match the name of your design tokens returned by Specify.
 

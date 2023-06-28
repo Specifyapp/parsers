@@ -1,7 +1,8 @@
 # Sort By
 
 ## Description
-This parser helps loop on several design tokens and sort them according to their respective key values.
+
+This parser helps you loop on several design tokens and sort them according to their respective key values.
 
 Learn more about how to configure Specify in the API documentation: [https://specifyapp.com/developers](https://specifyapp.com/developers).
 
@@ -160,7 +161,7 @@ type output = Array<{ [key: string]: any }>;
     "value": {
       "unit": "px",
       "measure": 8
-    },
+    }
   },
   {
     "name": "base-space-01",
@@ -168,8 +169,8 @@ type output = Array<{ [key: string]: any }>;
     "value": {
       "unit": "px",
       "measure": 4
-    },
-  },
+    }
+  }
 ]
 ```
 
@@ -183,7 +184,7 @@ type output = Array<{ [key: string]: any }>;
     "value": {
       "unit": "px",
       "measure": 4 // <---
-    },
+    }
   },
   {
     "name": "base-space-02",
@@ -191,7 +192,7 @@ type output = Array<{ [key: string]: any }>;
     "value": {
       "unit": "px",
       "measure": 8 // <---
-    },
-  },
+    }
+  }
 ]
 ```
