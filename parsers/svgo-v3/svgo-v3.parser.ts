@@ -1,6 +1,7 @@
+import { cloneDeep } from 'lodash';
+import { Config, CustomPlugin, optimize, PluginConfig } from 'svgo-v3';
 import { LibsType } from '../global-libs';
 import { DownloadableFile } from '../../types';
-import { Config, CustomPlugin, optimize, PluginConfig } from 'svgo-v3';
 import Template from '../../libs/template';
 import { BuiltinsWithOptionalParams } from 'svgo-v3/plugins/plugins-types';
 
@@ -35,12 +36,13 @@ export default async function (
         if (token.type === 'vector' && token.value.format === 'svg') {
           const baseString = await SpServices.assets.getSource<string>(token.value.url!, 'text');
           try {
-            if (options?.svgo?.plugins) {
+            const config = cloneDeep(options);
+            if (config?.svgo?.plugins) {
               const prefixPluginIndex =
-                options?.svgo?.plugins?.findIndex(
+                config?.svgo?.plugins?.findIndex(
                   plugin => typeof plugin === 'object' && plugin.name === 'prefixIds',
                 ) ?? -1;
-              const prefixPlugin = options?.svgo?.plugins[prefixPluginIndex];
+              const prefixPlugin = config?.svgo?.plugins[prefixPluginIndex];
               if (
                 prefixPlugin &&
                 typeof prefixPlugin === 'object' &&
@@ -49,13 +51,13 @@ export default async function (
                 typeof prefixPlugin.params?.prefix === 'string'
               ) {
                 (
-                  options.svgo.plugins![prefixPluginIndex] as {
+                  config.svgo.plugins![prefixPluginIndex] as {
                     params: BuiltinsWithOptionalParams['prefixIds'];
                   }
                 ).params.prefix = new Template(prefixPlugin.params.prefix).render(token);
               }
             }
-            const result = optimize(baseString, options?.svgo);
+            const result = optimize(baseString, config?.svgo);
             token.value.content = result.data;
           } catch (err) {
             token.value.content = baseString;
