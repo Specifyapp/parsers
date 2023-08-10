@@ -6,7 +6,7 @@ import { TextStyleToken } from '../../types';
 describe('to-css-text-style', () => {
   it('Get tokens - execute parser', async () => {
     const result = await toCssTextStyle(
-      seeds().tokens.filter(({ type }) => type === 'textStyle') as InputDataType,
+      seeds().tokens,
       undefined,
       libs,
     );
@@ -30,6 +30,7 @@ describe('to-css-text-style', () => {
     ).toBeTruthy();
     return;
   });
+  
   it('Get tokens - execute parser - with options include css properties', async () => {
     const input = seeds().tokens.filter(
       ({ type }) => type === 'textStyle',
@@ -45,6 +46,7 @@ describe('to-css-text-style', () => {
     expect(result.match(/{\n  font-family: (.*?);\n}/g)?.length).toEqual(input.length);
     return;
   });
+  
   it('Get tokens - execute parser - with options include textStyle properties', async () => {
     const input = seeds().tokens.filter(
       ({ type }) => type === 'textStyle',
@@ -62,6 +64,7 @@ describe('to-css-text-style', () => {
     );
     return;
   });
+  
   it('Get tokens - execute parser - with options exclude textStyle properties', async () => {
     const input = seeds().tokens.filter(
       ({ type }) => type === 'textStyle',
@@ -157,6 +160,7 @@ describe('to-css-text-style', () => {
     expect(result.includes('font-weight')).toBeFalsy();
     return;
   });
+  
   it('Get tokens - execute parser - with options include font-weight property', async () => {
     const input = seeds().tokens.filter(
       ({ type }) => type === 'textStyle',
@@ -172,6 +176,7 @@ describe('to-css-text-style', () => {
     expect(result.match(/{\n  font-weight: (.*?);\n}/g)?.length).toEqual(input.length);
     return;
   });
+  
   it('Get tokens - execute parser - with options include font-weight property and exclude font-family', async () => {
     const input = seeds().tokens.filter(
       ({ type }) => type === 'textStyle',
@@ -188,6 +193,7 @@ describe('to-css-text-style', () => {
     expect(result.match(/{\n  font-weight: (.*?);\n}/g)?.length).toEqual(input.length);
     return;
   });
+  
   it('Should Throw error when typing is incorrect', async () => {
     const input = seeds().tokens.filter(
       ({ type }) => type === 'textStyle',
