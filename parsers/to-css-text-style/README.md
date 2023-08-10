@@ -122,9 +122,6 @@ type output = string;
 ### Config
 
 ```jsonc
-"filter": {
-  "types": ["textStyle"],
-},
 "parsers": [
   {
     "name": "to-css-text-style",
