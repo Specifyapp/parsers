@@ -7,7 +7,9 @@ import {
   MeasurementValue,
   TextDecorationValue,
   TextStyleValue,
+  TextStyleToken,
   TextTransformValue,
+  IToken
 } from '../../types';
 import * as os from 'os';
 import tinycolor from 'tinycolor2';
@@ -43,7 +45,7 @@ const propertiesBaseInCss = [
   'text-indent',
 ] as const;
 
-export type InputDataType = Array<{ name: string; value: TextStyleValue } & Record<any, any>>;
+export type InputDataType = Array<Pick<IToken, 'name' | 'value' | 'type'> & Record<string, any>>;
 export type OutputDataType = string;
 type FilterListFromTextStyle = keyof TextStyleValue;
 type FilterListFromCssProperties = typeof propertiesBaseInCss[number];
@@ -272,10 +274,10 @@ export default async function (
   try {
     const textStylesProperties = getTextStyleProperties(options);
     const cssProperties = getCssProperties(options);
-    const result = inputData
-      .map(token => {
+    const result = (inputData
+      .filter((token) => token.type === 'textStyle') as Array<TextStyleToken>).map(token => {
         const toCssTextStyle = new ToCssTextStyle(token.value, token.name, cssProperties, options);
-
+  
         textStylesProperties.forEach(property => {
           if (property in toCssTextStyle && !!toCssTextStyle[property as keyof TextStyleValue]) {
             toCssTextStyle.trigger[property as keyof ToCssTextStyle['trigger']]();
@@ -286,8 +288,7 @@ export default async function (
         if (options?.suffix) token.name = `${token.name}${options.suffix}`;
         let name = applyTransformStr(token.name, options?.cssClassFormat || 'kebabCase');
         return `.${name} {${toCssTextStyle.cssContent.join(';' + os.EOL)}}`;
-      })
-      .join(os.EOL + os.EOL);
+      }).join(os.EOL + os.EOL);
 
     return prettier.format(result, {
       ...options?.prettierConfig,
