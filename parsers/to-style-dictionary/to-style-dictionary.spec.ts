@@ -1,7 +1,7 @@
 import toStyleDictionary from './to-style-dictionary.parser';
 import seeds from '../../tests/seeds';
 import libs from '../global-libs';
-import { AllowedFormat, Token } from '../../types';
+import { AllowedFormat, FontToken, Token } from '../../types';
 import * as TokensClass from './tokens';
 import {
   BaseStyleDictionaryTokensFormat,
@@ -255,9 +255,10 @@ describe('To Style Dictionary', () => {
     expect(Object.keys(content.asset)[0]).toEqual('font');
     Object.values(content).forEach(property => {
       Object.values(property).forEach(nestedProperty => {
-        Object.values(nestedProperty as Record<string, Record<string, { value: string }>>).forEach(
+        Object.values(nestedProperty as Record<string, Record<string, { value: string | number }>>).forEach(
           format => {
             Object.values(format).forEach(value => {
+              if (Number.isInteger(value.value)) return expect(value.value).toEqual(expect.any(Number));
               expect(value.value).toEqual(expect.any(String));
             });
           },
@@ -284,11 +285,13 @@ describe('To Style Dictionary', () => {
     expect(Object.keys(content.asset)[0]).toEqual('font');
     Object.values(content).forEach(property => {
       Object.values(property).forEach(nestedProperty => {
-        Object.values(nestedProperty as Record<string, Record<string, { value: string }>>).forEach(
+        Object.values(nestedProperty as Record<string, Record<string, { value: string | number }>>).forEach(
           format => {
             Object.entries(format).forEach(([format, value]) => {
               if (format === 'name') {
                 expect(value.value).toEqual(expect.any(String));
+              } else if (format === 'fontWeight') {
+                expect(value.value).toEqual(expect.any(Number));
               } else {
                 expect(value.value).toContain('fonts/');
               }
@@ -317,11 +320,13 @@ describe('To Style Dictionary', () => {
     expect(Object.keys(content.asset)[0]).toEqual('font');
     Object.values(content).forEach(property => {
       Object.values(property).forEach(nestedProperty => {
-        Object.values(nestedProperty as Record<string, Record<string, { value: string }>>).forEach(
+        Object.values(nestedProperty as Record<string, Record<string, { value: string | Number }>>).forEach(
           format => {
             Object.entries(format).forEach(([format, value]) => {
               if (format === 'name') {
                 expect(value.value).toEqual(expect.any(String));
+              } else if (format === 'fontWeight') {
+                expect(value.value).toEqual(expect.any(Number));
               } else {
                 expect(value.value).toContain('fonts/');
               }
@@ -645,8 +650,8 @@ describe('To Style Dictionary', () => {
         });
     });
     it('Font', () => {
-      seeds()
-        .tokens.filter(({ type }) => type === 'font')
+      (seeds()
+        .tokens.filter(({ type }) => type === 'font') as Array<FontToken>)
         .map(font => {
           const tokenClass: StyleDictionaryTokenClass = (<any>TokensClass)['Font'];
           const [familyName, subFamilyName] = font.name.split('-');
@@ -672,6 +677,9 @@ describe('To Style Dictionary', () => {
                     {
                       name: {
                         value: font.name,
+                      },
+                      fontWeight: {
+                        value: font.value.fontWeight,
                       },
                     },
                   ),

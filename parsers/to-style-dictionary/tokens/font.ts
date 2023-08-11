@@ -24,7 +24,7 @@ export class Font extends FontToken {
             Object,
           );
           return acc;
-        }, _.set({}, [...this.keys, 'name'], { value: this.name })),
+        }, _.set(_.set({}, [...this.keys, 'fontWeight'], { value: this.value.fontWeight }), [...this.keys, 'name'], { value: this.name })),
       },
     };
   }
