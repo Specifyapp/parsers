@@ -5,7 +5,7 @@ This parser helps you round any measurement design token with specific precision
 
 Some measurement token values like a font size, a line height or a shadow blur may need to be rounded. By specifying a mode, you can control the round function more precisely.
 
-Learn more about how to configure Specify in the API documentation: [https://specifyapp.com/developers](https://specifyapp.com/developers).
+Learn more about how to configure Specify in the API documentation: [https://docs.specifyapp.com/getting-started/getting-started](https://docs.specifyapp.com/getting-started/getting-started).
 ## Interface
 
 ```ts

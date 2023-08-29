@@ -3,7 +3,7 @@
 ## Description
 This parser helps you create text styles formatted as [SCSS mixins](https://sass-lang.com/documentation/at-rules/mixin).
 
-Learn more about how to configure Specify in the API documentation: [https://specifyapp.com/developers](https://specifyapp.com/developers).
+Learn more about how to configure Specify in the API documentation: [https://docs.specifyapp.com/getting-started/getting-started](https://docs.specifyapp.com/getting-started/getting-started).
 
 ## Interface
 

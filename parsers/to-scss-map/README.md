@@ -3,7 +3,7 @@
 ## Description
 This parser helps you generate `.scss` files containing Scss map and function / mixin to access the values of the tokens.
 
-Learn more about how to configure Specify in the API documentation: [https://specifyapp.com/developers](https://specifyapp.com/developers).
+Learn more about how to configure Specify in the API documentation: [https://docs.specifyapp.com/getting-started/getting-started](https://docs.specifyapp.com/getting-started/getting-started).
 
 ## Interface
 

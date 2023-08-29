@@ -9,7 +9,7 @@ This parser creates a file containing the whole theme. It can then be used in th
 
 The theme created by this parser is compatible with the Tailwind versions >= `2.x`.
 
-Learn more about how to configure Specify in the API documentation: [https://specifyapp.com/developers](https://specifyapp.com/developers).
+Learn more about how to configure Specify in the API documentation: [https://docs.specifyapp.com/getting-started/getting-started](https://docs.specifyapp.com/getting-started/getting-started).
 
 ## Interface
 

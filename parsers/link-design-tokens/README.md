@@ -15,7 +15,7 @@ For instance, a border design token is composed of:
 
 The border width and the border color absolute values will be replaced by their corresponding design tokens.
 
-Learn more about how to configure Specify in the API documentation: [https://specifyapp.com/developers](https://specifyapp.com/developers).
+Learn more about how to configure Specify in the API documentation: [https://docs.specifyapp.com/getting-started/getting-started](https://docs.specifyapp.com/getting-started/getting-started).
 
 **ℹ️ Good to know**
 This parser is useful when used before the [`to-theme-ui`](https://github.com/Specifyapp/parsers/tree/master/parsers/to-theme-ui) parser.
