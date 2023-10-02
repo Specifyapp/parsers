@@ -370,7 +370,7 @@ const theme = {
   text: {
     body: {
       fontFamily: 'Roboto-Regular',
-      lineHeight: '20px',
+      lineHeight: 'body',
       fontSize: '0.875rem',
       fontWeight: 'normal',
       textAlign: 'left',
