@@ -245,7 +245,7 @@ const theme = {
 export default theme;
 ```
 
-## Complex usage - with variant and preset
+## Complex usage - with variants and preset
 
 ### Config
 
@@ -370,9 +370,9 @@ const theme = {
   text: {
     body: {
       fontFamily: 'Roboto-Regular',
-      lineHeight: '20px',
+      lineHeight: 'body',
       fontSize: '0.875rem',
-      fontWeight: 400,
+      fontWeight: 'normal',
       textAlign: 'left',
       verticalAlign: 'top',
       fontVariant: 'small-caps',
