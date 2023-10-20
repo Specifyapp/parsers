@@ -690,7 +690,7 @@ describe('To Style Dictionary', () => {
     });
   });
 
-  it.only('Should include description in the output', async () => {
+  it('Should include description in the output', async () => {
     const result = await toStyleDictionary(
       seeds()
         .tokens.filter(({ type }) =>
