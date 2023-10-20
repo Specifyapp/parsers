@@ -3,6 +3,7 @@ import tinycolor from 'tinycolor2';
 import { BaseStyleDictionaryTokensFormat } from '../to-style-dictionary.type';
 import { OptionsType } from '../to-style-dictionary.parser';
 import * as _ from 'lodash';
+import { setDescription } from '../utils/setDescription';
 
 export class Shadow extends ShadowToken {
   keys: Array<string>;
@@ -23,6 +24,7 @@ export class Shadow extends ShadowToken {
               keys,
               {
                 value: tinycolor(shadow.color.value).toString(colorFormat),
+                ...setDescription(this, options),
               },
               Object,
             );
@@ -42,6 +44,7 @@ export class Shadow extends ShadowToken {
                 [...keys, 'offsetX'],
                 {
                   value: `${shadow.offsetX.value.measure}${shadow.offsetX.value.unit}`,
+                  ...setDescription(this, options),
                 },
                 Object,
               );
@@ -52,6 +55,7 @@ export class Shadow extends ShadowToken {
                 [...keys, 'offsetY'],
                 {
                   value: `${shadow.offsetY.value.measure}${shadow.offsetY.value.unit}`,
+                  ...setDescription(this, options),
                 },
                 Object,
               );
@@ -62,6 +66,7 @@ export class Shadow extends ShadowToken {
                 [...keys, 'blur'],
                 {
                   value: `${shadow.blur.value.measure}${shadow.blur.value.unit}`,
+                  ...setDescription(this, options),
                 },
                 Object,
               );
@@ -73,6 +78,7 @@ export class Shadow extends ShadowToken {
                 [...keys, 'spread'],
                 {
                   value: `${shadow.spread.value.measure}${shadow.spread.value.unit}`,
+                  ...setDescription(this, options),
                 },
                 Object,
               );

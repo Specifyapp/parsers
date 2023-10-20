@@ -3,6 +3,7 @@ import * as _ from 'lodash';
 import { FontToken } from '../../../types';
 import { OptionsType } from '../to-style-dictionary.parser';
 import { BaseStyleDictionaryTokensFormat } from '../to-style-dictionary.type';
+import { setDescription } from '../utils/setDescription';
 
 export class Font extends FontToken {
   keys: Array<string>;
@@ -20,6 +21,7 @@ export class Font extends FontToken {
             path,
             {
               value: Path.join(options?.assetsBaseDirectory?.fonts ?? '', `${this.name}.${format}`),
+              ...setDescription(this, options),
             },
             Object,
           );

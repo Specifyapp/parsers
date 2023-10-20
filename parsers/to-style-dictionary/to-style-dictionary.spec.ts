@@ -255,14 +255,15 @@ describe('To Style Dictionary', () => {
     expect(Object.keys(content.asset)[0]).toEqual('font');
     Object.values(content).forEach(property => {
       Object.values(property).forEach(nestedProperty => {
-        Object.values(nestedProperty as Record<string, Record<string, { value: string | number }>>).forEach(
-          format => {
-            Object.values(format).forEach(value => {
-              if (Number.isInteger(value.value)) return expect(value.value).toEqual(expect.any(Number));
-              expect(value.value).toEqual(expect.any(String));
-            });
-          },
-        );
+        Object.values(
+          nestedProperty as Record<string, Record<string, { value: string | number }>>,
+        ).forEach(format => {
+          Object.values(format).forEach(value => {
+            if (Number.isInteger(value.value))
+              return expect(value.value).toEqual(expect.any(Number));
+            expect(value.value).toEqual(expect.any(String));
+          });
+        });
       });
     });
   });
@@ -285,19 +286,19 @@ describe('To Style Dictionary', () => {
     expect(Object.keys(content.asset)[0]).toEqual('font');
     Object.values(content).forEach(property => {
       Object.values(property).forEach(nestedProperty => {
-        Object.values(nestedProperty as Record<string, Record<string, { value: string | number }>>).forEach(
-          format => {
-            Object.entries(format).forEach(([format, value]) => {
-              if (format === 'name') {
-                expect(value.value).toEqual(expect.any(String));
-              } else if (format === 'fontWeight') {
-                expect(value.value).toEqual(expect.any(Number));
-              } else {
-                expect(value.value).toContain('fonts/');
-              }
-            });
-          },
-        );
+        Object.values(
+          nestedProperty as Record<string, Record<string, { value: string | number }>>,
+        ).forEach(format => {
+          Object.entries(format).forEach(([format, value]) => {
+            if (format === 'name') {
+              expect(value.value).toEqual(expect.any(String));
+            } else if (format === 'fontWeight') {
+              expect(value.value).toEqual(expect.any(Number));
+            } else {
+              expect(value.value).toContain('fonts/');
+            }
+          });
+        });
       });
     });
   });
@@ -320,19 +321,19 @@ describe('To Style Dictionary', () => {
     expect(Object.keys(content.asset)[0]).toEqual('font');
     Object.values(content).forEach(property => {
       Object.values(property).forEach(nestedProperty => {
-        Object.values(nestedProperty as Record<string, Record<string, { value: string | Number }>>).forEach(
-          format => {
-            Object.entries(format).forEach(([format, value]) => {
-              if (format === 'name') {
-                expect(value.value).toEqual(expect.any(String));
-              } else if (format === 'fontWeight') {
-                expect(value.value).toEqual(expect.any(Number));
-              } else {
-                expect(value.value).toContain('fonts/');
-              }
-            });
-          },
-        );
+        Object.values(
+          nestedProperty as Record<string, Record<string, { value: string | Number }>>,
+        ).forEach(format => {
+          Object.entries(format).forEach(([format, value]) => {
+            if (format === 'name') {
+              expect(value.value).toEqual(expect.any(String));
+            } else if (format === 'fontWeight') {
+              expect(value.value).toEqual(expect.any(Number));
+            } else {
+              expect(value.value).toContain('fonts/');
+            }
+          });
+        });
       });
     });
   });
@@ -650,44 +651,71 @@ describe('To Style Dictionary', () => {
         });
     });
     it('Font', () => {
-      (seeds()
-        .tokens.filter(({ type }) => type === 'font') as Array<FontToken>)
-        .map(font => {
-          const tokenClass: StyleDictionaryTokenClass = (<any>TokensClass)['Font'];
-          const [familyName, subFamilyName] = font.name.split('-');
-          const instance = new tokenClass(font, [familyName, subFamilyName]);
-          const expectedFormats: Array<AllowedFormat> = ['woff', 'woff2'];
-          const result = instance.generate({
-            formatTokens: {
-              fontFormat: expectedFormats,
-            },
-          });
+      (seeds().tokens.filter(({ type }) => type === 'font') as Array<FontToken>).map(font => {
+        const tokenClass: StyleDictionaryTokenClass = (<any>TokensClass)['Font'];
+        const [familyName, subFamilyName] = font.name.split('-');
+        const instance = new tokenClass(font, [familyName, subFamilyName]);
+        const expectedFormats: Array<AllowedFormat> = ['woff', 'woff2'];
+        const result = instance.generate({
+          formatTokens: {
+            fontFormat: expectedFormats,
+          },
+        });
 
-          expect(result).toEqual({
-            asset: {
-              font: {
-                [familyName]: {
-                  [subFamilyName]: expectedFormats.reduce<Record<string, object>>(
-                    (acc, format) => {
-                      acc[format] = {
-                        value: `${font.name}.${format}`,
-                      };
-                      return acc;
+        expect(result).toEqual({
+          asset: {
+            font: {
+              [familyName]: {
+                [subFamilyName]: expectedFormats.reduce<Record<string, object>>(
+                  (acc, format) => {
+                    acc[format] = {
+                      value: `${font.name}.${format}`,
+                    };
+                    return acc;
+                  },
+                  {
+                    name: {
+                      value: font.name,
                     },
-                    {
-                      name: {
-                        value: font.name,
-                      },
-                      fontWeight: {
-                        value: font.value.fontWeight,
-                      },
+                    fontWeight: {
+                      value: font.value.fontWeight,
                     },
-                  ),
-                },
+                  },
+                ),
               },
             },
-          });
+          },
         });
+      });
     });
+  });
+
+  it.only('Should include description in the output', async () => {
+    const result = await toStyleDictionary(
+      seeds()
+        .tokens.filter(({ type }) =>
+          [
+            'color',
+            'textStyle',
+            'shadow',
+            'border',
+            'bitmap',
+            'depth',
+            'duration',
+            'font',
+            'measurement',
+            'opacity',
+            'vector',
+          ].includes(type),
+        )
+        .map(t => {
+          t.description = 'This is a description for ' + t.name;
+          return t;
+        }) as Array<Token>,
+      { includeDescription: true },
+      libs,
+    );
+
+    expect(result).toMatchSnapshot();
   });
 });

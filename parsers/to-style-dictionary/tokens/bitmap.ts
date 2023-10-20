@@ -3,6 +3,7 @@ import * as _ from 'lodash';
 import { BitmapToken } from '../../../types';
 import { OptionsType } from '../to-style-dictionary.parser';
 import { BaseStyleDictionaryTokensFormat } from '../to-style-dictionary.type';
+import { setDescription } from '../utils/setDescription';
 
 export class Bitmap extends BitmapToken {
   keys: Array<string>;
@@ -19,6 +20,7 @@ export class Bitmap extends BitmapToken {
           options?.assetsBaseDirectory?.images ?? '',
           `${this.name}@${this.value.dimension ?? 1}.${this.value.format}`,
         ),
+        ...setDescription(this, options),
       },
       Object,
     );

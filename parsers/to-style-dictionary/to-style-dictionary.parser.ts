@@ -27,6 +27,7 @@ export type OptionsType =
       formatName: 'camelCase' | 'kebabCase' | 'snakeCase' | 'pascalCase';
       formatTokens: FormatTokenType;
       splitBy?: string;
+      includeDescription?: boolean;
       assetsBaseDirectory?: Partial<{
         fonts?: string;
         images?: string;

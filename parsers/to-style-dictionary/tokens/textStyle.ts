@@ -4,6 +4,7 @@ import tinycolor from 'tinycolor2';
 import { BaseStyleDictionaryTokensFormat } from '../to-style-dictionary.type';
 import { OptionsType, FormatTokenType } from '../to-style-dictionary.parser';
 import * as _ from 'lodash';
+import { setDescription } from '../utils/setDescription';
 
 export class TextStyle extends TextStyleToken {
   keys: Array<string>;
@@ -49,6 +50,7 @@ export class TextStyle extends TextStyleToken {
       ['size', 'font', ...this.keys],
       {
         value: this.getFontSize(options?.formatTokens?.fontSizeFormat),
+        ...setDescription(this, options),
       },
       Object,
     );
@@ -60,6 +62,7 @@ export class TextStyle extends TextStyleToken {
         ['size', 'letterSpacing', ...this.keys],
         {
           value: letterSpacing,
+          ...setDescription(this, options),
         },
         Object,
       );
@@ -72,6 +75,7 @@ export class TextStyle extends TextStyleToken {
         ['size', 'lineHeight', ...this.keys],
         {
           value: lineHeight,
+          ...setDescription(this, options),
         },
         Object,
       );
@@ -84,6 +88,7 @@ export class TextStyle extends TextStyleToken {
         ['color', 'font', ...this.keys],
         {
           value: textColor,
+          ...setDescription(this, options),
         },
         Object,
       );
@@ -96,6 +101,7 @@ export class TextStyle extends TextStyleToken {
         ['size', 'textIndent', ...this.keys],
         {
           value: textIndent,
+          ...setDescription(this, options),
         },
         Object,
       );

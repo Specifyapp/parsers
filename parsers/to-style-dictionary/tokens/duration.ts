@@ -1,6 +1,8 @@
 import { DurationToken } from '../../../types';
 import { BaseStyleDictionaryTokensFormat } from '../to-style-dictionary.type';
 import * as _ from 'lodash';
+import { setDescription } from '../utils/setDescription';
+import { OptionsType } from '../to-style-dictionary.parser';
 
 export class Duration extends DurationToken {
   keys: Array<string>;
@@ -42,12 +44,13 @@ export class Duration extends DurationToken {
     return value;
   }
 
-  generate(): Pick<BaseStyleDictionaryTokensFormat, 'time'> {
+  generate(options: OptionsType): Pick<BaseStyleDictionaryTokensFormat, 'time'> {
     return _.setWith(
       {},
       this.keys,
       {
         value: `${this.valueInMs}`,
+        ...setDescription(this, options),
       },
       Object,
     );
