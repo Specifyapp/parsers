@@ -3,6 +3,7 @@ import { ColorToken } from '../../../types';
 import { OptionsType } from '../to-style-dictionary.parser';
 import { BaseStyleDictionaryTokensFormat } from '../to-style-dictionary.type';
 import * as _ from 'lodash';
+import { setDescription } from '../utils/setDescription';
 
 export class Color extends ColorToken {
   keys: Array<string>;
@@ -16,6 +17,7 @@ export class Color extends ColorToken {
       this.keys,
       {
         value: tinycolor(this.value).toString(options?.formatTokens?.colorFormat?.format || 'rgb'),
+        ...setDescription(this, options),
       },
       Object,
     );

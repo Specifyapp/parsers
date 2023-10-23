@@ -55,8 +55,6 @@ export type BaseStyleDictionaryTokensFormat = Partial<{
 
 export interface StyleDictionaryTokenClass {
   new (tokens: Partial<Token>, options: Array<string>): StyleDictionaryTokenClassInstance;
-  // afterStringGenerate?(tailwindTokens: TailwindOutputType, result: string): string;
-  // afterGenerate(TailwindTokens: TailwindMappingTypes): TailwindOutputType;
 }
 
 export interface StyleDictionaryTokenClassInstance {

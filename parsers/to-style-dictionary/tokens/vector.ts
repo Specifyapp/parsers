@@ -3,6 +3,7 @@ import * as _ from 'lodash';
 import { VectorToken } from '../../../types';
 import { OptionsType } from '../to-style-dictionary.parser';
 import { BaseStyleDictionaryTokensFormat } from '../to-style-dictionary.type';
+import { setDescription } from '../utils/setDescription';
 
 export class Vector extends VectorToken {
   keys: Array<string>;
@@ -19,6 +20,7 @@ export class Vector extends VectorToken {
           options?.assetsBaseDirectory?.icons ?? '',
           `${this.name}.${this.value.format}`,
         ),
+        ...setDescription(this, options),
       },
       Object,
     );

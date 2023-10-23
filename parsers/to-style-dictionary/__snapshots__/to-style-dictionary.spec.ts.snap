@@ -1,0 +1,660 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`To Style Dictionary Should include description in the output 1`] = `
+[
+  {
+    "name": "asset/image.json",
+    "value": {
+      "content": "{
+  "asset": {
+    "image": {
+      "photoExample": {
+        "value": "photo-example@2.jpg",
+        "description": "This is a description for photo-example"
+      },
+      "acmeLogo": {
+        "value": "acme-logo@1.png",
+        "description": "This is a description for acme-logo"
+      }
+    }
+  }
+}
+",
+    },
+  },
+  {
+    "name": "asset/icon.json",
+    "value": {
+      "content": "{
+  "asset": {
+    "icon": {
+      "userMask": {
+        "value": "user-mask.svg",
+        "description": "This is a description for user-mask"
+      },
+      "alignCenter": {
+        "value": "align-center.pdf",
+        "description": "This is a description for align-center"
+      },
+      "alertTriangle": {
+        "value": "alert-triangle.svg",
+        "description": "This is a description for alert-triangle"
+      },
+      "alertOctagon": {
+        "value": "alert-octagon.svg",
+        "description": "This is a description for alert-octagon"
+      },
+      "alertCircle": {
+        "value": "alert-circle.svg",
+        "description": "This is a description for alert-circle"
+      },
+      "airplay": {
+        "value": "airplay.svg",
+        "description": "This is a description for airplay"
+      },
+      "activity": {
+        "value": "activity.svg",
+        "description": "This is a description for activity"
+      }
+    }
+  }
+}
+",
+    },
+  },
+  {
+    "name": "asset/font.json",
+    "value": {
+      "content": "{
+  "asset": {
+    "font": {
+      "robotoRegular": {
+        "fontWeight": { "value": 400 },
+        "name": { "value": "Roboto-Regular" },
+        "ttf": {
+          "value": "Roboto-Regular.ttf",
+          "description": "This is a description for Roboto-Regular"
+        }
+      },
+      "interSemiBold": {
+        "fontWeight": { "value": 600 },
+        "name": { "value": "Inter-SemiBold" },
+        "ttf": {
+          "value": "Inter-SemiBold.ttf",
+          "description": "This is a description for Inter-SemiBold"
+        }
+      },
+      "interMedium": {
+        "fontWeight": { "value": 500 },
+        "name": { "value": "Inter-Medium" },
+        "ttf": {
+          "value": "Inter-Medium.ttf",
+          "description": "This is a description for Inter-Medium"
+        }
+      },
+      "firaCodeMedium": {
+        "fontWeight": { "value": 500 },
+        "name": { "value": "FiraCode-Medium" },
+        "ttf": {
+          "value": "FiraCode-Medium.ttf",
+          "description": "This is a description for FiraCode-Medium"
+        }
+      }
+    }
+  }
+}
+",
+    },
+  },
+  {
+    "name": "depth/base.json",
+    "value": {
+      "content": "{
+  "depth": {
+    "base": {
+      "middle": {
+        "value": "50",
+        "description": "This is a description for Middle"
+      },
+      "foreground": {
+        "value": "100",
+        "description": "This is a description for Foreground"
+      },
+      "background": {
+        "value": "1",
+        "description": "This is a description for Background"
+      }
+    }
+  }
+}
+",
+    },
+  },
+  {
+    "name": "time/base.json",
+    "value": {
+      "content": "{
+  "time": {
+    "base": {
+      "veryLong": {
+        "value": "3000",
+        "description": "This is a description for Very long"
+      },
+      "short": {
+        "value": "100",
+        "description": "This is a description for Short"
+      },
+      "long": {
+        "value": "700",
+        "description": "This is a description for Long"
+      },
+      "base": {
+        "value": "300",
+        "description": "This is a description for Base"
+      }
+    }
+  }
+}
+",
+    },
+  },
+  {
+    "name": "size/base.json",
+    "value": {
+      "content": "{
+  "size": {
+    "base": {
+      "baseSpace10": {
+        "value": "112px",
+        "description": "This is a description for base-space-10"
+      },
+      "baseSpace09": {
+        "value": "96px",
+        "description": "This is a description for base-space-09"
+      },
+      "baseSpace08": {
+        "value": "80px",
+        "description": "This is a description for base-space-08"
+      },
+      "baseSpace07": {
+        "value": "64px",
+        "description": "This is a description for base-space-07"
+      },
+      "baseSpace06": {
+        "value": "48px",
+        "description": "This is a description for base-space-06"
+      },
+      "baseSpace05": {
+        "value": "32px",
+        "description": "This is a description for base-space-05"
+      },
+      "baseSpace04": {
+        "value": "16px",
+        "description": "This is a description for base-space-04"
+      },
+      "baseSpace03": {
+        "value": "12px",
+        "description": "This is a description for base-space-03"
+      },
+      "baseSpace02": {
+        "value": "8px",
+        "description": "This is a description for base-space-02"
+      },
+      "baseSpace01": {
+        "value": "4px",
+        "description": "This is a description for base-space-01"
+      }
+    }
+  }
+}
+",
+    },
+  },
+  {
+    "name": "size/font.json",
+    "value": {
+      "content": "{
+  "size": {
+    "font": {
+      "title": {
+        "value": "32px",
+        "description": "This is a description for Title"
+      },
+      "list": {
+        "value": "14px",
+        "description": "This is a description for list"
+      },
+      "code": {
+        "value": "13px",
+        "description": "This is a description for Code"
+      },
+      "bodyWithOpacity": {
+        "value": "14px",
+        "description": "This is a description for body-with-opacity"
+      },
+      "body": {
+        "value": "14px",
+        "description": "This is a description for Body"
+      }
+    }
+  }
+}
+",
+    },
+  },
+  {
+    "name": "size/lineHeight.json",
+    "value": {
+      "content": "{
+  "size": {
+    "lineHeight": {
+      "title": {
+        "value": "40px",
+        "description": "This is a description for Title"
+      },
+      "list": {
+        "value": "20px",
+        "description": "This is a description for list"
+      },
+      "code": {
+        "value": "20px",
+        "description": "This is a description for Code"
+      },
+      "bodyWithOpacity": {
+        "value": "20px",
+        "description": "This is a description for body-with-opacity"
+      },
+      "body": {
+        "value": "20px",
+        "description": "This is a description for Body"
+      }
+    }
+  }
+}
+",
+    },
+  },
+  {
+    "name": "size/textIndent.json",
+    "value": {
+      "content": "{
+  "size": {
+    "textIndent": {
+      "title": {
+        "value": "5px",
+        "description": "This is a description for Title"
+      }
+    }
+  }
+}
+",
+    },
+  },
+  {
+    "name": "size/letterSpacing.json",
+    "value": {
+      "content": "{
+  "size": {
+    "letterSpacing": {
+      "bodyWithOpacity": {
+        "value": "10px",
+        "description": "This is a description for body-with-opacity"
+      },
+      "body": {
+        "value": "10px",
+        "description": "This is a description for Body"
+      }
+    }
+  }
+}
+",
+    },
+  },
+  {
+    "name": "size/border.json",
+    "value": {
+      "content": "{
+  "size": {
+    "border": {
+      "borderDashed": {
+        "value": "1px",
+        "description": "This is a description for border-dashed"
+      },
+      "borderAccentWithoutRadii": {
+        "value": "2px",
+        "description": "This is a description for border-accent-without-radii"
+      },
+      "borderAccentWithOpacity": {
+        "value": "2px",
+        "description": "This is a description for border-accent-with-opacity"
+      },
+      "borderAccent": {
+        "value": "2px",
+        "description": "This is a description for border-accent"
+      }
+    }
+  }
+}
+",
+    },
+  },
+  {
+    "name": "size/radius.json",
+    "value": {
+      "content": "{
+  "size": {
+    "radius": {
+      "borderDashed": {
+        "value": "16px",
+        "description": "This is a description for border-dashed"
+      },
+      "borderAccentWithOpacity": {
+        "value": "16px",
+        "description": "This is a description for border-accent-with-opacity"
+      },
+      "borderAccent": {
+        "value": "16px",
+        "description": "This is a description for border-accent"
+      }
+    }
+  }
+}
+",
+    },
+  },
+  {
+    "name": "size/shadow.json",
+    "value": {
+      "content": "{
+  "size": {
+    "shadow": {
+      "elevation3": {
+        "0": {
+          "offsetY": {
+            "value": "1.8518518209457397px",
+            "description": "This is a description for Elevation-3"
+          },
+          "blur": {
+            "value": "3.1481480598449707px",
+            "description": "This is a description for Elevation-3"
+          }
+        },
+        "1": {
+          "offsetY": {
+            "value": "8.148148536682129px",
+            "description": "This is a description for Elevation-3"
+          },
+          "blur": {
+            "value": "6.518518447875977px",
+            "description": "This is a description for Elevation-3"
+          }
+        },
+        "2": {
+          "offsetY": {
+            "value": "20px",
+            "description": "This is a description for Elevation-3"
+          },
+          "blur": {
+            "value": "13px",
+            "description": "This is a description for Elevation-3"
+          }
+        },
+        "3": {
+          "offsetY": {
+            "value": "38.51852035522461px",
+            "description": "This is a description for Elevation-3"
+          },
+          "blur": {
+            "value": "25.481481552124023px",
+            "description": "This is a description for Elevation-3"
+          }
+        },
+        "4": {
+          "offsetY": {
+            "value": "64.81481170654297px",
+            "description": "This is a description for Elevation-3"
+          },
+          "blur": {
+            "value": "46.85185241699219px",
+            "description": "This is a description for Elevation-3"
+          }
+        },
+        "5": {
+          "offsetY": {
+            "value": "100px",
+            "description": "This is a description for Elevation-3"
+          },
+          "blur": {
+            "value": "80px",
+            "description": "This is a description for Elevation-3"
+          },
+          "spread": {
+            "value": "1px",
+            "description": "This is a description for Elevation-3"
+          }
+        }
+      },
+      "elevation2": {
+        "0": {
+          "offsetY": {
+            "value": "4px",
+            "description": "This is a description for Elevation-2"
+          },
+          "blur": {
+            "value": "28px",
+            "description": "This is a description for Elevation-2"
+          }
+        },
+        "1": {
+          "offsetY": {
+            "value": "4px",
+            "description": "This is a description for Elevation-2"
+          },
+          "blur": {
+            "value": "4px",
+            "description": "This is a description for Elevation-2"
+          }
+        }
+      },
+      "elevation1": {
+        "0": {
+          "offsetY": {
+            "value": "4px",
+            "description": "This is a description for Elevation-1"
+          },
+          "blur": {
+            "value": "8px",
+            "description": "This is a description for Elevation-1"
+          }
+        }
+      }
+    }
+  }
+}
+",
+    },
+  },
+  {
+    "name": "color/font.json",
+    "value": {
+      "content": "{
+  "color": {
+    "font": {
+      "title": {
+        "value": "#1e212b",
+        "description": "This is a description for Title"
+      },
+      "code": {
+        "value": "#ff8e05",
+        "description": "This is a description for Code"
+      },
+      "bodyWithOpacity": {
+        "value": "#1e212b",
+        "description": "This is a description for body-with-opacity"
+      },
+      "body": {
+        "value": "#1e212b",
+        "description": "This is a description for Body"
+      }
+    }
+  }
+}
+",
+    },
+  },
+  {
+    "name": "color/border.json",
+    "value": {
+      "content": "{
+  "color": {
+    "border": {
+      "borderDashed": {
+        "value": "rgb(30, 33, 43)",
+        "description": "This is a description for border-dashed"
+      },
+      "borderAccentWithoutRadii": {
+        "value": "rgba(102, 80, 239, 0.5)",
+        "description": "This is a description for border-accent-without-radii"
+      },
+      "borderAccentWithOpacity": {
+        "value": "rgba(102, 80, 239, 0.5)",
+        "description": "This is a description for border-accent-with-opacity"
+      },
+      "borderAccent": {
+        "value": "rgb(102, 80, 239)",
+        "description": "This is a description for border-accent"
+      }
+    }
+  }
+}
+",
+    },
+  },
+  {
+    "name": "color/base.json",
+    "value": {
+      "content": "{
+  "color": {
+    "base": {
+      "colorsWhite": {
+        "value": "rgb(255, 255, 255)",
+        "description": "This is a description for Colors/White"
+      },
+      "colorsRed": {
+        "value": "rgb(245, 72, 63)",
+        "description": "This is a description for Colors/Red"
+      },
+      "colorsPureBlack": {
+        "value": "rgb(0, 0, 0)",
+        "description": "This is a description for Colors/PureBlack"
+      },
+      "colorsOrange": {
+        "value": "rgb(255, 142, 5)",
+        "description": "This is a description for Colors/Orange"
+      },
+      "colorsGrey": {
+        "value": "rgb(204, 213, 225)",
+        "description": "This is a description for Colors/Grey"
+      },
+      "colorsGreen": {
+        "value": "rgb(88, 205, 82)",
+        "description": "This is a description for Colors/Green"
+      },
+      "colorsBlack": {
+        "value": "rgb(30, 33, 43)",
+        "description": "This is a description for Colors/Black"
+      },
+      "colorsAlmostBlack": {
+        "value": "rgb(28, 28, 28)",
+        "description": "This is a description for Colors/AlmostBlack"
+      },
+      "colorsAccent": {
+        "value": "rgb(120, 133, 183)",
+        "description": "This is a description for Colors/Accent"
+      }
+    }
+  }
+}
+",
+    },
+  },
+  {
+    "name": "color/shadow.json",
+    "value": {
+      "content": "{
+  "color": {
+    "shadow": {
+      "elevation3": {
+        "0": {
+          "value": "rgba(0, 0, 0, 0.02)",
+          "description": "This is a description for Elevation-3"
+        },
+        "1": {
+          "value": "rgba(0, 0, 0, 0.03)",
+          "description": "This is a description for Elevation-3"
+        },
+        "2": {
+          "value": "rgba(0, 0, 0, 0.04)",
+          "description": "This is a description for Elevation-3"
+        },
+        "3": {
+          "value": "rgba(0, 0, 0, 0.04)",
+          "description": "This is a description for Elevation-3"
+        },
+        "4": {
+          "value": "rgba(0, 0, 0, 0.05)",
+          "description": "This is a description for Elevation-3"
+        },
+        "5": {
+          "value": "rgba(0, 0, 0, 0.07)",
+          "description": "This is a description for Elevation-3"
+        }
+      },
+      "elevation2": {
+        "0": {
+          "value": "rgba(0, 0, 0, 0.1)",
+          "description": "This is a description for Elevation-2"
+        },
+        "1": {
+          "value": "rgba(0, 0, 0, 0.1)",
+          "description": "This is a description for Elevation-2"
+        }
+      },
+      "elevation1": {
+        "0": {
+          "value": "rgba(0, 0, 0, 0.1)",
+          "description": "This is a description for Elevation-1"
+        }
+      }
+    }
+  }
+}
+",
+    },
+  },
+  {
+    "name": "opacity/base.json",
+    "value": {
+      "content": "{
+  "opacity": {
+    "base": {
+      "visible": {
+        "value": "0.95",
+        "description": "This is a description for Visible"
+      },
+      "transparent": {
+        "value": "0.1",
+        "description": "This is a description for Transparent"
+      },
+      "subtle": {
+        "value": "0.5",
+        "description": "This is a description for Subtle"
+      }
+    }
+  }
+}
+",
+    },
+  },
+]
+`;
