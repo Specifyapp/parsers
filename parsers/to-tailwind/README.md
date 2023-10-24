@@ -52,7 +52,7 @@ interface parser {
 | `formatConfig.endOfLine`           | optional | `auto` `lf` `crlf` `cr`                                                                                                                               | `auto`      | [Prettier documentation](https://prettier.io/docs/en/options.html#end-of-line) |
 | `formatConfig.tabWidth`            | optional | `number`                                                                                                                                              | `2`         | [Prettier documentation](https://prettier.io/docs/en/options.html#tab-width)   |
 | `formatConfig.useTabs`             | optional | `boolean`                                                                                                                                             | `true`      | [Prettier documentation](https://prettier.io/docs/en/options.html#tabs)        |
-| `formatConfig.useVariables`        | optional | `boolean`                                                                                                                                             | `false`     | Output utility class values as CSS variables                                   |
+| `formatConfig.useVariables`        | optional | `boolean`                                                                                                                                             | `false`     | Output utility class values as CSS variables. Requires CSS variables file using `to-css-custom-properties` parser                                   |
 | `formatConfig.singleQuote`         | optional | `boolean`                                                                                                                                             | `false`     | [Prettier documentation](https://prettier.io/docs/en/options.html#quotes)      |
 | `formatConfig.exportDefault`       | optional | `boolean`                                                                                                                                             | `true`      |                                                                                |
 | `formatTokens.colorFormat.format`  | optional | `rgb` `prgb` `hex` `hex6` `hex3` `hex4` `hex8` `name` `hsl` `hsv` `raw`                                                                               | `hex`       | The color format you want to apply to your potential color design token        |
@@ -173,13 +173,13 @@ const theme = {
 export default theme;
 ```
 
-## Using CSS variables your utility class values
+## Using CSS variables for utility class values (`useVariables`)
 
 The tailwind parser supports outputting CSS variables instead of hardcoded values in the theme. This enables functionality such as dark/light mode.
 
 ### Prerequisites
 
-To enable CSS variables to work in the Tailwind output, you need to generate an associated CSS variables file. This can be achieved by using the [`to-css-custom-properties` parser](https://github.com/Specifyapp/parsers/blob/master/parsers/to-css-custom-properties/README.md). You must ensure that the formatName matches between both parser usages so that the referenced CSS variables exist.
+To enable CSS variables to work in the Tailwind output, you need to generate an associated CSS variables file. This can be achieved by using the [`to-css-custom-properties`](https://github.com/Specifyapp/parsers/blob/master/parsers/to-css-custom-properties/README.md) parser. You must ensure that the formatName matches between both parser usages so that the referenced CSS variables exist.
 
 ### Config
 
@@ -227,6 +227,7 @@ To enable CSS variables to work in the Tailwind output, you need to generate an 
     },
     "type": "color",
   },
+}
 ```
 
 #### After
@@ -242,6 +243,20 @@ const extend = {
 module.exports = extend;
 ```
 
+#### Using a different format name - `kebabCase`
+
+The format name is used when generating the CSS variable reference so that it will match what you have in the CSS variables file. Setting formatName to `kebabCase` would result in the following output.
+
+```js
+const extend = {
+  colors: {
+    'colors-accent': 'var(--colors-accent)',
+    'colors-almost-black': 'var(--colors-almost-black)',
+  },
+};
+
+module.exports = extend;
+```
 
 ## Complex usage - with specific config for `colorFormat`
 

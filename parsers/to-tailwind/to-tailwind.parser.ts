@@ -35,7 +35,7 @@ export type OptionsType =
         singleQuote: boolean;
         exportDefault: boolean;
         /**
-         * Sets the value of the class as a CSS variable reference. You will need to generate a CSS variables file using the `to-css-custom-properties` parser.
+         * Sets the value of the class as a CSS variable reference. An associated CSS variables file is required using the `to-css-custom-properties` parser.
          */
         useVariables: boolean;
       }>;

@@ -57,8 +57,6 @@ describe('To tailwind', () => {
           libs,
         );
 
-        console.log(result)
-
         tokens.forEach(({ name }) => {
           const transformNameFn = getNameFormatterFunction(formatName);
           const formatted = transformNameFn(name);
