@@ -148,3 +148,16 @@ To use our design tokens seed:
 1. Import it in your [parser].spec.ts using `import * as seeds from '../../seeds.json';`
 2. Use the `seeds.tokens` variable according to your needs.
 3. Launch `yarn test` to tests your parsers
+
+### Using your own tokens as seed data
+
+If you want to use your own tokens to test your parsers against, you can pull down your tokens in JSON format using the Specify CLI with the following configuration:
+
+```jsonc
+rules: [
+    {
+      "name": "design tokens",
+      "path": "tokens.json"`,
+    },
+  ],
+```

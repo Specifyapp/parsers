@@ -32,6 +32,7 @@ interface parser {
       endOfLine: 'auto' | 'lf' | 'crlf' | 'cr';
       tabWidth: number;
       useTabs: boolean;
+      useVariables?: boolean;
       singleQuote: boolean;
       exportDefault: boolean;
     }>;
@@ -51,6 +52,7 @@ interface parser {
 | `formatConfig.endOfLine`           | optional | `auto` `lf` `crlf` `cr`                                                                                                                               | `auto`      | [Prettier documentation](https://prettier.io/docs/en/options.html#end-of-line) |
 | `formatConfig.tabWidth`            | optional | `number`                                                                                                                                              | `2`         | [Prettier documentation](https://prettier.io/docs/en/options.html#tab-width)   |
 | `formatConfig.useTabs`             | optional | `boolean`                                                                                                                                             | `true`      | [Prettier documentation](https://prettier.io/docs/en/options.html#tabs)        |
+| `formatConfig.useVariables`        | optional | `boolean`                                                                                                                                             | `false`     | Output utility class values as CSS variables                                   |
 | `formatConfig.singleQuote`         | optional | `boolean`                                                                                                                                             | `false`     | [Prettier documentation](https://prettier.io/docs/en/options.html#quotes)      |
 | `formatConfig.exportDefault`       | optional | `boolean`                                                                                                                                             | `true`      |                                                                                |
 | `formatTokens.colorFormat.format`  | optional | `rgb` `prgb` `hex` `hex6` `hex3` `hex4` `hex8` `name` `hsl` `hsv` `raw`                                                                               | `hex`       | The color format you want to apply to your potential color design token        |
@@ -170,6 +172,76 @@ const theme = {
 
 export default theme;
 ```
+
+## Using CSS variables your utility class values
+
+The tailwind parser supports outputting CSS variables instead of hardcoded values in the theme. This enables functionality such as dark/light mode.
+
+### Prerequisites
+
+To enable CSS variables to work in the Tailwind output, you need to generate an associated CSS variables file. This can be achieved by using the [`to-css-custom-properties` parser](https://github.com/Specifyapp/parsers/blob/master/parsers/to-css-custom-properties/README.md). You must ensure that the formatName matches between both parser usages so that the referenced CSS variables exist.
+
+### Config
+
+```jsonc
+"parsers": [
+  {
+    "name": "to-tailwind",
+    "options": {
+      "formatName": "camelCase",
+      "formatConfig": {
+        "objectName": "extend",
+        "module": "commonjs",
+        "useVariables": true
+      }
+    }
+  }
+  // …
+]
+```
+
+### Before/After
+
+#### Input
+
+```jsonc
+{
+    "id": "5c819ba1-d0bc-43d8-91f6-952998eb345b",
+    "name": "Colors/Accent",
+    "value": {
+      "a": 1,
+      "b": 183,
+      "g": 133,
+      "r": 120
+    },
+    "type": "color",
+  },
+  {
+    "id": "a69b03e6-e5b0-4d74-a866-74b3161320f6",
+    "name": "Colors/AlmostBlack",
+    "value": {
+      "a": 1,
+      "b": 28,
+      "g": 28,
+      "r": 28
+    },
+    "type": "color",
+  },
+```
+
+#### After
+
+```js
+const extend = {
+  colors: {
+    colorsAccent: 'var(--colorsAccent)',
+    colorsAlmostBlack: 'var(--colorsAlmostBlack)',
+  },
+};
+
+module.exports = extend;
+```
+
 
 ## Complex usage - with specific config for `colorFormat`
 

@@ -1,8 +1,7 @@
-import tinycolor from 'tinycolor2';
 import * as _ from 'lodash';
-import toTailwind from './to-tailwind.parser';
+import { camelCase } from 'lodash';
+import tinycolor from 'tinycolor2';
 import seeds from '../../tests/seeds';
-import libs from '../global-libs';
 import {
   BorderToken,
   ColorToken,
@@ -13,10 +12,12 @@ import {
   MeasurementToken,
   OpacityToken,
   ShadowToken,
-  TextStyleToken,
+  TextStyleToken
 } from '../../types';
+import libs from '../global-libs';
+import toTailwind from './to-tailwind.parser';
+import { FormatName } from './to-tailwind.type';
 import { getNameFormatterFunction } from './utils/getNameFormatterFunction';
-import { camelCase } from 'lodash';
 
 describe('To tailwind', () => {
   it('Should generate the colors object', async () => {
@@ -31,7 +32,46 @@ describe('To tailwind', () => {
     return;
   });
 
-  it('Should user raw color value ', async () => {
+
+  describe('Should generate correct casing for output variable value', () => {
+    beforeAll(() => {
+      jest.mock('lodash', () => ({
+        ...jest.requireActual('lodash'),
+        pascalCase: _.flow(_.camelCase, _.upperFirst),
+      }));
+    });
+
+    afterAll(() => {
+      jest.clearAllMocks();
+    });
+
+    const allCaseTypes: FormatName[][] = [['pascalCase'], ['snakeCase'], ['kebabCase'], ['camelCase']];
+
+    test.each(allCaseTypes)(
+      'should generate output variables in %s',
+      async formatName => {
+        const tokens = seeds().tokens.filter(token => token.type === 'color') as Array<ColorToken>;
+        const result = await toTailwind(
+          tokens,
+          { formatName, formatConfig: { useVariables: true } },
+          libs,
+        );
+
+        console.log(result)
+
+        tokens.forEach(({ name }) => {
+          const transformNameFn = getNameFormatterFunction(formatName);
+          const formatted = transformNameFn(name);
+
+          expect(result).toEqual(expect.stringContaining(`var(--${formatted})`));
+        });
+
+        return;
+      },
+    );
+  });
+
+  it('Should user raw color value', async () => {
     const tokens = seeds().tokens.filter(token => token.type === 'color') as Array<ColorToken>;
     const result = await toTailwind(
       tokens,
