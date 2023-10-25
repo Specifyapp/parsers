@@ -1,4 +1,3 @@
-import * as _ from 'lodash';
 import { IToken, TokensType } from '../../types';
 import { LibsType } from '../global-libs';
 
@@ -20,16 +19,16 @@ export type OptionsType =
 
 type groupedByType = Partial<{ [k in TokensType]: string[] }>;
 
-const applyFormat = (str: string, fn?: format) => {
-  if (fn && fn !== 'none') return _[fn](str);
-  return str.includes(' ') || str.includes('\n') || str.includes('/') ? JSON.stringify(str) : str;
-};
-
 export default async function toTypescriptDefinition(
   tokens: InputDataType,
   options: OptionsType,
   { _ }: Pick<LibsType, '_'>,
 ): Promise<OutputDataType> {
+  const applyFormat = (str: string, fn?: format) => {
+    if (fn && fn !== 'none') return _[fn](str);
+    return str.includes(' ') || str.includes('\n') || str.includes('/') ? JSON.stringify(str) : str;
+  };
+
   const grouped = tokens.reduce<groupedByType>((acc, current) => {
     if (!acc[current.type])
       return {
