@@ -1,11 +1,12 @@
 import { IToken, PartialRecord, TokensType } from '../../types';
-import { LibsType } from '../global-libs';
 import prettier from 'prettier';
 import os from 'os';
-import * as _ from 'lodash';
+import { groupBy } from 'lodash';
 import { ColorsFormat, FormatName, TailwindTokenClass, TailwindType } from './to-tailwind.type';
 import * as TokensClass from './tokens';
 import deepmerge from 'deepmerge';
+import { initFormatterFunction } from './utils/getNameFormatterFunction';
+import { LibsType } from '../global-libs';
 
 export type OutputDataType = string;
 export type InputDataType = Array<
@@ -63,7 +64,7 @@ class ToTailwind {
     this.exportDefault = options?.formatConfig?.exportDefault ?? true;
     this.module = options?.formatConfig?.module ?? 'es6';
     this.tokens = tokens;
-    this.tokensGroupedByType = _.groupBy(tokens, 'type');
+    this.tokensGroupedByType = groupBy(tokens, 'type');
     this.styles = {};
   }
 
@@ -122,6 +123,7 @@ export default async function (
   { _ }: Pick<LibsType, '_'>,
 ): Promise<OutputDataType> {
   try {
+    initFormatterFunction(_, options?.formatName);
     const parserInstance = new ToTailwind(tokens, options);
     return parserInstance.exec();
   } catch (err) {
