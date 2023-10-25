@@ -18,6 +18,9 @@ export type FormatTokenType = Partial<{
   fontSizeFormat: {
     unit: 'px' | 'rem';
   };
+  valueFormat: {
+    useVariables?: boolean;
+  };
 }>;
 export type OptionsType =
   | Partial<{
@@ -31,6 +34,10 @@ export type OptionsType =
         useTabs: boolean;
         singleQuote: boolean;
         exportDefault: boolean;
+        /**
+         * Sets the value of the class as a CSS variable reference. An associated CSS variables file is required using the `to-css-custom-properties` parser.
+         */
+        useVariables: boolean;
       }>;
       renameKeys: PartialRecord<TailwindType, string>;
       splitBy?: string;
@@ -59,6 +66,7 @@ class ToTailwind {
     this.tokensGroupedByType = _.groupBy(tokens, 'type');
     this.styles = {};
   }
+
   exec() {
     const tokenTypes = Object.keys(this.tokensGroupedByType) as Array<TokensType>;
     this.styles = tokenTypes.reduce(
@@ -75,6 +83,7 @@ class ToTailwind {
     const tokenByType = this.tokensGroupedByType[tokenType].reduce((acc, token) => {
       const instance = new TokenHandler(token);
       const tailwindTokens = instance.generate(this.options, this.tokens);
+
       return deepmerge(acc, tailwindTokens);
     }, {});
 

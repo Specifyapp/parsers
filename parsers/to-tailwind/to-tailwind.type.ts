@@ -107,4 +107,5 @@ export interface TailwindTokenClassInstance {
   generate(options: OptionsType, spTokens: InputDataType): Partial<Record<TailwindType, any>>;
 }
 
-export type FormatName = 'camelCase' | 'kebabCase' | 'snakeCase' | 'pascalCase';
+export const formatNameArray = ['camelCase', 'kebabCase', 'snakeCase', 'pascalCase'] as const;
+export type FormatName = typeof formatNameArray[number];

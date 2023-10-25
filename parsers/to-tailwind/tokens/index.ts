@@ -1,9 +1,11 @@
 import { Token } from '../../../types';
 import Template from '../../../libs/template';
 import * as _ from 'lodash';
+import { pascalCase } from 'lodash';
 import { getNameFormatterFunction } from '../utils/getNameFormatterFunction';
 import { TailwindType } from '../to-tailwind.type';
 import { OptionsType } from '../to-tailwind.parser';
+import { getClassNameAsCSSVariable } from '../utils/getClassNameAsCSSVariable';
 
 export * from './color';
 export * from './gradient';
@@ -34,14 +36,21 @@ export abstract class Utils {
     return token.name!;
   }
 
+  static getValue(key: string, value: unknown, options: OptionsType) {
+    if (options?.formatConfig?.useVariables) {
+      return getClassNameAsCSSVariable(String(key), options.formatName);
+    }
+
+    return value
+  }
+
   static go<T>(token: T, options: OptionsType, tailwindKey: TailwindType, value: unknown) {
     const keyName = this.getTemplatedTokenName(token, options?.renameKeys?.[tailwindKey]);
     const keys = [...(options?.splitBy ? keyName.split(new RegExp(options.splitBy)) : [keyName])];
-    return _.setWith(
-      {},
-      keys.map(k => getNameFormatterFunction(options?.formatName)(k)).join('.'),
-      value,
-      Object,
-    );
+
+    const key = keys.map(k => getNameFormatterFunction(options?.formatName)(k)).join('.');
+    const val = Utils.getValue(key, value, options);
+
+    return _.setWith({}, key, val, Object);
   }
 }
