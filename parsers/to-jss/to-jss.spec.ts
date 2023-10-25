@@ -62,7 +62,36 @@ describe('To jss', () => {
 
   it('Get tokens - apply parsers - with snakeCase formatName options', async () => {
     const options: OptionsType = {
-      formatName: 'snakeCase'!,
+      formatName: 'snakeCase',
+      formatTokens: { colorFormat: 'hsl' },
+    };
+    const result = await toJss(seeds().tokens as Array<Token>, options, libs);
+    const color = seeds().tokens.find(token => token.type === 'color') as ColorToken;
+    const measurement = seeds().tokens.find(
+      token => token.type === 'measurement',
+    ) as MeasurementToken;
+
+    const fnFormatColor = libs._[options.formatName!](color.name);
+    expect(
+      result.includes(
+        `${fnFormatColor}: "${libs
+          .tinycolor(color.value as ColorValue)
+          .toString(options.formatTokens?.colorFormat)}",`,
+      ),
+    ).toBe(true);
+
+    const fnFormatMeasurement = libs._[options.formatName!](measurement.name);
+    expect(
+      result.includes(
+        `${fnFormatMeasurement}: "${measurement.value.measure}${measurement.value.unit}",`,
+      ),
+    ).toBe(true);
+    return;
+  });
+
+  it('Get tokens - apply parsers - with pascalCase formatName options', async () => {
+    const options: OptionsType = {
+      formatName: 'pascalCase',
       formatTokens: { colorFormat: 'hsl' },
     };
     const result = await toJss(seeds().tokens as Array<Token>, options, libs);
