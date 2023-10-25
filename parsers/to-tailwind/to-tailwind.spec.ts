@@ -12,7 +12,7 @@ import {
   MeasurementToken,
   OpacityToken,
   ShadowToken,
-  TextStyleToken
+  TextStyleToken,
 } from '../../types';
 import libs from '../global-libs';
 import toTailwind from './to-tailwind.parser';
@@ -32,41 +32,30 @@ describe('To tailwind', () => {
     return;
   });
 
-
   describe('Should generate correct casing for output variable value', () => {
-    beforeAll(() => {
-      jest.mock('lodash', () => ({
-        ...jest.requireActual('lodash'),
-        pascalCase: _.flow(_.camelCase, _.upperFirst),
-      }));
+    const allCaseTypes: FormatName[][] = [
+      ['pascalCase'],
+      ['snakeCase'],
+      ['kebabCase'],
+      ['camelCase'],
+      ['none'],
+    ];
+
+    test.each(allCaseTypes)('should generate output variables in %s', async formatName => {
+      const tokens = seeds().tokens.filter(token => token.type === 'color') as Array<ColorToken>;
+      const result = await toTailwind(
+        tokens,
+        { formatName, formatConfig: { useVariables: true } },
+        libs,
+      );
+
+      tokens.forEach(({ name }) => {
+        const formatted = libs._[formatName](name);
+        expect(result).toEqual(expect.stringContaining(`var(--${formatted})`));
+      });
+
+      return;
     });
-
-    afterAll(() => {
-      jest.clearAllMocks();
-    });
-
-    const allCaseTypes: FormatName[][] = [['pascalCase'], ['snakeCase'], ['kebabCase'], ['camelCase']];
-
-    test.each(allCaseTypes)(
-      'should generate output variables in %s',
-      async formatName => {
-        const tokens = seeds().tokens.filter(token => token.type === 'color') as Array<ColorToken>;
-        const result = await toTailwind(
-          tokens,
-          { formatName, formatConfig: { useVariables: true } },
-          libs,
-        );
-
-        tokens.forEach(({ name }) => {
-          const transformNameFn = getNameFormatterFunction(formatName);
-          const formatted = transformNameFn(name);
-
-          expect(result).toEqual(expect.stringContaining(`var(--${formatted})`));
-        });
-
-        return;
-      },
-    );
   });
 
   it('Should user raw color value', async () => {
@@ -585,7 +574,7 @@ describe('To tailwind', () => {
     );
 
     tokens.forEach(({ name, value }) => {
-      const transformedName = getNameFormatterFunction(formatName)(name);
+      const transformedName = getNameFormatterFunction()(name);
       expect(result).toEqual(expect.stringContaining(`${borderWidthPrefix}${transformedName}`));
       expect(result).toEqual(expect.stringContaining(`${borderColorPrefix}${transformedName}`));
 
@@ -622,7 +611,7 @@ describe('To tailwind', () => {
     );
 
     tokens.forEach(({ name }) => {
-      const transformedName = getNameFormatterFunction(formatName)(name);
+      const transformedName = getNameFormatterFunction()(name);
       expect(result).toEqual(expect.stringContaining(`${prefix}${transformedName}`));
     });
   });
@@ -648,7 +637,7 @@ describe('To tailwind', () => {
     );
 
     tokens.forEach(({ name }) => {
-      const transformedName = getNameFormatterFunction(formatName)(name);
+      const transformedName = getNameFormatterFunction()(name);
       expect(result).toEqual(expect.stringContaining(`${prefix}${transformedName}`));
     });
   });
@@ -676,7 +665,7 @@ describe('To tailwind', () => {
     );
 
     tokens.forEach(({ name }) => {
-      const transformedName = getNameFormatterFunction(formatName)(name);
+      const transformedName = getNameFormatterFunction()(name);
       expect(result).toEqual(expect.stringContaining(`${prefix}${transformedName}`));
     });
   });
@@ -704,7 +693,7 @@ describe('To tailwind', () => {
     );
 
     tokens.forEach(({ name }) => {
-      const transformedName = getNameFormatterFunction(formatName)(name);
+      const transformedName = getNameFormatterFunction()(name);
       expect(result).toEqual(expect.stringContaining(`${prefix}${transformedName}`));
     });
   });
@@ -732,7 +721,7 @@ describe('To tailwind', () => {
     );
 
     tokens.forEach(({ name }) => {
-      const transformedName = getNameFormatterFunction(formatName)(name);
+      const transformedName = getNameFormatterFunction()(name);
       expect(result).toEqual(expect.stringContaining(`${prefix}${transformedName}`));
     });
   });
@@ -758,7 +747,7 @@ describe('To tailwind', () => {
     );
 
     tokens.forEach(({ name }) => {
-      const transformedName = getNameFormatterFunction(formatName)(name);
+      const transformedName = getNameFormatterFunction()(name);
       expect(result).toEqual(expect.stringContaining(`${prefix}${transformedName}`));
     });
   });
@@ -784,7 +773,7 @@ describe('To tailwind', () => {
     );
 
     tokens.forEach(({ name }) => {
-      const transformedName = getNameFormatterFunction(formatName)(name);
+      const transformedName = getNameFormatterFunction()(name);
       expect(result).toEqual(expect.stringContaining(`${prefix}${transformedName}`));
     });
   });
@@ -848,7 +837,7 @@ describe('To tailwind', () => {
     );
 
     tokens.forEach(({ name, value }) => {
-      const transformedName = getNameFormatterFunction(formatName)(name);
+      const transformedName = getNameFormatterFunction()(name);
 
       expect(result).toEqual(expect.stringContaining(`${fontSizePrefix}${transformedName}`));
       expect(result).toEqual(expect.stringContaining(`${lineHeightPrefix}${transformedName}`));
