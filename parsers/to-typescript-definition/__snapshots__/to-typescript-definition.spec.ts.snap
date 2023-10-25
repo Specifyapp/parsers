@@ -83,3 +83,31 @@ export type opacity = 'subtle' | 'transparent' | 'visible'
 
 "
 `;
+
+exports[`Tokens to Typescript types definitions Should generate all the types with name in pascalCase 1`] = `
+"export type bitmap = 'AcmeLogo' | 'PhotoExample' | 'PhotoExample' | 'PhotoExample'
+
+export type vector = 'Activity' | 'Airplay' | 'AlertCircle' | 'AlertOctagon' | 'AlertTriangle' | 'AlertTriangle' | 'AlignCenter' | 'AlignCenter' | 'UserMask' | 'UserMask'
+
+export type depth = 'Background' | 'Foreground' | 'Middle'
+
+export type duration = 'Base' | 'Long' | 'Short' | 'VeryLong'
+
+export type measurement = 'BaseSpace01' | 'BaseSpace02' | 'BaseSpace03' | 'BaseSpace04' | 'BaseSpace05' | 'BaseSpace06' | 'BaseSpace07' | 'BaseSpace08' | 'BaseSpace09' | 'BaseSpace10'
+
+export type textStyle = 'Body' | 'BodyWithOpacity' | 'Code' | 'List' | 'Title'
+
+export type border = 'BorderAccent' | 'BorderAccentWithOpacity' | 'BorderAccentWithoutRadii' | 'BorderDashed'
+
+export type color = 'ColorsAccent' | 'ColorsAlmostBlack' | 'ColorsBlack' | 'ColorsGreen' | 'ColorsGrey' | 'ColorsOrange' | 'ColorsPureBlack' | 'ColorsRed' | 'ColorsWhite'
+
+export type shadow = 'Elevation1' | 'Elevation2' | 'Elevation3'
+
+export type font = 'FiraCodeMedium' | 'InterMedium' | 'InterSemiBold' | 'RobotoRegular'
+
+export type gradient = 'GradientsColored' | 'GradientsDark' | 'GradientsNeutral' | 'GradientsSafari'
+
+export type opacity = 'Subtle' | 'Transparent' | 'Visible'
+
+"
+`;

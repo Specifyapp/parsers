@@ -1,5 +1,3 @@
-import * as _ from 'lodash';
-
 import { FormatName } from '../to-tailwind.type';
 import { getNameFormatterFunction } from './getNameFormatterFunction';
 
@@ -7,5 +5,5 @@ export function getClassNameAsCSSVariable(str: string, format: FormatName = 'cam
   const transformNameFn = getNameFormatterFunction(format);
   const formatted = transformNameFn(str);
 
-  return `var(--${formatted.replace('/', '')})`
+  return `var(--${formatted.replace('/', '')})`;
 }

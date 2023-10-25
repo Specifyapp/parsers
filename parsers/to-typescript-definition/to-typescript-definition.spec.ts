@@ -1,12 +1,12 @@
 import seeds from '../../tests/seeds';
-import libs, { LibsType } from '../global-libs';
 import toTypescriptDefinition, { InputDataType } from './to-typescript-definition.parser';
+import libs from '../global-libs';
 
 const tokens = seeds().tokens;
 
 describe('Tokens to Typescript types definitions', () => {
   it('Should generate all the types with default formatting', async () => {
-    const result = await toTypescriptDefinition(tokens as InputDataType, {}, libs as LibsType);
+    const result = await toTypescriptDefinition(tokens as InputDataType, {}, libs);
 
     expect(result).toMatchSnapshot();
   });
@@ -21,7 +21,7 @@ describe('Tokens to Typescript types definitions', () => {
           textStyle: 'text_style',
         },
       },
-      libs as LibsType,
+      libs,
     );
 
     expect(result.includes("export type helloColor = 'colors-accent'")).toBeTruthy();
@@ -43,13 +43,25 @@ describe('Tokens to Typescript types definitions', () => {
           measurement: 'not',
         },
       },
-      libs as LibsType,
+      libs,
     );
 
     expect(result.includes("export type another = 'colors_accent'")).toBeTruthy();
     expect(result.includes("export type name = 'subtle'")).toBeTruthy();
     expect(result.includes("export type why = 'elevation_1'")).toBeTruthy();
     expect(result.includes("export type not = 'base_space_01'")).toBeTruthy();
+
+    expect(result).toMatchSnapshot();
+  });
+
+  it('Should generate all the types with name in pascalCase', async () => {
+    const result = await toTypescriptDefinition(
+      tokens as InputDataType,
+      {
+        formatName: 'pascalCase',
+      },
+      libs,
+    );
 
     expect(result).toMatchSnapshot();
   });
