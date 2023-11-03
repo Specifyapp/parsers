@@ -58,22 +58,22 @@ describe('To css', () => {
     textStyle.value.textIndent = { value: { unit: 'px', measure: 12 } };
     textStyle.value.textTransform = 'capitalize';
 
-    const result = await toCss([textStyle], undefined, libs);
+    const result = await toCss([textStyle], { formatName: 'kebabCase' }, libs);
 
     expect(result).toBe(`:root {
   /* TEXTSTYLE */
-  --Body-color: rgb(30, 33, 43);
-  --Body-font-family: Inter;
-  --Body-font-weight: 500;
-  --Body-font-style: italic;
-  --Body-font-size: 14px;
-  --Body-font-variant: common-ligatures all-petite-caps;
-  --Body-letter-spacing: 10px;
-  --Body-line-height: 20px;
-  --Body-text-align: left;
-  --Body-text-decoration: dashed underline;
-  --Body-text-ident: 12px;
-  --Body-text-transform: capitalize;
+  --body-color: rgb(30, 33, 43);
+  --body-font-family: Inter;
+  --body-font-weight: 500;
+  --body-font-style: italic;
+  --body-font-size: 14px;
+  --body-font-variant: common-ligatures all-petite-caps;
+  --body-letter-spacing: 10px;
+  --body-line-height: 20px;
+  --body-text-align: left;
+  --body-text-decoration: dashed underline;
+  --body-text-ident: 12px;
+  --body-text-transform: capitalize;
 }
 `);
   });
