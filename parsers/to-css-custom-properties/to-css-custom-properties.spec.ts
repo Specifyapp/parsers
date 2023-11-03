@@ -6,7 +6,6 @@ import {
   ColorValue,
   Shadow,
   ShadowToken,
-  Token,
   MeasurementToken,
   TextStyleToken,
 } from '../../types';
