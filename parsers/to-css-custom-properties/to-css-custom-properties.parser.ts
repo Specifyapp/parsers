@@ -58,7 +58,10 @@ export default async function (
             token.name.includes('/')
               ? transformNameFn(token.name)
               : token.name;
-          return `--${name}: ${instance.toCss(options)};`;
+
+          return !!instance.custom
+            ? instance.toCss(options, name)
+            : `--${name}: ${instance.toCss(options)};`;
         })
         .join('');
       if (formatedCss.length > 0) result += `\n\n/* ${type.toUpperCase()} */\n${formatedCss}`;

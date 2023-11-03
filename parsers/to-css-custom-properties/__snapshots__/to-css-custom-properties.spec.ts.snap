@@ -43,6 +43,43 @@ exports[`To css Get tokens - apply parsers - all tokens 1`] = `
   --base-space-09: 96px;
   --base-space-10: 112px;
 
+  /* TEXTSTYLE */
+  --body-color: rgb(30, 33, 43);
+  --body-font-family: Inter;
+  --body-font-weight: 500;
+  --body-font-size: 14px;
+  --body-letter-spacing: 10px;
+  --body-line-height: 20px;
+  --body-text-align: left;
+  --body-with-opacity-color: rgba(30, 33, 43, 0.3);
+  --body-with-opacity-font-family: Inter;
+  --body-with-opacity-font-weight: 500;
+  --body-with-opacity-font-size: 14px;
+  --body-with-opacity-letter-spacing: 10px;
+  --body-with-opacity-line-height: 20px;
+  --body-with-opacity-text-align: left;
+  --code-color: rgb(255, 142, 5);
+  --code-font-family: Fira Code;
+  --code-font-weight: 500;
+  --code-font-size: 13px;
+  --code-line-height: 20px;
+  --code-text-align: left;
+  --list-font-family: Roboto;
+  --list-font-weight: 400;
+  --list-font-size: 14px;
+  --list-font-variant: small-caps;
+  --list-line-height: 20px;
+  --list-text-align: left;
+  --title-color: rgb(30, 33, 43);
+  --title-font-family: Inter;
+  --title-font-weight: 600;
+  --title-font-size: 32px;
+  --title-line-height: 40px;
+  --title-text-align: left;
+  --title-text-decoration: underline;
+  --title-text-ident: 5px;
+  --title-text-transform: uppercase;
+
   /* BORDER */
   --border-accent: 2px solid rgba(102, 80, 239, 1);
   --border-accent-with-opacity: 2px solid rgba(102, 80, 239, 0.5);

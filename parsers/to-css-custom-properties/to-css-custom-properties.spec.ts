@@ -1,7 +1,15 @@
 import libs from '../global-libs';
 import seeds from '../../tests/seeds';
 import toCss, { OptionsType } from './to-css-custom-properties.parser';
-import { ColorToken, ColorValue, Shadow, ShadowToken, Token, MeasurementToken } from '../../types';
+import {
+  ColorToken,
+  ColorValue,
+  Shadow,
+  ShadowToken,
+  Token,
+  MeasurementToken,
+  TextStyleToken,
+} from '../../types';
 
 describe('To css', () => {
   it('Get tokens - apply parsers', async () => {
@@ -12,7 +20,6 @@ describe('To css', () => {
       token => token.type === 'measurement',
     ) as MeasurementToken;
     const shadow = seeds().tokens.find(token => token.type === 'shadow') as ShadowToken;
-
     const shadowValue = shadow.value.reduce((acc: string, value: Shadow) => {
       const { color, offsetX, offsetY, blur, isInner } = value;
       const x = offsetX.value;
@@ -23,10 +30,8 @@ describe('To css', () => {
       if (acc === '') {
         return `${innerText}${x.measure}${x.unit} ${y.measure}${y.unit} ${bl.measure}${bl.unit} rgba(${r}, ${g}, ${b}, ${a})`;
       }
-
       return `${acc}, ${innerText}${x.measure}${x.unit} ${y.measure}${y.unit} ${bl.measure}${bl.unit} rgba(${r}, ${g}, ${b}, ${a})`;
     }, '');
-
     expect(
       result.includes(
         `${libs._.kebabCase(color.name)}: ${libs
@@ -44,6 +49,35 @@ describe('To css', () => {
     ).toBe(true);
   });
 
+  it('Get tokens - apply parsers for textStyle', async () => {
+    const textStyle = seeds().tokens.find(t => t.type === 'textStyle')! as TextStyleToken;
+
+    textStyle.value.font.value.isItalic = true;
+    textStyle.value.fontVariant = ['common-ligatures', 'all-petite-caps'];
+    textStyle.value.textDecoration = ['dashed', 'underline'];
+    textStyle.value.textIndent = { value: { unit: 'px', measure: 12 } };
+    textStyle.value.textTransform = 'capitalize';
+
+    const result = await toCss([textStyle], undefined, libs);
+
+    expect(result).toBe(`:root {
+  /* TEXTSTYLE */
+  --Body-color: rgb(30, 33, 43);
+  --Body-font-family: Inter;
+  --Body-font-weight: 500;
+  --Body-font-style: italic;
+  --Body-font-size: 14px;
+  --Body-font-variant: common-ligatures all-petite-caps;
+  --Body-letter-spacing: 10px;
+  --Body-line-height: 20px;
+  --Body-text-align: left;
+  --Body-text-decoration: dashed underline;
+  --Body-text-ident: 12px;
+  --Body-text-transform: capitalize;
+}
+`);
+  });
+
   it('Get tokens - apply parsers - with options', async () => {
     const options: OptionsType = {
       formatName: 'snakeCase'!,
@@ -54,7 +88,6 @@ describe('To css', () => {
     const measurement = seeds().tokens.find(
       token => token.type === 'measurement',
     ) as MeasurementToken;
-
     const fnFormatColor = libs._[options.formatName!](color.name);
     expect(
       result.includes(
@@ -63,7 +96,6 @@ describe('To css', () => {
           .toString(options.formatTokens?.color)}`,
       ),
     ).toBe(true);
-
     const fnFormatMeasurement = libs._[options.formatName!](measurement.name);
     expect(
       result.includes(
@@ -71,7 +103,6 @@ describe('To css', () => {
       ),
     ).toBe(true);
   });
-
   it('Get tokens - apply parsers - with custom selector', async () => {
     const options: OptionsType = {
       formatName: 'snakeCase'!,
@@ -85,7 +116,6 @@ describe('To css', () => {
     const measurement = seeds().tokens.find(
       token => token.type === 'measurement',
     ) as MeasurementToken;
-
     const fnFormatColor = libs._[options.formatName!](color.name);
     expect(
       result.includes(
@@ -94,7 +124,6 @@ describe('To css', () => {
           .toString(options.formatTokens?.color)}`,
       ),
     ).toBe(true);
-
     const fnFormatMeasurement = libs._[options.formatName!](measurement.name);
     expect(
       result.includes(
@@ -103,7 +132,6 @@ describe('To css', () => {
     ).toBe(true);
     expect(result.includes(`${options.formatConfig!.selector}`)).toBe(true);
   });
-
   it('Get tokens - apply parsers - without custom selector', async () => {
     const options: OptionsType = {
       formatName: 'snakeCase'!,
@@ -114,7 +142,6 @@ describe('To css', () => {
     const measurement = seeds().tokens.find(
       token => token.type === 'measurement',
     ) as MeasurementToken;
-
     const fnFormatColor = libs._[options.formatName!](color.name);
     expect(
       result.includes(
@@ -123,7 +150,6 @@ describe('To css', () => {
           .toString(options.formatTokens?.color)}`,
       ),
     );
-
     const fnFormatMeasurement = libs._[options.formatName!](measurement.name);
     expect(
       result.includes(
@@ -132,7 +158,6 @@ describe('To css', () => {
     ).toBe(true);
     expect(result.includes(`:root {`)).toBe(true);
   });
-
   it('Get tokens - apply parsers - with camelCase', async () => {
     const options: OptionsType = {
       formatName: 'camelCase'!,
@@ -143,7 +168,6 @@ describe('To css', () => {
     const measurement = seeds().tokens.find(
       token => token.type === 'measurement',
     ) as MeasurementToken;
-
     const fnFormatColor = libs._[options.formatName!](color.name);
     expect(
       result.includes(
@@ -152,10 +176,8 @@ describe('To css', () => {
           .toString(options.formatTokens?.color)}`,
       ),
     ).toBe(true);
-
     expect(result.includes('colorsAccent')).toBe(true);
     expect(result.includes('colorsRed')).toBe(true);
-
     const fnFormatName = libs._.camelCase;
     expect(
       result.includes(
@@ -164,7 +186,6 @@ describe('To css', () => {
     ).toBe(true);
     expect(result.includes(`:root {`)).toBe(true);
   });
-
   it('Get tokens - apply parsers - all tokens', async () => {
     const options: OptionsType = {
       formatName: 'kebabCase'!,
