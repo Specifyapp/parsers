@@ -8,3 +8,4 @@ export * from './depth';
 export * from './duration';
 export * from './border';
 export * from './measurement';
+export * from './textStyle';
