@@ -62,7 +62,7 @@ describe('To css', () => {
     expect(result).toBe(`:root {
   /* TEXTSTYLE */
   --body-color: rgb(30, 33, 43);
-  --body-font-family: Inter;
+  --body-font-family: Inter-Medium;
   --body-font-weight: 500;
   --body-font-style: italic;
   --body-font-size: 14px;
