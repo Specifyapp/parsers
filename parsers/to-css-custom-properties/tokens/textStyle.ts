@@ -18,7 +18,7 @@ export class TextStyle extends TextStyleToken {
             options?.formatTokens?.color || 'rgb',
           )};`
         : undefined,
-      `${BASE}-font-family: ${this.value.font.value.fontFamily};`,
+      `${BASE}-font-family: ${this.value.font.value.fontPostScriptName};`,
       `${BASE}-font-weight: ${this.value.font.value.fontWeight};`,
       !!this.value.font.value.isItalic ? `${BASE}-font-style: italic;` : undefined,
       `${BASE}-font-size: ${this.value.fontSize.value.measure}${this.value.fontSize.value.unit};`,
