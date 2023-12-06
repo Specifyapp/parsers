@@ -2,7 +2,7 @@
 
 ## Description
 
-Format design tokens to create a theme compatible with the [TailwindCSS specification](https://tailwindcss.com/docs/theme).
+This parser helps you format design tokens to create a theme compatible with the [TailwindCSS specification](https://tailwindcss.com/docs/theme).
 The theme is also compatible with [WindiCSS](https://windicss.org/).
 
 This parser creates a file containing the whole theme. It can then be used in the `tailwind.config.js`.

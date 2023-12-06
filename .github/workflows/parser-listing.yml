@@ -1,0 +1,40 @@
+name: 'Parser Listing'
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    types: ['ready_for_review', 'opened', 'synchronize', 'reopened']
+env:
+  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+jobs:
+  list:
+    runs-on: ubuntu-latest
+    if: github.event.pull_request.draft == false
+    steps:
+      - uses: actions/checkout@main
+      - name: Extract branch name
+        shell: bash
+        run: echo "branch=${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}" >> $GITHUB_OUTPUT
+        id: extract_branch
+      - name: Install
+        run: yarn install --frozen-lockfile
+      - name: Create Listing
+        run: yarn list-parsers
+      - uses: technote-space/get-diff-action@v6
+        id: diff
+        with:
+          FILES: |
+            SUMMARY.md
+      - name: Pushes parser list
+        uses: dmnemec/copy_file_to_another_repo_action@main
+        if: steps.diff.outputs.diff
+        env:
+          API_TOKEN_GITHUB: ${{ secrets.GH_PARSERS_TOKEN }}
+        with:
+          source_file: 'output/parsers.md'
+          destination_repo: 'Specifyapp/Documentation'
+          destination_folder: 'concepts'
+          user_email: 'allan.michay@gmail.com'
+          user_name: 'AllanMichay'
+          commit_message: 'feat(parsers): update parsers list'
